@@ -1,0 +1,30 @@
+{
+  "renderer": "tools/video_fx/render_painterly_sequence.py",
+  "seed": 302,
+  "transition_fraction": 0.18,
+  "families": [
+    "village",
+    "village",
+    "threshold",
+    "tavern",
+    "tavern",
+    "tavern",
+    "tavern",
+    "coin",
+    "threshold",
+    "dawn"
+  ],
+  "edge_reframe": {
+    "0": 0.20,
+    "4": 0.18,
+    "6": 0.19,
+    "9": 0.19
+  },
+  "portal_after": [6, 7],
+  "notes": [
+    "Edge reframing removes storyboard section-title remnants without inpainting.",
+    "Portal transitions are reserved for the merchant/coin story beat and the return from the coin image.",
+    "This config is for recovered storyboard-derived keyframes; replace edge_reframe entries when clean production stills supersede them.",
+    "Final song timing must replace equal scene duration after canonical audio edit-map analysis."
+  ]
+}
