@@ -2,22 +2,20 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** V6 remains the picture-locked review base. V7 post-effects delivery is **rejected as an effects implementation** after direct V6/V7 frame comparison. Next work is a frame-by-frame/localized effects pass over the existing approved paintings and V6 edit; do not regenerate source art.
+**Current state:** **V8 complete / final QC passed / YouTube delivery archived.** V8 fixes the rejected V7 approach by rebuilding the locked paintings into real frame-by-frame animated effect clips, then assembling those clips into six music-synced sections before final delivery.
 
 ## Canonical visual rule
 
-**Recreate Silver Coin from the visual language contained in the two user-supplied sample videos themselves.**
+The two user-supplied sample videos remain the visual source of truth:
 
-- Sample A: `imagine-d04b484c.mp4`
-- Sample B: `imagine-5558fc80.mp4`
-- Sample A's blonde flower-crowned woodland woman defines protagonist identity, face, hair, crown, costume family, painted surface, palette and world.
-- The old V5 tavern/laborer storyboard may inform narrative history only. Its visual designs are rejected.
+- `imagine-d04b484c.mp4`
+- `imagine-5558fc80.mp4`
 
-## V6 completed visual set used in the full render
+The blonde flower-crowned woman from sample A remains the recurring protagonist. No replacement paintings were generated for V8.
 
-The current full render intentionally favors the strongest accepted paintings instead of filling every narrative beat with weaker art.
+## Locked hero paintings
 
-High-resolution girl-first source paintings used:
+V8 uses the eight accepted V6 paintings only:
 
 - woodland / silver coin portrait
 - woodland path / village reveal
@@ -28,107 +26,98 @@ High-resolution girl-first source paintings used:
 - fiddler scene
 - communal dance scene
 
-Strong images recur through different crops, scale paths, lateral movement, angle paths, palette response and effect intensity where appropriate.
+All are backed up in ChatGPT Library and indexed in GitHub. See `BINARY_ARCHIVE.md`.
 
-## Full V6 render
+## V8 effect library
 
-Artifact: `Silver_Coin_V6_Full_MusicDirected_720p.mp4`
+V8 contains real reusable effect clips rendered from those paintings:
 
-- Duration: **207.416667 s**
-- Canonical master duration: 207.44 s
-- Video: **1280x720 H.264, 12 fps**
-- Audio: **48 kHz stereo AAC, 256 kb/s**
-- Bytes: **69,744,424**
-- SHA-256: `20670789b2d76ac7c924a539ca2e55375f5abc8b9cef9d48af99d925192793f3`
-- Visual QC: **PASS** across section/contact-sheet review
+1. forest / hair / flower-crown breathing
+2. coin glint
+3. tavern firelight + smoke
+4. fiddler/bow impact motion
+5. communal crowd sway
+6. lightning + wet-road reflection
+7. Gaussian light shafts
+8. fog/pigment travel
+9. explicit 2.5D depth-parallax scene graph
+10. recursive coin portal
+11. temporal dusk-to-night painting
+12. real-audio waveform on the fiddler/bow (Chorus 1)
+13. workers/procession motion
+14. clap/hand/crowd rhythm response
+15. shadow wipe
+16. localized candle heat haze
+17. real-audio waveform on the fiddler/bow (Chorus 2)
+18. real-audio waveform on the fiddler/bow (Final Chorus)
 
-See `V6_FULL_RENDER_META.json`.
+Effect binaries are backed up under `/Video Creation/Silver Coin/Effect Assets/` and their recipes/hashes are checkpointed in GitHub.
 
-## V7 post-effects review — REJECTED
+## Six rebuilt V8 sections
 
-A YouTube-oriented V7 delivery was produced from V6 with title/end treatment, global grade/bloom, crop/zoom behavior and delivery conversion. Direct frame comparison showed that this did **not** create the localized living-painting motion requested by the user.
+- Section 1: `0.0–39.3` — depth parallax, Gaussian shafts, workers motion, shadow wipe, temporal night, music-aligned lightning
+- Section 2: `39.3–82.7` — fire/smoke, heat haze, clap response, fiddler impact, real-audio bow waveform, crowd sway
+- Section 3: `82.7–103.7` — coin glint, recursive coin portal, tavern fire/heat
+- Section 4: `103.7–138.2` — Chorus 2 fire/clap/fiddle/dance plus the correct 127.4 s bow waveform
+- Section 5: `138.2–188.0` — temporal night, reverse fog travel, forest breath/depth, coin return, forward fog travel, late bridge lightning aligned near 183.3/185.0/187.3 s
+- Section 6: `188.0–207.44` — clap/fiddle/dance, correct 193.3 s final-chorus waveform, reverse coin portal to forest, coin-glint resolution
 
-Observed failure mode:
+Each section was individually rendered, visually QC'd, hashed, and backed up before full assembly. See `V8_SECTION_INDEX.json`.
 
-- most scene geometry remained the same as V6;
-- visible change was dominated by global color/bloom/title treatment;
-- supposed loops were largely parameter modulation, not independently animated hair, foliage, flames, smoke, crowd, fabric or reflections;
-- camera changes were crop/scale changes rather than convincing depth-aware camera movement;
-- the 24 fps delivery mostly duplicated/interpolated a 12 fps base instead of adding new frame-level animation;
-- therefore V7 must not be described as the completed effects pass.
+## Final master
 
-The user specifically requested a return to the earlier single-image living-cover method: render frame-by-frame, create real effect/loop assets, composite them over the locked image/video, then edit the effected shots together.
+`Silver_Coin_V8_FINAL_YouTube_720p24.mp4`
 
-## Required V8 correction — post/edit only, no new source images
+- final status: **QC PASSED**
+- duration: **210.461333 s**
+- song: **207.44 s** + ~3 s ending card
+- video: **1280x720, 24 fps, H.264 High profile**
+- audio: **AAC LC, 48 kHz stereo**
+- bytes: **155,101,031**
+- SHA-256: `b996cc251a73e93540abdcc7b8e1077959b5d82dcfb3396aa49c990302216d70`
+- persistent Library ID: `libfile_acfb04300bd88191b67e23b2ad736870`
 
-Preserve the V6 picture edit and accepted paintings. Build actual reusable effect layers/loops and render them into the frames before assembly.
+See `V8_FINAL_META.json`.
 
-Priority effect families already supported by the repository:
+## Final QC
 
-- 2.5D parallax / layered camera travel
-- cinemagraph micro-loops
-- hair / flower-crown / foliage / cloth drift
-- candle and fire flicker
-- smoke / fog / rain / ash / dust
-- moving practical light and shadows
-- reflected fire / wet-road shimmer
-- Gaussian bloom / localized light fields
-- lightning / strong light accents where musically motivated
-- beat/transient flashes and glints
-- coin-object transitions
-- painterly pigment / temporal-light transitions
-- audio-reactive intensity changes
+- full high-bitrate candidate decode: **PASS**, zero decode errors
+- delivery beginning/middle/end sample decode: **PASS**
+- unintended black-frame scan during song: **PASS**
+- section timing drift vs music map: approximately **<= 8 ms**
+- protagonist continuity: **PASS**
+- visual effect presence: **PASS**
+- motion scan confirms substantial frame-level movement instead of V7-style global treatment:
+  - Verse 1: 88.34% of frames > 0.5 frame-delta
+  - Chorus 1: 96.54%
+  - Verse 2: 83.93%
+  - Chorus 2: 94.57%
+  - Bridge: 81.59%
+  - Final chorus: 98.50%
 
-Render effects as real visual layers or frame sequences, QC them independently, then composite them with the existing paintings/V6 edit. Do not rely on tiny global parameter changes and call them loops.
+See `V8_QC_REPORT.md`.
 
-## Music-directed motion language retained
+## Archive state
 
-The real master may still drive:
+A complete Silver Coin runtime snapshot was checksummed before V8 production:
 
-- smoothed energy -> camera and practical-light intensity
-- transient peaks -> visible light/zoom/impact accents
-- brightness proxy -> atmospheric lift
-- section identity -> crop speed, angle amplitude, loop density and palette response
+- 181 media files
+- 150 images
+- 30 videos
+- 1 canonical WAV
+- just over 1 GB total
 
-But the music control must produce visible frame-level consequences.
+Verified ZIP archive volumes and the full SHA-256 ledger are stored under `/Video Creation/Silver Coin/Archive Snapshots/`.
 
-## Recoverable section rendering
-
-Keep the six-section/global-time recovery method introduced by V6. Each musical section should be effect-rendered independently, QC'd, then concatenated so one bad loop or transition does not require a full-song rerender.
-
-See `V6_SECTION_RENDER_RECOVERY.md`.
-
-## Canonical source recovery
-
-The branch contains lightweight full-duration visual proxies for both sample clips:
-
-- `projects/silver-coin/references/source-clips/imagine-d04b484c-github-reference.mp4`
-- `projects/silver-coin/references/source-clips/imagine-5558fc80-github-reference.mp4`
-
-The canonical originals remain the uploaded 560x560/24fps files identified by SHA-256 in `ASSET_MANIFEST.json`.
-
-Canonical audio:
-
-`Silver Coin  (Remastered).wav`  
-SHA-256: `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`
+The final candidate, QC assets, all six sections, all effect packs, canonical source videos/audio, hero paintings, and final YouTube master are backed up in persistent Library storage.
 
 ## Historical versions
 
-- V5.1 / V5.2: technically valid but aesthetically rejected image direction.
-- V6 opening proof: first validation of the girl-first image direction and music-cued camera/effects grammar.
-- V6 full render: current picture-locked base.
-- V7 YouTube post pass: **rejected for insufficient localized/frame-level effects**; keep only as a diagnostic experiment.
+- V5.1 / V5.2: technically valid, rejected image direction
+- V6: accepted picture direction and sync base
+- V7: rejected for insufficient localized/frame-level effects
+- **V8: current final delivery**
 
-## Exact next action
+## Next action
 
-1. Preserve V6 picture lock and source paintings.
-2. Reuse repository effect methods and the earlier living-cover philosophy.
-3. Create true effect-loop assets / frame sequences first.
-4. Apply them frame-by-frame to each V6 musical section.
-5. QC visible motion/effects before final assembly.
-6. Assemble YouTube title/end only after the effected picture pass is genuinely visible.
-7. Checkpoint every effect asset, preset, timing map and section render to GitHub.
-
-## Checkpoint rule
-
-After every meaningful production/tooling phase, update GitHub before moving on so another agent can resume without the original chat.
+Do not rerender by default. Treat V8 as the current final. Only modify specific sections/effects in response to user review, preserving the six-section recovery workflow and all existing archive checkpoints.
