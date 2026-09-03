@@ -8,17 +8,12 @@
     "filename": "Silver Coin  (Remastered).wav",
     "type": "audio/wav",
     "role": "canonical source master",
-    "storage": "chatgpt_library",
+    "storage": "chatgpt_library_and_active_chat_upload",
     "library_file_id": "libfile_7726133c84a4819186af6e0bdd63ffc6",
     "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
     "bytes": 39828652,
     "duration_seconds": 207.44,
-    "audio": {
-      "codec": "pcm_s16le",
-      "sample_rate_hz": 48000,
-      "channels": 2,
-      "bits_per_sample": 16
-    },
+    "audio": {"codec": "pcm_s16le", "sample_rate_hz": 48000, "channels": 2, "bits_per_sample": 16},
     "github_copy": false
   },
   "style_references": [
@@ -27,20 +22,13 @@
       "filename": "imagine-d04b484c.mp4",
       "type": "video/mp4",
       "role": "canonical style and motion reference",
-      "storage": "chatgpt_library",
+      "storage": "chatgpt_library_and_active_chat_upload",
       "library_file_id": "libfile_6403a0b255708191b9c1cbe2110887ce",
       "sha256": "8f14739f3eb4f7e7dcc639dfe9fab398623f4a7b5c31ce8b2c0131fab89e6c9c",
       "bytes": 2579198,
       "duration_seconds": 6.041667,
-      "video": {
-        "codec": "h264",
-        "width": 560,
-        "height": 560,
-        "fps": 24
-      },
-      "audio": {
-        "codec": "aac"
-      },
+      "video": {"codec": "h264", "width": 560, "height": 560, "fps": 24},
+      "audio": {"codec": "aac"},
       "github_original": false
     },
     {
@@ -48,20 +36,13 @@
       "filename": "imagine-5558fc80.mp4",
       "type": "video/mp4",
       "role": "canonical style and motion reference",
-      "storage": "chatgpt_library",
+      "storage": "chatgpt_library_and_active_chat_upload",
       "library_file_id": "libfile_50d6865c2c248191b98b6313aa813b3e",
       "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
       "bytes": 1725042,
       "duration_seconds": 6.041667,
-      "video": {
-        "codec": "h264",
-        "width": 560,
-        "height": 560,
-        "fps": 24
-      },
-      "audio": {
-        "codec": "aac"
-      },
+      "video": {"codec": "h264", "width": 560, "height": 560, "fps": 24},
+      "audio": {"codec": "aac"},
       "github_original": false
     }
   ],
@@ -82,24 +63,47 @@
       "sha256": "2186af80f1644f78ba4902e968ba31d453bda5f281645c845cc03171622aa9d0",
       "bytes": 17513,
       "duration_seconds": 12.083333,
-      "video": {
-        "codec": "h264",
-        "width": 128,
-        "height": 128,
-        "fps": 6
-      }
+      "video": {"codec": "h264", "width": 128, "height": 128, "fps": 6}
+    }
+  ],
+  "production_outputs": [
+    {
+      "id": "silver-coin-v51-full",
+      "filename": "Silver_Coin_V51_Full.mp4",
+      "role": "validated native V5.1 full-length hybrid-NeRF/audio-reactive render",
+      "storage": "active_runtime_delivery_artifact",
+      "github_copy": false,
+      "sha256": "21a51d8e0ca6ae9bba5d2a6442ea74055513597eebab9ce08d9328342870fdd4",
+      "bytes": 18591095,
+      "duration_seconds": 207.466667,
+      "video": {"codec": "h264", "width": 854, "height": 480, "fps": 15},
+      "audio": {"codec": "aac", "sample_rate_hz": 48000, "channels": 2},
+      "qc": "projects/silver-coin/V51_QC_REPORT.json"
+    },
+    {
+      "id": "silver-coin-v52-720p-delivery",
+      "filename": "Silver_Coin_V52_720p_Delivery.mp4",
+      "role": "current 720p painterly delivery encode",
+      "storage": "active_runtime_delivery_artifact",
+      "github_copy": false,
+      "sha256": "1e3099dd6dd0fbc93192098176d9763045fad263f2364050cc79cd83f9e3d2ed",
+      "bytes": 123783646,
+      "duration_seconds": 207.466667,
+      "video": {"codec": "h264", "width": 1280, "height": 720, "fps": 15},
+      "audio": {"codec": "aac", "sample_rate_hz": 48000, "channels": 2},
+      "native_resolution": false,
+      "upscale_method": "Lanczos from validated V5.1 854x480 source plus restrained unsharp recovery",
+      "delivery_record": "projects/silver-coin/DELIVERY_V52.json"
     }
   ],
   "excluded_from_silver_coin": [
-    {
-      "filename": "Ironflame: A Mythic Visual Storyboard.png",
-      "reason": "IronFlame project artifact; not a Silver Coin style source"
-    }
+    {"filename": "Ironflame: A Mythic Visual Storyboard.png", "reason": "IronFlame project artifact; not a Silver Coin style source"}
   ],
-  "production_outputs": [],
   "notes": [
-    "The reference clips define style and motion, not literal subject matter or final aspect ratio.",
-    "Final Silver Coin delivery is expected to be 16:9 unless the user changes it.",
+    "The reference clips define style and measured motion range, not literal subject matter or final aspect ratio.",
+    "V5.1 is the validated native working render in this CPU environment.",
+    "V5.2 is explicitly an upscale delivery encode, not a native 720p scene render.",
+    "Large video binaries remain runtime delivery artifacts; GitHub stores reproducible code, timing, hashes, QC, and method documentation.",
     "Update this manifest whenever assets are generated, approved, rejected, rendered, archived, or moved."
   ]
 }
