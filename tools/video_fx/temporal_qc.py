@@ -7,7 +7,8 @@ scene boundaries are labeled as intentional transitions instead of unexplained
 artifacts.
 
 This is not semantic face/hand QC. It is a fast first-pass detector that narrows
-manual inspection to suspicious timestamps.
+manual inspection to suspicious timestamps. Robust z-score tests are combined
+with absolute floors so very stable renders do not generate tiny false positives.
 """
 from __future__ import annotations
 import argparse,json
@@ -42,9 +43,11 @@ def scan(path,sample_fps=3.0,width=320,timeline_path=None,transition_window=.85)
     for i,r in enumerate(rows):
         if i==0:continue
         score=max(abs(zs['frame_difference'][i]),abs(zs['flow'][i]),max(0,-zs['sharpness'][i]));reasons=[]
-        if zs['frame_difference'][i]>4:reasons.append('frame-difference-spike')
-        if zs['flow'][i]>4:reasons.append('motion-spike')
-        if zs['sharpness'][i]<-4:reasons.append('sharpness-collapse')
+        # Robust z-score alone can over-flag tiny changes when the render is very stable.
+        # Require a meaningful absolute magnitude as well.
+        if zs['frame_difference'][i]>4 and r['frame_difference']>.035:reasons.append('frame-difference-spike')
+        if zs['flow'][i]>4 and r['flow']>1.0:reasons.append('motion-spike')
+        if zs['sharpness'][i]<-4 and r['sharpness']<80:reasons.append('sharpness-collapse')
         if reasons:
             expected=any(abs(r['t']-b)<=transition_window for b in boundaries)
             risks.append({'t':round(r['t'],3),'score':round(float(score),3),'reasons':reasons,'expected_transition':expected,'metrics':r})
