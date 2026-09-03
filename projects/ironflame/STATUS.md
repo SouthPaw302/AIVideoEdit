@@ -135,3 +135,28 @@ The user is trying to create a **new AI-native music-video medium**, not just au
 Target feeling:
 
 > The song became a visual world.
+
+## Production checkpoint — canonical visual set complete
+
+**Completed:** 2026-09-03
+
+- Canonical WAV analyzed: 04:04.680, 48 kHz stereo.
+- Signal-derived edit map committed under `assets/analysis/`.
+- Canonical female IronFlame identity anchor committed.
+- Twelve newly generated, exact-16:9 production stills committed under `assets/stills/`.
+- Production contact sheet, full prompt set, shot list, QC notes, and checksummed asset manifest committed.
+- A 320 kb/s working audio reference is recoverable from the chunked files documented in `AUDIO_RECOVERY.md`.
+- No prior IronFlame MP4 frames, loops, edit timing, or transitions were reused.
+
+Current approved asset set:
+
+- `ASSET_MANIFEST.json`
+- `SHOT_LIST.md`
+- `PROMPTS.md`
+- `QC.md`
+- `AUDIO_RECOVERY.md`
+- `assets/reference/ironflame-character-anchor.jpg`
+- `assets/reference/ironflame-production-contact-sheet.jpg`
+- `assets/stills/01-*.jpg` through `12-*.jpg`
+
+Exact next action: build animation tests for shots 01, 07, 08, and 10, validate temporal identity/hand/geometry stability, then render the remaining living scenes and assemble to the 04:04.680 timeline.
