@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** V6 full-length music-directed living-painting render is complete and visually QC-reviewed. Production is now in refinement/review rather than storyboard generation.
+**Current state:** V6 remains the picture-locked review base. V7 post-effects delivery is **rejected as an effects implementation** after direct V6/V7 frame comparison. Next work is a frame-by-frame/localized effects pass over the existing approved paintings and V6 edit; do not regenerate source art.
 
 ## Canonical visual rule
 
@@ -44,37 +44,57 @@ Artifact: `Silver_Coin_V6_Full_MusicDirected_720p.mp4`
 
 See `V6_FULL_RENDER_META.json`.
 
-## Music-directed motion language in the full render
+## V7 post-effects review — REJECTED
 
-The real master drives:
+A YouTube-oriented V7 delivery was produced from V6 with title/end treatment, global grade/bloom, crop/zoom behavior and delivery conversion. Direct frame comparison showed that this did **not** create the localized living-painting motion requested by the user.
+
+Observed failure mode:
+
+- most scene geometry remained the same as V6;
+- visible change was dominated by global color/bloom/title treatment;
+- supposed loops were largely parameter modulation, not independently animated hair, foliage, flames, smoke, crowd, fabric or reflections;
+- camera changes were crop/scale changes rather than convincing depth-aware camera movement;
+- the 24 fps delivery mostly duplicated/interpolated a 12 fps base instead of adding new frame-level animation;
+- therefore V7 must not be described as the completed effects pass.
+
+The user specifically requested a return to the earlier single-image living-cover method: render frame-by-frame, create real effect/loop assets, composite them over the locked image/video, then edit the effected shots together.
+
+## Required V8 correction — post/edit only, no new source images
+
+Preserve the V6 picture edit and accepted paintings. Build actual reusable effect layers/loops and render them into the frames before assembly.
+
+Priority effect families already supported by the repository:
+
+- 2.5D parallax / layered camera travel
+- cinemagraph micro-loops
+- hair / flower-crown / foliage / cloth drift
+- candle and fire flicker
+- smoke / fog / rain / ash / dust
+- moving practical light and shadows
+- reflected fire / wet-road shimmer
+- Gaussian bloom / localized light fields
+- lightning / strong light accents where musically motivated
+- beat/transient flashes and glints
+- coin-object transitions
+- painterly pigment / temporal-light transitions
+- audio-reactive intensity changes
+
+Render effects as real visual layers or frame sequences, QC them independently, then composite them with the existing paintings/V6 edit. Do not rely on tiny global parameter changes and call them loops.
+
+## Music-directed motion language retained
+
+The real master may still drive:
 
 - smoothed energy -> camera and practical-light intensity
-- transient peaks -> micro zoom / light accents
+- transient peaks -> visible light/zoom/impact accents
 - brightness proxy -> atmospheric lift
-- section identity -> crop speed, angle amplitude and palette response
+- section identity -> crop speed, angle amplitude, loop density and palette response
 
-Verse language stays slower and intimate. Choruses widen and move harder. The bridge cools/drifts. The final chorus gets the strongest camera amplitude before returning to the calm forest image.
-
-## Reusable loops/effects active
-
-- 2D Gaussian atmosphere drift
-- tavern practical-light breathing
-- wet-road reflection shimmer
-- slow crop/angle camera loops
-- clean music-bound dissolves
-- candle-flare transition
-- pigment soften transition
-- shadow wipe
-- fog bridge
-- final light lift
-
-Terminology guard: the Gaussian atmosphere is 2D image-space Gaussian compositing, **not** true 3D Gaussian Splatting.
+But the music control must produce visible frame-level consequences.
 
 ## Recoverable section rendering
 
-The CPU runtime could render the imagery quickly but a single monolithic full encode could exceed an execution window. V6 therefore introduced a preferred recovery method: render six global-time chunks, concatenate the intermediate video, then perform one final 720p/audio encode.
-
-Because each chunk evaluates the original global song timestamp, music envelopes, camera curves and the two halves of transitions remain continuous across chunk boundaries.
+Keep the six-section/global-time recovery method introduced by V6. Each musical section should be effect-rendered independently, QC'd, then concatenated so one bad loop or transition does not require a full-song rerender.
 
 See `V6_SECTION_RENDER_RECOVERY.md`.
 
@@ -96,15 +116,18 @@ SHA-256: `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`
 
 - V5.1 / V5.2: technically valid but aesthetically rejected image direction.
 - V6 opening proof: first validation of the girl-first image direction and music-cued camera/effects grammar.
-- V6 full render: current review target.
+- V6 full render: current picture-locked base.
+- V7 YouTube post pass: **rejected for insufficient localized/frame-level effects**; keep only as a diagnostic experiment.
 
 ## Exact next action
 
-1. Preserve the full V6 render as the current review target.
-2. Continue archiving the accepted hero-image set and the full-render scripts/metadata to GitHub.
-3. Use user review to identify specific timing, image, transition or effect changes rather than restarting the visual direction.
-4. Regenerate only affected sections using the six-chunk recovery workflow.
-5. Keep expanding reusable production/effect methods when they prove useful.
+1. Preserve V6 picture lock and source paintings.
+2. Reuse repository effect methods and the earlier living-cover philosophy.
+3. Create true effect-loop assets / frame sequences first.
+4. Apply them frame-by-frame to each V6 musical section.
+5. QC visible motion/effects before final assembly.
+6. Assemble YouTube title/end only after the effected picture pass is genuinely visible.
+7. Checkpoint every effect asset, preset, timing map and section render to GitHub.
 
 ## Checkpoint rule
 
