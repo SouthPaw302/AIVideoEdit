@@ -10,7 +10,9 @@ This is the durable index for the ChatGPT **Video Creation** project. It maps th
 | `README.md` | Short repository orientation |
 | `REPOSITORY_INDEX.md` | Complete recovery map and branch registry |
 | `PROJECT_INDEX.md` | Active and reference production registry |
+| `CHAT_RECOVERY_LOG.md` | Durable summary of recovered Video Creation conversations and remaining gaps |
 | `docs/CANON_WORKFLOW.md` | Ten-phase music-video production workflow |
+| `docs/CONTINUOUS_CHECKPOINT_POLICY.md` | Mandatory in-progress GitHub save points and asset/effect traceability |
 | `docs/VISUAL_STYLE_CATALOG.md` | Named rendering, animation, narrative, visualizer, and transition languages |
 | `docs/ARCHITECTURE.md` | Direction, asset, QC, animation, edit, render, and archive layers |
 | `docs/STORAGE_AND_CONNECTORS.md` | GitHub/workspace/object-storage roles and connector rules |
@@ -21,7 +23,10 @@ This is the durable index for the ChatGPT **Video Creation** project. It maps th
 | Branch | Scope | Current role |
 |---|---|---|
 | `main` | Repository-wide canon and merged project records | Default recovery branch |
+| `song/ironflame` | IronFlame production | V1 delivered; exact final MP4 archive references still need recovery |
 | `song/silver-coin` | Silver Coin production | Active song branch; Living Pre-Raphaelite Folk Romanticism locked |
+| `song/leave-it-by-the-door` | Historical project recovery | Warm tavern/living-scene evidence; missing source/output details recorded |
+| `song/sigh-no-more` | Draft project recovery | Veo/Sora prompt architecture preserved; no completed render confirmed |
 
 New songs should normally use `song/<slug>`. A future agent must check `PROJECT_INDEX.md` before assuming the active branch.
 
@@ -29,11 +34,14 @@ New songs should normally use `song/<slug>`. A future agent must check `PROJECT_
 
 ### IronFlame
 
-- Canonical path on `main`: `projects/ironflame/`
+- Active branch: `song/ironflame`
+- Project path: `projects/ironflame/`
 - Status source: `projects/ironflame/STATUS.md`
 - Core files: `PROJECT.md`, `LYRICS.md`, `VISUAL_DNA.md`, `SHOT_LIST.md`, `PROMPTS.md`, `QC.md`, `ASSET_MANIFEST.json`, `AUDIO_RECOVERY.md`
 - Assets include analysis, source/reference imagery, production images, QC material, and lossless-audio recovery parts.
 - Critical canon: the IronFlame is a woman; the canonical film is rebuilt from scratch.
+- V1 was rendered as a 12-scene, 04:04.680 film: 1280 x 720 master (58.9 MB reported) plus a 540p delivery (21.9 MB reported).
+- The delivered MP4 binaries were not found in the current workspace; their archive gap is documented on the song branch.
 
 ### Silver Coin
 

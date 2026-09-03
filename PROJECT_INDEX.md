@@ -5,9 +5,10 @@ This file tracks productions inside AIVideoEdit. Each project must be recoverabl
 ## Active
 
 ### IronFlame
-Path: `projects/ironflame/`
+Branch: [`song/ironflame`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/ironflame)  
+Project path on branch: `projects/ironflame/`
 
-Status: **Visual set complete / Ready for animation**
+Status: **V1 rendered and delivered / Final MP4 archive references must be recovered**
 
 Purpose: First full flagship project for the canonical AIVideoEdit workflow.
 
@@ -31,6 +32,7 @@ Production package:
 - `projects/ironflame/PROMPTS.md`
 - `projects/ironflame/QC.md`
 - `projects/ironflame/AUDIO_RECOVERY.md`
+- `projects/ironflame/RENDER_HISTORY.md`
 
 ### Silver Coin
 Branch: [`song/silver-coin`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/silver-coin)  
@@ -52,7 +54,23 @@ Recovery files on the song branch:
 - `projects/silver-coin/LYRICS.md`
 - `projects/silver-coin/VISUAL_DNA.md`
 - `projects/silver-coin/STYLE_REFERENCE.md`
+- `projects/silver-coin/EFFECTS_PLAN.md`
+- `projects/silver-coin/DECISIONS.md`
 - `projects/silver-coin/ASSET_MANIFEST.json`
+
+## Recovered / Partial Song Projects
+
+### Leave It by the Door
+
+Branch: [`song/leave-it-by-the-door`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/leave-it-by-the-door)
+
+Recovered evidence: a warm tavern narrative treatment and lyric-timed multi-image/living-scene experiments informed the canon workflow. Exact source audio, lyrics, render filenames, hashes, and delivery status have not yet been recovered. The branch preserves this honestly as a recovery project rather than claiming completion.
+
+### Sigh No More / Irish Eyes, Spanish Hair
+
+Branch: [`song/sigh-no-more`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/sigh-no-more)
+
+Recovered evidence: Veo/Sora-style sequential video prompt architecture was drafted around Lake Hartwell, mountain roads, old houses, wet pavement, candlelight, rural night, Spanish hair, Irish eyes, and ancestral ghosts. No completed render was confirmed. The branch preserves the concept and next action.
 
 ## Reference / Prior Experiments
 
