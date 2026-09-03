@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "project": "Silver Coin",
+  "renderer": "silver-coin-hybrid-nerf-v4",
+  "claim": "hybrid neural-radiance-field spatial rendering",
+  "qc_preview": {
+    "duration_seconds": 10.0,
+    "fps": 15,
+    "width": 640,
+    "height": 360,
+    "seed": 302,
+    "audio_attached": false,
+    "result": "visual QC pass for spatial/effects integration; full-song timing not yet evaluated"
+  },
+  "keyframes": [
+    "01_village_dawn_clean.jpg",
+    "02_miller_gold_clean.jpg",
+    "03_laborers_clean.jpg",
+    "04_final_wagon_clean.jpg",
+    "05_first_toast_clean.jpg",
+    "06_chorus_raise_mugs_clean.jpg",
+    "07_chorus_take_back_dawn_clean.jpg",
+    "08_fiddler_first_clean.jpg",
+    "09_dance_floor_clean.jpg",
+    "10_merchant_barmaid_clean.jpg",
+    "11_empty_cup_clean.jpg",
+    "12_silver_coin_hat_clean.jpg",
+    "13_defiant_barmaid_clean.jpg",
+    "14_chorus_return_clean.jpg",
+    "15_chorus_return_dance_clean.jpg",
+    "16_fiddler_return_clean.jpg",
+    "22_final_raise_clean.jpg",
+    "23_final_drive_bitter_clean.jpg",
+    "24_final_fiddler_clean.jpg",
+    "25_final_poor_rich_clean.jpg",
+    "26_final_living_hearts_clean.jpg"
+  ],
+  "scene_families": {
+    "01-04": "village",
+    "05": "threshold",
+    "06-11": "tavern",
+    "12": "coin",
+    "13-16": "tavern",
+    "22-26": "dawn"
+  },
+  "nerf_training": {
+    "coin": {"samples": 5500, "steps": 80, "train_mse": 0.1803189218, "validation_mse": 0.1859040260},
+    "dawn": {"samples": 5500, "steps": 80, "train_mse": 0.1482924819, "validation_mse": 0.1578283459},
+    "tavern": {"samples": 5500, "steps": 80, "train_mse": 0.1330621243, "validation_mse": 0.1446665674},
+    "threshold": {"samples": 5500, "steps": 80, "train_mse": 0.1294618249, "validation_mse": 0.1326696873},
+    "village": {"samples": 5500, "steps": 80, "train_mse": 0.1202163845, "validation_mse": 0.1329283118}
+  },
+  "effects": [
+    "compact trained NeRF MLP volume",
+    "depth-proxy parallax",
+    "mesh breath",
+    "wet reflection ripple",
+    "advected atmosphere",
+    "motivated rain/embers",
+    "firelight breath",
+    "heat haze",
+    "motivated light shafts",
+    "silver glint",
+    "fiddler bow transient",
+    "portrait depth focus",
+    "temporal canvas lock",
+    "pigment dissolve",
+    "coin portal"
+  ],
+  "qc_notes": [
+    "Twenty-one cleaned painted storyboard frames were used, increasing narrative coverage over the original ten-frame recovery set.",
+    "Storyboard titles/lyric text were removed by deterministic reframing before animation rather than generative inpainting.",
+    "NeRF contribution remains low-opacity and atmospheric so subject faces, instruments, clothing, and architecture retain the painted source identity.",
+    "Rain remains motivated in exterior scenes; embers remain sparse in warm interiors.",
+    "The preview is not considered a timing approval because the canonical WAV bytes were unavailable to the runtime during this pass."
+  ]
+}

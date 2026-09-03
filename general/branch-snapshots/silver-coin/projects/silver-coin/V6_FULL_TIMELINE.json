@@ -1,0 +1,46 @@
+{
+  "project": "Silver Coin",
+  "version": "V6",
+  "fps": 12,
+  "duration_seconds": 207.44,
+  "render_base": [960, 540],
+  "delivery": [1280, 720],
+  "scenes": [
+    {"start":0.0,"end":10.0,"asset":"forest","section":"verse","camera":"forest_coin"},
+    {"start":10.0,"end":20.0,"asset":"path","section":"verse","camera":"path_reveal"},
+    {"start":20.0,"end":30.0,"asset":"workers","section":"verse","camera":"work_end"},
+    {"start":30.0,"end":39.3,"asset":"inn","section":"verse","camera":"threshold"},
+    {"start":39.3,"end":50.0,"asset":"toast","section":"chorus","camera":"toast"},
+    {"start":50.0,"end":61.5,"asset":"clap","section":"chorus","camera":"clap"},
+    {"start":61.5,"end":72.2,"asset":"fiddle","section":"chorus","camera":"fiddle"},
+    {"start":72.2,"end":82.7,"asset":"dance","section":"chorus","camera":"dance"},
+    {"start":82.7,"end":93.0,"asset":"toast","section":"verse2","camera":"merchant_view"},
+    {"start":93.0,"end":103.7,"asset":"forest","section":"verse2","camera":"coin_memory"},
+    {"start":103.7,"end":115.0,"asset":"toast","section":"chorus","camera":"toast_return"},
+    {"start":115.0,"end":127.0,"asset":"dance","section":"chorus","camera":"dance_return"},
+    {"start":127.0,"end":138.2,"asset":"fiddle","section":"chorus","camera":"fiddle_return"},
+    {"start":138.2,"end":150.5,"asset":"inn","section":"bridge","camera":"night_threshold"},
+    {"start":150.5,"end":163.5,"asset":"workers","section":"bridge","camera":"village_lives"},
+    {"start":163.5,"end":176.5,"asset":"path","section":"bridge","camera":"night_walk"},
+    {"start":176.5,"end":188.0,"asset":"forest","section":"bridge","camera":"coin_reflection"},
+    {"start":188.0,"end":199.5,"asset":"dance","section":"final","camera":"final_dance"},
+    {"start":199.5,"end":207.44,"asset":"forest","section":"final","camera":"return_forest"}
+  ],
+  "styled_transitions": {
+    "39.3":"candle_flare",
+    "82.7":"pigment_soften",
+    "103.7":"candle_flare",
+    "138.2":"shadow_wipe",
+    "176.5":"fog_bridge",
+    "188.0":"light_lift",
+    "199.5":"fog_bridge"
+  },
+  "other_boundaries":"short clean music-bound dissolve",
+  "music_controls": {
+    "energy":"camera/light intensity",
+    "transients":"micro zoom and practical-light accents",
+    "brightness_proxy":"atmospheric lift",
+    "section":"camera amplitude and palette family"
+  },
+  "section_chunk_frames": [[0,472],[472,992],[992,1244],[1244,1658],[1658,2118],[2118,2489]]
+}

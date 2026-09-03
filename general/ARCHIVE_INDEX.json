@@ -1,0 +1,50 @@
+{
+  "archive_date": "2026-09-03",
+  "repository": "SouthPaw302/AIVideoEdit",
+  "main_base_commit": "9450059d3d5de1afc5cc138acd5283c93c79df3c",
+  "videos": {
+    "ironflame": {
+      "canonical_branch": "song/ironflame",
+      "archive_branch": "archive/video/ironflame",
+      "branch_commit": "06ba8f00d784b474b86e9093595e03180337607f",
+      "root_tree": "9985b478dd9350e27d7d98e0866da1572c18da7d",
+      "status": "V1 delivered; exact final MP4 archive reference remains a documented gap"
+    },
+    "silver-coin": {
+      "canonical_branch": "song/silver-coin",
+      "archive_branch": "archive/video/silver-coin",
+      "branch_commit": "45367f11c72b631bab1181f39a162046a8c6e10c",
+      "root_tree": "b0cb0ac38c22912760ea1d94a8a64bb6ea72e7c3",
+      "status": "V8 final complete / QC passed",
+      "final_sha256": "b996cc251a73e93540abdcc7b8e1077959b5d82dcfb3396aa49c990302216d70",
+      "persistent_library_id": "libfile_acfb04300bd88191b67e23b2ad736870"
+    },
+    "leave-it-by-the-door": {
+      "canonical_branch": "song/leave-it-by-the-door",
+      "archive_branch": "archive/video/leave-it-by-the-door",
+      "branch_commit": "93761c0e604c94668bf57b9003ccb9c0040d2bf8",
+      "root_tree": "f12c767cb93cd99dd47d8c874b2d14de44d020c8",
+      "status": "recovery/partial"
+    },
+    "sigh-no-more": {
+      "canonical_branch": "song/sigh-no-more",
+      "archive_branch": "archive/video/sigh-no-more",
+      "branch_commit": "3e6fe5d5fcc5057f595ee6b449f72b598b5015c2",
+      "root_tree": "d122bc777e8ae2482e993de387694cef5e8f8a3d",
+      "status": "recovery/partial"
+    }
+  },
+  "reusable": {
+    "silver_coin_tools_tree": "550abe0a95699f8f593de750cce16764e761768b",
+    "silver_coin_docs_tree": "ba4054646610547b4aefa79ca21adef0457a592e"
+  },
+  "session_assets": {
+    "ironflame_storyboard": {
+      "filename": "Ironflame: A Mythic Visual Storyboard.png",
+      "sha256": "27cbb1a5b7ac00f65f23ea3f57477781adbd725e6a8a2a8b18513ea8bd8bdc4b",
+      "dimensions": "1536x1024",
+      "bytes": 2423152,
+      "github_binary_state": "fingerprinted; not streamed by current connector"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Silver Coin V6 opening music-directed proof",
+  "duration_seconds": 39.3,
+  "render_base": [960, 540, 12],
+  "delivery": [1280, 720, 12],
+  "canonical_audio": "Silver Coin  (Remastered).wav",
+  "scenes": [
+    {"start": 0.0, "end": 10.0, "image": "enchanted_woodland_coin_portrait.png", "preset": "forest_coin"},
+    {"start": 10.0, "end": 20.0, "image": "golden_path_to_the_village.png", "preset": "path_reveal"},
+    {"start": 20.0, "end": 30.0, "image": "golden_haired_maiden_at_sunset.png", "preset": "labor_end"},
+    {"start": 30.0, "end": 39.3, "image": "twilight_inn_beneath_the_flower_crown.png", "preset": "threshold_gold"}
+  ],
+  "music_controls": [
+    "transient-qualified micro-zoom",
+    "energy-weighted exposure",
+    "section angle grammar",
+    "transition boundaries at 10/20/30 s"
+  ],
+  "visual_effects": [
+    "2D Gaussian light-splat atmosphere",
+    "slow camera push/pull",
+    "lateral crop travel",
+    "sub-degree angle change",
+    "wet-ground shimmer",
+    "Gaussian-defocus light bridge transition",
+    "stable vignette"
+  ],
+  "delivery_sha256": "b2be989731d3ffe0f8e1ffbd6a3a73e1d43b03932a237948ca4dbbac1c22bd6a",
+  "claim_guard": "2D Gaussian light-splat atmosphere is not 3D Gaussian Splatting."
+}

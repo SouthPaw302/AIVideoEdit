@@ -1,0 +1,168 @@
+{
+  "project": "IronFlame",
+  "version": 2,
+  "source_audio": {
+    "filename": "Ironflame (Remastered).wav",
+    "duration_seconds": 244.68,
+    "sample_rate": 48000,
+    "channels": 2,
+    "sha256": "76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962",
+    "canonical_wav_parts": "assets/audio/canonical-wav.parts/",
+    "canonical_wav_part_count": 66,
+    "working_reference_parts": "assets/audio/working-reference.parts/",
+    "working_reference_sha256": "1a60e360c99e961792eee7d14c35ca3bfe8c80c156d08b05a76dc326ce248a2b"
+  },
+  "image_spec": {
+    "width": 1664,
+    "height": 936,
+    "aspect_ratio": "16:9",
+    "format": "JPEG",
+    "generation": "OpenAI built-in image generation",
+    "character_reference": "assets/reference/ironflame-character-anchor.jpg"
+  },
+  "reference_assets": [
+    {
+      "path": "assets/reference/ironflame-character-anchor.jpg",
+      "sha256": "4aeba96a0f4fdeac3781df52d76bc343d2f715291e79174c73ef5d0a9906acf2"
+    },
+    {
+      "path": "assets/reference/ironflame-production-contact-sheet.jpg",
+      "sha256": "5c9f7fcd25e6f2ee1ef3efde1114ebd57de09669b17e56eead13c942d2db103b"
+    },
+    {
+      "path": "assets/reference/visual-storyboard.jpg",
+      "sha256": "8b6032189ad7818bd659b256e01b5611508744bd792cc3ecc112bf1bac01f340"
+    },
+    {
+      "path": "assets/analysis/audio-analysis.json",
+      "sha256": "9bb8898c9eed01e2d295baec2716dddccd366f0e38a2c7af630e969c5723818e"
+    },
+    {
+      "path": "assets/analysis/audio-edit-map.png",
+      "sha256": "8dd026d3b5d521338ca6883cbe38404638104265e8a8dcccfe0edd690fa38cc2"
+    }
+  ],
+  "production_stills": [
+    {
+      "shot": 1,
+      "start": 0,
+      "end": 18,
+      "path": "assets/stills/01-house-beneath-rain.jpg",
+      "sha256": "e60a4a2f96fe35db46f46a69e8b91d26a8bf226a38dadba50f365bdd013ffa70"
+    },
+    {
+      "shot": 2,
+      "start": 18,
+      "end": 42,
+      "path": "assets/stills/02-threshold-inward-windows.jpg",
+      "sha256": "415c758b81b6f9a390ee38154d68fe756f45c5c4b426bc8827fc69b4a208f99f"
+    },
+    {
+      "shot": 3,
+      "start": 42,
+      "end": 77,
+      "path": "assets/stills/03-dust-remembers-forge.jpg",
+      "sha256": "ca1d351d3856b2a21f5475c05ffdcd8a60d968ae121a598488537e5ee45c1111"
+    },
+    {
+      "shot": 4,
+      "start": 77,
+      "end": 95,
+      "path": "assets/stills/04-walls-pronounce-silence.jpg",
+      "sha256": "6f85cda10844a82c43235509f2f259ab08d6237dc351d2bed8f0e1108fc95b24"
+    },
+    {
+      "shot": 5,
+      "start": 95,
+      "end": 110,
+      "path": "assets/stills/05-road-with-wolves.jpg",
+      "sha256": "f09cb048f02bbca0f0339119b32d465868b1dd05a14546634ba6148eb24e42f7"
+    },
+    {
+      "shot": 6,
+      "start": 110,
+      "end": 122,
+      "path": "assets/stills/06-unmade-day.jpg",
+      "sha256": "fd9ac7089e32503409d6b38f6e499f3079a81be38346bff9fc0b6e224933fe2e"
+    },
+    {
+      "shot": 7,
+      "start": 122,
+      "end": 137,
+      "path": "assets/stills/07-quiet-thunder.jpg",
+      "sha256": "f699ff4b9047bf259b0ddca80fbedec686300f2538cfe955e4e0e1d606850331"
+    },
+    {
+      "shot": 8,
+      "start": 137,
+      "end": 167,
+      "path": "assets/stills/08-hallway-without-end.jpg",
+      "sha256": "2da6789e90276d879b841bfedfc3b0e2e034b4bd4c12752f2a3aa08f7406f6e2"
+    },
+    {
+      "shot": 9,
+      "start": 167,
+      "end": 187,
+      "path": "assets/stills/09-underground-reflection.jpg",
+      "sha256": "72472bf744a9e1e829f2ca6bcfd0976097a74babc782c7e10e88fb3c88f3fa9e"
+    },
+    {
+      "shot": 10,
+      "start": 187,
+      "end": 210,
+      "path": "assets/stills/10-rise-through-forge-gate.jpg",
+      "sha256": "e15326fb85cc9ebadb67e8d5e3dd117befb1a6205fdf21ba59a17a33730060a6"
+    },
+    {
+      "shot": 11,
+      "start": 210,
+      "end": 233,
+      "path": "assets/stills/11-morning-enters.jpg",
+      "sha256": "c550c90c2d46b08f1c386f8009a1306fa22b451598177647ee37466264c9520c"
+    },
+    {
+      "shot": 12,
+      "start": 233,
+      "end": 244.68,
+      "path": "assets/stills/12-legacy-mark.jpg",
+      "sha256": "beba767f6439b412dff3b29ca7d1275022c69e5b7ef898d703d1650fb817e634"
+    }
+  ],
+  "branch": "song/ironflame",
+  "updated_utc": "2026-09-03",
+  "production_outputs": [
+    {
+      "version": "IronFlame V1 master",
+      "status": "rendered_and_delivered_in_originating_chat",
+      "duration_seconds": 244.68,
+      "scene_count": 12,
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      },
+      "size_reported": "58.9 MB",
+      "filename": null,
+      "sha256": null,
+      "storage": "unresolved_originating_chat_download",
+      "recovery_note": "A downloadable copy was provided in the originating chat, but its filename, hash, Library ID, and durable object-storage URI are not currently recoverable. Reattach or relocate the file before marking it archived."
+    },
+    {
+      "version": "IronFlame V1 compact delivery",
+      "status": "rendered_and_delivered_in_originating_chat",
+      "duration_seconds": 244.68,
+      "scene_count": 12,
+      "resolution_label": "540p",
+      "size_reported": "21.9 MB",
+      "filename": null,
+      "sha256": null,
+      "storage": "unresolved_originating_chat_download",
+      "recovery_note": "A downloadable copy was provided in the originating chat, but its filename, hash, Library ID, and durable object-storage URI are not currently recoverable. Reattach or relocate the file before marking it archived."
+    }
+  ],
+  "archive_gaps": [
+    "Recover the two delivered V1 MP4 files from the originating chat or user.",
+    "Compute SHA-256 hashes and exact byte counts.",
+    "Record filenames, codecs, frame rates, and durable Library/object-storage URIs.",
+    "Generate and commit final-render QC/contact-sheet evidence if not already preserved."
+  ]
+}

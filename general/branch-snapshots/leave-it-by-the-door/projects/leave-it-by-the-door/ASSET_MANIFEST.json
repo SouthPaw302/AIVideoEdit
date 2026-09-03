@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "project": "Leave It by the Door",
+  "branch": "song/leave-it-by-the-door",
+  "updated_utc": "2026-09-03",
+  "state": "recovery_incomplete",
+  "source_audio": null,
+  "lyrics": null,
+  "references": [],
+  "generated_assets": [],
+  "production_outputs": [],
+  "missing": [
+    "source audio",
+    "verified lyrics",
+    "prompts/storyboard",
+    "generated imagery",
+    "intermediate or final renders",
+    "hashes and storage references"
+  ],
+  "instruction": "Update immediately when an older chat or asset is recovered; do not invent missing values."
+}

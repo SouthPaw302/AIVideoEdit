@@ -1,0 +1,21 @@
+{
+  "version": "V8",
+  "branch": "song/silver-coin",
+  "rule": "All sections are rebuilt from locked paintings plus approved frame-by-frame effect clips; no replacement paintings were generated.",
+  "sections": [
+    {"section":1,"range":"0.0-39.3","file":"V8_Section01_00-39.3.mp4","sha256":"a7cd2d1a2f52662adb87d7134b89fbb2ddeae98eb80e1c624bf13eaa50433cd4","library_file_id":"libfile_5c1fd5cbfc9c8191bea950ff38cc541b"},
+    {"section":2,"range":"39.3-82.7","file":"V8_Section02_39.3-82.7.mp4","sha256":"897eee440fd26262b7e1399503ab9ed033203334158c7ea3bf5fcd27d17f1436","library_file_id":"libfile_e7724e352fc48191a7605c548c3249a1"},
+    {"section":3,"range":"82.7-103.7","file":"V8_Section03_82.7-103.7.mp4","sha256":"a7fe59ea402f086979e9194a193d4cf5564e3432fd23152bb4f111ef08445bf4","library_file_id":"libfile_937cca4164608191b051fa7abd03bf4b"},
+    {"section":4,"range":"103.7-138.2","file":"V8_Section04_103.7-138.2.mp4","sha256":"de63c06ff40b755b2825783afd7a8f037cbf6a7742b14979244282fc5a964fbb","library_file_id":"libfile_2cc6dbda232c819198184e0b6bfcc9e6"},
+    {"section":5,"range":"138.2-188.0","file":"V8_Section05_138.2-188.0.mp4","sha256":"8cb2430e3b33a596fc0793adcd9c8102b63eefa8c3fe239116413d20eefc52a0","library_file_id":"libfile_c21afede55ac8191ae70051e3c614b06"},
+    {"section":6,"range":"188.0-207.44","file":"V8_Section06_188.0-207.44.mp4","sha256":"adcfa4e50d4a9d04b9aec63ff2ff9efbe5b8149eec692e13db8848f6cd543762","library_file_id":"libfile_1321e9fee3a4819196c0cff7c989dab7"}
+  ],
+  "assembled_candidate": {
+    "file":"Silver_Coin_V8_Candidate_720p24.mp4",
+    "sha256":"cb257753fe352b248d9d6b249e2a2b24ef4f34fa79d6d184e06a2fd27f9af70a",
+    "bytes":281964128,
+    "duration_seconds":210.461333,
+    "library_file_id":"libfile_820895c6d558819181a15ac72c3a8262",
+    "note":"207.44-second canonical song plus approximately 3-second end card. This is the lossless-ish QC candidate, not the compressed delivery master."
+  }
+}
