@@ -7,6 +7,8 @@
     "sample_rate": 48000,
     "channels": 2,
     "sha256": "76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962",
+    "canonical_wav_parts": "assets/audio/canonical-wav.parts/",
+    "canonical_wav_part_count": 66,
     "working_reference_parts": "assets/audio/working-reference.parts/",
     "working_reference_sha256": "1a60e360c99e961792eee7d14c35ca3bfe8c80c156d08b05a76dc326ce248a2b"
   },
