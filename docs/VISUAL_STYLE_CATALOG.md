@@ -46,6 +46,18 @@ Focused, seamless motion within a largely stable composition. Motion should be m
 
 Brushwork, pigment, ink, illustrated texture, or surface detail visibly moves, dissolves, reforms, or repaints itself with the music.
 
+### Living Pre-Raphaelite Folk Romanticism
+
+A luminous, animated oil-painting world derived from late-Romantic and Pre-Raphaelite visual language: idealized but human faces, medieval or traditional folk clothing, abundant flowers and foliage, deep natural greens, warm gold light, soft skin tones, and visible handcrafted brush texture.
+
+The painting must remain visibly painted while its people and environment move naturally. Character motion may include breathing, blinking, head turns, walking, reaching, handling objects, playing instruments, dancing, and subtle emotional performance. Hair, fabric, leaves, smoke, firelight, flowers, and drifting petals should move as part of the same living painted world.
+
+Camera behavior is graceful and observant: slow tracking, gentle pushes, portrait-to-environment reframing, and composed lateral movement. Avoid frantic camera work unless the music explicitly demands it.
+
+**Avoid:** plastic CGI sheen, anime styling, hyperreal skin, cheap fantasy illustration, static zoom-only animation, boiling textures, face drift, morphing hands, disappearing props, and unmotivated particle effects.
+
+**Canonical first project:** Silver Coin. Its two source clips define the rendering surface and motion quality, not the literal subject matter or final square aspect ratio.
+
 ---
 
 ## 3. Narrative visual languages

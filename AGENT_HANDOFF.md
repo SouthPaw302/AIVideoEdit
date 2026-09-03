@@ -58,14 +58,36 @@ Large binary media should normally live in the active ChatGPT project/workspace 
 
 1. Read `AGENT_HANDOFF.md` (this file).
 2. Read `README.md`.
-3. Read `docs/CANON_WORKFLOW.md`.
-4. Read `docs/ARCHITECTURE.md`.
-5. Read `docs/STORAGE_AND_CONNECTORS.md`.
-6. Read `PROJECT_INDEX.md`.
-7. For the active song, read everything in its `projects/<slug>/` directory, especially `PROJECT.md` and `STATUS.md`.
-8. Inspect the current repo state before modifying anything.
-9. Use connected tools legitimately available in the current environment. Do not pretend a connector exists when it does not.
-10. Continue production without repeatedly asking for minor creative decisions when the project already grants creative authority.
+3. Read `REPOSITORY_INDEX.md`.
+4. Read `PROJECT_INDEX.md`.
+5. Read `docs/CANON_WORKFLOW.md`.
+6. Read `docs/VISUAL_STYLE_CATALOG.md`.
+7. Read `docs/ARCHITECTURE.md`.
+8. Read `docs/STORAGE_AND_CONNECTORS.md`.
+9. Resolve the active song branch from `PROJECT_INDEX.md`.
+10. On that branch, read everything in `projects/<slug>/`, especially `PROJECT.md`, `STATUS.md`, `VISUAL_DNA.md`, and `ASSET_MANIFEST.json`.
+11. Inspect the current repo/branch state before modifying anything.
+12. Use only legitimately available tools and continue production without repeatedly asking for minor decisions already settled in the project files.
+
+---
+
+## 3A. Branch, chat, and indexing discipline
+
+- Use one production branch per song: `song/<slug>`.
+- Prefer one fresh production chat per video so media generation and rendering do not overload a single conversation.
+- Search `REPOSITORY_INDEX.md` and `PROJECT_INDEX.md` before beginning or recovering work.
+- Keep global workflow and style vocabulary discoverable from `main`; keep active song decisions and assets on the song branch until intentionally merged.
+- Every project must preserve its branch, project path, canonical source filenames, cryptographic hashes when available, style lock, reference assets, current status, and exact next action.
+- Before changing chats or agents, update `STATUS.md` and `ASSET_MANIFEST.json`.
+
+When a user supplies a new visual-style reference:
+
+1. give the style a durable descriptive name;
+2. describe surface, palette, lighting, motion, camera, continuity, and failure modes;
+3. add it to `docs/VISUAL_STYLE_CATALOG.md`;
+4. lock the project-specific interpretation in `projects/<slug>/VISUAL_DNA.md`;
+5. preserve small representative still/motion previews in GitHub when practical;
+6. record original media filenames, hashes, and external or Library references in the manifest.
 
 ---
 

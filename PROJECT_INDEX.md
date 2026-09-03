@@ -32,6 +32,28 @@ Production package:
 - `projects/ironflame/QC.md`
 - `projects/ironflame/AUDIO_RECOVERY.md`
 
+### Silver Coin
+Branch: [`song/silver-coin`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/silver-coin)  
+Project path on branch: `projects/silver-coin/`
+
+Status: **Visual style locked / Project and references indexed**
+
+Core direction:
+- canonical style: **Living Pre-Raphaelite Folk Romanticism**
+- luminous oil-brush surfaces, emerald-and-gold natural light, flowers and folk-period detail
+- natural character performance and environmental motion inside a visibly painted world
+- adapt the style to Silver Coin's village, road, tavern, musicians, dancing crowd, merchant/barmaid, and coin imagery
+- the square source clips define painting surface and motion quality; they do not dictate final aspect ratio or literal characters
+- build living scenes, not a slideshow or a sequence of slow zooms
+
+Recovery files on the song branch:
+- `projects/silver-coin/PROJECT.md`
+- `projects/silver-coin/STATUS.md`
+- `projects/silver-coin/LYRICS.md`
+- `projects/silver-coin/VISUAL_DNA.md`
+- `projects/silver-coin/STYLE_REFERENCE.md`
+- `projects/silver-coin/ASSET_MANIFEST.json`
+
 ## Reference / Prior Experiments
 
 Earlier experiments in the working ChatGPT environment demonstrated:

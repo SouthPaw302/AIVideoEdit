@@ -10,6 +10,7 @@ That file is the canonical recovery entrypoint for the entire project. It explai
 
 Then read:
 - [`PROJECT_INDEX.md`](PROJECT_INDEX.md)
+- [`REPOSITORY_INDEX.md`](REPOSITORY_INDEX.md)
 - [`docs/CANON_WORKFLOW.md`](docs/CANON_WORKFLOW.md)
 - [`docs/VISUAL_STYLE_CATALOG.md`](docs/VISUAL_STYLE_CATALOG.md)
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
