@@ -2,6 +2,18 @@
 
 AI-native music-video production pipeline for turning songs into directed visual films.
 
+## New agent / new chat
+
+**Start here:** [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md)
+
+That file is the canonical recovery entrypoint for the entire project. It explains the system, storage model, tool/connector philosophy, production workflow, and how to recover active song projects without relying on chat history.
+
+Then read:
+- [`PROJECT_INDEX.md`](PROJECT_INDEX.md)
+- [`docs/CANON_WORKFLOW.md`](docs/CANON_WORKFLOW.md)
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- [`docs/STORAGE_AND_CONNECTORS.md`](docs/STORAGE_AND_CONNECTORS.md)
+
 This repository is the canonical source for:
 
 - song-to-visual direction
@@ -12,9 +24,11 @@ This repository is the canonical source for:
 - audio-reactive cinematography
 - hybrid visualizers
 - FFmpeg/Python assembly
+- tool / MCP / connector interfaces
+- project status and handoff context
 - final render validation
 
-Large media assets (WAV/MP3/PNG/MP4) may live in the active production workspace; this repo stores the reproducible workflow, scripts, manifests, and shot decisions.
+Large media assets (WAV/MP3/PNG/MP4) may live in the active production workspace or external object storage; this repo stores the reproducible workflow, scripts, manifests, asset references, and shot decisions.
 
 ## Canon workflow
 
@@ -31,6 +45,8 @@ Large media assets (WAV/MP3/PNG/MP4) may live in the active production workspace
 
 See `docs/CANON_WORKFLOW.md`.
 
-## Current project
+## Active flagship project
 
-`projects/ironflame/` — canonical rebuild of **Ironflame**, centered on a female mythic protagonist: *she is the IronFlame*.
+`projects/ironflame/` — canonical rebuild of **IronFlame**, centered on a female mythic protagonist: **she is the IronFlame**.
+
+Every active song project should contain enough written state in its project directory to survive a new chat or agent handoff.
