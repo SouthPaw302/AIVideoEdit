@@ -11,6 +11,7 @@ That file is the canonical recovery entrypoint for the entire project. It explai
 Then read:
 - [`PROJECT_INDEX.md`](PROJECT_INDEX.md)
 - [`docs/CANON_WORKFLOW.md`](docs/CANON_WORKFLOW.md)
+- [`docs/VISUAL_STYLE_CATALOG.md`](docs/VISUAL_STYLE_CATALOG.md)
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 - [`docs/STORAGE_AND_CONNECTORS.md`](docs/STORAGE_AND_CONNECTORS.md)
 
@@ -18,6 +19,7 @@ This repository is the canonical source for:
 
 - song-to-visual direction
 - visual DNA and storyboard manifests
+- visual style and rendering-method catalog
 - AI image artifact QC
 - 2.5D / parallax animation
 - looping environmental motion
