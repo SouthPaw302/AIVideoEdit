@@ -145,7 +145,7 @@ Target feeling:
 - Canonical female IronFlame identity anchor committed.
 - Twelve newly generated, exact-16:9 production stills committed under `assets/stills/`.
 - Production contact sheet, full prompt set, shot list, QC notes, and checksummed asset manifest committed.
-- A 320 kb/s working audio reference is recoverable from the chunked files documented in `AUDIO_RECOVERY.md`.
+- The canonical lossless WAV and a 320 kb/s working reference are both recoverable from the checksummed parts documented in `AUDIO_RECOVERY.md`.
 - No prior IronFlame MP4 frames, loops, edit timing, or transitions were reused.
 
 Current approved asset set:
