@@ -1,162 +1,87 @@
 # IronFlame — Current Production Status
 
-**State:** Active / canonical rebuild in progress  
-**Role:** First flagship production for the full AIVideoEdit workflow
+**Updated:** 2026-09-03 UTC  
+**Branch:** `song/ironflame`  
+**State:** **V1 rendered and delivered; final binaries require durable re-archive**  
+**Role:** First flagship production for the complete AIVideoEdit workflow
 
-## Non-negotiable production rule
+## Non-negotiable canon
 
-The canonical IronFlame film is being rebuilt **from scratch**.
+- The IronFlame is a woman and the recurring mythic protagonist.
+- The canonical production was rebuilt from scratch.
+- No prior IronFlame MP4 frames, loops, edit timing, transitions, or rendered animation loops were reused.
+- Preserve the approved dark-folk/mythic-fantasy visual DNA and female character identity.
+- Keep further IronFlame work on `song/ironflame`, not directly on `main`.
 
-Do not reuse:
-- prior IronFlame MP4 frames
-- prior edit/timeline
-- prior scene timing
-- prior transitions
-- prior rendered animation loops
+## Canonical source package
 
-Prior videos are historical experiments only.
+- Lossless source: `Ironflame (Remastered).wav`
+- Duration: 244.680 seconds
+- Sample rate/channels: 48 kHz stereo
+- SHA-256: `76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962`
+- Recoverable lossless parts: `assets/audio/canonical-wav.parts/`
+- Recoverable working reference parts: `assets/audio/working-reference.parts/`
+- Reconstruction instructions: `AUDIO_RECOVERY.md`
 
-Allowed:
-- canonical remastered source audio
-- canonical lyrics
-- approved still artwork if useful
-- newly generated production frames
-- new procedural/audio-reactive layers
-- generic techniques learned during earlier tests
+## Completed production package
 
-## Canon source audio
+- Signal-derived audio analysis and edit map.
+- Canonical female IronFlame character anchor.
+- Twelve newly generated exact-16:9 production stills.
+- Production contact sheet and visual storyboard.
+- Full prompt set, shot list, QC notes, and checksummed asset manifest.
+- Lossless WAV and 320 kb/s working reference preserved as checksummed GitHub parts.
+- A twelve-scene V1 assembled to the full 04:04.680 song.
+- Master and compact delivery files rendered and provided for download.
 
-Filename used in the ChatGPT production environment:
+## V1 delivery record
 
-`Ironflame (Remastered) (1).mp3`
+### Master
 
-Historical workspace path during the originating session:
+- Duration: 04:04.680
+- Scenes: 12
+- Resolution: 1280 x 720
+- Reported size: 58.9 MB
+- Status: rendered and delivered in the originating chat
 
-`/mnt/data/Ironflame (Remastered) (1).mp3`
+### Compact delivery
 
-Do not assume that exact workspace path survives a future session. If missing, ask the user to attach/recover the canonical source or resolve it through available project storage.
+- Duration: 04:04.680
+- Scenes: 12
+- Resolution: 540p
+- Reported size: 21.9 MB
+- Status: rendered and delivered in the originating chat
 
-## Creative state
+## Archive gap
 
-The visual concept evolved from a literal haunted-house interpretation into a broader mythic-fantasy film.
+The final V1 MP4 files are not present in this active workspace or GitHub, and no recoverable filename, SHA-256, Library ID, or object-storage URI was found in the available project context.
 
-Critical character decision:
+Do **not** claim the final videos are durably archived yet. The source audio, stills, prompts, timing plan, and reconstruction data are preserved, but the exact delivered encodes must be reattached or relocated to durable storage.
 
-> **The IronFlame is a woman. She is the central recurring subject and symbolic embodiment of the title.**
+See `RENDER_HISTORY.md` and `ASSET_MANIFEST.json`.
 
-The user strongly approved the dark-fantasy storyboard/production-board direction.
-
-The film should still preserve the emotional DNA of the actual lyrics: rain, inward-facing house/windows, doorway, dust, iron/fire, walls speaking, sleeping distance, impossible hallway, quiet thunder, inverted gravity, reaching another person, underground, and dawn. These motifs may become symbolic trials in her myth rather than literal illustrations.
-
-## Current visual direction
+## Visual direction preserved
 
 - dark folk / mythic fantasy
 - haunted -> determined -> ascendant
-- cinematic realism with painterly and abstract passages
 - female recurring protagonist
-- forged iron / stone / rain / smoke / embers / ash
-- occasional integrated WMP/oscilloscope/reactive geometry language
-- recursive visual transitions
-- temporal change from darkness toward dawn
+- cinematic realism with painterly and abstract passages
+- forged iron, wet stone, rain, smoke, embers, ash, wolves, oath, memory
+- palette: ember orange -> iron blue -> ash gray -> dawn gold
+- integrated reactive geometry only where it belongs in the world
+- recursive transitions and temporal movement toward dawn
+- living layered scenes rather than slideshow motion
 
-Palette journey:
+Full rules remain in `PROJECT.md` and `VISUAL_DNA.md`.
 
-`ember orange -> iron blue -> ash gray -> dawn gold`
+## Exact next actions
 
-## Character continuity
+1. Recover/reattach the 720p master and 540p delivery MP4.
+2. Verify exact filenames, codecs, frame rates, durations, byte counts, and hashes.
+3. Store them in Library or durable object storage and update `ASSET_MANIFEST.json`.
+4. Generate final-render QC evidence/contact sheets if missing.
+5. Treat V2 or additional rendering as a separate explicit production decision.
 
-Working appearance:
-- woman, physically grounded rather than superhero-glossy
-- recognizable recurring face
-- dark wavy/braided hair
-- soot/scar/weathering texture
-- dark worn armor/leather/iron details
-- cloak
-- ember-lit identity
+## Continuous checkpoint rule
 
-Do not allow uncontrolled face/costume drift between key scenes.
-
-## Production frames
-
-During the originating session, storyboard/moodboard images were generated that established the fantasy direction. These planning boards may not persist across future environments. Their **creative decisions are preserved in GitHub**, so new final production frames can be regenerated without depending on those binaries.
-
-Final scene images should normally be clean cinematic 16:9 frames without storyboard UI or explanatory text unless deliberately used as an in-film graphic/title.
-
-## Animation target
-
-Do more than slow pan/zoom.
-
-Per-scene possibilities:
-- depth/parallax camera motion
-- hair/cloak drift
-- breathing/pose micro-motion
-- embers/sparks
-- localized rain
-- fog/smoke/ash
-- practical light/flicker
-- shadow motion
-- visualizer geometry integrated into world
-- local warp/deformation
-- selective rhythmic camera energy
-- recursive transitions between objects/environments
-
-## Artifact/QC requirement
-
-Scan stills before animation for:
-- hands/fingers
-- face/eyes
-- weapons/armor
-- architecture
-- nonsense marks/text
-- duplicated objects
-- perspective/reflections
-- continuity
-
-Then inspect animated shots for flicker, texture boiling, morphing props, unstable edges, and excessive motion.
-
-## Immediate next actions for a new agent
-
-1. Read `AGENT_HANDOFF.md` and all IronFlame project files.
-2. Recover/confirm the canonical remastered audio.
-3. Analyze the audio directly for exact duration, structure, section boundaries, dynamics, and useful reactive envelopes.
-4. Do **not** rely on timestamps hallucinated inside earlier generated storyboard art.
-5. Lock a practical character reference/look for the female IronFlame.
-6. Build a coherent final 16:9 shot set from scratch.
-7. Run artifact QC before expensive animation.
-8. Build layered living scenes with more animation than the earlier experiments.
-9. Integrate abstract/reactive visualizer passages only where the song wants them.
-10. Assemble to actual song structure, validate, and export master + compact version.
-11. Update this `STATUS.md` after meaningful progress so the next agent can continue without chat history.
-
-## User intent
-
-The user is trying to create a **new AI-native music-video medium**, not just automate slideshows.
-
-Target feeling:
-
-> The song became a visual world.
-
-## Production checkpoint — canonical visual set complete
-
-**Completed:** 2026-09-03
-
-- Canonical WAV analyzed: 04:04.680, 48 kHz stereo.
-- Signal-derived edit map committed under `assets/analysis/`.
-- Canonical female IronFlame identity anchor committed.
-- Twelve newly generated, exact-16:9 production stills committed under `assets/stills/`.
-- Production contact sheet, full prompt set, shot list, QC notes, and checksummed asset manifest committed.
-- The canonical lossless WAV and a 320 kb/s working reference are both recoverable from the checksummed parts documented in `AUDIO_RECOVERY.md`.
-- No prior IronFlame MP4 frames, loops, edit timing, or transitions were reused.
-
-Current approved asset set:
-
-- `ASSET_MANIFEST.json`
-- `SHOT_LIST.md`
-- `PROMPTS.md`
-- `QC.md`
-- `AUDIO_RECOVERY.md`
-- `assets/reference/ironflame-character-anchor.jpg`
-- `assets/reference/ironflame-production-contact-sheet.jpg`
-- `assets/stills/01-*.jpg` through `12-*.jpg`
-
-Exact next action: build animation tests for shots 01, 07, 08, and 10, validate temporal identity/hand/geometry stability, then render the remaining living scenes and assemble to the 04:04.680 timeline.
+After any new IronFlame work, update this status, manifest, decision/render history, and affected assets on `song/ironflame` before ending the work phase or switching chats.

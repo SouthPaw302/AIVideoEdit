@@ -1,5 +1,7 @@
 # Ironflame — Canon Rebuild
 
+**Branch:** `song/ironflame`
+
 ## Rule
 This production is rebuilt from scratch. Do **not** reuse frames, loops, edits, timing, or transitions from prior Ironflame MP4 renders.
 
@@ -37,3 +39,7 @@ Before animation, inspect hands, faces, weapons, armor, props, geometry, text, r
 
 ## Canon workflow
 Follow `docs/CANON_WORKFLOW.md` for every production pass.
+
+## Persistence rule
+
+All further IronFlame work stays on `song/ironflame`. Update `STATUS.md`, `ASSET_MANIFEST.json`, and `RENDER_HISTORY.md` after every meaningful phase and before changing chats or agents.
