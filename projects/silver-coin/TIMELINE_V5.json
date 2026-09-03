@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "source": "Silver Coin  (Remastered).wav",
+  "duration_seconds": 207.44,
+  "tempo": {
+    "dominant_pulse_bpm": 86.1328,
+    "double_time_bpm": 172.2656,
+    "meter_note": "Use 86.13 as the large compound/6-8 pulse; use 172.27 for fine transient subdivision."
+  },
+  "macro_sections": [
+    {"name":"verse_1","start":0.0,"end":39.265},
+    {"name":"chorus_1","start":39.265,"end":82.733},
+    {"name":"verse_2","start":82.733,"end":103.747},
+    {"name":"chorus_2","start":103.747,"end":138.159},
+    {"name":"bridge","start":138.159,"end":183.322},
+    {"name":"final_chorus","start":183.322,"end":207.44}
+  ],
+  "scenes": [
+    {"scene":1,"section":"verse_1","start":0.0,"end":7.6858,"anchor":"morning steals warmth / miller counts gold"},
+    {"scene":2,"section":"verse_1","start":7.6858,"end":15.9985,"anchor":"miller counts his gold"},
+    {"scene":3,"section":"verse_1","start":15.9985,"end":23.6147,"anchor":"carry sacks wood and grain / night turns cold"},
+    {"scene":4,"section":"verse_1","start":23.6147,"end":31.5791,"anchor":"final wagon rests / fire fills room"},
+    {"scene":5,"section":"verse_1","start":31.5791,"end":39.265,"anchor":"drink to scraps of joy / laugh away gloom"},
+    {"scene":6,"section":"chorus_1","start":39.265,"end":50.2712,"anchor":"raise mugs / stamp beat / will not mourn"},
+    {"scene":7,"section":"chorus_1","start":50.2712,"end":61.3471,"anchor":"master takes by day / take back before dawn"},
+    {"scene":8,"section":"chorus_1","start":61.3471,"end":71.7032,"anchor":"fiddler fast and loud / floorboards shake"},
+    {"scene":9,"section":"chorus_1","start":71.7032,"end":82.733,"anchor":"poor in coin / rich in song / living hearts"},
+    {"scene":10,"section":"verse_2","start":82.733,"end":88.0036,"anchor":"merchant finest silk / love true"},
+    {"scene":11,"section":"verse_2","start":88.0036,"end":93.53,"anchor":"cup ran dry / promise vanished"},
+    {"scene":12,"section":"verse_2","start":93.53,"end":98.7312,"anchor":"hat and silver coin / left man alone"},
+    {"scene":13,"section":"verse_2","start":98.7312,"end":103.747,"anchor":"barmaid lies and boasts / thirst in cold"},
+    {"scene":14,"section":"chorus_2","start":103.747,"end":112.5703,"anchor":"raise mugs / stamp beat / will not mourn"},
+    {"scene":15,"section":"chorus_2","start":112.5703,"end":120.8599,"anchor":"master takes by day / take back before dawn"},
+    {"scene":16,"section":"chorus_2","start":120.8599,"end":129.846,"anchor":"fiddler fast and loud / floorboards shake"},
+    {"scene":17,"section":"chorus_2","start":129.846,"end":138.159,"anchor":"poor in coin / rich in song / living hearts"},
+    {"scene":18,"section":"bridge","start":138.159,"end":144.73,"anchor":"farmer curses"},
+    {"scene":19,"section":"bridge","start":144.73,"end":150.9529,"anchor":"smith turns red"},
+    {"scene":20,"section":"bridge","start":150.9529,"end":157.1991,"anchor":"carter sings too loud"},
+    {"scene":21,"section":"bridge","start":157.1991,"end":164.0954,"anchor":"maid hides landlord bread"},
+    {"scene":22,"section":"bridge","start":164.0954,"end":170.3184,"anchor":"farmhand kisses love"},
+    {"scene":23,"section":"bridge","start":170.3184,"end":176.5413,"anchor":"tomorrow work / debts due"},
+    {"scene":24,"section":"bridge","start":176.5413,"end":183.322,"anchor":"wine and songs tonight / little coin"},
+    {"scene":25,"section":"final_chorus","start":183.322,"end":188.1745,"anchor":"raise mugs / stamp beat / morning breaks"},
+    {"scene":26,"section":"final_chorus","start":188.1745,"end":193.0043,"anchor":"life bitter / tonight drive away"},
+    {"scene":27,"section":"final_chorus","start":193.0043,"end":197.8572,"anchor":"fiddler fast and loud / rafters shake"},
+    {"scene":28,"section":"final_chorus","start":197.8572,"end":202.687,"anchor":"poor in coin / rich in song"},
+    {"scene":29,"section":"final_chorus","start":202.687,"end":207.44,"anchor":"while living hearts still wake"}
+  ],
+  "timing_method": "Macro sections from real-master feature segmentation; internal scene boundaries subdivided then snapped to the nearest valid detected beat.",
+  "lyric_timing_caveat": "Anchors are recovered from the canonical storyboard and are not word-level forced alignment."
+}
