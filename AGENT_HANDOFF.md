@@ -59,15 +59,17 @@ Large binary media should normally live in the active ChatGPT project/workspace 
 1. Read `AGENT_HANDOFF.md` (this file).
 2. Read `README.md`.
 3. Read `REPOSITORY_INDEX.md`.
-4. Read `PROJECT_INDEX.md`.
-5. Read `docs/CANON_WORKFLOW.md`.
-6. Read `docs/VISUAL_STYLE_CATALOG.md`.
-7. Read `docs/ARCHITECTURE.md`.
-8. Read `docs/STORAGE_AND_CONNECTORS.md`.
-9. Resolve the active song branch from `PROJECT_INDEX.md`.
-10. On that branch, read everything in `projects/<slug>/`, especially `PROJECT.md`, `STATUS.md`, `VISUAL_DNA.md`, and `ASSET_MANIFEST.json`.
-11. Inspect the current repo/branch state before modifying anything.
-12. Use only legitimately available tools and continue production without repeatedly asking for minor decisions already settled in the project files.
+4. Read `CHAT_RECOVERY_LOG.md`.
+5. Read `PROJECT_INDEX.md`.
+6. Read `docs/CANON_WORKFLOW.md`.
+7. Read `docs/CONTINUOUS_CHECKPOINT_POLICY.md`.
+8. Read `docs/VISUAL_STYLE_CATALOG.md`.
+9. Read `docs/ARCHITECTURE.md`.
+10. Read `docs/STORAGE_AND_CONNECTORS.md`.
+11. Resolve the active song branch from `PROJECT_INDEX.md`.
+12. On that branch, read everything in `projects/<slug>/`, especially `PROJECT.md`, `STATUS.md`, `VISUAL_DNA.md`, `EFFECTS_PLAN.md`, `DECISIONS.md`, and `ASSET_MANIFEST.json`.
+13. Inspect the current repo/branch state before modifying anything.
+14. Use only legitimately available tools and continue production without repeatedly asking for minor decisions already settled in the project files.
 
 ---
 
@@ -88,6 +90,37 @@ When a user supplies a new visual-style reference:
 4. lock the project-specific interpretation in `projects/<slug>/VISUAL_DNA.md`;
 5. preserve small representative still/motion previews in GitHub when practical;
 6. record original media filenames, hashes, and external or Library references in the manifest.
+
+---
+
+## 3B. Continuous GitHub checkpoint policy
+
+GitHub updates happen **during production**, not only at the end of a chat. This protects the project from freezes, context/cache limits, failed renders, and agent handoffs.
+
+Checkpoint the active song branch after:
+
+- a source audio or reference asset is received and fingerprinted;
+- a style, story, character, palette, or effects decision is approved;
+- audio/lyric/structure analysis is completed;
+- each meaningful image batch is generated, reviewed, approved, rejected, or repaired;
+- an effect or motion test is created and evaluated;
+- a shot list, prompt set, timing map, or scene graph changes;
+- an intermediate segment or full render is produced;
+- QC finds or resolves a material issue;
+- an asset is moved to Library/object storage;
+- any long operation after which losing the chat would cause duplicated work.
+
+Before starting another major generation/render batch, confirm the previous phase is represented by committed status, manifest, decisions, prompts, and previews.
+
+Generated images and effects must be traceable:
+
+- record prompt/version, intended shot, hash, dimensions, storage path/ID, approval state, and QC notes;
+- commit practical-size canonical images, contact sheets, masks, previews, scripts, and effect tests to the song branch;
+- when originals are too large, preserve a representative preview plus hash and durable external reference;
+- select effects from `docs/VISUAL_STYLE_CATALOG.md` and lock their actual project use in `EFFECTS_PLAN.md`;
+- never leave a critical approval or rejection only in chat.
+
+See `docs/CONTINUOUS_CHECKPOINT_POLICY.md`.
 
 ---
 
