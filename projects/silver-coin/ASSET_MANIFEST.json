@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "project": "Silver Coin",
+  "branch": "song/silver-coin",
+  "updated_utc": "2026-09-03",
+  "canonical_audio": {
+    "id": "silver-coin-remastered-wav",
+    "filename": "Silver Coin  (Remastered).wav",
+    "type": "audio/wav",
+    "role": "canonical source master",
+    "storage": "chatgpt_library",
+    "library_file_id": "libfile_7726133c84a4819186af6e0bdd63ffc6",
+    "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+    "bytes": 39828652,
+    "duration_seconds": 207.44,
+    "audio": {
+      "codec": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "bits_per_sample": 16
+    },
+    "github_copy": false
+  },
+  "style_references": [
+    {
+      "id": "silver-coin-style-reference-a",
+      "filename": "imagine-d04b484c.mp4",
+      "type": "video/mp4",
+      "role": "canonical style and motion reference",
+      "storage": "chatgpt_library",
+      "library_file_id": "libfile_6403a0b255708191b9c1cbe2110887ce",
+      "sha256": "8f14739f3eb4f7e7dcc639dfe9fab398623f4a7b5c31ce8b2c0131fab89e6c9c",
+      "bytes": 2579198,
+      "duration_seconds": 6.041667,
+      "video": {
+        "codec": "h264",
+        "width": 560,
+        "height": 560,
+        "fps": 24
+      },
+      "audio": {
+        "codec": "aac"
+      },
+      "github_original": false
+    },
+    {
+      "id": "silver-coin-style-reference-b",
+      "filename": "imagine-5558fc80.mp4",
+      "type": "video/mp4",
+      "role": "canonical style and motion reference",
+      "storage": "chatgpt_library",
+      "library_file_id": "libfile_50d6865c2c248191b98b6313aa813b3e",
+      "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+      "bytes": 1725042,
+      "duration_seconds": 6.041667,
+      "video": {
+        "codec": "h264",
+        "width": 560,
+        "height": 560,
+        "fps": 24
+      },
+      "audio": {
+        "codec": "aac"
+      },
+      "github_original": false
+    }
+  ],
+  "github_recovery_assets": [
+    {
+      "id": "silver-coin-style-contact-sheet",
+      "path": "projects/silver-coin/references/living-pre-raphaelite-style-reference.jpg",
+      "type": "image/jpeg",
+      "role": "four-frame style identification sheet",
+      "sha256": "50d878a4d628990387e2d454fac9059328aec1eed98d5ccd46ebc9ee61fa89d3",
+      "bytes": 22450
+    },
+    {
+      "id": "silver-coin-style-motion-preview",
+      "path": "projects/silver-coin/references/living-pre-raphaelite-motion-preview.mp4",
+      "type": "video/mp4",
+      "role": "reduced silent motion-language preview",
+      "sha256": "2186af80f1644f78ba4902e968ba31d453bda5f281645c845cc03171622aa9d0",
+      "bytes": 17513,
+      "duration_seconds": 12.083333,
+      "video": {
+        "codec": "h264",
+        "width": 128,
+        "height": 128,
+        "fps": 6
+      }
+    }
+  ],
+  "excluded_from_silver_coin": [
+    {
+      "filename": "Ironflame: A Mythic Visual Storyboard.png",
+      "reason": "IronFlame project artifact; not a Silver Coin style source"
+    }
+  ],
+  "production_outputs": [],
+  "notes": [
+    "The reference clips define style and motion, not literal subject matter or final aspect ratio.",
+    "Final Silver Coin delivery is expected to be 16:9 unless the user changes it.",
+    "Update this manifest whenever assets are generated, approved, rejected, rendered, archived, or moved."
+  ]
+}
