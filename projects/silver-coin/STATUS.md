@@ -2,12 +2,12 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** Full-length V5.1 hybrid-NeRF/audio-reactive render validated; V5.2 720p painterly delivery encode complete; temporal QC passed with zero unexplained risks
+**Current state:** V5.1/V5.2 technically validated but aesthetically rejected as the target; production is pivoting to a hero-frame-first approach inspired by the strongest early IronFlame experiment
 
 ## Completed
 
 - Locked **Living Pre-Raphaelite Folk Romanticism** as the primary visual language from the two supplied six-second reference clips.
-- Locked **hybrid neural-radiance-field spatial rendering** as the spatial method: a compact trained CPU NeRF supplies learned atmosphere/light while painted layers retain faces, hands, instruments, architecture, clothing, and narrative detail.
+- Locked **hybrid neural-radiance-field spatial rendering** as an available spatial method: a compact trained CPU NeRF supplies learned atmosphere/light while painted layers retain faces, hands, instruments, architecture, clothing, and narrative detail.
 - Recovered the canonical `Silver Coin  (Remastered).wav` in the active runtime and verified SHA-256 `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`.
 - Verified the re-uploaded style clips against the original recorded hashes.
 - Ran the real audio edit-map analysis and recovered the working song structure:
@@ -17,43 +17,65 @@
   - Chorus 2: 1:43.7–2:18.2
   - Bridge: 2:18.2–3:03.3
   - Final Chorus: 3:03.3–3:27.4
-- Recovered and cleaned a 29-scene narrative timeline from the storyboard material.
-- Removed storyboard titles/captions by deterministic crop/recomposition rather than large generative inpainting.
-- Calibrated motion against the supplied reference clips. At 280 px analysis width, measured mean optical flow was ~0.428 px/frame for the quieter reference and ~1.566 px/frame for the more active reference.
-- Audio-reactive V5 controls drive camera/parallax, localized painted motion, atmosphere/fire/haze, rain/embers/glints, fiddler bow response, and light shafts from the actual master.
-- Rebuilt the bridge as a **narrative ribbon** preserving the multi-character storyboard composition and moving the camera farmer → smith → carter → maid → lovers → dawn → wine.
-- Rendered complete V5.1 source: `Silver_Coin_V51_Full.mp4`.
-- Validated V5.1 container: H.264 854×480 at 15 fps + 48 kHz stereo AAC, 207.466667 s.
-- V5.1 SHA-256: `21a51d8e0ca6ae9bba5d2a6442ea74055513597eebab9ce08d9328342870fdd4`.
-- Added reusable temporal QC scanner at `tools/video_qc/temporal_qc.py`.
-- Temporal QC result: 50 expected transition/motion events and **0 unexplained temporal risks** using robust z-score plus absolute magnitude floors. See `V51_QC_REPORT.json`.
-- Created V5.2 painterly delivery encode: `Silver_Coin_V52_720p_Delivery.mp4`, 1280×720 at 15 fps, 207.466667 s.
-- V5.2 SHA-256: `1e3099dd6dd0fbc93192098176d9763045fad263f2364050cc79cd83f9e3d2ed`.
-- V5.2 is explicitly documented as a Lanczos/upscale delivery from the validated 854×480 source, not as native 720p scene rendering.
-- Expanded `docs/EFFECTS_METHOD_CATALOG.md` with reference-motion calibration, narrative-ribbon reframing, temporal QC, and documented painterly delivery-upscale rules.
+- Recovered and cleaned a 29-scene narrative timeline from storyboard material.
+- Built reusable CPU effects, compact NeRF volume rendering, reference-motion calibration, narrative-ribbon reframing, audio analysis, and temporal QC tooling.
+- Rendered complete V5.1 source and V5.2 720p delivery encode.
+- V5.1/V5.2 passed technical/container/temporal QC.
+
+## User aesthetic review — decisive pivot
+
+The user reported that the very first IronFlame video, built around a single static picture, looked better than Silver Coin V5/V5.2.
+
+Treat this as a production correction, not a minor preference.
+
+### Lesson
+
+Technical complexity is not visual quality. V5 accumulated too many competing operations: frequent scene changes, warps, particles, parallax, transitions, depth changes, reframing, and audio-reactive motion. The result is more sophisticated on paper but gives the viewer less time to inhabit a strong composition.
+
+### New production rule
+
+**Hero image first. Effects must earn their existence.**
+
+For the next Silver Coin pass:
+
+1. Start from one exceptional hero painting or a very small number of exceptional paintings.
+2. Preserve the image almost completely; do not deform faces, hands, instruments, clothing, or architectural anchors.
+3. Prefer slow camera drift, crop movement, light change, smoke/mist/rain, reflection, and restrained NeRF atmosphere over mesh warping.
+4. Let audio drive intensity of atmosphere/light/camera energy rather than forcing a new shot on every section or transient.
+5. Use the silver coin as an occasional visual anchor, not a constant transition gimmick.
+6. Keep long visual dwell times. A composition that deserves attention should stay on screen long enough to become a world.
+7. Judge each effect by subtraction: if removing it makes the image stronger, remove it.
+8. Technical QC remains necessary but cannot substitute for aesthetic judgment.
 
 ## Current approved direction
 
-Maintain the visibly hand-painted folk-romantic world while making it continuously alive through restrained depth/camera motion, cloth/crowd movement, motivated rain/embers, smoke/mist, wet reflection, fire/candle response, audio transients, and brief coin-driven transitions.
+Build Silver Coin V6 as a **minimal living painting** rather than a multi-panel animated storyboard.
 
-Allowed technical description: **hybrid neural-radiance-field spatial rendering**.
+Target feeling: one beautiful painted world slowly breathing with the song.
 
-Do not describe this as photogrammetric scene reconstruction, Nerfstudio, Instant-NGP, or a physically complete 3D model.
+Preferred motion hierarchy:
 
-## Delivery artifacts
+1. camera drift / slow push / reframing
+2. practical light and shadow response
+3. smoke, mist, rain, embers, reflections
+4. subtle NeRF volumetric atmosphere
+5. rare object glint or portal moment
+6. local deformation only when absolutely necessary
+
+The hybrid NeRF remains available, but it must stay subordinate to the hero image. Do not add an effect merely because the renderer can produce it.
+
+## Historical V5 artifacts
 
 See `DELIVERY_V52.json` and `V51_QC_REPORT.json`.
 
-- Native validated working render: `Silver_Coin_V51_Full.mp4`
-- Current delivery encode: `Silver_Coin_V52_720p_Delivery.mp4`
-- Large video binaries are runtime delivery artifacts; GitHub stores the reproducible code, timing data, hashes, method documentation, and QC records.
+- `Silver_Coin_V51_Full.mp4`
+- `Silver_Coin_V52_720p_Delivery.mp4`
 
-## Remaining improvement work
+These remain useful technical experiments and regression references, but they are **not the aesthetic target**.
 
-- User review of V5.2 pacing, scene selection, and overall visual feel.
-- Optional targeted repair if user identifies a scene that should be replaced or re-framed.
-- Optional higher-resolution native rerender when a faster/GPU render environment is available; do not confuse an upscale with native rendering.
-- Continue expanding reusable effects/method documentation as new methods prove useful.
+## Exact next action
+
+Select or create the strongest single Silver Coin hero composition, build a restrained 20–30 second V6 living-painting proof against the real master, compare it aesthetically to V5, then extend only if the minimal approach is clearly stronger.
 
 ## Checkpoint rule
 
