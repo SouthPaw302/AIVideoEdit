@@ -9,6 +9,7 @@ AI-native music-video production pipeline for turning songs into directed visual
 That file is the canonical recovery entrypoint for the entire project. It explains the system, storage model, tool/connector philosophy, production workflow, and how to recover active song projects without relying on chat history.
 
 Then read:
+- [`general/README.md`](general/README.md) — consolidated video/effects/resource archive on `main`
 - [`PROJECT_INDEX.md`](PROJECT_INDEX.md)
 - [`REPOSITORY_INDEX.md`](REPOSITORY_INDEX.md)
 - [`CHAT_RECOVERY_LOG.md`](CHAT_RECOVERY_LOG.md)
@@ -33,7 +34,9 @@ This repository is the canonical source for:
 - project status and handoff context
 - final render validation
 
-Large media assets (WAV/MP3/PNG/MP4) may live in the active production workspace or external object storage; this repo stores the reproducible workflow, scripts, manifests, asset references, and shot decisions.
+`general/branch-snapshots/` preserves complete Git-tree snapshots of every known Video Creation production branch, while `general/reusable/` preserves reusable effect/tool trees. Archive branches under `archive/video/*` provide additional point-in-time recovery refs.
+
+Large media assets (WAV/MP3/PNG/MP4) may also live in persistent Library or external object storage when they exceed GitHub's ordinary file limits; the repo preserves hashes, manifests, storage references, representative media, scripts, effects, QC, and exact recovery state.
 
 ## Canon workflow
 
@@ -50,8 +53,11 @@ Large media assets (WAV/MP3/PNG/MP4) may live in the active production workspace
 
 See `docs/CANON_WORKFLOW.md`.
 
-## Active flagship project
+## Video projects
 
-`projects/ironflame/` — canonical rebuild of **IronFlame**, centered on a female mythic protagonist: **she is the IronFlame**.
+- **IronFlame** — V1 delivered; final MP4 archive identity remains an explicit recovery gap.
+- **Silver Coin** — V8 final complete / QC passed; full production/effect state preserved on `song/silver-coin` and in the general branch snapshot.
+- **Leave It by the Door** — recovery/partial project.
+- **Sigh No More / Irish Eyes, Spanish Hair** — recovery/partial project.
 
-Every active song project should contain enough written state in its project directory to survive a new chat or agent handoff.
+Every active song project should contain enough written and referenced state in its project directory to survive a new chat or agent handoff.
