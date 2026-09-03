@@ -1,0 +1,27 @@
+{
+  "pack": "V8 Pack 04",
+  "type": "audio-specific waveform effect variants",
+  "branch": "song/silver-coin",
+  "rule": "No new paintings. Both clips are rendered from the locked fiddler painting and the actual Silver Coin master at the listed timestamps.",
+  "assets": [
+    {
+      "file": "V8_FX17_audio_waveform_chorus2.mp4",
+      "audio_start_seconds": 127.4,
+      "sha256": "f84271bb7e0a5bed907673c4d129ca8a844136a98f5abb02988d548c9b1b4491",
+      "bytes": 2726567,
+      "video": {"width": 1280, "height": 720, "fps": 24, "duration_seconds": 4.0},
+      "library_path": "/Video Creation/Silver Coin/Effect Assets/V8 Pack 04/V8_FX17_audio_waveform_chorus2.mp4",
+      "library_file_id": "libfile_3520fa798c0881918bdffd7b14b64ac5"
+    },
+    {
+      "file": "V8_FX18_audio_waveform_finalchorus.mp4",
+      "audio_start_seconds": 193.3,
+      "sha256": "8f67572b32f4b9c120b96d87e1e000774d5acadec7a3d15e2c5ffcb30fa63903",
+      "bytes": 2706812,
+      "video": {"width": 1280, "height": 720, "fps": 24, "duration_seconds": 4.0},
+      "library_path": "/Video Creation/Silver Coin/Effect Assets/V8 Pack 04/V8_FX18_audio_waveform_finalchorus.mp4",
+      "library_file_id": "libfile_8e703cb132c881918247f44ac6020819"
+    }
+  ],
+  "manifest_library_file_id": "libfile_818ec40d3144819188a86e6c560f94ba"
+}
