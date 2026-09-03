@@ -2,6 +2,12 @@
 
 Branch: `song/irish-eyes`
 
+## Governing production rules
+
+This visual DNA is subordinate to `projects/irish-eyes/PRODUCTION_RULES.md`. Those rules are binding for implementation, render proofs, PlayCanvas/SuperSplat usage, effect QC, fallbacks, checkpointing, and final acceptance.
+
+**An effect is not considered implemented until it exists in a rendered proof and survives QC.**
+
 ## Source anchors
 
 - Primary real-footage source: `Brandi South Florida 2017.mp4`
@@ -30,6 +36,10 @@ Branch: `song/irish-eyes`
 6. **2.5D parallax scene graphs** — use depth-separated frames for slow dimensional moves when the original clip cannot provide enough coverage.
 7. **Selective 3D Gaussian Splatting / NeRF environment reconstruction** — only for waterfront/background spatial extensions where the available frames provide enough parallax. Keep Brandi herself in the original photographic plate or carefully composited masks; do not reconstruct her face/body as a splat/NeRF character.
 8. **Integrated audio-reactive cinematography** — musical energy should modulate light bloom, water shimmer, atmospheric depth, micro-speed ramps, edit density, and subtle camera accents. Avoid obvious visualizer overlays.
+
+## PlayCanvas implementation commitment
+
+PlayCanvas is part of the actual Irish Eyes render/effects path where technically appropriate, not merely a reference. The production may use PlayCanvas Engine modern post-processing/custom render passes and the PlayCanvas SuperSplat ecosystem for viable background Gaussian-splat work. Any shot claiming PlayCanvas/SuperSplat treatment must have a real rendered proof and recorded settings before timeline integration.
 
 ## Transition language
 
