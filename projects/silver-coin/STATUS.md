@@ -2,43 +2,50 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** V5/V5.2 are historical technical experiments. V6 is being rebuilt from the two user-supplied sample videos themselves; sample A's opening blonde flower-crowned woodland woman is the recurring protagonist/style anchor.
+**Current state:** V6 is being rebuilt directly from the two user-supplied sample videos. The blonde flower-crowned woodland woman from sample A is the recurring protagonist and visual anchor; the rejected V5 tavern/laborer image set is no longer the visual source.
 
-## Decisive user correction
+## Canonical visual correction
 
-The earlier diagnosis that Silver Coin simply needed fewer images was incomplete.
+The user clarified that the principal problem with V5 was the **image set**, not simply the amount of motion.
 
-The user clarified that the main problem is **the image set itself**. The old tavern/laborer storyboard did not match the quality or visual identity of the supplied sample videos.
+Current rule:
 
-### Current canonical visual rule
-
-**Recreate the film from the visual language contained in the two sample videos.**
+**Recreate Silver Coin from the visual language contained in the two sample videos themselves.**
 
 - Sample A: `imagine-d04b484c.mp4`
 - Sample B: `imagine-5558fc80.mp4`
-- The first scene of sample A, featuring the blonde flower-crowned woman in the green woodland, is the starting character and world anchor.
-- Extract frames from the sample videos and use those frames to define face/character continuity, painting surface, palette, lighting, vegetation, costume/fabric language, composition, camera behavior, and motion feel.
-- Build an entirely new Silver Coin storyboard whose scenes look as though they belong to the same painted world.
-- The recovered V5 tavern/laborer panels may inform narrative beats only; **their image designs are rejected as the final visual source.**
+- Sample A's opening woman defines protagonist identity, face, hair, crown, costume family, painted surface, palette and woodland world.
+- The old tavern/laborer storyboard may inform narrative beats only. Its visual designs are rejected.
+
+## V6 progress
+
+Completed:
+
+- Verified both canonical uploads: 560x560, 24 fps, 6.041667 s each.
+- Extracted a 2 fps representative sequence from both originals: **24 exact sample frames total**.
+- Confirmed both samples depict the same recurring blonde flower-crowned woman in the same woodland painting language.
+- Locked character continuity and world rules in `V6_STORYBOARD_PLAN.md`.
+- Created the full 20-beat Silver Coin V6 storyboard around her:
+  woodland -> village/workers -> warm tavern -> first toast -> fiddler/dance -> merchant/coin -> defiance -> communal chorus -> night threshold -> woodland before dawn -> final coin/flower image.
+- Added `V6_REFERENCE_FRAME_INDEX.md` so future agents can recover the exact reference-frame progression and QC rules.
+- Built a local V6 storyboard blueprint using only frames extracted from the canonical sample videos as the continuity imagery.
 
 ## GitHub source-video recovery
 
-The branch now contains each source clip separately as a dedicated full-duration visual recovery proxy:
+The branch contains each sample separately as a lightweight full-duration visual recovery proxy:
 
 - `projects/silver-coin/references/source-clips/imagine-d04b484c-github-reference.mp4`
 - `projects/silver-coin/references/source-clips/imagine-5558fc80-github-reference.mp4`
 
-These are lightweight 96x96/4fps silent GitHub recovery proxies made from the canonical uploads. They are intentionally small enough to persist through the repository connector while retaining the complete visual sequence of each six-second clip.
-
-The canonical originals remain the uploaded 560x560/24fps files, identified permanently by SHA-256 in `ASSET_MANIFEST.json`. Do not confuse the GitHub proxy encode with the original binary.
+These are intentionally reduced 96x96/4fps silent proxies because the current repository connector cannot stream the multi-megabyte original runtime binaries directly into GitHub. The canonical originals remain the uploaded 560x560/24fps files; their SHA-256 hashes and metadata in `ASSET_MANIFEST.json` are authoritative.
 
 ## Canonical audio / structure
 
-Canonical audio: `Silver Coin  (Remastered).wav`  
+Audio: `Silver Coin  (Remastered).wav`  
 SHA-256: `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`  
 Duration: 207.44 s
 
-Working structure derived from the real master:
+Working structure:
 
 - Verse 1: 0:00–0:39.3
 - Chorus 1: 0:39.3–1:22.7
@@ -47,35 +54,28 @@ Working structure derived from the real master:
 - Bridge: 2:18.2–3:03.3
 - Final Chorus: 3:03.3–3:27.4
 
-## Reusable production technology retained
+## Reusable technology retained
 
-The technical work from V3–V5 remains useful **after** the new image set is correct:
+Keep the good technical work, but apply it only after the new image set is right:
 
 - audio edit-map analysis
-- compact CPU neural-radiance-field atmosphere
-- pseudo-depth / parallax
-- restrained atmosphere, rain, smoke, embers, reflection, practical light
-- object/coin match transitions
+- compact CPU NeRF atmosphere
+- restrained pseudo-depth/parallax
+- smoke/mist/rain/embers/reflections/practical light
+- coin/object match transitions
 - reference-motion calibration
 - temporal QC
 
-Do not use effects to compensate for weak source imagery.
-
-## Historical V5 artifacts
-
-- `Silver_Coin_V51_Full.mp4`
-- `Silver_Coin_V52_720p_Delivery.mp4`
-
-They passed technical/container/temporal QC but are not the aesthetic target.
+Do not use effects to compensate for weak imagery.
 
 ## Exact next action
 
-1. Extract representative and sequential frames from both canonical sample videos.
-2. Build a visual/character bible from sample A's opening woman and both clips' painterly environment/motion language.
-3. Create a new full-song storyboard with the woman recurring through Silver Coin's narrative.
-4. Generate/QC the new consistent scene set before animation.
-5. Apply the existing rendering/effects stack only after the storyboard passes visual QC.
-6. Assemble against the real 207.44-second master and checkpoint every meaningful phase to GitHub.
+1. Use the 24-frame sample sequence as the character/style continuity sheet.
+2. Produce the new V6 scene images for the 20 storyboard beats, keeping the same woman and painting language.
+3. QC each scene against the sample frames before animation.
+4. Animate only accepted images with the existing rendering/effects stack.
+5. Assemble against the real 207.44-second master.
+6. Checkpoint every meaningful phase to GitHub.
 
 ## Checkpoint rule
 
