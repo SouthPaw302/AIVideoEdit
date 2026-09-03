@@ -2,79 +2,59 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** V4 hybrid NeRF visual pass working with 21 cleaned narrative frames; reusable effects, NeRF, and audio-analysis tools are committed; canonical WAV bytes are now the blocking dependency for full-song timing/sync
+**Current state:** Full-length V5.1 hybrid-NeRF/audio-reactive render validated; V5.2 720p painterly delivery encode complete; temporal QC passed with zero unexplained risks
 
 ## Completed
 
-- User explicitly selected Neural Radiance Fields as the spatial rendering method.
-- Created dedicated branch `song/silver-coin` and persisted project recovery/style decisions.
-- Fingerprinted the canonical 207.440-second remastered WAV and indexed its Library reference.
-- Inspected both six-second visual reference clips and locked **Living Pre-Raphaelite Folk Romanticism** as the primary visual language.
-- Added the style and rendering decisions to repository-wide recovery/catalog documentation.
-- Built and QC'd the first ten recovered Silver Coin narrative keyframes.
-- Recovered an expanded **21-frame** painted narrative set covering village labor, miller, wagon, first toast, chorus, fiddler, merchant/barmaid, empty cup, silver coin, defiance, chorus returns, and final celebratory images.
-- Removed left-edge storyboard titles and bottom lyric/caption contamination through deterministic crop/recomposition rather than generative inpainting.
-- Implemented reusable CPU painterly effects: pseudo-depth parallax, localized mesh motion, advected atmosphere, motivated rain/embers, firelight breath, wet reflection ripple, heat haze, motivated light shafts, portrait depth-focus breath, localized metal/coin glint, performance transient warp, pigment dissolve, object/coin portal, and temporal canvas lock.
-- Added reusable effect code under `tools/video_fx/` and documented the methods in `docs/EFFECTS_METHOD_CATALOG.md`.
-- Added `tools/audio/analyze_edit_map.py`; synthetic validation correctly recovered deliberately placed section changes and produced beat/transient/sync candidates.
-- Implemented `tools/video_fx/tiny_nerf_volume.py`, an actual compact trained MLP mapping 3D position + view direction to density/RGB using Fourier features and CPU volume rendering.
-- Produced V4 local QC using all 21 cleaned frames plus five trained NeRF scene-family fields (`village`, `threshold`, `tavern`, `coin`, `dawn`).
-- Recorded V4 train/validation metrics and QC configuration in `NERF_V4_QC.json`.
-
-## V4 NeRF validation metrics
-
-V4 QC used seed 302, 5,500 samples and 80 training steps per family.
-
-- village validation MSE: ~0.1329
-- threshold validation MSE: ~0.1327
-- tavern validation MSE: ~0.1447
-- coin validation MSE: ~0.1859
-- dawn validation MSE: ~0.1578
-
-The NeRF remains a low-opacity learned atmospheric/light volume; the painted keyframes retain faces, hands, instruments, clothing, architecture, and narrative detail.
+- Locked **Living Pre-Raphaelite Folk Romanticism** as the primary visual language from the two supplied six-second reference clips.
+- Locked **hybrid neural-radiance-field spatial rendering** as the spatial method: a compact trained CPU NeRF supplies learned atmosphere/light while painted layers retain faces, hands, instruments, architecture, clothing, and narrative detail.
+- Recovered the canonical `Silver Coin  (Remastered).wav` in the active runtime and verified SHA-256 `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`.
+- Verified the re-uploaded style clips against the original recorded hashes.
+- Ran the real audio edit-map analysis and recovered the working song structure:
+  - Verse 1: 0:00–0:39.3
+  - Chorus 1: 0:39.3–1:22.7
+  - Verse 2: 1:22.7–1:43.7
+  - Chorus 2: 1:43.7–2:18.2
+  - Bridge: 2:18.2–3:03.3
+  - Final Chorus: 3:03.3–3:27.4
+- Recovered and cleaned a 29-scene narrative timeline from the storyboard material.
+- Removed storyboard titles/captions by deterministic crop/recomposition rather than large generative inpainting.
+- Calibrated motion against the supplied reference clips. At 280 px analysis width, measured mean optical flow was ~0.428 px/frame for the quieter reference and ~1.566 px/frame for the more active reference.
+- Audio-reactive V5 controls drive camera/parallax, localized painted motion, atmosphere/fire/haze, rain/embers/glints, fiddler bow response, and light shafts from the actual master.
+- Rebuilt the bridge as a **narrative ribbon** preserving the multi-character storyboard composition and moving the camera farmer → smith → carter → maid → lovers → dawn → wine.
+- Rendered complete V5.1 source: `Silver_Coin_V51_Full.mp4`.
+- Validated V5.1 container: H.264 854×480 at 15 fps + 48 kHz stereo AAC, 207.466667 s.
+- V5.1 SHA-256: `21a51d8e0ca6ae9bba5d2a6442ea74055513597eebab9ce08d9328342870fdd4`.
+- Added reusable temporal QC scanner at `tools/video_qc/temporal_qc.py`.
+- Temporal QC result: 50 expected transition/motion events and **0 unexplained temporal risks** using robust z-score plus absolute magnitude floors. See `V51_QC_REPORT.json`.
+- Created V5.2 painterly delivery encode: `Silver_Coin_V52_720p_Delivery.mp4`, 1280×720 at 15 fps, 207.466667 s.
+- V5.2 SHA-256: `1e3099dd6dd0fbc93192098176d9763045fad263f2364050cc79cd83f9e3d2ed`.
+- V5.2 is explicitly documented as a Lanczos/upscale delivery from the validated 854×480 source, not as native 720p scene rendering.
+- Expanded `docs/EFFECTS_METHOD_CATALOG.md` with reference-motion calibration, narrative-ribbon reframing, temporal QC, and documented painterly delivery-upscale rules.
 
 ## Current approved direction
 
-Maintain the visibly hand-painted Pre-Raphaelite folk-romantic world while making it feel continuously alive. Use coherent camera/depth motion, controlled cloth/crowd movement, motivated rain/embers, smoke/mist, wet reflection, fire/candle response, performance transients, and brief coin-driven transitions.
+Maintain the visibly hand-painted folk-romantic world while making it continuously alive through restrained depth/camera motion, cloth/crowd movement, motivated rain/embers, smoke/mist, wet reflection, fire/candle response, audio transients, and brief coin-driven transitions.
 
 Allowed technical description: **hybrid neural-radiance-field spatial rendering**.
 
 Do not describe this as photogrammetric scene reconstruction, Nerfstudio, Instant-NGP, or a physically complete 3D model.
 
-## Canonical source assets
+## Delivery artifacts
 
-See `ASSET_MANIFEST.json`.
+See `DELIVERY_V52.json` and `V51_QC_REPORT.json`.
 
-- Audio: `Silver Coin  (Remastered).wav`
-- Style clip A: `imagine-d04b484c.mp4`
-- Style clip B: `imagine-5558fc80.mp4`
-- GitHub still: `references/living-pre-raphaelite-style-reference.jpg`
-- GitHub motion preview: `references/living-pre-raphaelite-motion-preview.mp4`
+- Native validated working render: `Silver_Coin_V51_Full.mp4`
+- Current delivery encode: `Silver_Coin_V52_720p_Delivery.mp4`
+- Large video binaries are runtime delivery artifacts; GitHub stores the reproducible code, timing data, hashes, method documentation, and QC records.
 
-## Blocking dependency
+## Remaining improvement work
 
-The Library metadata for the canonical WAV is available, but the active runtime receives HTTP 403 when attempting to materialize the WAV bytes. Full song analysis/sync therefore requires the user to attach `Silver Coin  (Remastered).wav` to the active production chat.
-
-No other file is currently required.
-
-## Not completed
-
-- Real audio edit map for the 207.440-second master.
-- Verified full lyric transcription/timing.
-- Audio-driven rather than placeholder performance transient envelopes.
-- Final scene durations/cut points.
-- Full 207.440-second 16:9 master render with canonical audio.
-- Final continuity/artifact QC and archive.
-
-## Exact next action
-
-1. Receive/mount the canonical WAV bytes.
-2. Run `tools/audio/analyze_edit_map.py` and commit the real edit-map JSON/overview.
-3. Verify lyric/section labels against the waveform/listening pass.
-4. Replace preview-cycle transients with audio-derived envelopes for fiddle, foot stamps, coin glints, light, camera, and transitions.
-5. Assemble the 21-frame/NeRF/effects production into the complete 207.440-second timeline.
-6. QC, repair, final render, archive, and update GitHub.
+- User review of V5.2 pacing, scene selection, and overall visual feel.
+- Optional targeted repair if user identifies a scene that should be replaced or re-framed.
+- Optional higher-resolution native rerender when a faster/GPU render environment is available; do not confuse an upscale with native rendering.
+- Continue expanding reusable effects/method documentation as new methods prove useful.
 
 ## Checkpoint rule
 
-After each meaningful production or tooling phase, update this file and affected manifest/decision/method files on GitHub before continuing.
+After every meaningful production/tooling phase, update GitHub before moving on so another agent can resume from the branch without the original chat.
