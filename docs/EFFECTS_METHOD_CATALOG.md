@@ -21,11 +21,15 @@ Use for: gentle camera travel through still paintings, foreground/background sep
 
 Do not claim: monocular metric depth or reconstructed 3D geometry.
 
-### Localized micro-warp
+### Localized micro-warp / mesh breath
 
-Apply low-frequency, sub-pixel mesh motion gated by the depth proxy. Designed to suggest breathing, cloth movement, crowd sway, leaves, and hair without high-frequency texture boiling.
+Apply low-frequency, sub-pixel mesh motion. One variant is depth-gated; another pins frame edges while letting the interior breathe. Both are designed to suggest breathing, cloth movement, crowd sway, leaves, and hair without high-frequency texture boiling.
 
 Use for: living-painting motion where a full character animation model is unavailable.
+
+### Temporal canvas lock
+
+Generate one deterministic woven/pigment field per scene and reuse the same field on every frame. This restores a stable canvas/pigment micro-surface after remapping/compositing and prevents frame-randomized grain from crawling.
 
 ### Advected atmosphere
 
@@ -36,6 +40,10 @@ Benefit: atmospheric motion stays coherent and does not crawl like regenerated n
 ### Depth-gated volumetric light shafts
 
 Generate soft radial/fan light volumes from a motivated source such as a tavern window, hearth, lantern, or dawn sun. Gate visibility using pseudo-depth so the light reads as occupying space instead of being painted uniformly over subjects.
+
+### Motivated radial candle/window shafts
+
+A lighter-weight variant generates soft warm radial shafts around a known source location. It is useful when depth gating is unnecessary or the source image already strongly establishes room depth.
 
 ### Motivated particle fields
 
@@ -51,9 +59,29 @@ Avoid decorative magical particles with no physical source.
 
 Combine multiple low-amplitude temporal sine components to modulate warm luminance around hearth/candle scenes. The amplitude is intentionally small to avoid visible flicker artifacts.
 
-### Puddle reflection shimmer
+### Heat haze
 
-Warp only the lower exterior frame with low-amplitude horizontal displacement, blending the warped result back through a vertical mask. Useful for wet roads and reflected lantern/sunset light.
+Apply a restrained refractive warp only within the region affected by hot candles/hearths. Avoid global wavy distortion. Use low amplitude and blend the warped result back into the original frame.
+
+### Puddle reflection shimmer / wet reflection ripple
+
+Animate the lower exterior frame with restrained refractive displacement. The stronger variant builds a faint mirrored color memory from image content immediately above the road line and ripples it before blending it into the wet ground.
+
+### Depth focus breath
+
+Use the pseudo-depth field to move a shallow focus zone slowly through a portrait/subject shot. The background blur contribution stays low; this is an emotional emphasis tool, not a simulated DSLR rack-focus showcase.
+
+### Localized specular glint
+
+Sweep a small specular highlight across a bounded metallic region such as a coin, buckle, blade, glass rim, or instrument fitting. It must not brighten the whole frame.
+
+Silver Coin implementation: the glint is centered only on the coin/hat area.
+
+### Performance transient warp
+
+Apply a small impulse-shaped regional warp to a performance ROI. It can suggest bow strokes, drum hits, hand strikes, foot stamps, or other transients. When real audio is available, drive the impulse from the transient envelope instead of a fixed cycle.
+
+Silver Coin implementation: the fiddler bow region receives a tiny transient warp.
 
 ### Chroma pigment transport
 
@@ -73,9 +101,30 @@ Silver Coin implementation: the coin becomes a reflective portal rather than a g
 
 When storyboard titles or labels touch an image edge, reframe/crop the contaminated strip and restore composition instead of asking an inpainting algorithm to invent a large replacement region. This is safer for moving footage because no synthetic repair texture can shimmer later.
 
+The same rule applies to lyric/caption contamination along the bottom edge: crop/recompose when it preserves the shot better than generative repair.
+
 ### Painterly upscale
 
 Lanczos enlargement + restrained bilateral smoothing + low-amplitude unsharp recovery. Avoid aggressive AI-style sharpening that converts painted faces and cloth into plastic photo texture.
+
+## Compact CPU neural radiance field
+
+`tools/video_fx/tiny_nerf_volume.py` implements a genuine compact MLP:
+
+`(x, y, z, view_x, view_y, view_z) -> (density, red, green, blue)`
+
+It uses Fourier positional features, a small hidden layer, deterministic training samples, validation samples, and volume rendering along rays. The learned field is designed as atmospheric/light volume, not as a photogrammetric reconstruction of the detailed subject image.
+
+Each production use should record:
+
+- family/config
+- seed
+- training sample count
+- step count
+- train loss
+- validation loss
+- rendered volume resolution/sample count
+- composite opacity
 
 ## Hybrid neural-radiance-field integration
 
@@ -85,18 +134,35 @@ Allowed description: **hybrid neural-radiance-field spatial rendering** when an 
 
 Do not describe pseudo-depth, parallax, or noise volumes alone as a NeRF.
 
-## Silver Coin V3/V3.1 production findings
+## Silver Coin V3/V4 production findings
 
 - Large storyboard label remnants are better removed by reframing than inpainting.
+- Bottom lyric/caption contamination in recovered panels can also be removed by deterministic crop/recomposition.
 - Rain reads well over the cold labor/village scenes but should not leak deeply into the tavern interior.
 - Tavern embers should remain sparse and physically tied to hearth/firelight.
 - Low-frequency mesh motion is safer than frame-randomized deformation for the Living Pre-Raphaelite surface.
-- Depth-gated light volume increases perceived space without breaking the oil-painting material.
+- Temporal canvas lock helps restore stable painted material after multiple warps/composites.
+- Depth-gated or motivated light volume increases perceived space without breaking the oil-painting material.
+- Heat haze should stay localized and lower amplitude than ordinary fantasy-video implementations.
+- Performance transient warp works best on a restricted ROI and should eventually be driven by the actual audio transient envelope.
 - The silver-coin portal should remain brief; the coin is a narrative match-cut device, not a permanent fantasy effect.
+- V4 successfully combined 21 cleaned narrative frames with trained NeRF volumes and the CPU motion/effects stack.
+
+## Local audio edit-map method
+
+`tools/audio/analyze_edit_map.py` derives signal-based section candidates, beat times, transient peaks, energy peaks, brightness, and high-value sync points. It intentionally does not auto-label Verse/Chorus/Bridge; semantic labels require listening/lyric verification.
+
+This edit map should drive:
+
+- cut/transition placement
+- performance transient effects
+- foot-stamp/crowd motion intensity
+- coin glints
+- firelight/camera response
+- section-scale palette and scene-family changes
 
 ## Future method candidates
 
-- audio-derived transient envelopes mapped to bow strokes, foot stamps, coin glints, and light response
 - optical-flow assisted interpolation between closely matched generated keyframes
 - semantic masks for faces/hands/instruments to keep those regions more rigid than cloth/background motion
 - multi-plane depth cards with foreground segmentation and explicit occlusion ordering
@@ -104,5 +170,6 @@ Do not describe pseudo-depth, parallax, or noise volumes alone as a NeRF.
 - true Gaussian splatting or full NeRF reconstruction when an appropriate GPU/runtime and source views exist
 - palette-consistent grain/brush restoration after heavy compositing
 - temporal artifact detector for face/hand/instrument drift
+- automatic QC contact-sheet generation with frame-risk scoring
 
 Update this file whenever a method becomes reproducible enough that another agent should be able to discover and reuse it.
