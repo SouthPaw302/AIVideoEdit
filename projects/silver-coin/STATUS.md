@@ -2,107 +2,109 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** V6 is being rebuilt directly from the two user-supplied sample videos. The blonde flower-crowned woodland woman from sample A is the recurring protagonist and visual anchor. The first 39.3-second music-directed motion proof is rendered and QC'd; reusable camera/effect presets are now committed.
+**Current state:** V6 full-length music-directed living-painting render is complete and visually QC-reviewed. Production is now in refinement/review rather than storyboard generation.
 
 ## Canonical visual rule
 
-**Recreate Silver Coin from the visual language contained in the two sample videos themselves.**
+**Recreate Silver Coin from the visual language contained in the two user-supplied sample videos themselves.**
 
 - Sample A: `imagine-d04b484c.mp4`
 - Sample B: `imagine-5558fc80.mp4`
-- Sample A's opening woman defines protagonist identity, face, hair, crown, costume family, painted surface, palette and woodland world.
-- The old tavern/laborer storyboard may inform narrative beats only. Its visual designs are rejected.
+- Sample A's blonde flower-crowned woodland woman defines protagonist identity, face, hair, crown, costume family, painted surface, palette and world.
+- The old V5 tavern/laborer storyboard may inform narrative history only. Its visual designs are rejected.
 
-## V6 storyboard progress
+## V6 completed visual set used in the full render
 
-Completed:
+The current full render intentionally favors the strongest accepted paintings instead of filling every narrative beat with weaker art.
 
-- Verified both canonical uploads: 560x560, 24 fps, 6.041667 s each.
-- Extracted **24 exact representative sample frames** from the two originals.
-- Locked the recurring woman and world continuity in `V6_STORYBOARD_PLAN.md`.
-- Created a full 20-beat V6 story from woodland -> village/work -> tavern -> fiddle/dance -> merchant/coin -> defiance -> night threshold -> dawn/woodland return.
-- Added `V6_REFERENCE_FRAME_INDEX.md` for continuity/QC recovery.
-- Built a local storyboard blueprint using only the supplied sample-video imagery as the visual source.
-- Generated the first four final-direction 16:9 paintings: forest/coin, village path, workers at sunset, and twilight inn.
+High-resolution girl-first source paintings used:
 
-## V6 music-directed motion proof
+- woodland / silver coin portrait
+- woodland path / village reveal
+- workers at sunset
+- twilight inn exterior
+- first-toast tavern scene
+- clapping / rhythm tavern scene
+- fiddler scene
+- communal dance scene
 
-Rendered opening proof against the real master:
+Strong images recur through different crops, scale paths, lateral movement, angle paths, palette response and effect intensity where appropriate.
 
-- Duration: **39.333333 s**
-- Delivery: **1280x720 H.264, 12 fps + AAC audio**
-- Local artifact: `Silver_Coin_V6_Opening_MusicDirected_720p.mp4`
-- SHA-256: `b2be989731d3ffe0f8e1ffbd6a3a73e1d43b03932a237948ca4dbbac1c22bd6a`
+## Full V6 render
 
-Scene mapping:
+Artifact: `Silver_Coin_V6_Full_MusicDirected_720p.mp4`
 
-- 0:00–0:10 `forest_coin`
-- 0:10–0:20 `path_reveal`
-- 0:20–0:30 `labor_end`
-- 0:30–0:39.3 `threshold_gold`
+- Duration: **207.416667 s**
+- Canonical master duration: 207.44 s
+- Video: **1280x720 H.264, 12 fps**
+- Audio: **48 kHz stereo AAC, 256 kb/s**
+- Bytes: **69,744,424**
+- SHA-256: `20670789b2d76ac7c924a539ca2e55375f5abc8b9cef9d48af99d925192793f3`
+- Visual QC: **PASS** across section/contact-sheet review
 
-Music directs:
+See `V6_FULL_RENDER_META.json`.
 
-- transient-qualified micro zooms
-- slow push/pull speed
-- lateral crop travel
-- sub-degree angle drift/settle
-- exposure/practical-light response
-- section transition timing
+## Music-directed motion language in the full render
 
-Reusable effects used:
+The real master drives:
 
-- 2D Gaussian light-splat atmosphere
-- Gaussian-defocus light bridge transition
-- stable vignette
-- warm/cool threshold response
-- wet-road shimmer
-- non-destructive crop/parallax-like travel
+- smoothed energy -> camera and practical-light intensity
+- transient peaks -> micro zoom / light accents
+- brightness proxy -> atmospheric lift
+- section identity -> crop speed, angle amplitude and palette response
 
-Important terminology guard: the Gaussian light field in this proof is **2D image-space Gaussian diffusion/splats**, not true 3D Gaussian Splatting.
+Verse language stays slower and intimate. Choruses widen and move harder. The bridge cools/drifts. The final chorus gets the strongest camera amplitude before returning to the calm forest image.
 
-## Reusable files added
+## Reusable loops/effects active
 
-- `projects/silver-coin/V6_EFFECT_PRESETS.json`
-- `projects/silver-coin/V6_MUSIC_CAMERA_GRAMMAR.md`
-- `projects/silver-coin/V6_OPENING_MOTION_META.json`
-- `tools/video_fx/render_music_directed_living_painting.py`
+- 2D Gaussian atmosphere drift
+- tavern practical-light breathing
+- wet-road reflection shimmer
+- slow crop/angle camera loops
+- clean music-bound dissolves
+- candle-flare transition
+- pigment soften transition
+- shadow wipe
+- fog bridge
+- final light lift
 
-## GitHub source-video recovery
+Terminology guard: the Gaussian atmosphere is 2D image-space Gaussian compositing, **not** true 3D Gaussian Splatting.
 
-The branch contains each sample separately as a lightweight full-duration visual recovery proxy:
+## Recoverable section rendering
+
+The CPU runtime could render the imagery quickly but a single monolithic full encode could exceed an execution window. V6 therefore introduced a preferred recovery method: render six global-time chunks, concatenate the intermediate video, then perform one final 720p/audio encode.
+
+Because each chunk evaluates the original global song timestamp, music envelopes, camera curves and the two halves of transitions remain continuous across chunk boundaries.
+
+See `V6_SECTION_RENDER_RECOVERY.md`.
+
+## Canonical source recovery
+
+The branch contains lightweight full-duration visual proxies for both sample clips:
 
 - `projects/silver-coin/references/source-clips/imagine-d04b484c-github-reference.mp4`
 - `projects/silver-coin/references/source-clips/imagine-5558fc80-github-reference.mp4`
 
-The canonical originals remain the uploaded 560x560/24fps files; their SHA-256 hashes and metadata in `ASSET_MANIFEST.json` are authoritative.
+The canonical originals remain the uploaded 560x560/24fps files identified by SHA-256 in `ASSET_MANIFEST.json`.
 
-## Canonical audio / structure
+Canonical audio:
 
-Audio: `Silver Coin  (Remastered).wav`  
-SHA-256: `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`  
-Duration: 207.44 s
+`Silver Coin  (Remastered).wav`  
+SHA-256: `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`
 
-Working structure:
+## Historical versions
 
-- Verse 1: 0:00–0:39.3
-- Chorus 1: 0:39.3–1:22.7
-- Verse 2: 1:22.7–1:43.7
-- Chorus 2: 1:43.7–2:18.2
-- Bridge: 2:18.2–3:03.3
-- Final Chorus: 3:03.3–3:27.4
-
-## Production rule
-
-The static artwork must be excellent before animation. Use the full bag of tricks—loops, zooms, changing angles, Gaussian atmosphere, NeRF depth, reflections, light, transitions, audio cues—but only when the music asks for them and without damaging the painting.
+- V5.1 / V5.2: technically valid but aesthetically rejected image direction.
+- V6 opening proof: first validation of the girl-first image direction and music-cued camera/effects grammar.
+- V6 full render: current review target.
 
 ## Exact next action
 
-1. Finish generating/QC'ing the remaining V6 hero paintings with the same woman and sample-video visual language.
-2. Build the chorus motion presets (`first_toast`, `chorus_clap`, `fiddler_energy`, `communal_dance`).
-3. Extend the music-directed renderer through Chorus 1.
-4. Continue section by section to the 207.44-second master.
-5. Checkpoint every useful effect/method and every meaningful render phase to GitHub.
+1. Preserve the full V6 render as the current review target.
+2. Continue archiving the accepted hero-image set and the full-render scripts/metadata to GitHub.
+3. Use user review to identify specific timing, image, transition or effect changes rather than restarting the visual direction.
+4. Regenerate only affected sections using the six-chunk recovery workflow.
+5. Keep expanding reusable production/effect methods when they prove useful.
 
 ## Checkpoint rule
 
