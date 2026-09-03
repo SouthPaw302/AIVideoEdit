@@ -2,81 +2,81 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** V5.1/V5.2 technically validated but aesthetically rejected as the target; production is pivoting to a hero-frame-first approach inspired by the strongest early IronFlame experiment
+**Current state:** V5/V5.2 are historical technical experiments. V6 is being rebuilt from the two user-supplied sample videos themselves; sample A's opening blonde flower-crowned woodland woman is the recurring protagonist/style anchor.
 
-## Completed
+## Decisive user correction
 
-- Locked **Living Pre-Raphaelite Folk Romanticism** as the primary visual language from the two supplied six-second reference clips.
-- Locked **hybrid neural-radiance-field spatial rendering** as an available spatial method: a compact trained CPU NeRF supplies learned atmosphere/light while painted layers retain faces, hands, instruments, architecture, clothing, and narrative detail.
-- Recovered the canonical `Silver Coin  (Remastered).wav` in the active runtime and verified SHA-256 `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`.
-- Verified the re-uploaded style clips against the original recorded hashes.
-- Ran the real audio edit-map analysis and recovered the working song structure:
-  - Verse 1: 0:00–0:39.3
-  - Chorus 1: 0:39.3–1:22.7
-  - Verse 2: 1:22.7–1:43.7
-  - Chorus 2: 1:43.7–2:18.2
-  - Bridge: 2:18.2–3:03.3
-  - Final Chorus: 3:03.3–3:27.4
-- Recovered and cleaned a 29-scene narrative timeline from storyboard material.
-- Built reusable CPU effects, compact NeRF volume rendering, reference-motion calibration, narrative-ribbon reframing, audio analysis, and temporal QC tooling.
-- Rendered complete V5.1 source and V5.2 720p delivery encode.
-- V5.1/V5.2 passed technical/container/temporal QC.
+The earlier diagnosis that Silver Coin simply needed fewer images was incomplete.
 
-## User aesthetic review — decisive pivot
+The user clarified that the main problem is **the image set itself**. The old tavern/laborer storyboard did not match the quality or visual identity of the supplied sample videos.
 
-The user reported that the very first IronFlame video, built around a single static picture, looked better than Silver Coin V5/V5.2.
+### Current canonical visual rule
 
-Treat this as a production correction, not a minor preference.
+**Recreate the film from the visual language contained in the two sample videos.**
 
-### Lesson
+- Sample A: `imagine-d04b484c.mp4`
+- Sample B: `imagine-5558fc80.mp4`
+- The first scene of sample A, featuring the blonde flower-crowned woman in the green woodland, is the starting character and world anchor.
+- Extract frames from the sample videos and use those frames to define face/character continuity, painting surface, palette, lighting, vegetation, costume/fabric language, composition, camera behavior, and motion feel.
+- Build an entirely new Silver Coin storyboard whose scenes look as though they belong to the same painted world.
+- The recovered V5 tavern/laborer panels may inform narrative beats only; **their image designs are rejected as the final visual source.**
 
-Technical complexity is not visual quality. V5 accumulated too many competing operations: frequent scene changes, warps, particles, parallax, transitions, depth changes, reframing, and audio-reactive motion. The result is more sophisticated on paper but gives the viewer less time to inhabit a strong composition.
+## GitHub source-video recovery
 
-### New production rule
+The branch now contains each source clip separately as a dedicated full-duration visual recovery proxy:
 
-**Hero image first. Effects must earn their existence.**
+- `projects/silver-coin/references/source-clips/imagine-d04b484c-github-reference.mp4`
+- `projects/silver-coin/references/source-clips/imagine-5558fc80-github-reference.mp4`
 
-For the next Silver Coin pass:
+These are lightweight 96x96/4fps silent GitHub recovery proxies made from the canonical uploads. They are intentionally small enough to persist through the repository connector while retaining the complete visual sequence of each six-second clip.
 
-1. Start from one exceptional hero painting or a very small number of exceptional paintings.
-2. Preserve the image almost completely; do not deform faces, hands, instruments, clothing, or architectural anchors.
-3. Prefer slow camera drift, crop movement, light change, smoke/mist/rain, reflection, and restrained NeRF atmosphere over mesh warping.
-4. Let audio drive intensity of atmosphere/light/camera energy rather than forcing a new shot on every section or transient.
-5. Use the silver coin as an occasional visual anchor, not a constant transition gimmick.
-6. Keep long visual dwell times. A composition that deserves attention should stay on screen long enough to become a world.
-7. Judge each effect by subtraction: if removing it makes the image stronger, remove it.
-8. Technical QC remains necessary but cannot substitute for aesthetic judgment.
+The canonical originals remain the uploaded 560x560/24fps files, identified permanently by SHA-256 in `ASSET_MANIFEST.json`. Do not confuse the GitHub proxy encode with the original binary.
 
-## Current approved direction
+## Canonical audio / structure
 
-Build Silver Coin V6 as a **minimal living painting** rather than a multi-panel animated storyboard.
+Canonical audio: `Silver Coin  (Remastered).wav`  
+SHA-256: `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`  
+Duration: 207.44 s
 
-Target feeling: one beautiful painted world slowly breathing with the song.
+Working structure derived from the real master:
 
-Preferred motion hierarchy:
+- Verse 1: 0:00–0:39.3
+- Chorus 1: 0:39.3–1:22.7
+- Verse 2: 1:22.7–1:43.7
+- Chorus 2: 1:43.7–2:18.2
+- Bridge: 2:18.2–3:03.3
+- Final Chorus: 3:03.3–3:27.4
 
-1. camera drift / slow push / reframing
-2. practical light and shadow response
-3. smoke, mist, rain, embers, reflections
-4. subtle NeRF volumetric atmosphere
-5. rare object glint or portal moment
-6. local deformation only when absolutely necessary
+## Reusable production technology retained
 
-The hybrid NeRF remains available, but it must stay subordinate to the hero image. Do not add an effect merely because the renderer can produce it.
+The technical work from V3–V5 remains useful **after** the new image set is correct:
+
+- audio edit-map analysis
+- compact CPU neural-radiance-field atmosphere
+- pseudo-depth / parallax
+- restrained atmosphere, rain, smoke, embers, reflection, practical light
+- object/coin match transitions
+- reference-motion calibration
+- temporal QC
+
+Do not use effects to compensate for weak source imagery.
 
 ## Historical V5 artifacts
-
-See `DELIVERY_V52.json` and `V51_QC_REPORT.json`.
 
 - `Silver_Coin_V51_Full.mp4`
 - `Silver_Coin_V52_720p_Delivery.mp4`
 
-These remain useful technical experiments and regression references, but they are **not the aesthetic target**.
+They passed technical/container/temporal QC but are not the aesthetic target.
 
 ## Exact next action
 
-Select or create the strongest single Silver Coin hero composition, build a restrained 20–30 second V6 living-painting proof against the real master, compare it aesthetically to V5, then extend only if the minimal approach is clearly stronger.
+1. Extract representative and sequential frames from both canonical sample videos.
+2. Build a visual/character bible from sample A's opening woman and both clips' painterly environment/motion language.
+3. Create a new full-song storyboard with the woman recurring through Silver Coin's narrative.
+4. Generate/QC the new consistent scene set before animation.
+5. Apply the existing rendering/effects stack only after the storyboard passes visual QC.
+6. Assemble against the real 207.44-second master and checkpoint every meaningful phase to GitHub.
 
 ## Checkpoint rule
 
-After every meaningful production/tooling phase, update GitHub before moving on so another agent can resume from the branch without the original chat.
+After every meaningful production/tooling phase, update GitHub before moving on so another agent can resume without the original chat.
