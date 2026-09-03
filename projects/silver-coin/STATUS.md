@@ -2,10 +2,13 @@
 
 **Updated:** 2026-09-03 UTC  
 **Branch:** `song/silver-coin`  
-**Current state:** Visual style locked; project scaffold and recovery references complete; ready for Listen & Decode
+**Current state:** Visual style and NeRF method locked; audio analysis and scene production in progress
 
 ## Completed
 
+- User explicitly selected Neural Radiance Fields as the spatial rendering method.
+- Runtime capability checked: no GPU, PyTorch, Nerfstudio, COLMAP, or packaged NeRF stack is available.
+- Locked an honest CPU hybrid: a compact trained neural radiance-field MLP supplies volumetric density/color and view-dependent atmosphere, composited with painted multi-plane scenes. This is not described as full photogrammetric reconstruction.
 - Created dedicated branch `song/silver-coin`.
 - Fingerprinted and inspected the canonical remastered WAV.
 - Inspected both supplied six-second visual reference clips across their timelines.
@@ -40,12 +43,11 @@ See `ASSET_MANIFEST.json`.
 
 ## Exact next action
 
-1. Listen to and analyze the full 207.440-second master.
-2. Recover/verify canonical lyrics without inventing missing words.
-3. Commit section timing, energy curve, instrumentation notes, and lyrical images.
-4. Convert the recovered tavern/village concept into a shot list.
-5. Generate three 16:9 style tests: exterior road/village, firelit tavern performance, and silver-coin symbolic close-up.
-6. Artifact-scan the tests before approving full asset production.
+1. Analyze the full 207.440-second master and commit its edit map.
+2. Recover the known lyric narrative and verify any transcription that can be resolved without inventing words.
+3. Generate and QC the complete 16:9 painted scene set.
+4. Train/render the compact CPU NeRF atmosphere and spatial camera loops for each scene family.
+5. Apply the catalog-based effects plan, assemble to the master, validate, archive, and update GitHub after each phase.
 
 ## Checkpoint rule
 

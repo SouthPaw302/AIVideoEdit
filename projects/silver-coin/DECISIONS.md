@@ -29,3 +29,17 @@
 ## SC-007 — Persistence
 
 **Decision:** Update GitHub after every meaningful phase and before chat/agent handoff. Small reference previews are committed to GitHub; larger originals remain in Library/workspace/object storage and are fingerprinted in the manifest.
+
+## SC-008 — Neural Radiance Fields selected
+
+**Decision:** The user explicitly selected Neural Radiance Fields and ordered production to proceed.
+
+**Implementation:** This runtime lacks GPU, PyTorch, Nerfstudio, COLMAP, and a packaged NeRF stack. Silver Coin will use a compact CPU-trained NeRF MLP mapping 3D position plus view direction to volumetric density and color, combined with painted multi-plane scene geometry.
+
+**Integrity:** Describe the result as hybrid neural-radiance-field spatial rendering. Do not falsely claim full photogrammetric reconstruction or Instant-NGP.
+
+## SC-009 — Recovered song canon
+
+**Decision:** Preserve the rustic early-1700s Central European tavern-folk world, lively 6/8 feel near 104 BPM, laborers ending the day in revelry, communal defiance, merchant betrayal, village characters, fiddler, mugs/stamping/dancing, tomorrow's debts/work, and the theme “poor in coin, rich in song.”
+
+**Visual implication:** Keep the Living Pre-Raphaelite painted style but ground costumes, woodwork, tools, instruments, wagons, tavern behavior, and lighting in this folk world. Avoid modern drums, synth imagery, piano, orchestra, folk-rock staging, or polished contemporary performance language.

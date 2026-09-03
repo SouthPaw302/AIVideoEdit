@@ -4,9 +4,19 @@
 
 **Primary visual language:** Living Pre-Raphaelite Folk Romanticism  
 **Supporting language:** Cinematic living paintings  
-**Spatial method:** 2.5D parallax scene graphs, with selective deeper spatial reconstruction only where useful  
+**Spatial method:** Required hybrid Neural Radiance Field rendering. A compact trained CPU NeRF MLP maps 3D position and view direction to density/color for volumetric light and atmosphere; painted multi-plane scene geometry carries detailed subjects and architecture.  
 **Motion method:** Natural character performance plus seamless environmental micro-loops  
 **Transition motif:** The silver coin as reflective portal, match-cut object, and recurring visual anchor
+
+## NeRF implementation boundary
+
+The available runtime cannot run Nerfstudio/Instant-NGP or GPU photogrammetric reconstruction. The production therefore uses an actual compact neural radiance field for learned volumetric density/color and view-dependent atmosphere, combined with multi-plane projection for the detailed Living Pre-Raphaelite paintings.
+
+Allowed claim: **hybrid neural-radiance-field spatial rendering**.
+
+Do not claim: a full camera-captured photogrammetric NeRF, Instant-NGP reconstruction, or physically complete 3D geometry.
+
+The NeRF must visibly contribute depth-dependent fog, light shafts, smoke, ember/rain volume, parallax occlusion, and camera travel rather than existing only as unused code.
 
 ## What the reference clips establish
 

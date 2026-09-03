@@ -14,7 +14,8 @@ All effects must be selected from the repository-wide `docs/VISUAL_STYLE_CATALOG
 | Temporal painting | Cold exterior pigment warms into tavern amber; weather/time shifts | Selective at major structural transitions |
 | Continuous dream journey | Maintain flowing geography across road, threshold, and tavern | Preferred edit language |
 | Particle systems | Sparks, dust, rain points, smoke motes | Motivated only; no random magical particles |
-| 3D Gaussian Splatting / deeper spatial reconstruction | Possible navigable tavern or village establishing shot | Experimental, not required; must retain painterly surface |
+| Neural Radiance Fields | Learned volumetric density/color and view-dependent atmosphere for road, threshold, tavern, and coin-space camera travel | Required; compact CPU NeRF combined with painted multi-plane scenes; never mislabel as full photogrammetric reconstruction |
+| 3D Gaussian Splatting | Not the selected primary spatial method | Excluded from this version unless the user later changes the decision |
 | Spectrum/waveform/oscilloscope | Coin engraving, instrument vibration, or reflected light geometry | Optional and nearly subliminal |
 | WMP/plasma/tunnel visualizer | No default use | Use only if later music analysis reveals a justified abstract passage |
 | Photoreal/documentary/graphic-novel/collage | Not part of the locked primary language | Do not mix without a deliberate later decision |
