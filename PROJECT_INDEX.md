@@ -7,7 +7,7 @@ This file tracks productions inside AIVideoEdit. Each project must be recoverabl
 ### IronFlame
 Path: `projects/ironflame/`
 
-Status: **Active / Canon rebuild**
+Status: **Visual set complete / Ready for animation**
 
 Purpose: First full flagship project for the canonical AIVideoEdit workflow.
 
@@ -24,6 +24,13 @@ Read:
 - `projects/ironflame/STATUS.md`
 - `projects/ironflame/LYRICS.md`
 - `projects/ironflame/VISUAL_DNA.md`
+
+Production package:
+- `projects/ironflame/SHOT_LIST.md`
+- `projects/ironflame/ASSET_MANIFEST.json`
+- `projects/ironflame/PROMPTS.md`
+- `projects/ironflame/QC.md`
+- `projects/ironflame/AUDIO_RECOVERY.md`
 
 ## Reference / Prior Experiments
 
