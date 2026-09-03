@@ -1,6 +1,6 @@
 # AIVideoEdit — Effects & Rendering Method Catalog
 
-This file is a persistent reference for effects that have been implemented, tested, or deliberately rejected in production. It complements `VISUAL_STYLE_CATALOG.md`: the style catalog describes visual languages; this catalog describes reproducible motion, spatial, transition, lighting, and compositing methods.
+This file is a persistent reference for effects that have been implemented, tested, or deliberately rejected in production. It complements `VISUAL_STYLE_CATALOG.md`: the style catalog describes visual languages; this catalog describes reproducible motion, spatial, transition, lighting, compositing, QC, and delivery methods.
 
 ## Design rules
 
@@ -10,6 +10,7 @@ This file is a persistent reference for effects that have been implemented, test
 4. Distinguish true neural methods from approximations. Never describe pseudo-depth or image warping as a full 3D reconstruction.
 5. Save deterministic seeds and configuration with renders.
 6. QC still frames and transitions before committing a full-song render.
+7. Measure reference motion when possible instead of guessing animation intensity.
 
 ## Implemented CPU methods
 
@@ -25,8 +26,6 @@ Do not claim: monocular metric depth or reconstructed 3D geometry.
 
 Apply low-frequency, sub-pixel mesh motion. One variant is depth-gated; another pins frame edges while letting the interior breathe. Both are designed to suggest breathing, cloth movement, crowd sway, leaves, and hair without high-frequency texture boiling.
 
-Use for: living-painting motion where a full character animation model is unavailable.
-
 ### Temporal canvas lock
 
 Generate one deterministic woven/pigment field per scene and reuse the same field on every frame. This restores a stable canvas/pigment micro-surface after remapping/compositing and prevents frame-randomized grain from crawling.
@@ -34,8 +33,6 @@ Generate one deterministic woven/pigment field per scene and reuse the same fiel
 ### Advected atmosphere
 
 Create a low-frequency density field once, then advect/remap it over time instead of generating new random noise each frame. Tint and depth-gate it as fog, smoke, steam, or mist.
-
-Benefit: atmospheric motion stays coherent and does not crawl like regenerated noise.
 
 ### Depth-gated volumetric light shafts
 
@@ -61,7 +58,7 @@ Combine multiple low-amplitude temporal sine components to modulate warm luminan
 
 ### Heat haze
 
-Apply a restrained refractive warp only within the region affected by hot candles/hearths. Avoid global wavy distortion. Use low amplitude and blend the warped result back into the original frame.
+Apply a restrained refractive warp only within the region affected by hot candles/hearths. Avoid global wavy distortion.
 
 ### Puddle reflection shimmer / wet reflection ripple
 
@@ -69,7 +66,7 @@ Animate the lower exterior frame with restrained refractive displacement. The st
 
 ### Depth focus breath
 
-Use the pseudo-depth field to move a shallow focus zone slowly through a portrait/subject shot. The background blur contribution stays low; this is an emotional emphasis tool, not a simulated DSLR rack-focus showcase.
+Use the pseudo-depth field to move a shallow focus zone slowly through a portrait/subject shot. The background blur contribution stays low.
 
 ### Localized specular glint
 
@@ -79,7 +76,7 @@ Silver Coin implementation: the glint is centered only on the coin/hat area.
 
 ### Performance transient warp
 
-Apply a small impulse-shaped regional warp to a performance ROI. It can suggest bow strokes, drum hits, hand strikes, foot stamps, or other transients. When real audio is available, drive the impulse from the transient envelope instead of a fixed cycle.
+Apply a small impulse-shaped regional warp to a performance ROI. It can suggest bow strokes, drum hits, hand strikes, foot stamps, or other transients. When real audio is available, drive the impulse from the transient envelope.
 
 Silver Coin implementation: the fiddler bow region receives a tiny transient warp.
 
@@ -99,13 +96,32 @@ Silver Coin implementation: the coin becomes a reflective portal rather than a g
 
 ### Edge-contamination reframe
 
-When storyboard titles or labels touch an image edge, reframe/crop the contaminated strip and restore composition instead of asking an inpainting algorithm to invent a large replacement region. This is safer for moving footage because no synthetic repair texture can shimmer later.
+When storyboard titles, labels, or lyric captions touch an image edge, crop/recompose the contaminated strip instead of asking an inpainting model to invent a large replacement region. This is safer for moving footage because no synthetic repair texture can shimmer later.
 
-The same rule applies to lyric/caption contamination along the bottom edge: crop/recompose when it preserves the shot better than generative repair.
+### Narrative-ribbon reframing
+
+When a storyboard bridge or montage exists as a continuous multi-character strip, treat the strip as a painted panorama rather than cropping each subject into a separate portrait. Define focal windows along the ribbon and move the camera from subject to subject while preserving neighboring context.
+
+Silver Coin V5.1 bridge path: farmer → smith → carter → maid → lovers → dawn → wine.
+
+Benefit: preserves the original multi-character composition and prevents close crops from degrading into disconnected hands/torsos.
+
+### Reference-motion envelope calibration
+
+Measure optical flow on supplied style-reference clips at a fixed analysis scale and use the observed range as an animation envelope rather than guessing motion intensity.
+
+Silver Coin measurements at 280 px analysis width:
+
+- low-motion reference mean flow: ~0.428 px/frame
+- high-motion reference mean flow: ~1.566 px/frame
+
+Use this range to restrain quiet portraits and permit stronger chorus/dance motion without texture boiling.
 
 ### Painterly upscale
 
-Lanczos enlargement + restrained bilateral smoothing + low-amplitude unsharp recovery. Avoid aggressive AI-style sharpening that converts painted faces and cloth into plastic photo texture.
+Lanczos enlargement + restrained smoothing/sharpening. Avoid aggressive sharpening that converts painted faces and cloth into plastic photographic texture.
+
+Silver Coin delivery rule: when the validated render is lower resolution, a larger delivery encode may be produced and must be documented as an upscale, not a native high-resolution render.
 
 ## Compact CPU neural radiance field
 
@@ -113,53 +129,45 @@ Lanczos enlargement + restrained bilateral smoothing + low-amplitude unsharp rec
 
 `(x, y, z, view_x, view_y, view_z) -> (density, red, green, blue)`
 
-It uses Fourier positional features, a small hidden layer, deterministic training samples, validation samples, and volume rendering along rays. The learned field is designed as atmospheric/light volume, not as a photogrammetric reconstruction of the detailed subject image.
+It uses Fourier positional features, deterministic training/validation samples, and ray volume rendering. The learned field is atmospheric/light volume, not a photogrammetric reconstruction of the detailed subject image.
 
-Each production use should record:
-
-- family/config
-- seed
-- training sample count
-- step count
-- train loss
-- validation loss
-- rendered volume resolution/sample count
-- composite opacity
+Each production use should record family/config, seed, training sample count, step count, train/validation loss, rendered volume resolution/sample count, and composite opacity.
 
 ## Hybrid neural-radiance-field integration
 
-A compact CPU NeRF may supply learned volumetric density/color and view-dependent atmosphere while detailed subjects remain painted multi-plane imagery. Pseudo-depth methods in this catalog can drive compositing masks, occlusion, and camera motion around that neural field.
+A compact CPU NeRF may supply learned volumetric density/color and view-dependent atmosphere while detailed subjects remain painted multi-plane imagery. Pseudo-depth methods drive compositing masks, occlusion, and camera motion around that neural field.
 
 Allowed description: **hybrid neural-radiance-field spatial rendering** when an actual trained radiance-field component is present.
 
 Do not describe pseudo-depth, parallax, or noise volumes alone as a NeRF.
 
-## Silver Coin V3/V4 production findings
-
-- Large storyboard label remnants are better removed by reframing than inpainting.
-- Bottom lyric/caption contamination in recovered panels can also be removed by deterministic crop/recomposition.
-- Rain reads well over the cold labor/village scenes but should not leak deeply into the tavern interior.
-- Tavern embers should remain sparse and physically tied to hearth/firelight.
-- Low-frequency mesh motion is safer than frame-randomized deformation for the Living Pre-Raphaelite surface.
-- Temporal canvas lock helps restore stable painted material after multiple warps/composites.
-- Depth-gated or motivated light volume increases perceived space without breaking the oil-painting material.
-- Heat haze should stay localized and lower amplitude than ordinary fantasy-video implementations.
-- Performance transient warp works best on a restricted ROI and should eventually be driven by the actual audio transient envelope.
-- The silver-coin portal should remain brief; the coin is a narrative match-cut device, not a permanent fantasy effect.
-- V4 successfully combined 21 cleaned narrative frames with trained NeRF volumes and the CPU motion/effects stack.
-
 ## Local audio edit-map method
 
-`tools/audio/analyze_edit_map.py` derives signal-based section candidates, beat times, transient peaks, energy peaks, brightness, and high-value sync points. It intentionally does not auto-label Verse/Chorus/Bridge; semantic labels require listening/lyric verification.
+`tools/audio/analyze_edit_map.py` derives signal-based section candidates, beat times, transient peaks, energy peaks, brightness, and high-value sync points. Semantic Verse/Chorus/Bridge labels still require narrative/listening verification.
 
-This edit map should drive:
+Use the edit map for cut placement, performance transient effects, foot-stamp/crowd motion intensity, coin glints, firelight/camera response, and section-scale palette changes.
 
-- cut/transition placement
-- performance transient effects
-- foot-stamp/crowd motion intensity
-- coin glints
-- firelight/camera response
-- section-scale palette and scene-family changes
+## Temporal QC scanner
+
+`tools/video_qc/temporal_qc.py` samples a render, measures frame difference, optical-flow magnitude, and Laplacian sharpness, and scores outliers with robust median/MAD z-scores.
+
+Important V5.1 refinement: robust z-score alone can over-flag tiny changes in very stable footage, so each detector also requires an absolute magnitude floor. Timeline scene boundaries are accepted as expected transition windows; unexplained outliers are the frames that require visual review.
+
+Silver Coin V5.1 result: 50 expected transition/motion events and **0 unexplained risks** after applying absolute floors.
+
+## Silver Coin production findings through V5.2
+
+- Reframing is safer than large generative inpainting for storyboard label/caption cleanup.
+- Rain stays mostly outside; tavern embers stay sparse and source-motivated.
+- Low-frequency mesh motion is safer than frame-randomized deformation.
+- Temporal canvas lock restores stable painterly material after repeated warps/composites.
+- Light volumes and compact NeRF atmosphere increase perceived space without replacing subject painting.
+- Heat haze stays localized and restrained.
+- Performance transient warp works best on restricted ROIs driven by the real audio envelope.
+- The silver-coin portal is brief and narrative, not a permanent fantasy vortex.
+- Reference-motion calibration produces a more faithful living-painting cadence than arbitrary animation strength.
+- Narrative-ribbon reframing substantially improved the bridge composition.
+- Temporal QC must distinguish expected edit transitions from unexplained artifacts.
 
 ## Future method candidates
 
@@ -169,7 +177,6 @@ This edit map should drive:
 - learned depth maps when a reliable local model is available
 - true Gaussian splatting or full NeRF reconstruction when an appropriate GPU/runtime and source views exist
 - palette-consistent grain/brush restoration after heavy compositing
-- temporal artifact detector for face/hand/instrument drift
-- automatic QC contact-sheet generation with frame-risk scoring
+- automatic QC contact-sheet generation from unexplained risk timestamps
 
 Update this file whenever a method becomes reproducible enough that another agent should be able to discover and reuse it.
