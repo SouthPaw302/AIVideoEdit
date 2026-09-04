@@ -4,19 +4,28 @@ Branch: `song/irish-eyes`
 
 ## Current state
 
-Production mode: **moving-asset build / Magic Gate proofing / environmental coverage expansion / continuity validation complete enough for rough assembly**. **No final 3:07 master render yet.**
+Production mode: **landscape conversion / moving-asset build / continuity validation complete enough for rough assembly**. **No final 3:07 master render yet.**
 
 Primary source:
 - `Brandi South Florida 2017.mp4`
-- 1280x720 container / portrait display orientation
+- encoded 1280x720 with a -90 degree display matrix
+- correct displayed capture is portrait-oriented
 - 30 fps
 - 31.766344 s
-- 953 extracted source frames
+- 953 extracted upright source frames
 
 Working extraction:
 `/mnt/data/irish_eyes_branch/projects/irish-eyes/source_frames/brandi_south_florida_2017/`
 
-## Governing rule
+## Locked landscape rule
+
+The finished Irish Eyes film and YouTube packaging are **16:9 landscape only**. Portrait/vertical renders created during effect-laboratory development are reference/proof assets only.
+
+Disabling the source rotation is not a valid solution because it produces a sideways picture. Landscape production uses authored horizontal reframing, real-source closeups/medium crops, subject/environment extension, and landscape memory-world shots. **No blurred vertical-video sidebars or pillarboxed phone-video treatment in the finished film.**
+
+See `LANDSCAPE_MASTER_SPEC.md`.
+
+## Governing creative rule
 
 Real footage and real extracted frames remain the identity/reality anchor. Real CC0/public-domain photography is preferred for missing environmental memory plates when available. Generated material may support surreal transitions or missing visual beats when it genuinely improves the film, but drifted/synthetic-looking results are rejected. Effects must survive rendered QC.
 
@@ -37,7 +46,7 @@ Do not render the final master until the song-timed rough cut has been inspected
 - **P12 Road Travel / Rain Glass V2** — KEEP provisional environmental pass; stronger forward travel, refracting glass droplets, rain trails, subtle windshield distortion, restrained dashboard edge. SHA `acc170d19fba35fafe1ce497fcf7145e28c80b114dfc99ed1d411ddc93b3fd67`.
 - **P13 Warm Window / Candle Memory V2** — KEEP provisional environmental pass. Rain/glass focus story, pane-specific depth shifts, warm practical/candle reflection and source-derived outside memory. SHA `2825535c1e27d9c58f9cf372f703cf3ebbc4075b5717ee00800f356e31a2e1a3`.
 - **P14 Dark Lake / Ridge Horizon V2** — KEEP provisional environmental magic pass. Source-derived lake/sky, irregular ridge depth, broken water reflection, blue-hour grade and mist. SHA `a1318d38ab76adefe7324fdbec692568539872427889584059187a059f1b8df2`.
-- **T03 Glasses → Water → Road → Water V2** — KEEP provisional micro-hinge. 2.4 s / 72 frames / 0 black events / SHA `2ed1cc946a6711ed7168f0476ea281e9b6ddd2106feeb405a1e5c0007f3d202c`. See `MAGIC_GATE_T03_V2.md`.
+- **T03 Glasses → Water → Road → Water V2** — KEEP provisional micro-hinge. 2.4 s / 72 frames / 0 black events / SHA `2ed1cc946a6711ed7168f0476ea281e9b6ddd2106feeb405a1e5c0007f3d202c`.
 
 ## Rejected / preserve lesson only
 
@@ -52,37 +61,33 @@ Do not render the final master until the song-timed rough cut has been inspected
 
 ## Continuity validation
 
-### Continuity Reel V2
+### Portrait development continuity
 
-Earlier style-coherence proof:
-- 28.433333 s
-- 853 frames
-- 0 black events
-- 0 freeze events
-- SHA `314ba5d49a34d47de577594213ecc86a6385fd65630c76a1f2229f8ba0b95a5b`
+Earlier vertical/portrait continuity reels remain useful only as effect-development references. They are not final-film format.
 
 ### Continuity Reel V3 — Environmental
 
-File: `IRISH_EYES_MAGIC_CONTINUITY_REEL_V3_ENVIRONMENTAL.mp4`
-
-Sequence:
-P06 → T01 → P07 → P04 → P10 V5 → P11 V4 → P12 V2 → P13 V2 → P14 V2 → T02 V3 → P08 V4 → P05 V3.
-
-Render:
+Portrait development reference:
 - 49.266667 s
 - 30 fps
 - 1,478 frames
 - 0 black events
-- mean frame delta `2.416672450765127`
 - SHA `25f87380caa4f6a1ae4f3aaa72866e898e780c17457146688f3215d1ca9f71ed`
 
-Low-motion scan found no actual frozen shot; the longest consecutive low-delta run was only 0.20 s.
+Decision: KEEP as visual-language evidence only.
 
-**Decision: KEEP — ENVIRONMENTAL CONTINUITY PASS.**
+### Landscape Continuity Reel V4 — 16:9
 
-The road/rain/window/dark-lake material now reads as part of the same film language rather than a detached effects section. Remaining darkness/exposure mismatch in P13/P14/return family is deferred to shot matching and the professional grade, not a structural rebuild.
+New format-validation reel:
+- file: `landscape_16x9/continuity/IRISH_EYES_LANDSCAPE_CONTINUITY_REEL_V4_16x9.mp4`
+- 1280x720
+- 30 fps
+- approximately 55.47 s
+- assembled from the approved/provisional families using shot-specific horizontal crops
 
-See `CONTINUITY_V3_QC.md`.
+Purpose: verify that the established effect language survives cinematic 16:9 reframing before the 187.12 s rough assembly.
+
+Important: final individual shots should be rebuilt from the best source/shot packages in landscape rather than merely cropping low-resolution portrait proofs where that would reduce quality.
 
 ## Coverage state
 
@@ -99,22 +104,18 @@ Strong coverage now:
 
 Remaining optional support coverage:
 - ancestry / old architecture detail inserts where they improve the lyric map;
-- exact song-timed ordering and duration decisions.
+- exact song-timed ordering and duration decisions;
+- landscape rebuilds of selected approved shots at final working resolution.
 
-## Real-photo support plate route
+## YouTube packaging — corrected format
 
-Tool-first search identified real CC0/public-domain Wikimedia Commons candidates for environmental memory material, including:
-- `Mountain Lake Dusk.jpg` — CC0;
-- `Mountain Lake at Night (...)` — CC0;
-- `Old cabin window (Unsplash).jpg` — pre-June-2017 Unsplash CC0 archived on Commons.
+The earlier portrait packaging is superseded for final use.
 
-Binary ingest from Wikimedia was not available in the current sandbox network path, so current P13/P14 proofs remain source-derived. Compare against real CC0 plates later when ingest is available; do not fabricate licensing or claim the binaries were downloaded.
+New 16:9 assets in the active workspace:
+- `landscape_16x9/youtube_packaging/IRISH_EYES_YOUTUBE_INTRO_16x9_V2.mp4`
+- `landscape_16x9/youtube_packaging/IRISH_EYES_YOUTUBE_OUTRO_16x9_V2.mp4`
 
-## YouTube packaging
-
-Full-resolution separate intro/outro assets exist under `projects/irish-eyes/youtube_packaging/`. They are packaging assets, not replacements for the film's emotional ending.
-
-See `YOUTUBE_PACKAGING_MANIFEST.md`.
+Both are 1280x720 / 30 fps and built from real source frames with cinematic horizontal reframing. The outro remains a separate post-film card so the film itself can still end emotionally on water/light.
 
 ## Literal 3D Gaussian Splatting decision
 
@@ -122,10 +123,12 @@ This specific source clip does not show enough trustworthy real camera baseline 
 
 ## Exact next action
 
-1. begin the first **song-timed rough assembly** against the 187.12 s remastered song using only approved/provisional assets and real source footage;
-2. preserve long real-Brandi passages so the movie does not become an effects reel;
-3. inspect the rough cut for repetition, pacing, lyric/section alignment, visual fatigue and whether memory-world returns happen at the right emotional moments;
-4. add ancestry/architecture details only if the rough cut exposes a real story gap;
-5. do **not** render/deliver the final master yet;
-6. once picture structure is stable, apply shot-by-shot exposure/white-balance/skin/dress matching, saturation/vibrance, contrast, highlight recovery, selective sky/water work, halation cleanup, denoise/sharpening/grain matching and transition polish;
-7. final export must pass full-runtime visual/technical QC before delivery.
+1. inspect the 16:9 landscape continuity reel and revise any crop that loses the intended effect;
+2. rebuild the most important approved shots directly in 16:9 at 1280x720 from the highest-quality source material rather than relying on portrait-proof crops;
+3. begin the first **187.12 s landscape rough assembly** using the lyric-film map and approved visual families;
+4. the remastered Irish Eyes audio master is not currently mounted in the active runtime, so visual rough structure can continue from the measured timing map, but final song-sync/audio-reactive decisions require the original master when restored;
+5. preserve long real-Brandi passages so the movie does not become an effects reel;
+6. inspect rough cut for repetition, pacing, visual fatigue and whether memory-world returns happen at the right emotional moments;
+7. do **not** render/deliver the final master yet;
+8. once picture structure is stable, apply shot-by-shot exposure/white-balance/skin/dress matching, saturation/vibrance, contrast, highlight recovery, selective sky/water work, halation cleanup, denoise/sharpening/grain matching and transition polish;
+9. final export must pass full-runtime visual/technical QC before delivery.
