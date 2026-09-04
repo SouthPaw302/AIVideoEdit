@@ -70,6 +70,37 @@ Do not recreate weaker substitutes for technology already built in another song.
 
 A song may reuse another project's implementation without copying that project's art direction.
 
+## 5A. Tool-first law
+
+Before writing new code, first inspect the tools already available in the current environment and connected services.
+
+The preflight should consider, when relevant:
+
+- GitHub repository/search/branch/commit/tree/blob/Actions/artifact capabilities;
+- existing AIVideoEdit reusable implementations;
+- ChatGPT built-in tools and connected plugins;
+- Cloudflare Wrangler CLI and the Cloudflare platform when available/authenticated;
+- purpose-built media/storage services already connected.
+
+Use existing proven capabilities before creating custom replacements.
+
+### Cloudflare / Wrangler
+
+Wrangler is a first-class infrastructure/storage tool for AIVideoEdit when it is available and authenticated.
+
+Primary intended uses include:
+
+- **R2** for large source media, frame archives, generated asset packs, proof renders, intermediate renders and final masters that do not belong in GitHub;
+- **Workers** for lightweight asset/index APIs, signed-link helpers, render metadata services or production utilities when they materially help;
+- **Pages/Workers delivery** for temporary review interfaces or browsable proof libraries when needed;
+- **KV/D1/Queues or other Cloudflare services** only when a real production need justifies them.
+
+Do not create Cloudflare infrastructure merely because it is available. Prefer the simplest path that improves persistence, recovery, transfer, review or automation.
+
+Never store secrets in GitHub or manifests. Every large media object stored outside GitHub must retain a discoverable project manifest entry with filename/object key, size when known, checksum/hash when practical, role, and recovery location.
+
+If Wrangler is not present or authenticated in the active runtime, record that limitation and continue using the strongest available local/connected alternative rather than pretending Cloudflare operations succeeded.
+
 ## 6. Canonical reusable technology
 
 Current major trees:
@@ -198,7 +229,7 @@ Store on the song branch:
 - masks, depth maps, previews, scripts, QC
 - exact storage references for large binaries
 
-Large masters/source libraries may remain in workspace/File Library/object storage when necessary, but their identity and recovery location must be recorded.
+Large masters/source libraries may remain in workspace/File Library/object storage such as Cloudflare R2 when necessary, but their identity and recovery location must be recorded.
 
 ## 14. Reusable-effect promotion law
 
