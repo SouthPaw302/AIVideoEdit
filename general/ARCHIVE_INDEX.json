@@ -1,5 +1,5 @@
 {
-  "archive_date": "2026-09-03",
+  "archive_date": "2026-09-04",
   "repository": "SouthPaw302/AIVideoEdit",
   "main_base_commit": "9450059d3d5de1afc5cc138acd5283c93c79df3c",
   "videos": {
@@ -32,6 +32,20 @@
       "branch_commit": "3e6fe5d5fcc5057f595ee6b449f72b598b5015c2",
       "root_tree": "d122bc777e8ae2482e993de387694cef5e8f8a3d",
       "status": "recovery/partial"
+    },
+    "irish-eyes": {
+      "canonical_branch": "song/irish-eyes",
+      "archive_branch": "archive/video/irish-eyes",
+      "status": "V1.3 final complete / QC passed",
+      "final_filename": "IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4",
+      "final_sha256": "d0ace58c5e2b226cd08a928fc6f9b5ebcd3e2a949805adaa37fc94647ba603ae",
+      "persistent_library_id": "libfile_188ada3ee1c88191ae217eeb834402cd",
+      "youtube_upload_filename": "IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4",
+      "youtube_upload_sha256": "857b690b49e29724bcd625998e79f2fdc4873dc201c238628952ad4f53cc0763",
+      "youtube_upload_library_id": "libfile_0c67dfde60ec8191a37a97e520139892",
+      "audio_source_filename": "Irish eyes (Remastered) FINAL SOURCE.wav",
+      "audio_source_sha256": "b4255e04f31cf7c137ceea82222138c9e07ccc27de4aa8b83b8334814c4d5f46",
+      "audio_source_library_id": "libfile_721852b16ee4819187b553f2e13f459a"
     }
   },
   "reusable": {
