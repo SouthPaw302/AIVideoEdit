@@ -22,15 +22,21 @@ Branch: [`song/irish-eyes`](https://github.com/SouthPaw302/AIVideoEdit/tree/song
 Archive branch: `archive/video/irish-eyes`  
 Project path: `projects/irish-eyes/`
 
-Status: **V1.2 FINAL COMPLETE / QC PASSED**
+Status: **V1.3 FINAL COMPLETE / QC PASSED**
 
-Canonical artistic master: `IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`  
-SHA-256: `a7bc3cd9674b8eaf6a55c28dc6898dc136afc5c668bd95409dce06dc9f10dba7`  
-Library ID: `libfile_f35a75d11c748191ae3d25960667b0a9`
+Canonical artistic master: `IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`  
+SHA-256: `d0ace58c5e2b226cd08a928fc6f9b5ebcd3e2a949805adaa37fc94647ba603ae`  
+Library ID: `libfile_188ada3ee1c88191ae217eeb834402cd`
 
-Canonical YouTube upload with post-roll: `IRISH_EYES_V1_2_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`  
-SHA-256: `edae4a9b65a23c705228d58a41aa1e6eba14a378e3096657f6f22d62c9f3e362`  
-Library ID: `libfile_e6ace24d89c8819183d12bcbb471ef98`
+Canonical YouTube upload with post-roll: `IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`  
+SHA-256: `857b690b49e29724bcd625998e79f2fdc4873dc201c238628952ad4f53cc0763`  
+Library ID: `libfile_0c67dfde60ec8191a37a97e520139892`
+
+Authoritative audio source: `Irish eyes (Remastered) FINAL SOURCE.wav`  
+SHA-256: `b4255e04f31cf7c137ceea82222138c9e07ccc27de4aa8b83b8334814c4d5f46`  
+Library ID: `libfile_721852b16ee4819187b553f2e13f459a`
+
+V1.3 preserves the exact V1.2 H.264 picture stream and changes only the audio to the newer remaster supplied by the user. The V1.2 final remains preserved as version history.
 
 Core direction:
 - 16:9 source-derived memory cinema
@@ -40,7 +46,7 @@ Core direction:
 - environmental support serves the real source rather than replacing it
 - progressive removal of effects in the final refrain
 
-Final recovery files include `STATUS.md`, `FINAL_MASTER.md`, `FINAL_QC.md`, `ACTUAL_MOVIE_ASSET_MANIFEST.md`, `VISUAL_DNA.md`, `ROUGH_CUT_16X9_PLAN_V1.md`, `LANDSCAPE_NATIVE_BATCH_02.md`, and `YOUTUBE_PACKAGING_MANIFEST.md`.
+Final recovery files include `STATUS.md`, `FINAL_MASTER.md`, `FINAL_QC.md`, `AUDIO_REVISION_V1_3.md`, `ACTUAL_MOVIE_ASSET_MANIFEST.md`, `VISUAL_DNA.md`, `ROUGH_CUT_16X9_PLAN_V1.md`, `LANDSCAPE_NATIVE_BATCH_02.md`, and `YOUTUBE_PACKAGING_MANIFEST.md`.
 
 ### IronFlame
 
@@ -122,4 +128,4 @@ See `docs/VISUAL_STYLE_CATALOG.md` and `general/reusable/`.
 
 ## Adding or closing a project
 
-Use one branch per song: `song/<slug>`. At minimum preserve project status, visual DNA, manifests, QC, final hashes, persistent media references, and exact recovery instructions. At a final milestone, update this index, the general archive index/snapshot, and create a point-in-time archive branch.
+Use one branch per song: `song/<slug>`. At minimum preserve project status, visual DNA, manifests, QC, final hashes, persistent media references, and exact recovery instructions. At a final milestone, update this index, the general archive index/snapshot, and create or advance a point-in-time archive branch.
