@@ -14,45 +14,37 @@ Source restored in current runtime:
 - 31.766344 s
 - 953 source frames
 
-Native-cadence extraction completed in current runtime:
+Native-cadence extraction completed:
 
 - `frame_000001.png` through `frame_000953.png`
 - `FRAME_MANIFEST.csv`
 - working extraction path: `/mnt/data/irish_eyes_branch/projects/irish-eyes/source_frames/brandi_south_florida_2017/`
 
-Raw extraction is working media; canonical selected frames, shot-package manifests, proofs and reusable results must be checkpointed on this song branch/archive system as production proceeds.
+Raw extraction is working media; canonical selected frames, shot-package manifests, proofs and reusable results are checkpointed on this song branch/archive system as production proceeds.
 
-## Governing plan
+## Governing rules
 
-Follow `projects/irish-eyes/PRODUCTION_EXECUTION_PLAN.md`.
+Follow `projects/irish-eyes/PRODUCTION_EXECUTION_PLAN.md` and `projects/irish-eyes/USER_DIRECTIVES.md`.
 
-Key rules now locked:
+Locked rules:
 
 - tool/plugin/reusable-stack preflight before writing new effect code;
-- include Cloudflare Wrangler/R2/Workers/Pages in that preflight when available and authenticated; see `projects/irish-eyes/CLOUDFLARE_WRANGLER.md`;
-- use zoom and perception changes as authored cinematography, not generic Ken Burns motion;
-- use a hybrid visual philosophy: real source footage/frames remain the identity and reality anchor, while generated support elements may extend environments, transitions, surreal memory space, textures, optical material and missing story beats when they improve the film;
+- Cloudflare Wrangler/R2/Workers/Pages are canonical support options when available/authenticated;
+- zoom/perception changes are authored cinematography, not Ken Burns defaults;
+- real source footage/frames remain the identity and reality anchor;
+- generated support elements may extend environments, transitions, surreal memory space, textures, optical material and missing story beats when they improve the film;
 - preserve Brandi's photographic identity;
-- build stills into moving mini-scenes using 3DGS when viable, hybrid NeRF, 2.5D, living-image motion, reflection/water systems, weather/atmosphere, prism/halation, memory echoes, transformative transitions and music-directed behavior;
+- use actual 3DGS only when real source coverage supports it; see `3DGS_PIPELINE.md`;
+- use hybrid NeRF, 2.5D, living-image motion, water/reflection systems, weather/atmosphere, prism/halation, memory echoes, transformative transitions and music-directed behavior where artistically appropriate;
 - proof and QC effects before long-form assembly;
-- finish the assembled film with the complete editorial/color/texture stack in `EDITORIAL_FINISHING_STACK.md`;
+- professional editorial/color/texture finishing after picture lock;
 - scan the actual final export before delivery.
 
-## Tool preflight completed
-
-Current GitHub connector surface exposes extensive repository and workflow-management functions (search, branches, commits, trees, blobs, file writes, comparisons, PR/issues, Actions logs/artifacts/retries). It is useful for recovery/checkpointing but is not itself a native video-effects engine.
-
-Current repo reusable implementations include Silver Coin motion/effect/QC/NeRF tools, continuous 2.5D, and Irish Eyes restoration/water treatment.
-
-Cloudflare Wrangler is now a canonical project capability for large-binary persistence and production support. Preferred first use is R2 for large source/frame/proof/render assets when GitHub is the wrong storage layer. Workers/Pages and other Cloudflare services are available only when a concrete production need justifies them. The current ChatGPT container does not expose `wrangler` on PATH, so no Cloudflare operation is claimed as completed in this runtime.
-
-No useful dedicated Cloudflare ChatGPT plugin was discovered in the current plugin directory search. Optional media fallbacks discovered include Cloudinary, CloudConvert, Seedance-based AI Video Maker, sync.labs, Pixlie and Krikey. Do not install/use paid/external services by default; use only when a specific production need justifies them.
-
-## Hero-frame batch 01 complete
+## Hero-frame batch 01
 
 See `projects/irish-eyes/HERO_FRAME_BATCH_01.md`.
 
-Initial selected production candidates:
+Initial candidates:
 
 - frame 97 — arrival / reality anchor;
 - frame 291 — portrait / sunlight;
@@ -63,36 +55,54 @@ Initial selected production candidates:
 - frame 840 — introspective closing buildup;
 - frame 936 — closure.
 
-## Effect-laboratory proof 01
+## Effect proof P01 — Breeze Memory
 
-Shot package: `IE_P01_BREEZE_MEMORY`, source frame `frame_000420.png`.
+Shot package: `IE_P01_BREEZE_MEMORY`, source frame 420.
 
-Working package created locally with:
+P01 V3 rendered and QC'd:
 
-- source frame;
-- subject mask / alpha;
-- inpainted background plate;
-- depth field;
-- source-derived 2.5D motion proof;
-- water shimmer / halation / prism / temporal treatment iteration;
-- internal QC samples.
+- 4.0 s / 30 fps / 360x640 proof;
+- 120 frames;
+- 0 black frames;
+- SHA-256 `bcb66330bc072fbea61e4df3aca0b0e2fab8be0c1c8c6421195f0c95370b4867`.
 
-**Magic Gate result: REVISE.**
+Implemented: source-derived depth travel, protected subject separation, independent water, motivated Gaussian-shaped light fields, water light response, haze, hair/dress micro-motion, localized temporal echo, prism, source-derived portal behavior, halation and proof grade.
 
-The current proof demonstrates real dimensional motion and visible treatment, but it still reads too much like a sophisticated animated photograph. It is not yet approved for timeline use. See `projects/irish-eyes/MAGIC_GATE_01.md`.
+**Magic Gate: REVISE.** More dimensional than earlier versions, but still primarily reads as an animated photograph rather than a sufficiently strong spatial revelation.
 
-## Exact next action
+See `EFFECT_PROOF_P01_V3.md`.
 
-Iterate P01 to V3 using the canonical Silver Coin / Irish Eyes effect language:
+## Effect proof P02 — Reflection Portal
 
-1. moving Gaussian light fields anchored to the real cloud/sun opening;
-2. stronger protected background depth travel;
-3. independent water/reflection movement;
-4. asymmetric virtual-camera push rather than uniform zoom;
-5. localized prism/temporal behavior around hair, water and bright edges;
-6. reflection or bright-cloud portal exit test;
-7. identity and temporal QC.
+Shot package: `IE_P02_REFLECTION_PORTAL`, real source frames 270–315, hero frame 291.
 
-If P01 V3 still fails the magic threshold, move the primary effect-laboratory target to `frame_000614.png` rather than forcing the wrong frame.
+P02 V1 rendered and QC'd:
 
-**Do not assemble the final Irish Eyes video until multiple distinct shot packages have passed the magic gate.**
+- 4.5 s / 30 fps / 360x640 proof;
+- 135 frames;
+- 0 black frames;
+- SHA-256 `770592871c3fda3f41211d3ae5d3bcde72d31fd25001c4bee96b1dcb91dfc422`.
+
+Implemented: slowed real source motion, independent water, source-derived mirrored-sky reflection field, Gaussian-shaped light shafts, matched water glint, source-derived memory/reflection clone, localized prism, off-axis perception move and portal-bloom transition.
+
+**Magic Gate: REVISE.** Temporal life is much stronger than P01, but the final perception dive lands too much on foreground subject/crop instead of cleanly entering the water portal.
+
+See `EFFECT_PROOF_P02_REFLECTION_PORTAL.md`.
+
+## 3DGS path clarified
+
+See `projects/irish-eyes/3DGS_PIPELINE.md`.
+
+For true 3D Gaussian Splatting, real video frames must first pass Structure-from-Motion/camera recovery and a separate splat trainer. PlayCanvas/SuperSplat is the preferred inspection/edit/camera-animation/video-render stage once compatible splat data exists. Do not confuse this with Gaussian-shaped light fields.
+
+## Exact next production action
+
+Do not assemble the final film.
+
+Next proof target: a more favorable dramatic source window, especially around frame 614 or 743, using retained real motion plus a visibly authored atmospheric/perception event. Primary candidates:
+
+1. **Storm Revelation** — cloud displacement, independent water, Gaussian light opening, rain/lightning/reflection response, dimensional camera travel, then return to real light;
+2. **Reflection Portal V2** — fix camera target so the reflection actually becomes the destination;
+3. **3DGS viability test** — isolate the strongest background/parallax window, test camera/SfM stability first, train only if the source supports it.
+
+**No final Irish Eyes video until multiple distinct shot packages independently pass the Magic Gate.**
