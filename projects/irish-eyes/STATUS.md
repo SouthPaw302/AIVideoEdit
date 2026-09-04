@@ -46,7 +46,7 @@ Do not render the final master until story coverage is sufficient, the song-time
 - P03 Storm Revelation V1/V2/V3/V4 — did not cross the current Magic Gate.
 - P09 Memory Clone Refraction V1/V2/V3 — read as ghost/apparition rather than premium refraction.
 - P02 earlier portal versions — camera landed on/stretched subject.
-- two generated clean-plate attempts — changed person/location.
+- generated clean-plate/support attempts that changed person/location/style — rejected.
 - P10 V2 — glowing white-goggle behavior.
 
 ## Continuity validation
@@ -93,26 +93,49 @@ Major gaps:
 
 ## P11 — Water → Wet Road Memory
 
-V1 has been rendered from the real source-water/sky plate from frame 520.
+P11 has now gone through four proof versions. None is promoted.
 
-Implemented:
-- source-derived water motion;
-- camera dive into reflection;
-- water texture progressively transformed into a wet-road reflective plane;
-- source light split into restrained twin road-light streaks;
-- horizon haze hides the category transition;
-- no generated/replacement person.
+### V1
 
-Technical render:
-- 5.2 s
-- 30 fps
-- 360x640
-- 156 frames
-- 0 black frames
-- mean frame delta `1.2244736969832735`
+Source-derived water motion + camera dive + reflective-plane transformation. Rejected because the orange reflection streaks read like procedural/fake headlights.
+
+- 5.2 s / 156 frames / 0 black frames
 - SHA `f1a09ac1dccafb110e0c80a60b4aca9fda6e56b702ff3d65d2132dbfc86708fa`
 
-**Status: QC HOLD.** Do not promote until the final water→road transformation is visually inspected and judged believable/magical rather than synthetic/procedural-looking.
+### V2
+
+Tried a stronger source-only perspective fold. Rejected because the asphalt read as a dark geometric wedge rather than a believable environment.
+
+- 5.2 s / 156 frames / 0 black frames
+- SHA `50703f9aa0ec457c4517041a73579aa1b1b48f20c3ceefdb2d16e5369976a063`
+
+### V3
+
+Made the road category more explicit. Rejected because the trapezoid/dashed-centerline language looked constructed and procedural.
+
+- 5.2 s / 156 frames / 0 black frames
+- SHA `8167c33153e98d05ba24ddb5e35a959ec411fe9694ce36c85ae1a6601e522529`
+
+### V4
+
+Removed lane markings and hard road geometry. Used source-derived wet texture, soft roadside falloff, narrowed real-water sheen and horizon haze.
+
+- 5.2 s
+- 30 fps
+- 156 frames
+- 0 black frames
+- mean frame delta `0.7097589419056153`
+- SHA `ea072b1e8f8692269f042bf5cb17e0a53f393fed5e5ae2bb5c5f8b203cd7da97`
+
+**Decision: REVISE / DO NOT PROMOTE.** V4 is less artificial but the final surface remains too murky to convincingly read as a wet road.
+
+New route: use real licensed environmental photography as the road/window/lake destination plates and animate/composite them ourselves. See `SUPPORT_PLATES_01.md`. Prefer CC0/public-domain sources so the memory-world expansion stays grounded in real imagery rather than AI-video generation.
+
+## YouTube packaging
+
+Full-resolution separate intro/outro assets exist under `projects/irish-eyes/youtube_packaging/`. They are packaging assets, not replacements for the film's emotional ending.
+
+See `YOUTUBE_PACKAGING_MANIFEST.md`.
 
 ## Literal 3D Gaussian Splatting decision
 
@@ -122,10 +145,10 @@ This specific source clip does not show enough trustworthy real camera baseline 
 
 ## Exact next action
 
-1. visually clear or revise P11 Water → Wet Road Memory;
-2. build P12 Road Travel / Rain Glass;
-3. build P13 Warm House Window / Candle Memory;
-4. build P14 Dark Lake / Ridge Horizon;
+1. ingest the selected CC0 rainy-road support plate and build **P12 Road Travel / Rain Glass** as a real-photo moving scene;
+2. use P12 as the destination for a new P11 water→road optical handoff rather than synthesizing asphalt from scratch;
+3. ingest/build **P13 Warm House Window / Candle Memory** from CC0 window/architecture photography;
+4. ingest/build **P14 Dark Lake / Ridge Horizon** from CC0 lake/ridge photography;
 5. build the 1.8–2.5 s micro hinge glasses → water → road → water;
 6. rerun continuity with at least one environmental memory-world asset inserted;
 7. only after Act II / Act III coverage is adequate begin a song-timed rough assembly;
