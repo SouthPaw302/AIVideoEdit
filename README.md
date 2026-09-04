@@ -1,63 +1,44 @@
 # AIVideoEdit
 
-AI-native music-video production pipeline for turning songs into directed visual films.
+AI-native music-video production system for turning songs into directed long-form visual films.
 
-## New agent / new chat
+## Start here
 
-**Start here:** [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md)
+1. [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md) — operating/recovery rules
+2. [`PROJECT_INDEX.md`](PROJECT_INDEX.md) — current and historical song projects
+3. [`CANONICAL_EFFECTS.md`](CANONICAL_EFFECTS.md) — reusable effects/loops/transitions entrypoint
+4. [`general/reusable/CANONICAL_EFFECT_REGISTRY.md`](general/reusable/CANONICAL_EFFECT_REGISTRY.md) — accumulated production-technique library
+5. [`docs/CANON_WORKFLOW.md`](docs/CANON_WORKFLOW.md) — production workflow
 
-That file is the canonical recovery entrypoint for the entire project. It explains the system, storage model, tool/connector philosophy, production workflow, and how to recover active song projects without relying on chat history.
+## Repository layout
 
-Then read:
-- [`general/README.md`](general/README.md) — consolidated video/effects/resource archive on `main`
-- [`PROJECT_INDEX.md`](PROJECT_INDEX.md)
-- [`REPOSITORY_INDEX.md`](REPOSITORY_INDEX.md)
-- [`CHAT_RECOVERY_LOG.md`](CHAT_RECOVERY_LOG.md)
-- [`docs/CANON_WORKFLOW.md`](docs/CANON_WORKFLOW.md)
-- [`docs/CONTINUOUS_CHECKPOINT_POLICY.md`](docs/CONTINUOUS_CHECKPOINT_POLICY.md)
-- [`docs/VISUAL_STYLE_CATALOG.md`](docs/VISUAL_STYLE_CATALOG.md)
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-- [`docs/STORAGE_AND_CONNECTORS.md`](docs/STORAGE_AND_CONNECTORS.md)
+```text
+main
+├── AGENT_HANDOFF.md
+├── PROJECT_INDEX.md
+├── REPOSITORY_INDEX.md
+├── CANONICAL_EFFECTS.md
+├── docs/                  # system workflow, architecture and visual language
+├── general/
+│   ├── PRODUCTION_SYSTEM_RULES.md
+│   ├── ARCHIVE_INDEX.json
+│   ├── SESSION_ASSET_RECOVERY.md
+│   └── reusable/          # canonical cross-project effect/tool library
+└── projects/              # project template only on main
 
-This repository is the canonical source for:
+song/<slug>                # actual per-video production branches
+```
 
-- song-to-visual direction
-- visual DNA and storyboard manifests
-- visual style and rendering-method catalog
-- AI image artifact QC
-- 2.5D / parallax animation
-- looping environmental motion
-- audio-reactive cinematography
-- hybrid visualizers
-- FFmpeg/Python assembly
-- tool / MCP / connector interfaces
-- project status and handoff context
-- final render validation
+`main` is the persistent brain and reusable technology library. Each video is produced on `song/<slug>`. Large WAV/PNG/MP4 archives may live outside GitHub when appropriate, but GitHub preserves hashes, manifests, storage references, scripts, effect recipes, QC and recovery state.
 
-`general/branch-snapshots/` preserves complete Git-tree snapshots of every known Video Creation production branch, while `general/reusable/` preserves reusable effect/tool trees. Archive branches under `archive/video/*` provide additional point-in-time recovery refs.
+## Current video projects
 
-Large media assets (WAV/MP3/PNG/MP4) may also live in persistent Library or external object storage when they exceed GitHub's ordinary file limits; the repo preserves hashes, manifests, storage references, representative media, scripts, effects, QC, and exact recovery state.
+- **Irish Eyes** — active storyboard-linked shot-package/preview production.
+- **Silver Coin** — V8 final complete / QC passed; canonical motion-quality reference and deepest implemented reusable-effects lineage.
+- **IronFlame** — V1 rendered/delivered; exact final binary archive identity remains a recovery gap.
+- **Leave It by the Door** — historical recovery/partial.
+- **Sigh No More / Irish Eyes, Spanish Hair** — historical recovery/partial.
 
-## Canon workflow
+## Core production rule
 
-1. Listen & Decode
-2. Define Visual DNA
-3. Concept / Style Tests
-4. Asset Creation
-5. Artifact Scan & Repair
-6. Animation & Layering
-7. Sync & React
-8. Edit / Transition Design
-9. Final Grade & Render
-10. Validation & Archive
-
-See `docs/CANON_WORKFLOW.md`.
-
-## Video projects
-
-- **IronFlame** — V1 delivered; final MP4 archive identity remains an explicit recovery gap.
-- **Silver Coin** — V8 final complete / QC passed; full production/effect state preserved on `song/silver-coin` and in the general branch snapshot.
-- **Leave It by the Door** — recovery/partial project.
-- **Sigh No More / Irish Eyes, Spanish Hair** — recovery/partial project.
-
-Every active song project should contain enough written and referenced state in its project directory to survive a new chat or agent handoff.
+Do not start a new video or effect from zero. Search the canonical reusable library first, build actual moving shot packages from the storyboard, QC the rendered result, and promote useful new techniques back to `main/general/reusable/`.
