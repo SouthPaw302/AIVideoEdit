@@ -12,13 +12,14 @@ Known archive branches include:
 - `archive/video/silver-coin`
 - `archive/video/leave-it-by-the-door`
 - `archive/video/sigh-no-more`
-- `archive/video/irish-eyes` once the final song branch snapshot is created
+- `archive/video/irish-eyes`
 
 ## Active / completed productions
 
 ### Irish Eyes
 
 Branch: [`song/irish-eyes`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/irish-eyes)  
+Archive branch: `archive/video/irish-eyes`  
 Project path: `projects/irish-eyes/`
 
 Status: **V1.2 FINAL COMPLETE / QC PASSED**
