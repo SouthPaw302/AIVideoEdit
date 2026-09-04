@@ -119,11 +119,64 @@ Changes: depth-layered rain with face/body protection, stronger cloud/water coup
 
 See `MAGIC_GATE_03_STORM_REVELATION.md`.
 
+## Effect proof P04 — Spatial Entry
+
+Shot package: `IE_P04_SPATIAL_ENTRY`, real source frames 451–530.
+
+This window is valuable because Brandi naturally moves toward the left edge while the right side opens into unobstructed real water and sky, allowing the virtual camera to move past her without fabricating the hidden environment behind her.
+
+### P04 V1
+
+- 5.0 s / 30 fps / 360x640 proof;
+- 150 frames;
+- 0 black frames;
+- mean frame delta 4.0205;
+- SHA-256 `aaf20a2e8094f092d60c0e272b28794d46541aa25a5424313047bf23eaec5fa6`.
+
+Implemented: retained real motion, authored rightward camera slide/push, independent source-derived sky/water motion, motivated Gaussian-shaped light field, water glint response, haze, halation and finishing.
+
+**Magic Gate: REVISE.** Clean and promising, but still read too much like a sophisticated crop/push.
+
+### P04 V2
+
+- 5.2 s / 30 fps / 360x640 proof;
+- 156 frames;
+- 0 black frames;
+- mean frame delta 3.3137;
+- SHA-256 `c5f32d69e01c08bb2f71ac1ca7933e6e99da0685b2af3b05f4d11935063416c2`.
+
+Changes:
+
+- sky, far-water/horizon and near-water/shore move at different rates;
+- stronger depth differential during the rightward move;
+- actual source motion dominates the opening half;
+- once Brandi clears left naturally, the shot continues inside source-derived living sky/water;
+- camera push strengthens after subject clearance;
+- light volume and water highlight response remain scene-motivated;
+- final narrowing move enters real water/horizon instead of a synthetic destination.
+
+**Magic Gate: KEEP — PROVISIONAL PASS.** This is the first current-pass proof that convincingly solves the spatial-entry problem while keeping the scene real and source-derived. It is approved for the moving-asset library, subject to later comparison with any successful true-3DGS proof.
+
+Two attempted generative clean-plate experiments were explicitly rejected because they drifted into unrelated people/locations. They are not accepted production assets.
+
+See `EFFECT_PROOF_P04_SPATIAL_ENTRY.md`.
+
 ## 3DGS path clarified
 
 See `projects/irish-eyes/3DGS_PIPELINE.md`.
 
 For true 3D Gaussian Splatting, real video frames must first pass Structure-from-Motion/camera recovery and a separate splat trainer. PlayCanvas/SuperSplat is the preferred inspection/edit/camera-animation/video-render stage once compatible splat data exists. Do not confuse this with Gaussian-shaped light fields.
+
+Current sandbox preflight for the literal 3DGS path:
+
+- `ffmpeg`: available;
+- OpenCV: available;
+- PyTorch CPU: available;
+- `colmap`: not currently exposed;
+- `glomap`: not currently exposed;
+- Nerfstudio / `ns-train`: not currently exposed.
+
+No real 3DGS reconstruction is claimed yet.
 
 ## Tool resilience / external execution
 
@@ -133,15 +186,13 @@ The project is intentionally not dependent on one sandbox. GitHub remains the ca
 
 Do not assemble the final film.
 
-Next Magic Gate objective: **spatial entry into the real photograph/world**, not simply stronger overlays.
+We now have one provisional Magic Gate pass. The next objective is to prove that the visual language is repeatable with a distinctly different shot family.
 
 Preferred order:
 
-1. build the cleanest possible source-derived waterfront background using neighboring real frames / alignment / reconstruction;
-2. preserve a real Brandi foreground plate;
-3. create a camera path that travels laterally/past the subject toward water/horizon;
-4. use depth differential, water movement, atmospheric occlusion and foreground exit to hide disocclusion limits;
-5. if that cannot be made convincing, build Reflection Portal V2 so the water/sunglasses reflection becomes the actual camera destination;
-6. run 3DGS/SfM viability when the execution environment exposes the reconstruction/training toolchain.
+1. **Reflection Portal V2** — make the water/reflection the actual camera destination rather than a foreground crop;
+2. **Closing / Return proof** — build a quieter but still dimensional source-derived shot around frames 840/936;
+3. run a source-camera/parallax viability test for literal 3DGS before installing or adding a reconstruction toolchain;
+4. only after multiple distinct packages independently pass the Magic Gate should full-song assembly begin.
 
 **No final Irish Eyes video until multiple distinct shot packages independently pass the Magic Gate.**
