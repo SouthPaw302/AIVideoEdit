@@ -4,7 +4,7 @@ Branch: `song/irish-eyes`
 
 ## Current state
 
-Production mode: **moving-asset build / Magic Gate proofing / environmental coverage expansion**. The source-derived visual language has passed continuity testing. **No final 3:07 master render yet.**
+Production mode: **moving-asset build / Magic Gate proofing / environmental coverage expansion / continuity validation**. The source-derived visual language has passed the first continuity test. **No final 3:07 master render yet.**
 
 Primary source:
 - `Brandi South Florida 2017.mp4`
@@ -35,24 +35,15 @@ Do not render the final master until story coverage is sufficient, the song-time
 - **T02 Water / Reality Return V2/V3** — KEEP; memory→reality transition / tonal refinement.
 - **P11 Water → Wet Road Memory V4** — KEEP provisional; source water organically folds into a wet reflective road/track memory without lane markers, fake headlights or hard road geometry. SHA `ea072b1e8f8692269f042bf5cb17e0a53f393fed5e5ae2bb5c5f8b203cd7da97`.
 - **P12 Road Travel / Rain Glass V2** — KEEP provisional environmental pass; stronger forward travel, refracting glass droplets, rain trails, subtle windshield distortion, restrained dashboard edge. SHA `acc170d19fba35fafe1ce497fcf7145e28c80b114dfc99ed1d411ddc93b3fd67`.
+- **P13 Warm Window / Candle Memory V2** — KEEP provisional environmental pass. Rain/glass focus story, pane-specific depth shifts, warm practical/candle reflection and source-derived outside memory. SHA `2825535c1e27d9c58f9cf372f703cf3ebbc4075b5717ee00800f356e31a2e1a3`.
+- **P14 Dark Lake / Ridge Horizon V2** — KEEP provisional environmental magic pass. Source-derived lake/sky, irregular ridge depth, broken water reflection, blue-hour grade and mist. SHA `a1318d38ab76adefe7324fdbec692568539872427889584059187a059f1b8df2`.
 
-## P13 Warm Window / Candle Memory
+## Transition / hinge status
 
-V1: **REVISE** — composition works but reads too much like a static frame-over-footage treatment.
+- **T03 Glasses → Water → Road → Water V1** rendered successfully: 2.4 s / 72 frames / SHA `060c91911942c853842e48f468cefab24329b94ddf53417fff4450acb82d7d3a`.
+- **Status: QC HOLD.** The local image-inspection backend stopped responding before the QC sheet could be visually cleared. T03 is excluded from approved continuity until inspection succeeds.
 
-V2 rendered cleanly:
-- 5.4 s
-- 30 fps
-- 162 frames
-- 0 black frames
-- mean frame delta `0.2659996207873246`
-- SHA `2825535c1e27d9c58f9cf372f703cf3ebbc4075b5717ee00800f356e31a2e1a3`
-
-V2 adds focus choreography between rain/glass and outside memory, tiny pane-specific depth shifts, foreground rain, warm offscreen candle/practical reflection and soft wood-edge light.
-
-**Status: QC HOLD.** Local image inspection failed before final visual clearance. Do not promote until the QC sheet is inspected.
-
-See `MAGIC_GATE_BATCH_05.md`.
+See `MAGIC_GATE_BATCH_06.md`.
 
 ## Rejected / preserve lesson only
 
@@ -66,7 +57,7 @@ See `MAGIC_GATE_BATCH_05.md`.
 
 ## Continuity validation
 
-`IRISH_EYES_MAGIC_CONTINUITY_REEL_V2.mp4` is the current style-coherence proof:
+`IRISH_EYES_MAGIC_CONTINUITY_REEL_V2.mp4` remains the current completed style-coherence proof:
 - 28.433333 s
 - 30 fps
 - 853 frames
@@ -76,30 +67,35 @@ See `MAGIC_GATE_BATCH_05.md`.
 
 Decision: **KEEP AS STYLE-COHERENCE / CONTINUITY PROOF.**
 
+The next continuity reel must insert P11/P12/P13/P14 and test the expanded environmental memory world. That render was initiated, but the local execution backend became unavailable before a verified V3 file could be produced. Do not claim V3 exists until the render and QC complete.
+
 ## Coverage state
 
-Strong coverage:
+Strong coverage now:
 - Act I arrival / Irish Eyes / Spanish Hair / memory opening;
 - return-to-Brandi sections;
 - quiet closing / final refrain language;
 - reality↔memory optical gates;
-- first water→road and rain-glass environmental families.
+- water→road memory;
+- road travel / rain glass;
+- warm window / candle memory;
+- dark lake / ridge horizon.
 
-Remaining major coverage:
-- warm house/window/candle memory — P13 pending QC;
-- dark lake / ridge horizon;
+Remaining coverage / validation:
 - ancestry / old architecture details;
-- deepest Act III memory progression;
-- glasses → water → road → water micro hinge.
+- deepest Act III sequence ordering and transitions;
+- T03 micro-hinge visual QC;
+- environmental continuity V3;
+- song-timed rough assembly after continuity passes.
 
 ## Real-photo support plate route
 
-Tool-first search identified real CC0/public-domain Wikimedia Commons candidates for environmental memory material:
-- `Wet road.jpg` — CC0;
-- `Mountain Lake at Night (30608828696).jpg` — CC0;
+Tool-first search identified real CC0/public-domain Wikimedia Commons candidates for environmental memory material, including:
+- `Mountain Lake Dusk.jpg` — CC0;
+- `Mountain Lake at Night (...)` — CC0;
 - `Old cabin window (Unsplash).jpg` — pre-June-2017 Unsplash CC0 archived on Commons.
 
-When binary ingest is available, compare these real-photo support routes against P11/P12/P13 rather than defaulting to AI-generated environments.
+Binary ingest from Wikimedia was not available in the current sandbox network path, so current P13/P14 proofs remain source-derived. Compare against real CC0 plates later when ingest is available; do not fabricate licensing or claim the binaries were downloaded.
 
 ## YouTube packaging
 
@@ -113,9 +109,10 @@ This specific source clip does not show enough trustworthy real camera baseline 
 
 ## Exact next action
 
-1. visually clear or revise P13 V2;
-2. build **P14 Dark Lake / Ridge Horizon**, preferably from real CC0 photography if binary ingest is available;
-3. build the 1.8–2.5 s glasses → water → road → water micro hinge;
-4. rerun continuity with P11/P12/P13/P14 environmental memory assets inserted;
-5. only after Act II / Act III coverage is adequate begin a song-timed rough assembly;
-6. final master remains blocked until editorial/color/texture finishing and exported-file QC pass.
+1. rerun and complete `IRISH_EYES_MAGIC_CONTINUITY_REEL_V3_ENVIRONMENTAL.mp4` with P11/P12/P13/P14 inserted;
+2. scan it for black/freeze events, exposure/color jumps, procedural-looking environmental moments and transition overuse;
+3. visually clear or revise T03 micro-hinge;
+4. add ancestry / old-architecture detail assets only where the lyric-film map still needs them;
+5. after environmental continuity passes, begin the first **song-timed rough assembly**, still not the final master;
+6. apply the professional editorial/color/texture finishing stack only after picture structure is stable;
+7. final master remains blocked until exported-file QC passes.
