@@ -74,6 +74,20 @@ Real frames 360–445 retimed to 4.0 s. Uses actual hair/dress motion plus short
 - mean frame delta 6.816052888169156
 - SHA-256 `67d067c4bb585c3316c0085b1093e7278255d21ed5d370a9a31ea22772723ef3`
 
+### T01 Sun / Water Memory Gate V1
+
+**KEEP — provisional transition pass.**
+
+Connects P06 into P07 without a prolonged full-body dissolve. Background morphs under a motivated upper-right sun flare and lower-frame water refraction; the subject switch happens at the flare peak rather than as a long double exposure.
+
+- 3.3 s
+- 99 frames
+- 0 black frames
+- mean frame delta `3.392242580191799`
+- SHA-256 `35f9851d663f2fcfe8fa265a6a0ec2f30ad41b310a60ff1ac7c1bb1daed58d0f`
+
+See `MAGIC_GATE_BATCH_03.md`.
+
 ### P08 Return Human Anchor
 
 V1: **REVISE** — subject too dark.
@@ -94,16 +108,36 @@ V3 replaces the hard cutout with broad feathered subject/face fields, stronger b
 
 See `MAGIC_GATE_BATCH_02.md`.
 
+## Storm family status
+
+P03 V1/V2 remain rejected from the moving-asset library.
+
+P03 V3:
+
+- source-coupled cloud/water/light treatment;
+- 4.333333 s / 130 frames / 0 black frames;
+- SHA-256 `7e5e776c04ac5d7da9f7cd031ddb8103b62a20a29c49bac046424c5c31321bb2`;
+- **REVISE** — stronger cinematic integration but still not a distinct high-magic event.
+
+P03 V4 Temporal Glass:
+
+- environment-only nearby-time panes around protected real Brandi;
+- 4.333333 s / 130 frames / 0 black frames;
+- SHA-256 `405481840eb5056428e2c0c8ecd4d4f1149be130b11f3875c96871d4a5f5f2a4`;
+- **REVISE / DO NOT PROMOTE** — original idea, but glass lines are too graphic and the backlit face still lacks enough recovery.
+
+See `MAGIC_GATE_BATCH_03.md`.
+
 ## Earlier revisions still rejected
 
 - P01 Breeze Memory V3 — too much animated-photograph feel;
-- P03 Storm Revelation V1/V2 — promising but still too overlay-driven / insufficient spatial revelation;
+- P03 Storm Revelation V1/V2/V3/V4 — not yet good enough for the movie;
 - P02 earlier portal versions — camera landed on/stretched subject rather than entering water;
 - two generative clean-plate attempts — changed person/location and were rejected from production.
 
 ## Literal 3D Gaussian Splatting decision
 
-A source-camera/parallax viability test has now been run. See `3DGS_VIABILITY_2026-09-04.md`.
+A source-camera/parallax viability test has been run. See `3DGS_VIABILITY_2026-09-04.md`.
 
 The most stable background pairs are explained very well by a planar/global transform with roughly 1–2 px residual at proof resolution. This clip is dominated by distant sky/water/horizon and does not currently provide strong evidence of the multi-view camera baseline needed to justify a real 3DGS training pass.
 
@@ -120,14 +154,16 @@ The project now has several distinct successful families rather than one repeate
 - reflection/water portal;
 - hair/memory temporal trails;
 - quiet time-dilation / depth breathing;
-- source-derived water / light / halation / prism behavior.
+- source-derived water / light / halation / prism behavior;
+- a motivated reality-to-memory optical transition.
 
 This is enough to continue expanding the moving-asset library, but **not yet permission to render the final 3:07 film**.
 
 ## Exact next action
 
-1. complete visual QC on P08 V3 and either KEEP or REVISE;
-2. build another distinct high-magic asset from the strongest storm/backlight window without reusing the failed overlay-heavy P03 recipe;
-3. build at least one transition asset connecting a reality-anchor shot to a Magic Gate shot;
-4. begin mapping approved moving assets against the lyric-film map only after the library has enough variety to avoid repetition;
-5. still do not assemble the final master until the asset coverage and magic level are verified.
+1. complete `IE_P09_MEMORY_CLONE_REFRACTION` using the real frame-420 subject alpha and source-derived background/water; duplicates must read as refracted memory, not literal extra people;
+2. complete visual QC on P08 V3 and either KEEP or REVISE;
+3. preserve P03 V4's temporal-fracture concept for later adaptation, but do not reuse the current vertical glass-line treatment;
+4. build another transition family connecting a Magic Gate shot back into photographic reality;
+5. begin coverage mapping against the lyric-film map only after the moving-asset library has enough variety to avoid repetition;
+6. still do not assemble the final master until asset coverage and magic level are verified.
