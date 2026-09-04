@@ -1,90 +1,96 @@
 # Irish Eyes — Completed-State Recovery Handoff
 
 Branch: `song/irish-eyes`
-Status: **V1.2 FINAL COMPLETE / QC PASSED**
+Status: **V1.3 FINAL COMPLETE / QC PASSED**
 Format: **16:9 landscape / 1280x720 / 30 fps**
 
-This file now serves as a recovery guide for the completed production. It supersedes the earlier rough-cut handoff state.
+This is a completed production. Future work must be explicitly versioned as a revision/derivative, not treated as unfinished V1.3 production.
 
-## Canonical final film
+## Canonical artistic film
 
-`IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`
+`IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`
 
-- duration: 187.133333 s
-- H.264 video / AAC-LC stereo 48 kHz
-- SHA-256: `a7bc3cd9674b8eaf6a55c28dc6898dc136afc5c668bd95409dce06dc9f10dba7`
-- Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`
-- Library ID: `libfile_f35a75d11c748191ae3d25960667b0a9`
-
-This is the artistic master and ends on water/light.
+- 1280x720 / 30 fps
+- H.264 / AAC-LC stereo 48 kHz
+- picture duration: 187.133333 s
+- song audio duration: 187.120000 s
+- SHA-256: `d0ace58c5e2b226cd08a928fc6f9b5ebcd3e2a949805adaa37fc94647ba603ae`
+- Library: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`
+- Library ID: `libfile_188ada3ee1c88191ae217eeb834402cd`
 
 ## Canonical YouTube upload version
 
-`IRISH_EYES_V1_2_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
+`IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
 
-- duration: 192.154667 s
-- SHA-256: `edae4a9b65a23c705228d58a41aa1e6eba14a378e3096657f6f22d62c9f3e362`
-- Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_2_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
-- Library ID: `libfile_e6ace24d89c8819183d12bcbb471ef98`
+- duration: 192.154000 s
+- SHA-256: `857b690b49e29724bcd625998e79f2fdc4873dc201c238628952ad4f53cc0763`
+- Library: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
+- Library ID: `libfile_0c67dfde60ec8191a37a97e520139892`
 
-The extra runtime is the separate Mountain Noir post-film card; it is not part of the artistic 187.13 s film.
+The extra runtime is the separate Mountain Noir post-film card. The artistic film itself ends on water/light.
 
-## What survived the Magic Gate
+## V1.3 change from V1.2
 
-The final film preserves the project's source-derived hybrid cinema law:
+The user supplied a distinct remastered WAV after V1.2 picture lock. V1.3 replaces only the audio and preserves the completed V1.2 picture stream exactly.
 
-- real Brandi footage/frames remain the identity and emotional anchor;
-- authored horizontal reframing instead of blurred portrait sidebars;
+Authoritative WAV:
+
+`Irish eyes (Remastered) FINAL SOURCE.wav`
+
+- SHA-256: `b4255e04f31cf7c137ceea82222138c9e07ccc27de4aa8b83b8334814c4d5f46`
+- 187.120000 s / 48 kHz / stereo / PCM 16-bit
+- approximately -15.0 LUFS integrated
+- 5.7 LU LRA
+- approximately -2.4 dBFS true peak
+- Library ID: `libfile_721852b16ee4819187b553f2e13f459a`
+
+Picture preservation proof:
+
+- artistic-master V1.2/V1.3 video MD5: `9f65035bc4bccd4716c22a1f8767a11f`
+- upload V1.2/V1.3 video MD5: `cab7b37955fd3fcead3a68b4d529099a`
+
+Read `AUDIO_REVISION_V1_3.md`.
+
+## Creative identity that remains locked
+
+- real Brandi footage/frames remain the identity/emotional anchor;
+- 16:9 authored reframing, never blurred portrait sidebars;
 - spatial entry / controlled perceptual zoom;
 - 2.5D depth differential;
 - hair/dress temporal movement;
-- water/reflection portal language;
-- sunglasses/horizon portal;
+- water/reflection and sunglasses/horizon portals;
 - restrained prism/refraction/halation;
 - water→wet-road memory;
 - rain-glass travel;
 - warm window/candle memory;
 - dark lake/ridge memory;
 - optical reality↔memory gates;
-- progressive effect removal in the final refrain.
+- progressive removal of effects in the final refrain.
 
-True 3D Gaussian Splatting was deliberately not forced because the source lacked sufficient multiview baseline. Gaussian-shaped light fields are optical effects only.
+True 3D Gaussian Splatting was deliberately not forced because the source lacked sufficient multiview baseline.
 
 ## Final landscape closing batch
 
-- L18 V3 — approved source-derived full-body waterfront rebuild
-- L20 V3 — approved water→wet-road master
-- L21 V3 — approved road/rain-glass master
-- L22 V1 — approved warm-window/candle master
-- L23 V2 — approved real-photo-supported dark-lake/ridge master
+- L18 V3 — KEEP
+- L20 V3 — KEEP
+- L21 V3 — KEEP
+- L22 V1 — KEEP
+- L23 V2 — KEEP
 
 See `LANDSCAPE_NATIVE_BATCH_02.md`.
 
-## Final QC
+## QC state
 
-The encoded master passed full-runtime export review. Earlier material freeze candidates were repaired before V1.2. A stricter detector later reported two exactly-0.30 s low-motion intervals near 73.23 s and 102.10 s; direct frame inspection verified continuous/intentional motion rather than actual freezes.
+The V1.2 picture had already passed full export QC after repairing earlier freeze tells. Since V1.3 uses the identical H.264 picture stream, that visual QC carries forward exactly. V1.3 passed full video decode verification after the new-audio remux.
 
-Audio measures approximately:
+See `FINAL_QC.md`.
 
-- -14.3 LUFS integrated
-- 6.2 LU loudness range
-- -2.7 dBFS true peak
-
-Read `FINAL_QC.md` for the exact final verification record.
-
-## Persistent QC files
-
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_V1_2_FINAL_QC_CONTACT.jpg`
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_V1_2_FREEZE_FIX_QC_01.jpg`
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_V1_2_FREEZE_FIX_QC_02.jpg`
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_FINAL_BORDERLINE_FREEZE_QC.jpg`
-
-## Rejected lineage that remains rejected
+## Rejected lineage remains rejected
 
 Do not silently revive:
 
 - L18 V1 duplicate-person background
-- L18 V2 mirrored/symmetrical waterfront construction
+- L18 V2 mirrored/symmetrical waterfront
 - P01 Breeze Memory V3
 - P03 Storm Revelation V1–V4
 - P09 Memory Clone Refraction V1–V3
@@ -93,17 +99,16 @@ Do not silently revive:
 - T03 V1 broad face-spread portal
 - generated support that changes Brandi's identity/location/style
 
-## Recovery order
-
-For a future revision, read:
+## Recovery order for any future revision
 
 1. `STATUS.md`
 2. `FINAL_MASTER.md`
 3. `FINAL_QC.md`
-4. `ACTUAL_MOVIE_ASSET_MANIFEST.md`
-5. `VISUAL_DNA.md`
-6. `ROUGH_CUT_16X9_PLAN_V1.md`
-7. `LANDSCAPE_NATIVE_BATCH_02.md`
-8. `EDITORIAL_FINISHING_STACK.md`
+4. `AUDIO_REVISION_V1_3.md`
+5. `ACTUAL_MOVIE_ASSET_MANIFEST.md`
+6. `VISUAL_DNA.md`
+7. `ROUGH_CUT_16X9_PLAN_V1.md`
+8. `LANDSCAPE_NATIVE_BATCH_02.md`
+9. `EDITORIAL_FINISHING_STACK.md`
 
-V1.2 is complete. Any further work should be versioned as V1.3/V2 or a new derivative, not treated as unfinished V1.2 production.
+V1.3 is complete and frozen as the current canonical master.
