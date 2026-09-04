@@ -29,6 +29,7 @@ Follow `projects/irish-eyes/PRODUCTION_EXECUTION_PLAN.md`.
 Key rules now locked:
 
 - tool/plugin/reusable-stack preflight before writing new effect code;
+- include Cloudflare Wrangler/R2/Workers/Pages in that preflight when available and authenticated; see `projects/irish-eyes/CLOUDFLARE_WRANGLER.md`;
 - use zoom and perception changes as authored cinematography, not generic Ken Burns motion;
 - mix real footage/stills with generated support content when it improves the film;
 - preserve Brandi's photographic identity;
@@ -43,7 +44,9 @@ Current GitHub connector surface exposes extensive repository and workflow-manag
 
 Current repo reusable implementations include Silver Coin motion/effect/QC/NeRF tools, continuous 2.5D, and Irish Eyes restoration/water treatment.
 
-Optional plugin fallbacks discovered include Cloudinary, CloudConvert, Seedance-based AI Video Maker, sync.labs, Pixlie and Krikey. Do not install/use paid/external services by default; use only when a specific production need justifies them.
+Cloudflare Wrangler is now a canonical project capability for large-binary persistence and production support. Preferred first use is R2 for large source/frame/proof/render assets when GitHub is the wrong storage layer. Workers/Pages and other Cloudflare services are available only when a concrete production need justifies them. The current ChatGPT container does not expose `wrangler` on PATH, so no Cloudflare operation is claimed as completed in this runtime.
+
+No useful dedicated Cloudflare ChatGPT plugin was discovered in the current plugin directory search. Optional media fallbacks discovered include Cloudinary, CloudConvert, Seedance-based AI Video Maker, sync.labs, Pixlie and Krikey. Do not install/use paid/external services by default; use only when a specific production need justifies them.
 
 ## Exact next action
 
