@@ -1,89 +1,96 @@
 # Irish Eyes — Final Export QC
 
-Canonical master: `IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`
+Canonical master: `IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`
 Status: **PASS**
+
+## V1.3 scope
+
+V1.3 is an audio revision only. The accepted V1.2 H.264 picture stream was copied without re-encoding, so all V1.2 visual/freeze repairs remain exactly preserved.
 
 ## Stream verification
 
 Final artistic master:
 
-- video: H.264
+- video: H.264 / yuv420p / Rec.709-tagged
 - dimensions: 1280x720
 - frame rate: 30/1
+- picture duration: 187.133333 s
 - audio: AAC-LC
 - sample rate: 48,000 Hz
 - channels: 2
-- duration: 187.133333 s
-- size: 232,411,236 bytes
-- SHA-256: `a7bc3cd9674b8eaf6a55c28dc6898dc136afc5c668bd95409dce06dc9f10dba7`
+- song audio duration: 187.120000 s
+- size: 232,364,425 bytes
+- SHA-256: `d0ace58c5e2b226cd08a928fc6f9b5ebcd3e2a949805adaa37fc94647ba603ae`
 
 YouTube upload package with outro:
 
-- duration: 192.154667 s
-- size: 238,142,353 bytes
-- SHA-256: `edae4a9b65a23c705228d58a41aa1e6eba14a378e3096657f6f22d62c9f3e362`
+- duration: 192.154000 s
+- size: 238,095,490 bytes
+- SHA-256: `857b690b49e29724bcd625998e79f2fdc4873dc201c238628952ad4f53cc0763`
 
-## Black/freeze scan lineage
+## Picture identity verification
 
-Earlier finishing candidates exposed real material freeze tells:
+Artistic master video-stream MD5:
+- V1.2: `9f65035bc4bccd4716c22a1f8767a11f`
+- V1.3: `9f65035bc4bccd4716c22a1f8767a11f`
 
-### V1
+Upload-with-outro video-stream MD5:
+- V1.2: `cab7b37955fd3fcead3a68b4d529099a`
+- V1.3: `cab7b37955fd3fcead3a68b4d529099a`
 
-- ~20.70–21.27 s: ~0.57 s freeze candidate
-- ~50.97–51.37 s: ~0.40 s freeze candidate
+This proves the final V1.2 picture bitstream was preserved exactly through the V1.3 remux.
 
-### V1.1
+## Visual/freeze QC inherited exactly from V1.2
 
-- ~20.97–21.37 s: ~0.40 s freeze candidate
-- ~50.97–51.37 s: ~0.40 s freeze candidate
+V1.2 had already passed the full export Magic Gate after repairing earlier material freeze tells near ~20.7 s and ~51.0 s.
 
-Those intervals were repaired before V1.2.
+A stricter 0.30 s detector reported two borderline low-motion intervals near ~73.23 s and ~102.10 s; before/during/after frame inspection verified continuous intentional motion, not corruption.
 
-The normal V1.2 production detector completed without black/freeze events.
+Because V1.3 contains the identical picture stream, those findings remain authoritative:
 
-A deliberately stricter verification (`freezedetect` with 0.30 s threshold) later identified two exactly-0.30 s low-motion candidates:
-
-- ~73.23–73.53 s
-- ~102.10–102.40 s
-
-These were manually inspected with before/during/after frame grabs. The first is the warm-window transition resolving through glass/exterior memory; the second is a deliberately slow dark-lake/cloud passage. Both show visual continuity and are not corrupt/frozen frames. They are accepted artistic holds.
-
-No black-frame events were found at the production black detector threshold.
-
-## Visual review
-
-Full-timeline and boundary contact reviews checked:
-
+- no black-frame events at the production threshold;
+- no unresolved corrupt/frozen picture intervals;
 - no sideways source footage;
-- no blurred portrait-video sidebars;
-- no duplicate Brandi background in the accepted L18 V3;
-- no mirrored/symmetrical L18 V2 environment in final use;
-- no obvious generated identity replacement;
+- no blurred portrait sidebars;
+- no duplicate-Brandi L18 V1 failure;
+- no mirrored/symmetrical L18 V2 construction;
+- no generated Brandi identity replacement;
 - no white-goggle portal behavior;
-- no broken face/hair/dress masks detected in final review sampling;
-- environmental memory world remains visually distinct while matching the photographic film language;
-- final refrain progressively reduces spectacle and returns to reality;
-- water/light ending remains intact before separate YouTube post-roll.
+- no broken final-review masks detected;
+- final refrain returns progressively to reality;
+- water/light ending remains intact.
 
-## Audio verification
+V1.3 also passed a complete video decode after the audio remux.
 
-Final master audio analysis:
+## New authoritative audio verification
 
-- integrated loudness: approximately -14.3 LUFS
-- loudness range: 6.2 LU
-- true peak: approximately -2.7 dBFS
+Source: `Irish eyes (Remastered) FINAL SOURCE.wav`
 
-The authoritative source is the restored `Irish eyes (Remastered).wav`; final delivery does not depend on the rough cut's earlier compressed audio copy.
+- source SHA-256: `b4255e04f31cf7c137ceea82222138c9e07ccc27de4aa8b83b8334814c4d5f46`
+- duration: 187.120000 s
+- PCM 16-bit stereo / 48 kHz
+- integrated loudness: approximately -15.0 LUFS
+- loudness range: 5.7 LU
+- true peak: approximately -2.4 dBFS
 
-## Persistent QC evidence
+The AAC-LC encode in V1.3 was produced once from this WAV at approximately 320 kb/s; it does not reuse the rough cut or the V1.2 compressed audio stream. Post-roll audio is silence after the song by design.
 
-Library folder: `/Video Creation/Irish Eyes/QC/`
+## Persistent files
 
-- `IRISH_EYES_V1_2_FINAL_QC_CONTACT.jpg` — `libfile_3f8a7a1e93788191a496417b10211b34`
-- `IRISH_EYES_V1_2_FREEZE_FIX_QC_01.jpg` — `libfile_5217f87e5f348191bcc6e2438021fccb`
-- `IRISH_EYES_V1_2_FREEZE_FIX_QC_02.jpg` — `libfile_15930a1a6f948191a9a52b32b336e416`
-- `IRISH_EYES_FINAL_BORDERLINE_FREEZE_QC.jpg` — `libfile_3cfa77c2b03c81918089b71c732d36b5`
+Canonical artistic master:
+- Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`
+- Library ID: `libfile_188ada3ee1c88191ae217eeb834402cd`
+
+Canonical upload with outro:
+- Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
+- Library ID: `libfile_0c67dfde60ec8191a37a97e520139892`
+
+Authoritative WAV:
+- Library path: `/Video Creation/Irish Eyes/Final/Irish eyes (Remastered) FINAL SOURCE.wav`
+- Library ID: `libfile_721852b16ee4819187b553f2e13f459a`
+
+V1.2 QC evidence remains preserved in `/Video Creation/Irish Eyes/QC/` and is valid for V1.3 because the picture stream is identical.
 
 ## Verdict
 
-**V1.2 passes final export QC and is the canonical completed Irish Eyes master.**
+**V1.3 passes final export QC and is the canonical completed Irish Eyes master.**
