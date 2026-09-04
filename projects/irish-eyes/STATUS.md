@@ -60,8 +60,6 @@ Real frames 40–160. Modest optical approach, independent water, motivated Gaus
 - mean frame delta 2.510968689718364
 - SHA-256 `e61470fc2aff67ade3a53789f2a926147da52fe22843ef53d7d20ba9c9683f08`
 
-This is intentionally less surreal so the movie retains photographic truth.
-
 ### P07 Hair Memory V2
 
 **KEEP — provisional Magic Gate pass.**
@@ -86,8 +84,6 @@ Connects P06 into P07 without a prolonged full-body dissolve. Background morphs 
 - mean frame delta `3.392242580191799`
 - SHA-256 `35f9851d663f2fcfe8fa265a6a0ec2f30ad41b310a60ff1ac7c1bb1daed58d0f`
 
-See `MAGIC_GATE_BATCH_03.md`.
-
 ### P08 Return Human Anchor
 
 V1: **REVISE** — subject too dark.
@@ -102,38 +98,41 @@ V3 rendered technically clean:
 - mean frame delta 1.5297097849556494
 - SHA-256 `5ca6cccfe4ca7a896ce606f45a590828dd2459fa1aa1b489ed42b2c2a692dde0`
 
-V3 replaces the hard cutout with broad feathered subject/face fields, stronger backlight recovery, separate subject/background depth breathing, independent water, motivated sun volume and rim light.
-
 **Status: QC HOLD — not promoted until final visual inspection passes.**
 
-See `MAGIC_GATE_BATCH_02.md`.
+## P09 Memory Clone Refraction
 
-## Storm family status
+V1, V2 and V3 have all been rendered and QC'd.
 
-P03 V1/V2 remain rejected from the moving-asset library.
+- V1 SHA-256 `954cc39c243fb33b96b5ec7149cf64a5b615594e0629ce2ca0deac35d34747ef`
+- V2 SHA-256 `8cfd9acf0892013c7a8d6a8dd2bf91deb47117033f28be85dd21dd27d444613c`
+- V3 SHA-256 `8dd8e3d0b89078a8fc9a55936377eac181e2e181da9d81d9ad80d1aa062c1469`
 
-P03 V3:
+**Decision: DO NOT PROMOTE.**
 
-- source-coupled cloud/water/light treatment;
-- 4.333333 s / 130 frames / 0 black frames;
-- SHA-256 `7e5e776c04ac5d7da9f7cd031ddb8103b62a20a29c49bac046424c5c31321bb2`;
-- **REVISE** — stronger cinematic integration but still not a distinct high-magic event.
+The experiment moved from a floating translucent clone to water-constrained refraction, but even V3 still reads too much like an apparition/shadow rather than premium scene-native water memory. Preserve the lesson, not the asset.
 
-P03 V4 Temporal Glass:
+## P10 Eyes Within / Sunglasses Portal
 
-- environment-only nearby-time panes around protected real Brandi;
-- 4.333333 s / 130 frames / 0 black frames;
-- SHA-256 `405481840eb5056428e2c0c8ecd4d4f1149be130b11f3875c96871d4a5f5f2a4`;
-- **REVISE / DO NOT PROMOTE** — original idea, but glass lines are too graphic and the backlit face still lacks enough recovery.
+V1 rendered and QC'd:
+
+- 5.2 s
+- 156 frames
+- 0 black frames
+- mean frame delta `3.3174941942951017`
+- SHA-256 `276ae8c747b7f5879d904b3dfc1e49a6f971c9fe63b969fc0d16f53a08cd06f7`
+
+Concept: real South Florida water/sky appears inside Brandi's sunglasses and the camera pushes into a lens until that real source-derived waterfront becomes the whole frame.
+
+**Decision: REVISE / STRONG CONCEPT.**
+
+The perception move and water destination work, but the reflection treatment appears too early/broadly across the face. V2 recipe is locked: tighter two-lens geometry, near-zero reflection in the first ~18% of the shot, then a controlled ramp as the lens push commits. Keep the source-water portal ending.
 
 See `MAGIC_GATE_BATCH_03.md`.
 
-## Earlier revisions still rejected
+## Storm family status
 
-- P01 Breeze Memory V3 — too much animated-photograph feel;
-- P03 Storm Revelation V1/V2/V3/V4 — not yet good enough for the movie;
-- P02 earlier portal versions — camera landed on/stretched subject rather than entering water;
-- two generative clean-plate attempts — changed person/location and were rejected from production.
+P03 V1/V2/V3/V4 remain rejected from the moving-asset library. Preserve the ideas, not the current renders.
 
 ## Literal 3D Gaussian Splatting decision
 
@@ -161,9 +160,8 @@ This is enough to continue expanding the moving-asset library, but **not yet per
 
 ## Exact next action
 
-1. complete `IE_P09_MEMORY_CLONE_REFRACTION` using the real frame-420 subject alpha and source-derived background/water; duplicates must read as refracted memory, not literal extra people;
+1. render and QC P10 V2 with tightened/delayed lens reflection;
 2. complete visual QC on P08 V3 and either KEEP or REVISE;
-3. preserve P03 V4's temporal-fracture concept for later adaptation, but do not reuse the current vertical glass-line treatment;
-4. build another transition family connecting a Magic Gate shot back into photographic reality;
-5. begin coverage mapping against the lyric-film map only after the moving-asset library has enough variety to avoid repetition;
-6. still do not assemble the final master until asset coverage and magic level are verified.
+3. build a second return-to-reality transition family from an approved Magic Gate shot;
+4. begin coverage mapping against the lyric-film map only after the moving-asset library has enough variety to avoid repetition;
+5. still do not assemble the final master until asset coverage and magic level are verified.
