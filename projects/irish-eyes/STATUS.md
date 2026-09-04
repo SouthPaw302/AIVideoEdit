@@ -89,20 +89,59 @@ Implemented: slowed real source motion, independent water, source-derived mirror
 
 See `EFFECT_PROOF_P02_REFLECTION_PORTAL.md`.
 
+## Effect proof P03 — Storm Revelation
+
+Shot package: `IE_P03_STORM_REVELATION`, real source frames 614–743.
+
+### P03 V1
+
+- 4.333333 s / 30 fps / 360x640 proof;
+- 130 frames;
+- 0 black frames;
+- mean frame delta 3.764871799185329;
+- SHA-256 `37057a16c76af3cdaf4d15d598619d7a7243d4915034d904b6f52574511e10b5`.
+
+Implemented: source-motion base, storm pressure, source-cloud warping, independent water, Gaussian-shaped sun/cloud light fields, rain, lightning, synchronized water-reflection flash, halation/prism and asymmetric camera push.
+
+**Magic Gate: REVISE.** Too much of the first rain treatment read as an overlay rather than scene-integrated weather.
+
+### P03 V2
+
+- 4.333333 s / 30 fps / 360x640 proof;
+- 130 frames;
+- 0 black frames;
+- mean frame delta 3.519861391490813;
+- SHA-256 `0828ebb9a8049e6976150f7ae53693c1837b838249d2d6c995b5d24725897dfd`.
+
+Changes: depth-layered rain with face/body protection, stronger cloud/water coupling, synchronized lightning + reflected flash, motivated bounce light, source-derived reflected/duplicate Brandi apparition in water, stronger storm push.
+
+**Magic Gate: REVISE / PROMISING.** More cinematic and internally coupled than V1, but still not enough of a spatial revelation to count as the final magic proof.
+
+See `MAGIC_GATE_03_STORM_REVELATION.md`.
+
 ## 3DGS path clarified
 
 See `projects/irish-eyes/3DGS_PIPELINE.md`.
 
 For true 3D Gaussian Splatting, real video frames must first pass Structure-from-Motion/camera recovery and a separate splat trainer. PlayCanvas/SuperSplat is the preferred inspection/edit/camera-animation/video-render stage once compatible splat data exists. Do not confuse this with Gaussian-shaped light fields.
 
+## Tool resilience / external execution
+
+The project is intentionally not dependent on one sandbox. GitHub remains the canonical checkpoint layer. Cloudflare R2/Workers/Pages are planned support layers when Wrangler is exposed/authenticated. CloudConvert has also been surfaced as an optional external file/video-processing fallback for custom FFmpeg workflows if local render execution is unavailable; do not use paid/external processing merely because it exists.
+
 ## Exact next production action
 
 Do not assemble the final film.
 
-Next proof target: a more favorable dramatic source window, especially around frame 614 or 743, using retained real motion plus a visibly authored atmospheric/perception event. Primary candidates:
+Next Magic Gate objective: **spatial entry into the real photograph/world**, not simply stronger overlays.
 
-1. **Storm Revelation** — cloud displacement, independent water, Gaussian light opening, rain/lightning/reflection response, dimensional camera travel, then return to real light;
-2. **Reflection Portal V2** — fix camera target so the reflection actually becomes the destination;
-3. **3DGS viability test** — isolate the strongest background/parallax window, test camera/SfM stability first, train only if the source supports it.
+Preferred order:
+
+1. build the cleanest possible source-derived waterfront background using neighboring real frames / alignment / reconstruction;
+2. preserve a real Brandi foreground plate;
+3. create a camera path that travels laterally/past the subject toward water/horizon;
+4. use depth differential, water movement, atmospheric occlusion and foreground exit to hide disocclusion limits;
+5. if that cannot be made convincing, build Reflection Portal V2 so the water/sunglasses reflection becomes the actual camera destination;
+6. run 3DGS/SfM viability when the execution environment exposes the reconstruction/training toolchain.
 
 **No final Irish Eyes video until multiple distinct shot packages independently pass the Magic Gate.**
