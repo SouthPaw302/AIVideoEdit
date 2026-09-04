@@ -2,12 +2,22 @@
 
 Created 2026-09-03 to make the ChatGPT Video Creation project recoverable from `main` even when a production chat, workspace, or active song branch is unavailable.
 
+## System-wide production rules
+
+Before starting or recovering any song/video production, read:
+
+- `general/PRODUCTION_SYSTEM_RULES.md`
+- `general/reusable/REUSABLE_EFFECTS_POLICY.md`
+
+These are binding repository-wide defaults. They establish the asset-first / shot-package workflow, mandatory reuse of the existing effect stack, storyboard-to-scene organization, preview-mode behavior, spatial-rendering distinctions, visible-effect proof requirements, and final-export QC expectations.
+
 ## Canonical video branches
 
 - `song/ironflame`
 - `song/silver-coin`
 - `song/leave-it-by-the-door`
 - `song/sigh-no-more`
+- `song/irish-eyes`
 
 ## Archive branches
 
@@ -32,6 +42,8 @@ Point-in-time recovery branches created from the current production tips:
 Silver Coin contains the most developed reusable effects stack currently in the repository. Its complete branch snapshot includes the `tools/` tree and effect/motion method documentation, including painterly motion, music-directed living-painting, temporal QC, narrative ribbon, Gaussian/volumetric methods, tiny-NeRF volume work, 2.5D/depth methods, and the V8 effect-pack renderer.
 
 For convenience, `general/reusable/silver-coin-tools/` and `general/reusable/silver-coin-docs/` directly preserve those trees as reusable resources.
+
+Important: future agents must inspect and reuse this library before inventing weaker replacements. Silver Coin's spatial lineage includes the actual `general/reusable/silver-coin-tools/video_fx/tiny_nerf_volume.py` neural-radiance-field renderer plus depth parallax, atmospheric, reflection, light, transition, motion-calibration, and QC tools. 3D Gaussian Splatting remains a separate repository-wide spatial technique and should be used when adequate source views/runtime support exist.
 
 ## Final-output status
 
@@ -59,4 +71,4 @@ Recovery/partial project. Sequential video-prompt architecture and visual direct
 
 ## Recovery rule
 
-For a future production agent: start at this file, then read the relevant `general/branch-snapshots/<video>/` snapshot and the canonical `song/<video>` branch. New meaningful work must still be checkpointed to the song branch during production, and important reusable methods should also be indexed here.
+For a future production agent: start at this file, then read `general/PRODUCTION_SYSTEM_RULES.md`, the relevant `general/branch-snapshots/<video>/` snapshot, and the canonical `song/<video>` branch. New meaningful work must still be checkpointed to the song branch during production, and important reusable methods should also be indexed here.
