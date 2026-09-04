@@ -4,89 +4,86 @@ Branch: `song/irish-eyes`
 
 ## Production state
 
-**V1.2 FINAL COMPLETE / FULL EXPORT QC PASSED.**
+**V1.3 FINAL COMPLETE / FULL EXPORT QC PASSED.**
 
-Irish Eyes is now a completed 16:9 Mountain Noir music film. The active portrait-era/V4 lineage is historical only; the canonical finished film is the landscape V1.2 master described below.
+Irish Eyes is a completed 16:9 Mountain Noir music film. V1.3 supersedes V1.2 only because the user supplied a distinct remastered WAV after V1.2 picture lock. The accepted V1.2 picture was preserved bit-for-bit at the H.264 elementary-stream level; V1.3 is an audio revision, not a picture rebuild.
 
 ## Canonical artistic master
 
-File: `IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`
+File: `IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`
 
-- 1280x720 / 16:9
-- 30 fps
-- H.264 / yuv420p / Rec.709-tagged working delivery
-- AAC-LC stereo / 48 kHz
-- duration: 187.133333 s
-- bytes: 232,411,236
-- SHA-256: `a7bc3cd9674b8eaf6a55c28dc6898dc136afc5c668bd95409dce06dc9f10dba7`
-- persistent Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`
-- persistent Library ID: `libfile_f35a75d11c748191ae3d25960667b0a9`
+- 1280x720 / 16:9 / 30 fps
+- H.264 / yuv420p / Rec.709-tagged
+- AAC-LC stereo / 48 kHz / ~320 kb/s
+- picture duration: 187.133333 s
+- song audio duration: 187.120000 s
+- bytes: 232,364,425
+- SHA-256: `d0ace58c5e2b226cd08a928fc6f9b5ebcd3e2a949805adaa37fc94647ba603ae`
+- Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`
+- Library ID: `libfile_188ada3ee1c88191ae217eeb834402cd`
 
-This is the canonical film master. It ends on the artistic water/light ending and does not include the separate post-roll channel card.
+This is the canonical artistic film and ends on the water/light ending without the separate post-roll channel card.
 
 ## Canonical YouTube upload package
 
-File: `IRISH_EYES_V1_2_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
+File: `IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
 
 - 1280x720 / 30 fps
-- H.264 + AAC stereo 48 kHz
-- duration: 192.154667 s
-- bytes: 238,142,353
-- SHA-256: `edae4a9b65a23c705228d58a41aa1e6eba14a378e3096657f6f22d62c9f3e362`
-- persistent Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_2_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
-- persistent Library ID: `libfile_e6ace24d89c8819183d12bcbb471ef98`
+- H.264 + AAC-LC stereo / 48 kHz
+- duration: 192.154000 s
+- bytes: 238,095,490
+- SHA-256: `857b690b49e29724bcd625998e79f2fdc4873dc201c238628952ad4f53cc0763`
+- Library path: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
+- Library ID: `libfile_0c67dfde60ec8191a37a97e520139892`
 
-The extra ~5.02 s is separate Mountain Noir post-film packaging. The artistic film itself remains the 187.13 s canonical master above.
+The extra runtime is the separate Mountain Noir post-film card; the artistic film remains the 187.13 s master above.
+
+## Authoritative audio source
+
+The user-supplied remaster is now canonical:
+
+`Irish eyes (Remastered) FINAL SOURCE.wav`
+
+- 187.120000 s
+- 48 kHz / stereo / PCM 16-bit
+- bytes: 35,927,212
+- SHA-256: `b4255e04f31cf7c137ceea82222138c9e07ccc27de4aa8b83b8334814c4d5f46`
+- integrated loudness: approximately -15.0 LUFS
+- loudness range: 5.7 LU
+- true peak: approximately -2.4 dBFS
+- Library ID: `libfile_721852b16ee4819187b553f2e13f459a`
+
+See `AUDIO_REVISION_V1_3.md`.
+
+## Picture identity / QC inheritance
+
+The V1.3 artistic-master video stream has MD5 `9f65035bc4bccd4716c22a1f8767a11f`, identical to V1.2. The V1.3 upload-with-outro video stream has MD5 `cab7b37955fd3fcead3a68b4d529099a`, also identical to V1.2.
+
+Therefore the V1.2 picture QC remains valid without a lossy picture re-render:
+
+- no black-frame events at the production threshold;
+- earlier freeze tells near ~20.7 s and ~51.0 s were already repaired before V1.2;
+- stricter 0.30 s low-motion candidates near ~73.23 s and ~102.10 s were manually cleared as intentional continuous motion;
+- no sideways source footage;
+- no blurred portrait sidebars;
+- no accepted duplicate-Brandi or mirrored L18 construction;
+- final refrain progressively returns to photographic reality;
+- water/light ending preserved.
+
+The V1.3 container also passed full video decode verification after remuxing the new audio.
 
 ## Final picture lineage
 
-The final landscape build follows `ROUGH_CUT_16X9_PLAN_V1.md` and preserves real Brandi footage/frames as the identity anchor while using approved source-derived optical, spatial and environmental memory language.
+Landscape closeout remains unchanged from V1.2:
 
-Landscape-native additions that closed the handoff queue:
+- L18 V3 — KEEP
+- L20 Water→Wet Road V3 — KEEP
+- L21 Road/Rain-Glass V3 — KEEP
+- L22 Warm Window/Candle V1 — KEEP
+- L23 Dark Lake/Ridge V2 — KEEP
 
-- L18 V2 — rejected for mirrored/symmetrical background construction
-- L18 V3 — KEEP — SHA `eb401e851dbfde4e4965a6005100311e06a32d5f4e07dcd1d974d1975854d0d5`
-- L20 Water→Wet Road V3 — KEEP — SHA `a1f72eff639afc368f778537dc0ab334c8d89f047ef2a1515ba47fec8f784d12`
-- L21 Road/Rain-Glass V3 — KEEP — SHA `161dcefb278f9f09eb96f3d96041110b338f9bbe84c87469b547f860eac6821d`
-- L22 Warm Window/Candle V1 — KEEP — SHA `69814efe52df37fa7db1ba6ae1d89f59be27c91df027c033e831c9e5f58d4af2`
-- L23 Dark Lake/Ridge V2 — KEEP — SHA `9bce0b9fd9f0f3eb29a8d2ea0c7bc75dd3e46ceb72e009f7fe7ee904cfb4cb0a`
-
-See `LANDSCAPE_NATIVE_BATCH_02.md` and `ROUGH_CUT_16X9_V1_QC.md`.
-
-## Audio
-
-The original `Irish eyes (Remastered).wav` was recovered from persistent Library storage before finalization and used as the authoritative song source for the finished film. The previous handoff warning that the WAV was unavailable is obsolete.
-
-Final audio QC:
-
-- integrated loudness: approximately -14.3 LUFS
-- loudness range: 6.2 LU
-- true peak: approximately -2.7 dBFS
-
-## Final QC result
-
-The actual encoded V1.2 master was scanned, not merely the timeline.
-
-Passed:
-
-- correct 1280x720 / 30 fps / H.264 / AAC 48 kHz streams
-- no black-frame events at the production detector threshold
-- no corrupt or broken export intervals found
-- final full-timeline visual contact review passed
-- earlier material freeze candidates near ~20.7 s and ~51.0 s were removed during V1.1/V1.2 finishing
-- a stricter detector found two exactly-0.30 s low-motion candidates at ~73.23 s and ~102.10 s; frame-by-frame visual review confirmed these are intentional/continuous slow-motion transition and dark-lake moments, not frozen/corrupt frames
-- song duration/audio continuity verified
-- artistic effects remain visible without replacing Brandi's identity
-
-Persistent QC:
-
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_V1_2_FINAL_QC_CONTACT.jpg`
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_V1_2_FREEZE_FIX_QC_01.jpg`
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_V1_2_FREEZE_FIX_QC_02.jpg`
-- `/Video Creation/Irish Eyes/QC/IRISH_EYES_FINAL_BORDERLINE_FREEZE_QC.jpg`
-
-See `FINAL_MASTER.md` and `FINAL_QC.md`.
+See `LANDSCAPE_NATIVE_BATCH_02.md`, `ROUGH_CUT_16X9_V1_QC.md`, `FINAL_MASTER.md`, `FINAL_QC.md`, and `AUDIO_REVISION_V1_3.md`.
 
 ## Completion rule
 
-No further production work is required for V1.2. Future changes are revisions/new versions, not completion blockers.
+No further production work is required for V1.3. Future changes must increment the version and are revisions, not completion blockers.
