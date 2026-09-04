@@ -49,6 +49,7 @@ Store here:
 - tool/connector interfaces
 - storage references
 - production decisions
+- the canonical cross-project effect/loop/transition registry
 
 Large binary media should normally live in the active ChatGPT project/workspace or external object storage and be referenced by manifest.
 
@@ -61,15 +62,20 @@ Large binary media should normally live in the active ChatGPT project/workspace 
 3. Read `REPOSITORY_INDEX.md`.
 4. Read `CHAT_RECOVERY_LOG.md`.
 5. Read `PROJECT_INDEX.md`.
-6. Read `docs/CANON_WORKFLOW.md`.
-7. Read `docs/CONTINUOUS_CHECKPOINT_POLICY.md`.
-8. Read `docs/VISUAL_STYLE_CATALOG.md`.
-9. Read `docs/ARCHITECTURE.md`.
-10. Read `docs/STORAGE_AND_CONNECTORS.md`.
-11. Resolve the active song branch from `PROJECT_INDEX.md`.
-12. On that branch, read everything in `projects/<slug>/`, especially `PROJECT.md`, `STATUS.md`, `VISUAL_DNA.md`, `EFFECTS_PLAN.md`, `DECISIONS.md`, and `ASSET_MANIFEST.json`.
-13. Inspect the current repo/branch state before modifying anything.
-14. Use only legitimately available tools and continue production without repeatedly asking for minor decisions already settled in the project files.
+6. Read `CANONICAL_EFFECTS.md`.
+7. Read `general/reusable/README.md`.
+8. Read `general/reusable/CANONICAL_EFFECT_REGISTRY.md`.
+9. Read `general/reusable/PROJECT_TECHNIQUE_LINEAGE.md`.
+10. Read `general/reusable/EFFECT_PACKAGE_STANDARD.md` and `general/reusable/REUSABLE_EFFECTS_POLICY.md`.
+11. Read `docs/CANON_WORKFLOW.md`.
+12. Read `docs/CONTINUOUS_CHECKPOINT_POLICY.md`.
+13. Read `docs/VISUAL_STYLE_CATALOG.md`.
+14. Read `docs/ARCHITECTURE.md`.
+15. Read `docs/STORAGE_AND_CONNECTORS.md`.
+16. Resolve the active song branch from `PROJECT_INDEX.md`.
+17. On that branch, read everything in `projects/<slug>/`, especially `PROJECT.md`, `STATUS.md`, `VISUAL_DNA.md`, `EFFECTS_PLAN.md`, `DECISIONS.md`, `ASSET_MANIFEST.json`, and any current handoff/production-rules files.
+18. Inspect the current repo/branch state before modifying anything.
+19. Use only legitimately available tools and continue production without repeatedly asking for minor decisions already settled in the project files.
 
 ---
 
@@ -77,8 +83,8 @@ Large binary media should normally live in the active ChatGPT project/workspace 
 
 - Use one production branch per song: `song/<slug>`.
 - Prefer one fresh production chat per video so media generation and rendering do not overload a single conversation.
-- Search `REPOSITORY_INDEX.md` and `PROJECT_INDEX.md` before beginning or recovering work.
-- Keep global workflow and style vocabulary discoverable from `main`; keep active song decisions and assets on the song branch until intentionally merged.
+- Search `REPOSITORY_INDEX.md`, `PROJECT_INDEX.md`, and the canonical effect registry before beginning or recovering work.
+- Keep global workflow, style vocabulary, and reusable production technology discoverable from `main`; keep active song decisions and assets on the song branch until intentionally merged.
 - Every project must preserve its branch, project path, canonical source filenames, cryptographic hashes when available, style lock, reference assets, current status, and exact next action.
 - Before changing chats or agents, update `STATUS.md` and `ASSET_MANIFEST.json`.
 
@@ -117,10 +123,37 @@ Generated images and effects must be traceable:
 - record prompt/version, intended shot, hash, dimensions, storage path/ID, approval state, and QC notes;
 - commit practical-size canonical images, contact sheets, masks, previews, scripts, and effect tests to the song branch;
 - when originals are too large, preserve a representative preview plus hash and durable external reference;
-- select effects from `docs/VISUAL_STYLE_CATALOG.md` and lock their actual project use in `EFFECTS_PLAN.md`;
+- select effects from `docs/VISUAL_STYLE_CATALOG.md` and `general/reusable/CANONICAL_EFFECT_REGISTRY.md`, then lock their actual project use in `EFFECTS_PLAN.md`;
 - never leave a critical approval or rejection only in chat.
 
 See `docs/CONTINUOUS_CHECKPOINT_POLICY.md`.
+
+---
+
+## 3C. Mandatory reusable-effects preflight
+
+AIVideoEdit has accumulated reusable visual technology across multiple productions. **Do not start from zero.**
+
+Before creating a new loop, transition, animation, atmosphere treatment, spatial effect, audio-reactive behavior, or QC method:
+
+1. search `general/reusable/CANONICAL_EFFECT_REGISTRY.md` / `.json` for the visual need;
+2. inspect the existing implementation/reference path;
+3. respect the entry's validation status;
+4. adapt the existing technique when it fits rather than recreating it under a new song-specific name;
+5. keep the current song's art direction separate from the reusable implementation;
+6. when a genuinely new reusable method is created, register it before the production moves on.
+
+The current registry contains the accumulated lineage of Silver Coin, IronFlame, Irish Eyes, Leave It by the Door, Sigh No More / Irish Eyes Spanish Hair, and the wider AI Video Production System design.
+
+Important examples already preserved include:
+
+- Silver Coin's pseudo-depth, mesh breath, advected atmosphere, wet reflections, firelight, heat haze, light shafts, glints, transient warps, pigment transitions, object portal, narrative ribbon, audio reactivity, temporal QC, compact NeRF, and eight named V8 effect-loop presets;
+- Irish Eyes' real-footage restoration, halation, water shimmer, source-loop method, continuous soft-depth 2.5D and identity-safe QC;
+- IronFlame's rain/forge/fog/temporal-painting/integrated-visualizer/recursive-transition language;
+- Leave It by the Door's pre-rendered reusable scene/loop assembly pattern;
+- Sigh No More's sequential generated-cinema, wet-road, candlelight and ancestral-transition direction.
+
+A reusable effect must not die with a chat, branch, local directory, or finished song. Follow `general/reusable/EFFECT_PACKAGE_STANDARD.md`.
 
 ---
 
@@ -174,7 +207,7 @@ Before expensive animation/rendering, inspect for:
 
 Fix selectively. Do **not** regenerate a whole set because of one defect. Crop, mask, edit, darken, blur, cover with atmosphere, or replace only the failing shot.
 
-Motion QC must also check temporal flicker, texture boiling, unstable edges, morphing props, black frames, and sync.
+Motion QC must also check temporal flicker, texture boiling, unstable edges, morphing props, black frames, sync, freezes, duplicate passages, loop seams, and transition ghosting.
 
 ---
 
@@ -240,30 +273,27 @@ See `docs/STORAGE_AND_CONNECTORS.md`.
 
 ## 8. Active projects
 
-See `PROJECT_INDEX.md`.
+See `PROJECT_INDEX.md` for current production status. Do not assume the historically first flagship project is the currently active song.
 
-Current flagship/canonical production:
+### IronFlame historical canon
 
-### IronFlame
-Directory: `projects/ironflame/`
-
-This is the first project intended to exercise the full canon workflow.
+Directory: `projects/ironflame/` on its song branch/snapshot.
 
 Critical creative rule:
 
 > **The IronFlame is a woman. She is the recurring mythic protagonist.**
 
-Critical production rule:
+Critical production rule from the canon rebuild:
 
-> **The new canonical IronFlame film must be rebuilt from scratch. Do not reuse prior IronFlame MP4 renders, their frames, scene timing, transitions, or loops.**
+> **The new canonical IronFlame film must be rebuilt from scratch. Do not reuse prior IronFlame MP4 renders, their frames, scene timing, transitions, or loops as production sources.**
 
-Read the project directory before touching production.
+The techniques learned from IronFlame may still be preserved and reused through the canonical effect registry; the old rendered IronFlame media itself is excluded as a source for that rebuild.
 
 ---
 
 ## 9. Creative authority
 
-The user has explicitly given the system/director latitude to make strong creative choices. Do not stop for every minor decision. Use the song, lyrics, project files, and established visual DNA to keep moving toward a finished film.
+The user has explicitly given the system/director latitude to make strong creative choices. Do not stop for every minor decision. Use the song, lyrics, project files, established visual DNA, and reusable effect library to keep moving toward a finished film.
 
 The target feeling is:
 
@@ -292,5 +322,7 @@ Before ending a long session or moving to a new agent, update `STATUS.md` with:
 - exact next action
 - any technical failures/workarounds
 - decisions that must not be lost
+
+Also update the canonical effect registry whenever a reusable production technique is created, materially improved, rejected for a reusable reason, or recovered from historical work.
 
 This is how the project survives chat/context boundaries.
