@@ -33,54 +33,40 @@ Do not render the final master until the song-timed rough cut has been inspected
 
 ## Approved / provisional visual families
 
-- **P02 Reflection Portal V3** — KEEP; camera destination is source-derived water.
-- **P04 Spatial Entry V2** — KEEP; real frames 451–530, subject clears naturally while sky/far-water/near-water move at different rates.
-- **P05 Still Here / Time Dilation V2/V3** — KEEP; quiet closing magic / tonal refinement.
-- **P06 Opening Arrival V1** — KEEP; photographic reality anchor.
-- **P07 Hair Memory V2** — KEEP; real hair/dress motion + face-protected temporal trails.
-- **P08 Return Human Anchor V3/V4** — KEEP; photographic return anchor / tonal refinement.
-- **P10 Eyes Within / Sunglasses Portal V4/V5** — KEEP; dark lens reflection → source-derived waterfront / color refinement.
-- **T01 Sun / Water Memory Gate V1** — KEEP; reality→memory transition.
-- **T02 Water / Reality Return V2/V3** — KEEP; memory→reality transition / tonal refinement.
-- **P11 Water → Wet Road Memory V4** — KEEP provisional; water organically folds into wet reflective road/track memory.
-- **P12 Road Travel / Rain Glass V2** — KEEP provisional environmental pass.
-- **P13 Warm Window / Candle Memory V2** — KEEP provisional environmental pass.
-- **P14 Dark Lake / Ridge Horizon V2** — KEEP provisional environmental magic pass.
-- **T03 Glasses → Water → Road → Water V2** — KEEP provisional micro-hinge.
+- P02 Reflection Portal V3 — KEEP
+- P04 Spatial Entry V2 — KEEP
+- P05 Still Here / Time Dilation — KEEP
+- P06 Opening Arrival — KEEP
+- P07 Hair Memory — KEEP
+- P08 Return Human Anchor — KEEP
+- P10 Eyes Within / Sunglasses Portal — KEEP
+- T01 Sun / Water Memory Gate — KEEP
+- T02 Water / Reality Return — KEEP
+- P11 Water → Wet Road Memory V4 — KEEP provisional
+- P12 Road Travel / Rain Glass V2 — KEEP provisional
+- P13 Warm Window / Candle Memory V2 — KEEP provisional
+- P14 Dark Lake / Ridge Horizon V2 — KEEP provisional
+- T03 Glasses → Water → Road → Water V2 — KEEP provisional
 
 ## 16:9 working master library
 
-See `LANDSCAPE_MASTER_LIBRARY_V1.md`.
+See `LANDSCAPE_MASTER_LIBRARY_V1.md` and `LANDSCAPE_NATIVE_BATCH_01.md`.
 
-The already-rendered 1280x720 / 30 fps continuity components are now registered as the working landscape library:
+The earlier 1280x720 continuity components remain useful working assets L00–L12.
 
-- L00 P06 arrival;
-- L01 T01 reality→memory;
-- L02 P07 hair memory;
-- L03 P04 spatial entry;
-- L04 P10 eyes portal;
-- L05 T03 glasses/water/road/water;
-- L06 P11 water→road;
-- L07 P12 rain-glass road travel;
-- L08 P13 warm window/candle;
-- L09 P14 dark lake/ridge;
-- L10 T02 memory→reality;
-- L11 P08 photographic return;
-- L12 P05 quiet closing.
+### Newly rendered landscape-native real Brandi masters
 
-These are working picture assets, not automatically final-quality shots. Important shots should still be rebuilt directly from the highest-quality source when media execution is available.
+- **L15 Arrival Real V1** — KEEP — SHA `38a2213e3bdc9521f4b072a5f0dd922470a76772008ee3016836efe2764c12d4`
+- **L16 Irish Eyes Portrait V1** — KEEP — SHA `41e4e7157a62189731a2f8f14e461ad04e70f45e4de706bef58846bbada35745`
+- **L17 Hair Real Motion V1** — KEEP — SHA `1614cf2934039f80505e46db12b77f500feb970f8c64f1b7dfef3627e1f800d3`
+- **L18 Full-Body Waterfront 2.5D V1** — REJECTED because the background retained a giant duplicate Brandi
+- **L18 Full-Body Waterfront 2.5D V2** — rebuilt from clean real waterfront + one real Brandi alpha; QC HOLD — SHA `08ef5521787fa935ab3aca157a1c5ce8b5b4ec665782777d5cdaf3a33cf231e1`
+- **L19 Last Look Real V1** — KEEP — SHA `95d7b61aef858553f5e269cebde08619c68dbce037db62e9b96937df46d0d763`
 
-## Landscape-native real Brandi shots queued next
+Batch QC sheet:
+`landscape_16x9/qc/LANDSCAPE_MASTERS_L15_L19_QC.jpg`
 
-Direct-from-source recipes are locked for:
-
-- **L15 Arrival Real** — early source motion, landscape medium/close framing;
-- **L16 Irish Eyes Portrait** — sunglasses/face/hair real-source passage;
-- **L17 Hair Real Motion** — strongest wind/hair source window;
-- **L18 Full-Body Waterfront 2.5D** — real Brandi subject plate + real source-derived waterfront extension;
-- **L19 Last Look Real** — late-source human passage for the ending.
-
-A batch render was attempted, then retried in smaller chunks, but the active local media executor began refusing all execution jobs. **Do not claim L15–L19 are rendered yet.** The recipes and intended narrative roles are preserved in the branch.
+The QC pass caught and removed the L18 V1 duplicate-person failure before rough assembly.
 
 ## Continuity validation
 
@@ -95,47 +81,37 @@ Purpose: verify that the established effect language survives cinematic 16:9 ref
 
 Portrait continuity reels remain effect-development references only.
 
-## 187.12-second rough-cut structure locked
+## 187.12-second rough-cut structure
 
 See `ROUGH_CUT_16X9_PLAN_V1.md`.
 
-The full picture structure is now mapped from 00:00.00 through 03:07.12, including:
+The full picture structure is mapped from 00:00.00 through 03:07.12, including title-over-opening reality, long real-Brandi sections, Irish-eyes portal, Spanish-hair movement, spatial entry, environmental memory-world sequence, return to reality, deep-memory Act III passage, and progressive removal of effects in the final refrain.
 
-- title inside the opening reality rather than extra pre-song runtime;
-- long real-Brandi sections in Acts I, III and IV;
-- Irish-eyes/sunglasses portal;
-- Spanish-hair motion language;
-- spatial entry;
-- water→road→rain-glass→warm-window→dark-lake environmental memory run;
-- return to photographic reality;
-- deep-memory loop in Act III;
-- progressive removal of effects in the final refrain;
-- separate YouTube post-roll after the artistic 187.12 s film ends.
-
-The remastered Irish Eyes WAV is not currently mounted in the active runtime, so the rough-cut plan uses the already-measured musical boundaries. Exact transient/phrase sync resumes when the original audio master is restored.
+The remastered Irish Eyes WAV is **not currently mounted in the active runtime**. Rough picture timing can follow the already-measured structural boundaries, but true transient/phrase sync and audio-reactive modulation must wait until the original audio master is restored.
 
 ## YouTube packaging — 16:9
 
 - `landscape_16x9/youtube_packaging/IRISH_EYES_YOUTUBE_INTRO_16x9_V2.mp4`
 - `landscape_16x9/youtube_packaging/IRISH_EYES_YOUTUBE_OUTRO_16x9_V2.mp4`
 
-Both are 1280x720 / 30 fps. The intro is designed to live over the song opening; the outro remains separate post-film packaging.
-
-## Tool resilience / current execution fallback
-
-The project rule remains tool-first. The local media executor is currently refusing video jobs. CloudConvert has been surfaced as the preferred connected fallback because it supports local-file video processing and custom FFmpeg workflows. It is not yet assumed connected/usable until the user completes the plugin connection. GitHub remains the canonical checkpoint layer while execution is unavailable.
+Both are 1280x720 / 30 fps. The intro lives over the song opening; the outro is separate post-film packaging.
 
 ## Literal 3D Gaussian Splatting decision
 
 This specific source clip does not show enough trustworthy real camera baseline for a forced 3DGS training pass. Reserve true splatting for deliberate multiview/translated-camera footage. Gaussian-shaped light fields remain allowed but must not be mislabeled 3DGS.
 
+## Current execution condition
+
+The local container rendered L15–L19 in smaller chunks but is intermittently refusing new media jobs again. Plugin discovery did not surface a connected deterministic FFmpeg/video-processing service suitable for this custom workflow, so GitHub remains the canonical checkpoint while the next render surface is retried.
+
 ## Exact next action
 
-1. when local or connected media execution becomes available, render **L15–L19** first at 1280x720 / 30 fps directly from the real source;
-2. QC those real-human landscape masters for crop quality, face/hair/hands, exposure and repeated composition;
-3. assemble the first **187.12 s landscape visual rough** from `ROUGH_CUT_16X9_PLAN_V1.md`;
-4. restore the original remastered Irish Eyes WAV before claiming true song-sync/audio-reactive timing;
-5. inspect the rough for repetition, pacing, visual fatigue and real-Brandi percentage;
-6. do **not** render/deliver the final master yet;
-7. after picture structure stabilizes, apply shot-by-shot exposure/white-balance/skin/dress matching, saturation/vibrance, contrast, highlight recovery, selective sky/water work, halation cleanup, denoise/sharpening/grain matching and transition polish;
-8. final export must pass full-runtime visual/technical QC before delivery.
+1. visually clear or revise L18 V2;
+2. render landscape-native environmental masters **L20 Water→Road, L21 Rain-Glass Travel, L22 Warm Window/Candle, L23 Dark Lake/Ridge** at 1280x720;
+3. assemble the first **187.12 s landscape visual rough** from `ROUGH_CUT_16X9_PLAN_V1.md` using L15–L23 plus approved transition families;
+4. preserve long real-Brandi passages so the movie does not become an effects reel;
+5. restore the original remastered Irish Eyes WAV before claiming true song sync;
+6. inspect the rough for repetition, pacing, visual fatigue and real-Brandi percentage;
+7. do **not** render/deliver the final master yet;
+8. after picture structure stabilizes, apply shot-by-shot exposure/white-balance/skin/dress matching, saturation/vibrance, contrast, highlight recovery, selective sky/water work, halation cleanup, denoise/sharpening/grain matching and transition polish;
+9. final export must pass full-runtime visual/technical QC before delivery.
