@@ -1,42 +1,75 @@
 {
   "archive_date": "2026-09-03",
+  "cleanup_date": "2026-09-03",
   "repository": "SouthPaw302/AIVideoEdit",
-  "main_base_commit": "9450059d3d5de1afc5cc138acd5283c93c79df3c",
+  "main_layout": "canonical indexes + docs + reusable library; whole-branch snapshot mirrors removed",
+  "pre_cleanup_branch": "archive/pre-cleanup-20260903",
   "videos": {
+    "irish-eyes": {
+      "canonical_branch": "song/irish-eyes",
+      "status": "active preview / storyboard-linked shot-package production",
+      "baseline": "IRISH_EYES_V4_REVIEW_MASTER.mp4",
+      "baseline_sha256": "4ac2a1e3f8b4556d0a384029686cfdf246042c81fed6a9b38a0592fd74637614",
+      "frames": 5611
+    },
     "ironflame": {
       "canonical_branch": "song/ironflame",
-      "archive_branch": "archive/video/ironflame",
-      "branch_commit": "06ba8f00d784b474b86e9093595e03180337607f",
-      "root_tree": "9985b478dd9350e27d7d98e0866da1572c18da7d",
+      "legacy_archive_branch": "archive/video/ironflame",
+      "legacy_archive_relation": "identical to canonical branch at cleanup time",
       "status": "V1 delivered; exact final MP4 archive reference remains a documented gap"
     },
     "silver-coin": {
       "canonical_branch": "song/silver-coin",
-      "archive_branch": "archive/video/silver-coin",
-      "branch_commit": "45367f11c72b631bab1181f39a162046a8c6e10c",
-      "root_tree": "b0cb0ac38c22912760ea1d94a8a64bb6ea72e7c3",
+      "legacy_archive_branch": "archive/video/silver-coin",
+      "legacy_archive_relation": "one commit behind canonical branch at cleanup time",
       "status": "V8 final complete / QC passed",
       "final_sha256": "b996cc251a73e93540abdcc7b8e1077959b5d82dcfb3396aa49c990302216d70",
       "persistent_library_id": "libfile_acfb04300bd88191b67e23b2ad736870"
     },
     "leave-it-by-the-door": {
       "canonical_branch": "song/leave-it-by-the-door",
-      "archive_branch": "archive/video/leave-it-by-the-door",
-      "branch_commit": "93761c0e604c94668bf57b9003ccb9c0040d2bf8",
-      "root_tree": "f12c767cb93cd99dd47d8c874b2d14de44d020c8",
+      "legacy_archive_branch": "archive/video/leave-it-by-the-door",
+      "legacy_archive_relation": "identical to canonical branch at cleanup time",
       "status": "recovery/partial"
     },
     "sigh-no-more": {
       "canonical_branch": "song/sigh-no-more",
-      "archive_branch": "archive/video/sigh-no-more",
-      "branch_commit": "3e6fe5d5fcc5057f595ee6b449f72b598b5015c2",
-      "root_tree": "d122bc777e8ae2482e993de387694cef5e8f8a3d",
+      "legacy_archive_branch": "archive/video/sigh-no-more",
+      "legacy_archive_relation": "identical to canonical branch at cleanup time",
       "status": "recovery/partial"
     }
   },
   "reusable": {
-    "silver_coin_tools_tree": "550abe0a95699f8f593de750cce16764e761768b",
-    "silver_coin_docs_tree": "ba4054646610547b4aefa79ca21adef0457a592e"
+    "root": "general/reusable/",
+    "canonical_registry": "general/reusable/CANONICAL_EFFECT_REGISTRY.json",
+    "silver_coin_tools": "general/reusable/silver-coin-tools/",
+    "silver_coin_specific_docs": "general/reusable/silver-coin-docs/",
+    "depth_parallax_25d": "general/reusable/depth-parallax-25d/",
+    "irish_eyes_tools": "general/reusable/irish-eyes-tools/"
+  },
+  "cleanup": {
+    "removed_from_main": [
+      "general/branch-snapshots/",
+      "general/reusable/silver-coin-docs/ARCHITECTURE.md",
+      "general/reusable/silver-coin-docs/CANON_WORKFLOW.md",
+      "general/reusable/silver-coin-docs/CONTINUOUS_CHECKPOINT_POLICY.md",
+      "general/reusable/silver-coin-docs/STORAGE_AND_CONNECTORS.md",
+      "general/reusable/silver-coin-docs/VISUAL_STYLE_CATALOG.md"
+    ],
+    "safe_delete_branch_refs_when_ref_deletion_is_available": [
+      "song/silver-coin-qc-final",
+      "song/silver-coin-v51-qc-temp",
+      "archive/video/ironflame",
+      "archive/video/leave-it-by-the-door",
+      "archive/video/sigh-no-more",
+      "archive/video/silver-coin",
+      "cleanup/worktree",
+      "cleanup/worktree2",
+      "cleanup/worktree3",
+      "cleanup/worktree4",
+      "cleanup/worktree5"
+    ],
+    "note": "The connected GitHub action set in the cleanup session did not expose branch-ref deletion. These refs were therefore not falsely reported as deleted. Canonical song branches and archive/pre-cleanup-20260903 preserve the required history."
   },
   "session_assets": {
     "ironflame_storyboard": {
