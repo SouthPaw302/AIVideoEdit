@@ -90,20 +90,89 @@ Decision: **REVISE / DO NOT PROMOTE.**
 
 Reason: the temporal idea is more original, but the vertical refractive/glass lines become too graphic against the photographic footage and the backlit face remains insufficiently recovered. Preserve the concept, not this render.
 
-## Next high-magic family
+## P09 — Memory Clone Refraction
 
-Build `IE_P09_MEMORY_CLONE_REFRACTION` from the real frame/alpha system already proven around frame 420.
+Source frame: 420.
 
-Target language:
+Intent: create source-derived surreal duplicates of Brandi without inventing a new person. The duplicate should feel like memory/refraction, not a pasted ghost.
 
-- main Brandi remains the real photographic anchor;
-- one smaller distant time-memory clone may exist at low opacity and softened detail;
-- a second clone may exist only as a distorted water reflection;
-- no synthetic replacement person;
-- clones must feel like memory/refraction, not three literal Brandis standing together;
-- independent background/water movement and motivated light continue underneath;
-- reject if the clone effect reads gimmicky, ghosted, or face-duplicating.
+### V1
+
+- 4.6 s / 30 fps / 360x640
+- 138 frames
+- 0 black frames
+- mean frame delta `0.658047772624358`
+- SHA-256 `954cc39c243fb33b96b5ec7149cf64a5b615594e0629ce2ca0deac35d34747ef`
+
+Decision: **REJECT.**
+
+The distant clone read like a translucent figure pasted into the sky.
+
+### V2
+
+- 4.8 s / 30 fps / 360x640
+- 144 frames
+- 0 black frames
+- mean frame delta `0.48065190162846416`
+- SHA-256 `8cfd9acf0892013c7a8d6a8dd2bf91deb47117033f28be85dd21dd27d444613c`
+
+Decision: **REVISE.**
+
+The clone was constrained to water/refraction and no longer floated in the sky, but the memory effect became too subtle to survive the Magic Gate.
+
+### V3
+
+- 5.0 s / 30 fps / 360x640
+- 150 frames
+- 0 black frames
+- mean frame delta `0.4840958822706935`
+- SHA-256 `8dd8e3d0b89078a8fc9a55936377eac181e2e181da9d81d9ad80d1aa062c1469`
+
+Decision: **REJECT AS MAGIC-GATE ASSET / RETAIN AS EXPERIMENT.**
+
+The water-constrained clone is more visible, but still reads as an apparition/shadow instead of premium refracted-water memory. Do not promote to the moving-asset library.
+
+Reusable lesson: source-derived human duplication must inherit the scene physics strongly enough that the viewer reads reflection/refraction first and clone second.
+
+## P10 — Eyes Within / Sunglasses Portal
+
+Source identity frame: 291.
+Source water/sky destination: clean right-side environment from frame 520.
+
+Intent: visually realize the storyboard beat `Eyes — the story within` by letting real South Florida water/sky appear inside Brandi's sunglasses, then moving the camera into a lens until the source-derived waterfront becomes the full frame.
+
+### V1
+
+- 5.2 s / 30 fps / 360x640
+- 156 frames
+- 0 black frames
+- mean frame delta `3.3174941942951017`
+- SHA-256 `276ae8c747b7f5879d904b3dfc1e49a6f971c9fe63b969fc0d16f53a08cd06f7`
+
+Decision: **REVISE / STRONG CONCEPT.**
+
+What works:
+
+- camera destination is a real source-derived waterfront;
+- the perception move is much stronger than an ordinary zoom;
+- the final handoff reads as entering the world inside the image;
+- no synthetic replacement person is used.
+
+What fails:
+
+- lens/reflection treatment appears too early and too broadly across the face;
+- sunglasses need tighter lens confinement before the camera gets close;
+- the first second should remain cleaner photographic truth.
+
+### V2 recipe locked
+
+- keep manual two-lens geometry rather than threshold segmentation, which also captures dark hair;
+- tighten each lens ellipse;
+- hold reflection strength near zero during the first ~18% of the shot;
+- ramp reflection only as the camera commits to the lens push;
+- preserve the existing source-water handoff and portal end-state;
+- QC the actual render before promoting.
 
 ## Batch rule
 
-T01 is accepted into the moving-asset library. P03 V3/V4 are not. No rejected storm proof may silently re-enter the full edit.
+T01 is accepted into the moving-asset library. P03 V3/V4 and P09 are not. P10 remains active but V1 is not approved. No rejected proof may silently re-enter the full edit.
