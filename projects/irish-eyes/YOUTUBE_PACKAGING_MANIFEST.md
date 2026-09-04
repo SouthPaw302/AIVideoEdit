@@ -1,46 +1,53 @@
 # Irish Eyes — YouTube Packaging
 
-These are separate packaging assets for eventual YouTube delivery. They are not permission to assemble or publish the final film.
+Status: **FINALIZED**
 
-## Intro V1
+The project now has both a canonical artistic master and a ready-to-upload Mountain Noir version with separate post-film branding.
 
-File: `youtube_packaging/intro/IRISH_EYES_YOUTUBE_INTRO_V1.mp4`
+## Landscape intro
 
-- real South Florida source footage only;
-- full project portrait resolution: 720x1280;
-- 30 fps;
-- H.264 / yuv420p;
-- ~4.2 s;
-- silent by design so final song audio can run underneath;
-- subtle warm grade, optical push, vignette;
-- bronze serif `IRISH EYES` title;
-- restrained `MOUNTAIN NOIR` channel line;
-- no synthetic person or generated video imagery.
+`IRISH_EYES_YOUTUBE_INTRO_16x9_V2.mp4`
 
-SHA-256: `d1590c20455f64176a1b5521af0c3a5cc82175e9e7359ef9e0fc18aab27a9a6d`
+- 1280x720 / 30 fps
+- designed to live over the opening song audio;
+- title treatment remains inside the artistic runtime rather than adding pre-song delay;
+- real/source-derived South Florida visual language;
+- portrait V1 intro is historical only.
 
-## Outro V1
+## Landscape outro
 
-File: `youtube_packaging/outro/IRISH_EYES_YOUTUBE_OUTRO_V1.mp4`
+`IRISH_EYES_YOUTUBE_OUTRO_16x9_V2.mp4`
 
-- real South Florida final-motion source;
-- full project portrait resolution: 720x1280;
-- 30 fps;
-- H.264 / yuv420p;
-- ~4.97 s;
-- silent by design;
-- emotional real image fades away first;
-- only after picture falls to black does the restrained Mountain Noir end card appear;
-- preserves the film rule that the narrative ending itself is water/light rather than a flashy logo.
+- 1280x720 / 30 fps
+- separate post-film channel card;
+- follows the artistic water/light ending;
+- does not alter the story ending itself;
+- portrait V1 outro is historical only.
 
-SHA-256: `829ebf19fd37c38e037b7346ba41b43c0fc30c4f3f906ebcbbebdd787a7930ad`
+## Canonical artistic film
+
+`IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`
+
+- duration: 187.133333 s
+- SHA-256: `a7bc3cd9674b8eaf6a55c28dc6898dc136afc5c668bd95409dce06dc9f10dba7`
+- Library: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_2_FINAL_YouTube_720p30.mp4`
+- Library ID: `libfile_f35a75d11c748191ae3d25960667b0a9`
+
+Use this when the film should end immediately on its own final image.
+
+## Canonical YouTube upload package
+
+`IRISH_EYES_V1_2_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
+
+- duration: 192.154667 s
+- SHA-256: `edae4a9b65a23c705228d58a41aa1e6eba14a378e3096657f6f22d62c9f3e362`
+- Library: `/Video Creation/Irish Eyes/Final/IRISH_EYES_V1_2_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`
+- Library ID: `libfile_e6ace24d89c8819183d12bcbb471ef98`
+
+This is the preferred channel-upload file when the Mountain Noir post-roll card is desired.
 
 ## QC
 
-Intro: no detected black/freeze failures.
+Both final encodes preserve 1280x720 / 30 fps H.264 video and AAC stereo 48 kHz audio. Final export QC is recorded in `FINAL_QC.md`.
 
-Outro: black/static detection during the final end-card interval is expected design, not a render fault.
-
-## Final-use rule
-
-Do not bake these into a final master until the full-song edit is picture-locked. Intro may sit over the opening song audio. Outro must follow the emotional water/light ending with enough separation that the end card reads as YouTube packaging rather than part of the story.
+The outro's intentionally static/near-black end-card behavior is packaging design, not part of the artistic film and not a render failure.
