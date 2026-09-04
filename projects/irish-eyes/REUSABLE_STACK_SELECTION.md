@@ -14,6 +14,37 @@ The goal is to prepare storyboard-linked production packages containing the actu
 
 Do not preview generated images/contact sheets in chat unless the user explicitly asks.
 
+## Canonical motion/quality reference
+
+Use the actual delivered Silver Coin final as the practical quality and motion reference for Irish Eyes:
+
+`Silver_Coin_V8_FINAL_YouTube_720p24.mp4`
+
+Verified reference properties from the user-supplied live YouTube master copy:
+
+- duration: 210.461333 s
+- resolution: 1280x720
+- frame rate: 24 fps
+- video codec: H.264
+- audio: AAC, 48 kHz stereo
+- SHA-256: `b996cc251a73e93540abdcc7b8e1077959b5d82dcfb3396aa49c990302216d70`
+
+This hash matches the archived canonical Silver Coin delivery record.
+
+The reference is important because its success comes from the combination of methods, not one isolated effect. It maintains coherent subjects and compositions while repeatedly changing depth, atmosphere, light, framing, pose, location, and visual energy. Motion is present inside the image without allowing the movie to collapse into a generic visualizer or simple zoom sequence.
+
+For Irish Eyes, compare preview shots against the *behavior* of this final rather than copying its painterly art direction. The benchmark is:
+
+- coherent visual identity throughout;
+- meaningful internal movement;
+- visible spatial/depth behavior;
+- motivated environmental effects;
+- transitions that feel authored rather than generic;
+- changing compositions and scene energy across the runtime;
+- recurring motifs that create continuity;
+- effects that support the image rather than obscure it;
+- enough finished shot variety that the eventual long-form edit feels alive.
+
 ## Mandatory repository-wide resources
 
 ### Silver Coin spatial/effect lineage
