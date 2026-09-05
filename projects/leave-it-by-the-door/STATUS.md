@@ -2,86 +2,79 @@
 
 **Updated:** 2026-09-05 UTC  
 **Branch:** `song/leave-it-by-the-door`  
-**State:** Native-24 V2 full render complete; awaiting user review
+**State:** Native-24 V2 accepted as picture baseline; V3 YouTube refinement active
 
-## Recovered source package
+## V2 baseline
 
-- Canonical remastered source audio: `Leave it by the door. (Remastered) (1).wav`.
-- 13 named generated hero stills recovered from the previous production handoff.
-- Prior reference clips, extracted frames, storyboard/project docs, masks, derivatives, render scripts, QC sheets and V1.1 were recovered.
-- V1.1 was diagnosed as visually under-sampled because its shot intermediates were rendered at 10 fps and then delivered inside a 24 fps container. V1.1 is retired as the quality target.
-
-## Motion/effects references
-
-User-supplied references:
-- `imagine-f9c3e46d.mp4`
-- `imagine-1fb7bb42.mp4`
-
-Both are true 24 fps. Their optical-flow and luminance behavior are used as irregular motion drivers. See `REFERENCE_MOTION_TARGETS.md`.
-
-## V2 production architecture
-
-Full renderer:
-`projects/leave-it-by-the-door/scripts/render_full_native24_v2.py`
-
-Render plan:
-`projects/leave-it-by-the-door/FULL_V2_RENDER_PLAN.md`
-
-V2 uses:
-- true per-frame native 24 fps rendering
-- 25 independently encoded/resumable shot masters
-- 1280×720 H.264 CRF 16 shot masters
-- reference-motion-driven exterior/weather and local character/fabric/instrument movement
-- rain, sea spray, moving wave/foam bands and wet shimmer
-- smoke/fog advection
-- warm/cool light migration
-- fire/candle breathing and volumetric warm shafts
-- embers and burden/ash motif
-- lightning/reflection accents
-- dawn birds and storm-to-gold progression
-- pigment/fog travel transitions
-- scene-fixed canvas texture
-- face/identity protection masks
-- camera motion intentionally secondary to internal scene motion
-
-## Full V2 render complete
-
-Final workspace/Library master:
+Canonical V2 master:
 `Leave_It_By_The_Door_NATIVE24_FULL_V2_720p24.mp4`
 
 Properties:
-- duration: 198.833333 s
-- resolution: 1280×720
-- frame rate: true 24 fps
-- frames: 4,772
-- H.264 video bitrate: ~7.23 Mbps
-- audio: AAC stereo, 48 kHz, ~320 kbps
-- file size: ~187.9 MB
+- 198.833333 s
+- 1280×720
+- true 24 fps
+- 4,772 individually rendered frames
+- H.264 ~7.23 Mbps
+- AAC stereo 48 kHz ~320 kbps
+- ~187.9 MB
 - SHA-256: `c82bdb31e7610c7de8d3da506940ebfade5fa6fa1a5af6d6d2ae6e2c4c43c05e`
 
-Every one of the 25 shot masters validated against its exact expected native frame count before assembly. Final video assembly used stream copy for the already-encoded shot video, avoiding a second generational video encode.
+V2 retired the rejected 10 fps intermediate workflow. It measured ~62% more adjacent-frame motion than V1.1 and had zero near-exact duplicate frame pairs in the direct scan.
 
-## QC
+User response to V2: **better / awesome** and keep it as the base.
 
-Direct reduced-resolution adjacent-frame scan:
-- V2 mean adjacent-frame motion: 3.1315
-- V1.1 mean adjacent-frame motion: 1.9270
-- V2 therefore carries ~62% more measured frame-to-frame motion than V1.1
-- V2 near-exact duplicate frame pairs: 0
-- V1.1 near-exact duplicate frame pairs: 7
+## Current user direction for V3
 
-Reference comparison:
-- high-energy storm reference mean adjacent motion: 10.0214
-- warm/light reference mean adjacent motion: 5.1089
-- V2 intentionally remains below the references' maximum motion energy to preserve painted character identity while substantially increasing living-scene motion over V1.1
+The final YouTube pass should:
+- keep V2's successful native-24 picture language;
+- reduce the visible shaking/global camera wobble;
+- add more believable internal loops;
+- strengthen animated fires, candles, embers, smoke, rain, water and reflections;
+- feel like premium long-form dynamic animated imagery on YouTube rather than obvious AI video;
+- keep characters/anatomy/painterly identity stable;
+- add intro and outro;
+- deliver the final upload file wrapped in a ZIP.
 
-QC record:
-`projects/leave-it-by-the-door/FULL_V2_QC.json`
+## Canonical FX V2 now integrated
 
-## Current decision point
+The repository-wide centralized FX runtime is now available directly on this song branch at:
+`general/reusable/fx_v2/`
 
-V2 should now be reviewed by the user for artistic intensity and scene-specific motion. Do not revert to the V1.1 10-fps-intermediate workflow. Further revisions should build from the native-24 V2 engine and completed shot architecture.
+This runtime consolidates effect implementations/lineage from Silver Coin, Irish Eyes, IronFlame and Leave It by the Door behind stable IDs.
+
+Selected approved V3 effects are recorded in:
+`projects/leave-it-by-the-door/V3_FX_MANIFEST.json`
+
+Current approved core includes localized living flow, water flow, advected smoke, rain plane, living flame, embers, practical-light breath, moving light field and temporal canvas lock.
+
+Transitions that remain `proof_required` are not allowed into the V3 FX manifest merely because code exists.
+
+## Hard precompile gate
+
+Before V3 final compile/render, run:
+`general/reusable/fx_v2/precompile_gate.py`
+
+The gate fails closed if an effect is only a registry placeholder, not wired into runtime code, contains placeholder/TODO/no-op logic, lacks approved rendered proof/QC, fails pixel-change/temporal tests, or violates effect-specific quality limits.
+
+A passing run creates `V3_FX_LOCK.json`; that lock must verify immediately before final compile so code/config changes cannot silently alter the render after approval.
+
+The same gate is enforced in GitHub Actions with both a positive approved-core test and a negative test that deliberately requests an unapproved effect and requires rejection.
+
+## Current production files
+
+Read in this order:
+1. `AGENT_HANDOFF.md`
+2. `V3_REFINEMENT_PLAN.md`
+3. `V3_FX_MANIFEST.json`
+4. `EFFECTS_PLAN.md`
+5. `REFERENCE_MOTION_TARGETS.md`
+6. `FULL_V2_QC.json`
+7. `scripts/render_full_native24_v2.py`
+
+## Next production action
+
+Build the V3 refinement renderer from the V2 shot architecture, using canonical FX V2 calls and lower camera amplitude. Render resumably at true 24 fps, add intro/outro, run full QC, save the YouTube master, and wrap final delivery in a ZIP.
 
 ## Storage
 
-GitHub remains the persistent control/source-of-truth layer for scripts, status, plans and QC metadata. The current environment does not expose an authenticated Cloudflare R2 connector. The 187.9 MB final master is saved persistently in ChatGPT Library; it is too large for a normal single-file GitHub repository object under GitHub's 100 MB file limit.
+GitHub is the persistent control/source-of-truth layer for code, manifests, status, effect locks and QC metadata. Large media masters remain in the active workspace/Library or approved object storage, with hashes/recovery locations recorded here when created.
