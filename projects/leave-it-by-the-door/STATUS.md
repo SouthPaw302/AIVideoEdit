@@ -65,25 +65,51 @@ Before V3 final compile/render, run:
 
 The gate fails closed if an effect is only a registry placeholder, not wired into runtime code, contains placeholder/TODO/no-op logic, lacks approved rendered proof/QC, fails pixel-change/temporal tests, or violates effect-specific quality limits.
 
-A passing run creates `V3_FX_LOCK.json`; that lock must verify immediately before final compile so code/config changes cannot silently alter the render after approval.
+`V3_FX_LOCK.json` currently records PASS for all nine requested V3 effects. The lock must still verify immediately before final compile so code/config changes cannot silently alter the render after approval.
 
-The same gate is enforced in GitHub Actions with both a positive approved-core test and a negative test that deliberately requests an unapproved effect and requires rejection.
+## V3 implementation checkpoint
+
+Executable refinement renderer committed:
+`scripts/render_v3_refinement.py`
+
+It consumes the accepted 25 native-24 V2 shot masters as source plates, damps high-frequency whole-frame translation, then layers canonical approved FX by scene family. It creates both an artistic song master and a separate YouTube version with intro/outro.
+
+A Library restore showed that the persistent V2 ZIP contains the final master but not the 25 intermediate shot files. The final V2 master was therefore scanned directly. The 24 strongest true visual joins recover the original 25-shot architecture exactly.
+
+Canonical recovered cut-frame map at 24 fps:
+`[153,305,478,645,813,906,1162,1385,1608,1840,2039,2269,2518,2762,2947,3127,3291,3480,3660,3876,4107,4328,4438,4649]`
+
+Recovery utility committed:
+`scripts/recover_v2_shots_from_master.py`
+
+It validates the accepted V2 fingerprint (24 fps / 4,772 frames), recreates frame-accurate CRF16 source plates and writes `RECOVERY_MAP.json`. This makes the final V2 master sufficient to resume V3 even when the original shot directory is gone.
+
+Sandbox proof status:
+- 2-second V3 proof rendered successfully;
+- 1280×720;
+- true 24 fps;
+- 48 frames;
+- character/identity remained visually stable in the inspected proof frame;
+- rain/water/light motion was added without introducing a new default camera zoom.
 
 ## Current production files
 
 Read in this order:
 1. `AGENT_HANDOFF.md`
-2. `V3_REFINEMENT_PLAN.md`
-3. `V3_FX_MANIFEST.json`
-4. `EFFECTS_PLAN.md`
-5. `REFERENCE_MOTION_TARGETS.md`
-6. `FULL_V2_QC.json`
-7. `scripts/render_full_native24_v2.py`
-8. `../../general/reusable/fx_v2/SPATIAL_3DGS_SUPERSPLAT.md`
+2. `STATUS.md`
+3. `V3_REFINEMENT_PLAN.md`
+4. `V3_FX_MANIFEST.json`
+5. `V3_FX_LOCK.json`
+6. `scripts/recover_v2_shots_from_master.py`
+7. `scripts/render_v3_refinement.py`
+8. `EFFECTS_PLAN.md`
+9. `REFERENCE_MOTION_TARGETS.md`
+10. `FULL_V2_QC.json`
+11. `general/reusable/fx_v2/SPATIAL_3DGS_SUPERSPLAT.md`
 
 ## Next production action
 
-Build the V3 refinement renderer from the V2 shot architecture, using canonical FX V2 calls and lower camera amplitude. Render resumably at true 24 fps, add intro/outro, run full QC, save the YouTube master, and wrap final delivery in a ZIP.
+Recover the 25 V2 source plates from the Library master, verify the FX lock immediately before compile, run the V3 refinement shot-by-shot/resumably, inspect representative storm/hearth/celebration/dawn proofs, then complete full QC, artistic master, YouTube intro/outro master and final ZIP delivery.
 
 ## Storage
 
