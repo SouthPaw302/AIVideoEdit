@@ -4,12 +4,18 @@
 **Timing authority:** canonical 04:04.680 song structure.  
 **Runtime:** generative-engine control bus at 24 fps.
 
+## Global transition rule
+
+No literal or implied fantasy gates, portals, doorway vortices, magic thresholds, tunnel openings, or scene-change apertures. The supplied references do not establish that language, so it is forbidden for this production.
+
+Transitions must emerge from existing REF-A / REF-B / REF-C elements only: orb trajectory, contour-line continuation, ribbon continuation, ring growth/collapse, light transfer, silhouette match position, face morph, palette migration, and depth/scale continuity. A transition must visibly connect outgoing and incoming imagery rather than cover a cut with an unrelated effect.
+
 ## 01 — 00:00–00:18 — “There is a house beneath the rain / where every window faces in”
 
 **Hero family:** REF-A.  
 **Hero image:** black silhouette at lower-left reaching toward an enormous blue flowing face occupying the right side; the face feels like an interior world rather than a literal person. A small warm orb sits between hand and face.
 
-**Expansion media:** create alternate wide compositions where the face contours bend inward like impossible architecture, but do not introduce a literal house, windows, rain, or scenery. The lyric is translated symbolically through inward-facing contour lines.
+**Expansion media:** create alternate wide compositions where the face contours bend inward like impossible architecture, but do not introduce a literal house, windows, rain, doorway, portal, or scenery. The lyric is translated symbolically through inward-facing contour lines.
 
 **Motion:** almost still. Orb drift only; slow contour flow; barely perceptible face breathing.
 
@@ -20,9 +26,11 @@
 **Hero family:** REF-A.  
 **Hero image:** silhouette in profile now closer to the face; orb has moved from hand toward the face/eye line.
 
-**Expansion media:** several adjacent states of the orb trajectory and hand pose, preserving the same silhouette grammar. The “doorway” becomes a circular contour aperture in the blue field, not a physical door.
+**Expansion media:** several adjacent states of the orb trajectory and hand pose, preserving the same silhouette grammar. The lyric word “doorway” is not rendered as a doorway, aperture, portal, gate, tunnel, or opening. Presence is communicated only by the orb leaving the hand and entering the face’s contour field.
 
-**Motion:** traveling orb; contour aperture opening slowly; no camera shake.
+**Motion:** traveling orb; contour lines subtly reorient around its path; no camera shake.
+
+**Transition into Shot 03:** the orb brightens one crystalline edge in the incoming REF-C face; contour flow becomes spectral ribbon. No portal or wipe layer.
 
 **Audio mapping:** onset -> orb micro-steps; high -> small contour sparkle; no unrelated effects.
 
@@ -91,7 +99,7 @@
 
 **Hero image:** faceted head and giant smooth face occupy opposite sides, connected by a looping ribbon/ring path that has no obvious up/down orientation.
 
-**Expansion media:** rotationally ambiguous compositions generated from the same blue/ribbon language; no literal hallway.
+**Expansion media:** rotationally ambiguous compositions generated from the same blue/ribbon language; no literal hallway, gate, portal, tunnel, or corridor.
 
 **Motion:** extremely slow field rotation limited to background/ribbon geometry; faces remain spatial anchors.
 
