@@ -64,7 +64,7 @@ Before creating a new effect, loop, transition, spatial method, camera behavior,
 - `general/reusable/CANONICAL_EFFECT_REGISTRY.json`
 - `general/reusable/PROJECT_TECHNIQUE_LINEAGE.md`
 
-Then inspect the implementation under `general/reusable/`.
+Then inspect the implementation under `general/reusable/`, especially `general/reusable/generative-engine/` before building a new song-level reactive analyzer or living-image runtime.
 
 Do not recreate weaker substitutes for technology already built in another song.
 
@@ -105,10 +105,13 @@ If Wrangler is not present or authenticated in the active runtime, record that l
 
 Current major trees:
 
+- `general/reusable/generative-engine/`
 - `general/reusable/silver-coin-tools/`
 - `general/reusable/silver-coin-docs/`
 - `general/reusable/depth-parallax-25d/`
 - `general/reusable/irish-eyes-tools/`
+
+The generative engine is the canonical shared timing/reactivity layer: analyze the song once, preserve a frame-aligned control bus, and let multiple visual systems consume the same smoothed RMS/onset/low/mid/high signals. Artistic parameter mappings remain song-specific and proof-gated.
 
 The registry preserves implemented and recovered methods from Silver Coin, Irish Eyes, IronFlame, Leave It by the Door, Sigh No More, and broader production-system work.
 
@@ -123,6 +126,8 @@ Important classes already available include:
 - halation/bloom/light shafts/glints
 - transient/performance warps
 - audio edit maps and audio-reactive controls
+- shared frame-aligned reactive control bus
+- organic generative visual plates for compositing
 - pigment/object/recursive transitions
 - integrated visualizer language
 - temporal QC
@@ -134,6 +139,7 @@ Important classes already available include:
 - **Hybrid NeRF** = a trained radiance-field component is composited with image/depth layers.
 - **3DGS** = actual Gaussian-splat scene data/primitives are rendered.
 - A Gaussian-shaped light field is not the same thing as 3D Gaussian Splatting.
+- A custom music-reactive field is not projectM/MilkDrop unless that actual engine is used.
 
 Never claim a technique merely because the result resembles it.
 
@@ -192,7 +198,7 @@ The song can drive:
 - camera amplitude
 - transition timing
 
-Prefer measured/smoothed controls over generic random movement or strobing.
+Prefer measured/smoothed controls over generic random movement or strobing. When several systems react to the same song, prefer one preserved generative-engine control bus over independent effect-specific re-analysis unless there is a documented reason to diverge.
 
 ## 12. QC law
 
@@ -266,7 +272,8 @@ A new agent should read, in order:
 1. `BIBLE.md`
 2. `PROJECT_INDEX.md`
 3. the canonical reusable-effect registry
-4. the complete active song project's own branch and handoff/status files
+4. `general/reusable/generative-engine/README.md` when the active work uses music-directed motion, living images or generated visual fields
+5. the complete active song project's own branch and handoff/status files
 
 Do not rebuild settled decisions from memory when the branch already records them.
 
