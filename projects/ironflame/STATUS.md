@@ -1,17 +1,35 @@
 # IronFlame — Current Production Status
 
-**Updated:** 2026-09-03 UTC  
-**Branch:** `song/ironflame`  
-**State:** **V1 rendered and delivered; final binaries require durable re-archive**  
-**Role:** First flagship production for the complete AIVideoEdit workflow
+**Updated:** 2026-09-05 02:16 EDT  
+**Branch:** `song/ironflame-20260905-0216`  
+**State:** **Timestamped V2 reference-motion pass rendered, QC scanned, and durably stored for review**  
+**Role:** Follow-up production pass based on three new user-supplied animated visual references
+
+## Current timestamped pass
+
+A new pass was created from the canonical `song/ironflame` branch without overwriting V1 history. The literal nested ref `song/ironflame/20260905-0216` cannot coexist with the existing Git ref `song/ironflame`, so the valid equivalent branch is `song/ironflame-20260905-0216`.
+
+Render: `IRONFLAME_20260905_V2_REFERENCE_MOTION_720p24.mp4`
+
+- duration: 244.680 s
+- resolution/fps: 1280x720 @ 24 fps
+- codecs: H.264 + AAC 48 kHz stereo
+- bytes: 163,692,507
+- SHA-256: `1444c80e9ef5a3bd11bce47f660938f0a5e0b6f59aec0607239db63baa5d8815`
+- Library ID: `libfile_59bccc6ffb5c8191b2785e7f1b886d61`
+- Library path: `/IRONFLAME_20260905_V2_REFERENCE_MOTION_720p24.mp4`
+- exported-file QC: runtime/probe pass; no >=0.5 s black stretches detected; no >=3 s accidental freezes detected
+
+See `runs/20260905-0216/RUN.md` and `runs/20260905-0216/QC.json` for source-reference hashes, mapping, render identity, and QC evidence.
+
+This V2 pass is a review checkpoint, not yet declared the replacement canonical master. The new references define motion/composition language but do not contain the canonical female IronFlame identity; a later identity-forward pass should preserve the strongest motion language while restoring the recurring woman where the story requires her.
 
 ## Non-negotiable canon
 
 - The IronFlame is a woman and the recurring mythic protagonist.
-- The canonical production was rebuilt from scratch.
-- No prior IronFlame MP4 frames, loops, edit timing, transitions, or rendered animation loops were reused.
-- Preserve the approved dark-folk/mythic-fantasy visual DNA and female character identity.
-- Keep further IronFlame work on `song/ironflame`, not directly on `main`.
+- Preserve the approved dark-folk/mythic-fantasy visual DNA and female character identity for identity-bearing scenes.
+- Keep further IronFlame work on an IronFlame production branch, not directly on `main`.
+- The film must remain directed and music-shaped, not a slideshow or generic visualizer.
 
 ## Canonical source package
 
@@ -23,65 +41,10 @@
 - Recoverable working reference parts: `assets/audio/working-reference.parts/`
 - Reconstruction instructions: `AUDIO_RECOVERY.md`
 
-## Completed production package
+## Historical V1 record
 
-- Signal-derived audio analysis and edit map.
-- Canonical female IronFlame character anchor.
-- Twelve newly generated exact-16:9 production stills.
-- Production contact sheet and visual storyboard.
-- Full prompt set, shot list, QC notes, and checksummed asset manifest.
-- Lossless WAV and 320 kb/s working reference preserved as checksummed GitHub parts.
-- A twelve-scene V1 assembled to the full 04:04.680 song.
-- Master and compact delivery files rendered and provided for download.
-
-## V1 delivery record
-
-### Master
-
-- Duration: 04:04.680
-- Scenes: 12
-- Resolution: 1280 x 720
-- Reported size: 58.9 MB
-- Status: rendered and delivered in the originating chat
-
-### Compact delivery
-
-- Duration: 04:04.680
-- Scenes: 12
-- Resolution: 540p
-- Reported size: 21.9 MB
-- Status: rendered and delivered in the originating chat
-
-## Archive gap
-
-The final V1 MP4 files are not present in this active workspace or GitHub, and no recoverable filename, SHA-256, Library ID, or object-storage URI was found in the available project context.
-
-Do **not** claim the final videos are durably archived yet. The source audio, stills, prompts, timing plan, and reconstruction data are preserved, but the exact delivered encodes must be reattached or relocated to durable storage.
-
-See `RENDER_HISTORY.md` and `ASSET_MANIFEST.json`.
-
-## Visual direction preserved
-
-- dark folk / mythic fantasy
-- haunted -> determined -> ascendant
-- female recurring protagonist
-- cinematic realism with painterly and abstract passages
-- forged iron, wet stone, rain, smoke, embers, ash, wolves, oath, memory
-- palette: ember orange -> iron blue -> ash gray -> dawn gold
-- integrated reactive geometry only where it belongs in the world
-- recursive transitions and temporal movement toward dawn
-- living layered scenes rather than slideshow motion
-
-Full rules remain in `PROJECT.md` and `VISUAL_DNA.md`.
-
-## Exact next actions
-
-1. Recover/reattach the 720p master and 540p delivery MP4.
-2. Verify exact filenames, codecs, frame rates, durations, byte counts, and hashes.
-3. Store them in Library or durable object storage and update `ASSET_MANIFEST.json`.
-4. Generate final-render QC evidence/contact sheets if missing.
-5. Treat V2 or additional rendering as a separate explicit production decision.
+V1 was previously rendered and delivered as a twelve-scene 1280x720 master plus a 540p compact delivery, but its exact final MP4 archive identity remains unrecovered. Its source audio, stills, prompts, timing plan, and reconstruction data remain preserved on `song/ironflame`.
 
 ## Continuous checkpoint rule
 
-After any new IronFlame work, update this status, manifest, decision/render history, and affected assets on `song/ironflame` before ending the work phase or switching chats.
+After any new IronFlame work, update status, manifest/identity records, render history, QC, and affected assets before ending the work phase or switching chats.
