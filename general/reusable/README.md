@@ -11,7 +11,8 @@ Before inventing a new effect or building a new song:
 3. read `PROJECT_TECHNIQUE_LINEAGE.md` to see which project created or validated each technique;
 4. read `EFFECT_PACKAGE_STANDARD.md` before creating a new reusable loop/effect;
 5. inspect the implementation path and proof/QC source listed for any effect you intend to reuse;
-6. only then create a new effect when the existing library cannot satisfy the shot.
+6. inspect `generative-engine/` before building a new song-level audio-reactive analyzer or living-image runtime;
+7. only then create a new effect when the existing library cannot satisfy the shot.
 
 ## Status language
 
@@ -28,6 +29,7 @@ Never upgrade an effect's status without evidence.
 
 ## Current canonical implementation trees
 
+- `generative-engine/` — shared music-reactive control bus plus streaming reference renderers for organic reactive fields and continuous living-image parallax. Song-specific mappings remain proof-gated.
 - `silver-coin-tools/` — deepest reusable CPU effect/audio/QC stack; includes hybrid painterly motion, audio reactivity, temporal QC, and compact NeRF volume rendering.
 - `silver-coin-docs/` — method catalog, motion calibration, visual style catalog, architecture and workflow references.
 - `depth-parallax-25d/` — continuous soft-depth 2.5D parallax renderer validated during Irish Eyes.
