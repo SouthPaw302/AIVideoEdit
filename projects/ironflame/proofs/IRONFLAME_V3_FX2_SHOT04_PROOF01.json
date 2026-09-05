@@ -1,0 +1,13 @@
+{
+  "proof": "IRONFLAME_V3_FX2_SHOT04_PROOF01",
+  "source": "crystalline_cosmic_encounter.png",
+  "fps": 24,
+  "frames": 144,
+  "duration_seconds": 6.0,
+  "size": [640, 360],
+  "song_start_seconds": 77.0,
+  "effects": ["FX2-MOTION-002", "FX2-LIGHT-001", "FX2-LIGHT-002", "FX2-SURFACE-001"],
+  "sha256": "ea775fde341e20033db1de416be1b200fe791d94dd6aed5937e8387802d1b79c",
+  "visual_qc": "PENDING HUMAN VISUAL QC",
+  "notes": ["Canonical FX2 runtime executed by ID on every frame.", "Canonical IronFlame frame-aligned controls drove energy/transient/brightness context."]
+}
