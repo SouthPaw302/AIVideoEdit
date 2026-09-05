@@ -1,0 +1,20 @@
+{
+  "filename": "Leave_It_By_The_Door_NATIVE24_LivingScene_PROOF01_720p24.mp4",
+  "state": "rendered",
+  "workspace": "/mnt/data/leaveit_native24_proof/Leave_It_By_The_Door_NATIVE24_LivingScene_PROOF01_720p24.mp4",
+  "library_filename": "Leave_It_By_The_Door_NATIVE24_LivingScene_PROOF01_720p24.mp4",
+  "sha256": "69d4499c6eb00797d00901944cb9e9227f713083d89e2aff3c251440e69cef7f",
+  "size_bytes": 9376467,
+  "duration_seconds": 6.0,
+  "resolution": "1280x720",
+  "fps": 24,
+  "video_codec": "h264",
+  "video_bitrate_bps": 12196298,
+  "audio_codec": "aac",
+  "audio_bitrate_bps": 297167,
+  "reference_clips": [
+    "imagine-f9c3e46d.mp4",
+    "imagine-1fb7bb42.mp4"
+  ],
+  "notes": "Native 24 fps proof using optical-flow signatures transferred from the supplied references into localized sea/cloud/hair/skirt regions plus motivated rain/spray/embers, wet reflections and light migration. Camera movement is secondary."
+}
