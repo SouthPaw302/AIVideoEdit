@@ -1,6 +1,7 @@
 {
   "project": "leave-it-by-the-door-v3",
   "updated_utc": "2026-09-05",
+  "state": "V3_COMPLETE_QC_PASS",
   "source_master": "Leave_It_By_The_Door_NATIVE24_FULL_V2_720p24.mp4",
   "source_sha256": "c82bdb31e7610c7de8d3da506940ebfade5fa6fa1a5af6d6d2ae6e2c4c43c05e",
   "fps": 24,
@@ -16,16 +17,50 @@
     {"shot":7,"start_frame":906,"end_frame_exclusive":1162,"frames":256,"status":"rendered_and_ffprobe_validated"},
     {"shot":8,"start_frame":1162,"end_frame_exclusive":1385,"frames":223,"status":"rendered_and_ffprobe_validated"},
     {"shot":9,"start_frame":1385,"end_frame_exclusive":1608,"frames":223,"status":"rendered_and_ffprobe_validated"},
-    {"shot":10,"start_frame":1608,"end_frame_exclusive":1840,"frames":232,"status":"rendered_and_ffprobe_validated"}
+    {"shot":10,"start_frame":1608,"end_frame_exclusive":1840,"frames":232,"status":"rendered_and_ffprobe_validated"},
+    {"shot":11,"start_frame":1840,"end_frame_exclusive":2039,"frames":199,"status":"rendered_and_ffprobe_validated"},
+    {"shot":12,"start_frame":2039,"end_frame_exclusive":2269,"frames":230,"status":"rendered_and_ffprobe_validated"},
+    {"shot":13,"start_frame":2269,"end_frame_exclusive":2518,"frames":249,"status":"rendered_and_ffprobe_validated"},
+    {"shot":14,"start_frame":2518,"end_frame_exclusive":2762,"frames":244,"status":"rendered_and_ffprobe_validated"},
+    {"shot":15,"start_frame":2762,"end_frame_exclusive":2947,"frames":185,"status":"rendered_and_ffprobe_validated"},
+    {"shot":16,"start_frame":2947,"end_frame_exclusive":3127,"frames":180,"status":"rendered_and_ffprobe_validated"},
+    {"shot":17,"start_frame":3127,"end_frame_exclusive":3291,"frames":164,"status":"rendered_and_ffprobe_validated"},
+    {"shot":18,"start_frame":3291,"end_frame_exclusive":3480,"frames":189,"status":"rendered_and_ffprobe_validated"},
+    {"shot":19,"start_frame":3480,"end_frame_exclusive":3660,"frames":180,"status":"rendered_and_ffprobe_validated"},
+    {"shot":20,"start_frame":3660,"end_frame_exclusive":3876,"frames":216,"status":"rendered_and_ffprobe_validated"},
+    {"shot":21,"start_frame":3876,"end_frame_exclusive":4107,"frames":231,"status":"rendered_and_ffprobe_validated"},
+    {"shot":22,"start_frame":4107,"end_frame_exclusive":4328,"frames":221,"status":"rendered_and_ffprobe_validated"},
+    {"shot":23,"start_frame":4328,"end_frame_exclusive":4438,"frames":110,"status":"rendered_and_ffprobe_validated"},
+    {"shot":24,"start_frame":4438,"end_frame_exclusive":4649,"frames":211,"status":"rendered_and_ffprobe_validated"},
+    {"shot":25,"start_frame":4649,"end_frame_exclusive":4772,"frames":123,"status":"rendered_and_ffprobe_validated"}
   ],
-  "completed_frame_total": 1840,
-  "next_shot": 11,
+  "completed_frame_total": 4772,
+  "next_shot": null,
+  "all_shots_complete": true,
+  "artistic_master": {
+    "file": "Leave_It_By_The_Door_NATIVE24_FULL_V3_720p24.mp4",
+    "frames": 4772,
+    "duration_seconds": 198.833333,
+    "sha256": "6157a7cab4f30df09207f9140874e5ce3561cd254cf30b5d1f33424df4c1d700",
+    "qc": "PASS"
+  },
+  "youtube_master": {
+    "file": "Leave_It_By_The_Door_V3_YOUTUBE_720p24.mp4",
+    "frames": 4916,
+    "duration_seconds": 204.833333,
+    "sha256": "fb0199318127681ab36122188572776c05e13b589ff2e38a3b3c97235a20dfb5",
+    "qc": "PASS",
+    "opening_title": true,
+    "post_roll_seconds": 6
+  },
+  "delivery_zip": "Leave_It_By_The_Door_V3_YOUTUBE_DELIVERY.zip",
   "proof_qc": "V3_PROOF_QC_2026-09-05.json",
   "fx_lock": "V3_FX_LOCK.json",
   "notes": [
-    "Shot renders are video-only H.264 CRF16 at native 24 fps; final audio is muxed after all 25 shots assemble.",
-    "Stabilizer state resets at every recovered shot boundary.",
-    "V3 effects are applied by scene family using the approved canonical FX set.",
-    "Local sandbox shot masters are transient; GitHub checkpoint and source V2 master in Library are sufficient to reconstruct/resume."
+    "All 25 recovered V2 shot segments were rendered through the V3 refinement stack and exact-frame validated.",
+    "Final artistic master preserves original remastered song runtime.",
+    "YouTube master adds opening title treatment and a six-second Mountainnoir post-roll over continuing dawn motion.",
+    "Full V3 QC passed: true 24 fps, 1280x720, expected frame counts, no black frames.",
+    "Large final binaries are stored in ChatGPT Library; GitHub remains the control/source-of-truth layer."
   ]
 }
