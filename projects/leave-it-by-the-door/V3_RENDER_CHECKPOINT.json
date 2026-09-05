@@ -1,0 +1,24 @@
+{
+  "project": "leave-it-by-the-door-v3",
+  "updated_utc": "2026-09-05",
+  "source_master": "Leave_It_By_The_Door_NATIVE24_FULL_V2_720p24.mp4",
+  "source_sha256": "c82bdb31e7610c7de8d3da506940ebfade5fa6fa1a5af6d6d2ae6e2c4c43c05e",
+  "fps": 24,
+  "resolution": [1280, 720],
+  "recovered_shot_boundaries_frames": [0,153,305,478,645,813,906,1162,1385,1608,1840,2039,2269,2518,2762,2947,3127,3291,3480,3660,3876,4107,4328,4438,4649,4772],
+  "completed_shots": [
+    {"shot":1,"start_frame":0,"end_frame_exclusive":153,"frames":153,"status":"rendered_and_ffprobe_validated"},
+    {"shot":2,"start_frame":153,"end_frame_exclusive":305,"frames":152,"status":"rendered_and_ffprobe_validated"},
+    {"shot":3,"start_frame":305,"end_frame_exclusive":478,"frames":173,"status":"rendered_and_ffprobe_validated"}
+  ],
+  "completed_frame_total": 478,
+  "next_shot": 4,
+  "proof_qc": "V3_PROOF_QC_2026-09-05.json",
+  "fx_lock": "V3_FX_LOCK.json",
+  "notes": [
+    "Shot renders are video-only H.264 CRF16 at native 24 fps; final audio is muxed after all 25 shots assemble.",
+    "Stabilizer state resets at every recovered shot boundary.",
+    "V3 effects are applied by scene family using the approved canonical FX set.",
+    "Local sandbox shot masters are transient; GitHub checkpoint and source V2 master in Library are sufficient to reconstruct/resume."
+  ]
+}
