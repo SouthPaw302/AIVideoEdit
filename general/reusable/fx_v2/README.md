@@ -16,12 +16,14 @@ The viewer should read a living image, not a still being shaken or zoomed.
 
 ## Runtime layers
 
-1. `surface` — stable canvas/pigment, local contrast, identity protection.
-2. `motion` — depth parallax, cloth/hair/crowd breath, water/foliage flow.
-3. `environment` — rain, rain glass, fog/smoke, spray, embers, fire.
-4. `light` — firelight, moving practical light, shafts, glints, temporal palette migration.
-5. `transition` — pigment, fog/light, reflection, doorway/depth, object portal, perceptual gates.
-6. `spatial` — honest 2.5D, NeRF atmosphere, and real 3DGS/SuperSplat integration when source geometry supports it.
+1. `audio` — shared frame-aligned reactive controls from `general/reusable/generative-engine/`.
+2. `surface` — stable canvas/pigment, local contrast, identity protection.
+3. `motion` — depth parallax, cloth/hair/crowd breath, water/foliage flow.
+4. `environment` — rain, rain glass, fog/smoke, spray, embers, fire.
+5. `light` — firelight, moving practical light, shafts, glints, temporal palette migration.
+6. `visualizer` — generated compositing plates that consume the shared control bus.
+7. `transition` — pigment, fog/light, reflection, doorway/depth, object portal, perceptual gates.
+8. `spatial` — honest 2.5D, NeRF atmosphere, and real 3DGS/SuperSplat integration when source geometry supports it.
 
 ## IDs
 
@@ -38,6 +40,8 @@ Example:
   ]
 }
 ```
+
+For music-directed projects, prefer a single preserved `FX2-AUDIO-001` analysis pass and map its smoothed controls into several effects rather than independently re-analyzing the song inside every renderer.
 
 ## Hard precompile gate
 
@@ -58,7 +62,7 @@ See `PRECOMPILE_FX_GATE.md`.
 
 ## Promotion gate
 
-No effect is promoted to `main` merely because code exists. Each candidate requires:
+No effect is promoted to production use merely because code exists. Each candidate requires:
 
 - deterministic implementation;
 - 3–10 second rendered proof;
@@ -73,14 +77,17 @@ Until that happens its `gate_status` remains `proof_required`, which makes the p
 ## Design improvements over V1
 
 - eliminate global shake as a default motion source;
+- analyze song reactivity once and preserve a common control bus;
 - cache static masks/fields once per shot;
+- stream full-song procedural renders rather than buffering every frame in RAM;
 - use loop-safe phase functions and advected fields instead of per-frame random noise;
 - protect faces/hands/instruments from broad warps;
 - support explicit ROIs/masks for fire, smoke, water, glass and reflective surfaces;
 - separate flame geometry from firelight illumination;
 - make transitions physically motivated by visible scene elements;
 - expose song-agnostic presets instead of hard-coded song paths;
-- keep real 3DGS clearly separate from 2D Gaussian light fields.
+- keep real 3DGS clearly separate from 2D Gaussian light fields;
+- keep custom reactive fields distinct from projectM/MilkDrop unless those actual engines are used.
 
 ## Source lineage being consolidated
 
@@ -88,4 +95,5 @@ Until that happens its `gate_status` remains `proof_required`, which makes the p
 - Irish Eyes Magic Gate perceptual/reflection/water/glass transition families;
 - IronFlame recursive transition and temporal-painting concepts;
 - Leave It by the Door native-24 localized weather/fire/identity-safe motion renderer;
+- the Generative Engine shared control-bus and streaming reference renderers;
 - SuperSplat for genuine Gaussian-splat scene editing/rendering only when valid splat geometry exists.
