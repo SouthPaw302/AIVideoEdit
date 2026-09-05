@@ -1,0 +1,22 @@
+{
+  "fps": 24,
+  "canvas": [1280, 720],
+  "source_reference_mode": "12.083333s forward/reverse ping-pong ingredients made from each 6.041667s user clip",
+  "layout": "portrait source centered over blurred full-frame spatial extension with subtle sinusoidal drift and vignette",
+  "scenes": [
+    {"id":1,"start":0.0,"end":18.0,"reference":"imagine-ae835deb.mp4","role":"house/rain premonition; abstract iron-memory field","flip":false},
+    {"id":2,"start":18.0,"end":42.0,"reference":"imagine-22d97f7e.mp4","role":"threshold/inward windows; reaching cosmic presence","flip":false},
+    {"id":3,"start":42.0,"end":77.0,"reference":"imagine-3324e842.mp4","role":"dust remembers / forge memory","flip":false},
+    {"id":4,"start":77.0,"end":95.0,"reference":"imagine-22d97f7e.mp4","role":"walls pronounce silence","flip":true},
+    {"id":5,"start":95.0,"end":110.0,"reference":"imagine-ae835deb.mp4","role":"sleeping distance / road abstraction","flip":true},
+    {"id":6,"start":110.0,"end":122.0,"reference":"imagine-3324e842.mp4","role":"unmade day / first warmth","flip":true},
+    {"id":7,"start":122.0,"end":137.0,"reference":"imagine-ae835deb.mp4","role":"quiet thunder / gravity inversion","flip":false,"extra":"subtle oscillating rotation"},
+    {"id":8,"start":137.0,"end":167.0,"reference":"imagine-22d97f7e.mp4","role":"hallway without end / reaching stranger","flip":false},
+    {"id":9,"start":167.0,"end":187.0,"reference":"imagine-3324e842.mp4","role":"underground recognition","flip":false},
+    {"id":10,"start":187.0,"end":210.0,"reference":"imagine-ae835deb.mp4","role":"IronFlame ascendant / reactive energy","flip":true,"extra":"higher saturation and oscillating rotation"},
+    {"id":11,"start":210.0,"end":233.0,"reference":"imagine-3324e842.mp4","role":"morning enters without sound","flip":true,"extra":"softened dawn-oriented grade"},
+    {"id":12,"start":233.0,"end":244.68,"reference":"imagine-22d97f7e.mp4","role":"legacy mark / final reaching image","flip":false,"extra":"2.2s fade to black"}
+  ],
+  "audio": "Ironflame (Remastered).wav",
+  "final_duration_seconds": 244.68
+}
