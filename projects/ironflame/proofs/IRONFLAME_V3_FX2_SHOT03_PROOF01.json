@@ -1,0 +1,13 @@
+{
+  "proof": "IRONFLAME_V3_FX2_SHOT03_PROOF01",
+  "source": "cosmic_recognition_in_blue_light.png",
+  "fps": 24,
+  "frames": 144,
+  "duration_seconds": 6.0,
+  "size": [640, 360],
+  "song_start_seconds": 42.0,
+  "effects": ["FX2-MOTION-002", "FX2-LIGHT-001", "FX2-LIGHT-002", "FX2-SURFACE-001"],
+  "sha256": "a38362a533c8273fe38731d36edfcf43bba03831f94c212009e82a09bcc3ab2c",
+  "visual_qc": "PENDING HUMAN VISUAL QC",
+  "notes": ["Canonical FX2 runtime executed by ID on every frame.", "Canonical IronFlame frame-aligned controls drove energy/transient/brightness context."]
+}
