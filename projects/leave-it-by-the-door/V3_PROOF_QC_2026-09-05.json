@@ -1,0 +1,54 @@
+{
+  "project": "leave-it-by-the-door-v3",
+  "date_utc": "2026-09-05",
+  "source_master": "Leave_It_By_The_Door_NATIVE24_FULL_V2_720p24.mp4",
+  "proofs": [
+    {
+      "name": "celebration",
+      "source_window_seconds": [130.0, 132.0],
+      "frames": 48,
+      "fps": 24,
+      "resolution": [1280, 720],
+      "v2": {
+        "mean_adjacent_absdiff": 4.570577684869158,
+        "p90_adjacent_absdiff": 6.490444469451903,
+        "near_duplicate_pairs": 0,
+        "mean_global_shift_px_at_160w": 0.068139365527017,
+        "p90_global_shift_px_at_160w": 0.10450073952354307
+      },
+      "v3": {
+        "mean_adjacent_absdiff": 4.388089570593326,
+        "p90_adjacent_absdiff": 6.556124877929687,
+        "near_duplicate_pairs": 0,
+        "mean_global_shift_px_at_160w": 0.07068706886996722,
+        "p90_global_shift_px_at_160w": 0.04675681985144261
+      },
+      "result": "PASS",
+      "notes": "No duplicate cadence. Fast whole-frame motion tail materially reduced while flame/embers/smoke/local flow remain active."
+    },
+    {
+      "name": "dawn",
+      "source_window_seconds": [183.0, 185.0],
+      "frames": 48,
+      "fps": 24,
+      "resolution": [1280, 720],
+      "v2": {
+        "mean_adjacent_absdiff": 2.5613756091036697,
+        "p90_adjacent_absdiff": 2.67648606300354,
+        "near_duplicate_pairs": 0,
+        "mean_global_shift_px_at_160w": 0.025070872179672035,
+        "p90_global_shift_px_at_160w": 0.04043024579668798
+      },
+      "v3": {
+        "mean_adjacent_absdiff": 2.3599187249832965,
+        "p90_adjacent_absdiff": 2.524180603027343,
+        "near_duplicate_pairs": 0,
+        "mean_global_shift_px_at_160w": 0.022861877198200962,
+        "p90_global_shift_px_at_160w": 0.03648346911957788
+      },
+      "result": "PASS",
+      "notes": "No duplicate cadence. Dawn remains calm with reduced global drift and independent water/light/smoke motion."
+    }
+  ],
+  "decision": "Proceed to resumable full V3 production using the current family effect stack. Preserve native 24 fps and reset stabilizer at recovered shot joins."
+}
