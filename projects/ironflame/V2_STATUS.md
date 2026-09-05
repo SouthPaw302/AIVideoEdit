@@ -6,7 +6,7 @@
 
 ## Current state
 
-Production has started using the new generative-engine roadmap and FX V2 system.
+Production is actively using the new generative-engine roadmap and FX V2 system.
 
 Completed:
 
@@ -14,47 +14,46 @@ Completed:
 - 12-frame contact-sheet extraction for each reference;
 - hard visual-style lock written in `V2_REFERENCE_STYLE_LOCK.md`;
 - 12-shot lyric/hero structure written in `V2_HERO_SHOT_MAP.md`;
-- V2 roadmap written in `V2_PRODUCTION_ROADMAP.md`;
 - full song analyzed at native production 24 fps using the canonical reactive-control algorithm;
 - 5,873 frame-aligned control records generated;
-- control summary preserved under `assets/analysis/v2_control_summary_24fps.json`;
-- first REF-A wide hero produced strictly from an extracted source frame, using source-derived side expansion only;
-- authored depth map created for that hero;
-- repo `streaming_living_parallax` implementation reproduced from `main@e6ba077c` and proof-tested at low amplitude;
-- first proof was rejected as too subtle by temporal delta check;
-- second proof increased motion slightly and passed the local visible-motion threshold without adding unrelated effects.
+- generated support media constrained to the REF-A / REF-B / REF-C language;
+- V2.0 rough cut assembled and final-file QC performed;
+- V2.1 targeted REF-B revision built after dead-zone detection;
+- V2.2 rebuilt all 12 scenes with shorter hero holds, stronger restrained source-preserving push/drift, and substantially more of the actual supplied reference-video motion;
+- V2.2 final exported movie scanned at reduced QC resolution with `blackdetect` and `freezedetect`;
+- V2.2 produced zero black events and zero >=2-second freeze events at the selected QC threshold.
 
-## Durable production files
+## V2.2 review render
 
-Library root: `/AIVideoEdit/IronFlame_V2_20260905/`
+- duration: 244.666667 s picture / 244.680 s canonical audio target
+- resolution: 1280x720
+- frame rate: 24 fps
+- video: H.264
+- audio: AAC from `Ironflame (Remastered).wav`
+- SHA-256: `80f165f947fc1a3db41f32f8a52b160adcdb17af63a304a066a76b054dd403db`
+- Library: `/AIVideoEdit/IronFlame_V2_20260905/IRONFLAME_V2_2_REVIEW_720p24.mp4`
+- Library ID: `libfile_33fe581a1b8081919e94c4125c277638`
 
-- full 24 fps reactive controls: `/AIVideoEdit/IronFlame_V2_20260905/ironflame_controls_24fps.json`
-  - Library ID: `libfile_bfe938e7a17881918c3bdf4f9fbadb66`
-  - SHA-256: `70a94ccb4d0239af7ab8748c876566ccc6a9f7a4b02af496bddaf5b0bd343594`
-- Shot 01 wide hero: `/AIVideoEdit/IronFlame_V2_20260905/shot01_refA/shot01_refA_hero_wide_source_preserved.png`
-  - Library ID: `libfile_bdc918f8be5081918e20a69e4e228390`
-- Shot 01 authored depth: `/AIVideoEdit/IronFlame_V2_20260905/shot01_refA/shot01_refA_authored_depth.png`
-  - Library ID: `libfile_1e25fcdbe81481918050e65354894a19`
-- Shot 01 4-second proof with song audio: `/AIVideoEdit/IronFlame_V2_20260905/shot01_refA/shot01_refA_proof_v2_with_audio.mp4`
-  - Library ID: `libfile_0450a784e5f48191b8b3283bf042b231`
+Compact review:
 
-## Shot 01 proof result
+- `/AIVideoEdit/IronFlame_V2_20260905/IRONFLAME_V2_2_COMPACT_540p24.mp4`
+- Library ID: `libfile_a7a6a263b5dc8191b08a55895758007b`
+- SHA-256: `615044c88f31e9faaeffb5a6b21984fb637edda8e3e01807ef7f60bf54222de1`
 
-- duration: 4.0 s
-- 24 fps / 96 frames
-- depth mode: provided authored depth map
-- mean temporal delta: 0.0005010
-- max temporal delta: 0.0011847
-- minimum frame mean luma: 41.13
-- black frames: none detected
-- decision: **KEEP AS MOTION PROOF**, not yet a final shot package.
+QC log:
 
-The motion is deliberately small because the supplied references move through internal flow, glow, rings and controlled deformation rather than large camera motion.
+- `/AIVideoEdit/IronFlame_V2_20260905/V2_2_QC.log`
+- Library ID: `libfile_fe125238e4388191ba8117546d4121b2`
+
+## V2.2 edit rule
+
+This revision does **not** introduce a new visual-effects family. Every scene alternates between generated hero/support plates and the matching supplied REF-A / REF-B / REF-C source motion. The supplied examples remain the style and motion veto.
+
+The new generative-engine control bus remains the shared audio-analysis source. It informs motion strength and scene energy; it does not authorize unrelated visualizer effects.
 
 ## Next production actions
 
-1. Build REF-C Shot 03 hero package and ring/ribbon proof using the same control bus.
-2. Build REF-B Shot 05 hero package and warm-head/palm glow proof.
-3. Add palette-aware compositor adapters described in Phase 2 of `general/reusable/generative-engine/PLAN.md` when needed, keeping them song-specific until proof/QC.
-4. Create side-by-side source-reference proof sheets before promoting any generated/expanded hero.
-5. Continue checkpointing every accepted/rejected proof here and in the manifest.
+1. Review V2.2 picture for artistic pacing and lyric/emotional correspondence, not just technical motion survival.
+2. Refine any shot whose generated support media drifts from the supplied reference language.
+3. If the picture is approved, produce a higher-quality master encode and final contact-sheet/QC evidence.
+4. Preserve all accepted/rejected decisions and exact hashes before promotion.
