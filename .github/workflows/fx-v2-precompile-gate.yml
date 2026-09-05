@@ -31,3 +31,19 @@ jobs:
           python general/reusable/fx_v2/precompile_gate.py \
             --manifest general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json \
             --verify-lock /tmp/fx.lock.json
+      - name: Prove unapproved FX are blocked
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          src = Path('general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json')
+          data = json.loads(src.read_text())
+          data['transitions'] = [{'id': 'FX2-TRANS-002'}]
+          Path('/tmp/must-fail.fx.json').write_text(json.dumps(data))
+          PY
+          if python general/reusable/fx_v2/precompile_gate.py --manifest /tmp/must-fail.fx.json; then
+            echo "ERROR: proof_required transition incorrectly passed the gate"
+            exit 1
+          else
+            echo "PASS: unapproved transition was correctly blocked"
+          fi
