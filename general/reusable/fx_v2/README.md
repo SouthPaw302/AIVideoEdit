@@ -33,11 +33,28 @@ Example:
 {
   "effects": [
     {"id": "FX2-FIRE-001", "roi": [0.05,0.38,0.46,0.98], "strength": 0.9},
-    {"id": "FX2-SMOKE-001", "roi": [0.0,0.0,0.58,0.78], "strength": 0.5},
-    {"id": "FX2-MOTION-002", "mask": "cloth_hair", "strength": 0.7}
+    {"id": "FX2-ATM-001", "roi": [0.0,0.0,0.58,0.78], "strength": 0.5},
+    {"id": "FX2-MOTION-002", "roi": [0.0,0.0,1.0,1.0], "strength": 0.7}
   ]
 }
 ```
+
+## Hard precompile gate
+
+A project may not compile merely because an FX ID exists in JSON.
+
+Before a production render, run `precompile_gate.py`. It verifies that every requested effect:
+
+- is explicitly production-approved in the canonical registry;
+- is wired into the actual runtime path;
+- is not a placeholder/stub/no-op;
+- has a rendered proof/checksum and KEEP/APPROVED/PASS visual QC;
+- produces measurable pixel change and temporal behavior where expected;
+- does not smuggle excessive whole-frame shake into non-camera effects.
+
+The gate writes an `fx.lock.json` containing hashes of the manifest, registry, runtime implementation and proof records. The lock must be verified again immediately before compile. Any change invalidates it.
+
+See `PRECOMPILE_FX_GATE.md`.
 
 ## Promotion gate
 
@@ -50,6 +67,8 @@ No effect is promoted to `main` merely because code exists. Each candidate requi
 - black/freeze/loop-seam scan;
 - visual QC: KEEP / REVISE / REJECT;
 - documented limitations.
+
+Until that happens its `gate_status` remains `proof_required`, which makes the precompile gate fail if a song attempts to use it.
 
 ## Design improvements over V1
 
