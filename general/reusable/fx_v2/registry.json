@@ -1,0 +1,29 @@
+{
+  "schema_version": 2,
+  "runtime": "aivideoedit-fx-v2",
+  "effects": {
+    "FX2-MOTION-001": {"name": "depth_parallax", "family": "motion", "status": "ported"},
+    "FX2-MOTION-002": {"name": "localized_living_flow", "family": "motion", "status": "new"},
+    "FX2-MOTION-003": {"name": "water_flow", "family": "motion", "status": "new"},
+    "FX2-MOTION-004": {"name": "quiet_depth_breath", "family": "motion", "status": "new"},
+    "FX2-ATM-001": {"name": "advected_smoke", "family": "environment", "status": "improved"},
+    "FX2-ATM-002": {"name": "rain_plane", "family": "environment", "status": "improved"},
+    "FX2-ATM-003": {"name": "rain_glass", "family": "environment", "status": "new"},
+    "FX2-ATM-004": {"name": "sea_spray", "family": "environment", "status": "ported"},
+    "FX2-FIRE-001": {"name": "living_flame", "family": "environment", "status": "new"},
+    "FX2-FIRE-002": {"name": "embers", "family": "environment", "status": "improved"},
+    "FX2-LIGHT-001": {"name": "practical_light_breath", "family": "light", "status": "improved"},
+    "FX2-LIGHT-002": {"name": "moving_light_field", "family": "light", "status": "improved"},
+    "FX2-LIGHT-003": {"name": "localized_glint", "family": "light", "status": "ported"},
+    "FX2-LIGHT-004": {"name": "temporal_palette_migration", "family": "light", "status": "new"},
+    "FX2-SURFACE-001": {"name": "temporal_canvas_lock", "family": "surface", "status": "ported"},
+    "FX2-TRANS-001": {"name": "pigment_gate", "family": "transition", "status": "improved"},
+    "FX2-TRANS-002": {"name": "reflection_gate", "family": "transition", "status": "new"},
+    "FX2-TRANS-003": {"name": "light_peak_handoff", "family": "transition", "status": "new"},
+    "FX2-TRANS-004": {"name": "doorway_depth_gate", "family": "transition", "status": "new"},
+    "FX2-TRANS-005": {"name": "ember_to_light", "family": "transition", "status": "new"},
+    "FX2-SPATIAL-001": {"name": "hybrid_25d", "family": "spatial", "status": "ported"},
+    "FX2-SPATIAL-002": {"name": "tiny_nerf_atmosphere", "family": "spatial", "status": "ported"},
+    "FX2-SPATIAL-003": {"name": "supersplat_3dgs", "family": "spatial", "status": "conditional", "claim_guard": "requires genuine splat geometry; never use for 2D Gaussian overlays"}
+  }
+}
