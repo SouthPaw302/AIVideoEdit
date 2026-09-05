@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "presets": {
+    "living_tavern": {
+      "camera_rule": "stable or very slow authored push; no random shake",
+      "effects": [
+        {"id":"FX2-MOTION-002","roi":[0.0,0.05,1.0,0.96],"strength":0.55},
+        {"id":"FX2-FIRE-001","roi":[0.04,0.38,0.40,0.98],"strength":0.90},
+        {"id":"FX2-FIRE-002","roi":[0.0,0.18,0.72,1.0],"strength":0.55},
+        {"id":"FX2-ATM-001","roi":[0.0,0.0,0.68,0.82],"strength":0.42},
+        {"id":"FX2-LIGHT-001","roi":[0.0,0.15,0.60,1.0],"strength":0.75},
+        {"id":"FX2-LIGHT-002","origin":[0.20,0.28],"strength":0.50},
+        {"id":"FX2-SURFACE-001","strength":0.55}
+      ]
+    },
+    "storm_threshold": {
+      "camera_rule": "slow threshold approach; internal weather movement dominates",
+      "effects": [
+        {"id":"FX2-MOTION-003","roi":[0.46,0.52,1.0,1.0],"strength":0.75,"reflect":true},
+        {"id":"FX2-ATM-002","roi":[0.46,0.0,1.0,1.0],"strength":0.65},
+        {"id":"FX2-ATM-004","roi":[0.50,0.34,1.0,0.98],"strength":0.55},
+        {"id":"FX2-ATM-001","roi":[0.40,0.0,1.0,0.82],"strength":0.35},
+        {"id":"FX2-LIGHT-002","origin":[0.24,0.24],"strength":0.40},
+        {"id":"FX2-SURFACE-001","strength":0.50}
+      ]
+    },
+    "rain_window_memory": {
+      "camera_rule": "nearly locked; focus/perception changes are stronger than camera travel",
+      "effects": [
+        {"id":"FX2-ATM-003","roi":[0.0,0.0,1.0,1.0],"strength":0.72,"drop_count":42},
+        {"id":"FX2-LIGHT-001","roi":[0.56,0.28,1.0,1.0],"strength":0.65},
+        {"id":"FX2-LIGHT-004","strength":0.32},
+        {"id":"FX2-SURFACE-001","strength":0.35}
+      ]
+    },
+    "dawn_release": {
+      "camera_rule": "calm, slow resolve; storm movement tapers toward stillness",
+      "effects": [
+        {"id":"FX2-MOTION-003","roi":[0.42,0.58,1.0,1.0],"strength":0.35,"reflect":true},
+        {"id":"FX2-ATM-001","roi":[0.38,0.0,1.0,0.72],"strength":0.18},
+        {"id":"FX2-LIGHT-002","origin":[0.74,0.16],"strength":0.50},
+        {"id":"FX2-LIGHT-004","strength":0.62},
+        {"id":"FX2-SURFACE-001","strength":0.45}
+      ]
+    }
+  },
+  "transitions": {
+    "threshold_entry":"FX2-TRANS-004",
+    "reflection_memory":"FX2-TRANS-002",
+    "light_handoff":"FX2-TRANS-003",
+    "fire_to_dawn":"FX2-TRANS-005",
+    "painterly_world_change":"FX2-TRANS-001"
+  }
+}

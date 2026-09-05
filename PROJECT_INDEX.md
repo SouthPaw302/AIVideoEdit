@@ -1,94 +1,40 @@
-# Project Index
+# AIVideoEdit — Project Index
 
-This file tracks productions inside AIVideoEdit. Each project must be recoverable from GitHub without relying on chat history.
+Every complete song/video production lives on exactly one canonical `song/<slug>` branch. `main` contains only the Bible, this index, templates, and reusable cross-project technology.
 
 ## Active
 
-### IronFlame
-Branch: [`song/ironflame`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/ironflame)  
-Project path on branch: `projects/ironflame/`
+- `song/leave-it-by-the-door` — native-24 V2 complete and accepted as the picture baseline; V3 refinement active. Current direction: less global shake, more internal living-image loops, stronger animated fire/candles/embers/smoke/reflections, intro/outro for YouTube, final ZIP delivery. FX integration must use the centralized FX V2 precompile gate before compile/render.
 
-Status: **V1 rendered and delivered / Final MP4 archive references must be recovered**
+## Active reusable-system work
 
-Purpose: First full flagship project for the canonical AIVideoEdit workflow.
+- `fx/canonical-v2` — consolidation of proven Silver Coin / Irish Eyes / IronFlame / Leave It effect implementations into a callable repository-wide FX runtime under `general/reusable/fx_v2/`. Includes stable FX IDs, proof/QC records, hard fail-closed precompile validation, immutable FX lock verification, and GitHub Actions positive + negative gate tests. Intended for promotion to `main` once the current integration pass is complete.
 
-Core direction:
-- female mythic protagonist; she **is** the IronFlame
-- dark folk / mythic fantasy / haunted but resolute
-- ember orange -> iron blue -> ash gray -> dawn gold
-- living scenes, not slideshow frames
-- advanced micro-animation, parallax, particles, audio-reactive light/FX, and selective integrated visualizer language
-- rebuilt from scratch; old IronFlame MP4s are excluded as production sources
+## Completed / delivered
 
-Read:
-- `projects/ironflame/PROJECT.md`
-- `projects/ironflame/STATUS.md`
-- `projects/ironflame/LYRICS.md`
-- `projects/ironflame/VISUAL_DNA.md`
+- `song/irish-eyes` — **V1.3 FINAL COMPLETE / QC PASSED**. 16:9 / 1280x720 / 30 fps. Canonical artistic master `IRISH_EYES_V1_3_FINAL_YouTube_720p30.mp4`, SHA-256 `d0ace58c5e2b226cd08a928fc94647ba603ae`, persistent Library ID `libfile_188ada3ee1c88191ae217eeb834402cd`. Canonical upload-with-outro `IRISH_EYES_V1_3_FINAL_UPLOAD_WITH_OUTRO_720p30.mp4`, SHA-256 `857b690b49e29724bcd625998e79f2fdc4873dc201c238628952ad4f53cc0763`, Library ID `libfile_0c67dfde60ec8191a37a97e520139892`. V1.3 preserves the V1.2 picture stream exactly and uses the newer user-supplied remaster. Point-in-time archive branch: `archive/video/irish-eyes`.
+- `song/silver-coin` — V8 final complete / QC passed. Canonical final SHA-256: `b996cc251a73e93540abdcc7b8e1077959b5d82dcfb3396aa49c990302216d70`.
+- `song/ironflame` — V1 rendered/delivered; exact final MP4 archive identity remains unrecovered.
 
-Production package:
-- `projects/ironflame/SHOT_LIST.md`
-- `projects/ironflame/ASSET_MANIFEST.json`
-- `projects/ironflame/PROMPTS.md`
-- `projects/ironflame/QC.md`
-- `projects/ironflame/AUDIO_RECOVERY.md`
-- `projects/ironflame/RENDER_HISTORY.md`
+## Historical recovery
 
-### Silver Coin
-Branch: [`song/silver-coin`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/silver-coin)  
-Project path on branch: `projects/silver-coin/`
+- `song/sigh-no-more` — partial recovery / historical Irish Eyes precursor; completed render not confirmed on that branch. The completed Irish Eyes film is `song/irish-eyes`.
 
-Status: **Visual style locked / Project and references indexed**
+## System rule
 
-Core direction:
-- canonical style: **Living Pre-Raphaelite Folk Romanticism**
-- luminous oil-brush surfaces, emerald-and-gold natural light, flowers and folk-period detail
-- natural character performance and environmental motion inside a visibly painted world
-- adapt the style to Silver Coin's village, road, tavern, musicians, dancing crowd, merchant/barmaid, and coin imagery
-- the square source clips define painting surface and motion quality; they do not dictate final aspect ratio or literal characters
-- build living scenes, not a slideshow or a sequence of slow zooms
+Song-specific media, storyboards, prompts, shot packages, manifests, QC, project docs and renders stay on the song branch.
 
-Recovery files on the song branch:
-- `projects/silver-coin/PROJECT.md`
-- `projects/silver-coin/STATUS.md`
-- `projects/silver-coin/LYRICS.md`
-- `projects/silver-coin/VISUAL_DNA.md`
-- `projects/silver-coin/STYLE_REFERENCE.md`
-- `projects/silver-coin/EFFECTS_PLAN.md`
-- `projects/silver-coin/DECISIONS.md`
-- `projects/silver-coin/ASSET_MANIFEST.json`
+Only generic reusable technology returns to `main/general/reusable/`.
 
-## Recovered / Partial Song Projects
+For a new song:
 
-### Leave It by the Door
+1. create `song/<slug>` from `main`;
+2. create `projects/<slug>/` on that branch using `projects/PROJECT_TEMPLATE.md`;
+3. keep the entire production there;
+4. promote reusable methods back to `main` only after they prove useful.
 
-Branch: [`song/leave-it-by-the-door`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/leave-it-by-the-door)
+For Leave It recovery, open `song/leave-it-by-the-door` and read `projects/leave-it-by-the-door/AGENT_HANDOFF.md`, `STATUS.md`, `EFFECTS_PLAN.md`, `REFERENCE_MOTION_TARGETS.md`, and `FULL_V2_QC.json`.
 
-Recovered evidence: a warm tavern narrative treatment and lyric-timed multi-image/living-scene experiments informed the canon workflow. Exact source audio, lyrics, render filenames, hashes, and delivery status have not yet been recovered. The branch preserves this honestly as a recovery project rather than claiming completion.
+For FX V2 recovery, open `fx/canonical-v2` and read `general/reusable/fx_v2/AGENT_HANDOFF.md`, `README.md`, `PRECOMPILE_FX_GATE.md`, `registry.json`, and the proof records.
 
-### Sigh No More / Irish Eyes, Spanish Hair
-
-Branch: [`song/sigh-no-more`](https://github.com/SouthPaw302/AIVideoEdit/tree/song/sigh-no-more)
-
-Recovered evidence: Veo/Sora-style sequential video prompt architecture was drafted around Lake Hartwell, mountain roads, old houses, wet pavement, candlelight, rural night, Spanish hair, Irish eyes, and ancestral ghosts. No completed render was confirmed. The branch preserves the concept and next action.
-
-## Reference / Prior Experiments
-
-Earlier experiments in the working ChatGPT environment demonstrated:
-- single-image living-cover animation
-- rain/fog/glow/lightning compositing
-- lyric-timed multi-image cuts
-- warm tavern narrative treatment for “Leave It by the Door”
-- efficient pre-rendered scene/loop assembly
-
-These experiments informed the canon workflow, but their binary assets are not guaranteed to persist across sessions unless archived externally.
-
-## Adding a project
-
-Create `projects/<slug>/` with at minimum:
-- `PROJECT.md`
-- `STATUS.md`
-- `LYRICS.md` if applicable
-- `VISUAL_DNA.md`
-
-Then add it to this index.
+Read `BIBLE.md` for the production system.
