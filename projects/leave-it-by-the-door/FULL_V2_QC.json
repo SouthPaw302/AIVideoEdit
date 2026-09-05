@@ -1,0 +1,60 @@
+{
+  "file": "Leave_It_By_The_Door_NATIVE24_FULL_V2_720p24.mp4",
+  "sha256": "c82bdb31e7610c7de8d3da506940ebfade5fa6fa1a5af6d6d2ae6e2c4c43c05e",
+  "resolution": [1280, 720],
+  "fps": 24,
+  "frames": 4772,
+  "duration_seconds": 198.833333,
+  "video_bitrate_bps": 7227871,
+  "audio_sample_rate_hz": 48000,
+  "audio_channels": 2,
+  "audio_bitrate_bps": 325723,
+  "file_size_bytes": 187878474,
+  "shot_validation": {
+    "shot_count": 25,
+    "expected_total_frames": 4772,
+    "actual_total_frames": 4772,
+    "frame_count_failures": 0
+  },
+  "motion_comparison": {
+    "ref_storm": {
+      "frames": 145,
+      "mean_adjacent_absdiff": 10.0213773148,
+      "p10": 4.8838611111,
+      "p50": 9.6099305556,
+      "p90": 15.0516319444,
+      "near_exact_duplicate_pairs": 0
+    },
+    "ref_light": {
+      "frames": 145,
+      "mean_adjacent_absdiff": 5.1088826196,
+      "p10": 0.6788611111,
+      "p50": 4.3402777778,
+      "p90": 10.3016666667,
+      "near_exact_duplicate_pairs": 0
+    },
+    "v2": {
+      "frames": 4772,
+      "mean_adjacent_absdiff": 3.1315353321,
+      "p10": 1.4183333333,
+      "p50": 2.5863888889,
+      "p90": 4.6765277778,
+      "near_exact_duplicate_pairs": 0
+    },
+    "v1_old": {
+      "frames": 4769,
+      "mean_adjacent_absdiff": 1.9270409355,
+      "p10": 1.0462638889,
+      "p50": 1.639375,
+      "p90": 2.6703402778,
+      "near_exact_duplicate_pairs": 7
+    }
+  },
+  "notes": [
+    "True native 24 fps; no 10-to-24 conversion.",
+    "25 resumable H.264 shot masters assembled using video stream copy.",
+    "Reference optical-flow/luminance signatures drive irregular localized motion.",
+    "Camera motion is secondary to internal scene motion.",
+    "Final master is stored in ChatGPT Library; GitHub stores control state and QC metadata because the final binary exceeds GitHub's normal 100 MB single-file limit."
+  ]
+}
