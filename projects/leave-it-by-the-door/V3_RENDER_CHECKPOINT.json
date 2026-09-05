@@ -9,16 +9,20 @@
   "completed_shots": [
     {"shot":1,"start_frame":0,"end_frame_exclusive":153,"frames":153,"status":"rendered_and_ffprobe_validated"},
     {"shot":2,"start_frame":153,"end_frame_exclusive":305,"frames":152,"status":"rendered_and_ffprobe_validated"},
-    {"shot":3,"start_frame":305,"end_frame_exclusive":478,"frames":173,"status":"rendered_and_ffprobe_validated"}
+    {"shot":3,"start_frame":305,"end_frame_exclusive":478,"frames":173,"status":"rendered_and_ffprobe_validated"},
+    {"shot":4,"start_frame":478,"end_frame_exclusive":645,"frames":167,"status":"rendered_and_ffprobe_validated"},
+    {"shot":5,"start_frame":645,"end_frame_exclusive":813,"frames":168,"status":"rendered_and_ffprobe_validated"},
+    {"shot":6,"start_frame":813,"end_frame_exclusive":906,"frames":93,"status":"rendered_and_ffprobe_validated"}
   ],
-  "completed_frame_total": 478,
-  "next_shot": 4,
+  "completed_frame_total": 906,
+  "next_shot": 7,
   "proof_qc": "V3_PROOF_QC_2026-09-05.json",
   "fx_lock": "V3_FX_LOCK.json",
   "notes": [
     "Shot renders are video-only H.264 CRF16 at native 24 fps; final audio is muxed after all 25 shots assemble.",
     "Stabilizer state resets at every recovered shot boundary.",
     "V3 effects are applied by scene family using the approved canonical FX set.",
+    "Shots 1-6 were ffprobe validated at 1280x720, 24/1 fps, with exact expected frame counts.",
     "Local sandbox shot masters are transient; GitHub checkpoint and source V2 master in Library are sufficient to reconstruct/resume."
   ]
 }
