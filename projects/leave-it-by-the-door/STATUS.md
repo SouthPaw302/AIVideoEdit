@@ -2,61 +2,86 @@
 
 **Updated:** 2026-09-05 UTC  
 **Branch:** `song/leave-it-by-the-door`  
-**State:** Active production; handoff recovered; native-24-fps rebuild underway
+**State:** Native-24 V2 full render complete; awaiting user review
 
-## Recovered and confirmed
+## Recovered source package
 
-- Complete prior handoff ZIP was recovered into the active workspace.
-- Canonical remastered source audio recovered: `Leave it by the door. (Remastered) (1).wav`.
-- 13 named generated hero stills recovered.
-- Prior reference clips, extracted reference frames, project/storyboard docs, QC sheets, masks, derivatives, render scripts and the previous full V1.1 render were recovered.
-- Previous V1.1 was diagnosed as visually under-sampled because shot intermediates were rendered at 10 fps and then delivered inside a 24 fps container.
-- That V1.1 is no longer the quality target.
+- Canonical remastered source audio: `Leave it by the door. (Remastered) (1).wav`.
+- 13 named generated hero stills recovered from the previous production handoff.
+- Prior reference clips, extracted frames, storyboard/project docs, masks, derivatives, render scripts, QC sheets and V1.1 were recovered.
+- V1.1 was diagnosed as visually under-sampled because its shot intermediates were rendered at 10 fps and then delivered inside a 24 fps container. V1.1 is retired as the quality target.
 
-## Current quality references
+## Motion/effects references
 
-Two user-supplied clips are now the motion/effects references:
+User-supplied references:
 - `imagine-f9c3e46d.mp4`
 - `imagine-1fb7bb42.mp4`
 
-Both are true 24 fps. See `REFERENCE_MOTION_TARGETS.md` for measured bitrate/motion targets and the adopted effect language.
+Both are true 24 fps. Their optical-flow and luminance behavior are used as irregular motion drivers. See `REFERENCE_MOTION_TARGETS.md`.
 
-## Native 24 fps rebuild
+## V2 production architecture
 
-A new living-scene proof engine has been implemented and checkpointed at:
+Full renderer:
+`projects/leave-it-by-the-door/scripts/render_full_native24_v2.py`
 
-`projects/leave-it-by-the-door/scripts/render_native24_living_scene_proof.py`
+Render plan:
+`projects/leave-it-by-the-door/FULL_V2_RENDER_PLAN.md`
 
-The engine uses:
-- native per-frame 24 fps rendering
-- optical-flow signatures measured from the supplied reference videos
-- localized semantic motion masks
-- separate sea/cloud/hair/skirt/crowd motion
-- continuous rain, wave spray and ember trajectories
-- wet reflection ripple
-- reference-derived warm/cool light migration
-- restrained camera motion secondary to internal image motion
-- identity protection around principal faces/subjects
+V2 uses:
+- true per-frame native 24 fps rendering
+- 25 independently encoded/resumable shot masters
+- 1280×720 H.264 CRF 16 shot masters
+- reference-motion-driven exterior/weather and local character/fabric/instrument movement
+- rain, sea spray, moving wave/foam bands and wet shimmer
+- smoke/fog advection
+- warm/cool light migration
+- fire/candle breathing and volumetric warm shafts
+- embers and burden/ash motif
+- lightning/reflection accents
+- dawn birds and storm-to-gold progression
+- pigment/fog travel transitions
+- scene-fixed canvas texture
+- face/identity protection masks
+- camera motion intentionally secondary to internal scene motion
 
-Sandbox proof produced:
-`Leave_It_By_The_Door_NATIVE24_LivingScene_PROOF01_720p24.mp4`
+## Full V2 render complete
 
-Proof properties:
-- 1280×720
-- native 24 fps
-- 144 unique rendered frames / 6.0 s
-- H.264 video bitrate ≈ 12.2 Mbps
-- AAC ≈ 297 kbps
+Final workspace/Library master:
+`Leave_It_By_The_Door_NATIVE24_FULL_V2_720p24.mp4`
 
-## Next production action
+Properties:
+- duration: 198.833333 s
+- resolution: 1280×720
+- frame rate: true 24 fps
+- frames: 4,772
+- H.264 video bitrate: ~7.23 Mbps
+- audio: AAC stereo, 48 kHz, ~320 kbps
+- file size: ~187.9 MB
+- SHA-256: `c82bdb31e7610c7de8d3da506940ebfade5fa6fa1a5af6d6d2ae6e2c4c43c05e`
 
-1. Increase internal motion energy toward the slower supplied reference while keeping faces stable.
-2. Convert the 25-shot full-song map to the native-24 living-scene engine.
-3. Render in resumable per-shot chunks rather than one monolithic job.
-4. QC every shot for frozen/repeated frames, identity drift, mask seams, black frames and motion discontinuities.
-5. Assemble a 1920×1080 / native 24 fps full master.
-6. Keep scripts, manifests, metrics and status checkpointed to this branch while large media remains in workspace/object storage.
+Every one of the 25 shot masters validated against its exact expected native frame count before assembly. Final video assembly used stream copy for the already-encoded shot video, avoiding a second generational video encode.
+
+## QC
+
+Direct reduced-resolution adjacent-frame scan:
+- V2 mean adjacent-frame motion: 3.1315
+- V1.1 mean adjacent-frame motion: 1.9270
+- V2 therefore carries ~62% more measured frame-to-frame motion than V1.1
+- V2 near-exact duplicate frame pairs: 0
+- V1.1 near-exact duplicate frame pairs: 7
+
+Reference comparison:
+- high-energy storm reference mean adjacent motion: 10.0214
+- warm/light reference mean adjacent motion: 5.1089
+- V2 intentionally remains below the references' maximum motion energy to preserve painted character identity while substantially increasing living-scene motion over V1.1
+
+QC record:
+`projects/leave-it-by-the-door/FULL_V2_QC.json`
+
+## Current decision point
+
+V2 should now be reviewed by the user for artistic intensity and scene-specific motion. Do not revert to the V1.1 10-fps-intermediate workflow. Further revisions should build from the native-24 V2 engine and completed shot architecture.
 
 ## Storage
 
-GitHub is the connected persistent control/source-of-truth layer for this production. The current environment does not expose an authenticated Cloudflare R2 connector, so no R2 upload should be claimed. Large media remains in the active workspace/Library until a legitimate object-storage connector is connected.
+GitHub remains the persistent control/source-of-truth layer for scripts, status, plans and QC metadata. The current environment does not expose an authenticated Cloudflare R2 connector. The 187.9 MB final master is saved persistently in ChatGPT Library; it is too large for a normal single-file GitHub repository object under GitHub's 100 MB file limit.
