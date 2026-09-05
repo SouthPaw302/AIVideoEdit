@@ -49,6 +49,15 @@ Current approved core includes localized living flow, water flow, advected smoke
 
 Transitions that remain `proof_required` are not allowed into the V3 FX manifest merely because code exists.
 
+## Spatial / Gaussian-splat rule
+
+True 3D Gaussian Splatting is now explicitly separated from 2D Gaussian masks, glow fields and 2.5D depth/parallax effects.
+
+Canonical workflow:
+`general/reusable/fx_v2/SPATIAL_3DGS_SUPERSPLAT.md`
+
+SuperSplat is the preferred open-source inspection/editing layer when genuine splat geometry exists. Current Leave It hero paintings remain Tier 1/2 living-painting assets unless valid multi-view or reconstructed 3DGS geometry is produced. Do not label ordinary 2D Gaussian effects as 3DGS.
+
 ## Hard precompile gate
 
 Before V3 final compile/render, run:
@@ -70,6 +79,7 @@ Read in this order:
 5. `REFERENCE_MOTION_TARGETS.md`
 6. `FULL_V2_QC.json`
 7. `scripts/render_full_native24_v2.py`
+8. `../../general/reusable/fx_v2/SPATIAL_3DGS_SUPERSPLAT.md`
 
 ## Next production action
 
