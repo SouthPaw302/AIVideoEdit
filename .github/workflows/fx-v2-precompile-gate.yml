@@ -1,0 +1,33 @@
+name: FX V2 Precompile Gate
+
+on:
+  push:
+    branches: ["fx/canonical-v2"]
+    paths:
+      - "general/reusable/fx_v2/**"
+      - ".github/workflows/fx-v2-precompile-gate.yml"
+  pull_request:
+    paths:
+      - "general/reusable/fx_v2/**"
+      - ".github/workflows/fx-v2-precompile-gate.yml"
+
+jobs:
+  verify-approved-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install FX runtime dependencies
+        run: python -m pip install --upgrade pip numpy opencv-python-headless
+      - name: Run hard precompile FX gate
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json \
+            --lock-out /tmp/fx.lock.json
+      - name: Verify immutable FX lock
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json \
+            --verify-lock /tmp/fx.lock.json
