@@ -1,0 +1,30 @@
+{
+  "schema_version": 3,
+  "runtime": "aivideoedit-fx-v2",
+  "gate_policy": "production renderers must pass precompile_gate.py and verify the generated fx.lock.json immediately before compile",
+  "effects": {
+    "FX2-MOTION-001": {"name":"depth_parallax","family":"motion","status":"ported","gate_status":"proof_required","implementation":{"kind":"adapter","path":"general/reusable/silver-coin-tools/hybrid_painterly_fx.py","symbol":"depth_parallax"}},
+    "FX2-MOTION-002": {"name":"localized_living_flow","family":"motion","status":"new","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.05,"temporal_delta_min":0.02,"max_global_shift_px":2.5}},
+    "FX2-MOTION-003": {"name":"water_flow","family":"motion","status":"new","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.05,"temporal_delta_min":0.02,"max_global_shift_px":2.5}},
+    "FX2-MOTION-004": {"name":"quiet_depth_breath","family":"motion","status":"new","gate_status":"proof_required","implementation":{"kind":"adapter","path":"general/reusable/silver-coin-tools/video_fx/painterly_motion_extensions.py","symbol":"depth_focus_breath"}},
+    "FX2-ATM-001": {"name":"advected_smoke","family":"environment","status":"improved","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.05,"temporal_delta_min":0.02,"max_global_shift_px":2.5}},
+    "FX2-ATM-002": {"name":"rain_plane","family":"environment","status":"improved","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.05,"temporal_delta_min":0.02,"max_global_shift_px":2.5}},
+    "FX2-ATM-003": {"name":"rain_glass","family":"environment","status":"new","gate_status":"proof_required","implementation":{"kind":"runtime_apply"}},
+    "FX2-ATM-004": {"name":"sea_spray","family":"environment","status":"ported","gate_status":"proof_required","implementation":{"kind":"adapter","path":"projects/leave-it-by-the-door/scripts/render_full_native24_v2.py","symbol":"source-derived sea spray logic"}},
+    "FX2-FIRE-001": {"name":"living_flame","family":"environment","status":"new","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.10,"temporal_delta_min":0.05,"max_global_shift_px":2.5}},
+    "FX2-FIRE-002": {"name":"embers","family":"environment","status":"improved","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.02,"temporal_delta_min":0.02,"max_global_shift_px":2.5}},
+    "FX2-LIGHT-001": {"name":"practical_light_breath","family":"light","status":"improved","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.05,"temporal_delta_min":0.05,"max_global_shift_px":2.5}},
+    "FX2-LIGHT-002": {"name":"moving_light_field","family":"light","status":"improved","gate_status":"approved","implementation":{"kind":"runtime_apply"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.02,"temporal_delta_min":0.02,"max_global_shift_px":2.5}},
+    "FX2-LIGHT-003": {"name":"localized_glint","family":"light","status":"ported","gate_status":"proof_required","implementation":{"kind":"adapter","path":"general/reusable/silver-coin-tools/video_fx/painterly_motion_extensions.py","symbol":"localized_specular_glint"}},
+    "FX2-LIGHT-004": {"name":"temporal_palette_migration","family":"light","status":"new","gate_status":"proof_required","implementation":{"kind":"runtime_apply"}},
+    "FX2-SURFACE-001": {"name":"temporal_canvas_lock","family":"surface","status":"ported","gate_status":"approved","implementation":{"kind":"runtime_apply","method":"apply_canvas"},"proofs":["FX2_PROOF01_LIVING_TAVERN"],"quality":{"source_delta_min":0.05,"temporal_required":false,"max_global_shift_px":2.5}},
+    "FX2-TRANS-001": {"name":"pigment_gate","family":"transition","status":"improved","gate_status":"proof_required","implementation":{"kind":"runtime_transition","method":"pigment_gate"}},
+    "FX2-TRANS-002": {"name":"reflection_gate","family":"transition","status":"new","gate_status":"proof_required","implementation":{"kind":"runtime_transition","method":"reflection_gate"}},
+    "FX2-TRANS-003": {"name":"light_peak_handoff","family":"transition","status":"new","gate_status":"proof_required","implementation":{"kind":"runtime_transition","method":"light_peak_handoff"}},
+    "FX2-TRANS-004": {"name":"doorway_depth_gate","family":"transition","status":"new","gate_status":"proof_required","implementation":{"kind":"runtime_transition","method":"doorway_depth_gate"}},
+    "FX2-TRANS-005": {"name":"ember_to_light","family":"transition","status":"new","gate_status":"proof_required","implementation":{"kind":"runtime_transition","method":"ember_to_light"}},
+    "FX2-SPATIAL-001": {"name":"hybrid_25d","family":"spatial","status":"ported","gate_status":"proof_required","implementation":{"kind":"adapter","path":"general/reusable/depth-parallax-25d/depth_parallax_25d.py"}},
+    "FX2-SPATIAL-002": {"name":"tiny_nerf_atmosphere","family":"spatial","status":"ported","gate_status":"proof_required","implementation":{"kind":"adapter","path":"general/reusable/silver-coin-tools/video_fx/tiny_nerf_volume.py"}},
+    "FX2-SPATIAL-003": {"name":"supersplat_3dgs","family":"spatial","status":"conditional","gate_status":"conditional","implementation":{"kind":"external","tool":"playcanvas/supersplat","requires":"genuine 3D Gaussian splat geometry plus project-specific spatial preflight"},"claim_guard":"requires genuine splat geometry; never use for 2D Gaussian overlays"}
+  }
+}
