@@ -1,0 +1,15 @@
+{
+  "schema": "ironflame.v3.actual-runtime-audit.v1",
+  "date": "2026-09-05",
+  "production_status": "fail_closed_exploratory_only",
+  "canonical_fx_runtime_verified": false,
+  "canonical_audio_controls_verified_in_scripts": true,
+  "blocks": [
+    {"range":"00:00-00:42","renderer_provenance":"incomplete","canonical_fx_runtime":"unverified","decision":"reject_as_verified_candidate"},
+    {"range":"00:42-01:35","script":"/mnt/data/render_v3_42_95.py","script_sha256":"590c537899b2c4fec18af3b9edca3c029a363c141e2bb64e801f0ff32c00c83f","canonical_fx_runtime":false,"fx2_ids_declared":false,"canonical_controls":true,"actual_methods":["cv2.warpAffine","cv2.remap","custom luminance/color masks","custom ribbon_transition"],"decision":"reject_as_verified_candidate"},
+    {"range":"01:35-02:02","script":"/mnt/data/render_v3_95_122.py","script_sha256":"3cf1d3ed7bf5addcc2e65ca1c9cdfba92e5be1e2593c0536feaaedeedd993913","canonical_fx_runtime":false,"fx2_ids_declared":false,"canonical_controls":true,"actual_methods":["custom OpenCV ring/filament plate","FFmpeg xfade smoothleft","screen blend"],"decision":"reject_as_verified_candidate"},
+    {"range":"02:02-02:47","script":"/mnt/data/ironflame_v3/render_122_167_v32.py","script_sha256":"3bde16674215fb8a0e37c088c01063934042703bc64b8528c0f26f38b0ad55a6","canonical_fx_runtime":false,"fx2_ids_declared":false,"canonical_controls":true,"actual_methods":["cv2.warpAffine","cv2.remap","custom warm/bright masks","custom contour/ribbon transition"],"decision":"reject_as_verified_candidate"},
+    {"range":"02:47-03:30","script":"/mnt/data/ironflame_v3/render_167_210_v32.py","script_sha256":"4ef78920403e38ad09cc81bd5df6e8087aebc7375dc8bb4da3d1dcc5c1a1da5c","canonical_fx_runtime":false,"fx2_ids_declared":false,"canonical_controls":true,"actual_methods":["cv2.warpAffine","cv2.remap","custom warm/bright masks","custom contour/ribbon transition"],"decision":"reject_as_verified_candidate"},
+    {"range":"03:30-04:04.680","script":"/mnt/data/ironflame_v3/render_210_244_v32.py","script_sha256":"2355e6993319deff0e155e6c1e7cf6fdc83b6f2f79ed6291ba6fabd6efd9ad5d","canonical_fx_runtime":false,"fx2_ids_declared":false,"canonical_controls":true,"actual_methods":["cv2.warpAffine","cv2.remap","custom warm/bright masks","custom contour/ribbon transition"],"decision":"reject_as_verified_candidate"}
+  ]
+}
