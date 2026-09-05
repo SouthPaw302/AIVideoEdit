@@ -1,0 +1,25 @@
+{
+  "proof": "IRONFLAME_V3_FX2_SHOT02_PROOF01",
+  "source": "projects/ironflame shot02 hero plate",
+  "fps": 24,
+  "frames": 144,
+  "duration_seconds": 6.0,
+  "size": [640, 360],
+  "effects": ["FX2-MOTION-002", "FX2-LIGHT-001", "FX2-LIGHT-002", "FX2-SURFACE-001"],
+  "runtime_source": "general/reusable/fx_v2/runtime.py",
+  "runtime_blob_sha": "3355d5a63c3301d6f8fcbe8a369c8acd98b97c4c",
+  "audio_control_source": "ironflame_controls_24fps.json",
+  "song_start_seconds": 18.0,
+  "source_delta_mean": 1.9698110070248203,
+  "source_delta_max": 2.4771730324074075,
+  "adjacent_delta_mean": 0.15334417896917896,
+  "adjacent_delta_p95": 0.6311291956018519,
+  "sha256": "99dd3bc20fc6f400dd77f5c4adb27755f38d482589e7ccc351922c2b3a0d3f63",
+  "export_qc": {"black_events": 0, "freeze_events_ge_1_5s": 0},
+  "visual_qc": "KEEP AS IRONFLAME FX2 TECHNICAL/STYLE PROOF; not a full shot approval",
+  "notes": [
+    "Canonical FX2 IDs executed frame-by-frame with per-effect pixel delta recorded.",
+    "Uses canonical IronFlame audio controls starting at song time 18.0s.",
+    "No proof_required model/transition is claimed."
+  ]
+}
