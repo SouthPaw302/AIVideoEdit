@@ -15,10 +15,11 @@
     {"shot":6,"start_frame":813,"end_frame_exclusive":906,"frames":93,"status":"rendered_and_ffprobe_validated"},
     {"shot":7,"start_frame":906,"end_frame_exclusive":1162,"frames":256,"status":"rendered_and_ffprobe_validated"},
     {"shot":8,"start_frame":1162,"end_frame_exclusive":1385,"frames":223,"status":"rendered_and_ffprobe_validated"},
-    {"shot":9,"start_frame":1385,"end_frame_exclusive":1608,"frames":223,"status":"rendered_and_ffprobe_validated"}
+    {"shot":9,"start_frame":1385,"end_frame_exclusive":1608,"frames":223,"status":"rendered_and_ffprobe_validated"},
+    {"shot":10,"start_frame":1608,"end_frame_exclusive":1840,"frames":232,"status":"rendered_and_ffprobe_validated"}
   ],
-  "completed_frame_total": 1608,
-  "next_shot": 10,
+  "completed_frame_total": 1840,
+  "next_shot": 11,
   "proof_qc": "V3_PROOF_QC_2026-09-05.json",
   "fx_lock": "V3_FX_LOCK.json",
   "notes": [
