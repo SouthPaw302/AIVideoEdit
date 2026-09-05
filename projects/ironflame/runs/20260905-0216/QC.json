@@ -1,0 +1,34 @@
+{
+  "project": "ironflame",
+  "run": "20260905-0216",
+  "render": "IRONFLAME_20260905_V2_REFERENCE_MOTION_720p24.mp4",
+  "sha256": "1444c80e9ef5a3bd11bce47f660938f0a5e0b6f59aec0607239db63baa5d8815",
+  "bytes": 163692507,
+  "duration_seconds": 244.68,
+  "video": {
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps": 24
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate_target": "256k"
+  },
+  "checks": {
+    "runtime_matches_source": true,
+    "blackdetect_0_5s": "pass_no_events",
+    "freezedetect_3s": "pass_no_events",
+    "final_file_probed": true,
+    "final_hash_recorded": true
+  },
+  "storage": {
+    "provider": "ChatGPT Library",
+    "library_file_id": "libfile_59bccc6ffb5c8191b2785e7f1b886d61",
+    "path": "/IRONFLAME_20260905_V2_REFERENCE_MOTION_720p24.mp4"
+  },
+  "canonical_master": false,
+  "note": "Completed reference-motion V2 checkpoint. Await user review before promotion/replacement of canonical IronFlame master."
+}
