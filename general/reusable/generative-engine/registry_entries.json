@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-05",
+  "canonical_registry_target": "../CANONICAL_EFFECT_REGISTRY.json",
+  "entries": [
+    {
+      "id": "SYS-AUDIO-REACTIVE-001",
+      "name": "Unified frame-aligned visual control bus",
+      "status": "experimental",
+      "project": "System",
+      "category": "audio_analysis",
+      "implementation": "audio/reactive_core.py",
+      "proof": "PLAN.md#smoke-test-record"
+    },
+    {
+      "id": "VIS-GEN-001",
+      "name": "Organic audio-reactive generative field",
+      "status": "experimental",
+      "project": "System",
+      "category": "audio_reactive",
+      "implementation": "visualizers/reactive_field.py",
+      "proof": "PLAN.md#smoke-test-record"
+    },
+    {
+      "id": "DF-25D-001",
+      "name": "Streaming continuous soft-depth living parallax",
+      "status": "experimental",
+      "project": "System",
+      "category": "spatial",
+      "implementation": "spatial/living_parallax.py",
+      "proof": "PLAN.md#smoke-test-record",
+      "notes": "Real depth preferred. Synthetic radial depth is fallback/proof mode only. This does not replace IE-SPATIAL-001 or SYS-SPATIAL-003 lineage."
+    }
+  ],
+  "not_duplicated": [
+    {
+      "id": "SYS-SPATIAL-001",
+      "reason": "Existing 3D Gaussian Splatting / SuperSplat system capability remains canonical. Future real 3DGS integration should consume this control bus rather than create a duplicate GS family."
+    }
+  ]
+}
