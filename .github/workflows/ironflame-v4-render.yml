@@ -5,6 +5,7 @@ on:
     branches: ["song/ironflame-20260905-0216"]
     paths:
       - "projects/ironflame/scripts/render_canon_motion_v4.py"
+      - "projects/ironflame/scripts/run_canon_motion_v4.py"
       - "projects/ironflame/FX_REQUIREMENTS.fx.json"
       - ".github/workflows/ironflame-v4-render.yml"
   workflow_dispatch:
@@ -41,7 +42,7 @@ jobs:
             --verify-lock projects/ironflame/fx.lock.json
       - name: Render and QC actual exported movie
         run: |
-          python projects/ironflame/scripts/render_canon_motion_v4.py \
+          python projects/ironflame/scripts/run_canon_motion_v4.py \
             --repo . \
             --audio 'Ironflame (Remastered).wav' \
             --output-dir render/ironflame_v4
