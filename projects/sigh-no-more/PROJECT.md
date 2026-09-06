@@ -1,16 +1,9 @@
-# Sigh No More / Irish Eyes, Spanish Hair — Recovered Project
+# Sigh No More — Project
 
-**Branch:** `song/sigh-no-more`  
-**State:** Draft prompt architecture recovered; no completed render confirmed
+Branch: `song/sigh-no-more`
 
-## Identity
+Production goal: build a directed long-form music film from the supplied WAV and verified lyrics only. No historical Irish Eyes visual media is production-authoritative.
 
-Available continuity records treat “Sigh No More” and “Irish Eyes, Spanish Hair” as the same or closely linked music-video effort. Preserve both names until the canonical song title is confirmed.
+Current result: original storyboard, original hero/world media, 18 finished shot packages, accepted shot proofs, production-local FX lock, post-lock assembly, and actual-export QC pass.
 
-## Recovered direction
-
-The project was structured as sequential Veo/Sora-style cinematic prompts. Its visual world included Lake Hartwell, mountain roads, old houses, wet pavement, candlelight, rural night, Spanish hair, Irish eyes, and cinematic ancestral ghosts.
-
-## Integrity rule
-
-Do not claim a final render exists. Recover canonical audio/lyrics and the original prompt architecture before generating new material.
+Final visual language: Appalachian noir / coastal old-world borderland, recurring green-eyed dark-haired traveler, lanterns, wet stone roads, fire, red woven inheritance thread, family memory objects, and a night-to-dawn progression.

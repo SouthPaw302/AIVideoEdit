@@ -1,23 +1,10 @@
 {
   "schema": "aivideoedit.source-authority.v1",
   "project": "sigh-no-more",
-  "user_scope": "Create the video using only the supplied sound WAV file and user-provided lyrics; neutral reusable systems from current main are allowed.",
-  "authorized_sources": [
-    {
-      "role": "music_master",
-      "type": "wav",
-      "status": "verified_present",
-      "filename": "Irish eyes (Remastered).wav (2)",
-      "sha256": "eb3d23a41b6e1802d9a3e91617ac334ff42587d09adbdbbf3c982bf2860ae82d"
-    },
-    {
-      "role": "lyrics",
-      "type": "user_verified_text",
-      "status": "verified_present",
-      "sha256": "de033ade60dfc4ac6362d25bccb76767c911eaef7b4a3c6cb4d211e259d0b976"
-    }
-  ],
   "allow": {
+    "current_user_instruction": true,
+    "current_song_branch": true,
+    "current_main": true,
     "historical_chats": false,
     "historical_summaries": false,
     "unrelated_song_branches": false,
@@ -25,6 +12,10 @@
     "prior_project_visual_dna": false,
     "prior_project_media": false
   },
+  "authorized_sources": [
+    {"role":"music_master","type":"wav","name":"Irish eyes (Remastered).wav (2)","sha256":"eb3d23a41b6e1802d9a3e91617ac334ff42587d09adbdbbf3c982bf2860ae82d","duration_seconds":187.12,"sample_rate":48000,"channels":2},
+    {"role":"lyrics","type":"verified_user_text","status":"present"}
+  ],
   "explicit_user_authorizations": [],
-  "rule": "Prior Irish Eyes/Sigh No More renders, QC imagery, recovered visual DNA and historical prompts are not production inputs."
+  "rule": "Only the supplied WAV and current user-provided lyrics are story/source authority; neutral reusable production systems from current main are allowed."
 }

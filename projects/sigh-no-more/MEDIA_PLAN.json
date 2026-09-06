@@ -1,33 +1,10 @@
 {
   "schema": "aivideoedit.media-plan.v1",
-  "status": "established",
+  "status": "locked",
   "source_policy": "WAV + verified lyrics only",
   "user_approach_established": true,
-  "selected_capabilities": [
-    "generated_stills",
-    "generated_support_imagery",
-    "living_painting",
-    "layered_composite",
-    "depth_25d",
-    "atmospheric_plate",
-    "reactive_plate",
-    "transition_media",
-    "conventional_video"
-  ],
-  "approach": "Fully original lyric-driven Appalachian-noir/Latin-trip-hop visual world: wandering-road narrative, Irish-green/sea and Spanish-black/flame motifs, ancestral thread imagery, cinematic environmental storytelling, genuine shot-local internal motion, depth-assisted 2.5D where supported, motivated atmosphere/light/particles, and music-directed behavior from one preserved audio control bus.",
-  "music_style": {
-    "tempo_bpm": 80,
-    "key": "F minor",
-    "mood": "cinematic, mysterious, wandering traveler, dusty-road atmosphere",
-    "rhythm": "deep trip-hop drums with Latin folk percussion and subtle hand drums",
-    "instrumental_cues": ["slide guitar", "Appalachian fiddle", "charango-style plucks", "sub bass", "Rhodes", "accordion"],
-    "structure": ["intro", "verse", "chorus", "bridge/instrumental groove", "outro"]
-  },
-  "fx_direction": {
-    "shared_audio_bus": "FX2-AUDIO-001 candidate; must be proof-gated before FX lock",
-    "preferred_approved_runtime_effects": ["FX2-MOTION-002", "FX2-MOTION-003", "FX2-ATM-001", "FX2-ATM-002", "FX2-FIRE-001", "FX2-FIRE-002", "FX2-LIGHT-001", "FX2-LIGHT-002", "FX2-SURFACE-001"],
-    "conditional_or_proof_required_effects": ["FX2-MOTION-001", "FX2-MOTION-004", "FX2-LIGHT-003", "FX2-LIGHT-004", "FX2-TRANS-001", "FX2-TRANS-002", "FX2-TRANS-003", "FX2-TRANS-004", "FX2-TRANS-005", "FX2-SPATIAL-001", "FX2-SPATIAL-004", "FX2-AUDIO-001"],
-    "forbidden_claims": ["NeRF without actual trained radiance field", "3DGS without genuine splat geometry", "projectM/MilkDrop without that engine"]
-  },
-  "next_legal_stage": "STORYBOARD_LOCKED"
+  "selected_capabilities": ["generated_stills","layered_composite","depth_25d","atmospheric_plate","reactive_plate","transition_media","conventional_video","analysis_qc_media"],
+  "visual_world": "A single green-eyed, dark-haired traveler moves through an invented mountain-to-sea borderland. Lanterns, wet roads, red woven thread, fire, family photographs and a medallion recur as inheritance motifs. The palette migrates from blue-black night and amber practicals toward sunrise gold.",
+  "motion_rule": "internal localized motion first; restrained camera drift second",
+  "technical_truth": "Synthetic image-space 2.5D only; no NeRF or true 3DGS claim."
 }

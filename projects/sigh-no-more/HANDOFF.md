@@ -1,13 +1,9 @@
 # Sigh No More — Handoff
 
-Active branch: `song/sigh-no-more`.
+Current stage: `FINAL_QC_PASSED`.
 
-Current authority: current user instruction -> this branch -> current main.
+Use `PROJECT_STATE.json`, `SOURCE_AUTHORITY.json`, `MEDIA_PLAN.json`, `SHOT_LIST.md`, `fx.lock.json`, `RENDER_HISTORY.md`, and `QC.md` as production truth. Prior Irish Eyes renders/prompts/visual DNA remain prohibited source material.
 
-User instruction: create the video using only the canonical sound WAV and verified lyrics. Recovered/historical Irish Eyes media, old prompts, storyboards, visual DNA, and other song assets are not authorized production sources.
+Final export identity: `Sigh_No_More_FINAL_CANONICAL.mp4`, 190.12 s, SHA-256 `f017cff06001669f8551c14c9311c7c2ab7eb24b9c6c34afda0743b2e9ff3cd9`.
 
-Canonical system rules from current `main` were synced into this branch on 2026-09-06.
-
-Established visual/media approach: fully original lyric-driven mythic nocturne with cinematic environmental storytelling, recurring symbolic motifs, layered 2.5D/depth motion, authored camera movement, composited atmosphere/light/particles, and audio-reactive intensity. No generic slideshow. Do not claim NeRF/3DGS unless actually implemented.
-
-BLOCKER: neither the canonical WAV nor verified lyric text is currently present in the branch or accessible upload library. Do not invent or recover them from historical summaries. Resume at source ingest as soon as both authorized inputs are available.
+The film uses an original green-eyed/dark-haired traveler and invented mountain-to-sea world. Spatial effects are synthetic image-space 2.5D only. Four corrupted intermediate shots (S12–S15) were repaired independently; do not regress to the earlier rejected procedural render.

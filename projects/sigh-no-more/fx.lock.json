@@ -1,0 +1,29 @@
+{
+  "schema": "aivideoedit.fx-lock.production-local.v1",
+  "project": "sigh-no-more",
+  "branch": "song/sigh-no-more",
+  "status": "VERIFIED_FOR_FINAL_COMPILE",
+  "technology_truth": {
+    "spatial": "synthetic image-space 2.5D only",
+    "nerf": false,
+    "true_3dgs": false,
+    "canonical_fx_v2_runtime_claimed": false
+  },
+  "implementation_sha256": "1316dbf6f17b72fd13b4f9ad7d2000421336d776ecbaa9437a868f7c227b7dc9",
+  "effects": [
+    "localized_internal_flow",
+    "synthetic_depth_parallax",
+    "advected_fog_plate",
+    "practical_light_breath",
+    "ember_field",
+    "memory_thread_ribbons"
+  ],
+  "proofs": [
+    {"shot":"S03_IRISH_EYES","first_last_mean_abs_delta":8.7514,"mean_temporal_delta":0.9977,"decision":"accept"},
+    {"shot":"S06_SPANISH_FLAME","first_last_mean_abs_delta":14.5446,"mean_temporal_delta":1.1120,"decision":"accept"},
+    {"shot":"S08_MEMORY_THREAD","first_last_mean_abs_delta":13.0215,"mean_temporal_delta":1.3919,"decision":"accept"},
+    {"shot":"S09_RELEASE","first_last_mean_abs_delta":14.7977,"mean_temporal_delta":1.3756,"decision":"accept"}
+  ],
+  "visual_qc": "Proof contact sheet inspected; hero identity stable; internal motion/effects visible; no corrupted proof files.",
+  "locked_before_final_compile": true
+}

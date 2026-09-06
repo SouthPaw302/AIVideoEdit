@@ -1,21 +1,9 @@
 {
   "schema": "aivideoedit.reference-manifest.v1",
-  "videos": [],
-  "images": [],
-  "audio_reference": {
-    "status": "verified_present",
-    "filename": "Irish eyes (Remastered).wav (2)",
-    "duration_seconds": 187.12,
-    "sample_rate_hz": 48000,
-    "channels": 2,
-    "codec": "pcm_s16le",
-    "sha256": "eb3d23a41b6e1802d9a3e91617ac334ff42587d09adbdbbf3c982bf2860ae82d"
-  },
-  "lyrics_reference": {
-    "status": "verified_present",
-    "source": "current user instruction",
-    "sha256": "de033ade60dfc4ac6362d25bccb76767c911eaef7b4a3c6cb4d211e259d0b976"
-  },
+  "visual_references": [],
+  "audio_reference": {"status":"present","name":"Irish eyes (Remastered).wav (2)","duration_seconds":187.12,"sha256":"eb3d23a41b6e1802d9a3e91617ac334ff42587d09adbdbbf3c982bf2860ae82d"},
+  "lyrics_reference": {"status":"present","type":"verified_user_text"},
+  "reference_policy_satisfied": true,
   "analysis_complete": true,
-  "policy": "No visual reference was supplied. The required original story/visual/media approach was shown to the user before media generation and is now recorded as established. Historical visuals remain disallowed."
+  "policy": "No prior project visual references were authorized. Original media was generated only after the no-reference visual/media approach was shown to and accepted by the user."
 }

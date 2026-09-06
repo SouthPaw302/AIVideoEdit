@@ -1,25 +1,25 @@
-# Sigh No More / Irish Eyes, Spanish Hair — Recovered Visual DNA
+# Sigh No More — Visual DNA
 
 ## World
+An invented mountain-to-sea borderland where Appalachian wet roads, stone walls and lanterns flow naturally into an old coastal village. The geography is emotional rather than literal.
 
-- Lake Hartwell
-- mountain roads
-- old houses
-- wet pavement
-- candlelight
-- rural night
-- Spanish hair
-- Irish eyes
-- cinematic ancestral ghosts
+## Hero
+One recurring adult female traveler: dark long wavy hair, vivid green eyes, weathered black/charcoal dress and woven shawl with dark red thread, leather travel pack. Identity should remain stable across shots.
 
-## Primary recovered method
+## Motifs
+- green eyes / sea light
+- black hair / fire movement
+- red woven thread as inheritance and continuity
+- lantern practicals
+- wet roads and stone
+- family photographs, maps and a medallion
+- mountain/sea split imagery
 
-Sequential generated cinema using connected Veo/Sora-style shot prompts.
+## Palette arc
+Blue-black night + amber practicals -> saturated fire/red inheritance -> smoky green ancestral memory -> sunrise gold / evergreen release.
 
-## Tone
+## Motion language
+Internal localized flow first: hair, textile, fog, fire, reflected light and memory ribbons. Camera drift remains secondary and restrained. Music reactivity uses one shared frame-aligned WAV analysis bus.
 
-Cinematic, nocturnal, rural, intimate, ancestral, and haunted by memory.
-
-## Unresolved
-
-Exact characters, palette progression, camera grammar, continuity anchors, effects map, transitions, and ending logic must be recovered from the original prompt architecture or approved anew.
+## Spatial truth
+Synthetic image-space 2.5D only. No NeRF or true 3DGS claim.

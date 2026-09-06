@@ -1,5 +1,11 @@
-# Sigh No More / Irish Eyes, Spanish Hair — Effects Recovery
+# Sigh No More — FX Plan
 
-Potentially relevant catalog techniques suggested by the recovered imagery include sequential generated cinema, cinematic living paintings, wet-road/rain reflection animation, candlelight micro-loops, atmospheric fog, and restrained ancestral-ghost transitions.
+Locked production-local effects:
+- localized internal flow for hair/textile/environmental motion
+- synthetic image-space depth parallax
+- advected fog/smoke atmosphere
+- practical/moving light breath
+- ember field for flame/release sections
+- memory-thread ribbons for ancestral-memory sections
 
-These are recovery hypotheses, not locked approvals. Confirm against the original prompts or user direction before production.
+All effects are driven by one frame-aligned WAV analysis bus where musically reactive. Internal motion precedes restrained camera drift. Exact locked evidence is in `fx.lock.json`.

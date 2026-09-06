@@ -2,29 +2,22 @@
   "schema_version": 2,
   "project": "Sigh No More / Irish Eyes, Spanish Hair",
   "branch": "song/sigh-no-more",
-  "updated_utc": "2026-09-06",
-  "canonical_title": "Sigh No More / Irish Eyes, Spanish Hair",
+  "canonical_title": "Sigh No More",
   "source_audio": {
-    "filename": "Irish eyes (Remastered).wav (2)",
-    "conversation_file_id": "file_00000000de9081f7a967f4af4c6bcc93",
+    "name": "Irish eyes (Remastered).wav (2)",
     "sha256": "eb3d23a41b6e1802d9a3e91617ac334ff42587d09adbdbbf3c982bf2860ae82d",
     "duration_seconds": 187.12,
-    "sample_rate_hz": 48000,
-    "channels": 2,
-    "codec": "pcm_s16le",
-    "size_bytes": 35940892
+    "sample_rate": 48000,
+    "channels": 2
   },
-  "lyrics": {
-    "source": "current user-provided canonical text",
-    "sha256": "de033ade60dfc4ac6362d25bccb76767c911eaef7b4a3c6cb4d211e259d0b976"
-  },
-  "generated_assets": [],
-  "accepted_shot_proofs": [],
-  "production_outputs": [],
-  "rejected_outputs": [
-    {
-      "name": "Sigh_No_More_FINAL.mp4",
-      "reason": "Exploratory assembly produced before canonical shot-package/proof/FX-lock sequence; not an accepted production final."
-    }
-  ]
+  "lyrics": "verified_user_text",
+  "generated_assets": "new production-only hero/world stills; large binary bytes retained outside git",
+  "shot_count": 18,
+  "production_output": {
+    "name": "Sigh_No_More_FINAL_CANONICAL.mp4",
+    "duration_seconds": 190.12,
+    "sha256": "f017cff06001669f8551c14c9311c7c2ab7eb24b9c6c34afda0743b2e9ff3cd9",
+    "resolution": "1280x720",
+    "fps": 24
+  }
 }

@@ -1,22 +1,22 @@
-# Sigh No More — QC
+# Sigh No More — Final QC
 
-Current canonical gate: **APPROACH_ESTABLISHED**.
+Status: **PASS** on the actual post-lock export.
 
-## Source/authority QC — PASS
-- supplied WAV fingerprinted and technically verified
-- current user lyrics recorded as canonical source text
-- historical project media/visual DNA remain denied
-- no visual reference was supplied; required original visual/media approach was shown to the user and recorded
+Final export:
+- file: `Sigh_No_More_FINAL_CANONICAL.mp4`
+- duration: 190.12 s
+- video: H.264, 1280x720, 24 fps
+- audio: AAC, 48 kHz stereo, 256 kb/s
+- SHA-256: `f017cff06001669f8551c14c9311c7c2ab7eb24b9c6c34afda0743b2e9ff3cd9`
 
-## Workflow audit — PREVIOUS PASS REJECTED
-The earlier full-song render cannot be called final under current `main` because the required sequence was not followed:
-1. storyboard/shot map was not formally locked
-2. branch-local `shot_packages/` were not built
-3. short finished shot proofs were not accepted
-4. callable FX were not resolved through `fx_v2/registry.json` and precompile-gated into `fx.lock.json`
-5. assembly therefore occurred before the legal `FX_LOCKED` stage
+Checks:
+- 18 finished production shots present; four corrupted intermediates were re-rendered individually rather than rebuilding the whole film.
+- Post-lock final compile completed to full runtime.
+- `blackdetect` (0.4 s threshold) found no unintended sustained black sections.
+- `freezedetect` (1.0 s threshold) found no sustained freeze failures.
+- first 2.8 s audio measures ~-91 dB (intentional silent visual opening).
+- 4–8 s audio measures mean ~-21.5 dB / max ~-5.4 dB, confirming WAV entrance after the opening.
+- full contact-sheet inspection confirms the intended character/world progression and no broken section frames.
+- technology claims remain bounded to synthetic image-space 2.5D; no NeRF or true 3DGS claim.
 
-The earlier visual scan does not cure those missing production gates. It is retained only as rejected render history.
-
-## Next gate
-Lock `SHOT_LIST.md` from the verified WAV/lyrics and established media plan. No final assembly or downloadable production output is permitted until shot proofs and FX lock pass.
+Decision: accept final export.
