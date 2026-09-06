@@ -2,17 +2,17 @@
   "schema": "aivideoedit.project-state.v1",
   "project": "sigh-no-more",
   "branch": "song/sigh-no-more",
-  "state": "INITIALIZED",
-  "updated_utc": "2026-09-06T09:20:00Z",
-  "evidence": {
-    "canonical_rules_synced": true,
-    "visual_approach_shown_to_user": true,
-    "source_ingest_complete": false,
-    "reference_policy_satisfied": true,
-    "reference_analysis_complete": true,
-    "media_plan_valid": false,
-    "visual_approach_established": true
-  },
-  "blocked_on": ["canonical_wav_missing", "verified_lyrics_missing"],
-  "note": "Do not advance to SOURCE_INGESTED until both authorized inputs exist and are verified."
+  "stage": "APPROACH_ESTABLISHED",
+  "updated_utc": "2026-09-06T09:45:00Z",
+  "source_ingest_complete": true,
+  "reference_analysis_complete": true,
+  "visual_approach_established": true,
+  "storyboard_locked": false,
+  "shot_packages_built": false,
+  "shot_proofs_accepted": false,
+  "fx_lock_verified": false,
+  "assembly_complete": false,
+  "final_qc_passed": false,
+  "archive_complete": false,
+  "note": "Canonical workflow reset after reassessment. Existing exploratory full render is rejected as a production final because shot packages, accepted proofs and FX lock were skipped. Next legal stage is STORYBOARD_LOCKED."
 }

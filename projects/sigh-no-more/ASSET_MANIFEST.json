@@ -1,22 +1,30 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "project": "Sigh No More / Irish Eyes, Spanish Hair",
   "branch": "song/sigh-no-more",
-  "updated_utc": "2026-09-03",
-  "state": "draft_prompt_architecture_recovery",
-  "canonical_title": null,
-  "source_audio": null,
-  "lyrics": null,
-  "prompt_documents": [],
+  "updated_utc": "2026-09-06",
+  "canonical_title": "Sigh No More / Irish Eyes, Spanish Hair",
+  "source_audio": {
+    "filename": "Irish eyes (Remastered).wav (2)",
+    "conversation_file_id": "file_00000000de9081f7a967f4af4c6bcc93",
+    "sha256": "eb3d23a41b6e1802d9a3e91617ac334ff42587d09adbdbbf3c982bf2860ae82d",
+    "duration_seconds": 187.12,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "codec": "pcm_s16le",
+    "size_bytes": 35940892
+  },
+  "lyrics": {
+    "source": "current user-provided canonical text",
+    "sha256": "de033ade60dfc4ac6362d25bccb76767c911eaef7b4a3c6cb4d211e259d0b976"
+  },
   "generated_assets": [],
+  "accepted_shot_proofs": [],
   "production_outputs": [],
-  "missing": [
-    "canonical title",
-    "source audio",
-    "verified lyrics",
-    "original prompt architecture",
-    "timing map",
-    "generated clips or render evidence"
-  ],
-  "instruction": "Update immediately when older chats or files are recovered; do not invent missing values."
+  "rejected_outputs": [
+    {
+      "name": "Sigh_No_More_FINAL.mp4",
+      "reason": "Exploratory assembly produced before canonical shot-package/proof/FX-lock sequence; not an accepted production final."
+    }
+  ]
 }
