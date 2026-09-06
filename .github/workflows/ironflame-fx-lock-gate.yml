@@ -1,0 +1,36 @@
+name: IronFlame FX V2 Lock Gate
+
+on:
+  push:
+    branches: ["song/ironflame-20260905-0216"]
+    paths:
+      - "general/reusable/fx_v2/**"
+      - "projects/ironflame/FX_REQUIREMENTS.fx.json"
+      - ".github/workflows/ironflame-fx-lock-gate.yml"
+  workflow_dispatch:
+
+jobs:
+  ironflame-lock-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install runtime dependencies
+        run: python -m pip install --upgrade pip numpy opencv-python-headless
+      - name: Run hard IronFlame FX gate
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest projects/ironflame/FX_REQUIREMENTS.fx.json \
+            --lock-out projects/ironflame/fx.lock.json
+      - name: Verify immutable lock immediately
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest projects/ironflame/FX_REQUIREMENTS.fx.json \
+            --verify-lock projects/ironflame/fx.lock.json
+      - name: Upload lock evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ironflame-fx-lock
+          path: projects/ironflame/fx.lock.json

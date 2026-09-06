@@ -1,7 +1,8 @@
 {
-  "project": "ironflame-v3.3-prelock",
+  "project": "ironflame-v3.3-lock-candidate",
   "runtime": "aivideoedit-fx-v2",
   "seed": 302,
+  "allow_conditional": ["FX2-SPATIAL-004"],
   "effects": [
     {"id":"FX2-MOTION-002","strength":0.72},
     {"id":"FX2-LIGHT-001","strength":0.62},
