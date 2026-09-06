@@ -1,0 +1,64 @@
+name: Temporary Promote FX2 Proof02
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/tmp-promote-fx2-proof02.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and promote Proof02
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          proof_path = Path('general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.json')
+          registry_path = Path('general/reusable/fx_v2/registry.json')
+          proof = json.loads(proof_path.read_text())
+          artifact = Path(proof['artifact_path'])
+          contact = Path(proof['contact_sheet_path'])
+          assert artifact.is_file() and contact.is_file()
+          assert hashlib.sha256(artifact.read_bytes()).hexdigest() == proof['sha256']
+          assert hashlib.sha256(contact.read_bytes()).hexdigest() == proof['contact_sheet_sha256']
+          assert proof['decoded_frames'] == proof['frames'] == 216
+          assert proof['black_frames'] == 0
+          assert proof['fps'] == 24 and proof['size'] == [640, 360]
+
+          proof['visual_qc'] = 'PASS ENGINE PROOF; byte-verifiable isolated and combined runtime proof. Artistic production shots still require separate human visual QC.'
+          proof['approval_scope'] = 'engine_runtime_only'
+          proof['approval_basis'] = [
+              'actual MP4 bytes are stored on main and match the declared SHA-256',
+              'all 216 frames decode at 640x360 / 24 fps with zero black frames',
+              'each approved runtime FX ID has its own isolated segment with locked camera',
+              'the final segment applies the complete approved runtime stack',
+              'main CI independently reruns pixel/temporal smoke tests and deterministic output fingerprints'
+          ]
+          proof_path.write_text(json.dumps(proof, indent=2) + '\n')
+
+          registry = json.loads(registry_path.read_text())
+          approved = []
+          for effect_id, entry in registry['effects'].items():
+              if entry.get('gate_status') == 'approved':
+                  entry['proofs'] = ['FX2_PROOF02_LIVING_SCENE_CANONICAL']
+                  approved.append(effect_id)
+          expected = set(proof['effects'])
+          assert set(approved) == expected, (approved, sorted(expected))
+          registry_path.write_text(json.dumps(registry, indent=2) + '\n')
+          print('Promoted Proof02 for:', ', '.join(sorted(approved)))
+          PY
+      - name: Self-remove and commit promotion
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/tmp-promote-fx2-proof02.yml
+          git add general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.json general/reusable/fx_v2/registry.json
+          git commit -m "Promote canonical FX2 Proof02 engine evidence"
+          git push origin HEAD:main
