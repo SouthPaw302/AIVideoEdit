@@ -56,12 +56,16 @@ jobs:
             --verify-lock /tmp/fx.lock.json
       - name: Prove runtime output is process deterministic
         run: |
+          rm -f /tmp/determinism.txt
           for seed in 1 999; do
             PYTHONHASHSEED=$seed python - <<'PY' >> /tmp/determinism.txt
-          import hashlib, importlib.util
+          import hashlib, importlib.util, sys
           import numpy as np
           p='general/reusable/fx_v2/runtime.py'
-          spec=importlib.util.spec_from_file_location('fxrt',p); m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+          spec=importlib.util.spec_from_file_location('fxrt',p)
+          m=importlib.util.module_from_spec(spec)
+          sys.modules[spec.name]=m
+          spec.loader.exec_module(m)
           r=m.FXRuntime(seed=302)
           f=r.noise_field((180,320,3),'determinism-check',.37)
           print(hashlib.sha256(np.ascontiguousarray(f).tobytes()).hexdigest())
