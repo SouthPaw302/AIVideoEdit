@@ -1,11 +1,21 @@
 # IronFlameNew QC
 
-## Source ingest
-- Master audio decode: PASS.
-- Three MP4 decode checks: PASS.
-- Frame count: 145 each / 435 total.
+## Source ingest / reference gate
+- Master audio decode: PASS
+- Three MP4 decode checks: PASS
+- Expected frames: 145 each / 435 total
+- Extracted frames: 145 each / 435 total — PASS
+- Extraction policy: all_frames for all three short references — PASS
+- Full-sequence analysis recorded — PASS
 
-## Current block
-Reference extraction QC is incomplete: extracted frame count is currently recorded as 0/145 for each clip. No creative storyboard/visual lock is valid until complete extraction and analysis pass.
+## Authority contamination check
+- Historical chats/summaries: DENIED
+- Prior project storyboards/visual DNA/media: DENIED
+- Old lyric text: not authorized; removed from active project state
 
-Final export QC requirements remain governed by `main`.
+## Creative gate
+- Visual approach derived from current references only: PASS
+- Storyboard mapped to specific reference ranges and current WAV structure: PASS
+- Production stills/shot proofs: NOT YET BUILT
+- FX lock: NOT YET ALLOWED
+- Assembly: NOT YET ALLOWED

@@ -1,12 +1,13 @@
 {
   "project": "IronFlameNew",
   "branch": "song/ironflamenew",
-  "binary_policy": "User-supplied binaries remain externally held; branch records identity/hash/role/recovery information.",
+  "binary_policy": "User-supplied binaries and extracted frame binaries remain externally held; branch records identity, hashes, counts, roles and recovery pointers.",
   "assets": [
     {"id":"IFN-AUDIO-001","name":"Ironflame Redux(1).wav","role":"master_audio","sha256":"76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962","duration_seconds":244.68,"sample_rate":48000,"channels":2,"source_file_id":"file_00000000d1cc81f7807db18d6dce7392"},
-    {"id":"IFN-REF-A","name":"1 (1)(1).mp4","role":"visual_motion_reference","sha256":"717608f9a8e83819a921f7a1af276f89b0ed41ecd7fbe3dba89c4cbe1a2ecb03","resolution":[464,688],"fps":24,"duration_seconds":6.041667,"total_frames":145,"source_file_id":"file_00000000e07081f58734b60c35c010b0"},
-    {"id":"IFN-REF-B","name":"1 (2)(1).mp4","role":"visual_motion_reference","sha256":"402adf8e580ba5105f7ebf17df28107ad4ab5e5323fb8d0a8adc42835013cde7","resolution":[464,688],"fps":24,"duration_seconds":6.041667,"total_frames":145,"source_file_id":"file_0000000040ac81f7b8e297fa3322586f"},
-    {"id":"IFN-REF-C","name":"1 (3)(1).mp4","role":"visual_motion_reference","sha256":"da4e50dae75ca498692975e3ef80b498572f537c4a6bbd5de46cca030d65e464","resolution":[464,688],"fps":24,"duration_seconds":6.041667,"total_frames":145,"source_file_id":"file_00000000063881f79d8b2cddf65533bb"}
+    {"id":"IFN-REF-A","name":"1 (1)(1).mp4","role":"visual_motion_reference","sha256":"717608f9a8e83819a921f7a1af276f89b0ed41ecd7fbe3dba89c4cbe1a2ecb03","resolution":[464,688],"fps":24,"duration_seconds":6.041667,"total_frames":145,"extracted_frames":145,"frame_set_digest":"92924ad2af896e4b73cbb54bfcaeb030450578c02b17ef189f722e18cf874ed2","source_file_id":"file_00000000e07081f58734b60c35c010b0"},
+    {"id":"IFN-REF-B","name":"1 (2)(1).mp4","role":"visual_motion_reference","sha256":"402adf8e580ba5105f7ebf17df28107ad4ab5e5323fb8d0a8adc42835013cde7","resolution":[464,688],"fps":24,"duration_seconds":6.041667,"total_frames":145,"extracted_frames":145,"frame_set_digest":"987749731c7fe63a7506dddaac2d57c01c01ec20032dc805256335f64b46b413","source_file_id":"file_0000000040ac81f7b8e297fa3322586f"},
+    {"id":"IFN-REF-C","name":"1 (3)(1).mp4","role":"visual_motion_reference","sha256":"da4e50dae75ca498692975e3ef80b498572f537c4a6bbd5de46cca030d65e464","resolution":[464,688],"fps":24,"duration_seconds":6.041667,"total_frames":145,"extracted_frames":145,"frame_set_digest":"dcb65a1536c2f6596dcc4b9e52fb09d838a08a23b46a7c0e4303da1701c17ebe","source_file_id":"file_00000000063881f79d8b2cddf65533bb"}
   ],
-  "status": "source_ingested"
+  "generated_assets": [],
+  "status": "storyboard_locked_no_generated_media_yet"
 }

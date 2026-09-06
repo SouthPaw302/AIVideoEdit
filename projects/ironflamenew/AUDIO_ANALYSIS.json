@@ -1,0 +1,16 @@
+{
+  "source": "Ironflame Redux(1).wav",
+  "sha256": "76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962",
+  "duration_seconds": 244.68,
+  "sample_rate": 48000,
+  "tempo_bpm_estimate": 87.891,
+  "key_candidates": [
+    {"key":"F minor","score":0.7190},
+    {"key":"A# major","score":0.6379},
+    {"key":"A# minor","score":0.6362},
+    {"key":"F major","score":0.6251}
+  ],
+  "coarse_structure_seconds": [0.0,8.149,46.144,67.989,77.483,123.371,148.075,164.267,187.307,231.488,244.68],
+  "strong_onsets_seconds": [21.269,29.461,33.557,37.824,46.165,49.92,80.939,82.987,94.229,97.301,99.349,116.053,166.165,187.989,198.208,200.256,202.987,217.984,220.715,239.467],
+  "note": "Measured from the current WAV only. No historical timing map or lyric structure imported."
+}

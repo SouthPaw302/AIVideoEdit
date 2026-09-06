@@ -1,5 +1,7 @@
 # IronFlameNew Render History
 
-No accepted production shot proof or production movie exists.
+Clean rebuild started under universal production contract.
 
-A previously generated unrelated fantasy key image was not branch-authorized production media and is rejected/excluded from this clean project.
+No prior IronFlame renders are accepted as lineage for this production.
+
+Current clean production has **no accepted shot proof and no assembled render yet**.

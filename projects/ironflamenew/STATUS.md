@@ -1,9 +1,11 @@
 # IronFlameNew Status
 
-- Universal production contract merged into this branch.
-- Clean source authority restored: current chat/files + current main only.
-- Master WAV and three short MP4 references are ingested and hashed.
-- Each reference contains 145 frames and must be extracted completely.
-- Previous partial-frame storyboard/visual lock is revoked.
-- Current stage: **SOURCE_INGESTED**.
-- Next legal stage: extract 145/145 frames from each reference, analyze them, update `REFERENCE_MANIFEST.json`, then run the production guard.
+- Clean authority: current chat/files + current `main` only.
+- All three short references fully extracted: **435/435 frames**.
+- Full-sequence motion/style analysis complete.
+- Current WAV analyzed independently; no historical timing map imported.
+- Clean visual DNA established from the supplied reference imagery only.
+- Clean 10-shot storyboard locked and mapped to specific source frame ranges.
+- No generated production imagery has been accepted yet.
+- Current stage: **STORYBOARD_LOCKED**.
+- Next legal stage: build real shot packages and short proof renders. Do not assemble the full film.
