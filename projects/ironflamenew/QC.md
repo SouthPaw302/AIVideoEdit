@@ -8,10 +8,11 @@
 
 ## Shot media
 - 10 widescreen shot packages: PASS.
-- 30 representative rendered frames (8/50/92% of each shot): PASS internal visual review.
+- 30 corrected representative rendered frames (8/50/92% of each shot): PASS internal visual review.
+- Delivery-candidate QC caught and rejected rectangular source-crop leakage in crystalline scenes and weak warm-presence geometry.
+- Corrected crystalline/ribbon pixels are newly authored from REF-C geometry/motion language; warm presence is newly authored from REF-B head geometry and faces the subject.
 - Medieval/warrior/wolf/sword/castle/portal/title contamination: NONE.
-- Intermediate compiled video: NONE.
 
-## Pending
-- Canonical FX v2 lock.
-- Full final export QC: black/damaged frames, freezes, repetition, temporal seams, ghosting, visible FX, flicker, continuity, 16:9 framing, duration and audio sync.
+## Current gate
+- Corrected assets are back at SHOT_PROOFS_ACCEPTED pending regenerated FX lock.
+- Final export must still pass all-frame decode, black/freeze scan, continuity/contact-sheet review, framing/runtime/audio sync, and visible-motion QC.

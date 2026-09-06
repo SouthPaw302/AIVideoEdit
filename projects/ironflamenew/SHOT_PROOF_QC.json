@@ -1,19 +1,23 @@
 {
-  "schema": "aivideoedit.shot-proof-qc.v1",
-  "project": "IronFlameNew",
-  "method": "three internally inspected rendered frames per shot at 8/50/92 percent; no intermediate compiled video",
-  "sample_count": 30,
-  "sample_set_sha256": "1a8fd0f2589fd5e1bbe2faf84c2d633a7b2dee5273feee3959c32361dfc0fb05",
-  "qc_montage_sha256": "45d3d10150d2461406bf4c00d792905ce989887aaf00e2d77802dcb8718e9063",
-  "resolution": [1280,720],
+  "schema": "aivideoedit.shot-proof-qc.v2",
   "result": "PASS",
-  "checks": {
-    "current_reference_visual_language": true,
-    "fantasy_contamination": false,
-    "identity_strategy_consistent": true,
-    "widescreen_native": true,
-    "internal_motion_visible": true,
-    "black_frames": 0,
-    "obvious_source_padding": false
-  }
+  "compiled_intermediate_video": false,
+  "sample_frames": 30,
+  "sample_policy": "8%, 50%, 92% of each of 10 shots",
+  "visual_qc": "PASS: corrected set has no rectangular source leakage; warm presence is coherent and faces the subject; crystalline/ribbon scenes are clean; no historical fantasy contamination.",
+  "motion_visibility": {
+    "min_mean_pair_delta": 3.7825583526,
+    "max_pair_delta": 11.0458828848
+  },
+  "evidence": {
+    "external_sample_bundle_sha256": "c5a54e8b8a2f4707fdc5c49c5d6e5cf3ecadd0937c5f95d471108c508f261857",
+    "montage_sha256": "0733db7fbb6c6bd97d231f9f0ea46f61efd30ebe30ff7ae91c85c77bf53664fa",
+    "montage_path": "analysis/final_frame_qc_v2/qc_montage.jpg"
+  },
+  "corrections_after_rejected_delivery_candidate": [
+    "removed rectangular crop leakage from shots 05/08/09",
+    "re-authored crystalline figure pixels procedurally from REF-C silhouette geometry",
+    "re-authored clean procedural ribbon geometry from REF-C motion language",
+    "re-authored warm presence from REF-B head geometry and oriented it toward the human silhouette"
+  ]
 }
