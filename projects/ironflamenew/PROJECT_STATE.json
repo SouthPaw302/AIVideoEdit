@@ -2,7 +2,7 @@
   "schema": "aivideoedit.project-state.v1",
   "project": "IronFlameNew",
   "branch": "song/ironflamenew",
-  "stage": "FX_LOCKED",
+  "stage": "FINAL_QC_PASSED",
   "source_ingest_complete": true,
   "reference_policy_satisfied": true,
   "reference_analysis_complete": true,
@@ -11,7 +11,7 @@
   "shot_packages_built": true,
   "shot_proofs_accepted": true,
   "fx_lock_verified": true,
-  "assembly_complete": false,
-  "final_qc_passed": false,
+  "assembly_complete": true,
+  "final_qc_passed": true,
   "archive_complete": false
 }
