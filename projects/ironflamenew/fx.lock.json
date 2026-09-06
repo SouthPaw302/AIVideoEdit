@@ -13,15 +13,15 @@
     },
     {
       "path": "projects/ironflamenew/FINAL_RENDER_INPUT_HASHES.json",
-      "sha256": "309a52b758d87ada0cbd75fac522a1dafb94fcacf8b79fbb5451ce5c4bdafe57"
+      "sha256": "20c5ac60713b984e258b56c6a0a0cfb13c32f57e28c4b155e5b59d09f6bb9b1f"
     },
     {
       "path": "projects/ironflamenew/SHOT_PACKAGE_MANIFEST.json",
-      "sha256": "313a84329e9c08159e39ee674a30af6565c4900b77821bf5bfebbadf131d54f8"
+      "sha256": "a1a9c4ced2ead6856c910696f73b4ed7a15bee76870cf892adb313d76fd39c11"
     },
     {
       "path": "projects/ironflamenew/SHOT_PROOF_QC.json",
-      "sha256": "bbc85693bc28255b9cdc8925d99a72706e4a559df86fb43a5a717cf808127a7e"
+      "sha256": "7244e5f9dc9996d1fa8fe67c2578fd7bde5bf22a11042ea2cb72b1b81919d66c"
     },
     {
       "path": "projects/ironflamenew/REFERENCE_MANIFEST.json",
@@ -167,10 +167,10 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 0.751071,
-        "temporal_delta_max": 0.332778,
-        "global_shift_px_max": 0.016387,
-        "sample_output_sha256": "e90b8d844540dae6d094a0e560bc473805fd2a737ac896de43d6a82560c12077"
+        "source_delta_max": 0.7511,
+        "temporal_delta_max": 0.332807,
+        "global_shift_px_max": 0.01698,
+        "sample_output_sha256": "34bb8718d9e3dc0a16f2d83be70da3a144165f1ef42237e4e4d4c2751bb4476c"
       }
     },
     {
@@ -204,5 +204,5 @@
     }
   ],
   "result": "PASS",
-  "evidence_fingerprint_sha256": "61d98572ea5b4979c8aeed8a540841235bf47feac8adbc01003d68ea22affd36"
+  "evidence_fingerprint_sha256": "28638ae5df0ca0b7db4220bc92ced18a2ef7f505b652706b91a9e2685a98f29b"
 }
