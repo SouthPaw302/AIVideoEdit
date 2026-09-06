@@ -1,7 +1,7 @@
 # IronFlameNew Render History
 
-Clean rebuild started under universal production contract.
-
-No prior IronFlame renders are accepted as lineage for this production.
-
-Current clean production has **no accepted shot proof and no assembled render yet**.
+- Source/reference ingest and full 435-frame extraction complete.
+- Ten shot media packages authored.
+- 30 still-frame proof samples rendered for internal QC only.
+- No intermediate movie files retained or authorized.
+- Final render pending FX lock.

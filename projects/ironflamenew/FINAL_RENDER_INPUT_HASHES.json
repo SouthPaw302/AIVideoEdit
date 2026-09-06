@@ -1,0 +1,35 @@
+{
+  "schema": "aivideoedit.external-render-inputs.v1",
+  "project": "IronFlameNew",
+  "storage": "session sandbox / externally held binaries",
+  "files": {
+    "analysis/shot_assets.npz": {
+      "sha256": "f409eccaca0b09b355d70ccbdab2fecfc58d6262ce7d9469356292bfdb4a169e",
+      "bytes": 16051964
+    },
+    "analysis/shot_recipes.json": {
+      "sha256": "cbe54e267814bd0a67d3944b642303433dfa4b56f5eef42df8c2418e43a947fb",
+      "bytes": 14862
+    },
+    "analysis/reference_motion_drivers.npz": {
+      "sha256": "81cf39f5ca4cb52ef70f111d616edb75ec260a8368a2f0e30c43fa2827394e7d",
+      "bytes": 19585195
+    },
+    "analysis/reactive_controls_24fps.json": {
+      "sha256": "d9d3b983ffdcee45b70cd7deedf061b20d462d4d0ba695e365acfa88a07ba802",
+      "bytes": 2258861
+    },
+    "source/Ironflame_Redux.wav": {
+      "sha256": "76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962",
+      "bytes": 46978732
+    },
+    "render_final.py": {
+      "sha256": "b2c5ad5badfddbb4c233998201bac4fd9ef3595a8e97d2dd4581cf66f3490f3c",
+      "bytes": 6961
+    },
+    "canonical/runtime.py": {
+      "sha256": "6cfdf3ba68c1f79015c1f1b26174d4e3ca4de7b75b06b5ad9811580f5bc2cfa4",
+      "bytes": 18690
+    }
+  }
+}

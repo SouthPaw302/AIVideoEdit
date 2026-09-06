@@ -1,0 +1,50 @@
+name: IronFlameNew Canonical FX Lock
+
+on:
+  push:
+    branches: ["song/ironflamenew"]
+    paths:
+      - "projects/ironflamenew/FX_REQUIREMENTS.fx.json"
+      - "projects/ironflamenew/render_final.py"
+      - "projects/ironflamenew/FINAL_RENDER_INPUT_HASHES.json"
+      - "projects/ironflamenew/SHOT_PACKAGE_MANIFEST.json"
+      - "projects/ironflamenew/SHOT_PROOF_QC.json"
+      - "projects/ironflamenew/REFERENCE_MANIFEST.json"
+      - "projects/ironflamenew/MEDIA_PLAN.json"
+      - ".github/workflows/ironflamenew-fx-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  lock-production-fx:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install gate runtime dependencies
+        run: python -m pip install --upgrade pip numpy opencv-python-headless
+      - name: Generate canonical FX lock
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest projects/ironflamenew/FX_REQUIREMENTS.fx.json \
+            --lock-out projects/ironflamenew/fx.lock.json
+      - name: Verify immutable FX lock
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest projects/ironflamenew/FX_REQUIREMENTS.fx.json \
+            --verify-lock projects/ironflamenew/fx.lock.json
+      - name: Commit verified lock to production branch
+        run: |
+          git config user.name "AIVideoEdit FX Gate"
+          git config user.email "actions@users.noreply.github.com"
+          git add projects/ironflamenew/fx.lock.json
+          if git diff --cached --quiet; then
+            echo "FX lock already current"
+          else
+            git commit -m "Lock IronFlameNew production FX [fx-lock]"
+            git push
+          fi

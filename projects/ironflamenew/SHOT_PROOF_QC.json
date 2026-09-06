@@ -1,0 +1,19 @@
+{
+  "schema": "aivideoedit.shot-proof-qc.v1",
+  "project": "IronFlameNew",
+  "method": "three internally inspected rendered frames per shot at 8/50/92 percent; no intermediate compiled video",
+  "sample_count": 30,
+  "sample_set_sha256": "1a8fd0f2589fd5e1bbe2faf84c2d633a7b2dee5273feee3959c32361dfc0fb05",
+  "qc_montage_sha256": "45d3d10150d2461406bf4c00d792905ce989887aaf00e2d77802dcb8718e9063",
+  "resolution": [1280,720],
+  "result": "PASS",
+  "checks": {
+    "current_reference_visual_language": true,
+    "fantasy_contamination": false,
+    "identity_strategy_consistent": true,
+    "widescreen_native": true,
+    "internal_motion_visible": true,
+    "black_frames": 0,
+    "obvious_source_padding": false
+  }
+}

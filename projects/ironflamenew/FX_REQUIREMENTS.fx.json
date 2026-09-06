@@ -1,6 +1,22 @@
 {
   "project": "IronFlameNew",
-  "status": "blocked_until_shot_proofs_accepted",
-  "effects": [],
-  "render_inputs": []
+  "runtime": "aivideoedit-fx-v2",
+  "seed": 302,
+  "effects": [
+    {"id":"FX2-MOTION-002","strength":0.72},
+    {"id":"FX2-ATM-001","strength":0.18},
+    {"id":"FX2-FIRE-002","strength":0.24},
+    {"id":"FX2-LIGHT-001","strength":0.75},
+    {"id":"FX2-LIGHT-002","strength":0.75},
+    {"id":"FX2-SURFACE-001","strength":0.33}
+  ],
+  "transitions": [],
+  "render_inputs": [
+    "projects/ironflamenew/render_final.py",
+    "projects/ironflamenew/FINAL_RENDER_INPUT_HASHES.json",
+    "projects/ironflamenew/SHOT_PACKAGE_MANIFEST.json",
+    "projects/ironflamenew/SHOT_PROOF_QC.json",
+    "projects/ironflamenew/REFERENCE_MANIFEST.json",
+    "projects/ironflamenew/MEDIA_PLAN.json"
+  ]
 }

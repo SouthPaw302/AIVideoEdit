@@ -1,22 +1,17 @@
 {
   "schema": "aivideoedit.media-plan.v1",
-  "status": "established_from_supplied_references",
+  "status": "locked_clean",
   "selected_capabilities": [
     "source_video",
     "extracted_frames",
-    "generated_stills",
     "generated_support_imagery",
     "living_painting",
     "layered_composite",
-    "depth_25d",
     "atmospheric_plate",
     "reactive_plate",
-    "transition_media",
     "conventional_video",
     "analysis_qc_media"
   ],
-  "user_approach_established": false,
-  "user_approach_requirement": "not_required_because_visual_references_were_supplied",
-  "excluded_until_genuine_assets_exist": ["nerf", "true_3dgs"],
-  "notes": "Build original widescreen production imagery from the supplied references' visual/motion DNA; references are analysis sources, not timeline filler."
+  "user_approach_established": true,
+  "notes": "Reference-led production. No NeRF/3DGS claims. Portrait references supply visual/motion DNA; final media is newly authored 16:9 composites."
 }

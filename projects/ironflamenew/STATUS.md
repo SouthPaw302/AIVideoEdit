@@ -1,11 +1,11 @@
 # IronFlameNew Status
 
-- Clean authority: current chat/files + current `main` only.
-- All three short references fully extracted: **435/435 frames**.
-- Full-sequence motion/style analysis complete.
-- Current WAV analyzed independently; no historical timing map imported.
-- Clean visual DNA established from the supplied reference imagery only.
-- Clean 10-shot storyboard locked and mapped to specific source frame ranges.
-- No generated production imagery has been accepted yet.
-- Current stage: **STORYBOARD_LOCKED**.
-- Next legal stage: build real shot packages and short proof renders. Do not assemble the full film.
+Clean rebuild from current user files only.
+
+- 435/435 reference frames extracted and analyzed.
+- Current WAV analyzed into 24 fps reactive controls.
+- Visual DNA/storyboard locked from the three current references only.
+- 10 true-widescreen shot packages built as source-derived/generated composites.
+- 30 representative rendered frames internally QC'd; no intermediate video compiled.
+- Current stage: **SHOT_PROOFS_ACCEPTED**.
+- Next: canonical FX v2 precompile gate -> immutable lock -> one final movie render -> full export QC.

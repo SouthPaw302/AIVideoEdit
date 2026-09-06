@@ -1,21 +1,17 @@
 # IronFlameNew QC
 
-## Source ingest / reference gate
-- Master audio decode: PASS
-- Three MP4 decode checks: PASS
-- Expected frames: 145 each / 435 total
-- Extracted frames: 145 each / 435 total — PASS
-- Extraction policy: all_frames for all three short references — PASS
-- Full-sequence analysis recorded — PASS
+## Source/reference
+- Master WAV decode: PASS.
+- Reference MP4 decode: PASS.
+- Full extraction: PASS, 145/145 each, 435 total.
+- Historical-source contamination: NONE AUTHORIZED.
 
-## Authority contamination check
-- Historical chats/summaries: DENIED
-- Prior project storyboards/visual DNA/media: DENIED
-- Old lyric text: not authorized; removed from active project state
+## Shot media
+- 10 widescreen shot packages: PASS.
+- 30 representative rendered frames (8/50/92% of each shot): PASS internal visual review.
+- Medieval/warrior/wolf/sword/castle/portal/title contamination: NONE.
+- Intermediate compiled video: NONE.
 
-## Creative gate
-- Visual approach derived from current references only: PASS
-- Storyboard mapped to specific reference ranges and current WAV structure: PASS
-- Production stills/shot proofs: NOT YET BUILT
-- FX lock: NOT YET ALLOWED
-- Assembly: NOT YET ALLOWED
+## Pending
+- Canonical FX v2 lock.
+- Full final export QC: black/damaged frames, freezes, repetition, temporal seams, ghosting, visible FX, flicker, continuity, 16:9 framing, duration and audio sync.
