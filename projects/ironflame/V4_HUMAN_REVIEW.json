@@ -1,0 +1,35 @@
+{
+  "project": "IronFlame",
+  "render": "V4 Canon Motion",
+  "master_sha256": "7e4a9e6f2537b3896874dc274f729ba85389bfd8343cb10767c6af862998cb90",
+  "technical_qc": "PASS",
+  "artistic_qc": "REVISE",
+  "reference_motion_calibration": {
+    "method": "Farneback flow, 240x135, 1 second interval",
+    "v4_mean_flow_px": 1.7529,
+    "reference_1_sha256": "847b76a943fdd3d4cb539623517d9203c3fda75585680282cd608018e12d32d5",
+    "reference_1_mean_flow_px": 5.7238,
+    "reference_2_sha256": "b0825596f450825e9ca92aa142cf029ec7928ad303bdad89ae5ffbffe23eb08c",
+    "reference_2_mean_flow_px": 7.9813,
+    "finding": "V4 is technically alive but materially more restrained than the supplied motion DNA. Long-form pacing can be calmer than the 6-second references, but high-energy scenes need substantially more internal movement."
+  },
+  "shots": {
+    "01": {"visual":"KEEP","motion":"REVISE","note":"House/rain world reads; strengthen wet-ground/reflection life without moving architecture unnaturally."},
+    "02": {"visual":"KEEP","motion":"REVISE","note":"Threshold identity holds; localize exterior rain/reflection more clearly."},
+    "03": {"visual":"KEEP","motion":"REVISE_MINOR","note":"Forge/flame/smoke is strongest early sequence; preserve face/hands while increasing environmental life."},
+    "04": {"visual":"KEEP","motion":"REVISE","note":"Wall encounter reads; add moving relief/side-light response rather than generic frame flow."},
+    "05": {"visual":"KEEP","motion":"REVISE","note":"Road/wolves composition works; move fog/sky/cloth while protecting wolves from morphing."},
+    "06": {"visual":"KEEP","motion":"REVISE","note":"Unmade-day beat needs more explicit iron-blue/ash to dawning warmth progression."},
+    "07": {"visual":"KEEP","motion":"REVISE_MAJOR","note":"Canon calls for gravity inversion; V4 remains too visually stable."},
+    "08": {"visual":"KEEP","motion":"REVISE_MAJOR","note":"Needs deep hallway push and focus transfer; protect foreground hand."},
+    "09": {"visual":"KEEP","motion":"REVISE","note":"Canon calls for locked-camera recognition; retain moving water/reflection, remove generic camera drift."},
+    "10": {"visual":"REVISE_FRAMING","motion":"REVISE_MAJOR","note":"Rise needs stronger cloak/hair/world motion. Circular forge architecture must not read as a magic portal; use tighter framing and broken in-world contour/sigil behavior."},
+    "11": {"visual":"KEEP","motion":"REVISE","note":"Make storm/iron-blue to dawn-gold palette migration explicit."},
+    "12": {"visual":"KEEP","motion":"REVISE","note":"Add optical rack focus from legacy mark to heroine and retain restrained closing energy."}
+  },
+  "transitions": {
+    "10_to_11": {"status":"REVISE","finding":"Pigment intermediate visibly tears face/architecture; approved light-peak handoff proof is cleaner."},
+    "others": {"status":"KEEP_WITH_FINAL_REVIEW","finding":"Short mixed pigment/light vocabulary generally reads; watch brief identity ghosting on light handoffs and blotchy pigment frames."}
+  },
+  "next_gate": "Judge V5 directed render. If motion remains materially below target or portal-like framing persists, promote the staged V6 reference-calibrated corrections and rerender behind the same FX lock gate."
+}
