@@ -1,6 +1,30 @@
 {
   "project": "IronFlameRedux",
   "branch": "song/ironflame-redux",
-  "status": "awaiting_user_files",
-  "assets": []
+  "status": "reference_intake_complete_audio_pending",
+  "assets": [
+    {
+      "id": "IFR-SRC-001",
+      "title": "Ironflame: A Mythic Visual Storyboard.png",
+      "role": [
+        "visual_story_authority",
+        "storyboard_reference",
+        "protagonist_reference",
+        "palette_reference",
+        "motion_language_reference"
+      ],
+      "source_scope": "current_production_user_supplied",
+      "file_library_id": "file_0000000003fc81f7a64a7104845308c7",
+      "session_path": "/mnt/data/Ironflame: A Mythic Visual Storyboard.png",
+      "bytes": 2423152,
+      "sha256": "27cbb1a5b7ac00f65f23ea3f57477781adbd725e6a8a2a8b18513ea8bd8bdc4b",
+      "notes": "Board gives sequence-level time references, but its 3:20 technical duration conflicts with shown 03:20-03:28 epilogue and 03:28+ end card. Audio master controls final timing."
+    }
+  ],
+  "pending": [
+    "Redux production audio master",
+    "authoritative lyrics/transcript if separate from storyboard",
+    "any additional current-production reference media"
+  ],
+  "inheritance_policy": "Do not import historical IronFlame branch media, lyrics, prompts, controls or renders unless user explicitly supplies or requests them for IronFlameRedux."
 }
