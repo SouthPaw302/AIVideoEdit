@@ -1,12 +1,10 @@
 # AIVideoEdit Canonical FX V2
 
-Branch: `fx/canonical-v2`
+Canonical location: `main/general/reusable/fx_v2/`
 
 ## Purpose
 
-Unify the strongest proven AIVideoEdit effects from Silver Coin, Irish Eyes, IronFlame and Leave It by the Door behind one stable callable runtime.
-
-The old repository has excellent effects, but they are fragmented across song renderers and overlapping helper modules. V2 makes the effects reusable by ID and keeps song-specific timing/ROIs in project manifests.
+Unify the strongest proven AIVideoEdit effects behind one stable callable runtime while keeping song-specific timing, ROIs, mappings, and story decisions on song branches.
 
 ## Core rule
 
@@ -21,60 +19,44 @@ The viewer should read a living image, not a still being shaken or zoomed.
 3. `motion` — depth parallax, cloth/hair/crowd breath, water/foliage flow.
 4. `environment` — rain, rain glass, fog/smoke, spray, embers, fire.
 5. `light` — firelight, moving practical light, shafts, glints, temporal palette migration.
-6. `visualizer` — generated compositing plates that consume the shared control bus.
+6. `visualizer` — generated compositing plates consuming the shared control bus.
 7. `transition` — pigment, fog/light, reflection, doorway/depth, object portal, perceptual gates.
 8. `spatial` — honest 2.5D, NeRF atmosphere, and real 3DGS/SuperSplat integration when source geometry supports it.
 
-## IDs
+## Stable IDs
 
 Effects are addressed by stable IDs from `registry.json`. A song manifest calls IDs plus parameters; it does not copy implementation code.
 
-Example:
-
-```json
-{
-  "effects": [
-    {"id": "FX2-FIRE-001", "roi": [0.05,0.38,0.46,0.98], "strength": 0.9},
-    {"id": "FX2-ATM-001", "roi": [0.0,0.0,0.58,0.78], "strength": 0.5},
-    {"id": "FX2-MOTION-002", "roi": [0.0,0.0,1.0,1.0], "strength": 0.7}
-  ]
-}
-```
-
 For music-directed projects, prefer a single preserved `FX2-AUDIO-001` analysis pass and map its smoothed controls into several effects rather than independently re-analyzing the song inside every renderer.
+
+The historical IDs in `generative-engine/registry_entries.json` are aliases only; the callable registry remains this directory's `registry.json`.
 
 ## Hard precompile gate
 
 A project may not compile merely because an FX ID exists in JSON.
 
-Before a production render, run `precompile_gate.py`. It verifies that every requested effect:
+`precompile_gate.py` schema v2 verifies:
 
-- is explicitly production-approved in the canonical registry;
-- is wired into the actual runtime path;
-- is not a placeholder/stub/no-op;
-- has a rendered proof/checksum and KEEP/APPROVED/PASS visual QC;
-- produces measurable pixel change and temporal behavior where expected;
-- does not smuggle excessive whole-frame shake into non-camera effects.
+- production approval state;
+- runtime wiring or real adapter implementation files;
+- stub/placeholder rejection;
+- human-approved proof records;
+- proof-binary bytes when an addressable artifact is recorded;
+- deterministic sample-output hashes plus pixel/temporal/global-shift smoke metrics for runtime effects;
+- explicit hashed PASS preflight for conditional/external technology;
+- exact production `render_inputs` that can alter the pixels.
 
-The gate writes an `fx.lock.json` containing hashes of the manifest, registry, runtime implementation and proof records. The lock must be verified again immediately before compile. Any change invalidates it.
+The generated lock includes a complete evidence fingerprint. Lock verification reruns the live checks immediately before compile. Schema-v1 locks are obsolete and must be regenerated.
 
 See `PRECOMPILE_FX_GATE.md`.
 
 ## Promotion gate
 
-No effect is promoted to production use merely because code exists. Each candidate requires:
+No effect is promoted merely because code exists. Candidates require deterministic implementation, representative rendered proof, native project cadence, measurable motion/pixel behavior where appropriate, visual QC, documented limitations, and truthful technology naming.
 
-- deterministic implementation;
-- 3–10 second rendered proof;
-- native final cadence (24/30 fps as project requires);
-- before/after or motion metrics;
-- black/freeze/loop-seam scan;
-- visual QC: KEEP / REVISE / REJECT;
-- documented limitations.
+Adapter/external effects promoted to ordinary `approved` status additionally require byte-verifiable proof artifact evidence. Conditional technologies remain conditional and require project-specific preflight evidence.
 
-Until that happens its `gate_status` remains `proof_required`, which makes the precompile gate fail if a song attempts to use it.
-
-## Design improvements over V1
+## Design rules
 
 - eliminate global shake as a default motion source;
 - analyze song reactivity once and preserve a common control bus;
@@ -86,14 +68,9 @@ Until that happens its `gate_status` remains `proof_required`, which makes the p
 - separate flame geometry from firelight illumination;
 - make transitions physically motivated by visible scene elements;
 - expose song-agnostic presets instead of hard-coded song paths;
-- keep real 3DGS clearly separate from 2D Gaussian light fields;
+- keep real 3DGS clearly separate from 2D Gaussian light fields; see `../SPATIAL_3DGS_SUPERSPLAT.md`;
 - keep custom reactive fields distinct from projectM/MilkDrop unless those actual engines are used.
 
-## Source lineage being consolidated
+## Historical lineage
 
-- Silver Coin V8 effect packs and music-directed living painting tools;
-- Irish Eyes Magic Gate perceptual/reflection/water/glass transition families;
-- IronFlame recursive transition and temporal-painting concepts;
-- Leave It by the Door native-24 localized weather/fire/identity-safe motion renderer;
-- the Generative Engine shared control-bus and streaming reference renderers;
-- SuperSplat for genuine Gaussian-splat scene editing/rendering only when valid splat geometry exists.
+FX V2 consolidates reusable implementation lineage from Silver Coin, Irish Eyes, IronFlame, Leave It by the Door, the shared Generative Engine, and genuine SuperSplat/3DGS workflows when real splat geometry exists. Historical integration branches remain provenance only; `main` is the current source of truth.
