@@ -1,0 +1,23 @@
+name: AIVideoEdit Production Contract
+
+on:
+  push:
+    branches: ["main", "song/**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  production-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate universal production contract
+        shell: bash
+        run: |
+          BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          python general/reusable/tools/production_guard.py --branch "$BRANCH"

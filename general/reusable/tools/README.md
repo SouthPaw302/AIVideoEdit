@@ -1,9 +1,9 @@
 # Reusable Tools
 
-This is the canonical home for small cross-project utilities that do not belong to a larger reusable subsystem.
+Canonical home for small project-neutral command-line helpers, validators, converters, inspectors, and recovery utilities.
 
-Use `general/reusable/tools/` for durable, song-agnostic command-line helpers, validators, converters, inspectors, and recovery utilities. Do not create the superseded `general/reusable/embedded-tools/` tree.
+Before adding a tool, check whether it belongs in `fx_v2/`, `generative-engine/`, `painterly-motion/`, `memory-atmosphere/`, or `depth-parallax-25d/`.
 
-Before adding a tool here, check whether it already belongs in one of the established systems such as `fx_v2/`, `generative-engine/`, `silver-coin-tools/`, `irish-eyes-tools/`, or `depth-parallax-25d/`.
+`production_guard.py` is the universal production-state validator. Song-specific scripts stay on the relevant `song/<slug>` branch.
 
-Song-specific scripts stay on the relevant `song/<slug>` branch under that project.
+Do not create song-named reusable directories and do not recreate the superseded `general/reusable/embedded-tools/` tree.

@@ -2,23 +2,20 @@
 
 Canonical production system for dynamic long-form music films.
 
-**Start:** read `AGENT_HANDOFF.md`.
+**Universal start:** read `AGENTS.md`, then run the production guard. No agent, model, connector, local script, or human automation receives a separate production authority.
 
 ## Repository law
-- `main` is system-only: doctrine, templates, reusable capabilities, proofs, QC, and system indexes.
-- `main` does not identify, rank, or link to active/completed song productions.
+- `main` is system-only: doctrine, contracts, templates, reusable capabilities, proofs, QC, and system indexes.
 - Every production lives on its own `song/<slug>` branch.
-- A newly supplied music/audio master for video work (MP3/WAV/FLAC/M4A/AAC/etc.) creates a new `song/<slug>` branch from `main` before production begins, unless the user explicitly says to continue a named existing branch.
-- Song media, story, prompts, shot packages, status, manifests, renders, and QC stay on that production branch.
-- Reusable discoveries return to `main` only after generic extraction, project-neutral naming/path cleanup, proof/QC, and canonical registration.
-- Song/project names must not become reusable effect IDs, folder names, preset names, examples, or discovery paths. Origin may remain only as optional provenance.
+- A new supplied audio master creates a new `song/<slug>` from current `main` unless the user explicitly names an existing branch to continue.
+- Production media/story/prompts/status/manifests/renders/QC stay on that branch.
+- Reusable discoveries return to `main` only after project-neutral extraction, proof/QC, and canonical registration.
+- Historical chats, unrelated song branches, prior storyboards, prior art direction, and production media are **not production authority** unless the current user explicitly authorizes them.
 
-## System entry points
-- `BIBLE.md`
-- `SYSTEM_INDEX.md`
+## Hard contract
+- `general/reusable/PRODUCTION_CONTRACT.json`
+- `general/reusable/tools/production_guard.py`
+- `general/reusable/MEDIA_CAPABILITY_MATRIX.json`
 - `general/reusable/fx_v2/registry.json`
-- `general/reusable/generative-engine/`
-- `general/reusable/painterly-motion/`
-- `general/reusable/memory-atmosphere/`
-- `general/reusable/depth-parallax-25d/`
-- `general/reusable/tools/`
+
+The written docs explain the system; the guard determines whether a production may advance.

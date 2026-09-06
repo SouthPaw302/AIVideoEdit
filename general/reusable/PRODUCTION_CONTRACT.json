@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.production-contract.v1",
+  "authority": ["current_user_instruction", "active_song_branch_state", "current_main"],
+  "default_denied_sources": ["historical_chats", "historical_summaries", "unrelated_song_branches", "prior_project_storyboards", "prior_project_visual_dna", "prior_project_media"],
+  "states": [
+    "INITIALIZED",
+    "SOURCE_INGESTED",
+    "REFERENCES_ANALYZED",
+    "APPROACH_ESTABLISHED",
+    "STORYBOARD_LOCKED",
+    "SHOT_PACKAGES_BUILT",
+    "SHOT_PROOFS_ACCEPTED",
+    "FX_LOCKED",
+    "ASSEMBLED",
+    "FINAL_QC_PASSED",
+    "ARCHIVED"
+  ],
+  "reference_policy": {
+    "short_video_max_seconds": 30.0,
+    "short_video_max_frames": 1800,
+    "short_video_rule": "extract_all_frames",
+    "long_video_rule": "meaningful_sampling_with_recorded_policy_ranges_and_coverage",
+    "images_rule": "inspect_all_supplied_images",
+    "no_visual_reference_rule": "show_story_visual_media_approach_to_user_and_record_established_before_generated_media"
+  },
+  "required_project_files": [
+    "PROJECT.md", "STATUS.md", "HANDOFF.md", "PROJECT_STATE.json", "SOURCE_AUTHORITY.json",
+    "REFERENCE_MANIFEST.json", "MEDIA_PLAN.json", "ASSET_MANIFEST.json", "VISUAL_DNA.md", "SHOT_LIST.md",
+    "RENDER_HISTORY.md", "QC.md"
+  ],
+  "stage_requirements": {
+    "SOURCE_INGESTED": ["source_ingest_complete"],
+    "REFERENCES_ANALYZED": ["reference_policy_satisfied", "reference_analysis_complete"],
+    "APPROACH_ESTABLISHED": ["media_plan_valid", "visual_approach_established"],
+    "STORYBOARD_LOCKED": ["storyboard_locked"],
+    "SHOT_PACKAGES_BUILT": ["shot_packages_built"],
+    "SHOT_PROOFS_ACCEPTED": ["shot_proofs_accepted"],
+    "FX_LOCKED": ["fx_lock_verified"],
+    "ASSEMBLED": ["assembly_complete"],
+    "FINAL_QC_PASSED": ["final_qc_passed"],
+    "ARCHIVED": ["archive_complete"]
+  }
+}

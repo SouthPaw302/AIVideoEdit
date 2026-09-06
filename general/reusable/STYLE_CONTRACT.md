@@ -1,26 +1,14 @@
 # Style Contract
 
-This repository's target look sits deliberately between two failure
-modes. Use this table to self-check any shot before it's accepted.
+A shot passes only when it reads as an authored living scene rather than a static slideshow or uncontrolled generated video.
 
-| Trait | Static slideshow (FAIL) | Living-image animated still (TARGET) | Generic AI-generated video (FAIL) |
-|---|---|---|---|
-| Motion source | None — held frame | Parallax/depth layers, splat data, or particle/atmosphere systems acting on real source or locked-identity pixels | Model hallucinates new geometry/content per frame |
-| Identity | N/A | Exact source likeness preserved, or a locked identity sheet reused consistently | Face/body regenerated shot-to-shot, drifting |
-| Camera behavior | None or generic Ken Burns pan/zoom only | Depth-aware camera movement, internal scene motion (fire, smoke, water, embers) | Camera motion is a side effect of generation, not authored |
-| Transitions | Hard cuts or basic crossfade | Authored pigment/object/recursive transitions from the effect registry | Transitions are whatever the generation model happened to produce |
-| Traceability | N/A | Every visible effect traces to a registry ID, source input, and proof render | Effect can't be pointed to in code; "the model just did it" |
+| Trait | FAIL | TARGET |
+|---|---|---|
+| Motion | held frame, generic pan/zoom, whole-frame shake | internal scene motion first; depth-aware camera second |
+| Identity | face/body drift, waxy regeneration, bad mattes | exact source likeness or one locked identity reused consistently |
+| Scene | hallucinated geometry/content changing unintentionally | traceable source/locked pixels, layers, depth, atmosphere and authored additions |
+| Transitions | arbitrary dissolve/model morph | motivated, authored transition proven at real duration |
+| Effects | invisible, merely claimed, or untraceable | visible at normal playback and traceable to implementation/input/proof |
+| Technology | look-alike terminology | truthful 2.5D/NeRF/3DGS/visualizer naming |
 
-A shot passes only if every row lands in the TARGET column. A shot that
-is technically clean (renders, plays, has no black frames) but reads as
-slideshow or generic-AI-video has still failed — see
-`general/reusable/LESSONS.md` for the IronFlame V3.4 case.
-
-## Reference points
-
-- **Internal benchmark:** `song/silver-coin` V8 final
-  (`Silver_Coin_V8_FINAL_YouTube_720p24-1.mp4`). Copy its production
-  discipline and visible motion quality, not necessarily its art style.
-- **External reference:** the Mountainnoir YouTube channel demonstrates
-  this target aesthetic. When starting a new production, review current
-  uploads there for direction before locking a shot's motion treatment.
+No previous song branch or historical production defines a new project's art direction unless the current user explicitly authorizes it. Reusable technology may transfer; production-specific art direction does not.

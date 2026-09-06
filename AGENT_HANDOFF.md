@@ -2,29 +2,21 @@
 
 ## Authority
 1. Current explicit user instruction.
-2. If already on a `song/<slug>` branch, that branch's STATUS/HANDOFF/manifests.
-3. `BIBLE.md`, `SYSTEM_INDEX.md`, and `general/reusable/`.
-4. Older chats/summaries/provenance.
+2. Active `song/<slug>` branch `PROJECT_STATE.json`, `SOURCE_AUTHORITY.json`, STATUS/HANDOFF/manifests.
+3. `AGENTS.md`, `BIBLE.md`, `SYSTEM_INDEX.md`, `general/reusable/PRODUCTION_CONTRACT.json`, and current `general/reusable/`.
+
+Historical chats/summaries, unrelated branches, old production imagery, and provenance are **not automatic authority**. Use them only when the current user explicitly authorizes them.
 
 ## Boot
-1. Read `BIBLE.md`.
-2. Read `SYSTEM_INDEX.md`.
-3. Read `general/reusable/fx_v2/registry.json` and `PRECOMPILE_FX_GATE.md`.
-4. Read `general/reusable/PRODUCTION_PIPELINE.md` and `STYLE_CONTRACT.md`.
-5. Inspect connected/runtime tools before new code.
-6. Inspect relevant `general/reusable/` capabilities before inventing substitutes.
-
-## Branch trigger
-A newly supplied music/audio master intended for video production creates a fresh `song/<slug>` from `main` before production work begins. Do not search `main` for an active project and do not infer continuation from historical names. Only an explicit user instruction to continue a named existing branch overrides this.
-
-## Project-neutral promotion
-Production-created technology is proven on its branch, then generalized: remove production media/paths/constants/story assumptions/names, assign capability IDs/names, create project-neutral proof/QC, promote to `main/general/reusable/`, and register canonically. Origin is provenance, never capability identity.
-
-## FX rule
-Resolve callable FX from `general/reusable/fx_v2/registry.json`; run the fail-closed precompile gate; generate and verify the lock immediately before render; inspect the actual exported media. Gate success proves implementation/evidence integrity, not artistic success.
+1. Read `AGENTS.md` and `PRODUCTION_CONTRACT.json`.
+2. Read `SYSTEM_INDEX.md` and `MEDIA_CAPABILITY_MATRIX.json`.
+3. Read the active branch state/manifests if on `song/<slug>`.
+4. Run `production_guard.py` before advancing state.
+5. Inspect connected/runtime tools and relevant project-neutral reusable capabilities before inventing substitutes.
+6. Resolve callable FX only through `general/reusable/fx_v2/registry.json`.
 
 ## Film rule
-Build real shot packages, not slides. Inspect short proofs before scaling. Use measured song controls when music-reactivity is intended. Protect identity. Never accept invisible effects or command success as QC.
+Build real shot packages, not slides. Inspect short finished proofs before scaling. Internal scene motion first, camera second. Use measured song controls when music-reactivity is intended. Protect identity. Never accept invisible effects or command success as QC.
 
 ## Final QC
-Inspect the actual export for black/damaged frames, freezes, repetition, loop seams, ghosting, missing effects, flicker/boiling, identity drift, source leakage, continuity, framing/aspect, runtime, and audio sync. Record specs/SHA/storage/QC.
+Inspect the actual exported media for damaged/black frames, freezes, repetition, loop seams, ghosting, missing effects, flicker/boiling, identity drift, source leakage, continuity, framing/aspect, runtime, and audio sync. Record specs/SHA/storage/QC.
