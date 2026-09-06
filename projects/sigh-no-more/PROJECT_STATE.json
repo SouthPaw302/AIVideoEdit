@@ -1,0 +1,18 @@
+{
+  "schema": "aivideoedit.project-state.v1",
+  "project": "sigh-no-more",
+  "branch": "song/sigh-no-more",
+  "state": "INITIALIZED",
+  "updated_utc": "2026-09-06T09:20:00Z",
+  "evidence": {
+    "canonical_rules_synced": true,
+    "visual_approach_shown_to_user": true,
+    "source_ingest_complete": false,
+    "reference_policy_satisfied": true,
+    "reference_analysis_complete": true,
+    "media_plan_valid": false,
+    "visual_approach_established": true
+  },
+  "blocked_on": ["canonical_wav_missing", "verified_lyrics_missing"],
+  "note": "Do not advance to SOURCE_INGESTED until both authorized inputs exist and are verified."
+}

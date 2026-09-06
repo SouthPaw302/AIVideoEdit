@@ -1,0 +1,7 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "visual_references": [],
+  "audio_reference": {"status": "missing", "required": true},
+  "lyrics_reference": {"status": "missing", "required": true},
+  "policy": "No prior project visual references are authorized. Original media may follow the user-visible approach only after source ingest."
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "status": "blocked_pending_sources",
+  "source_policy": "WAV + verified lyrics only",
+  "approach": "Fully original lyric-driven mythic nocturne: cinematic environmental storytelling, recurring symbolic motifs, layered 2.5D/depth motion, authored camera movement, composited atmosphere/light/particles, and audio-reactive intensity. No generic slideshow and no inherited song imagery.",
+  "technical_truth": ["2.5D/depth parallax only when actually rendered", "no NeRF/3DGS claims without real implementation", "effects must pass current FX gate"],
+  "next_after_ingest": ["analyze WAV structure/energy", "map verified lyrics to song sections", "lock storyboard", "build shot packages", "generate original media", "proof shots", "lock FX", "assemble", "final QC"]
+}

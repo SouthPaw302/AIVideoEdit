@@ -1,0 +1,19 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "project": "sigh-no-more",
+  "authorized_sources": [
+    {"role": "music_master", "type": "wav", "status": "missing"},
+    {"role": "lyrics", "type": "verified_text", "status": "missing"}
+  ],
+  "denied_sources": [
+    "historical_chats",
+    "historical_summaries",
+    "unrelated_song_branches",
+    "prior_project_storyboards",
+    "prior_project_visual_dna",
+    "prior_project_media",
+    "existing_irish_eyes_renders_or_qc_images"
+  ],
+  "user_scope": "Create the video using only the sound WAV file and lyrics.",
+  "rule": "Reusable neutral production code/effects from current main are allowed; prior story/media content is not."
+}
