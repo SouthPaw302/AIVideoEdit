@@ -2,34 +2,23 @@
 
 Canonical production system for dynamic long-form music films.
 
-## Start here
-
-1. Read `AGENT_HANDOFF.md` — this is the single boot sequence. Do not
-   substitute your own reading order.
-2. `AGENT_HANDOFF.md` will point you to `PROJECT_INDEX.md` for what is
-   currently active, and to `BIBLE.md` for system doctrine.
+**Start:** read `AGENT_HANDOFF.md`.
 
 ## Repository law
+- `main` is system-only: doctrine, templates, reusable capabilities, proofs, QC, and system indexes.
+- `main` does not identify, rank, or link to active/completed song productions.
+- Every production lives on its own `song/<slug>` branch.
+- A newly supplied music/audio master for video work (MP3/WAV/FLAC/M4A/AAC/etc.) creates a new `song/<slug>` branch from `main` before production begins, unless the user explicitly says to continue a named existing branch.
+- Song media, story, prompts, shot packages, status, manifests, renders, and QC stay on that production branch.
+- Reusable discoveries return to `main` only after generic extraction, project-neutral naming/path cleanup, proof/QC, and canonical registration.
+- Song/project names must not become reusable effect IDs, folder names, preset names, examples, or discovery paths. Origin may remain only as optional provenance.
 
-- `main` = Bible, indexes, templates, reusable cross-project technology.
-- `song/<slug>` = one complete song/video production, including all its
-  source media references, storyboards, prompts, manifests, and QC.
-- Do not store song productions on `main`.
-- Promote only generic reusable methods back to `main/general/reusable/`.
-- Current active production is stated in `PROJECT_INDEX.md`, nowhere else.
-  If this README and `PROJECT_INDEX.md` ever disagree, `PROJECT_INDEX.md`
-  is correct — treat the disagreement as a bug and fix this file.
-
-## Tooling continuity notes
-
-- The canonical reusable utility path is `general/reusable/tools/`.
-  `general/reusable/embedded-tools/` was an earlier working name only;
-  treat it as superseded and do not create both trees.
-- Browser-loaded/WebGPU Gaussian-splat viewer references discussed during
-  tooling research included `gsplat.js` and Luma's web player. They are
-  optional browser-review/reference candidates, not required dependencies
-  and not substitutes for truthful 3DGS production rendering.
-- `.github/workflows/publish_review.yml` and `review/index.html` were
-  discussed/offered as optional review infrastructure but were intentionally
-  never built. Their absence is not missing work. Create them only if a
-  concrete review-surface requirement appears later.
+## System entry points
+- `BIBLE.md`
+- `SYSTEM_INDEX.md`
+- `general/reusable/fx_v2/registry.json`
+- `general/reusable/generative-engine/`
+- `general/reusable/painterly-motion/`
+- `general/reusable/memory-atmosphere/`
+- `general/reusable/depth-parallax-25d/`
+- `general/reusable/tools/`

@@ -10,7 +10,7 @@
       "gate_status": "proof_required",
       "implementation": {
         "kind": "adapter",
-        "path": "general/reusable/silver-coin-tools/hybrid_painterly_fx.py",
+        "path": "general/reusable/painterly-motion/hybrid_painterly_fx.py",
         "symbol": "depth_parallax"
       }
     },
@@ -55,7 +55,7 @@
       "gate_status": "proof_required",
       "implementation": {
         "kind": "adapter",
-        "path": "general/reusable/silver-coin-tools/video_fx/painterly_motion_extensions.py",
+        "path": "general/reusable/painterly-motion/video_fx/painterly_motion_extensions.py",
         "symbol": "depth_focus_breath"
       }
     },
@@ -105,12 +105,11 @@
     "FX2-ATM-004": {
       "name": "sea_spray",
       "family": "environment",
-      "status": "ported",
-      "gate_status": "proof_required",
+      "status": "unpromoted",
+      "gate_status": "unavailable",
       "implementation": {
-        "kind": "adapter",
-        "path": "projects/leave-it-by-the-door/scripts/render_full_native24_v2.py",
-        "symbol": "source-derived sea spray logic"
+        "kind": "unpromoted",
+        "note": "Production-specific implementation must be generalized and proof-gated before canonical promotion."
       }
     },
     "FX2-FIRE-001": {
@@ -188,7 +187,7 @@
       "gate_status": "proof_required",
       "implementation": {
         "kind": "adapter",
-        "path": "general/reusable/silver-coin-tools/video_fx/painterly_motion_extensions.py",
+        "path": "general/reusable/painterly-motion/video_fx/painterly_motion_extensions.py",
         "symbol": "localized_specular_glint"
       }
     },
@@ -286,7 +285,7 @@
       "gate_status": "proof_required",
       "implementation": {
         "kind": "adapter",
-        "path": "general/reusable/silver-coin-tools/video_fx/tiny_nerf_volume.py"
+        "path": "general/reusable/painterly-motion/video_fx/tiny_nerf_volume.py"
       }
     },
     "FX2-SPATIAL-003": {
