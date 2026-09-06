@@ -1,0 +1,1 @@
+{"schema":"aivideoedit.shot-package.v1","shot":6,"status":"built_and_qc_sampled","asset_pack":"analysis/shot_assets.npz","recipe_source":"analysis/shot_recipes.json","source_dna":"REF-A+C","binary_policy":"externally held; hashes in SHOT_PACKAGE_MANIFEST.json"}
