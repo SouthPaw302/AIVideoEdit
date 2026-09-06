@@ -2,6 +2,8 @@
 
 Copy this structure into `projects/<song-slug>/` on a dedicated `song/<slug>` branch.
 
+Before starting production, read `AGENT_HANDOFF.md`, `BIBLE.md`, `general/reusable/PRODUCTION_PIPELINE.md`, and `general/reusable/STYLE_CONTRACT.md` from `main`.
+
 ## Required files
 
 ### `PROJECT.md`
@@ -33,7 +35,7 @@ Use when lyrics materially drive direction. Preserve verified user-approved cano
 Document:
 
 - emotion arc and world
-- primary/secondary style from `docs/VISUAL_STYLE_CATALOG.md`
+- primary/secondary style using `general/reusable/STYLE_CONTRACT.md` as the acceptance boundary
 - subject/character continuity
 - palette, lighting, and textures
 - camera language
@@ -46,7 +48,7 @@ Document:
 
 ### `EFFECTS_PLAN.md`
 
-Map chosen catalog techniques to story purpose, song section/shot, audio driver, intensity, implementation/test path, and approval/QC state.
+Map chosen canonical techniques to story purpose, song section/shot, audio driver, intensity, implementation/test path, and approval/QC state. Reuse the registry before inventing new effects.
 
 ### `DECISIONS.md`
 
@@ -70,9 +72,10 @@ Track source audio, references, generated images, masks/layers, effect tests, sc
 - `assets/effects/`
 - `assets/scenes/`
 - `assets/qc/`
+- `shot_packages/<shot_id>/` using the package layout in `general/reusable/PRODUCTION_PIPELINE.md`
 
 ## Continuous checkpoint rule
 
-Follow `docs/CONTINUOUS_CHECKPOINT_POLICY.md`. Do not postpone all GitHub updates until the end of the chat.
+Follow the checkpoint and handoff rules in `AGENT_HANDOFF.md` and `BIBLE.md`: make meaningful durable checkpoints, keep `STATUS.md` executable, preserve asset identities and recovery locations, and do not postpone all repository updates until the end of a long production session.
 
 A new agent must be able to continue by reading GitHub, switching to the correct branch, resolving media through the manifest, and executing the exact next action in `STATUS.md`.
