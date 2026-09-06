@@ -1,24 +1,29 @@
 # AIVideoEdit — System Index
 
-Permanent-system index only. No working-production names or branch links belong here.
+Permanent-system index only. No active production names or unrelated song links belong here.
 
-## Core
-- `README.md` — front door/branch trigger.
-- `AGENT_HANDOFF.md` — boot sequence.
-- `BIBLE.md` — doctrine.
-- `projects/PROJECT_TEMPLATE.md` — branch-local production template.
+## Universal contract
+- `AGENTS.md` — universal agent entry point.
+- `general/reusable/PRODUCTION_CONTRACT.json` — machine-readable production state/rules.
+- `general/reusable/tools/production_guard.py` — fail-closed production-stage validator.
+- `general/reusable/MEDIA_CAPABILITY_MATRIX.json` / `.md` — media forms available to production.
+- `projects/PROJECT_TEMPLATE.md` — required branch-local state/manifests.
+
+## Doctrine
+- `README.md`
+- `AGENT_HANDOFF.md`
+- `BIBLE.md`
+- `general/reusable/PRODUCTION_PIPELINE.md`
+- `general/reusable/STYLE_CONTRACT.md`
 
 ## Reusable capabilities
-- `general/reusable/fx_v2/` — callable FX runtime/registry/proofs/gate.
+- `general/reusable/fx_v2/` — callable FX runtime/registry/proofs/gate; single runtime authority.
 - `general/reusable/generative-engine/` — audio analysis, shared controls, reactive/spatial runtime.
 - `general/reusable/painterly-motion/` — living/painterly motion and temporal QC.
-- `general/reusable/memory-atmosphere/` — restoration, shimmer, halation, atmosphere.
+- `general/reusable/memory-atmosphere/` — restoration/atmosphere treatments.
 - `general/reusable/depth-parallax-25d/` — depth-assisted 2.5D motion.
-- `general/reusable/tools/` — small generic utilities.
+- `general/reusable/tools/` — generic utilities.
 - `general/reusable/SPATIAL_3DGS_SUPERSPLAT.md` — truthful 3DGS doctrine.
 
 ## Branch selection
-New supplied audio master -> create new `song/<slug>` from `main`. Explicit request to continue an existing branch -> continue it. Otherwise never guess from historical projects.
-
-## Capability ownership
-Once production-born technology is generalized and promoted, it belongs to AIVideoEdit as a whole. Production origin is optional provenance only and never its canonical name, namespace, discovery path, or runtime dependency.
+New supplied audio master -> new `song/<slug>` from current `main`. Explicit request to continue a named existing branch -> continue it. Otherwise never infer continuation from historical names.

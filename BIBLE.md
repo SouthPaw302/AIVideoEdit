@@ -2,43 +2,37 @@
 
 Permanent operating system for dynamic long-form music films.
 
-## Branch law
-`main` contains only system doctrine, templates, reusable capabilities, registries, proofs, QC, and indexes. Every production lives on `song/<slug>`. Production media/story/prompts/status/manifests/renders/QC stay there. `main` keeps no active/completed project list.
-
-A newly supplied music/audio master for video work creates a new `song/<slug>` from `main` before production begins unless the user explicitly identifies an existing branch to continue.
+## Branch and authority law
+`main` is system-only. Every production lives on `song/<slug>`. A new audio master starts a fresh song branch from current `main` unless the user explicitly names an existing branch. Production authority is current user instruction -> active song-branch state -> current main. Historical projects/chats are opt-in only.
 
 ## Target
-Make a directed long-form visual film, not a slideshow, generic visualizer, or one clip with weak effects. The film should feel continuously authored through shots, depth, atmosphere, light, motion, environment, composition, transitions, and recurring motifs.
+Make a directed long-form visual film, not a slideshow, generic visualizer, or one weak repeated clip. The song should become a continuously authored visual world through shots, depth, atmosphere, light, internal motion, environment, composition, transitions, and recurring motifs.
 
-## Production order
-Inspect tools/capabilities; analyze song/lyrics; define visual DNA/story; lock storyboard/shot map; build asset/shot library; animate/composite; add music-directed behavior/transitions; assemble only after enough finished shots exist; render full movie; inspect/QC actual export; archive identity/decisions; generalize reusable discoveries.
+## Hard production order
+Initialize -> ingest sources -> extract/analyze references -> establish visual/media approach -> lock storyboard/shot map -> build shot library -> animate/composite -> accept short proofs -> lock FX -> assemble -> render -> inspect actual export -> archive.
+
+`general/reusable/tools/production_guard.py` is the fail-closed stage authority.
+
+## Reference law
+- Short reference video: extract every frame.
+- Long/large reference video: meaningful sampling is allowed, but policy, sample count, frame ranges/scene coverage, and analysis must be recorded.
+- Supplied images: inspect/analyze them before deriving new media.
+- No visual references: before generating original media, show the user the proposed story/visual/media approach and record it as established.
 
 ## Shot-package law
-A storyboard is a production map. Selected scenes become genuine branch-local shot packages with the source/layers/depth/masks/generated support/FX/transitions/loops/previews/notes they require. Preview mode means short finished proofs, not premature full assembly.
+Every selected scene becomes a genuine branch-local shot package with source, masks/alpha, layers, depth where needed, generated support, FX assets, transitions/loops, proof preview, notes, and QC. Preview means a short finished proof, not premature assembly.
 
-## Reuse/tool-first law
-Before inventing technology, inspect `SYSTEM_INDEX.md`, `general/reusable/fx_v2/registry.json`, `general/reusable/CAPABILITY_LINEAGE.md`, `general/reusable/generative-engine/`, relevant capability folders, and connected/runtime tools. Do not inspect unrelated production branches merely to discover reusable tech; truly reusable tech belongs on `main`.
-
-## Capability law
-Canonical shared families include living/painterly motion, atmosphere/environment, light, surface treatment, 2.5D/spatial methods, real radiance-field/3DGS methods when actually used, transitions, loops, audio-reactive controls, procedural plates, and temporal QC.
+## Reuse and media law
+Before inventing technology, inspect `SYSTEM_INDEX.md`, `MEDIA_CAPABILITY_MATRIX.json`, `fx_v2/registry.json`, the generative engine, and relevant neutral capability folders. The production media plan must deliberately select suitable media forms instead of defaulting to stills + zoom.
 
 ## Technical truthfulness
-2.5D means depth/layer image-space motion. NeRF means an actual trained radiance field. 3DGS means actual Gaussian-splat scene primitives. A Gaussian light/noise field is not 3DGS. A custom reactive field is not projectM/MilkDrop unless that engine is used.
+2.5D means depth/layer image-space motion. NeRF means an actual trained radiance field. 3DGS means actual Gaussian-splat scene primitives. A Gaussian light/noise field is not 3DGS. A custom reactive field is not projectM/MilkDrop unless that engine is actually used.
 
-## Proof law
-Code existence is not proof. Preserve implementation/backend, parameters, proof render, QC, and keep/revise/reject decision. Effects must be visible in proof and survive export. Callable FX must pass the canonical FX gate/lock.
-
-## Music/identity law
-Prefer measured/smoothed music controls for timing, motion density, atmosphere, reflections, light, camera, and transitions. Protect identity-bearing people from morphing, anatomy errors, waxy restoration, bad mattes, and double exposure.
-
-## QC law
-A successful render command is not a finished film. Inspect the final export for black/damaged frames, freezes, repeated sections, loop seams, ghosting, invisible effects, flicker/boiling, identity drift, source leakage, continuity, framing/aspect, and full runtime/audio sync.
-
-## Promotion law
-A method returns to `main` only after production-specific media, paths, constants, story assumptions, and names are removed. Give it a capability-based stable ID/name, project-neutral path, project-neutral proof/QC, and canonical registry entry. Production origin may remain only as optional provenance; it is never the capability's identity or required discovery path.
+## Proof/QC law
+Code existence is not proof. Preserve implementation/backend, parameters, proof render, QC, and keep/revise/reject decision. Effects must be visible in proof and survive export. Callable FX must pass the canonical gate/lock. Final acceptance requires inspection of the actual complete export.
 
 ## Persistence
-GitHub is the persistent brain; large binaries may live in external storage if branch manifests preserve identity/hash/role/recovery location. `main` preserves generalized system material only.
+GitHub is the persistent brain; large binaries may live externally if branch manifests preserve identity/hash/role/recovery location.
 
 ## Final principle
 The goal is not “AI pictures behind a song.” The goal is: **the song became a visual world.**

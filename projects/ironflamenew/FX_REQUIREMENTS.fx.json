@@ -1,7 +1,6 @@
 {
   "project": "IronFlameNew",
-  "status": "pending_accepted_shot_recipes",
+  "status": "blocked_until_shot_proofs_accepted",
   "effects": [],
-  "render_inputs": [],
-  "note": "Do not run production gate yet. Exact effects and pixel-altering renderer inputs will be locked only after short shot proofs are visually accepted. See FX_PLAN.md."
+  "render_inputs": []
 }

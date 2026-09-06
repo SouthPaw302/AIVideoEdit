@@ -1,79 +1,47 @@
 # Production Pipeline
 
-This is the ordered method for turning a song into a finished, visibly animated music film. It applies on every `song/<slug>` branch.
+This ordered method applies to every `song/<slug>` branch and is enforced by `PRODUCTION_CONTRACT.json` + `production_guard.py`.
 
-## Step 0 — Determine reference availability
+## 0 — Initialize authority/state
+Create the branch-local template files. `SOURCE_AUTHORITY.json` allows current user inputs, current branch decisions, and current `main`; historical chats/unrelated branches are denied unless explicitly authorized.
 
-Before anything else, decide which path applies for this production.
+## 1 — Ingest source material
+Record hashes, roles, technical metadata, and recovery/storage pointers for supplied audio/video/images.
 
-**Branch A — reference video/images exist.**
-1. Extract frames from the reference at a meaningful sampling rate.
-2. Analyze visual style, motion language, palette, and (if a human subject is present) identity-bearing features that must be preserved.
-3. Analyze the lyrics and the song's beat/structure to define narrative beats and musical cues.
-4. Derive the shot library and storyboard from the source material, mapping narrative beats to specific extracted frames/ranges.
+## 2 — Extract and analyze references
+**Video present:**
+- Short video (system default: <=30 s AND <=1800 frames): extract every frame.
+- Larger video: meaningful sampling is allowed. Record sampling method, extracted count, frame/time ranges and scene/motion coverage.
+- Analyze style, palette, motion language, composition, identity-bearing features, and useful frame/range mappings.
 
-**Branch B — no reference video/images exist.**
-1. Derive the visual DNA from the lyrics, genre, and mood alone: define setting, era, palette, lighting philosophy, and (if there is a protagonist) an identity sheet describing them consistently.
-2. Generate original key stills with the available connected/runtime image-generation capability at a locked spec (resolution, aspect ratio, character/identity sheet). The repository `generative-engine/` is not itself a still-image model; it supplies reusable audio-reactive, living-image, and spatial runtime components after source imagery exists.
-3. Lock the identity/style decisions before proceeding; do not regenerate a subject's face/identity between shots once locked.
-4. Rejoin the pipeline at the same point Branch A does: build the shot library and storyboard, now from your own generated stills instead of source footage.
+**Images present:** inspect/analyze all supplied images before deriving new media.
 
-Both branches converge here onward. A missing reference is not a reason to build a weaker or more static film — treat generated stills exactly like extracted frames: raw scene material to be brought to life, not a long static image.
+**No visual references:** do not generate original media yet. Build a proposed story/visual/media approach using the song/lyrics and `MEDIA_CAPABILITY_MATRIX`; show it to the user and record the resulting direction as established.
 
-## Step 1 — Lock storyboard and shot map
+## 3 — Establish visual/media approach
+Create/lock the production's visual DNA and `MEDIA_PLAN.json`. Choose deliberately among source footage, extracted frames, generated stills/support imagery, living paintings, layered composites, depth/2.5D, reactive/atmospheric plates, loops, transitions, real radiance fields, real 3DGS when valid, and conventional video.
 
-The storyboard is a production map. Every selected frame/still must become a real shot package — a storyboard is not itself a deliverable.
+## 4 — Lock storyboard and shot map
+Only after reference analysis/approach is complete. Map narrative and musical beats to specific source frame/ranges or to the established original-media plan.
 
-## Step 2 — Build the asset/shot library
+## 5 — Build shot packages
+For each selected shot use:
+`source/ alpha/ layers/ depth/ generated/ fx_assets/ transition/ loop/ preview/ notes/`.
 
-For each shot, use the standard layout:
+## 6 — Animate/composite and prove
+Reuse neutral canonical capabilities before inventing substitutes. Make short finished shot proofs. Inspect them visually. Protect identity. Internal motion first, camera second.
 
-```
-projects/<slug>/shot_packages/<shot_id>/
-  source/      alpha/      layers/      depth/
-  generated/   fx_assets/  transition/  loop/
-  preview/     notes/
-```
+## 7 — Music-directed behavior
+Prefer one preserved, smoothed, frame-aligned song analysis bus (RMS/onset/low/mid/high) when several systems need the same signals.
 
-Preview mode means producing genuine production ingredients and short proof renders — not prematurely assembling the full movie.
+## 8 — Lock FX
+Only accepted shot recipes enter the production FX manifest. Resolve callable effects from `fx_v2/registry.json`, declare real pixel-altering render inputs, run the fail-closed precompile gate, generate and verify `fx.lock.json` immediately before compile.
 
-## Step 3 — Create real animated/composited shot packages
+## 9 — Assemble
+Only after enough finished shot packages/proofs exist. Never use infrastructure success as a substitute for creative completion.
 
-Reuse before inventing. Read, in order, before building any new effect:
+## 10 — Render and QC
+Inspect the actual full export for black/damaged frames, freezes, repetition, loop seams, ghosting, invisible/missing effects, flicker/boiling, identity drift, source leakage, continuity, framing/aspect, runtime, compression and audio sync.
 
-1. `general/reusable/CANONICAL_EFFECT_REGISTRY.md` / `.json`
-2. `general/reusable/PROJECT_TECHNIQUE_LINEAGE.md`
-3. `general/reusable/generative-engine/`
-4. `general/reusable/fx_v2/`
-
-Reusable technology available in this repo includes: 2.5D/depth parallax; compact NeRF / hybrid radiance-field rendering where technically truthful; 3D Gaussian Splatting only when actual splat data exists; mesh/micro-motion and living-image motion; fog/smoke/rain/embers/heat-haze atmosphere; water/wet-road reflections; halation/bloom/light shafts/glints; transient/performance warps; audio-reactive controls; a shared frame-aligned reactive control bus; organic generative visual plates; pigment/object/recursive transitions; an integrated visualizer language; and temporal QC.
-
-Major reusable trees: `general/reusable/fx_v2/`, `general/reusable/generative-engine/`, `general/reusable/depth-parallax-25d/`, `general/reusable/silver-coin-tools/`, `general/reusable/silver-coin-docs/`, `general/reusable/irish-eyes-tools/`, and `general/reusable/tools/`.
-
-### Technical truthfulness
-
-- 2.5D means depth/layer-aware image-space motion.
-- NeRF means an actual trained neural radiance field.
-- Hybrid NeRF means a trained radiance-field component composited with image/depth layers.
-- 3DGS means actual Gaussian-splat scene primitives/data are rendered. Follow `general/reusable/SPATIAL_3DGS_SUPERSPLAT.md`.
-- Do not rename a look-alike effect as a technology that was not actually used.
-
-Protect identity-bearing human subjects from morphing, anatomy drift, waxy faces, or obvious matte artifacts, whether the subject came from source footage (Branch A) or a locked identity sheet (Branch B).
-
-## Step 4 — Add music-directed behavior and transitions
-
-The song can drive: shot timing, cut/transient accents, motion density, atmosphere, reflection strength, light/glint behavior, camera amplitude, and transition timing. Preferred architecture: analyze the song once into a preserved, smoothed, frame-aligned control bus (RMS/onset/low/mid/high) when multiple systems need the same signals, rather than re-deriving audio analysis per effect.
-
-## Step 5 — Assemble
-
-Only assemble once enough finished shot packages exist. Do not confuse verification infrastructure (the FX gate, precompile checks) with the creative production itself.
-
-Production FX manifests must declare the actual renderer/source-code inputs that can alter the render so the FX lock invalidates when those files change. Isolated engine CI may use the gate's explicit engine-test mode; production may not.
-
-## Step 6 — Render and QC the complete movie
-
-See the final-QC checklist in `AGENT_HANDOFF.md`.
-
-## Step 7 — Archive
-
-Preserve recovery docs, manifests, hashes, QC, prompts, decisions, and external-storage pointers. Promote genuinely reusable methods back to `general/reusable/` — but only after they've proven useful, not pre-emptively.
+## 11 — Archive/promote
+Preserve manifests, hashes, prompts/decisions, proof/QC records and storage pointers. Promote genuinely reusable methods to project-neutral `main/general/reusable/` only after proof/QC.
