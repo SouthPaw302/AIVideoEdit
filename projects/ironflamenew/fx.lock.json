@@ -9,11 +9,11 @@
   "render_inputs": [
     {
       "path": "projects/ironflamenew/render_final.py",
-      "sha256": "c8795da56ac66a0f2b338866b6872bb318d9c1fbf0491bf26da8b2a318db7897"
+      "sha256": "b2c5ad5badfddbb4c233998201bac4fd9ef3595a8e97d2dd4581cf66f3490f3c"
     },
     {
       "path": "projects/ironflamenew/FINAL_RENDER_INPUT_HASHES.json",
-      "sha256": "dcc05385620cb3a6b2f5a2608ae11d3bf34c3dcd5d21e7e6bf7df528c0cfeec8"
+      "sha256": "309a52b758d87ada0cbd75fac522a1dafb94fcacf8b79fbb5451ce5c4bdafe57"
     },
     {
       "path": "projects/ironflamenew/SHOT_PACKAGE_MANIFEST.json",
@@ -204,5 +204,5 @@
     }
   ],
   "result": "PASS",
-  "evidence_fingerprint_sha256": "0398e31c0c21c3b3909f1f9ee60e1b2b6871f6a12d1de427fc4b23d9a30ed1a2"
+  "evidence_fingerprint_sha256": "61d98572ea5b4979c8aeed8a540841235bf47feac8adbc01003d68ea22affd36"
 }
