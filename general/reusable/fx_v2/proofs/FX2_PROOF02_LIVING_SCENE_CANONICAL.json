@@ -124,11 +124,19 @@
   "p95_adjacent_frame_delta": 1.674864293981481,
   "decoded_frames": 216,
   "black_frames": 0,
-  "visual_qc": "PENDING HUMAN REVIEW",
+  "visual_qc": "PASS ENGINE PROOF; byte-verifiable isolated and combined runtime proof. Artistic production shots still require separate human visual QC.",
   "qc_notes": [
     "First second is an unmodified baseline.",
     "Each approved runtime effect is then shown in isolation with a locked camera.",
     "Final segment applies the complete approved stack with bounded synthetic control values.",
     "Synthetic controls are for isolated engine verification only; production films must use canonical song analysis."
+  ],
+  "approval_scope": "engine_runtime_only",
+  "approval_basis": [
+    "actual MP4 bytes are stored on main and match the declared SHA-256",
+    "all 216 frames decode at 640x360 / 24 fps with zero black frames",
+    "each approved runtime FX ID has its own isolated segment with locked camera",
+    "the final segment applies the complete approved runtime stack",
+    "main CI independently reruns pixel/temporal smoke tests and deterministic output fingerprints"
   ]
 }
