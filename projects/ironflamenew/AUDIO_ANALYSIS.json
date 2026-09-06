@@ -1,0 +1,30 @@
+{
+  "source": "Ironflame Redux(1).wav",
+  "sha256": "76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962",
+  "duration_seconds": 244.68,
+  "sample_rate": 48000,
+  "channels": 2,
+  "estimated_tempo_bpm_half_time": 89.1029,
+  "estimated_tempo_bpm_double_time": 178.2058,
+  "estimated_key": "F minor",
+  "control_bus": {
+    "schema": "aivideoedit.reactive-controls.v1",
+    "fps": 24,
+    "frames": 5873,
+    "sha256": "9caa2507b79b785dd8ad11cdf1dbd9cdd220521ce0d1e224e13082304627e0de"
+  },
+  "shot_windows": [
+    {"shot":1,"start":0,"end":18,"rms_n_mean":0.1722,"onset_n_mean":0.0631,"low_n_mean":0.0602,"mid_n_mean":0.2436,"high_n_mean":0.1178},
+    {"shot":2,"start":18,"end":42,"rms_n_mean":0.2695,"onset_n_mean":0.1301,"low_n_mean":0.0092,"mid_n_mean":0.4024,"high_n_mean":0.2469},
+    {"shot":3,"start":42,"end":77,"rms_n_mean":0.3495,"onset_n_mean":0.0912,"low_n_mean":0.1242,"mid_n_mean":0.4271,"high_n_mean":0.3976},
+    {"shot":4,"start":77,"end":95,"rms_n_mean":0.5449,"onset_n_mean":0.1055,"low_n_mean":0.3675,"mid_n_mean":0.4561,"high_n_mean":0.6135},
+    {"shot":5,"start":95,"end":110,"rms_n_mean":0.5408,"onset_n_mean":0.1055,"low_n_mean":0.4235,"mid_n_mean":0.3691,"high_n_mean":0.5845},
+    {"shot":6,"start":110,"end":122,"rms_n_mean":0.5742,"onset_n_mean":0.0851,"low_n_mean":0.4347,"mid_n_mean":0.4428,"high_n_mean":0.6162},
+    {"shot":7,"start":122,"end":137,"rms_n_mean":0.1678,"onset_n_mean":0.0626,"low_n_mean":0.0470,"mid_n_mean":0.2577,"high_n_mean":0.1313},
+    {"shot":8,"start":137,"end":167,"rms_n_mean":0.1395,"onset_n_mean":0.0846,"low_n_mean":0.0543,"mid_n_mean":0.1862,"high_n_mean":0.1130},
+    {"shot":9,"start":167,"end":187,"rms_n_mean":0.3247,"onset_n_mean":0.0682,"low_n_mean":0.1494,"mid_n_mean":0.3907,"high_n_mean":0.3662},
+    {"shot":10,"start":187,"end":210,"rms_n_mean":0.5900,"onset_n_mean":0.1312,"low_n_mean":0.4744,"mid_n_mean":0.3982,"high_n_mean":0.4711},
+    {"shot":11,"start":210,"end":233,"rms_n_mean":0.5847,"onset_n_mean":0.1199,"low_n_mean":0.4425,"mid_n_mean":0.4549,"high_n_mean":0.4898},
+    {"shot":12,"start":233,"end":244.68,"rms_n_mean":0.0585,"onset_n_mean":0.0533,"low_n_mean":0.0165,"mid_n_mean":0.1123,"high_n_mean":0.0818}
+  ]
+}

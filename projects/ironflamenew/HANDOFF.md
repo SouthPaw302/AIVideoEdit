@@ -1,18 +1,29 @@
 # IronFlameNew Handoff
 
 ## Authority
-Follow current user instruction first, then this branch's project files, then the canonical system on `main`.
+Current user instruction → this branch's project files → canonical system on `main`.
 
-## Current state
-Project initialized only. No source files have been ingested yet.
+## Current production state
+Source ingest and planning are complete. This is **not** at final assembly. Work is at original-asset creation and short proof stage.
 
-## Next action
-Ingest the files supplied by the user; identify audio/reference/lyrics inputs; analyze source and song; lock visual DNA and storyboard before production shots.
+## Inputs
+- `Ironflame Redux(1).wav` — 244.68 s, 48 kHz stereo; SHA in `ASSET_MANIFEST.json`.
+- Three supplied 6.04 s visual/motion reference videos; use only as style/motion DNA.
+- `LYRICS.md` is the story authority.
 
-## Hard rules
-- Build real animated/composited shot packages, not slides.
-- Reuse canonical capabilities before inventing substitutes.
+## Locked direction
+Read `VISUAL_DNA.md` and `SHOT_LIST.md`. The new direction is rain-house memory surrealism fused with blue contour intelligence, warm translucent contact light, crystalline form, and fluid ribbons. Female protagonist remains one consistent IronFlame identity.
+
+## Non-negotiable production rules
+- True HD widescreen only; never pad portrait reference clips into the movie.
+- References are inspiration/data, not filler.
+- No portal / magic gate / fantasy doorway imagery.
+- Build living animated/composited shots, not zooming stills.
+- Use measured song controls and verify effects actually survive export.
+- Reuse canonical capabilities before inventing weaker substitutes.
 - Use only truthful technology labels.
-- Callable FX must resolve through FX v2 and pass the fail-closed precompile gate/lock before render.
-- Proof success is not artistic approval; inspect actual exported media.
-- Do not assemble a full film before enough finished shots exist.
+- No full assembly until enough shots have finished, visually accepted proofs.
+- Do not flood GitHub with sandbox micro-artifacts; checkpoint meaningful production state.
+
+## Immediate next work
+Generate and lock the protagonist/key visual, then build original 16:9 hero plates for shot packages. Create real depth for selected spatial shots. Start with approved FX2 runtime effects listed in `FX_PLAN.md`; do not claim proof-gated transitions/spatial technologies until they actually pass their required evidence path.
