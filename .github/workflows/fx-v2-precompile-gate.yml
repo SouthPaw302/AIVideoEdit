@@ -6,13 +6,13 @@ on:
     paths:
       - "general/reusable/**"
       - "projects/PROJECT_TEMPLATE.md"
-      - "PROJECT_INDEX.md"
+      - "SYSTEM_INDEX.md"
       - ".github/workflows/fx-v2-precompile-gate.yml"
   pull_request:
     paths:
       - "general/reusable/**"
       - "projects/PROJECT_TEMPLATE.md"
-      - "PROJECT_INDEX.md"
+      - "SYSTEM_INDEX.md"
       - ".github/workflows/fx-v2-precompile-gate.yml"
   workflow_dispatch:
 
@@ -46,13 +46,13 @@ jobs:
         run: |
           python general/reusable/fx_v2/precompile_gate.py \
             --engine-test \
-            --manifest general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json \
+            --manifest general/reusable/fx_v2/examples/approved-runtime-core.fx.json \
             --lock-out /tmp/fx.lock.json
       - name: Re-run live evidence and verify immutable FX lock
         run: |
           python general/reusable/fx_v2/precompile_gate.py \
             --engine-test \
-            --manifest general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json \
+            --manifest general/reusable/fx_v2/examples/approved-runtime-core.fx.json \
             --verify-lock /tmp/fx.lock.json
       - name: Prove runtime output is process deterministic
         run: |
@@ -78,7 +78,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          src=Path('general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json')
+          src=Path('general/reusable/fx_v2/examples/approved-runtime-core.fx.json')
           data=json.loads(src.read_text())
           data['transitions']=[{'id':'FX2-TRANS-002'}]
           Path('/tmp/must-fail.fx.json').write_text(json.dumps(data))
@@ -93,7 +93,7 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           required=[
-            'README.md','AGENT_HANDOFF.md','BIBLE.md','PROJECT_INDEX.md','projects/PROJECT_TEMPLATE.md',
+            'README.md','AGENT_HANDOFF.md','BIBLE.md','SYSTEM_INDEX.md','projects/PROJECT_TEMPLATE.md',
             'general/reusable/STYLE_CONTRACT.md','general/reusable/PRODUCTION_PIPELINE.md',
             'general/reusable/CANONICAL_EFFECT_REGISTRY.json','general/reusable/CANONICAL_EFFECT_REGISTRY.md',
             'general/reusable/SPATIAL_3DGS_SUPERSPLAT.md','general/reusable/tools/README.md'
