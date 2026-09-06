@@ -1,0 +1,59 @@
+name: IronFlame V7 Human-Corrected Render
+
+on:
+  push:
+    branches: ["song/ironflame-20260905-0216"]
+    paths:
+      - "projects/ironflame/scripts/render_canon_motion_v7.py"
+      - "projects/ironflame/scripts/render_canon_motion_v6.py"
+      - "projects/ironflame/scripts/render_canon_motion_v4.py"
+      - "projects/ironflame/FX_REQUIREMENTS.fx.json"
+      - ".github/workflows/ironflame-v7-render.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render-ironflame-v7:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install media/runtime dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python-headless pillow
+      - name: Reconstruct and verify canonical audio
+        run: |
+          cat projects/ironflame/assets/audio/canonical-wav.parts/part-* > 'Ironflame (Remastered).wav'
+          echo '76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962  Ironflame (Remastered).wav' | sha256sum -c -
+      - name: Run fail-closed FX precompile gate
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest projects/ironflame/FX_REQUIREMENTS.fx.json \
+            --lock-out projects/ironflame/fx.lock.json
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest projects/ironflame/FX_REQUIREMENTS.fx.json \
+            --verify-lock projects/ironflame/fx.lock.json
+      - name: Render V7 from canonical stills and WAV; run technical and motion gates
+        run: |
+          python projects/ironflame/scripts/render_canon_motion_v7.py \
+            --repo . \
+            --audio 'Ironflame (Remastered).wav' \
+            --output-dir render/ironflame_v7
+      - name: Upload V7 master, QC, review contacts, evidence, depth maps and lock
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ironflame-v7-human-corrected
+          path: |
+            render/ironflame_v7/
+            projects/ironflame/fx.lock.json
+          if-no-files-found: warn
+          retention-days: 14

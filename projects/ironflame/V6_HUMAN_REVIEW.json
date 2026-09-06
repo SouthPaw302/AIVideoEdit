@@ -1,0 +1,35 @@
+{
+  "project": "IronFlame",
+  "render": "V6 Reference-Calibrated Canon",
+  "master_sha256": "6ab7892d24c6f1f03e1e56ebcb5a0fde42cdd6d8755b0e9d1f8f147633795593",
+  "technical_qc": "PASS",
+  "automated_motion_qc": "PASS",
+  "artistic_qc": "REVISE",
+  "independent_motion_check": {
+    "mean_flow_px": 2.2927980300527615,
+    "p90_flow_px_mean": 4.332449174562439,
+    "scene07_mean_flow_px": 2.889188987868173,
+    "scene09_mean_flow_px": 0.10113615072087238,
+    "scene10_mean_flow_px": 5.32455039024353,
+    "result": "matches embedded V6 QC"
+  },
+  "human_findings": {
+    "scene09": {
+      "status": "REVISE",
+      "finding": "Locked camera is correct, but the 20-second recognition beat reads too close to a held still. Strengthen protected water/reflection life, chamber ash and the single narrative ember without adding camera drift or deforming either face."
+    },
+    "scene10": {
+      "status": "REVISE_FRAMING",
+      "finding": "Motion is strong, but the luminous circular source arch still reads too much like a portal. Crop progressively into the heroine so only broken forge/rune arcs survive as environmental machinery."
+    },
+    "transition_10_to_11": {
+      "status": "REVISE",
+      "finding": "Canonical light handoff is cleaner than the rejected pigment pass, but V6 still shows a brief two-face exposure around the midpoint. Compress the blend under a face-centered light peak while retaining FX2-TRANS-003."
+    },
+    "other_scenes": {
+      "status": "KEEP_WITH_FINAL_REVIEW",
+      "finding": "V6 materially improves V4/V5 motion and preserves identity; scene 12 rack focus and scene 11 dawn migration read clearly."
+    }
+  },
+  "decision": "Promote a targeted V7 correction pass from canonical stills/WAV/runtime. Do not patch the V6 MP4 and do not call V6 FINAL."
+}
