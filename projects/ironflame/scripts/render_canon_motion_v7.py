@@ -86,7 +86,7 @@ def underground_reflection_life(frame: np.ndarray, gi: int, start: int, end: int
         fade = max(0.0, 1.0-phase/174.0)
         col = (int(25+18*fade), int(80+45*fade), int(150+70*fade))
         cv2.ellipse(ripple, (cx,cy), (rx,ry), 0, 0, 360, col, 1, cv2.LINE_AA)
-    out = cv2.addWeighted(out, 0.86, rippple, 0.14, 0)
+    out = cv2.addWeighted(out, 0.86, ripple, 0.14, 0)
 
     # Dawn enters first through the reflection, while its facial geometry stays fixed.
     reflection_light = v6._ellipse(frame.shape, (0.53,0.77), (0.18,0.19), blur=25)
@@ -95,7 +95,7 @@ def underground_reflection_life(frame: np.ndarray, gi: int, start: int, end: int
     f += reflection_light[...,None] * np.array([10,40,95], np.float32) * ((q**1.3)*(0.18+0.07*e))
     f += glow[...,None] * np.array([18,70,155], np.float32) * (0.50+0.20*math.sin(t*2.0)+0.15*onset)
     out = np.clip(f, 0, 255).astype(np.uint8)
-    cvr.circle(out, (cx,cy), 1, (45,150,245), -1, cv2.LINE_AA)
+    cv2.circle(out, (cx,cy), 1, (45,150,245), -1, cv2.LINE_AA)
     return out
 
 
@@ -105,8 +105,8 @@ def v7_camera_frame(base, global_i, scene_idx, cuts, energy):
         before = frame.copy()
         scene_q = float(np.clip((global_i-cuts[0]) / max(1, cuts[-1]-cuts[0]-1), 0.0, 1.0))
         z = 1.22 + 0.14*scene_q
-        M = cvr.getRotationMatrix2D((v4.INTERNAL_W*.43, v4.INTERNAL_H*0.32), 0, z)
-        frame = cvr.warpAffine(frame, M, (v4.INTERNAL_W, v4.INTERNAL_H), flags=cv2.INTER_CUBIC,
+        M = cv2.getRotationMatrix2D((v4.INTERNAL_W*0.43, v4.INTERNAL_H*0.32), 0, z)
+        frame = cv2.warpAffine(frame, M, (v4.INTERNAL_W, v4.INTERNAL_H), flags=cv2.INTER_CUBIC,
                                borderMode=cv2.BORDER_REFLECT_101)
         v6._record("forge_reframe", before, frame, global_i)
     return frame, k, q
@@ -166,7 +166,7 @@ def make_v7_review_contact(master: Path, out: Path):
                 if not ok:
                     frame = np.zeros((216,384,3), np.uint8)
                 else:
-                    frame = cvr.resize(frame, (384,216), interpolation=cv2.INTER_AREA)
+                    frame = cv2.resize(frame, (384,216), interpolation=cv2.INTER_AREA)
                 cv2.rectangle(frame,(0,0),(132,25),(0,0,0),-1)
                 cv2.putText(frame,f"{label} {t:.2f}s",(5,18),cv2.FONT_HERSHEY_SIMPLEX,.45,(255,255,255),1,cv2.LINE_AA)
                 thumbs.append(frame)
