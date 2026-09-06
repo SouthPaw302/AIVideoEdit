@@ -1,0 +1,502 @@
+name: Temporary Project-Neutral Main Migration
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/tmp-neutralize-project-names.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Convert main to capability-centric architecture
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Capability-centric reusable paths. Project/song names do not own shared technology.
+          if [ -d general/reusable/silver-coin-tools ]; then
+            mv general/reusable/silver-coin-tools general/reusable/painterly-motion
+          fi
+          if [ -d general/reusable/silver-coin-docs ]; then
+            mkdir -p general/reusable/painterly-motion/docs
+            mv general/reusable/silver-coin-docs/* general/reusable/painterly-motion/docs/
+            rmdir general/reusable/silver-coin-docs
+          fi
+          if [ -d general/reusable/irish-eyes-tools ]; then
+            mv general/reusable/irish-eyes-tools general/reusable/memory-atmosphere
+          fi
+          if [ -f general/reusable/memory-atmosphere/south_florida_memory_fx.py ]; then
+            mv general/reusable/memory-atmosphere/south_florida_memory_fx.py general/reusable/memory-atmosphere/memory_atmosphere_fx.py
+          fi
+
+          # A production-specific render pack is not a reusable main capability.
+          rm -f general/reusable/painterly-motion/video_fx/render_silver_coin_v8_effect_pack.py
+
+          # Main examples must be capability examples, not song examples.
+          if [ -f general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json ]; then
+            mv general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json general/reusable/fx_v2/examples/approved-runtime-core.fx.json
+          fi
+
+          cat > README.md <<'EOF'
+          # AIVideoEdit
+
+          Canonical production system for dynamic long-form music films.
+
+          ## Start here
+
+          Read `AGENT_HANDOFF.md` first. It is the boot sequence.
+
+          ## Repository law
+
+          - `main` is system-only: doctrine, templates, reusable tools, reusable effects, proof/QC infrastructure, and capability indexes.
+          - `main` does **not** identify or link to active/completed song productions.
+          - Every music-video production lives on its own `song/<slug>` branch.
+          - Song titles, source media, storyboards, prompts, shot packages, manifests, renders, QC, and production status remain on that branch.
+          - A newly supplied music/audio master for video work (MP3, WAV, FLAC, M4A, AAC, etc.) starts a new `song/<slug>` branch from `main` before production begins, unless the user explicitly says to continue a named existing branch.
+          - Reusable technology created during a production may return to `main` only after it is generalized, proof-backed, QC'd, and renamed as an AIVideoEdit capability.
+          - Project/song names must not become reusable effect IDs, reusable folder names, canonical preset names, or discovery paths. Origin may be retained only as non-authoritative provenance metadata.
+
+          ## Canonical capability entry points
+
+          - `BIBLE.md` — production doctrine.
+          - `SYSTEM_INDEX.md` — reusable system/capability map.
+          - `general/reusable/fx_v2/registry.json` — callable canonical FX registry.
+          - `general/reusable/generative-engine/` — shared music analysis/reactivity/spatial runtime.
+          - `general/reusable/painterly-motion/` — painterly/living-image motion capabilities.
+          - `general/reusable/memory-atmosphere/` — cinematic restoration, shimmer, halation, and memory-atmosphere capabilities.
+          - `general/reusable/depth-parallax-25d/` — reusable 2.5D depth/parallax system.
+          - `general/reusable/tools/` — small project-neutral utilities.
+
+          A production branch consumes these capabilities. It does not define their canonical identity.
+          EOF
+
+          cat > AGENT_HANDOFF.md <<'EOF'
+          # AIVideoEdit — Agent Handoff
+
+          Read this file before acting.
+
+          ## Authority order
+
+          1. Current explicit user instruction.
+          2. If already on a `song/<slug>` branch, that branch's own STATUS/HANDOFF/manifests.
+          3. `BIBLE.md`, `SYSTEM_INDEX.md`, and `general/reusable/` canonical system files.
+          4. Older chats, summaries, external packets, and historical provenance.
+
+          ## Boot sequence
+
+          1. Read `BIBLE.md`.
+          2. Read `SYSTEM_INDEX.md`.
+          3. Read `general/reusable/fx_v2/registry.json` and `PRECOMPILE_FX_GATE.md`.
+          4. Read `general/reusable/PRODUCTION_PIPELINE.md` and `STYLE_CONTRACT.md`.
+          5. Read `general/reusable/CAPABILITY_LINEAGE.md` and `LESSONS.md` when relevant.
+          6. Inspect connected/runtime tools before writing new code or custom tooling.
+          7. Inspect `general/reusable/` before inventing any effect, loop, transition, spatial method, reactive system, or QC tool.
+          8. If music-directed motion/reactivity is needed, inspect `general/reusable/generative-engine/`.
+          9. Only after the reusable system is understood should production-specific branch files be read or created.
+
+          ## New uploaded-audio rule
+
+          A newly supplied music/audio master intended for video production creates a new `song/<slug>` branch from `main` before production work begins. This includes MP3, WAV, FLAC, M4A, AAC and equivalent source masters.
+
+          Do **not** search `main` for an "active project" and do not infer continuation from historical project names.
+
+          Exception: if the user explicitly says to continue a specific existing `song/<slug>` branch, continue that branch and read its own handoff/status files.
+
+          ## Main is project-blind
+
+          `main` must not use working-production names as canonical effect/tool identities or discovery paths. Shared technology belongs to AIVideoEdit as a whole.
+
+          When a production creates something reusable:
+
+          1. prove it inside the production;
+          2. isolate the generic implementation;
+          3. remove song-specific media, paths, assumptions, constants, and naming;
+          4. assign capability-based IDs/names;
+          5. create project-neutral proof/QC;
+          6. promote it to `main/general/reusable/`;
+          7. register it canonically.
+
+          Production origin may be retained in optional provenance/history metadata only. It must never be required to discover or use the capability.
+
+          ## Canonical FX V2
+
+          The callable effect system is `general/reusable/fx_v2/`.
+
+          Before production render:
+
+          1. resolve exact FX IDs from `registry.json`;
+          2. run `precompile_gate.py` on the branch's FX manifest;
+          3. require real implementation, approval/proof, visible pixel change, and required preflight evidence;
+          4. generate the FX lock;
+          5. verify the lock immediately before render;
+          6. inspect the exported media visually/temporally.
+
+          A green gate proves implementation/evidence integrity, not artistic success.
+
+          ## Production rules
+
+          - Build genuine shot packages, not slides.
+          - Inspect short proof renders before scaling.
+          - Use measured song controls rather than generic random movement when music-reactivity is intended.
+          - Technical naming must be truthful: 2.5D, NeRF, 3DGS, projectM, etc. may be claimed only when the actual technology is used.
+          - Preserve identity and continuity when real people/source media matter.
+          - Do not accept invisible effects because code says they ran.
+          - Do not treat command success as QC acceptance.
+
+          ## Final QC
+
+          Scan the actual final export for black/damaged frames, freezes, repeated sections, loop seams, transition ghosting, missing effects, flicker/texture boiling, identity drift, source leakage, continuity errors, aspect/framing issues, runtime, and audio sync. Record final filename/specs/SHA/storage/QC.
+
+          ## Working cadence
+
+          Work autonomously. Use sandbox for intermediates. Push meaningful recovery checkpoints, not noisy micro-pushes. GitHub is the persistent brain; large media may live elsewhere if identity/hash/recovery location is preserved on the production branch.
+          EOF
+
+          cat > SYSTEM_INDEX.md <<'EOF'
+          # AIVideoEdit — System Index
+
+          This file indexes the permanent production system only. It intentionally contains no active/completed song list and no links to working productions.
+
+          ## Core doctrine
+
+          - `README.md` — front door and branch trigger rule.
+          - `AGENT_HANDOFF.md` — agent boot sequence.
+          - `BIBLE.md` — permanent production doctrine.
+          - `projects/PROJECT_TEMPLATE.md` — branch-local production package template.
+
+          ## Reusable capabilities
+
+          - `general/reusable/fx_v2/` — canonical callable FX runtime, registry, proof records, and hard precompile/lock gate.
+          - `general/reusable/generative-engine/` — shared audio analysis, frame-aligned control bus, reactive visual fields, and living parallax.
+          - `general/reusable/painterly-motion/` — generalized painterly/living-image motion, motion analysis, temporal QC, and related methods.
+          - `general/reusable/memory-atmosphere/` — generalized cinematic restoration, shimmer, halation, and memory-atmosphere treatment.
+          - `general/reusable/depth-parallax-25d/` — reusable depth-assisted image-space motion.
+          - `general/reusable/tools/` — small project-neutral utilities.
+          - `general/reusable/SPATIAL_3DGS_SUPERSPLAT.md` — truthful 3DGS/SuperSplat operating doctrine.
+
+          ## Canonical registries and policy
+
+          - `general/reusable/fx_v2/registry.json` is the callable FX registry.
+          - `general/reusable/CAPABILITY_LINEAGE.md` records capability evolution without making productions part of the runtime namespace.
+          - `general/reusable/REUSABLE_EFFECTS_POLICY.md` and `EFFECT_PACKAGE_STANDARD.md` define reusable promotion requirements.
+
+          ## Branch selection
+
+          `main` does not select a current production.
+
+          - Newly supplied music/audio master for video work -> create `song/<slug>` from `main`.
+          - Explicit user instruction to continue a named existing branch -> continue that branch.
+          - Otherwise do not guess from historical song names.
+          EOF
+
+          cat > BIBLE.md <<'EOF'
+          # AIVideoEdit — Bible
+
+          This repository is the permanent operating system for creating dynamic long-form music films.
+
+          ## 1. Branch law
+
+          - `main` contains only the production system, templates, reusable capabilities, registries, proofs, QC infrastructure, and system indexes.
+          - Every song/video production lives on its own `song/<slug>` branch.
+          - Song-specific images, audio, references, shot packages, storyboards, prompts, manifests, renders, QC, status, and decisions stay on that branch.
+          - `main` does not maintain an active/completed production list and does not link agents to working song branches.
+          - A newly supplied music/audio master for video work starts a new `song/<slug>` branch from `main` before production begins unless the user explicitly says to continue a named existing branch.
+          - Reusable technology developed during a production returns to `main` only after project-specific assumptions and naming are removed.
+
+          ## 2. What we are making
+
+          The target is a directed long-form visual film for a song, not a slideshow, generic visualizer, or one source clip with weak effects.
+
+          A finished film should feel continuously authored through changing shots, depth, atmosphere, light, motion, environment, composition, transitions, and recurring motifs.
+
+          ## 3. Production order
+
+          1. Inspect available tools/capabilities.
+          2. Analyze the song and lyrics.
+          3. Define visual DNA and story.
+          4. Create/lock storyboard and shot map.
+          5. Build the asset/shot library.
+          6. Animate/composite selected shots.
+          7. Add music-directed behavior and transitions.
+          8. Assemble only when enough finished shot packages exist.
+          9. Render the complete movie.
+          10. Scan/QC the actual export.
+          11. Archive manifests, hashes, decisions, and reusable discoveries.
+          12. Generalize and promote reusable discoveries back to `main` when justified.
+
+          ## 4. Storyboard and shot-package rule
+
+          The storyboard is a production map, not a preview slideshow. Each selected scene should become a real shot package with whatever source, alpha, layers, depth/masks, generated support, FX assets, transitions, loops, previews, and notes are required.
+
+          Recommended branch-local structure:
+
+          `projects/<slug>/shot_packages/<shot_id>/`
+
+          Preview mode means finished ingredients plus short proof clips, not premature full-film assembly.
+
+          ## 5. Reuse before invention
+
+          Before creating a new effect, loop, transition, spatial method, camera behavior, reactive system, or QC utility, inspect:
+
+          - `SYSTEM_INDEX.md`
+          - `general/reusable/fx_v2/registry.json`
+          - `general/reusable/CAPABILITY_LINEAGE.md`
+          - `general/reusable/generative-engine/`
+          - the relevant capability directory under `general/reusable/`
+
+          Reuse existing proven capabilities before building weaker substitutes.
+
+          Do not inspect unrelated production branches merely to discover reusable technology. If a capability is truly reusable, it belongs on `main` under a project-neutral identity.
+
+          ## 6. Tool-first law
+
+          Before new code, inspect tools available in the current environment and connected services. Prefer existing GitHub, media, image-generation, storage, rendering, analysis, ChatGPT/plugin, and platform capabilities when they materially help.
+
+          Cloud/object storage may hold large binaries; GitHub must preserve discoverable identity, hashes, roles, and recovery locations. Never store secrets in the repo.
+
+          ## 7. Canonical reusable technology
+
+          Major capability trees include:
+
+          - `general/reusable/fx_v2/`
+          - `general/reusable/generative-engine/`
+          - `general/reusable/painterly-motion/`
+          - `general/reusable/memory-atmosphere/`
+          - `general/reusable/depth-parallax-25d/`
+          - `general/reusable/tools/`
+
+          Important capability classes include 2.5D/depth parallax, radiance-field methods, real 3DGS when splat geometry exists, living-image motion, atmosphere/fog/smoke/rain/embers/heat, reflections, halation/bloom/light shafts/glints, performance/transient warps, music-reactive control buses, procedural visual plates, transitions, loops, and temporal QC.
+
+          ## 8. Technical truthfulness
+
+          - 2.5D = depth/layer-aware image-space motion.
+          - NeRF = an actual trained neural radiance field is rendered.
+          - Hybrid NeRF = a real radiance-field component is composited with image/depth layers.
+          - 3DGS = actual Gaussian-splat scene primitives are rendered.
+          - Gaussian-shaped light/noise is not 3DGS.
+          - A custom reactive field is not projectM/MilkDrop unless that engine is actually used.
+
+          Never claim a technique because the result merely resembles it.
+
+          ## 9. Effect proof rule
+
+          Code existence is not proof. Meaningful effects preserve source/input class, implementation/backend, parameters/preset, proof render, QC result, and keep/revise/reject decision. The effect must be visibly present in proof and survive export.
+
+          Callable production FX must pass the canonical `fx_v2` gate/lock process.
+
+          ## 10. Loop rule
+
+          A reusable loop records source/range class, FPS/dimensions, duration, motion type, entry/exit behavior, seam method, crossblend when used, return-to-start behavior, seam/freeze/duplicate/ghosting QC, and intended musical role. Mathematical endpoint similarity alone is not acceptance.
+
+          ## 11. Identity/source rule
+
+          Use real source media where it provides identity, motion, place, or continuity. Generated media is encouraged when the story requires missing scenes/support. Protect identity-bearing people and reject morphing, hallucinated anatomy, waxy restoration, obvious matte edges, or prolonged double exposure.
+
+          ## 12. Music-directed rule
+
+          Music may drive shot timing, transient accents, motion density, atmosphere, reflections, lighting, camera amplitude, and transitions. Prefer measured/smoothed controls and one preserved frame-aligned control bus over unrelated per-effect re-analysis unless divergence is documented.
+
+          ## 13. QC law
+
+          A successful render command is not a finished film. Inspect the actual exported movie for black/damaged frames, freezes, repeated sections, loop seams, ghosting, invisible effects, temporal flicker/boiling, identity drift, source leakage, continuity errors, aspect/framing issues, and full runtime/audio sync.
+
+          ## 14. Persistence law
+
+          Production branches preserve project status/rules, storyboard/shot map, manifests/hashes, prompts/decisions, practical-size source/reference assets, masks/depth/previews/scripts/QC, and exact external storage references for large binaries.
+
+          `main` preserves only generalized reusable system material.
+
+          ## 15. Reusable-capability promotion law
+
+          If a method survives a real production test:
+
+          1. isolate the reusable behavior;
+          2. remove production-specific media, absolute paths, constants, story assumptions, and names;
+          3. give it a capability-based stable name/ID;
+          4. place it under a project-neutral `general/reusable/` path;
+          5. create project-neutral proof/QC and failure modes;
+          6. add/update the canonical registry;
+          7. optionally retain production origin only as non-authoritative provenance metadata.
+
+          A song title must never become the canonical effect name, folder namespace, preset identity, or required discovery path.
+
+          ## 16. New-production and recovery rule
+
+          New supplied music/audio master -> create `song/<slug>` from `main`, create `projects/<slug>/` from `projects/PROJECT_TEMPLATE.md`, and keep the complete production there.
+
+          Explicit request to continue an existing branch -> open that branch and read its own STATUS/HANDOFF/manifests.
+
+          Never use a list of old project names on `main` to decide what the user currently means.
+
+          ## Final principle
+
+          The goal is not “AI pictures behind a song.” The goal is: **the song became a visual world.**
+          EOF
+
+          cat > general/reusable/CAPABILITY_LINEAGE.md <<'EOF'
+          # AIVideoEdit — Capability Lineage
+
+          This document records reusable capability evolution without making any production branch part of the canonical namespace.
+
+          ## Rule
+
+          Reusable capabilities are identified by what they do, not by the song in which they were first discovered. Production origin may be kept in optional historical metadata, but agents must never need an old song branch to discover, name, or use a promoted capability.
+
+          ## Capability families
+
+          - **Living/painterly motion** — local flow, breathing motion, masked subject/background movement, texture-safe image animation.
+          - **Atmosphere/environment** — smoke, fog, rain, embers, flame, haze, water/reflection movement.
+          - **Light** — practical-light breathing, moving fields, glints, bloom/halation, motivated shafts.
+          - **Surface** — temporally stable canvas/texture treatments and restoration layers.
+          - **Spatial** — 2.5D depth parallax, living parallax, radiance-field methods, real 3DGS under truthful preflight.
+          - **Transitions** — pigment/object/reflection/light/depth motivated handoffs.
+          - **Audio/reactivity** — shared frame-aligned music controls and edit maps.
+          - **QC** — temporal scanning, freeze/duplicate/black-frame/ghosting checks, proof and lock verification.
+
+          ## Promotion stages
+
+          1. production experiment;
+          2. proof render and visual/technical QC;
+          3. generic extraction;
+          4. project-neutral naming/path cleanup;
+          5. canonical proof package;
+          6. registry promotion;
+          7. ongoing main CI/lock verification.
+
+          The canonical callable effect state is `general/reusable/fx_v2/registry.json`.
+          EOF
+
+          cat > general/reusable/LESSONS.md <<'EOF'
+          # AIVideoEdit — Reusable Lessons
+
+          These are system lessons, not project histories.
+
+          - A technically valid still-image timeline is not a dynamic film.
+          - Effects must be visible in the exported media; configuration/code existence is insufficient.
+          - Short proof renders must be inspected before scaling a method across a full production.
+          - Gate success is necessary but not artistic acceptance.
+          - Real-person identity must survive restoration, compositing, depth motion, and transitions.
+          - Music-reactive systems should consume measured controls rather than generic synthetic motion in production.
+          - Strong internal motion is usually preferable to constant whole-frame shake.
+          - A reusable effect is not reusable until production-specific media, paths, constants, story assumptions, and names have been removed.
+          - Once generalized, a capability belongs to AIVideoEdit as a whole; its production origin is provenance, not identity.
+          - Failed or superseded approaches should be recorded on their production branch, not kept on main as active reusable doctrine.
+          EOF
+
+          cat > general/reusable/README.md <<'EOF'
+          # AIVideoEdit Reusable System
+
+          Everything under this tree must be project-neutral and usable without opening an unrelated song branch.
+
+          ## Canonical directories
+
+          - `fx_v2/` — callable FX runtime/registry/proofs/gate.
+          - `generative-engine/` — music analysis/reactivity/spatial runtime.
+          - `painterly-motion/` — living/painterly image-motion tools and methods.
+          - `memory-atmosphere/` — cinematic restoration/halation/shimmer/atmosphere tools.
+          - `depth-parallax-25d/` — depth-assisted 2.5D motion.
+          - `tools/` — small general utilities.
+
+          ## Naming law
+
+          Reusable folders, effect IDs, presets, examples, and public callable symbols are named after capabilities—not productions. A production may be mentioned only as optional historical provenance and must never be required to locate/use the capability.
+
+          If code still contains production-specific source paths, media filenames, story constants, or assumptions, it has not completed promotion and does not belong in the callable reusable surface.
+          EOF
+
+          cat > general/reusable/memory-atmosphere/VISIBLE_MEMORY_FX_PRESET.md <<'EOF'
+          # Visible Memory / Atmosphere FX Preset
+
+          Project-neutral cinematic-memory preset for making treatment visibly readable without turning a shot into a generic visualizer or breaking photographic identity.
+
+          Recommended components: depth travel, low-opacity temporal echo, restrained prism edge separation, motivated halation/bloom, spatially motivated water/reflection displacement, haze/light shafts, and synchronized lightning/wet-reflection accents where appropriate.
+
+          QC must confirm visible intent at normal playback speed, no distracting face duplication, no constant color fringing, motivated distortion/light, preserved highlight detail, and no foreground/source obstruction reading as an effect glitch.
+
+          Reusable lesson: dedicated effect passages must be perceptually visible as well as technically correct.
+          EOF
+
+          cat > projects/PROJECT_TEMPLATE.md <<'EOF'
+          # Production Branch Template
+
+          Use this template only on a `song/<slug>` branch. Complete productions do not live on `main`.
+
+          ## Branch creation
+
+          A newly supplied music/audio master for video work creates a fresh `song/<slug>` branch from `main` before production work begins, unless the user explicitly identifies an existing branch to continue.
+
+          Create `projects/<slug>/` with at least:
+
+          - `PROJECT.md` — production intent and constraints
+          - `STATUS.md` — current continuation state
+          - `HANDOFF.md` — exact next-agent recovery instructions
+          - `LYRICS.md` when applicable
+          - `VISUAL_DNA.md`
+          - `SHOT_LIST.md` / storyboard map
+          - `EFFECTS_PLAN.md` or FX manifest
+          - `ASSET_MANIFEST.json`
+          - `RENDER_HISTORY.md`
+          - `QC.md`
+          - `shot_packages/`
+
+          Before inventing technology, read the project-neutral system on `main`: `BIBLE.md`, `SYSTEM_INDEX.md`, `general/reusable/fx_v2/registry.json`, `general/reusable/PRODUCTION_PIPELINE.md`, and `general/reusable/STYLE_CONTRACT.md`.
+
+          Reusable discoveries remain on the production branch while being proven. Promotion back to `main` happens only after generic extraction, project-neutral naming/path cleanup, proof/QC, and canonical registration.
+          EOF
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          regp=Path('general/reusable/fx_v2/registry.json')
+          reg=json.loads(regp.read_text())
+          for e in reg.get('effects',{}).values():
+              impl=e.get('implementation') or {}
+              p=impl.get('path')
+              if isinstance(p,str):
+                  p=p.replace('general/reusable/silver-coin-tools/','general/reusable/painterly-motion/')
+                  p=p.replace('general/reusable/irish-eyes-tools/south_florida_memory_fx.py','general/reusable/memory-atmosphere/memory_atmosphere_fx.py')
+                  impl['path']=p
+          # This candidate still points into a production branch, so it is not promoted canon.
+          sea=reg.get('effects',{}).get('FX2-ATM-004')
+          if sea:
+              sea['status']='unpromoted'
+              sea['gate_status']='unavailable'
+              sea['implementation']={
+                  'kind':'unpromoted',
+                  'note':'Production-specific source implementation must be generalized and proof-gated before canonical promotion.'
+              }
+          regp.write_text(json.dumps(reg,indent=2)+'\n')
+
+          wf=Path('.github/workflows/fx-v2-precompile-gate.yml')
+          s=wf.read_text()
+          s=s.replace('general/reusable/fx_v2/examples/leave-it-by-the-door-core.fx.json','general/reusable/fx_v2/examples/approved-runtime-core.fx.json')
+          wf.write_text(s)
+
+          # Remove project-based discovery file; capability lineage replaces it.
+          Path('PROJECT_INDEX.md').unlink(missing_ok=True)
+          Path('general/reusable/PROJECT_TECHNIQUE_LINEAGE.md').unlink(missing_ok=True)
+          PY
+
+          # Self-remove migration workflow.
+          rm -f .github/workflows/tmp-neutralize-project-names.yml
+
+          # Fail if canonical boot docs still route agents through project indexes/lineage.
+          if grep -R -n -E 'PROJECT_INDEX|PROJECT_TECHNIQUE_LINEAGE|silver-coin-tools|irish-eyes-tools|leave-it-by-the-door-core' README.md AGENT_HANDOFF.md BIBLE.md SYSTEM_INDEX.md projects/PROJECT_TEMPLATE.md general/reusable/README.md general/reusable/fx_v2/registry.json .github/workflows/fx-v2-precompile-gate.yml; then
+            echo 'ERROR: project-coupled canonical reference remains'
+            exit 1
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Make main project-neutral and capability-centric'
+          git push origin HEAD:main
