@@ -19,3 +19,6 @@ Permanent-system index only. No working-production names or branch links belong 
 
 ## Branch selection
 New supplied audio master -> create new `song/<slug>` from `main`. Explicit request to continue an existing branch -> continue it. Otherwise never guess from historical projects.
+
+## Capability ownership
+Once production-born technology is generalized and promoted, it belongs to AIVideoEdit as a whole. Production origin is optional provenance only and never its canonical name, namespace, discovery path, or runtime dependency.
