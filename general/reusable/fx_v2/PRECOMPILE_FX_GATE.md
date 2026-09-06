@@ -2,21 +2,35 @@
 
 ## Why this exists
 
-An effect name in a manifest is not evidence that the effect is actually present in the render path. AIVideoEdit now treats FX verification as a hard compile dependency.
+An effect name in a manifest is not evidence that the effect is actually present in the render path. AIVideoEdit treats FX verification as a hard compile dependency.
 
-> This gate verifies that effects are real, wired, and proof-backed.
-> A passing gate is necessary but not sufficient — it does not mean a
-> shot is artistically finished or alive. See AGENT_HANDOFF.md,
-> "The gate protects creative quality; it is not a substitute for it."
+> This gate verifies that effects are real, wired, deterministic, and evidence-backed.
+> A passing gate is necessary but not sufficient — it does not mean a shot is artistically finished or alive.
 
-Production render order is:
+## Production render order
 
 1. project declares exact FX IDs in a project `.fx.json` manifest;
-2. `precompile_gate.py` resolves every ID against `registry.json`;
-3. the gate verifies the real runtime wiring/implementation, rejects stubs/placeholders, checks approved proof/QC records, and runs pixel-level smoke tests;
-4. the gate writes `fx.lock.json` with hashes of the project manifest, registry, runtime implementation and proof records;
-5. immediately before the real render starts, the renderer verifies the lock again;
-6. any changed code, registry or manifest invalidates the lock and blocks compile until the gate is rerun.
+2. production manifests declare `render_inputs`: the actual renderer/source-code files whose changes can alter the final pixels;
+3. `precompile_gate.py` resolves every ID against `registry.json`;
+4. the gate verifies implementation wiring/files, rejects stubs/placeholders, checks proof/QC records, verifies proof binaries when an addressable artifact path is recorded, and runs deterministic pixel/temporal smoke tests for runtime effects;
+5. conditional/external technology requires explicit `allow_conditional` opt-in plus a technology-specific preflight JSON with `result: PASS`;
+6. the gate writes schema-v2 `fx.lock.json` containing manifest/registry/runtime hashes, renderer-input hashes, implementation hashes, proof-record evidence, preflight hashes, smoke metrics, deterministic sample-output digests, and one complete evidence fingerprint;
+7. immediately before the real render starts, the renderer verifies the lock again;
+8. lock verification reruns the live checks and rejects any evidence mismatch.
+
+Any schema-v1 lock is obsolete and must be regenerated.
+
+## Proof truthfulness
+
+A 64-character checksum stored in JSON is a declaration, not cryptographic verification of a binary that is unavailable.
+
+Proof records therefore distinguish:
+
+- declared proof checksum — preserved historical identity;
+- byte-verified proof artifact — the referenced binary is addressable and its bytes match the declared SHA-256;
+- live deterministic runtime evidence — the gate renders fixed samples from the current implementation and hashes the resulting pixels.
+
+Approved runtime effects may use a human-approved historical proof record plus live runtime evidence. Approved adapter/external effects require byte-verified proof artifact(s), because the gate cannot substitute a synthetic runtime probe for an external implementation.
 
 ## Fail-closed rules
 
@@ -24,20 +38,22 @@ The gate fails when any requested effect:
 
 - does not exist in the canonical registry;
 - is `proof_required`, experimental, rejected, or otherwise not `approved`;
-- exists in the registry but is not routed through the real runtime dispatcher;
-- resolves to an empty method, `pass`, `NotImplementedError`, TODO/FIXME/placeholder code;
-- lacks a rendered proof record covering that exact FX ID;
-- lacks a valid proof binary checksum;
-- lacks KEEP / APPROVED / PASS visual QC;
-- uses a proof below 24 fps, under 24 frames, or below 320x180;
+- is conditional without explicit project opt-in and a PASS preflight record;
+- exists in the registry but is not routed through the real runtime dispatcher or a real implementation file;
+- resolves to empty/stub/placeholder/NotImplemented code;
+- lacks an approved proof record when approval requires one;
+- has an addressable proof binary whose SHA-256 does not match the proof record;
+- is an approved adapter/external effect without byte-verified proof artifact evidence;
 - produces effectively no pixel change in the runtime smoke test;
 - is supposed to animate but does not change over time;
 - causes excessive whole-frame translation when it is not a camera/spatial effect;
-- is a transition that does not preserve the outgoing/incoming endpoints or visibly evolve between them.
+- is a transition that fails endpoint preservation or visible temporal evolution;
+- uses a production manifest with no declared `render_inputs`;
+- changes any locked manifest, registry, runtime, renderer input, implementation, proof, preflight, or deterministic sample-output evidence.
 
-## What this does not pretend to automate
+## What this does not automate
 
-Pixel metrics cannot decide whether an effect is artistically beautiful. Human visual QC is therefore mandatory before `gate_status` can become `approved`. The automated gate catches fake wiring, no-op implementations, placeholders, missing proofs, stale locks, and obviously broken temporal behavior. The proof/QC decision is the artistic gate.
+Pixel metrics cannot decide whether an effect is artistically good. Human visual QC remains mandatory before `gate_status` becomes `approved`, and final exported-film QC remains mandatory after assembly.
 
 ## Production command
 
@@ -57,16 +73,16 @@ python general/reusable/fx_v2/precompile_gate.py \
 
 A non-zero exit code means **do not render**.
 
+## Engine-test mode
+
+`--engine-test` exists only for isolated reusable-system CI. It allows a fixture manifest without production `render_inputs`. Song production must not use it.
+
 ## Approval states
 
 - `approved` — may compile after the gate passes.
-- `proof_required` — implementation may exist, but production use is blocked until a proof passes visual and technical QC.
-- `conditional` — external/spatial technology such as real SuperSplat/3DGS. It requires explicit project opt-in plus a separate technology-specific spatial preflight. It is never silently substituted with a 2D imitation.
-
-## Current proof policy
-
-A single rendered proof may cover multiple effects only when the proof record explicitly lists every effect and the visual inspection confirms each one is genuinely visible. If an individual effect cannot be distinguished in the proof, it does not deserve `approved` status.
+- `proof_required` — implementation may exist, but production use is blocked until proof and visual/technical QC satisfy the promotion requirements.
+- `conditional` — external/spatial technology such as real SuperSplat/3DGS; requires explicit opt-in and a hashed PASS preflight. It is never silently replaced by a 2D imitation.
 
 ## Camera rule
 
-Ordinary environment/light/surface effects are checked for unintended global translation. The FX layer must not smuggle camera shake into a scene under another effect name. Camera movement belongs to explicit camera/spatial logic and must be independently QC'd.
+Ordinary environment/light/surface effects are checked for unintended global translation. Camera movement belongs to explicit camera/spatial logic and must be independently QC'd.
