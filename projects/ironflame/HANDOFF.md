@@ -37,6 +37,57 @@ Start here and follow the existing material; do not add a new rule system for th
 
 Also inspect the branches/projects for the previously successful videos, especially **Silver Coin**, for the actual working production behavior: create/derive frames, animate them, make visible loops/effects, render, inspect, keep improving, then assemble.
 
+## Exact source/media pointers
+
+### IronFlame song audio
+
+The canonical song source is already archived on this branch.
+
+- Recovery instructions: `projects/ironflame/AUDIO_RECOVERY.md`
+- Asset record: `projects/ironflame/ASSET_MANIFEST.json`
+- Canonical WAV parts: `projects/ironflame/assets/audio/canonical-wav.parts/`
+- Reconstructed filename: `Ironflame (Remastered).wav`
+- SHA-256: `76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962`
+- Working MP3 parts: `projects/ironflame/assets/audio/working-reference.parts/`
+
+### IronFlame generated visual library
+
+The generated IronFlame still library is recorded in `projects/ironflame/ASSET_MANIFEST.json` and lives under:
+
+- `projects/ironflame/assets/stills/`
+- `projects/ironflame/assets/reference/`
+- `projects/ironflame/assets/analysis/`
+
+The manifest records that the production stills were generated with OpenAI built-in image generation at 1664x936 / 16:9 and gives the exact per-shot filenames and hashes. Use those files as raw source material to derive animated shots; do not simply hold them on screen.
+
+### Successful/example videos and source references
+
+The important example is the **finished Silver Coin video the user uploaded back into the Video Creation Project for comparison**:
+
+- Project-uploaded benchmark filename: `Silver_Coin_V8_FINAL_YouTube_720p24-1.mp4`
+- This is the actual finished video to inspect for motion density, living-image treatment, loop behavior, transitions, pacing, and overall feel. It is a benchmark/reference, not a template to copy.
+
+Silver Coin's durable GitHub project is:
+
+- Branch: `song/silver-coin`
+- Project: `projects/silver-coin/`
+- Asset map: `projects/silver-coin/ASSET_MANIFEST.json`
+
+That manifest also points to the ChatGPT Library originals used by Silver Coin:
+
+- `Silver Coin  (Remastered).wav` — Library file ID `libfile_7726133c84a4819186af6e0bdd63ffc6`
+- `imagine-d04b484c.mp4` — Library file ID `libfile_6403a0b255708191b9c1cbe2110887ce`
+- `imagine-5558fc80.mp4` — Library file ID `libfile_50d6865c2c248191b98b6313aa813b3e`
+
+GitHub keeps reduced visual recovery proxies for the two supplied Silver Coin motion references at:
+
+- `projects/silver-coin/references/source-clips/imagine-d04b484c-github-reference.mp4`
+- `projects/silver-coin/references/source-clips/imagine-5558fc80-github-reference.mp4`
+
+The originals in the ChatGPT Project/File Library are the authoritative visual references; the tiny GitHub proxies are only for recovery/identification.
+
+Also recover the successful prior productions and their project chats from the **Video Creation** Project when available, rather than assuming IronFlame V3.4 demonstrates the intended workflow.
+
 ## Continuation point
 
 Do not spend time polishing the existing V3.4 slideshow-like master.
