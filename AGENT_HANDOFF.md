@@ -23,19 +23,22 @@ When sources conflict, prefer higher items:
 5. Read `general/reusable/PRODUCTION_PIPELINE.md`.
 6. Read `general/reusable/STYLE_CONTRACT.md`.
 7. Read `general/reusable/LESSONS.md`.
-8. If music-directed motion, living images, procedural plates, or shared
+8. Before writing new code or custom tooling, inspect the connected/runtime
+   tools and capabilities already available in the current environment.
+9. If music-directed motion, living images, procedural plates, or shared
    reactivity are involved, read `general/reusable/generative-engine/README.md`.
-9. Before creating any effect, inspect `general/reusable/fx_v2/` first,
-   then legacy canonical registry/lineage files. Do not rebuild an
-   existing effect system without checking here first.
-10. Read the active song branch's complete `projects/<slug>/` directory:
+10. Before creating any effect, inspect `general/reusable/fx_v2/` first,
+    then legacy canonical registry/lineage files. Do not rebuild an
+    existing effect system without checking here first.
+11. Read the active song branch's complete `projects/<slug>/` directory:
     PROJECT, STATUS, HANDOFF, manifests, shot maps, effect declarations,
     render history, and QC evidence.
-11. Inspect prior successful project branches instead of re-inventing
+12. Inspect prior successful project branches instead of re-inventing
     weaker substitutes.
-12. Continue from recorded branch state. Do not reconstruct settled
-    decisions from memory, and do not resurrect work a handoff has
-    explicitly marked failed or superseded.
+13. Continue from recorded branch state. Do not reconstruct settled
+    decisions from memory, do not restart a song as a generic new task when
+    its branch already records settled direction, and do not resurrect work
+    a handoff has explicitly marked failed or superseded.
 
 ## Current active production
 
@@ -83,14 +86,31 @@ return-to-start behavior, and seam/freeze/duplicate/ghosting QC, plus
 the loop's musical role. Avoid long human-subject crossfades that create
 double-image ghosting.
 
+## During production
+
+- Inspect proof renders visually and temporally before scaling up,
+  batch-producing shots, or assembling long sections.
+- If intended motion, effects, identity protection, or transitions are weak
+  or absent in the proof, revise the shot before scaling it into the film.
+
 ## Before final delivery
 
 - Render the actual full movie; do not hand over a render merely because
   a script completed successfully.
 - Probe duration/codecs/audio.
-- Scan for black frames, freezes, duplicates, bad seams, ghosting,
-  flicker, identity drift, source leakage, continuity errors, and sync
-  issues.
+- Scan the actual exported movie for:
+  - black/damaged frames;
+  - freezes or accidental still stretches;
+  - repeated sections;
+  - bad loop seams;
+  - transition ghosting;
+  - invisible/missing effects;
+  - temporal flicker/texture boiling;
+  - identity drift;
+  - incorrect source leakage;
+  - continuity errors;
+  - aspect/framing issues;
+  - full runtime and audio sync.
 - Verify intended effects are visibly present in the exported master.
 - Record final filename, dimensions, fps, codec, size, SHA-256,
   storage/recovery location, and QC result.
