@@ -1,0 +1,19 @@
+{
+  "proof": "IRONFLAME_FX2-TRANS-001_PROOF01",
+  "source": "IronFlame representative pigment boundary",
+  "fps": 24,
+  "frames": 48,
+  "duration_seconds": 2.0,
+  "size": [640, 360],
+  "camera": "locked transition proof",
+  "effects": ["FX2-TRANS-001"],
+  "sha256": "2dce9fec3e6cbe804266b9faf1a67d5038cc53932d2807fb02c1dc3b73069331",
+  "mean_adjacent_gray_delta": 1.7094432039463774,
+  "p95_adjacent_gray_delta": 1.55751074552536,
+  "visual_qc": "KEEP AS IRONFLAME TRANSITION ENGINE PROOF",
+  "notes": [
+    "Canonical pigment_gate behavior; exact outgoing/incoming endpoints are preserved before encode.",
+    "Production IronFlame uses a shorter 6-frame application after this long-form proof established visible evolution.",
+    "Proof binary remains in the active render workspace; GitHub stores checksum and QC record."
+  ]
+}

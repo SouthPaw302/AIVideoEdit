@@ -1,0 +1,21 @@
+{
+  "project": "ironflame-v3.3-prelock",
+  "runtime": "aivideoedit-fx-v2",
+  "seed": 302,
+  "effects": [
+    {"id":"FX2-MOTION-002","strength":0.72},
+    {"id":"FX2-LIGHT-001","strength":0.62},
+    {"id":"FX2-LIGHT-002","strength":0.62},
+    {"id":"FX2-SURFACE-001","strength":0.42},
+    {"id":"FX2-SPATIAL-004","use":"authored-depth shots 01,06,09,12 only"}
+  ],
+  "transitions": [
+    {"id":"FX2-TRANS-001","frames":6,"use":"transformation boundaries"},
+    {"id":"FX2-TRANS-003","frames":12,"use":"light-object handoffs"}
+  ],
+  "claims": {
+    "spatial":"2.5D image-space authored-depth living parallax",
+    "not_claimed":["NeRF","3D Gaussian Splatting","SuperSplat","true 3D geometry"]
+  },
+  "candidate_master_sha256":"8de9038aabbeb58c5ec2e136e5718cb130c4f6abce55cdaf811c6fc4be515c98"
+}

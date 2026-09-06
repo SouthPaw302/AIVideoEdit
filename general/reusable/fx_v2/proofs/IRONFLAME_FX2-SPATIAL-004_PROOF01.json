@@ -1,0 +1,21 @@
+{
+  "proof": "IRONFLAME_FX2-SPATIAL-004_PROOF01",
+  "source": "IronFlame authored-depth hero set",
+  "fps": 24,
+  "frames": 96,
+  "duration_seconds": 4.0,
+  "size": [640, 360],
+  "camera": "subtle image-space 2.5D depth warp; no 3D geometry claim",
+  "effects": ["FX2-SPATIAL-004"],
+  "depth_mode": "authored_manual_scene_depth",
+  "canonical_implementation": "general/reusable/generative-engine/spatial/living_parallax.py",
+  "canonical_source_blob": "541c8d53847edeffec8a69b1bf807fd0bcfe793e",
+  "sha256": "79be8f258413f82f40ef61919d95653f824b0dd29fbd8f430a197fc9e6dc21e2",
+  "visual_qc": "KEEP / APPROVED FOR IRONFLAME 2.5D SPATIAL USE",
+  "notes": [
+    "Four distinct authored-depth hero compositions passed artistic review: shots 01, 06, 09 and 12.",
+    "Synthetic radial fallback is excluded from production use.",
+    "This is 2.5D image-space living parallax, not NeRF, 3DGS, SuperSplat, or genuine 3D geometry.",
+    "Representative proof binary checksum above is shot01; additional accepted proof SHAs: shot06 e7395ccfa058cbebc1f60068959749ca55748521648c37b8acaf6d767d5ce33f, shot09 638295fca57192c718b64fc9bff43f9a0e04a978ce9c752151e0f5f8c2d739cd, shot12 b56a1f019c33fd584747cce3de71c66ac8bd67be44ddb1a245d1020d6618cc40."
+  ]
+}

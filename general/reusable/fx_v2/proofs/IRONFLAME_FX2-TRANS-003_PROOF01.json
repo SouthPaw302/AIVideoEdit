@@ -1,0 +1,19 @@
+{
+  "proof": "IRONFLAME_FX2-TRANS-003_PROOF01",
+  "source": "IronFlame representative light handoff boundary",
+  "fps": 24,
+  "frames": 48,
+  "duration_seconds": 2.0,
+  "size": [640, 360],
+  "camera": "locked transition proof",
+  "effects": ["FX2-TRANS-003"],
+  "sha256": "4c4b6d6a0c17096452a39f517cfe9c027811d2af19ac3ebae1e575c668e5d2f9",
+  "mean_adjacent_gray_delta": 2.325397587970811,
+  "p95_adjacent_gray_delta": 6.39090256690979,
+  "visual_qc": "KEEP AS IRONFLAME TRANSITION ENGINE PROOF",
+  "notes": [
+    "Canonical light_peak_handoff behavior; exact outgoing/incoming endpoints are preserved before encode.",
+    "Production IronFlame uses a 12-frame application after this long-form proof established visible evolution.",
+    "Proof binary remains in the active render workspace; GitHub stores checksum and QC record."
+  ]
+}
