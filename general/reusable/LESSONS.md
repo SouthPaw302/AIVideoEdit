@@ -8,3 +8,9 @@
 - Prefer meaningful internal motion over constant whole-frame shake.
 - A capability is not reusable until project-specific media, paths, constants, assumptions, and names are removed.
 - Once generalized, it belongs to AIVideoEdit; origin is provenance, not identity.
+- When no visual reference/style is supplied, build and lock the story universe first: narrative arc, recurring motifs, locations, hero characters, palette, light language, and shot grammar must exist before large media generation.
+- Generated still batches are shot-source assets, not finished scenes. Convert selected stills into branch-local shot packages with motion layers, masks/depth where useful, atmosphere/light/FX assets, proof renders, and QC before assembly.
+- Establish hero-character continuity early. Reuse a locked character identity and wardrobe/world language across generated shot sources so the film reads as one authored universe rather than unrelated images.
+- A short visual cold-open before the music can strengthen narrative entry when intentionally authored; its duration must be explicit in the timing map and final runtime/audio-sync QC.
+- Repair locally whenever possible. If a small subset of rendered shots fail or corrupt, patch/re-render only those shot packages and splice them back into the assembly instead of rebuilding the entire film.
+- Storyboard acceptance is permission to produce shots, not permission to assemble. The storyboard establishes the world; short finished shot proofs establish that the world actually moves and survives the effect stack.
