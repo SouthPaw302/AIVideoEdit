@@ -32,6 +32,14 @@ Proof records therefore distinguish:
 
 Approved runtime effects may use a human-approved historical proof record plus live runtime evidence. Approved adapter/external effects require byte-verified proof artifact(s), because the gate cannot substitute a synthetic runtime probe for an external implementation.
 
+## Canonical runtime proof
+
+`FX2_PROOF02_LIVING_SCENE_CANONICAL` is the active engine-level proof for the currently approved FX2 runtime effects. Its MP4 and contact sheet are stored under `general/reusable/fx_v2/proofs/`, the actual MP4 bytes are hashed by the gate, and the proof contains isolated locked-camera segments for each approved runtime effect followed by the combined stack.
+
+`FX2_PROOF01_LIVING_TAVERN` remains historical lineage only. Its declared checksum is preserved, but its original binary is not addressable on `main`, so it is not active canonical evidence.
+
+Proof02 approval is scoped to the reusable engine. It does **not** approve a song shot or final film; production shots still require their own artistic and exported-film QC.
+
 ## Fail-closed rules
 
 The gate fails when any requested effect:
