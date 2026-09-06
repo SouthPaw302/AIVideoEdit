@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
-"""Hard precompile gate for AIVideoEdit FX v2.
+"""Fail-closed precompile gate for AIVideoEdit FX v2.
 
-A project cannot render merely because an FX id exists in JSON. This gate verifies:
-- every requested FX id resolves in the canonical registry;
-- the effect is approved for production (or explicitly allowed conditional);
-- a concrete implementation exists and is not a stub/placeholder;
-- an approved proof/QC record covers the exact FX id;
-- frame effects actually change pixels and, where required, change over time;
-- non-camera FX do not introduce excessive global image translation;
-- transition effects honor endpoints and visibly evolve between them;
-- an immutable lock file records code/registry/manifest/proof hashes and smoke metrics.
+The gate proves more than registry membership. It binds a production render to:
+- the exact manifest, FX registry, runtime and declared renderer inputs;
+- concrete runtime methods or adapter implementation files;
+- human-approved proof records, with proof binaries byte-verified when addressable;
+- deterministic runtime smoke output fingerprints and temporal/pixel metrics;
+- explicit preflight evidence for conditional/external technologies.
 
-Production renderers should run this first and refuse to compile if it fails.
+Lock verification reruns the live checks and compares the complete evidence fingerprint.
+Old schema-v1 locks are intentionally rejected and must be regenerated.
 """
 from __future__ import annotations
 
@@ -28,6 +26,8 @@ from typing import Any
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 BAD_TOKENS = ("TODO", "FIXME", "PLACEHOLDER", "NotImplementedError", "pass #", "raise NotImplemented")
 GOOD_QC = ("KEEP", "APPROVED", "PASS")
+SCHEMA_VERSION = 2
+GATE_NAME = "aivideoedit-fx-precompile-v2"
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -39,8 +39,7 @@ def sha256_file(path: Path) -> str:
 
 
 def canonical_json_hash(obj: Any) -> str:
-    data = json.dumps(obj, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    return sha256_bytes(data)
+    return sha256_bytes(json.dumps(obj, sort_keys=True, separators=(",", ":")).encode("utf-8"))
 
 
 def load_json(path: Path) -> dict:
@@ -51,6 +50,29 @@ def load_json(path: Path) -> dict:
     if not isinstance(data, dict):
         raise RuntimeError(f"{path} must contain a JSON object")
     return data
+
+
+def repo_root_from_runtime(runtime_path: Path) -> Path:
+    path = runtime_path.resolve()
+    try:
+        return path.parents[3]
+    except IndexError as exc:
+        raise RuntimeError(f"cannot determine repository root from {runtime_path}") from exc
+
+
+def resolve_repo_path(repo_root: Path, raw: str, label: str) -> Path:
+    p = Path(raw)
+    if p.is_absolute():
+        resolved = p.resolve()
+    else:
+        resolved = (repo_root / p).resolve()
+        try:
+            resolved.relative_to(repo_root.resolve())
+        except ValueError as exc:
+            raise RuntimeError(f"{label} escapes repository root: {raw}") from exc
+    if not resolved.is_file():
+        raise RuntimeError(f"{label} missing: {raw}")
+    return resolved
 
 
 def load_runtime(runtime_path: Path):
@@ -120,7 +142,22 @@ def requested_entries(manifest: dict) -> list[dict]:
     return out
 
 
-def proof_record(proof_dir: Path, proof_id: str, effect_id: str) -> tuple[dict, str]:
+def render_input_hashes(manifest: dict, repo_root: Path, engine_test: bool) -> list[dict]:
+    vals = manifest.get("render_inputs", [])
+    if not isinstance(vals, list):
+        raise RuntimeError("manifest render_inputs must be a list")
+    if not vals and not engine_test:
+        raise RuntimeError("production manifest must declare render_inputs; use --engine-test only for isolated engine CI")
+    out = []
+    for raw in vals:
+        if not isinstance(raw, str) or not raw.strip():
+            raise RuntimeError(f"invalid render_inputs entry: {raw!r}")
+        path = resolve_repo_path(repo_root, raw, "render input")
+        out.append({"path": raw, "sha256": sha256_file(path)})
+    return out
+
+
+def proof_record(proof_dir: Path, proof_id: str, effect_id: str, repo_root: Path) -> tuple[dict, dict]:
     path = proof_dir / f"{proof_id}.json"
     if not path.exists():
         raise RuntimeError(f"approved proof record missing: {path}")
@@ -137,10 +174,26 @@ def proof_record(proof_dir: Path, proof_id: str, effect_id: str) -> tuple[dict, 
     size = proof.get("size", [0, 0])
     if not (isinstance(size, list) and len(size) == 2 and int(size[0]) >= 320 and int(size[1]) >= 180):
         raise RuntimeError(f"proof {proof_id} resolution is too small or missing")
-    digest = str(proof.get("sha256", "")).lower()
-    if not HEX64.match(digest):
-        raise RuntimeError(f"proof {proof_id} does not contain a valid binary SHA-256")
-    return proof, sha256_file(path)
+    declared = str(proof.get("sha256", "")).lower()
+    if not HEX64.match(declared):
+        raise RuntimeError(f"proof {proof_id} does not contain a valid declared binary SHA-256")
+
+    artifact = proof.get("artifact_path") or proof.get("binary_path")
+    evidence = {
+        "id": proof_id,
+        "record_sha256": sha256_file(path),
+        "declared_binary_sha256": declared,
+        "artifact_path": artifact,
+        "artifact_verified": False,
+    }
+    if artifact:
+        artifact_path = resolve_repo_path(repo_root, str(artifact), f"proof artifact for {proof_id}")
+        actual = sha256_file(artifact_path)
+        if actual != declared:
+            raise RuntimeError(f"proof {proof_id} binary checksum mismatch: declared={declared} actual={actual}")
+        evidence["artifact_verified"] = True
+        evidence["artifact_sha256"] = actual
+    return proof, evidence
 
 
 def synthetic_frame(np, cv2, width=320, height=180):
@@ -174,15 +227,7 @@ def smoke_frame_effect(module, runtime, effect: dict, quality: dict) -> dict:
     times = (0.11, 0.37, 0.73, 1.19, 1.83, 2.41)
     outs = []
     for t in times:
-        ctx = module.FXContext(
-            t=t,
-            duration=3.0,
-            frame_index=round(t * 24),
-            fps=24,
-            energy=.64,
-            transient=.58,
-            brightness=.55,
-        )
+        ctx = module.FXContext(t=t, duration=3.0, frame_index=round(t * 24), fps=24, energy=.64, transient=.58, brightness=.55)
         out = runtime.apply(src.copy(), effect, ctx)
         if out is None or out.shape != src.shape or out.dtype != src.dtype:
             raise RuntimeError(f"{effect['id']} returned an invalid frame")
@@ -194,7 +239,6 @@ def smoke_frame_effect(module, runtime, effect: dict, quality: dict) -> dict:
     source_delta = max(source_deltas)
     temporal_delta = max(temporal_deltas) if temporal_deltas else 0.0
     shift = max(shifts)
-
     smin = float(quality.get("source_delta_min", .01))
     if source_delta < smin:
         raise RuntimeError(f"{effect['id']} is effectively a no-op: source delta {source_delta:.4f} < {smin:.4f}")
@@ -205,11 +249,12 @@ def smoke_frame_effect(module, runtime, effect: dict, quality: dict) -> dict:
     max_shift = quality.get("max_global_shift_px")
     if max_shift is not None and shift > float(max_shift):
         raise RuntimeError(f"{effect['id']} causes excessive global shift {shift:.3f}px > {float(max_shift):.3f}px")
-
+    sample_digest = sha256_bytes(b"".join(out.tobytes() for out in outs))
     return {
         "source_delta_max": round(source_delta, 6),
         "temporal_delta_max": round(temporal_delta, 6),
         "global_shift_px_max": round(shift, 6),
+        "sample_output_sha256": sample_digest,
     }
 
 
@@ -223,7 +268,6 @@ def smoke_transition(runtime, effect: dict, impl: dict, quality: dict) -> dict:
     method = getattr(runtime, method_name, None)
     if method is None or not callable(method):
         raise RuntimeError(f"transition implementation missing: FXRuntime.{method_name}")
-
     params = dict(effect.get("params", {}))
     samples = []
     for p in (0.0, .20, .40, .60, .80, 1.0):
@@ -231,7 +275,6 @@ def smoke_transition(runtime, effect: dict, impl: dict, quality: dict) -> dict:
         if out is None or out.shape != a.shape:
             raise RuntimeError(f"{effect['id']} transition returned invalid output")
         samples.append(out)
-
     endpoint_a = mean_delta(np, cv2, a, samples[0])
     endpoint_b = mean_delta(np, cv2, b, samples[-1])
     if endpoint_a > float(quality.get("endpoint_delta_max", .01)):
@@ -245,15 +288,34 @@ def smoke_transition(runtime, effect: dict, impl: dict, quality: dict) -> dict:
         "endpoint_a_delta": round(endpoint_a, 6),
         "endpoint_b_delta": round(endpoint_b, 6),
         "temporal_delta_max": round(temporal, 6),
+        "sample_output_sha256": sha256_bytes(b"".join(out.tobytes() for out in samples)),
     }
 
 
-def verify_project(manifest_path: Path, registry_path: Path, proof_dir: Path, runtime_path: Path, static_only: bool = False) -> dict:
+def conditional_preflight(manifest: dict, eid: str, repo_root: Path) -> dict:
+    mapping = manifest.get("conditional_preflight", {})
+    if not isinstance(mapping, dict):
+        raise RuntimeError("manifest conditional_preflight must be an object")
+    raw = mapping.get(eid)
+    if not isinstance(raw, str) or not raw:
+        raise RuntimeError(f"{eid} requires a technology-specific conditional_preflight JSON path")
+    path = resolve_repo_path(repo_root, raw, f"conditional preflight for {eid}")
+    data = load_json(path)
+    if str(data.get("result", "")).upper() != "PASS":
+        raise RuntimeError(f"conditional preflight for {eid} does not contain result=PASS")
+    if data.get("effect_id") not in (None, eid):
+        raise RuntimeError(f"conditional preflight {raw} is for {data.get('effect_id')}, not {eid}")
+    return {"path": raw, "sha256": sha256_file(path)}
+
+
+def verify_project(manifest_path: Path, registry_path: Path, proof_dir: Path, runtime_path: Path, static_only: bool = False, engine_test: bool = False) -> dict:
     manifest = load_json(manifest_path)
     registry = load_json(registry_path)
     if manifest.get("runtime") != registry.get("runtime"):
         raise RuntimeError(f"runtime mismatch: project={manifest.get('runtime')!r} registry={registry.get('runtime')!r}")
 
+    repo_root = repo_root_from_runtime(runtime_path)
+    render_inputs = render_input_hashes(manifest, repo_root, engine_test)
     source, methods = runtime_ast(runtime_path)
     runtime_apply_text = method_text(source, methods, "apply")
     reg_effects = registry.get("effects", {})
@@ -267,51 +329,61 @@ def verify_project(manifest_path: Path, registry_path: Path, proof_dir: Path, ru
 
     approved_conditional = set(manifest.get("allow_conditional", []))
     lock_effects = []
-
     for req in requested_entries(manifest):
         eid = req["id"]
         entry = reg_effects.get(eid)
         if entry is None:
             raise RuntimeError(f"unknown FX id requested by project: {eid}")
-
         gate_status = entry.get("gate_status")
-        if gate_status != "approved":
-            if gate_status == "conditional" and eid in approved_conditional:
-                pass
-            else:
-                raise RuntimeError(f"{eid} is not production-approved (gate_status={gate_status!r})")
+        if gate_status == "conditional":
+            if eid not in approved_conditional:
+                raise RuntimeError(f"{eid} is conditional and requires explicit allow_conditional opt-in")
+        elif gate_status != "approved":
+            raise RuntimeError(f"{eid} is not production-approved (gate_status={gate_status!r})")
 
         impl = entry.get("implementation") or {}
         kind = impl.get("kind")
         impl_hash = None
+        impl_file = None
         if kind == "runtime_apply":
             if req["_kind"] != "frame":
                 raise RuntimeError(f"{eid} is registered as frame effect but requested as transition")
             if eid not in runtime_apply_text:
                 raise RuntimeError(f"{eid} exists in registry but is not wired into FXRuntime.apply")
-            method_name_for_code = impl.get("method") or ("apply_canvas" if eid == "FX2-SURFACE-001" else entry.get("name"))
-            text = method_text(source, methods, method_name_for_code)
-            impl_hash = sha256_bytes(text.encode("utf-8"))
+            method_name = impl.get("method") or ("apply_canvas" if eid == "FX2-SURFACE-001" else entry.get("name"))
+            impl_hash = sha256_bytes(method_text(source, methods, method_name).encode("utf-8"))
         elif kind == "runtime_transition":
             if req["_kind"] != "transition":
                 raise RuntimeError(f"{eid} is registered as transition but requested as frame effect")
             method_name = impl.get("method") or entry.get("name")
-            text = method_text(source, methods, method_name)
-            impl_hash = sha256_bytes(text.encode("utf-8"))
-        elif kind in ("adapter", "external"):
-            if gate_status != "conditional":
-                raise RuntimeError(f"{eid} uses {kind} implementation but is not conditional")
+            impl_hash = sha256_bytes(method_text(source, methods, method_name).encode("utf-8"))
+        elif kind == "adapter":
+            raw_path = impl.get("path")
+            if not raw_path:
+                raise RuntimeError(f"{eid} adapter has no implementation path")
+            path = resolve_repo_path(repo_root, raw_path, f"adapter implementation for {eid}")
+            impl_hash = sha256_file(path)
+            impl_file = raw_path
+        elif kind == "external":
             impl_hash = canonical_json_hash(impl)
         else:
             raise RuntimeError(f"{eid} has no concrete implementation kind")
 
-        proof_hashes = []
+        proof_evidence = []
         proof_ids = entry.get("proofs") or []
         if gate_status == "approved" and not proof_ids:
             raise RuntimeError(f"{eid} is marked approved without proof records")
         for proof_id in proof_ids:
-            _, proof_file_hash = proof_record(proof_dir, proof_id, eid)
-            proof_hashes.append({"id": proof_id, "record_sha256": proof_file_hash})
+            _, evidence = proof_record(proof_dir, proof_id, eid, repo_root)
+            proof_evidence.append(evidence)
+
+        if gate_status == "approved" and kind in ("adapter", "external"):
+            if not proof_evidence or not all(p.get("artifact_verified") for p in proof_evidence):
+                raise RuntimeError(f"approved {kind} effect {eid} requires byte-verified proof artifact(s)")
+
+        preflight = None
+        if gate_status == "conditional":
+            preflight = conditional_preflight(manifest, eid, repo_root)
 
         metrics = {"static_only": True}
         if not static_only:
@@ -321,7 +393,7 @@ def verify_project(manifest_path: Path, registry_path: Path, proof_dir: Path, ru
             elif kind == "runtime_transition":
                 metrics = smoke_transition(runtime, req, impl, quality)
             else:
-                metrics = {"external_preflight_required": True}
+                metrics = {"external_or_adapter": True, "implementation_sha256": impl_hash}
 
         lock_effects.append({
             "id": eid,
@@ -329,36 +401,41 @@ def verify_project(manifest_path: Path, registry_path: Path, proof_dir: Path, ru
             "family": entry.get("family"),
             "gate_status": gate_status,
             "implementation": impl,
+            "implementation_path": impl_file,
             "implementation_sha256": impl_hash,
-            "proofs": proof_hashes,
+            "proofs": proof_evidence,
+            "conditional_preflight": preflight,
             "smoke": metrics,
         })
 
-    return {
-        "schema_version": 1,
-        "gate": "aivideoedit-fx-precompile-v1",
+    result = {
+        "schema_version": SCHEMA_VERSION,
+        "gate": GATE_NAME,
         "project": manifest.get("project"),
         "runtime": registry.get("runtime"),
         "manifest_sha256": sha256_file(manifest_path),
         "registry_sha256": sha256_file(registry_path),
         "runtime_sha256": sha256_file(runtime_path),
+        "render_inputs": render_inputs,
         "effects": lock_effects,
         "result": "PASS",
     }
+    result["evidence_fingerprint_sha256"] = canonical_json_hash({"render_inputs": render_inputs, "effects": lock_effects})
+    return result
 
 
-def verify_lock(lock_path: Path, manifest_path: Path, registry_path: Path, runtime_path: Path) -> dict:
+def verify_lock(lock_path: Path, manifest_path: Path, registry_path: Path, proof_dir: Path, runtime_path: Path, engine_test: bool = False) -> dict:
     lock = load_json(lock_path)
-    checks = {
-        "manifest_sha256": sha256_file(manifest_path),
-        "registry_sha256": sha256_file(registry_path),
-        "runtime_sha256": sha256_file(runtime_path),
-    }
-    for key, actual in checks.items():
-        if lock.get(key) != actual:
-            raise RuntimeError(f"FX lock invalid: {key} changed after precompile gate")
+    if int(lock.get("schema_version", 0)) != SCHEMA_VERSION or lock.get("gate") != GATE_NAME:
+        raise RuntimeError("FX lock uses obsolete schema; regenerate with the current precompile gate")
     if lock.get("result") != "PASS":
         raise RuntimeError("FX lock does not contain PASS result")
+    current = verify_project(manifest_path, registry_path, proof_dir, runtime_path, static_only=False, engine_test=engine_test)
+    for key in ("manifest_sha256", "registry_sha256", "runtime_sha256", "evidence_fingerprint_sha256"):
+        if lock.get(key) != current.get(key):
+            raise RuntimeError(f"FX lock invalid: {key} changed after precompile gate")
+    if lock.get("render_inputs") != current.get("render_inputs") or lock.get("effects") != current.get("effects"):
+        raise RuntimeError("FX lock invalid: live evidence differs from locked evidence")
     return lock
 
 
@@ -370,7 +447,8 @@ def main() -> int:
     ap.add_argument("--proof-dir", default=str(here / "proofs"))
     ap.add_argument("--runtime", default=str(here / "runtime.py"))
     ap.add_argument("--lock-out", help="write immutable FX lock JSON")
-    ap.add_argument("--static-only", action="store_true", help="skip pixel smoke tests; for code-index checks only")
+    ap.add_argument("--static-only", action="store_true", help="skip pixel smoke tests; code/index checks only")
+    ap.add_argument("--engine-test", action="store_true", help="allow isolated engine CI manifest without production render_inputs")
     ap.add_argument("--verify-lock", help="verify an existing lock instead of generating one")
     args = ap.parse_args()
 
@@ -378,13 +456,12 @@ def main() -> int:
     registry = Path(args.registry)
     proof_dir = Path(args.proof_dir)
     runtime = Path(args.runtime)
-
     try:
         if args.verify_lock:
-            lock = verify_lock(Path(args.verify_lock), manifest, registry, runtime)
-            print(json.dumps({"result": "PASS", "verified_lock": args.verify_lock, "project": lock.get("project")}, indent=2))
+            lock = verify_lock(Path(args.verify_lock), manifest, registry, proof_dir, runtime, engine_test=args.engine_test)
+            print(json.dumps({"result": "PASS", "verified_lock": args.verify_lock, "project": lock.get("project"), "schema_version": SCHEMA_VERSION}, indent=2))
             return 0
-        result = verify_project(manifest, registry, proof_dir, runtime, static_only=args.static_only)
+        result = verify_project(manifest, registry, proof_dir, runtime, static_only=args.static_only, engine_test=args.engine_test)
         if args.lock_out:
             out = Path(args.lock_out)
             out.parent.mkdir(parents=True, exist_ok=True)
