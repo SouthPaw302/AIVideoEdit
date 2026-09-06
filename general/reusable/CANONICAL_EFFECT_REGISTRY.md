@@ -172,3 +172,11 @@ Before a new shot/effect is invented, search this registry by visual need. Reuse
 Example: Irish Eyes may reuse Silver Coin's light-volume, wet-reflection, NeRF, motion-calibration and temporal-QC methods without becoming a Pre-Raphaelite painting.
 
 Whenever a new technique is created, update both this file and `CANONICAL_EFFECT_REGISTRY.json` before the production chat ends or moves to another major phase.
+
+## Verification status
+
+Every entry above carries a `verification_status`. Treat
+`aspirational` entries as not available for use until a proof render
+exists — do not claim an aspirational technique (e.g. 3D Gaussian
+Splatting) was used unless actual splat data was rendered. See
+`PRODUCTION_PIPELINE.md#technical-truthfulness`.

@@ -4,6 +4,11 @@
 
 An effect name in a manifest is not evidence that the effect is actually present in the render path. AIVideoEdit now treats FX verification as a hard compile dependency.
 
+> This gate verifies that effects are real, wired, and proof-backed.
+> A passing gate is necessary but not sufficient — it does not mean a
+> shot is artistically finished or alive. See AGENT_HANDOFF.md,
+> "The gate protects creative quality; it is not a substitute for it."
+
 Production render order is:
 
 1. project declares exact FX IDs in a project `.fx.json` manifest;
