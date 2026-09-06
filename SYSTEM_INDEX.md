@@ -2,10 +2,17 @@
 
 Permanent-system index only. No active production names or unrelated song links belong here.
 
+## Runtime bootstrap
+- `bootstrap.py` — universal portable entry point; installs/loads the entire exact current `main` OS into a sandbox and creates the session attestation.
+- `SOUL.md` — permanent AIVideoEdit identity and invariant behavior.
+- `general/reusable/AIVIDEOEDIT_OS_MANIFEST.json` — critical current-main files attested each session.
+- `.aivideoedit/session.json` — ephemeral bootstrap attestation; never committed.
+- `.aivideoedit/SECOND_BRAIN.md` — ephemeral generated branch/session context; never committed.
+
 ## Universal contract
-- `AGENTS.md` — universal agent entry point.
+- `AGENTS.md` — universal agent entry point; first action is bootstrap.
 - `general/reusable/PRODUCTION_CONTRACT.json` — machine-readable production state/rules.
-- `general/reusable/tools/production_guard.py` — fail-closed production-stage validator.
+- `general/reusable/tools/production_guard.py` — fail-closed production-stage and bootstrap-session validator.
 - `general/reusable/MEDIA_CAPABILITY_MATRIX.json` / `.md` — media forms available to production.
 - `projects/PROJECT_TEMPLATE.md` — required branch-local state/manifests.
 

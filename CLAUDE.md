@@ -1,2 +1,3 @@
 # AIVideoEdit
-Follow root `AGENTS.md` and `general/reusable/PRODUCTION_CONTRACT.json`. Run `general/reusable/tools/production_guard.py` before advancing any song production. Tool/vendor-specific instructions do not override the universal contract.
+**First command of every new Claude session:** `python bootstrap.py boot --repo-root <repo>`.
+Do not begin production by reading/copying rules manually. After bootstrap PASS, follow bootstrapped `SOUL.md`, `.aivideoedit/SECOND_BRAIN.md`, and the current-main guard. Claude-specific instructions never override the AIVideoEdit OS.

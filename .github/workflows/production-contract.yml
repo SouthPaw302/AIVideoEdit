@@ -16,8 +16,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Validate universal production contract
+      - name: Bootstrap exact current-main AIVideoEdit OS
         shell: bash
         run: |
           BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-          python general/reusable/tools/production_guard.py --branch "$BRANCH"
+          python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$BRANCH"
+      - name: Verify bootstrapped production contract
+        shell: bash
+        run: |
+          BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$BRANCH"
