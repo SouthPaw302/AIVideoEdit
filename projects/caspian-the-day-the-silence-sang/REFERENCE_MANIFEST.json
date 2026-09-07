@@ -1,0 +1,39 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [
+    {
+      "id": "reference-motion-001",
+      "name": "None.mp4",
+      "role": "motion_language_reference",
+      "sha256": "fb59859fd614fa02ff074cc5f69d4d3499aaff678e49cd430a163dfef7bb33e9",
+      "duration_seconds": 6.0416667,
+      "width": 560,
+      "height": 560,
+      "fps": 24.0,
+      "total_frames": 145,
+      "extraction_policy": "all_frames",
+      "extracted_frames": 145,
+      "analysis_complete": true,
+      "sampling_description": "Not sampled: every frame extracted and inspected because the reference is short.",
+      "coverage": "frames 0-144 / complete clip",
+      "authorized_use": "motion language only; do not copy subject, composition-specific artwork, or black sculptural material verbatim",
+      "analysis": {
+        "composition": "Near-locked portrait composition; scene meaning changes primarily through internal transformation rather than camera movement.",
+        "motion_language": [
+          "continuous internal surface motion",
+          "identity anchors preserved",
+          "progressive spatial material replacement",
+          "coherent start/middle/end transformation",
+          "restrained camera",
+          "localized occlusion and reveal"
+        ],
+        "transition_behavior": "The existing scene material becomes the transition matte and progressively reconstructs the subject/environment; not a conventional dissolve.",
+        "production_translation": "Use stable hero compositions and authored generated story media, then transform localized materials into the next story state while protecting Caspian identity and scene continuity."
+      }
+    }
+  ],
+  "images": [],
+  "no_visual_reference": false,
+  "analysis_complete": true,
+  "notes": "Current user supplied the short reference specifically to teach the animation/rendering language. Every one of 145 frames was analyzed."
+}

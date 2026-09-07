@@ -1,0 +1,30 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "assets": [
+    {
+      "id": "audio-master",
+      "kind": "audio",
+      "name": "A Thousand Doors.wav",
+      "sha256": "4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1",
+      "duration_seconds": 180.64,
+      "status": "ingested"
+    },
+    {
+      "id": "motion-reference-001",
+      "kind": "video_reference",
+      "origin": "user_supplied",
+      "role": "motion_language_reference",
+      "name": "None.mp4",
+      "sha256": "fb59859fd614fa02ff074cc5f69d4d3499aaff678e49cd430a163dfef7bb33e9",
+      "duration_seconds": 6.0416667,
+      "width": 560,
+      "height": 560,
+      "fps": 24,
+      "frames": 145,
+      "status": "ingested_analyzed"
+    }
+  ],
+  "production_assets_pending": true,
+  "required_next_assets": "Real generated hero/story media for S01-S16 with branch-local media evidence before SHOT_PACKAGES_BUILT.",
+  "notes": "The prior a-thousand-doors V8 render is historical/rejected and is not an authorized production input for this branch."
+}

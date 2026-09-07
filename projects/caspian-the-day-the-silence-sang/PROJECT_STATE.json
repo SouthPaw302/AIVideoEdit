@@ -1,0 +1,23 @@
+{
+  "schema": "aivideoedit.project-state.v1",
+  "project": "caspian-the-day-the-silence-sang",
+  "branch": "song/caspian-the-day-the-silence-sang",
+  "stage": "STORYBOARD_LOCKED",
+  "source_ingest_complete": true,
+  "reference_analysis_complete": true,
+  "music_analysis_complete": true,
+  "lyrics_status_resolved": true,
+  "genre_authority_resolved": true,
+  "visual_approach_established": true,
+  "storyboard_locked": true,
+  "script_locked": true,
+  "frame_followable_script": true,
+  "shot_packages_built": false,
+  "media_evidence_verified": false,
+  "shot_proofs_accepted": false,
+  "fx_lock_verified": false,
+  "assembly_complete": false,
+  "final_qc_passed": false,
+  "archive_complete": false,
+  "rebuild_reason": "Fresh rebuild from current main after the prior a-thousand-doors geometric render failed creative/story/media-evidence audit."
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "project": "caspian-the-day-the-silence-sang",
+  "title": "CASPIAN — THE DAY THE SILENCE SANG",
+  "audio_master": {
+    "name": "A Thousand Doors.wav",
+    "sha256": "4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1",
+    "duration_seconds": 180.64,
+    "sample_rate_hz": 48000,
+    "channels": 2
+  },
+  "analysis_complete": true,
+  "lyrics": {
+    "status": "present",
+    "source": "current_user_instruction",
+    "text_file": "LYRICS.md",
+    "verified_against": "user_supplied_text",
+    "note": "Lyric text is authoritative. Exact syllable-level vocal timing is not claimed; script cues are section/phrase aligned to measured musical structure."
+  },
+  "genre": {
+    "status": "user_confirmed",
+    "label": "Reggae Dubstep Mix",
+    "source": "current_user_instruction",
+    "user_declaration": "this is a Reggae Dubstep Mix"
+  },
+  "rhythm": {
+    "tempo_status": "measured",
+    "tempo_bpm": 151.999,
+    "natural_directing_half_time_bpm": 75.9995,
+    "pulse_description": "Fast nominal pulse with a natural heavy half-time directing feel; use ~76 BPM for major body/environment weight while retaining faster subdivisions for detail.",
+    "meter_or_groove": "Reggae/dub offbeat feel fused with dubstep half-time weight and bass-led section dynamics."
+  },
+  "tonal_estimate": {
+    "key_center": "A minor",
+    "status": "approximate"
+  },
+  "dynamics": {
+    "approx_peak_dbfs": -3.55,
+    "approx_rms_dbfs": -17.52
+  },
+  "structure_boundaries_seconds": [0.0,12.86,26.98,48.6,71.22,78.3,122.6,134.72,142.73,167.67,180.64],
+  "sections": [
+    {"id":"M01","start_seconds":0.0,"end_seconds":12.86,"energy":"restrained / expectant","musical_cues":["quiet opening texture","pulse implied","space before full groove"],"narrative_function":"Establish a world waiting for Caspian; ordinary reality before wonder becomes visible."},
+    {"id":"M02","start_seconds":12.86,"end_seconds":26.98,"energy":"rising","musical_cues":["first structural lift","texture expansion","arrival momentum"],"narrative_function":"Reveal the impossible threshold and Caspian as the mystery entering the world."},
+    {"id":"M03","start_seconds":26.98,"end_seconds":48.6,"energy":"first chorus / open","musical_cues":["clearer groove","name/refrain emphasis","broader harmonic/texture field"],"narrative_function":"The stars and hidden worlds respond to Caspian; first exploration of thresholds."},
+    {"id":"M04","start_seconds":48.6,"end_seconds":71.22,"energy":"steady narrative drive","musical_cues":["groove continuity","nature/memory phrase","moderate bass weight"],"narrative_function":"Nature reveals memory: river, moon, trees, impossible things."},
+    {"id":"M05","start_seconds":71.22,"end_seconds":78.3,"energy":"brief pocket / setup","musical_cues":["short transitional breathing space","accent details","anticipation"],"narrative_function":"Caspian collects wonder objects and prepares to actively follow the hidden map."},
+    {"id":"M06","start_seconds":78.3,"end_seconds":122.6,"energy":"sustained high drive","musical_cues":["strong half-time bass weight","reggae offbeat motion","dubstep escalation","long forward section"],"narrative_function":"Second-chorus adventure: Caspian runs toward the strange and the environment wakes in response."},
+    {"id":"M07","start_seconds":122.6,"end_seconds":134.72,"energy":"emotional turn / easing","musical_cues":["drive relaxes","more vocal space","memory emphasis"],"narrative_function":"Years accelerate; possible older selves and accumulating birthdays appear."},
+    {"id":"M08","start_seconds":134.72,"end_seconds":142.73,"energy":"quiet threshold","musical_cues":["reduction in motion","intimate vocal space","suspension"],"narrative_function":"Return to the birthday room; candles flicker and spectacle withdraws."},
+    {"id":"M09","start_seconds":142.73,"end_seconds":167.67,"energy":"suspended then climactic","musical_cues":["time-still tension","returning bass/texture","motif convergence"],"narrative_function":"Time stops; the world opens behind reality; all earlier wonders integrate and the silence sings Caspian's name."},
+    {"id":"M10","start_seconds":167.67,"end_seconds":180.64,"energy":"resolution","musical_cues":["final cadence","release","ending space"],"narrative_function":"Time resumes; Caspian blows out the candles; one impossible point of light remains before black."}
+  ],
+  "directing_rules": [
+    "Major visual transformations follow phrase/section meaning, not every transient.",
+    "Use ~76 BPM half-time weight for primary environmental/body motion; faster subdivisions may animate small details.",
+    "Reggae offbeat character can inform sways, light responses, footfall anticipation and spatial echo without becoming a generic visualizer.",
+    "Dubstep bass accents may drive localized material pressure, depth and transformation intensity, never whole-frame shake."
+  ]
+}
