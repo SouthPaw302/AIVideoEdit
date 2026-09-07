@@ -1,23 +1,15 @@
 {
   "schema": "aivideoedit.fx-plan.v1",
   "project": "a-thousand-doors",
-  "canonical_candidates": [
-    "FX2-MOTION-002",
-    "FX2-ATM-001",
-    "FX2-FIRE-001",
-    "FX2-FIRE-002",
-    "FX2-LIGHT-001",
-    "FX2-LIGHT-002",
-    "FX2-AUDIO-001"
-  ],
-  "project_fx": [
-    {
-      "id": "ATD-FX-001",
-      "name": "Threshold Prism Bleed",
-      "status": "prototype_required",
-      "truth_claim": "stylized composited threshold-light effect inspired by diffraction, interference-like spectral separation, scattering, and aperture-edge behavior; not a physically exact wave-optics simulation",
-      "intended_shots": ["S02", "S09", "S11"],
-      "proof_required": true
-    }
-  ]
+  "canonical_candidates": ["FX2-MOTION-002","FX2-ATM-001","FX2-LIGHT-001","FX2-LIGHT-002"],
+  "project_fx": [{
+    "id": "ATD-FX-001",
+    "name": "Threshold Prism Bleed",
+    "status": "proof_accepted",
+    "implementation": "projects/a-thousand-doors/effects/threshold_prism_bleed.py",
+    "truth_claim": "optics-inspired localized spectral threshold compositor; not a physically exact wave-optics simulation",
+    "intended_shots": ["S02","S09","S11"],
+    "proof_required": true,
+    "proof_accepted": true
+  }]
 }

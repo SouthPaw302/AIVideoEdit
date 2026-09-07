@@ -2,14 +2,15 @@
 
 Authority: current user instruction -> this song branch -> current main.
 
-Do not import historical styles, storyboards, or media. The current user selected a hybrid of route 1 and route 3 in this chat: **Corridor of Unlived Lives** is the core world; **Inner Archive** enters primarily in the climax.
+Direction is locked: **The Corridor of Unlived Lives** is the core visual world; **The Inner Archive** becomes dominant in the climax. Historical project media/styles remain excluded.
 
-The user explicitly requested that production continue without intermediate preview/file chatter in chat. Internal proofs and QC are still mandatory.
+The user explicitly requested no intermediate preview/file chatter in chat unless asked.
 
-New effect under development: `Threshold Prism Bleed`, a stylized composited threshold-light effect inspired by diffraction/scattering behavior. It must not be described as a physically exact optics simulator.
+Production is at `FINAL_QC_PASSED`. Accepted master:
+- `A_Thousand_Doors_v8_720p_full.mp4`
+- 180.640 s, 1280x720, 24 fps, 4335 frames
+- SHA-256 `8144d14cf4d8d0995c2f60334158576f6607a7d17e90e74029b7b8e539621349`
 
-Audio master identity:
-- filename: A Thousand Doors.wav
-- duration: 180.640 s
-- PCM 16-bit stereo, 48 kHz
-- SHA-256: 4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1
+New effect: `ATD-FX-001 Threshold Prism Bleed`. Implementation and research are in `effects/`; it is a stylized optics-inspired compositor, not a physical wave solver.
+
+Final technical export QC passed with zero decode errors, zero black-frame events, and zero freeze events longer than 2.5 s. The only remaining project state is durable binary archival; do not set `ARCHIVED` until a persistent recovery location exists.

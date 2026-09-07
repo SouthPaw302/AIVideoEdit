@@ -1,14 +1,8 @@
 {
   "schema": "aivideoedit.asset-manifest.v1",
   "assets": [
-    {
-      "id": "audio-master",
-      "kind": "audio",
-      "name": "A Thousand Doors.wav",
-      "sha256": "4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1",
-      "duration_seconds": 180.64,
-      "status": "ingested"
-    }
+    {"id":"audio-master","kind":"audio","name":"A Thousand Doors.wav","sha256":"4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1","duration_seconds":180.64,"status":"ingested"},
+    {"id":"final-master-v8","kind":"video","name":"A_Thousand_Doors_v8_720p_full.mp4","sha256":"8144d14cf4d8d0995c2f60334158576f6607a7d17e90e74029b7b8e539621349","duration_seconds":180.64,"width":1280,"height":720,"fps":24,"frames":4335,"audio":"AAC 48kHz stereo","status":"final_qc_passed","archive_status":"pending durable binary archive"}
   ],
-  "production_assets_pending": true
+  "production_assets_pending": false
 }

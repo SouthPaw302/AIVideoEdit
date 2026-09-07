@@ -1,0 +1,16 @@
+{
+  "schema": "aivideoedit.fx-lock.v1",
+  "project": "a-thousand-doors",
+  "locked": true,
+  "project_fx": [{
+    "id": "ATD-FX-001",
+    "name": "Threshold Prism Bleed",
+    "implementation": "projects/a-thousand-doors/effects/threshold_prism_bleed.py",
+    "truth_claim": "optics-inspired localized spectral threshold compositor; not a physically exact wave-optics simulation",
+    "proof_source": "accepted full export A_Thousand_Doors_v8_720p_full.mp4",
+    "proof_ranges_seconds": [[16,32],[143,158]],
+    "status": "accepted"
+  }],
+  "canonical_fx_used": ["FX2-MOTION-002","FX2-ATM-001","FX2-LIGHT-001","FX2-LIGHT-002"],
+  "verification": "visible in accepted export and survived final encode"
+}
