@@ -1,0 +1,71 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "selected_capabilities": [
+    "generated_stills",
+    "generated_support_imagery",
+    "living_painting",
+    "layered_composite",
+    "depth_25d",
+    "atmospheric_plate",
+    "reactive_plate",
+    "transition_media",
+    "conventional_video",
+    "analysis_qc_media"
+  ],
+  "visual_direction_gate": {
+    "required": true,
+    "presented_in_chat": true,
+    "options": [
+      {
+        "number": 1,
+        "name": "The Corridor of Unlived Lives",
+        "story_approach": "A traveler crosses an impossible corridor of doors revealing alternate lives, losses, futures, and finally the self behind all choices.",
+        "rendering_route": "Cinematic surreal realism with monumental architecture, dark wood and brass, dimensional door light, layered 2.5D depth, atmosphere, practical-light motion, and authored threshold transitions.",
+        "storyboard": [
+          {"number": 1, "description": "A single illuminated door stands without a wall in a black landscape."},
+          {"number": 2, "description": "The first threshold reveals an endless corridor lined with mismatched doors."},
+          {"number": 3, "description": "Opening doors reveal alternate worlds and alternate selves while the corridor becomes unstable."},
+          {"number": 4, "description": "A plain handleless door survives after the corridor disappears."},
+          {"number": 5, "description": "The final opening collapses all previous worlds inward around the traveler."}
+        ]
+      },
+      {
+        "number": 2,
+        "name": "Threshold City",
+        "story_approach": "A rain-soaked city grows impossible doors in transit stations, walls, intersections, and moving vehicles; each threshold rearranges reality.",
+        "rendering_route": "Grounded urban magical realism with wet streets, reflections, fog, practical city light, impossible architecture, and physically motivated camera movement.",
+        "storyboard": [
+          {"number": 1, "description": "A freestanding door waits on an empty midnight train platform."},
+          {"number": 2, "description": "The city subtly rearranges itself after the first crossing."},
+          {"number": 3, "description": "Doors appear beneath water, in buses, alley walls, and skyscrapers."},
+          {"number": 4, "description": "A familiar front door stands alone in a frozen rainy intersection."}
+        ]
+      },
+      {
+        "number": 3,
+        "name": "The Inner Archive",
+        "story_approach": "The thousand doors are structures inside one mind: memories, fears, dreams, identities, and forgotten selves reorganizing into integration.",
+        "rendering_route": "Experimental painterly abstraction using silhouettes, paper, smoke, pigment, glass, constellations, reactive geometry, temporal texture locking, and audio-driven internal motion.",
+        "storyboard": [
+          {"number": 1, "description": "A dark human silhouette floats with one small glowing door inside the chest."},
+          {"number": 2, "description": "Rooms made from handwritten pages and memory fragments pour out."},
+          {"number": 3, "description": "Hundreds of doors multiply across the body and surrounding void."},
+          {"number": 4, "description": "The archive storm collapses to one key and one point of light before integration."}
+        ]
+      }
+    ],
+    "user_selection": {
+      "status": "hybrid",
+      "selected_option_numbers": [1, 3],
+      "recorded_user_instruction": "User approved the recommendation: Route 1 is the primary visual world and Route 3's Inner Archive treatment is incorporated into the climax."
+    },
+    "locked": true
+  },
+  "production_direction": {
+    "primary_route": 1,
+    "climax_route": 3,
+    "new_fx": "Threshold Prism Bleed",
+    "chat_preview_policy": "internal proofs only unless user explicitly requests preview or file"
+  }
+}

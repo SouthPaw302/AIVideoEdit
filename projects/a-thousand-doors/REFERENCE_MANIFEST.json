@@ -1,0 +1,8 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [],
+  "images": [],
+  "no_visual_reference": true,
+  "analysis_complete": true,
+  "notes": "The user supplied audio only. Visual direction was therefore established through the mandatory no-reference selection gate."
+}

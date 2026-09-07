@@ -1,0 +1,14 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "assets": [
+    {
+      "id": "audio-master",
+      "kind": "audio",
+      "name": "A Thousand Doors.wav",
+      "sha256": "4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1",
+      "duration_seconds": 180.64,
+      "status": "ingested"
+    }
+  ],
+  "production_assets_pending": true
+}

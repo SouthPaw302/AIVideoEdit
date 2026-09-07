@@ -1,0 +1,24 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "current_user_instruction": "Create the video for A Thousand Doors from the supplied WAV; use the recommended route 1 core with route 3 climax; create a new production effect; do not surface previews/files in chat unless asked; keep working autonomously.",
+  "allow": {
+    "historical_chats": false,
+    "historical_summaries": false,
+    "unrelated_song_branches": false,
+    "prior_project_storyboards": false,
+    "prior_project_visual_dna": false,
+    "prior_project_media": false
+  },
+  "explicit_user_authorizations": [],
+  "authorized_sources": [
+    {
+      "kind": "audio_master",
+      "name": "A Thousand Doors.wav",
+      "sha256": "4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1",
+      "duration_seconds": 180.64,
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_format": "pcm_s16le"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "aivideoedit.project-state.v1",
+  "project": "a-thousand-doors",
+  "branch": "song/a-thousand-doors",
+  "stage": "STORYBOARD_LOCKED",
+  "source_ingest_complete": true,
+  "reference_analysis_complete": true,
+  "visual_approach_established": true,
+  "storyboard_locked": true,
+  "shot_packages_built": false,
+  "shot_proofs_accepted": false,
+  "fx_lock_verified": false,
+  "assembly_complete": false,
+  "final_qc_passed": false,
+  "archive_complete": false
+}
