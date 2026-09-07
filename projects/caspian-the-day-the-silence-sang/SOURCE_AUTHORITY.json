@@ -1,6 +1,6 @@
 {
   "schema": "aivideoedit.source-authority.v1",
-  "current_user_instruction": "Rebuild this production as CASPIAN — THE DAY THE SILENCE SANG. Genre is a Reggae Dubstep Mix. Use the supplied lyrics as story authority and the supplied 145-frame reference clip as animation/motion-language authority, not as imagery to copy verbatim. Create a real story with creative freedom, generate real production media, allow image previews when needed, and create a frame-followable script before rendering.",
+  "current_user_instruction": "Use the music and the uploaded 145-frame reference video only as directing authority. Ignore the supplied lyrics for this version. Build a music-driven abstract video from a hybrid of selected still frames extracted from the user's reference video and newly generated companion stills that match the reference's dark sculptural metamorphic visual language.",
   "allow": {
     "historical_chats": false,
     "historical_summaries": false,
@@ -9,7 +9,11 @@
     "prior_project_visual_dna": false,
     "prior_project_media": false
   },
-  "explicit_user_authorizations": [],
+  "explicit_user_authorizations": [
+    "Selected frames from the current uploaded reference video may be used directly as production stills.",
+    "New generated stills may be created to match the reference video's visual language without copying it verbatim.",
+    "The previously supplied lyrics are archived but excluded from directing authority for this version."
+  ],
   "authorized_sources": [
     {
       "kind": "audio_master",
@@ -18,18 +22,8 @@
       "duration_seconds": 180.64,
       "sample_rate_hz": 48000,
       "channels": 2,
-      "sample_format": "pcm_s16le"
-    },
-    {
-      "kind": "lyrics",
-      "name": "CASPIAN — THE DAY THE SILENCE SANG",
-      "source": "current_user_instruction",
-      "path": "LYRICS.md"
-    },
-    {
-      "kind": "genre_declaration",
-      "value": "Reggae Dubstep Mix",
-      "source": "current_user_instruction"
+      "sample_format": "pcm_s16le",
+      "role": "primary_timing_and_energy_authority"
     },
     {
       "kind": "reference_video",
@@ -38,7 +32,19 @@
       "duration_seconds": 6.0416667,
       "fps": 24,
       "frames": 145,
-      "role": "motion_language_reference"
+      "role": "visual_motion_language_and_authorized_source_stills"
+    },
+    {
+      "kind": "lyrics",
+      "name": "CASPIAN — THE DAY THE SILENCE SANG",
+      "path": "LYRICS.md",
+      "role": "archived_excluded_from_current_direction",
+      "source": "current_user_instruction"
+    },
+    {
+      "kind": "genre_declaration",
+      "value": "Reggae Dubstep Mix",
+      "source": "current_user_instruction"
     }
   ]
 }

@@ -2,6 +2,7 @@
   "schema": "aivideoedit.media-plan.v1",
   "user_approach_established": true,
   "selected_capabilities": [
+    "source_frame_stills",
     "generated_stills",
     "generated_support_imagery",
     "living_painting",
@@ -10,28 +11,30 @@
     "atmospheric_plate",
     "reactive_plate",
     "transition_media",
-    "conventional_video",
     "analysis_qc_media"
   ],
   "current_direction": {
     "title": "CASPIAN — THE DAY THE SILENCE SANG",
-    "story_thesis": "The lyrics shape an emotional metamorph rather than a literal illustrated journey. Caspian's presence changes the hidden material of reality; the film stays portrait-led and symbolic while moving from silence through wonder, time and memory toward a warm birthday resolution.",
+    "direction_mode": "music_only_abstract_hybrid",
     "genre": "Reggae Dubstep Mix",
     "genre_authority": "current_user_instruction",
-    "lyrics_authority": "LYRICS.md",
+    "lyrics_use": "excluded_by_current_user",
     "music_authority": "MUSIC_ANALYSIS.json",
-    "motion_reference": "None.mp4 / reference-motion-001",
-    "motion_translation": "Reference-faithful living metamorph: intimate portrait composition, near-locked camera, identity anchors, slow localized material invasion/replacement, coherent A/B/C transformation states, dark sculptural relief and restrained warm fissure-light.",
-    "reference_fidelity": "Learn the reference's compositional density, metamorphic behavior, pacing and tonal restraint. Do not copy its woman, exact relief pattern or source frames verbatim.",
-    "visual_material": "Near-black charcoal/obsidian organic relief with pale/ivory subject highlights and sparse bronze-gold fissures. Water, rings, roots, maps, stars and candle motifs are expressed as internal material behaviors rather than separate literal landscapes.",
-    "lyric_visualization_rule": "Associative, not illustrative. No one-line-one-object mapping; recurring material motifs carry several lyric ideas across long transformations.",
-    "threshold_rule": "Thresholds appear as seams, apertures, light slits, shadow boundaries or material openings. Avoid repeated literal doors.",
-    "character_rule": "Use one recurring youthful central presence. Do not claim exact Caspian likeness unless a current reference photo is supplied and identity is explicitly locked.",
-    "storyboard_status": "reset_pending_reference_led_rebuild",
-    "preview_policy": "Image previews are enabled when the generation runtime surfaces them. Keeping chat light never authorizes procedural placeholder substitution."
+    "reference_video": "None.mp4 / reference-motion-001",
+    "reference_role": "Both motion-language reference and authorized source for selected production still frames.",
+    "hybrid_media_rule": "Interleave selected exact still frames extracted from the user's reference video with newly generated companion stills that match its dark sculptural portrait/material language. New stills must feel native to the same universe without copying individual frames verbatim.",
+    "motion_translation": "Near-locked composition; internal motion first; localized material invasion/replacement; coherent A/B/C metamorph states; restrained warm fissure-light; bass-driven local pressure rather than global camera shake.",
+    "visual_material": "Near-black wet/matte sculptural relief, obsidian/charcoal organic folds, pale or low-key human/figurative fragments when useful, sparse bronze-gold fissures, bubbles/reflections/voids and dense negative space.",
+    "story_rule": "No literal lyric narrative. The film's progression is an abstract evolution of material states driven by music sections, energy and rhythm.",
+    "preview_policy": "Image previews are enabled when the generation runtime surfaces them."
   },
   "production_asset_gate": {
-    "status": "pending",
-    "rule": "No production image generation until the new reference-led symbolic storyboard/script is locked. Do not advance to SHOT_PACKAGES_BUILT until real generated assets are manifest-recorded and each package contains hashed media_evidence."
+    "status": "open_for_media_generation",
+    "requirements": [
+      "Extract and preserve selected source frames from the 145-frame reference video.",
+      "Generate companion stills matching the reference visual language.",
+      "Record both source-frame and generated assets in ASSET_MANIFEST.json.",
+      "Lock the music-driven shot/script map only after the hybrid visual vocabulary exists."
+    ]
   }
 }
