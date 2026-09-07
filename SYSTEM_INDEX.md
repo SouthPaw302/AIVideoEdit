@@ -12,7 +12,9 @@ Permanent-system index only. No active production names or unrelated song links 
 ## Universal contract
 - `AGENTS.md` — universal agent entry point; first action is bootstrap.
 - `general/reusable/PRODUCTION_CONTRACT.json` — machine-readable production state/rules.
-- `general/reusable/tools/production_guard.py` — fail-closed production-stage and bootstrap-session validator.
+- `general/reusable/tools/production_guard.py` — fail-closed production-stage/bootstrap-session validator.
+- `general/reusable/tools/narrative_guard.py` — fail-closed lyrics/genre/music/script/media-evidence validator.
+- `general/reusable/NARRATIVE_CONTRACT.md` — narrative/music/script/real-media doctrine enforced by the narrative guard.
 - `general/reusable/MEDIA_CAPABILITY_MATRIX.json` / `.md` — media forms available to production.
 - `projects/PROJECT_TEMPLATE.md` — required branch-local state/manifests.
 
@@ -22,6 +24,7 @@ Permanent-system index only. No active production names or unrelated song links 
 - `BIBLE.md`
 - `general/reusable/PRODUCTION_PIPELINE.md`
 - `general/reusable/STYLE_CONTRACT.md`
+- `general/reusable/NARRATIVE_CONTRACT.md`
 
 ## Reusable capabilities
 - `general/reusable/fx_v2/` — callable FX runtime/registry/proofs/gate; single runtime authority.

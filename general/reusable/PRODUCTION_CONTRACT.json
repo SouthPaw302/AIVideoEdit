@@ -37,6 +37,29 @@
     "no_visual_reference_min_storyboard_beats": 3,
     "no_visual_reference_decision_artifacts_rule": "concept/storyboard previews made solely for route selection are allowed before lock but are not production assets unless the selected direction explicitly adopts them"
   },
+  "music_story_policy": {
+    "lyrics_status_must_be_resolved": true,
+    "lyrics_present_rule": "preserve verified lyrics in LYRICS.md and use lyrics plus music analysis as script authority",
+    "no_lyrics_rule": "music analysis becomes the primary narrative authority; absence of lyrics never permits skipping story construction",
+    "genre_rule": "if genre/song type cannot be identified confidently, ask the current user before approach/story lock and record the user's declaration as authoritative",
+    "minimum_genre_confidence_when_inferred": 0.65,
+    "music_analysis_required": [
+      "rhythm_or_pulse",
+      "tempo_or_non_metric_status",
+      "meter_or_groove",
+      "section_map",
+      "energy_curve",
+      "musical_cues",
+      "narrative_function"
+    ],
+    "script_rule": "after storyboard lock and before shot packages, create SCRIPT.md and machine-readable SCRIPT.json covering the complete target frame range; every script entry must map story action, visual media, animation behavior, music cues, lyric cue when applicable, and transition",
+    "preview_rule": "a request to keep chat light or suppress previews must never be interpreted as permission to replace required production imagery with procedural placeholders; if the generation runtime surfaces image previews, those previews are allowed as part of producing real media"
+  },
+  "media_evidence_policy": {
+    "metadata_only_shot_packages_forbidden": true,
+    "generated_capability_requires_generated_asset_evidence": true,
+    "shot_package_requires_media_evidence": true
+  },
   "required_project_files": [
     "PROJECT.md",
     "STATUS.md",
@@ -46,6 +69,9 @@
     "REFERENCE_MANIFEST.json",
     "MEDIA_PLAN.json",
     "ASSET_MANIFEST.json",
+    "MUSIC_ANALYSIS.json",
+    "SCRIPT.md",
+    "SCRIPT.json",
     "VISUAL_DNA.md",
     "SHOT_LIST.md",
     "RENDER_HISTORY.md",
@@ -57,7 +83,10 @@
     ],
     "REFERENCES_ANALYZED": [
       "reference_policy_satisfied",
-      "reference_analysis_complete"
+      "reference_analysis_complete",
+      "music_analysis_complete",
+      "lyrics_status_resolved",
+      "genre_authority_resolved"
     ],
     "APPROACH_ESTABLISHED": [
       "media_plan_valid",
@@ -65,10 +94,13 @@
       "no_reference_visual_direction_gate_if_applicable"
     ],
     "STORYBOARD_LOCKED": [
-      "storyboard_locked"
+      "storyboard_locked",
+      "script_locked",
+      "frame_followable_script"
     ],
     "SHOT_PACKAGES_BUILT": [
-      "shot_packages_built"
+      "shot_packages_built",
+      "media_evidence_verified"
     ],
     "SHOT_PROOFS_ACCEPTED": [
       "shot_proofs_accepted"
