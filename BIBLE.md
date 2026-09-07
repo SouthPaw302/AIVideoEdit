@@ -17,7 +17,9 @@ Initialize -> ingest sources -> extract/analyze references -> establish visual/m
 - Short reference video: extract every frame.
 - Long/large reference video: meaningful sampling is allowed, but policy, sample count, frame ranges/scene coverage, and analysis must be recorded.
 - Supplied images: inspect/analyze them before deriving new media.
-- No visual references: before generating original media, show the user the proposed story/visual/media approach and record it as established.
+- No visual references: the production enters the **Visual Direction Selection Gate**. Before generating production media, the agent must present at least three materially distinct numbered artistic-rendering routes in chat. Each route must contain a named story interpretation, rendering/media treatment, and a numbered mini-storyboard of at least three beats/frames. The user must explicitly select one route, select a hybrid by option number, or modify a route. The presented options and current-user selection must be recorded in `MEDIA_PLAN.json` and locked before production proceeds.
+- Concept/storyboard previews created only for the Visual Direction Selection Gate are allowed as decision artifacts; they are not production assets unless the selected direction explicitly adopts them.
+- Historical styles/preferences and agent taste cannot substitute for a current no-reference selection.
 
 ## Shot-package law
 Every selected scene becomes a genuine branch-local shot package with source, masks/alpha, layers, depth where needed, generated support, FX assets, transitions/loops, proof preview, notes, and QC. Preview means a short finished proof, not premature assembly.

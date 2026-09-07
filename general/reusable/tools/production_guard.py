@@ -132,6 +132,174 @@ def verify_bootstrap_session(branch: str):
     return errors
 
 
+def validate_no_reference_visual_direction_gate(plan, contract, errors):
+    """Validate explicit user selection among multiple no-reference visual routes."""
+    if not truthy(plan.get("user_approach_established")):
+        fail(
+            "no-reference production requires user_approach_established=true "
+            "before generated production media",
+            errors,
+        )
+
+    gate = plan.get("visual_direction_gate")
+    if not isinstance(gate, dict):
+        fail(
+            "no-reference production requires MEDIA_PLAN.visual_direction_gate",
+            errors,
+        )
+        return
+
+    if not truthy(gate.get("required")):
+        fail("visual_direction_gate.required must be true", errors)
+    if not truthy(gate.get("presented_in_chat")):
+        fail(
+            "visual direction options must be presented to the user in chat "
+            "(visual_direction_gate.presented_in_chat=true)",
+            errors,
+        )
+    if not truthy(gate.get("locked")):
+        fail("visual_direction_gate must be locked before APPROACH_ESTABLISHED", errors)
+
+    min_options = int(
+        contract.get("reference_policy", {}).get(
+            "no_visual_reference_min_options", 3
+        )
+    )
+    min_beats = int(
+        contract.get("reference_policy", {}).get(
+            "no_visual_reference_min_storyboard_beats", 3
+        )
+    )
+    options = gate.get("options")
+    if not isinstance(options, list) or len(options) < min_options:
+        fail(
+            f"no-reference visual direction gate requires at least {min_options} "
+            "numbered artistic-rendering options",
+            errors,
+        )
+        return
+
+    option_numbers = []
+    names = []
+    story_routes = []
+    render_routes = []
+
+    for index, option in enumerate(options, start=1):
+        if not isinstance(option, dict):
+            fail(f"visual direction option {index} must be an object", errors)
+            continue
+
+        number = option.get("number")
+        if not isinstance(number, int) or isinstance(number, bool) or number < 1:
+            fail(f"visual direction option {index} requires a positive integer number", errors)
+        else:
+            option_numbers.append(number)
+
+        name = option.get("name")
+        story_approach = option.get("story_approach")
+        rendering_route = option.get("rendering_route")
+        if not isinstance(name, str) or not name.strip():
+            fail(f"visual direction option {index} requires a name", errors)
+        else:
+            names.append(name.strip().casefold())
+        if not isinstance(story_approach, str) or not story_approach.strip():
+            fail(f"visual direction option {index} requires story_approach", errors)
+        else:
+            story_routes.append(story_approach.strip().casefold())
+        if not isinstance(rendering_route, str) or not rendering_route.strip():
+            fail(f"visual direction option {index} requires rendering_route", errors)
+        else:
+            render_routes.append(rendering_route.strip().casefold())
+
+        storyboard = option.get("storyboard")
+        if not isinstance(storyboard, list) or len(storyboard) < min_beats:
+            fail(
+                f"visual direction option {index} requires a numbered mini-storyboard "
+                f"with at least {min_beats} beats/frames",
+                errors,
+            )
+            continue
+
+        beat_numbers = []
+        for beat_index, beat in enumerate(storyboard, start=1):
+            if not isinstance(beat, dict):
+                fail(
+                    f"visual direction option {index} storyboard beat {beat_index} "
+                    "must be an object",
+                    errors,
+                )
+                continue
+            beat_number = beat.get("number")
+            description = beat.get("description")
+            if (
+                not isinstance(beat_number, int)
+                or isinstance(beat_number, bool)
+                or beat_number < 1
+            ):
+                fail(
+                    f"visual direction option {index} storyboard beat {beat_index} "
+                    "requires a positive integer number",
+                    errors,
+                )
+            else:
+                beat_numbers.append(beat_number)
+            if not isinstance(description, str) or not description.strip():
+                fail(
+                    f"visual direction option {index} storyboard beat {beat_index} "
+                    "requires a description",
+                    errors,
+                )
+        if len(beat_numbers) != len(set(beat_numbers)):
+            fail(f"visual direction option {index} storyboard numbers must be unique", errors)
+
+    if len(option_numbers) != len(set(option_numbers)):
+        fail("visual direction option numbers must be unique", errors)
+    if len(names) != len(set(names)):
+        fail("visual direction option names must be distinct", errors)
+    if len(story_routes) != len(set(story_routes)):
+        fail("visual direction story approaches must be distinct", errors)
+    if len(render_routes) != len(set(render_routes)):
+        fail("visual direction rendering routes must be distinct", errors)
+
+    selection = gate.get("user_selection")
+    if not isinstance(selection, dict):
+        fail("visual_direction_gate.user_selection is required", errors)
+        return
+
+    status = selection.get("status")
+    if status not in {"selected", "hybrid"}:
+        fail("visual direction user_selection.status must be selected or hybrid", errors)
+
+    selected_numbers = selection.get("selected_option_numbers")
+    if not isinstance(selected_numbers, list) or not selected_numbers:
+        fail("user selection requires selected_option_numbers", errors)
+    else:
+        invalid = [
+            n for n in selected_numbers
+            if not isinstance(n, int)
+            or isinstance(n, bool)
+            or n not in set(option_numbers)
+        ]
+        if invalid:
+            fail(
+                "user selection references unknown visual direction option number(s): "
+                + ", ".join(str(n) for n in invalid),
+                errors,
+            )
+        if status == "selected" and len(selected_numbers) != 1:
+            fail("selected status must reference exactly one option number", errors)
+        if status == "hybrid" and len(selected_numbers) < 2:
+            fail("hybrid status must reference at least two option numbers", errors)
+
+    recorded = selection.get("recorded_user_instruction")
+    if not isinstance(recorded, str) or not recorded.strip():
+        fail(
+            "visual direction gate requires recorded_user_instruction from the "
+            "current user's explicit selection/modification",
+            errors,
+        )
+
+
 def validate(branch: str):
     contract = load_json(CONTRACT_PATH)
     media = load_json(MEDIA_PATH)
@@ -238,12 +406,8 @@ def validate(branch: str):
             fail("unknown media capabilities: " + ", ".join(unknown), errors)
         if not truthy(state.get("visual_approach_established")):
             fail("visual/media approach not established", errors)
-        if not videos and not images and not truthy(plan.get("user_approach_established")):
-            fail(
-                "no-reference production requires user_approach_established=true "
-                "before generated media",
-                errors,
-            )
+        if not videos and not images:
+            validate_no_reference_visual_direction_gate(plan, contract, errors)
 
     checks = {
         "STORYBOARD_LOCKED": "storyboard_locked",

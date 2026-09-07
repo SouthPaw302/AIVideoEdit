@@ -37,6 +37,21 @@ Nothing else is automatically authoritative. Historical chats, summaries, unrela
 ## Non-negotiable sequence
 Source ingest -> reference extraction/analysis -> visual/media approach -> storyboard -> shot packages -> short finished proofs -> FX lock -> assembly -> actual-export QC -> archive.
 
-Short reference videos are fully extracted. Long references use recorded meaningful sampling. If there is no usable visual reference, no original media may be generated until the story/visual/media approach has been shown to the user and recorded as established.
+Short reference videos are fully extracted. Long references use recorded meaningful sampling.
+
+### No-reference visual-direction gate
+If there is no usable user-supplied visual reference (no reference video and no reference image), the agent **must not silently choose an artistic direction** and must not generate production media yet.
+
+Before `APPROACH_ESTABLISHED`, the agent must:
+1. derive **at least three materially distinct numbered artistic-rendering routes** from the current song/script/lyrics and available capabilities;
+2. present those routes to the user in chat;
+3. give every route a name, story interpretation, rendering/media treatment, and a numbered mini-storyboard with at least three beats/frames so the user can compare the actual visual path;
+4. accept a single route, a hybrid of numbered routes, or explicit user modifications;
+5. record the presented options and the user's explicit current-chat selection in `MEDIA_PLAN.json`; and
+6. lock that selection before any production media is generated.
+
+Concept/storyboard previews created solely to let the user choose a route are decision artifacts, not production media. They may not be silently promoted into the production unless the user-selected direction authorizes them.
+
+A prior project style, historical preference, old storyboard, or agent taste may inform options only when authorized; none may be used to bypass this gate.
 
 A storyboard is never a substitute for shot production. A successful command is never artistic QC. Effects must be visible and traceable. Technology names must be truthful.

@@ -16,10 +16,19 @@ Record hashes, roles, technical metadata, and recovery/storage pointers for supp
 
 **Images present:** inspect/analyze all supplied images before deriving new media.
 
-**No visual references:** do not generate original media yet. Build a proposed story/visual/media approach using the song/lyrics and `MEDIA_CAPABILITY_MATRIX`; show it to the user and record the resulting direction as established.
+**No visual references — Visual Direction Selection Gate:**
+- Do not silently choose the visual style and do not generate production media yet.
+- Build at least three **materially distinct numbered artistic-rendering routes** from the current song/script/lyrics and `MEDIA_CAPABILITY_MATRIX`.
+- Present the routes in chat. Each route must include: a route name, story interpretation, rendering/media treatment, and a numbered mini-storyboard with at least three beats/frames.
+- The user may select one option number, combine option numbers, or modify a route.
+- Record every presented option and the explicit current-user selection in `MEDIA_PLAN.json`.
+- Lock the selection before production media begins.
+- Concept/storyboard previews made only to help the user choose are decision artifacts and are allowed before the gate locks; they are not automatically production assets.
 
 ## 3 — Establish visual/media approach
 Create/lock the production's visual DNA and `MEDIA_PLAN.json`. Choose deliberately among source footage, extracted frames, generated stills/support imagery, living paintings, layered composites, depth/2.5D, reactive/atmospheric plates, loops, transitions, real radiance fields, real 3DGS when valid, and conventional video.
+
+For a no-reference production, `APPROACH_ESTABLISHED` is valid only after the Visual Direction Selection Gate records at least three compliant routes, confirms they were presented in chat, records the user's explicit selection/hybrid/modification, and marks the selection locked.
 
 ## 4 — Lock storyboard and shot map
 Only after reference analysis/approach is complete. Map narrative and musical beats to specific source frame/ranges or to the established original-media plan.
