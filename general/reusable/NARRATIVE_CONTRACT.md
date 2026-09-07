@@ -2,13 +2,22 @@
 
 This contract closes a class of failures where a technically valid render can pass while the intended story media was never created.
 
-## 1. Resolve lyrics status
+## 1. Resolve lyrics status and directing use
 Every production must explicitly record one of:
 - `present`
 - `instrumental`
 - `none_confirmed`
 
-If lyrics are present, preserve a verified `LYRICS.md` and use lyrics plus musical analysis as story/script authority.
+If lyrics are present, preserve a verified `LYRICS.md`.
+
+By default, present lyrics are active directing authority and must be used with musical analysis as script authority.
+
+A current user may explicitly exclude otherwise-present lyrics from directing. In that case `MUSIC_ANALYSIS.json` must keep `lyrics.status = "present"` and record:
+- `lyrics.directing_use = "excluded_by_current_user"`
+- `lyrics.exclusion_source = "current_user_instruction"`
+- the current user's exclusion instruction
+
+When lyrics are explicitly excluded, they remain archived source material but must not appear in `SCRIPT.basis` or `lyric_cue` fields. Music analysis becomes the primary narrative/directing authority.
 
 If lyrics are absent, the music itself is the primary narrative source. Instrumental does **not** mean narrative-free.
 

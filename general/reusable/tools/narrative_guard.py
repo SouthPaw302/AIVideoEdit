@@ -69,6 +69,15 @@ def validate_music_analysis(project: Path, state: dict, errors: list[str]):
             lyrics_file = lyrics.get("text_file") or "LYRICS.md"
             if not (project / lyrics_file).is_file():
                 fail(f"lyrics.status=present requires {lyrics_file}", errors)
+            directing_use = lyrics.get("directing_use", "required")
+            if directing_use not in {"required", "excluded_by_current_user"}:
+                fail("lyrics.directing_use must be required or excluded_by_current_user", errors)
+            if directing_use == "excluded_by_current_user":
+                if lyrics.get("exclusion_source") != "current_user_instruction":
+                    fail("lyrics excluded from directing require exclusion_source=current_user_instruction", errors)
+                instruction = lyrics.get("exclusion_instruction")
+                if not isinstance(instruction, str) or not instruction.strip():
+                    fail("lyrics excluded from directing require exclusion_instruction", errors)
 
     genre = music.get("genre")
     if not isinstance(genre, dict):
@@ -176,10 +185,14 @@ def validate_script(project: Path, state: dict, music: dict | None, errors: list
         fail("SCRIPT.basis must include storyboard and music_analysis", errors)
 
     lyrics_status = None
+    lyrics_directing_use = "required"
     if music and isinstance(music.get("lyrics"), dict):
         lyrics_status = music["lyrics"].get("status")
-        if lyrics_status == "present" and "lyrics" not in basis:
-            fail("lyrics are present, so SCRIPT.basis must include lyrics", errors)
+        lyrics_directing_use = music["lyrics"].get("directing_use", "required")
+        if lyrics_status == "present" and lyrics_directing_use != "excluded_by_current_user" and "lyrics" not in basis:
+            fail("lyrics are present and active, so SCRIPT.basis must include lyrics", errors)
+        if lyrics_status == "present" and lyrics_directing_use == "excluded_by_current_user" and "lyrics" in basis:
+            fail("lyrics are explicitly excluded by the current user, so SCRIPT.basis must not include lyrics", errors)
 
     entries = script.get("entries")
     if not isinstance(entries, list) or not entries:
@@ -214,8 +227,10 @@ def validate_script(project: Path, state: dict, music: dict | None, errors: list
 
     if isinstance(total, int) and expected_start != total:
         fail(f"SCRIPT frame coverage must end at total_frames-1 ({total-1}); got {expected_start-1}", errors)
-    if lyrics_status == "present" and lyric_cue_count == 0:
-        fail("lyrics are present but SCRIPT contains no lyric_cue entries", errors)
+    if lyrics_status == "present" and lyrics_directing_use != "excluded_by_current_user" and lyric_cue_count == 0:
+        fail("lyrics are present and active but SCRIPT contains no lyric_cue entries", errors)
+    if lyrics_status == "present" and lyrics_directing_use == "excluded_by_current_user" and lyric_cue_count != 0:
+        fail("lyrics are explicitly excluded by the current user but SCRIPT still contains lyric_cue entries", errors)
 
 
 def generated_assets_present(asset_manifest: dict) -> bool:
