@@ -7,7 +7,13 @@ import json
 import os
 from pathlib import Path
 
-ROOT = Path(os.environ.get("AIVIDEOEDIT_REPO_ROOT", Path(__file__).resolve().parents[3])).resolve()
+SCRIPT_ROOT = Path(__file__).resolve().parents[3]
+if os.environ.get("AIVIDEOEDIT_REPO_ROOT"):
+    ROOT = Path(os.environ["AIVIDEOEDIT_REPO_ROOT"]).resolve()
+elif SCRIPT_ROOT.name == "os" and SCRIPT_ROOT.parent.name == ".aivideoedit":
+    ROOT = SCRIPT_ROOT.parent.parent.resolve()
+else:
+    ROOT = SCRIPT_ROOT.resolve()
 
 
 def load_json(path: Path):
