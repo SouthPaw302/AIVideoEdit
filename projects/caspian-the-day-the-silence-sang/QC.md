@@ -1,31 +1,27 @@
-# QC — Music-only abstract hybrid
+# QC — V3 rejected after user creative review
 
-## Reference verification
-- supplied reference `None.mp4`: 6.041667 s, 560×560, 24 fps, 145 frames
-- short-reference rule applied: **all 145 frames extracted and inspected**
-- selected production anchors: frames 0, 36, 72, 96, 120, 144
+## Technical result
+`A_Thousand_Doors_HYBRID_v3_720p.mp4` was technically valid: duration, decode, black-frame and freeze checks passed.
 
-## Media proof
-Initial 18-second hybrid proof used direct material masks between alternating supplied/generated portraits. Review of sampled proof frames showed a double-face/ghosting risk when source compositions differed. That transition design was rejected.
+## Creative failure
+User review rejected the film because the supplied reference video and stills from it became the dominant content, while the generated companion media remained too close to the same portrait/black-material subject. The result felt like a single trapped soul repeating in a dark environment rather than a new generative visual work.
 
-Accepted revision: every state change collapses through the reference's resolved dark-material frame before the next image emerges. This preserves the supplied clip's material-takeover grammar and prevents direct portrait-to-portrait ghost blends.
+This means the prior creative-QC PASS was incorrect. Technical validity did not establish successful media authorship.
 
-Accepted proof: `hybrid_motion_proof.mp4`, SHA-256 `8badc28f7669180789f3411db0cace6762215fa39aaec24e0149d60aa526f119`.
+## Root cause
+- reference imagery was used as content instead of primarily as style/motion authority
+- generated media copied the reference's subject class and composition too closely
+- visual variety was nominal rather than semantic
+- the hybrid ratio did not create a genuinely new visual world
+- repeated face/material cycles created an oppressive horror/hell reading not requested by the user
 
-## Final export
-Accepted master: `A_Thousand_Doors_HYBRID_v3_720p.mp4`
-- container duration: **180.640000 s**
-- video: H.264, 1280×720, 24 fps, 4335 frames, 180.625 s video stream
-- audio: AAC, 48 kHz stereo, 180.640 s
-- SHA-256: `2957c2290ac48a56c9503afe40c086aaca2ea1fd7c246405fd1cca40620f0b38`
+## Rebuild requirement
+- keep the 145-frame reference analysis and extracted frames as motion/style/mask evidence
+- use only limited reference-frame inserts as picture content
+- create substantially new abstract production media: non-literal forms, materials, spatial structures and states that share the reference's lighting, metamorph grammar and tonal restraint without reusing its woman/portrait concept
+- reject the eight existing generated portrait stills as too derivative
+- reject `hybrid_motion_proof.mp4` and V3 as creative-direction failures
+- do not advance beyond `APPROACH_ESTABLISHED` until the new media set is actually generated and reviewed
 
-Actual-export QC:
-- full video decode errors: **0**
-- blackdetect events (d=0.3, pic_th=0.98, pix_th=0.05): **0**
-- freezedetect events >2.5 s at -45 dB: **0**
-- timeline script coverage: frames 0–4334 with no gaps
-- hybrid-media requirement: PASS — 6 supplied-frame anchors + 8 generated companion stills
-- lyric exclusion: PASS — no lyric cue or lyric-derived scene is present in the locked script
-- reference-style requirement: PASS — near-locked compositions, internal flow, dark material midpoint and sparse warm fissures are present throughout
-
-Durable binary archival remains pending; do not mark `ARCHIVED` yet.
+## Current status
+`FINAL_QC_PASSED` revoked. V3 must not be archived as a final master.
