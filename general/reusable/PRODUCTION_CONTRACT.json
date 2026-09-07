@@ -1,7 +1,18 @@
 {
   "schema": "aivideoedit.production-contract.v1",
-  "authority": ["current_user_instruction", "active_song_branch_state", "current_main"],
-  "default_denied_sources": ["historical_chats", "historical_summaries", "unrelated_song_branches", "prior_project_storyboards", "prior_project_visual_dna", "prior_project_media"],
+  "authority": [
+    "current_user_instruction",
+    "active_song_branch_state",
+    "current_main"
+  ],
+  "default_denied_sources": [
+    "historical_chats",
+    "historical_summaries",
+    "unrelated_song_branches",
+    "prior_project_storyboards",
+    "prior_project_visual_dna",
+    "prior_project_media"
+  ],
   "states": [
     "INITIALIZED",
     "SOURCE_INGESTED",
@@ -21,23 +32,58 @@
     "short_video_rule": "extract_all_frames",
     "long_video_rule": "meaningful_sampling_with_recorded_policy_ranges_and_coverage",
     "images_rule": "inspect_all_supplied_images",
-    "no_visual_reference_rule": "show_story_visual_media_approach_to_user_and_record_established_before_generated_media"
+    "no_visual_reference_rule": "before production media generation present at least three materially distinct numbered artistic-rendering routes in chat; each route must include a name, story interpretation, rendering/media treatment, and numbered mini-storyboard of at least three beats/frames; record all routes plus the current user's explicit selection/hybrid/modification in MEDIA_PLAN.json and lock the selection",
+    "no_visual_reference_min_options": 3,
+    "no_visual_reference_min_storyboard_beats": 3,
+    "no_visual_reference_decision_artifacts_rule": "concept/storyboard previews made solely for route selection are allowed before lock but are not production assets unless the selected direction explicitly adopts them"
   },
   "required_project_files": [
-    "PROJECT.md", "STATUS.md", "HANDOFF.md", "PROJECT_STATE.json", "SOURCE_AUTHORITY.json",
-    "REFERENCE_MANIFEST.json", "MEDIA_PLAN.json", "ASSET_MANIFEST.json", "VISUAL_DNA.md", "SHOT_LIST.md",
-    "RENDER_HISTORY.md", "QC.md"
+    "PROJECT.md",
+    "STATUS.md",
+    "HANDOFF.md",
+    "PROJECT_STATE.json",
+    "SOURCE_AUTHORITY.json",
+    "REFERENCE_MANIFEST.json",
+    "MEDIA_PLAN.json",
+    "ASSET_MANIFEST.json",
+    "VISUAL_DNA.md",
+    "SHOT_LIST.md",
+    "RENDER_HISTORY.md",
+    "QC.md"
   ],
   "stage_requirements": {
-    "SOURCE_INGESTED": ["source_ingest_complete"],
-    "REFERENCES_ANALYZED": ["reference_policy_satisfied", "reference_analysis_complete"],
-    "APPROACH_ESTABLISHED": ["media_plan_valid", "visual_approach_established"],
-    "STORYBOARD_LOCKED": ["storyboard_locked"],
-    "SHOT_PACKAGES_BUILT": ["shot_packages_built"],
-    "SHOT_PROOFS_ACCEPTED": ["shot_proofs_accepted"],
-    "FX_LOCKED": ["fx_lock_verified"],
-    "ASSEMBLED": ["assembly_complete"],
-    "FINAL_QC_PASSED": ["final_qc_passed"],
-    "ARCHIVED": ["archive_complete"]
+    "SOURCE_INGESTED": [
+      "source_ingest_complete"
+    ],
+    "REFERENCES_ANALYZED": [
+      "reference_policy_satisfied",
+      "reference_analysis_complete"
+    ],
+    "APPROACH_ESTABLISHED": [
+      "media_plan_valid",
+      "visual_approach_established",
+      "no_reference_visual_direction_gate_if_applicable"
+    ],
+    "STORYBOARD_LOCKED": [
+      "storyboard_locked"
+    ],
+    "SHOT_PACKAGES_BUILT": [
+      "shot_packages_built"
+    ],
+    "SHOT_PROOFS_ACCEPTED": [
+      "shot_proofs_accepted"
+    ],
+    "FX_LOCKED": [
+      "fx_lock_verified"
+    ],
+    "ASSEMBLED": [
+      "assembly_complete"
+    ],
+    "FINAL_QC_PASSED": [
+      "final_qc_passed"
+    ],
+    "ARCHIVED": [
+      "archive_complete"
+    ]
   }
 }
