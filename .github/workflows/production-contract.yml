@@ -38,7 +38,9 @@ jobs:
         shell: bash
         run: |
           python general/reusable/tools/production_guard.py --bootstrap-phase --branch main
+          python general/reusable/tools/narrative_guard.py --branch main
       - name: Verify bootstrapped production contract
         shell: bash
         run: |
           python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$CONTRACT_BRANCH"
+          python .aivideoedit/os/general/reusable/tools/narrative_guard.py --branch "$CONTRACT_BRANCH"
