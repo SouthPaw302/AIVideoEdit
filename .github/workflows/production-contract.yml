@@ -16,13 +16,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Resolve contract branch
+        shell: bash
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" && "$GITHUB_HEAD_REF" == song/* && "$GITHUB_BASE_REF" == "main" ]]; then
+            echo "FAIL: song branches are production archives and must not merge into main."
+            exit 1
+          fi
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" && "$GITHUB_BASE_REF" == "main" ]]; then
+            CONTRACT_BRANCH="main"
+          else
+            CONTRACT_BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          fi
+          echo "CONTRACT_BRANCH=$CONTRACT_BRANCH" >> "$GITHUB_ENV"
       - name: Bootstrap exact current-main AIVideoEdit OS
         shell: bash
         run: |
-          BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-          python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$BRANCH"
+          python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$CONTRACT_BRANCH"
+      - name: Validate candidate main system
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        shell: bash
+        run: |
+          python general/reusable/tools/production_guard.py --bootstrap-phase --branch main
       - name: Verify bootstrapped production contract
         shell: bash
         run: |
-          BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$BRANCH"
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$CONTRACT_BRANCH"
