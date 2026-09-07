@@ -15,21 +15,23 @@
   ],
   "current_direction": {
     "title": "CASPIAN — THE DAY THE SILENCE SANG",
-    "story_thesis": "There are worlds that only open when Caspian arrives. Ordinary reality reveals hidden wonder, memory and impossible worlds, then returns to the birthday room with wonder intact.",
+    "story_thesis": "The lyrics shape an emotional metamorph rather than a literal illustrated journey. Caspian's presence changes the hidden material of reality; the film stays portrait-led and symbolic while moving from silence through wonder, time and memory toward a warm birthday resolution.",
     "genre": "Reggae Dubstep Mix",
     "genre_authority": "current_user_instruction",
     "lyrics_authority": "LYRICS.md",
     "music_authority": "MUSIC_ANALYSIS.json",
-    "script_authority": "SCRIPT.json",
     "motion_reference": "None.mp4 / reference-motion-001",
-    "motion_translation": "Living-image metamorph: stable composition, internal motion first, identity anchors, progressive localized material replacement, coherent transformation states, restrained camera.",
-    "visual_material": "Natural-world matter, photographic/emulsion textures, bark, water, stars, smoke, brass-gold fissures and light. Do not copy the reference clip's exact black sculptural material.",
-    "door_rule": "A door/threshold is a narrative mechanism, never the dominant repeated image. Any ordinary surface may become a threshold.",
-    "character_rule": "Caspian is the recurring protagonist; preserve one consistent child identity across generated story media.",
+    "motion_translation": "Reference-faithful living metamorph: intimate portrait composition, near-locked camera, identity anchors, slow localized material invasion/replacement, coherent A/B/C transformation states, dark sculptural relief and restrained warm fissure-light.",
+    "reference_fidelity": "Learn the reference's compositional density, metamorphic behavior, pacing and tonal restraint. Do not copy its woman, exact relief pattern or source frames verbatim.",
+    "visual_material": "Near-black charcoal/obsidian organic relief with pale/ivory subject highlights and sparse bronze-gold fissures. Water, rings, roots, maps, stars and candle motifs are expressed as internal material behaviors rather than separate literal landscapes.",
+    "lyric_visualization_rule": "Associative, not illustrative. No one-line-one-object mapping; recurring material motifs carry several lyric ideas across long transformations.",
+    "threshold_rule": "Thresholds appear as seams, apertures, light slits, shadow boundaries or material openings. Avoid repeated literal doors.",
+    "character_rule": "Use one recurring youthful central presence. Do not claim exact Caspian likeness unless a current reference photo is supplied and identity is explicitly locked.",
+    "storyboard_status": "reset_pending_reference_led_rebuild",
     "preview_policy": "Image previews are enabled when the generation runtime surfaces them. Keeping chat light never authorizes procedural placeholder substitution."
   },
   "production_asset_gate": {
     "status": "pending",
-    "rule": "Do not advance to SHOT_PACKAGES_BUILT until actual generated story assets exist in ASSET_MANIFEST.json and each shot package has hashed media_evidence."
+    "rule": "No production image generation until the new reference-led symbolic storyboard/script is locked. Do not advance to SHOT_PACKAGES_BUILT until real generated assets are manifest-recorded and each package contains hashed media_evidence."
   }
 }

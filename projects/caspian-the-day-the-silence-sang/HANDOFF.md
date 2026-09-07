@@ -1,21 +1,22 @@
 # Handoff — CASPIAN — THE DAY THE SILENCE SANG
 
 Branch: `song/caspian-the-day-the-silence-sang`  
-Stage: `STORYBOARD_LOCKED`
+Stage: `APPROACH_ESTABLISHED`
 
-This is the clean rebuild branch. Do not import the historical V8 render or old corridor art direction; they are rejected creative proof only.
+This is the clean rebuild branch. Do not import the historical A Thousand Doors geometric render or its corridor art direction.
 
 ## Authoritative inputs
 1. `A Thousand Doors.wav` — 180.64 s audio master
 2. `LYRICS.md` — current-user supplied Caspian lyrics
-3. `MUSIC_ANALYSIS.json` — genre/music directing authority
-4. `REFERENCE_MANIFEST.json` — 145-frame user-supplied motion-language reference, all frames analyzed
-5. `VISUAL_DNA.md`
-6. `SCRIPT.json` — exact frame-followable production story
-7. `SCRIPT.md` — human directing script
+3. `MUSIC_ANALYSIS.json` — Reggae Dubstep Mix + measured directing cues
+4. `REFERENCE_MANIFEST.json` — 145-frame user-supplied motion/style reference, all frames analyzed
+5. `VISUAL_DNA.md` — current reference-led symbolic visual direction
 
-## Motion law
-Learn the supplied clip's stable-composition/internal-metamorph technique without copying its artwork. Real generated story media must exist before shot packages can pass.
+## Critical correction
+The previous literal 16-scene script/storyboard is rejected. `SCRIPT.md`, `SCRIPT.json`, and `SHOT_LIST.md` now explicitly mark that pass as withdrawn. Do not render from it.
+
+## Motion/style law
+Learn the supplied clip's portrait-scale, near-locked, internally living metamorph language: preserve face/silhouette anchors while dark organic material progressively invades and reconstructs the image. Use sparse warm fissure-light and symbolic material changes. Lyrics are felt through transformation; they are not illustrated one object at a time.
 
 ## Next action
-Generate and preserve hero/story assets for S01 onward, with image previews allowed. Record each accepted generated asset in `ASSET_MANIFEST.json`, build real shot packages with hashes, then make short proofs before FX lock or assembly.
+Create a new non-literal storyboard and full 4335-frame script using recurring symbolic material states. Only after that lock may real production hero assets be generated and manifest-recorded.

@@ -1,6 +1,6 @@
 # Status — CASPIAN — THE DAY THE SILENCE SANG
 
-Current stage: `STORYBOARD_LOCKED`.
+Current stage: `APPROACH_ESTABLISHED`.
 
 ## Locked / complete
 - 180.64 s audio master retained and hashed
@@ -8,13 +8,15 @@ Current stage: `STORYBOARD_LOCKED`.
 - genre authority: **Reggae Dubstep Mix**, current-user confirmed
 - music structure/cues recorded in `MUSIC_ANALYSIS.json`
 - supplied motion reference analyzed frame-by-frame: 145/145 frames
-- real story treatment established around Caspian, wonder, memory, time and birthday
-- 24 fps / 4335-frame `SCRIPT.json` covers the entire timeline without gaps
-- human-readable `SCRIPT.md` created
-- visual DNA revised to reference-derived living metamorph behavior
+- reference-style direction now prioritizes portrait-led sculptural metamorphosis and symbolic lyric interpretation
 
-## Historical failure excluded
-The prior `song/a-thousand-doors` V8 render is rejected as a visual-development proof and is not an authorized media input for this branch. It demonstrated the failure mode the new contract now blocks: geometry/procedural effects standing in for the story.
+## Rejected
+- the prior 16-scene literal lyric storyboard/script
+- the generated multi-panel storyboard image; deleted from sandbox and never committed to GitHub
+- any one-lyric-one-object fantasy illustration approach
 
-## Next production gate
-Create real generated hero/story media for S01-S16 with image previews allowed. Do not mark `SHOT_PACKAGES_BUILT` until generated assets are manifest-recorded and every package contains hashed media evidence.
+## Current visual law
+Use the reference clip's actual language: near-locked portrait composition, identity anchors, slow local material invasion/replacement, dark organic relief, sparse bronze/gold fissure light, and coherent start/middle/end transformations. Lyrics shape emotional/metaphoric states rather than literal scenes.
+
+## Next gate
+Rebuild and lock a new symbolic storyboard + full frame-followable script before generating production images. No shot packages, FX lock, assembly or final QC may advance yet.
