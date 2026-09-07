@@ -1,22 +1,19 @@
-# Handoff — CASPIAN — THE DAY THE SILENCE SANG
+# Handoff — Music-only abstract hybrid
 
 Branch: `song/caspian-the-day-the-silence-sang`  
-Stage: `APPROACH_ESTABLISHED`
+Stage: `FINAL_QC_PASSED`
 
-This is the clean rebuild branch. Do not import the historical A Thousand Doors geometric render or its corridor art direction.
+Current user direction supersedes the earlier lyric-story treatment: **do not direct from the lyrics**. `LYRICS.md` stays archived only. The authoritative film is a music-driven abstract hybrid using the current reference clip plus generated companion stills.
 
-## Authoritative inputs
+Authority:
 1. `A Thousand Doors.wav` — 180.64 s audio master
-2. `LYRICS.md` — current-user supplied Caspian lyrics
-3. `MUSIC_ANALYSIS.json` — Reggae Dubstep Mix + measured directing cues
-4. `REFERENCE_MANIFEST.json` — 145-frame user-supplied motion/style reference, all frames analyzed
-5. `VISUAL_DNA.md` — current reference-led symbolic visual direction
+2. `None.mp4` — 145-frame visual/motion reference and source-frame authority
+3. `MUSIC_ANALYSIS.json` — music directing map; lyrics explicitly excluded
+4. `MEDIA_PLAN.json` / `VISUAL_DNA.md`
+5. `SCRIPT.json` — exact 4335-frame state sequence
+6. `fx.lock.json` — RFMT-001 motion/material method
+7. `ASSET_MANIFEST.json` — 6 supplied anchors, 8 generated companions, proof and final master
 
-## Critical correction
-The previous literal 16-scene script/storyboard is rejected. `SCRIPT.md`, `SCRIPT.json`, and `SHOT_LIST.md` now explicitly mark that pass as withdrawn. Do not render from it.
+Accepted final master: `A_Thousand_Doors_HYBRID_v3_720p.mp4`, SHA-256 `2957c2290ac48a56c9503afe40c086aaca2ea1fd7c246405fd1cca40620f0b38`.
 
-## Motion/style law
-Learn the supplied clip's portrait-scale, near-locked, internally living metamorph language: preserve face/silhouette anchors while dark organic material progressively invades and reconstructs the image. Use sparse warm fissure-light and symbolic material changes. Lyrics are felt through transformation; they are not illustrated one object at a time.
-
-## Next action
-Create a new non-literal storyboard and full 4335-frame script using recurring symbolic material states. Only after that lock may real production hero assets be generated and manifest-recorded.
+Final QC: 0 decode errors, 0 black events, 0 freezes >2.5 s. Durable binary archival is still pending, so do not mark `ARCHIVED` until a persistent recovery location exists.

@@ -1,45 +1,37 @@
-# Visual DNA — CASPIAN: THE DAY THE SILENCE SANG
+# Visual DNA — Music-only abstract hybrid
 
-## Core form
-A music-driven abstract living-sculpture film. The supplied 145-frame reference video is the primary visual and motion-language authority, and selected exact frames from it are authorized as production stills.
+## Authority
+The current uploaded 145-frame video is the primary visual and motion-language authority. The current user explicitly rejected lyric illustration and requested a hybrid of extracted reference stills and newly generated stills that match the reference.
 
-## Reference language to preserve
-- intimate, dense compositions with heavy near-black mass
-- near-locked camera; the image itself moves
-- slow localized material creep, invasion and reconstruction
-- coherent A/B/C metamorph states rather than crossfades
-- matte/wet charcoal-black sculptural matter with sparse bronze-gold fissures
-- pale or legible figurative fragments may act as anchors, but a recurring character is not required
-- voids, bubbles, reflections, folds, cracks and organic relief may carry the visual evolution
-- transformations should feel physically continuous even when surreal
+## Core image
+- intimate face/portrait-scale composition
+- dense near-black sculptural/organic relief surrounding or overtaking the subject
+- pale skin or face fragments as high-contrast anchors
+- circular/bulbous relief forms embedded in the black material
+- restrained bronze/gold fissures and highlights
+- deep negative space; no colorful fantasy landscape montage
 
-## Hybrid still rule
-Use a deliberate mixture of:
-1. selected exact still frames extracted from the user-supplied reference video; and
-2. newly generated companion stills that plausibly belong to the same visual universe.
+## Motion
+- near-locked camera
+- internal deformation before camera motion
+- reference-frame optical flow transferred to both provided and generated stills
+- 4–15 second living states rather than rapid cuts
+- irregular material takeover and reconstruction
+- outgoing and incoming portraits never crossfade directly; the resolved dark-material reference state sits between them
+- bass envelope modulates deformation strength locally, never whole-frame shake
 
-Generated imagery must match the reference's darkness, sculptural density, lighting restraint and metamorphic logic without reproducing specific frames verbatim.
+## Hybrid rule
+Six exact frames extracted from the supplied clip are production still anchors. Eight generated companion images extend the same material universe. The generated images are not substitutes for the reference; they alternate with it.
 
-## Music translation
-- ~76 BPM half-time feel governs primary deformation, breathing and pressure
-- reggae offbeat may create delayed sway, recoil or visual echo
-- faster subdivisions drive fine particles, bubbles, fissure shimmer and micro-texture
-- dubstep accents create local compression, split, flex, depth surge and material replacement
-- section changes may change the entire material state; individual beats should not trigger generic full-frame pulses
+## Prohibited
+- lyric illustration
+- storyline objects derived from the archived lyrics
+- storyboard-poster layouts
+- fantasy landscape montage
+- repeated doors
+- geometric visualizer graphics
+- generic Ken Burns pan/zoom
+- direct portrait-to-portrait dissolve that creates double faces
 
-## Palette
-Near-black, charcoal, obsidian and smoke-grey dominate. Pale ivory/skin-like values may appear as fragile anchors. Bronze/gold light is sparse and important. Secondary cool tones may appear embedded inside the material rather than becoming literal scenery.
-
-## Anti-literal rules
-- no lyric illustration
-- no birthday imagery required
-- no recurring doors
-- no fantasy landscape montage
-- no child-character continuity requirement
-- no storyboard-poster aesthetic
-- no procedural geometry as primary picture
-- no generic visualizer pulses or whole-frame bass shake
-- no pan/zoom pretending to be internal animation
-
-## Directing principle
-The film is an evolving abstract organism synchronized to the reggae/dubstep structure. It should feel as though the reference clip's visual world expanded into a three-minute generative piece using both the user's own frames and new media born from the same material logic.
+## Truthful technical claim
+The production uses conventional OpenCV/Farneback dense optical flow, frame-derived luma masks, still-image warping, audio RMS control and compositing. It is not a learned video diffusion model and must not be labeled as one.

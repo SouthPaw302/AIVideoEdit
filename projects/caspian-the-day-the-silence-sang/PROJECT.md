@@ -1,23 +1,11 @@
-# CASPIAN — THE DAY THE SILENCE SANG
+# Music-only abstract hybrid production
 
-Production branch: `song/caspian-the-day-the-silence-sang` (fresh rebuild from current `main`).
+Branch: `song/caspian-the-day-the-silence-sang`
 
-## Current authority
-- Audio master: `A Thousand Doors.wav`
-- Lyrics: current-user supplied `LYRICS.md`
-- Genre: **Reggae Dubstep Mix** (current-user confirmed)
-- Motion-language reference: current-user supplied `None.mp4`, 6.0417 s / 145 frames; every frame analyzed
-- Current directing treatment/script supersedes the rejected corridor-dominant render
+Source audio: user-supplied `A Thousand Doors.wav`, 180.64 s.
 
-## Directing thesis
-**There are worlds that only open when Caspian arrives.**
+Current direction: ignore the supplied lyrics for visual directing. Use the music, its measured structure and the user-confirmed **Reggae Dubstep Mix** identity. Match the current uploaded 145-frame video's dark sculptural visual/motion language and build a hybrid from exact extracted reference stills plus generated companion stills.
 
-The film follows Caspian through ordinary reality that repeatedly reveals hidden wonder: stars, river memory, tree-ring maps, impossible objects, a night run through a responsive forest, the acceleration of birthdays, and finally a frozen birthday-room moment where the world opens behind reality and the silence sings his name.
+The current reference video is authorized both as motion-language authority and as a source-still pool. The generated images extend that same material world. Historical project media and the earlier literal lyric storyboard are not production authority.
 
-The door is a metaphor/threshold mechanism, not the picture. Real characters, environments, actions and emotional progression must be visible.
-
-## Rendering language
-Learn the supplied reference behavior, not its literal artwork: stable compositions, internal motion first, identity anchors, progressive localized material replacement, coherent transformation states, and restrained camera motion. Generated cinematic story media comes first; procedural geometry may only support it.
-
-## Rebuild status
-The previous `song/a-thousand-doors` geometric master is historical and rejected; it is not a production input for this fresh branch. Production is at `STORYBOARD_LOCKED`. No new final render is accepted.
+Delivery target: a living abstract music film with near-locked compositions, internal optical-flow deformation, irregular dark-material takeovers and restrained warm fissure highlights. No lyric illustration, no generic visualizer, no repeated geometric motif.

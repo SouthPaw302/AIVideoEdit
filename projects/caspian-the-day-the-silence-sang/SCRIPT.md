@@ -1,20 +1,26 @@
-# Video Script — CASPIAN — THE DAY THE SILENCE SANG
+# Video Script — Music-only abstract hybrid
 
-## STATUS: REJECTED LITERAL DRAFT — DO NOT RENDER
+**Runtime:** 180.640 s container / 4335 video frames at 24 fps  
+**Genre:** Reggae Dubstep Mix  
+**Lyrics:** present in `LYRICS.md` but explicitly excluded from directing by the current user.  
+**Authority:** `MUSIC_ANALYSIS.json` + supplied 145-frame video + current user hybrid direction.
 
-The previous 16-scene script was rejected by the user on 2026-09-07 because it translated the lyrics too literally into fantasy scenes and objects.
+The film is an abstract material performance, not a lyric illustration or conventional story. Six exact stills extracted from the current reference alternate with eight generated companion stills. All 145 reference frames provide optical-flow and material-mask control. Changes pass through the reference's resolved dark-material state rather than directly dissolving one portrait into another.
 
-The supplied 145-frame reference video is now the stronger visual-style authority. The replacement script must remain faithful to that clip's intimate sculptural portrait language, near-locked composition, identity anchors, slow localized material invasion/replacement and dark tonal restraint.
+Frame map:
+1. S01 0–308 — source frame 0
+2. S02 309–647 — generated g01
+3. S03 648–1166 — source frame 36
+4. S04 1167–1709 — generated g03
+5. S05 1710–1879 — source frame 72
+6. S06 1880–2231 — generated g06
+7. S07 2232–2591 — generated g04
+8. S08 2592–2942 — source frame 96
+9. S09 2943–3233 — source frame 120
+10. S10 3234–3425 — generated g07
+11. S11 3426–3695 — source frame 144 / resolved dark state
+12. S12 3696–4024 — generated g05
+13. S13 4025–4187 — generated g08
+14. S14 4188–4334 — generated g02
 
-The lyrics remain narrative authority, but they must be interpreted associatively rather than illustrated line-by-line.
-
-### Replacement-script rules
-- portrait-led or single-subject compositions over literal location hopping
-- long metamorphic phrases rather than montage/checklist storytelling
-- recurring symbolic material vocabulary for silence, song, time, wonder, memory and birthday
-- no one-lyric-one-object mapping
-- no repeated literal doors
-- no fantasy-landscape storyboard poster logic
-- maintain full 180.64 s / 24 fps / 4335-frame coverage when the new script is locked
-
-Exact frame-followable replacement script: **pending**.
+`SCRIPT.json` is the exact machine-readable frame authority.

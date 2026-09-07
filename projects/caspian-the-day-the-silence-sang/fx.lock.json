@@ -1,0 +1,21 @@
+{
+  "schema": "aivideoedit.fx-lock.v1",
+  "locked": true,
+  "effects": [
+    {
+      "id": "RFMT-001",
+      "name": "Reference-Flow Material Takeover",
+      "status": "accepted",
+      "truthful_technical_name": "Farneback optical-flow still warping with reference-luma material masks and audio-RMS control",
+      "reference_frames_used": 145,
+      "proof": {"name":"hybrid_motion_proof.mp4","sha256":"8badc28f7669180789f3411db0cace6762215fa39aaec24e0149d60aa526f119","duration_seconds":18.0},
+      "rules": [
+        "near-locked composition",
+        "internal motion first",
+        "outgoing portrait collapses into resolved dark reference state before next portrait emerges",
+        "audio RMS modulates deformation and localized warm response",
+        "no claim of learned video diffusion or physically exact simulation"
+      ]
+    }
+  ]
+}

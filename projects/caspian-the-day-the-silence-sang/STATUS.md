@@ -1,22 +1,24 @@
-# Status — CASPIAN — THE DAY THE SILENCE SANG
+# Status — Music-only abstract hybrid
 
-Current stage: `APPROACH_ESTABLISHED`.
+Current stage: `FINAL_QC_PASSED`.
 
-## Locked / complete
-- 180.64 s audio master retained and hashed
-- lyrics status: `present`; current-user text preserved in `LYRICS.md`
-- genre authority: **Reggae Dubstep Mix**, current-user confirmed
-- music structure/cues recorded in `MUSIC_ANALYSIS.json`
-- supplied motion reference analyzed frame-by-frame: 145/145 frames
-- reference-style direction now prioritizes portrait-led sculptural metamorphosis and symbolic lyric interpretation
+Completed:
+- original 180.64 s audio retained as directing source
+- supplied lyrics preserved but explicitly excluded from directing by current user instruction
+- genre authority: Reggae Dubstep Mix
+- supplied 6.041667 s reference analyzed frame-by-frame: 145/145 frames
+- six exact reference anchor stills selected
+- eight generated companion stills accepted in the reference-matched visual language
+- 14-state frame-followable music script locked across frames 0–4334
+- real shot packages built with hashed source/generated media evidence
+- `RFMT-001 Reference-Flow Material Takeover` proofed and locked
+- full hybrid assembly completed
+- actual final export passed decode/black/freeze and creative-reference QC
 
-## Rejected
-- the prior 16-scene literal lyric storyboard/script
-- the generated multi-panel storyboard image; deleted from sandbox and never committed to GitHub
-- any one-lyric-one-object fantasy illustration approach
+Accepted master:
+- `A_Thousand_Doors_HYBRID_v3_720p.mp4`
+- 1280×720 / 24 fps / 4335 video frames
+- container/audio duration 180.640 s
+- SHA-256 `2957c2290ac48a56c9503afe40c086aaca2ea1fd7c246405fd1cca40620f0b38`
 
-## Current visual law
-Use the reference clip's actual language: near-locked portrait composition, identity anchors, slow local material invasion/replacement, dark organic relief, sparse bronze/gold fissure light, and coherent start/middle/end transformations. Lyrics shape emotional/metaphoric states rather than literal scenes.
-
-## Next gate
-Rebuild and lock a new symbolic storyboard + full frame-followable script before generating production images. No shot packages, FX lock, assembly or final QC may advance yet.
+Remaining: durable binary archive only. `archive_complete` remains false.

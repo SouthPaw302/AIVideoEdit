@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.music-analysis.v1",
   "project": "caspian-the-day-the-silence-sang",
-  "title": "CASPIAN — THE DAY THE SILENCE SANG",
+  "title": "Music-only abstract hybrid cut",
   "audio_master": {
     "name": "A Thousand Doors.wav",
     "sha256": "4db0b897005cdf7b0a2d2ed9d85b0c9442ef52dcfdc14f8dd73094f9ce762de1",
@@ -12,10 +12,11 @@
   "analysis_complete": true,
   "lyrics": {
     "status": "present",
-    "source": "current_user_instruction",
     "text_file": "LYRICS.md",
-    "directional_use": "excluded_by_current_user",
-    "note": "Lyrics are archived for provenance but are not used to direct this version of the film."
+    "verified_against": "user_supplied_text",
+    "directing_use": "excluded_by_current_user",
+    "exclusion_source": "current_user_instruction",
+    "exclusion_instruction": "Forget the lyrics. Let's just use the music for the video."
   },
   "genre": {
     "status": "user_confirmed",
@@ -27,29 +28,29 @@
     "tempo_status": "measured",
     "tempo_bpm": 151.999,
     "natural_directing_half_time_bpm": 75.9995,
-    "pulse_description": "Fast nominal pulse with a heavy half-time directing feel; major material motion follows ~76 BPM while fine texture can respond to faster subdivisions.",
-    "meter_or_groove": "Reggae/dub offbeat feel fused with dubstep half-time weight and bass-led section dynamics."
+    "pulse_description": "Fast nominal pulse with heavy half-time directing weight; primary deformation follows roughly 76 BPM while smaller material details may use faster subdivisions.",
+    "meter_or_groove": "Reggae/dub offbeat character fused with dubstep half-time bass weight and section-level pressure changes."
   },
-  "tonal_estimate": {"key_center":"A minor","status":"approximate"},
-  "dynamics": {"approx_peak_dbfs":-3.55,"approx_rms_dbfs":-17.52},
+  "tonal_estimate": {"key_center": "A minor", "status": "approximate"},
+  "dynamics": {"approx_peak_dbfs": -3.55, "approx_rms_dbfs": -17.52},
   "structure_boundaries_seconds": [0.0,12.86,26.98,48.6,71.22,78.3,122.6,134.72,142.73,167.67,180.64],
   "sections": [
-    {"id":"M01","start_seconds":0.0,"end_seconds":12.86,"energy":"restrained / expectant","musical_cues":["quiet opening texture","pulse implied","space before full groove"],"narrative_function":"Hold a dark near-static sculptural field with barely perceptible internal life."},
-    {"id":"M02","start_seconds":12.86,"end_seconds":26.98,"energy":"rising","musical_cues":["first structural lift","texture expansion","arrival momentum"],"narrative_function":"Introduce the first warm fissure and begin localized material invasion/reconstruction."},
-    {"id":"M03","start_seconds":26.98,"end_seconds":48.6,"energy":"first open section","musical_cues":["clearer groove","broader texture field","stronger spatial energy"],"narrative_function":"Expand from one portrait/material state into a richer abstract living surface while preserving a stable compositional anchor."},
-    {"id":"M04","start_seconds":48.6,"end_seconds":71.22,"energy":"steady drive","musical_cues":["groove continuity","moderate bass weight","repeating pulse"],"narrative_function":"Make the material behave more fluidly: ripple, ring, fold, reflect and reorganize without literal scenery."},
-    {"id":"M05","start_seconds":71.22,"end_seconds":78.3,"energy":"brief pocket / setup","musical_cues":["short breathing space","accent details","anticipation"],"narrative_function":"Contract to a smaller, denser visual state and prepare the long high-energy transformation."},
-    {"id":"M06","start_seconds":78.3,"end_seconds":122.6,"energy":"sustained high drive","musical_cues":["strong half-time bass weight","reggae offbeat motion","dubstep escalation","long forward section"],"narrative_function":"Drive the main metamorphic passage: pressure, flex, split, merge and re-form the image through multiple coherent states using hybrid source/generated stills."},
-    {"id":"M07","start_seconds":122.6,"end_seconds":134.72,"energy":"easing / emotional turn","musical_cues":["drive relaxes","more space","memory-like repetition"],"narrative_function":"Slow the transformation and allow visual echoes/afterimages of prior states to coexist in one composition."},
-    {"id":"M08","start_seconds":134.72,"end_seconds":142.73,"energy":"quiet threshold","musical_cues":["motion reduction","suspension","intimacy"],"narrative_function":"Nearly stop the image; preserve only micro-motion, breath and faint warm light."},
-    {"id":"M09","start_seconds":142.73,"end_seconds":167.67,"energy":"suspended then climactic","musical_cues":["tension","returning bass/texture","motif convergence"],"narrative_function":"Rebuild the dark field into its most complete metamorphic state, merging source-frame and generated visual identities into one resolved abstract form."},
-    {"id":"M10","start_seconds":167.67,"end_seconds":180.64,"energy":"resolution","musical_cues":["final cadence","release","ending space"],"narrative_function":"Let the transformed surface release, dim and simplify until one restrained point/fissure of light remains before black."}
+    {"id":"M01","start_seconds":0.0,"end_seconds":12.86,"energy":"restrained / expectant","musical_cues":["quiet opening texture","pulse implied","space before full groove"],"narrative_function":"Establish the supplied reference's dark sculptural field with minimal motion and a legible human anchor."},
+    {"id":"M02","start_seconds":12.86,"end_seconds":26.98,"energy":"rising","musical_cues":["first structural lift","texture expansion","arrival momentum"],"narrative_function":"Introduce the first generated companion state while retaining the reference-derived material language."},
+    {"id":"M03","start_seconds":26.98,"end_seconds":48.6,"energy":"first open groove","musical_cues":["clearer groove","broader texture field","more sustained pulse"],"narrative_function":"Return to a supplied-frame anchor and let internal motion expand without literal narrative imagery."},
+    {"id":"M04","start_seconds":48.6,"end_seconds":71.22,"energy":"steady drive","musical_cues":["groove continuity","moderate bass weight","stable forward energy"],"narrative_function":"Increase gold-fissure contrast and material pressure in a generated state."},
+    {"id":"M05","start_seconds":71.22,"end_seconds":78.3,"energy":"brief pocket / setup","musical_cues":["short breathing space","accent detail","anticipation"],"narrative_function":"Use a supplied anchor as a visual reset before the long high-drive section."},
+    {"id":"M06","start_seconds":78.3,"end_seconds":122.6,"energy":"sustained high drive","musical_cues":["strong half-time bass weight","reggae offbeat motion","dubstep escalation","long forward section"],"narrative_function":"Cycle through multiple generated and supplied portrait-material states; bass pressure increases deformation strength rather than whole-frame shake."},
+    {"id":"M07","start_seconds":122.6,"end_seconds":134.72,"energy":"emotional turn / easing","musical_cues":["drive relaxes","more space","lower pressure"],"narrative_function":"Return to a darker supplied-frame state and reduce visual complexity."},
+    {"id":"M08","start_seconds":134.72,"end_seconds":142.73,"energy":"quiet threshold","musical_cues":["reduction in motion","suspension","breathing room"],"narrative_function":"Collapse toward the resolved dark-material state."},
+    {"id":"M09","start_seconds":142.73,"end_seconds":167.67,"energy":"suspended then climactic","musical_cues":["time-still tension","returning bass/texture","motif convergence"],"narrative_function":"Use the darkest supplied anchor as a midpoint, then emerge into a high-contrast generated kintsugi-like state."},
+    {"id":"M10","start_seconds":167.67,"end_seconds":180.64,"energy":"resolution","musical_cues":["final cadence","release","ending space"],"narrative_function":"Resolve through two generated companion portraits while deformation and warm response taper toward the end."}
   ],
   "directing_rules": [
-    "Music is the sole narrative/timing authority for this version; lyrics are excluded by current-user instruction.",
-    "Use ~76 BPM half-time weight for primary deformation and faster subdivisions only for fine texture.",
-    "Reggae offbeat may create sway, recoil and delayed visual echo; dubstep accents may create localized pressure and depth, never whole-frame shake.",
-    "Major transformations follow phrase/section structure, not every beat.",
-    "Abstract material continuity is more important than literal story imagery."
+    "The lyrics are archived but not used for visual timing, objects, scenes or cues.",
+    "Major state changes follow music sections and long-phrase energy rather than every transient.",
+    "Use roughly 76 BPM half-time weight for primary deformation and bass pressure.",
+    "Reggae offbeat character may affect subtle anticipation and surface response.",
+    "Dubstep bass changes localized deformation intensity; never shake the entire frame."
   ]
 }

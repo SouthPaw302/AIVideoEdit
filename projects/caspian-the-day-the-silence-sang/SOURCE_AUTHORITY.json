@@ -1,6 +1,6 @@
 {
   "schema": "aivideoedit.source-authority.v1",
-  "current_user_instruction": "Use the music and the uploaded 145-frame reference video only as directing authority. Ignore the supplied lyrics for this version. Build a music-driven abstract video from a hybrid of selected still frames extracted from the user's reference video and newly generated companion stills that match the reference's dark sculptural metamorphic visual language.",
+  "current_user_instruction": "Forget the lyrics. Use the music for the video and make the generated images match the uploaded reference video; use a hybrid of created stills and stills extracted from the provided video.",
   "allow": {
     "historical_chats": false,
     "historical_summaries": false,
@@ -10,9 +10,9 @@
     "prior_project_media": false
   },
   "explicit_user_authorizations": [
-    "Selected frames from the current uploaded reference video may be used directly as production stills.",
-    "New generated stills may be created to match the reference video's visual language without copying it verbatim.",
-    "The previously supplied lyrics are archived but excluded from directing authority for this version."
+    "Use frames extracted from the current uploaded reference video as production stills.",
+    "Use newly generated stills matched to the current uploaded reference video's visual language.",
+    "Exclude the supplied lyrics from visual directing authority; retain them only as archived source text."
   ],
   "authorized_sources": [
     {
@@ -22,28 +22,28 @@
       "duration_seconds": 180.64,
       "sample_rate_hz": 48000,
       "channels": 2,
-      "sample_format": "pcm_s16le",
-      "role": "primary_timing_and_energy_authority"
+      "sample_format": "pcm_s16le"
     },
     {
       "kind": "reference_video",
       "name": "None.mp4",
       "sha256": "fb59859fd614fa02ff074cc5f69d4d3499aaff678e49cd430a163dfef7bb33e9",
-      "duration_seconds": 6.0416667,
+      "duration_seconds": 6.041667,
+      "width": 560,
+      "height": 560,
       "fps": 24,
       "frames": 145,
-      "role": "visual_motion_language_and_authorized_source_stills"
-    },
-    {
-      "kind": "lyrics",
-      "name": "CASPIAN — THE DAY THE SILENCE SANG",
-      "path": "LYRICS.md",
-      "role": "archived_excluded_from_current_direction",
-      "source": "current_user_instruction"
+      "role": "visual_motion_language_and_source_frame_authority"
     },
     {
       "kind": "genre_declaration",
       "value": "Reggae Dubstep Mix",
+      "source": "current_user_instruction"
+    },
+    {
+      "kind": "lyrics_archive",
+      "path": "LYRICS.md",
+      "status": "present_but_excluded_from_directing",
       "source": "current_user_instruction"
     }
   ]
