@@ -29,6 +29,7 @@ Permanent-system index only. No active production names or unrelated song links 
 - `general/reusable/painterly-motion/` — living/painterly motion and temporal QC.
 - `general/reusable/memory-atmosphere/` — restoration/atmosphere treatments.
 - `general/reusable/depth-parallax-25d/` — depth-assisted 2.5D motion.
+- `general/reusable/storage/` — GitHub Releases media storage adapter and manifest schema.
 - `general/reusable/tools/` — generic utilities.
 - `general/reusable/SPATIAL_3DGS_SUPERSPLAT.md` — truthful 3DGS doctrine.
 
