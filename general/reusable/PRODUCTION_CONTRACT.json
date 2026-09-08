@@ -32,6 +32,8 @@
     "short_video_rule": "extract_all_frames",
     "long_video_rule": "meaningful_sampling_with_recorded_policy_ranges_and_coverage",
     "images_rule": "inspect_all_supplied_images",
+    "reference_role_rule": "every visual reference must have an explicit authorized production role; style, motion-language, palette, composition, lighting, or effect references teach those properties only and do not authorize reuse of the reference subject, scene, source frames, or source footage as final-picture content unless the current user explicitly authorizes content reuse",
+    "reference_content_reuse_default": "denied_unless_current_user_explicitly_authorizes",
     "no_visual_reference_rule": "before production media generation present at least three materially distinct numbered artistic-rendering routes in chat; each route must include a name, story interpretation, rendering/media treatment, and numbered mini-storyboard of at least three beats/frames; record all routes plus the current user's explicit selection/hybrid/modification in MEDIA_PLAN.json and lock the selection",
     "no_visual_reference_min_options": 3,
     "no_visual_reference_min_storyboard_beats": 3,
@@ -60,6 +62,11 @@
     "metadata_only_shot_packages_forbidden": true,
     "generated_capability_requires_generated_asset_evidence": true,
     "shot_package_requires_media_evidence": true
+  },
+  "creative_acceptance_policy": {
+    "technical_pass_is_not_artistic_acceptance": true,
+    "current_user_rejection_rule": "an explicit current-user rejection of a proof, media set, visual direction, or final export invalidates any prior accepted/final-QC status for the affected material; mark affected assets/proofs rejected, clear dependent acceptance booleans, and roll the project back to the earliest stage that must be redone",
+    "rejected_media_must_not_be_promoted": true
   },
   "required_project_files": [
     "PROJECT.md",
