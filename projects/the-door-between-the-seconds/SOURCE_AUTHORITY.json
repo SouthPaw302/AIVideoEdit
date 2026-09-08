@@ -15,6 +15,6 @@
   "explicit_user_authorizations": [],
   "notes": [
     "Current user requires dense animation-like motion and/or short video inserts rather than low-density still holds.",
-    "Supplied images are not authorized as final-picture content by default; role remains reference-only until explicit current-user authorization."
+    "Current user explicitly selected option 1: the six supplied still images are authorized for direct final-picture reuse and animation, while also serving as character/style/lighting continuity anchors."
   ]
 }
