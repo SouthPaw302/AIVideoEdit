@@ -1,0 +1,10 @@
+{
+  "schema": "aivideoedit.video-script.v1",
+  "locked": false,
+  "based_on_storyboard": false,
+  "target_fps": 24,
+  "duration_seconds": 163.12,
+  "total_frames": 3915,
+  "basis": ["lyrics", "music_analysis"],
+  "entries": []
+}

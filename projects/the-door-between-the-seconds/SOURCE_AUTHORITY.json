@@ -1,0 +1,20 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "allow": {
+    "current_user_instruction": true,
+    "current_chat_audio": true,
+    "current_chat_lyrics": true,
+    "current_chat_images": true,
+    "historical_chats": false,
+    "historical_summaries": false,
+    "unrelated_song_branches": false,
+    "prior_project_storyboards": false,
+    "prior_project_visual_dna": false,
+    "prior_project_media": false
+  },
+  "explicit_user_authorizations": [],
+  "notes": [
+    "Current user requires dense animation-like motion and/or short video inserts rather than low-density still holds.",
+    "Supplied images are not authorized as final-picture content by default; role remains reference-only until explicit current-user authorization."
+  ]
+}

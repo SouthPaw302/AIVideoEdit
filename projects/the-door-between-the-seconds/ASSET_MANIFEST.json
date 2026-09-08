@@ -1,0 +1,6 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "assets": [
+    {"id":"AUDIO_MASTER","kind":"audio","origin":"current_chat","name":"The Door between the Seconds.wav","sha256":"9c70521c67c7c030ef297c4c19cb54adf07dc4600b5022e24c9cedf1a0f5a36c","bytes":31319212,"duration_seconds":163.12,"sample_rate":48000,"channels":2,"status":"received"}
+  ]
+}

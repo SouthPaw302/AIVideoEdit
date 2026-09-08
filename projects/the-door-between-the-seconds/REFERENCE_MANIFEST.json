@@ -1,0 +1,12 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [],
+  "images": [
+    {"id":"R01","name":"ChatGPT Image Sep 8, 2026, 03_35_32 AM (1).png","source":"current_chat","dimensions":[1122,1402],"sha256":"26d9c9d77b71bf6c8fd9de47d2c6b57b4d0e192b535a99f5c1eebb6886e48c4c","authorized_role":"unresolved_reference_only","content_reuse_authorized":false,"analysis_complete":false},
+    {"id":"R02","name":"ChatGPT Image Sep 8, 2026, 03_35_33 AM (2).png","source":"current_chat","dimensions":[1122,1402],"sha256":"7f2b93eb9b5f9ac567d4ca19b1aa4879ae76f8ccfdfe8f5e8416c0ce6676736b","authorized_role":"unresolved_reference_only","content_reuse_authorized":false,"analysis_complete":false},
+    {"id":"R03","name":"ChatGPT Image Sep 8, 2026, 03_35_33 AM (3).png","source":"current_chat","dimensions":[1122,1402],"sha256":"0bd23ef2740b5624cda9cf21e6a650ffaafb15010ec511d346972717a766277f","authorized_role":"unresolved_reference_only","content_reuse_authorized":false,"analysis_complete":false},
+    {"id":"R04","name":"ChatGPT Image Sep 8, 2026, 03_35_33 AM (4).png","source":"current_chat","dimensions":[1122,1402],"sha256":"3c0c4825534d1629d13c99160c3b00bdf65da118a82501badc40194e739f958a","authorized_role":"unresolved_reference_only","content_reuse_authorized":false,"analysis_complete":false},
+    {"id":"R05","name":"ChatGPT Image Sep 8, 2026, 03_35_34 AM (5).png","source":"current_chat","dimensions":[1122,1402],"sha256":"55c86d952ee13f19dd401775b758a8046c66c9b680dc16063df694daf15d2ba1","authorized_role":"unresolved_reference_only","content_reuse_authorized":false,"analysis_complete":false},
+    {"id":"R06","name":"ChatGPT Image Sep 8, 2026, 03_35_35 AM (6).png","source":"current_chat","dimensions":[1122,1402],"sha256":"c01bc50f28d9c3e0e6a2247146ccbfbc4b40474df490a84db6a294670c7d8ace","authorized_role":"unresolved_reference_only","content_reuse_authorized":false,"analysis_complete":false}
+  ]
+}

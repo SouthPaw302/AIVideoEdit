@@ -1,0 +1,28 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": false,
+  "selected_capabilities": [
+    "source_images",
+    "generated_stills",
+    "generated_support_imagery",
+    "living_painting",
+    "layered_composite",
+    "depth_25d",
+    "atmospheric_plate",
+    "transition_media",
+    "conventional_video"
+  ],
+  "temporal_density": {
+    "directive_source": "current_user_instruction",
+    "mode": "dense_animation_like",
+    "target_output_fps": 24,
+    "static_hold_policy": "avoid long single-still holds; every held key image must contain localized/internal motion and/or camera/depth evolution",
+    "keyframe_density_target": "multiple meaningful visual states per second in active passages",
+    "video_insert_policy": "author short rendered/conventional-video inserts at major musical and narrative transitions",
+    "intermediate_frame_policy": "create in-between states and interpolation only as support for real authored motion; interpolation is not a substitute for shot design"
+  },
+  "visual_reference_content_reuse": {
+    "status": "not_authorized",
+    "rule": "supplied stills may teach character/style/lighting/composition but may not be inserted into final picture until current user explicitly authorizes content reuse"
+  }
+}
