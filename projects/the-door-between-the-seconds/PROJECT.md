@@ -7,7 +7,7 @@ Lyrics: supplied in the current chat and preserved in `LYRICS.md`.
 Visual references: six current-chat still images supplied with the song.
 
 ## Current directing instruction
-The edit must have substantially greater temporal density than a slideshow: many more frame iterations, animation-like motion, and short conventional-video inserts where useful. The supplied stills are anchors/reference material, not permission to hold a single image for long static durations.
+The edit must have substantially greater temporal density than a slideshow: many more frame iterations, animation-like motion, and short conventional-video inserts where useful. The supplied stills are anchors and final-picture source material, not permission to hold a single image for long static durations.
 
 ## Reference-content status
-Final-picture reuse of the supplied stills is not yet assumed. Until the user explicitly authorizes content reuse, they are treated as visual/character/style references only, consistent with the current-main reference-role policy.
+The current user explicitly selected option `1`: use the exact six supplied images in the finished video and animate them. They are authorized for final-picture reuse and also remain the character/style/lighting continuity anchors for derived material.
