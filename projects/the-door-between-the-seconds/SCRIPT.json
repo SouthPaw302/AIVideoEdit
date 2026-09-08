@@ -1,10 +1,18 @@
 {
   "schema": "aivideoedit.video-script.v1",
-  "locked": false,
-  "based_on_storyboard": false,
-  "target_fps": 24,
+  "locked": true,
+  "based_on_storyboard": true,
+  "target_fps": 30,
   "duration_seconds": 163.12,
-  "total_frames": 3915,
-  "basis": ["lyrics", "music_analysis"],
-  "entries": []
+  "total_frames": 4894,
+  "basis": ["storyboard","music_analysis","lyrics"],
+  "editorial_scene_count": 27,
+  "entries": [
+    {"shot_id":"INTRO","start_frame":0,"end_frame":239,"story_action":"The woman approaches the inward-looking house beneath the rain.","visual_media":"rainy castle approach; continuous rain, camera drift and reflective shimmer","animation_behavior":"continuous 30fps authored camera motion, rain/embers, light breathing, reflective shimmer and audio-reactive accents; 27 editorial sub-scenes are defined in RENDER_PLAN.json","music_cues":["section-timed edit","audio-reactive envelope"],"lyric_cue":"There is a house beneath the rain / Where every window faces in","transition":"dissolve"},
+    {"shot_id":"VERSE_1","start_frame":240,"end_frame":1319,"story_action":"She leaves deliberate footprints at the threshold; dust, iron and walls begin answering her presence.","visual_media":"window, doorway, footprints, dust-and-iron chamber; 30fps camera/atmosphere motion","animation_behavior":"continuous 30fps authored camera motion, rain/embers, light breathing, reflective shimmer and audio-reactive accents; 27 editorial sub-scenes are defined in RENDER_PLAN.json","music_cues":["section-timed edit","audio-reactive envelope"],"lyric_cue":"footsteps / dust remembers / iron remembers flame / walls pronounce my silence","transition":"pigment"},
+    {"shot_id":"CHORUS_1","start_frame":1320,"end_frame":2099,"story_action":"The sleeping distance is revealed as an endless cathedral-city with a seam of unmade dawn.","visual_media":"endless arches, hard impact cuts, stronger parallax and audio-reactive accents","animation_behavior":"continuous 30fps authored camera motion, rain/embers, light breathing, reflective shimmer and audio-reactive accents; 27 editorial sub-scenes are defined in RENDER_PLAN.json","music_cues":["section-timed edit","audio-reactive envelope"],"lyric_cue":"Do not wake the sleeping distance / There is still an unmade day","transition":"cut/pigment"},
+    {"shot_id":"VERSE_2","start_frame":2100,"end_frame":3300,"story_action":"The hallway has no end; she stops trying to cross it and reaches toward the moment before strangers become friends.","visual_media":"corridor repeats, threshold echoes, mirrors and reaching gesture","animation_behavior":"continuous 30fps authored camera motion, rain/embers, light breathing, reflective shimmer and audio-reactive accents; 27 editorial sub-scenes are defined in RENDER_PLAN.json","music_cues":["section-timed edit","audio-reactive envelope"],"lyric_cue":"quiet thunder / hallway had no end / touched the moment before strangers become friends","transition":"pigment/cut"},
+    {"shot_id":"CHORUS_2","start_frame":3301,"end_frame":4140,"story_action":"Contact folds the distance and the house opens into a city suspended between moon and dawn.","visual_media":"rain-black exterior, footprints-as-path, cathedral-city expansion","animation_behavior":"continuous 30fps authored camera motion, rain/embers, light breathing, reflective shimmer and audio-reactive accents; 27 editorial sub-scenes are defined in RENDER_PLAN.json","music_cues":["section-timed edit","audio-reactive envelope"],"lyric_cue":"repeat chorus","transition":"cut/pigment"},
+    {"shot_id":"OUTRO","start_frame":4141,"end_frame":4893,"story_action":"She descends into the underground sanctuary; silent morning enters without conquering the dark.","visual_media":"crypt, roses, dying candles, slow dawn shafts, reduced motion into final stillness","animation_behavior":"continuous 30fps authored camera motion, rain/embers, light breathing, reflective shimmer and audio-reactive accents; 27 editorial sub-scenes are defined in RENDER_PLAN.json","music_cues":["section-timed edit","audio-reactive envelope"],"lyric_cue":"If the morning finds this house / We were never lost / We were underground","transition":"pigment"}
+  ]
 }
