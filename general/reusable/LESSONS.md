@@ -3,6 +3,9 @@
 - Effects must visibly survive export.
 - Inspect short proofs before scaling.
 - Gate success is not artistic acceptance.
+- A style/motion reference is not automatically final-picture content. Declare the reference role explicitly and do not reuse its subject, scene, frames, or footage unless the current user authorizes content reuse.
+- Generated companion media must expand the visual world; near-duplicates of the reference subject are not meaningful new media.
+- A current-user creative rejection invalidates prior proof/final-QC acceptance for the affected material and requires rollback to the earliest stage that must be rebuilt.
 - Protect real-person identity through all processing.
 - Production music-reactivity should use measured controls.
 - Prefer meaningful internal motion over constant whole-frame shake.
