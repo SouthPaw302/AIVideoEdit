@@ -45,7 +45,9 @@ If generated media capabilities are selected, generated visual assets must actua
 ## Proof/QC law
 Code existence is not proof. Preserve implementation/backend, parameters, proof render, QC, and keep/revise/reject decision. Effects must be visible in proof and survive export. Callable FX must pass the canonical gate/lock. Final acceptance requires inspection of the actual complete export.
 
-Technical export checks cannot compensate for creative absence. A technically valid render still fails if the scripted story media was never created, the shot packages are placeholders, or the finished film does not materially represent the locked script.
+Final-export QC must evaluate **visual progression as well as motion**. A render can contain continuous pixel motion and still fail creatively when subject scale, composition, environment, or shot identity remain substantially unchanged for too long. Build and inspect a time-distributed contact sheet of the complete export; use `general/reusable/tools/export_variety_qc.py` as a warning detector for long runs of compositionally similar samples. A numeric PASS never replaces human contact-sheet inspection, and a REVIEW result requires deliberate creative inspection/revision before final acceptance.
+
+Technical export checks cannot compensate for creative absence. A technically valid render still fails if the scripted story media was never created, the shot packages are placeholders, the finished film does not materially represent the locked script, or visible progression has collapsed into repeated variants of one composition.
 
 ## Persistence
 GitHub is the persistent brain; large binaries may live externally if branch manifests preserve identity/hash/role/recovery location.

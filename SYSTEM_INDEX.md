@@ -28,11 +28,13 @@ Permanent-system index only. No active production names or unrelated song links 
 
 ## Reusable capabilities
 - `general/reusable/fx_v2/` — callable FX runtime/registry/proofs/gate; single runtime authority.
+- `general/reusable/fx_v2/material_reactive_layers.py` — luminance-split living-material motion plus deterministic orbital/audio-reactive ember paths; registry-gated.
 - `general/reusable/generative-engine/` — audio analysis, shared controls, reactive/spatial runtime.
 - `general/reusable/painterly-motion/` — living/painterly motion and temporal QC.
 - `general/reusable/memory-atmosphere/` — restoration/atmosphere treatments.
 - `general/reusable/depth-parallax-25d/` — depth-assisted 2.5D motion.
 - `general/reusable/storage/` — GitHub Releases media storage adapter and manifest schema.
+- `general/reusable/tools/export_variety_qc.py` — complete-export contact-sheet/perceptual warning tool for repeated composition despite continuous motion.
 - `general/reusable/tools/` — generic utilities.
 - `general/reusable/SPATIAL_3DGS_SUPERSPLAT.md` — truthful 3DGS doctrine.
 
