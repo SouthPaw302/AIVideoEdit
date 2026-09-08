@@ -2,8 +2,8 @@
   "schema": "aivideoedit.music-analysis.v1",
   "analysis_complete": true,
   "duration_seconds": 163.12,
-  "lyrics": {"status":"present","source":"current_user_instruction","text_file":"LYRICS.md","directing_use":"included"},
-  "genre": {"status":"inferred","label":"dark industrial rock / gothic electronic","source":"current_user_lyrics_and_arrangement_cues_plus_audio_analysis","confidence":0.86,"evidence":["full industrial percussion","distorted guitar stabs","distorted synth bass","driving industrial beat","heavy synth pads","layered vocal harmonies"]},
+  "lyrics": {"status":"present","source":"current_user_instruction","text_file":"LYRICS.md","directing_use":"required"},
+  "genre": {"status":"confident","label":"dark industrial rock / gothic electronic","source":"current_user_lyrics_and_arrangement_cues_plus_audio_analysis","confidence":0.86,"evidence":["full industrial percussion","distorted guitar stabs","distorted synth bass","driving industrial beat","heavy synth pads","layered vocal harmonies"]},
   "rhythm": {"tempo_status":"measured","tempo_bpm":112.35,"pulse_description":"steady industrial mid-tempo pulse with dynamic dropouts and heavy re-entries","meter_or_groove":"4/4 industrial rock/electronic groove"},
   "sections": [
     {"id":"INTRO","start_seconds":0.0,"end_seconds":8.0,"energy":"low/building","musical_cues":["rain-dark opening texture","first pulse emergence"],"narrative_function":"reveal the house beneath the rain"},
