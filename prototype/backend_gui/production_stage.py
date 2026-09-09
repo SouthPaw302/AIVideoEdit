@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import server as base
 import production_project
 from core_adapter import CORE
 
@@ -14,6 +15,10 @@ def _read_json(path: Path, default):
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return default
+
+
+def _write_json(path: Path, payload: dict) -> None:
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
 def _reference_policy_ok(refs: dict, contract: dict) -> tuple[bool, list[str]]:
@@ -43,11 +48,75 @@ def _reference_policy_ok(refs: dict, contract: dict) -> tuple[bool, list[str]]:
     return not problems, problems
 
 
+def _validate_next_stage(current: dict, target_stage: str) -> None:
+    states = CORE.production_contract().get("states", [])
+    current_stage = current.get("stage")
+    if current_stage not in states:
+        raise RuntimeError(f"current production stage is invalid: {current_stage}")
+    if target_stage not in states:
+        raise ValueError(f"unknown production stage: {target_stage}")
+    index = states.index(current_stage)
+    expected = states[index + 1] if index + 1 < len(states) else None
+    if target_stage != expected:
+        raise ValueError(f"only the next stage may be requested; expected {expected or 'none'}")
+
+
+def _generic_guarded_advance(project_id: str, target_stage: str) -> dict:
+    current = production_project.status(project_id)
+    _validate_next_stage(current, target_stage)
+    engine = Path(current["engine_root"])
+    project_dir = Path(current["project_dir"])
+    state_path = project_dir / "PROJECT_STATE.json"
+    status_path = project_dir / "STATUS.md"
+    old_state = state_path.read_text(encoding="utf-8")
+    old_status = status_path.read_text(encoding="utf-8") if status_path.is_file() else ""
+    state = _read_json(state_path, {})
+    state["stage"] = target_stage
+    state["stage_requested_by"] = "aivideoedit-workstation"
+    state["stage_requested_at"] = base.now()
+    _write_json(state_path, state)
+    status_path.write_text(f"# Status\n\nStage: {target_stage}\n\nPending canonical guard verification.\n", encoding="utf-8")
+    production_project._clear_guard_marker(engine)
+
+    guard = production_project.run_guard(project_id)
+    if not guard.get("guard_pass"):
+        state_path.write_text(old_state, encoding="utf-8")
+        status_path.write_text(old_status, encoding="utf-8")
+        production_project._clear_guard_marker(engine)
+        return {
+            **production_project.status(project_id),
+            "ok": False,
+            "advanced": False,
+            "requested_stage": target_stage,
+            "guard_stdout": guard.get("stdout", ""),
+            "guard_stderr": guard.get("stderr", ""),
+            "error": "canonical production guard rejected the requested stage",
+        }
+
+    status_path.write_text(f"# Status\n\nStage: {target_stage}\n\nCanonical production guard: PASS.\n", encoding="utf-8")
+    commit = production_project._git_commit_paths(engine, [state_path, status_path], f"Advance production to {target_stage}")
+    production_project._write_guard_marker(project_id)
+    return {
+        **production_project.status(project_id),
+        "ok": True,
+        "advanced": True,
+        "requested_stage": target_stage,
+        "commit": commit,
+        "guard_stdout": guard.get("stdout", ""),
+    }
+
+
 def advance(project_id: str, target_stage: str) -> dict:
     current = production_project.status(project_id)
     if not current.get("initialized"):
         raise RuntimeError("production workspace is not initialized")
     target_stage = str(target_stage or "").strip()
+    _validate_next_stage(current, target_stage)
+
+    # Source ingest is the one transition that intentionally refreshes the raw
+    # workstation media manifests before the guard runs.
+    if target_stage == "SOURCE_INGESTED":
+        return production_project.advance(project_id, target_stage)
 
     if target_stage == "REFERENCES_ANALYZED":
         project_dir = Path(current["project_dir"])
@@ -75,14 +144,11 @@ def advance(project_id: str, target_stage: str) -> dict:
                 "REFERENCES_ANALYZED gate is not satisfied: " + ", ".join(missing)
                 + (" · " + "; ".join(detail) if detail else "")
             )
-        # Record the computed policy evidence immediately before guarded advance.
         state["reference_policy_satisfied"] = True
-        state["reference_analysis_complete"] = True
-        state["music_analysis_complete"] = True
-        state_path = project_dir / "PROJECT_STATE.json"
-        state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        _write_json(project_dir / "PROJECT_STATE.json", state)
         engine = Path(current["engine_root"])
-        production_project._git_commit_paths(engine, [state_path], "Record reference-analysis gate evidence")
+        production_project._git_commit_paths(engine, [project_dir / "PROJECT_STATE.json"], "Record reference-analysis gate evidence")
         production_project._clear_guard_marker(engine)
 
-    return production_project.advance(project_id, target_stage)
+    # All later transitions preserve the already-analyzed canonical manifests.
+    return _generic_guarded_advance(project_id, target_stage)
