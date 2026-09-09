@@ -3,65 +3,76 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AIVideoEdit Alpha</title>
+  <title>AIVideoEdit Studio Alpha</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <main class="shell">
     <header class="topbar">
-      <div><p class="eyebrow">AIVideoEdit</p><h1>Production Backend <span>ALPHA</span></h1><p class="sub">Single-user media workstation: browser control, local workers, persistent workspace.</p></div>
-      <div id="health" class="status">Connecting…</div>
+      <div><p class="eyebrow">AIVideoEdit</p><h1>Studio <span>ALPHA</span></h1><p class="sub">Add your media, preview it, prepare it, and check it before you keep working.</p></div>
+      <div id="health" class="status">Starting…</div>
     </header>
 
+    <section class="steps" aria-label="Workflow">
+      <div class="step active"><b>1</b><span><strong>Add media</strong><small>Choose a video, song, or image</small></span></div>
+      <div class="step"><b>2</b><span><strong>Prepare</strong><small>Make preview copies and review frames</small></span></div>
+      <div class="step"><b>3</b><span><strong>Check</strong><small>Verify the media before continuing</small></span></div>
+    </section>
+
     <section class="toolbar card">
-      <label>Project<select id="project"></select></label>
-      <button id="newProject" class="secondary">New project</button>
-      <label class="file-picker">Media<input id="mediaFile" type="file" accept="video/*,audio/*,image/*" /></label>
-      <button id="upload">Ingest media</button>
+      <label>Current project<select id="project"></select></label>
+      <button id="newProject" class="secondary">+ New project</button>
+      <label class="file-picker">Add media<input id="mediaFile" type="file" accept="video/*,audio/*,image/*" /></label>
+      <button id="upload">Add to project</button>
       <span id="uploadMessage" class="muted"></span>
+    </section>
+
+    <section id="nextAction" class="next-action card">
+      <div><p class="eyebrow">Next step</p><h2 id="nextActionTitle">Add a media file</h2><p id="nextActionText" class="muted">Choose a file above to begin.</p></div>
+      <button id="nextActionButton" hidden>Continue</button>
     </section>
 
     <section class="workspace">
       <aside class="card assets-panel">
-        <div class="section-head"><div><h2>Assets</h2><p class="muted">Backend workspace</p></div><button id="refreshAssets" class="icon secondary">↻</button></div>
+        <div class="section-head"><div><h2>Your media</h2><p class="muted">Everything in this project</p></div><button id="refreshAssets" class="icon secondary" title="Refresh">↻</button></div>
         <div id="assets" class="assets"></div>
       </aside>
 
       <section class="card inspector">
-        <div id="emptyInspector" class="empty"><h2>Select an asset</h2><p class="muted">Preview, process and QC it here.</p></div>
+        <div id="emptyInspector" class="empty"><h2>Pick something to work on</h2><p class="muted">Select a file from “Your media” to preview and prepare it.</p></div>
         <div id="assetInspector" hidden>
-          <div class="section-head"><div><h2 id="assetTitle">Asset</h2><p id="assetSubtitle" class="muted"></p></div><span id="qcBadge" class="pill">UNCHECKED</span></div>
+          <div class="section-head"><div><h2 id="assetTitle">Media</h2><p id="assetSubtitle" class="muted"></p></div><span id="qcBadge" class="pill">NOT CHECKED</span></div>
           <div id="preview" class="preview"></div>
           <div id="metadata" class="metadata"></div>
           <div class="operation-bar">
-            <button data-op="make_proxy">Create proxy</button>
-            <button data-op="extract_review_frames" class="secondary">Review frames</button>
-            <button data-op="qc_media" class="secondary">Run QC</button>
-            <button id="deleteAsset" class="danger">Delete</button>
+            <button data-op="make_proxy">Make preview copy</button>
+            <button data-op="extract_review_frames" class="secondary">Create review snapshots</button>
+            <button data-op="qc_media" class="secondary">Check media</button>
+            <button id="deleteAsset" class="danger">Remove</button>
           </div>
+          <p class="helper">A preview copy is smaller and easier to play. Review snapshots help you scan the whole video. “Check media” verifies the file can be decoded cleanly.</p>
           <div id="reviewFrames" class="review-frames"></div>
         </div>
       </section>
     </section>
 
-    <section class="lower-grid">
-      <article class="card">
-        <div class="section-head"><div><h2>Runtime</h2><p class="muted">Worker dependencies on this machine.</p></div><button id="runJob" class="secondary">Test FFmpeg</button></div>
-        <div id="capabilities" class="stack"></div>
-      </article>
-      <article class="card jobs-card">
-        <div class="section-head"><div><h2>Jobs</h2><p class="muted">Persistent local execution history.</p></div><button id="refreshJobs" class="icon secondary">↻</button></div>
-        <div id="jobs" class="jobs"></div>
-      </article>
-    </section>
+    <details class="advanced card">
+      <summary><span><strong>System activity</strong><small>Runtime details and background jobs</small></span><span>Show</span></summary>
+      <section class="lower-grid">
+        <article>
+          <div class="section-head"><div><h2>Computer tools</h2><p class="muted">What this machine can use.</p></div><button id="runJob" class="secondary">Test video engine</button></div>
+          <div id="capabilities" class="stack"></div>
+        </article>
+        <article class="jobs-card">
+          <div class="section-head"><div><h2>Background work</h2><p class="muted">Recent tasks and their status.</p></div><button id="refreshJobs" class="icon secondary">↻</button></div>
+          <div id="jobs" class="jobs"></div>
+        </article>
+      </section>
+    </details>
 
-    <section class="card architecture">
-      <h2>Alpha Stack</h2>
-      <div class="flow"><span>Browser GUI</span><b>→</b><span>Python API</span><b>→</b><span>FFmpeg Workers</span><b>→</b><span>Persistent Workspace</span><b>→</b><span>QC</span></div>
-      <p class="muted">GitHub remains source control. Runtime media stays out of Git and GitHub Actions storage.</p>
-    </section>
+    <footer class="footer"><span>Runs on this device</span><span>Media stays out of GitHub Actions storage</span><span>Single-user alpha</span></footer>
   </main>
-  <dialog id="projectDialog"><form method="dialog"><h3>New project</h3><label>Name<input id="newProjectName" placeholder="My video" maxlength="100" /></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="createProject" value="default">Create</button></div></form></dialog>
+  <dialog id="projectDialog"><form method="dialog"><h3>Create a project</h3><p class="muted">Give this video project a simple name.</p><label>Project name<input id="newProjectName" placeholder="My music video" maxlength="100" /></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="createProject" value="default">Create project</button></div></form></dialog>
   <script src="/app.js"></script>
 </body>
 </html>
