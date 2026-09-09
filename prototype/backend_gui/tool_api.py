@@ -12,6 +12,7 @@ from typing import Callable
 import server as base
 import storage
 import production_project
+import production_analysis
 from core_adapter import CORE
 
 
@@ -27,6 +28,8 @@ TOOL_SCHEMAS = [
     {"name": "production.initialize", "description": "Create an isolated canonical song-branch production workspace for a browser project and validate INITIALIZED state with the current-main guard.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "production.status", "description": "Show canonical production branch, stage, next stage, manifest sync state and guard status for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "production.sync_assets", "description": "Sync workstation media into canonical ASSET_MANIFEST.json and REFERENCE_MANIFEST.json without advancing production stage or claiming analysis.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.analyze", "description": "Queue evidence-producing reference extraction and music signal analysis for a SOURCE_INGESTED project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.set_music_context", "description": "Record explicit lyrics status/text and genre authority. This does not infer or fabricate either value.", "input_schema": {"type": "object", "required": ["project_id", "lyrics_status", "genre"], "properties": {"project_id": {"type": "string"}, "lyrics_status": {"type": "string", "enum": ["present", "absent"]}, "genre": {"type": "string"}, "lyrics_text": {"type": "string"}, "directing_use": {"type": "string"}}}},
     {"name": "production.guard", "description": "Re-run the bootstrapped current-main production guard for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "production.advance", "description": "Request exactly the next canonical production stage. The change is rolled back unless the current-main production guard passes.", "input_schema": {"type": "object", "required": ["project_id", "target_stage"], "properties": {"project_id": {"type": "string"}, "target_stage": {"type": "string"}}}},
     {"name": "media.list", "description": "List registered media assets for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
@@ -137,6 +140,22 @@ def call_tool(
         project_id = str(args.get("project_id") or "")
         _project(project_id)
         return production_project.sync_assets(project_id)
+    if name == "production.analyze":
+        project_id = str(args.get("project_id") or "")
+        _project(project_id)
+        job = base.add_job("analyze_production", project_id, None)
+        dispatch_job(job)
+        return {"job": job}
+    if name == "production.set_music_context":
+        project_id = str(args.get("project_id") or "")
+        _project(project_id)
+        return production_analysis.set_music_context(
+            project_id,
+            lyrics_status=str(args.get("lyrics_status") or ""),
+            genre=str(args.get("genre") or ""),
+            lyrics_text=str(args.get("lyrics_text") or ""),
+            directing_use=str(args.get("directing_use") or "default"),
+        )
     if name == "production.guard":
         project_id = str(args.get("project_id") or "")
         _project(project_id)
