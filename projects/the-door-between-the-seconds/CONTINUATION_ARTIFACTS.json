@@ -1,0 +1,41 @@
+{
+  "schema": "door-seconds.continuation-artifacts.v1",
+  "note": "Large render/contact-sheet binaries are indexed by hash here. Text/code/QC records are synchronized to the song branch; binary promotion should use the repository storage contract rather than silently bloating git history.",
+  "artifacts": [
+    {
+      "path": "production/final_pandora_v2_gate/pandora_picture_960x540_v3patch.mp4",
+      "bytes": 45031560,
+      "sha256": "522a252ab90a8b6352e64fcb5377d3674ba63cf91bf5208b0d8721a73b306a6a",
+      "storage": "local_current_session",
+      "repo_binary_committed": false
+    },
+    {
+      "path": "production/final_pandora_v2_gate/The_Door_Between_the_Seconds_PANDORA_FINAL_540p_v3patch_mux.mp4",
+      "bytes": 50419396,
+      "sha256": "8000c074d56b702ead67b058a09f930086475550f5fa634520f7c24a3e8954a5",
+      "storage": "local_current_session",
+      "repo_binary_committed": false
+    },
+    {
+      "path": "production/final_pandora_v2_gate/FINAL_VARIETY_3S_v3patch.jpg",
+      "bytes": 1601769,
+      "sha256": "5c93a5435b79701a2a090daaa0bf7599995ef53045c94f71671f24db6114ec2e",
+      "storage": "local_current_session",
+      "repo_binary_committed": false
+    },
+    {
+      "path": "production/final_pandora_v2_gate/FINAL_VARIETY_5S_v3patch.jpg",
+      "bytes": 951109,
+      "sha256": "372670b0663e5084fd91c04bac0acf3f4ec1950c7010fe0b033aca9bd9cd52ed",
+      "storage": "local_current_session",
+      "repo_binary_committed": false
+    },
+    {
+      "path": "proofs/current_gate/SHOT_MIDPOINT_CONTACT_SHEET.jpg",
+      "bytes": 600030,
+      "sha256": "af08c004d59e98a42733b12eb8d1f89b7a44590164356d7dc785a4c15d1dc3d7",
+      "storage": "local_current_session",
+      "repo_binary_committed": false
+    }
+  ]
+}

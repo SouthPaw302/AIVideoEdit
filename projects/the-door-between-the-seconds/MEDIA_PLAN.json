@@ -13,11 +13,12 @@
     "authorized_source_images",
     "recovered_generated_stills",
     "accepted_motion_benchmark_video",
+    "living_painting",
     "layered_composite",
-    "living_still_fx",
     "reflection_echo",
     "perspective_transform",
     "atmospheric_plate",
+    "reactive_plate",
     "transition_media",
     "conventional_video"
   ],
@@ -41,10 +42,35 @@
     "outro": "crypt sanctuary and silent morning"
   },
   "final_qc": [
+    "current narrative guard",
+    "current production guard",
+    "FX V2 precompile lock and live verify",
+    "shot-package media evidence hashes",
+    "shot proof decode/motion QC",
     "decode and black-frame scan",
     "freeze scan",
+    "cold-open audio-silence verification",
     "time-distributed contact sheet",
     "export_variety_qc",
-    "manual cinematic scan requested by current user"
-  ]
+    "manual cinematic scan"
+  ],
+  "canonical_fx_runtime": {
+    "runtime": "aivideoedit-fx-v2",
+    "manifest": "FX_REQUIREMENTS.fx.json",
+    "lock": "fx.lock.json",
+    "required_ids": [
+      "FX2-MOTION-002",
+      "FX2-ATM-001",
+      "FX2-ATM-002",
+      "FX2-FIRE-002",
+      "FX2-LIGHT-001",
+      "FX2-LIGHT-002"
+    ],
+    "rule": "renderer must verify current fx.lock.json before emitting production frames"
+  },
+  "capability_proof": {
+    "reflection_echo": "proofs/current_gate/CAPABILITY_PROOF.json",
+    "perspective_transform": "proofs/current_gate/CAPABILITY_PROOF.json",
+    "transition_media": "proofs/current_gate/CAPABILITY_PROOF.json"
+  }
 }

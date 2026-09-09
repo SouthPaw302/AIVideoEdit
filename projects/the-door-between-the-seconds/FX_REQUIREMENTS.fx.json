@@ -1,0 +1,37 @@
+{
+  "project": "the-door-between-the-seconds-pandora-v2",
+  "runtime": "aivideoedit-fx-v2",
+  "seed": 302,
+  "render_inputs": [
+    "projects/the-door-between-the-seconds/production/build_pandora_final.py",
+    "projects/the-door-between-the-seconds/SCRIPT.json",
+    "projects/the-door-between-the-seconds/MEDIA_PLAN.json"
+  ],
+  "effects": [
+    {
+      "id": "FX2-MOTION-002",
+      "strength": 0.32
+    },
+    {
+      "id": "FX2-ATM-001",
+      "strength": 0.45
+    },
+    {
+      "id": "FX2-ATM-002",
+      "strength": 0.58
+    },
+    {
+      "id": "FX2-FIRE-002",
+      "strength": 0.55
+    },
+    {
+      "id": "FX2-LIGHT-001",
+      "strength": 0.6
+    },
+    {
+      "id": "FX2-LIGHT-002",
+      "strength": 0.55
+    }
+  ],
+  "transitions": []
+}
