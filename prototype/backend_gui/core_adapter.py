@@ -1,26 +1,30 @@
 #!/usr/bin/env python3
 """Adapter between the workstation stack and the canonical AIVideoEdit OS.
 
-The adapter never copies production authority into the prototype. It asks the
-repository bootstrap to materialize the exact current `main` OS under
-`.aivideoedit/os/`, then reads contracts/capabilities/effects from that
-attested snapshot.
+The workstation is not a production branch and must never pretend to be one.
+This adapter installs a clean current `main` checkout into the runtime cache,
+boots/attests that checkout as `main`, and reads canonical contracts,
+capabilities and effects from its `.aivideoedit/os` snapshot.
 """
 from __future__ import annotations
 
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
-REPO_ROOT = HERE.parents[1]
-SESSION_ROOT = REPO_ROOT / ".aivideoedit"
+HOST_REPO = HERE.parents[1]
+HOST_BOOTSTRAP = HOST_REPO / "bootstrap.py"
+RUNTIME = Path(os.environ.get("AIVE_RUNTIME", str(HERE / ".runtime"))).resolve()
+CORE_HOME = RUNTIME / "core"
+CORE_REPO = CORE_HOME / "repo"
+SESSION_ROOT = CORE_REPO / ".aivideoedit"
 OS_ROOT = SESSION_ROOT / "os"
 SESSION_FILE = SESSION_ROOT / "session.json"
-BOOTSTRAP = REPO_ROOT / "bootstrap.py"
 CONTRACT = Path("general/reusable/PRODUCTION_CONTRACT.json")
 CAPABILITY_MATRIX = Path("general/reusable/MEDIA_CAPABILITY_MATRIX.json")
 FX_REGISTRY = Path("general/reusable/fx_v2/registry.json")
@@ -33,13 +37,10 @@ def _read_json(path: Path, default: Any) -> Any:
         return default
 
 
-def _git_branch() -> str:
-    explicit = os.environ.get("AIVIDEOEDIT_BRANCH")
-    if explicit:
-        return explicit
+def _host_branch() -> str:
     try:
         proc = subprocess.run(
-            ["git", "-C", str(REPO_ROOT), "branch", "--show-current"],
+            ["git", "-C", str(HOST_REPO), "branch", "--show-current"],
             capture_output=True,
             text=True,
             timeout=5,
@@ -49,40 +50,89 @@ def _git_branch() -> str:
             return proc.stdout.strip()
     except Exception:
         pass
-    return "prototype/backend-gui"
+    return "unknown"
+
+
+def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        cmd,
+        cwd=str(cwd),
+        capture_output=True,
+        text=True,
+        timeout=timeout,
+        check=False,
+    )
 
 
 class CoreAdapter:
     def __init__(self) -> None:
-        self.repo_root = REPO_ROOT
+        self.host_repo = HOST_REPO
+        self.core_repo = CORE_REPO
         self.os_root = OS_ROOT
         self.session_file = SESSION_FILE
 
+    def _install_core(self, offline: bool) -> subprocess.CompletedProcess:
+        CORE_HOME.mkdir(parents=True, exist_ok=True)
+        if CORE_REPO.exists():
+            shutil.rmtree(CORE_REPO)
+
+        if offline:
+            if not shutil.which("git"):
+                raise RuntimeError("offline core loading requires git")
+            proc = _run(
+                ["git", "clone", "--no-hardlinks", str(HOST_REPO), str(CORE_REPO)],
+                HOST_REPO,
+            )
+            if proc.returncode != 0:
+                return proc
+            target = "origin/main"
+            check = _run(["git", "rev-parse", "--verify", target], CORE_REPO, timeout=30)
+            if check.returncode != 0:
+                target = "main"
+            return _run(["git", "checkout", "--detach", target], CORE_REPO, timeout=60)
+
+        if not HOST_BOOTSTRAP.is_file():
+            raise RuntimeError("host bootstrap.py not found")
+        return _run(
+            [sys.executable, str(HOST_BOOTSTRAP), "install", "--workspace", str(CORE_REPO)],
+            HOST_REPO,
+        )
+
     def bootstrap(self, offline: bool = False) -> dict:
-        if not BOOTSTRAP.is_file():
-            return {"ok": False, "error": "bootstrap.py not found", "repo_root": str(REPO_ROOT)}
+        try:
+            install = self._install_core(offline)
+        except Exception as exc:
+            return {"ok": False, "bootstrapped": False, "error": str(exc), **self.status()}
+        if install.returncode != 0:
+            return {
+                "ok": False,
+                "bootstrapped": False,
+                "phase": "install",
+                "stdout": (install.stdout or "")[-4000:],
+                "stderr": (install.stderr or "")[-4000:],
+                **self.status(),
+            }
+
+        bootstrap = CORE_REPO / "bootstrap.py"
+        if not bootstrap.is_file():
+            return {"ok": False, "bootstrapped": False, "error": "installed main lacks bootstrap.py", **self.status()}
+
         cmd = [
             sys.executable,
-            str(BOOTSTRAP),
+            str(bootstrap),
             "boot",
             "--repo-root",
-            str(REPO_ROOT),
+            str(CORE_REPO),
             "--branch",
-            _git_branch(),
+            "main",
         ]
         if offline:
             cmd.append("--offline")
-        proc = subprocess.run(
-            cmd,
-            cwd=str(REPO_ROOT),
-            capture_output=True,
-            text=True,
-            timeout=180,
-            check=False,
-        )
+        proc = _run(cmd, CORE_REPO, timeout=300)
         result = {
             "ok": proc.returncode == 0,
             "returncode": proc.returncode,
+            "phase": "boot",
             "stdout": (proc.stdout or "")[-4000:],
             "stderr": (proc.stderr or "")[-4000:],
         }
@@ -96,12 +146,15 @@ class CoreAdapter:
         fx = _read_json(self.os_root / FX_REGISTRY, {}) if self.os_root.is_dir() else {}
         capabilities = self._records(matrix, ("capabilities", "media_capabilities", "items"))
         effects = self._records(fx, ("effects", "fx", "registry", "items"))
-        bootstrapped = bool(session) and self.os_root.is_dir()
+        bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == "main"
         return {
             "ok": True,
             "bootstrapped": bootstrapped,
-            "repo_root": str(self.repo_root),
-            "branch": _git_branch(),
+            "mode": "isolated-canonical-main",
+            "host_repo": str(self.host_repo),
+            "host_branch": _host_branch(),
+            "core_repo": str(self.core_repo) if self.core_repo.exists() else None,
+            "core_branch": session.get("branch"),
             "os_root": str(self.os_root) if bootstrapped else None,
             "main_commit": session.get("os_main_commit"),
             "session_id": session.get("session_id"),
@@ -123,14 +176,12 @@ class CoreAdapter:
                     return value
                 if isinstance(value, dict):
                     return [dict({"id": k}, **(v if isinstance(v, dict) else {"value": v})) for k, v in value.items()]
-            # Some registries are keyed directly by capability/effect id.
-            if payload and all(isinstance(k, str) for k in payload):
-                records = []
-                for key, value in payload.items():
-                    if isinstance(value, dict):
-                        records.append(dict({"id": key}, **value))
-                if records:
-                    return records
+            records = []
+            for key, value in payload.items():
+                if isinstance(value, dict):
+                    records.append(dict({"id": key}, **value))
+            if records:
+                return records
         return []
 
     def production_contract(self) -> dict:
