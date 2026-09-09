@@ -3,6 +3,7 @@ let currentAssetId = null;
 let assetsCache = [];
 let systemState = null;
 let coreState = null;
+let productionState = null;
 
 async function api(url, options) {
   const res = await fetch(url, options);
@@ -10,6 +11,14 @@ async function api(url, options) {
   try { body = await res.json(); } catch (_) {}
   if (!res.ok) throw new Error(body?.error || `${res.status} ${res.statusText}`);
   return body;
+}
+async function toolCall(name, arguments_ = {}) {
+  const d = await api('/api/tools/call', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({name, arguments: arguments_})
+  });
+  return d.result;
 }
 const esc = v => String(v ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const projectId = () => $('project').value || 'prototype';
@@ -50,6 +59,7 @@ async function loadCoreStatus(){
     $('coreStatus').textContent='Start the full stack to use the canonical production engine.';
     $('coreDetails').textContent='';
   }
+  updateProductionButtons();
 }
 async function bootstrapCore(){
   $('loadCore').disabled=true;
@@ -64,7 +74,58 @@ async function bootstrapCore(){
     $('coreDetails').textContent=e.message;
   } finally {
     $('loadCore').disabled=false;
-    await Promise.allSettled([loadCoreStatus(),loadSystem()]);
+    await Promise.allSettled([loadCoreStatus(),loadSystem(),loadProductionStatus()]);
+  }
+}
+function updateProductionButtons(){
+  const initialized=!!productionState?.initialized;
+  $('startProjectEngine').hidden=initialized;
+  $('verifyProjectEngine').hidden=!initialized;
+  $('startProjectEngine').disabled=!coreState?.bootstrapped;
+}
+async function loadProductionStatus(){
+  if(!$('project').value){ return; }
+  try {
+    productionState = await toolCall('production.status',{project_id:projectId()});
+    if(!productionState.initialized){
+      $('productionStatus').textContent=coreState?.bootstrapped?'This project is not connected to the production engine yet.':'Load the canonical core first, then start the project engine.';
+    } else if(productionState.guard_pass){
+      $('productionStatus').textContent=`Production workspace ready · ${productionState.stage||'INITIALIZED'} · verified against main ${String(productionState.main_commit||'').slice(0,12)}.`;
+    } else {
+      $('productionStatus').textContent=`Production workspace exists at ${productionState.stage||'unknown'} but needs verification.`;
+    }
+  } catch(e) {
+    productionState=null;
+    $('productionStatus').textContent=e.message;
+  }
+  updateProductionButtons();
+}
+async function startProjectEngine(){
+  $('startProjectEngine').disabled=true;
+  $('productionStatus').textContent='Creating an isolated production workspace and verifying it…';
+  try {
+    if(!coreState?.bootstrapped){ await bootstrapCore(); }
+    if(!coreState?.bootstrapped) throw new Error('Canonical core is not loaded.');
+    productionState=await toolCall('production.initialize',{project_id:projectId()});
+    $('productionStatus').textContent=productionState.guard_pass?`Production workspace ready · ${productionState.stage||'INITIALIZED'}.`:'Production workspace was created but the canonical guard did not pass.';
+  } catch(e){
+    $('productionStatus').textContent=e.message;
+  } finally {
+    $('startProjectEngine').disabled=false;
+    await loadProductionStatus();
+  }
+}
+async function verifyProjectEngine(){
+  $('verifyProjectEngine').disabled=true;
+  $('productionStatus').textContent='Running the canonical production guard…';
+  try {
+    productionState=await toolCall('production.guard',{project_id:projectId()});
+    $('productionStatus').textContent=productionState.guard_pass?`Verified · ${productionState.stage||'INITIALIZED'} · guard PASS.`:`Verification failed. ${productionState.stderr||'Project state needs attention.'}`;
+  } catch(e){
+    $('productionStatus').textContent=e.message;
+  } finally {
+    $('verifyProjectEngine').disabled=false;
+    await loadProductionStatus();
   }
 }
 async function loadSystem(){
@@ -159,18 +220,20 @@ async function deleteAsset(){
 }
 async function createProject(){
   const name=$('newProjectName').value.trim(); if(!name)return;
-  const d=await api('/api/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})}); await loadProjects(d.project.id); $('newProjectName').value=''; await refreshAll();
+  const d=await api('/api/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})}); await loadProjects(d.project.id); $('newProjectName').value=''; productionState=null; await refreshAll();
 }
-async function refreshAll(){ await Promise.allSettled([loadAssets(),loadJobs(),loadSystem(),loadCoreStatus()]); }
+async function refreshAll(){ await Promise.allSettled([loadAssets(),loadJobs(),loadSystem(),loadCoreStatus(),loadProductionStatus()]); }
 
 $('upload').addEventListener('click',uploadMedia);
-$('project').addEventListener('change',()=>{currentAssetId=null;refreshAll();});
+$('project').addEventListener('change',()=>{currentAssetId=null;productionState=null;refreshAll();});
 $('refreshAssets').addEventListener('click',loadAssets);
 $('refreshJobs').addEventListener('click',loadJobs);
 $('runJob').addEventListener('click',()=>api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'ffmpeg_check',project:projectId()})}).then(loadJobs));
 $('prepareProject').addEventListener('click',prepareProject);
 $('syncProject').addEventListener('click',syncProject);
 $('loadCore').addEventListener('click',bootstrapCore);
+$('startProjectEngine').addEventListener('click',startProjectEngine);
+$('verifyProjectEngine').addEventListener('click',verifyProjectEngine);
 $('deleteAsset').addEventListener('click',deleteAsset);
 document.querySelectorAll('[data-op]').forEach(b=>b.addEventListener('click',()=>operation(b.dataset.op)));
 $('newProject').addEventListener('click',()=>$('projectDialog').showModal());
