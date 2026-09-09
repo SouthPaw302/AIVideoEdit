@@ -29,7 +29,11 @@
 
     <section id="nextAction" class="next-action card">
       <div><p class="eyebrow">Next step</p><h2 id="nextActionTitle">Add a media file</h2><p id="nextActionText" class="muted">Choose a file above to begin.</p></div>
-      <button id="nextActionButton" hidden>Continue</button>
+      <div class="next-buttons">
+        <button id="prepareProject" class="secondary">Prepare whole project</button>
+        <button id="syncProject" class="secondary" hidden>Back up project</button>
+        <button id="nextActionButton" hidden>Continue</button>
+      </div>
     </section>
 
     <section class="workspace">
@@ -62,6 +66,7 @@
         <article>
           <div class="section-head"><div><h2>Computer tools</h2><p class="muted">What this machine can use.</p></div><button id="runJob" class="secondary">Test video engine</button></div>
           <div id="capabilities" class="stack"></div>
+          <div id="systemStats" class="system-stats muted"></div>
         </article>
         <article class="jobs-card">
           <div class="section-head"><div><h2>Background work</h2><p class="muted">Recent tasks and their status.</p></div><button id="refreshJobs" class="icon secondary">↻</button></div>
