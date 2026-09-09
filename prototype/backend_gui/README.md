@@ -2,9 +2,9 @@
 
 This branch proves the smallest useful version of the proposed architecture:
 
-Browser GUI -> local/backend API -> worker -> temporary disk -> future object storage
+Browser GUI -> backend API -> media worker -> local workspace -> future object storage
 
-GitHub remains source control and project history. The prototype does not use GitHub Actions artifacts or caches.
+GitHub remains source control and project history. Runtime media is stored under `.runtime/`, ignored by Git, and the prototype does not use GitHub Actions artifacts or caches.
 
 ## Run
 
@@ -20,16 +20,19 @@ Then open:
 http://127.0.0.1:8080
 ```
 
-No Python framework is required. The server uses only the Python standard library.
+The server binds to `0.0.0.0` by default, so another device on the same LAN can use the machine's LAN IP. No Python web framework is required; the server uses only the Python standard library.
 
 ## What it currently proves
 
 - one browser GUI can control the backend
-- the backend reports installed runtime capabilities
-- jobs can be submitted through an API
-- a background worker thread can execute a local FFmpeg task
-- job state is visible in the GUI
-- execution happens on the server instead of GitHub Actions
+- the backend reports installed Python, FFmpeg, FFprobe, and Git capabilities
+- media can upload directly from the browser into backend storage
+- upload bytes are streamed to disk instead of being held as a GitHub artifact
+- job and asset state persist locally across page refreshes/restarts
+- FFprobe extracts real media metadata
+- FFmpeg generates a preview thumbnail
+- background worker jobs execute outside GitHub Actions
+- runtime files are explicitly excluded from Git
 
 ## Prototype API
 
@@ -37,26 +40,18 @@ No Python framework is required. The server uses only the Python standard librar
 - `GET /api/capabilities`
 - `GET /api/jobs`
 - `POST /api/jobs`
+- `GET /api/assets`
+- `POST /api/assets?filename=<name>&project=<project>`
+- `GET /media/<asset-id>/thumbnail.jpg`
 
-Example job body:
+## Sandbox proof
 
-```json
-{
-  "type": "ffmpeg_check",
-  "project": "prototype/backend-gui"
-}
-```
+The prototype was executed in the development sandbox with FFmpeg 7.1.5. A generated H.264/AAC MP4 was uploaded through `/api/assets`; the backend stored it, detected 320x180 video, 2.0 second duration, H.264 video and AAC audio, generated a JPEG thumbnail, and completed the analysis job successfully.
 
-## Intentionally not added yet
+## Next milestones
 
-- database
-- authentication
-- persistent queue
-- object storage credentials
-- upload/download media pipeline
-- real render commands
-- OpenCV worker
-- AI inference worker
-- deployment automation
-
-Those belong after the basic architecture is proven on a real machine.
+- S3-compatible object storage adapter (Cloudflare R2/B2/S3)
+- project directories/manifests instead of a single asset list
+- actual render commands and progress reporting
+- OpenCV worker operations
+- authentication before exposure beyond a trusted LAN
