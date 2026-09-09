@@ -1,27 +1,24 @@
-# The Door Between the Seconds — Visual Story
+# The Door Between the Seconds — Pandora Canon Story
 
-The house is not abandoned. It is waiting.
+## Canon
+The protagonist is **Pandora the Vampire**. The song's lyrics are the narrative spine. Existing gothic chamber, window, corridor, cathedral, crypt, rain, rose and portrait media remain valid production material and are reassigned to explicit story beats rather than discarded.
 
-A woman in burgundy velvet crosses a rain-black courtyard toward a house whose windows do not look out at the world; every window turns inward, toward the house's own hidden center. She is not arriving for the first time. The rain knows her. The iron knows her. The dust has kept the shape of every hand that touched the place before her.
+## Cold open — before the music
+Before the first note, Pandora exists in six seconds of near-silence inside her candlelit moon-window chamber. Rain moves on the glass. Candlelight breathes. Her hair and fabric barely move. Pandora does not perform for the camera; she waits, remembers, and finally turns toward the interior. The music begins only after the audience has met her.
 
-At the threshold she deliberately leaves wet footprints behind. They are not evidence for another person. They are a message to the darkness itself: I was here. I entered willingly.
+## The house beneath the rain
+The music reveals that Pandora's chamber belongs to a larger impossible house beneath the rain. Every window faces inward because the house is a machine of memory. Pandora crosses the threshold deliberately and leaves wet evidence behind so the darkness itself will know she returned. Dust, iron, candle flame, books and walls respond before she touches them. The building remembers her because she has passed through it across more than one lifetime.
 
-Inside, the house answers without speaking. Candle flames lean toward her. Reflections lag half a second behind. Dust lifts from books before her fingers reach them. Iron catches ember-colored light as if remembering an older fire. The walls seem to shape her silence into a name she has never heard spoken aloud.
+## The sleeping distance
+As the first chorus opens, the intimate room expands into cathedral scale. The "sleeping distance" is the supernatural interval between people, choices, centuries and identities. Pandora sees moonlight, arches and a pale seam of day that has not yet happened. The night is not her enemy; as a vampire it is her native element, but the lyric asks her not to trap herself inside it. The unmade day is the possibility that something in her can still change.
 
-The deeper she walks, the less ordinary distance becomes. Corridors lengthen when she looks forward and shorten when she turns away. Rooms repeat with small differences. Mirrors show gestures she has not made yet. The house is built around an interval rather than a place — the thin, impossible space between one second and the next.
+## Quiet thunder and the endless hallway
+The second verse destabilizes the house. Silent thunder gathers overhead. Gravity loosens. Corridors repeat. Pandora sees an unreachable presence at the end of a hallway that lengthens whenever she advances. She stops trying to defeat physical distance. Instead she reaches toward the instant before two lives are assigned their roles. Her hand touches a moment rather than a body: the second before stranger becomes friend, enemy becomes beloved, or immortal becomes capable of change.
 
-In the first great hall she sees the sleeping distance: endless arches, black water on stone, and a pale line of dawn so far away that it seems to belong to another life. She understands the warning in the song. Do not wake it. Do not ask the night to remain. The night is not the enemy; it is the passage protecting an unmade day.
+## The second chorus
+Contact changes the geometry. The same rooms and windows seen earlier return, but they no longer imprison Pandora. Reflections become passages; departures become paths; the cathedral distance begins folding toward her. Existing chamber imagery functions here as a visual refrain, proving that the world has changed even when Pandora returns to familiar spaces.
 
-Then she sees someone at the end of a hallway that has no end. At first the figure is only a human-shaped absence between candles. Each step toward it creates more hallway. She stops trying to cross the distance and reaches out instead. The house folds the missing space. For one instant her hand touches another hand — not yet lover, not yet friend, not yet stranger. It is the moment before the world decides what two people will become.
+## Underground morning
+Pandora does not escape upward. She descends into the crypt-sanctuary beneath ordinary time. Roses, exhausted candles, wet stone and old memory surround her. Morning enters without violence. It does not destroy the vampire or conquer the night; it reaches the underground world quietly. Pandora finally understands the lyric: they were never lost. What could not exist in ordinary time survived below it, inside the door between seconds.
 
-That contact changes the house. Rain begins to fall indoors. Reflections become doorways. Candlelight runs upward along the walls. The grand corridors open into an impossible city of bridges and arches suspended between moonlight and dawn. She walks through it without fear now, no longer trapped inside memory but moving through it.
-
-By the final chorus, the house is no longer a prison. It is revealed as a shelter built beneath ordinary time, a place where unfinished choices were kept alive rather than lost. Every departure stored another possible morning. Every silence preserved a word that could still be spoken.
-
-At last she descends instead of escaping upward. Beneath the house lies the true sanctuary: stone, roses, exhausted candles, dust, old inscriptions, and the quiet remnants of everyone who passed through before. The first morning light enters from far above without fanfare. It does not conquer the dark. It simply reaches it.
-
-She reclines beneath that light and finally understands the footprints, the iron, the dust, the endless hallway and the unmade day.
-
-They were never lost.
-
-They were underground — beneath the rain, beneath the hours, in the door between the seconds — waiting for morning to become possible.
+The final image holds Pandora in near-stillness beneath first light: still a vampire, still of the night, but no longer trapped by it.
