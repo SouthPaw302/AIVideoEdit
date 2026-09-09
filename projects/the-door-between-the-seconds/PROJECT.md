@@ -2,12 +2,14 @@
 
 Production branch: `song/the-door-between-the-seconds`
 
-Source master: `The Door between the Seconds.wav` supplied in the current chat.
-Lyrics: supplied in the current chat and preserved in `LYRICS.md`.
-Visual references: six current-chat still images supplied with the song.
+## Current canon
+- Subject/protagonist: **Pandora the Vampire**.
+- Lyrics are directing authority and define the story spine.
+- A **6.0-second silent cold open** introduces Pandora before the song begins.
+- Song audio begins at video time **00:06.000**; target video duration is **169.12 seconds**.
+- Existing recovered visual media remains authorized and must be worked into the script rather than discarded.
+- The six original supplied stills remain authorized for direct final-picture reuse and continuity anchoring.
+- The repeated chamber/window look is a recurring memory-home motif, not the entire film.
 
-## Current directing instruction
-The edit must have substantially greater temporal density than a slideshow: many more frame iterations, animation-like motion, and short conventional-video inserts where useful. The supplied stills are anchors and final-picture source material, not permission to hold a single image for long static durations.
-
-## Reference-content status
-The current user explicitly selected option `1`: use the exact six supplied images in the finished video and animate them. They are authorized for final-picture reuse and also remain the character/style/lighting continuity anchors for derived material.
+## Motion and pacing
+Dense animation-like motion remains required: per-frame camera motion, rain, candle/light changes, reflections, temporal echoes, mirrored/repeated architecture, petals/embers/haze, perspective/gravity shifts and stronger scale changes on choruses.
