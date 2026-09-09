@@ -7,7 +7,13 @@ on:
       - 'general/reusable/fx_v2/verify_living_still_fx.py'
       - 'general/reusable/fx_v2/registry.json'
       - '.github/workflows/verify-living-still-fx.yml'
-  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'general/reusable/fx_v2/living_still_fx.py'
+      - 'general/reusable/fx_v2/verify_living_still_fx.py'
+      - 'general/reusable/fx_v2/registry.json'
+      - '.github/workflows/verify-living-still-fx.yml'
 
 permissions:
   contents: read
