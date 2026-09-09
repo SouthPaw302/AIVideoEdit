@@ -25,8 +25,10 @@ TOOL_SCHEMAS = [
     {"name": "project.status", "description": "Return project media and QC summary.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "project.prepare", "description": "Queue all missing preview, review-frame and QC work for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "production.initialize", "description": "Create an isolated canonical song-branch production workspace for a browser project and validate INITIALIZED state with the current-main guard.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
-    {"name": "production.status", "description": "Show canonical production branch, stage and guard status for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.status", "description": "Show canonical production branch, stage, next stage, manifest sync state and guard status for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.sync_assets", "description": "Sync workstation media into canonical ASSET_MANIFEST.json and REFERENCE_MANIFEST.json without advancing production stage or claiming analysis.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "production.guard", "description": "Re-run the bootstrapped current-main production guard for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.advance", "description": "Request exactly the next canonical production stage. The change is rolled back unless the current-main production guard passes.", "input_schema": {"type": "object", "required": ["project_id", "target_stage"], "properties": {"project_id": {"type": "string"}, "target_stage": {"type": "string"}}}},
     {"name": "media.list", "description": "List registered media assets for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "media.prepare", "description": "Queue one preparation operation for a registered asset.", "input_schema": {"type": "object", "required": ["asset_id", "operation"], "properties": {"asset_id": {"type": "string"}, "operation": {"type": "string", "enum": ["make_proxy", "extract_review_frames", "qc_media"]}}}},
     {"name": "storage.status", "description": "Show local/external storage configuration.", "input_schema": {"type": "object", "properties": {}}},
@@ -131,10 +133,19 @@ def call_tool(
         project_id = str(args.get("project_id") or "")
         _project(project_id)
         return production_project.status(project_id)
+    if name == "production.sync_assets":
+        project_id = str(args.get("project_id") or "")
+        _project(project_id)
+        return production_project.sync_assets(project_id)
     if name == "production.guard":
         project_id = str(args.get("project_id") or "")
         _project(project_id)
         return production_project.run_guard(project_id)
+    if name == "production.advance":
+        project_id = str(args.get("project_id") or "")
+        target_stage = str(args.get("target_stage") or "")
+        _project(project_id)
+        return production_project.advance(project_id, target_stage)
     if name == "media.list":
         project_id = str(args.get("project_id") or "")
         _project(project_id)
