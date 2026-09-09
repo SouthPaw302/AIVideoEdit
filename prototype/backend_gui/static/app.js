@@ -2,6 +2,7 @@ const $ = id => document.getElementById(id);
 let currentAssetId = null;
 let assetsCache = [];
 let systemState = null;
+let coreState = null;
 
 async function api(url, options) {
   const res = await fetch(url, options);
@@ -32,11 +33,46 @@ async function loadCapabilities(){
   const caps=d.capabilities.map(c=>c.name==='Python'&&!c.available?{...c,available:true,detail:'Running this app'}:c);
   $('capabilities').innerHTML=caps.map(c=>`<div class="cap"><span class="dot ${c.available?'ok':'bad'}"></span><div><strong>${esc(c.name)}</strong><small>${esc(c.available?'Ready':c.detail)}</small></div></div>`).join('');
 }
+async function loadCoreStatus(){
+  try {
+    coreState = await api('/api/core');
+    if(coreState.bootstrapped){
+      $('coreStatus').textContent='Current-main production engine loaded and attested.';
+      $('coreDetails').textContent=`main ${String(coreState.main_commit||'').slice(0,12)} · ${coreState.capability_count||0} media capabilities · ${coreState.fx_count||0} reusable FX · guard ${coreState.guard_result||'unknown'}`;
+      $('loadCore').textContent='Refresh current core';
+    } else {
+      $('coreStatus').textContent='Canonical production engine is not loaded yet.';
+      $('coreDetails').textContent='Load it to use the production contracts, capability matrix and reusable FX from current main.';
+      $('loadCore').textContent='Load current core';
+    }
+  } catch (_) {
+    coreState = null;
+    $('coreStatus').textContent='Start the full stack to use the canonical production engine.';
+    $('coreDetails').textContent='';
+  }
+}
+async function bootstrapCore(){
+  $('loadCore').disabled=true;
+  $('coreStatus').textContent='Loading and verifying current main…';
+  $('coreDetails').textContent='This can take a moment the first time.';
+  try {
+    const d=await api('/api/core/bootstrap',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+    coreState=d;
+    $('uploadMessage').textContent=d.bootstrapped?'Production engine loaded.':'Production engine could not be loaded.';
+  } catch(e) {
+    $('coreStatus').textContent='Production engine needs attention.';
+    $('coreDetails').textContent=e.message;
+  } finally {
+    $('loadCore').disabled=false;
+    await Promise.allSettled([loadCoreStatus(),loadSystem()]);
+  }
+}
 async function loadSystem(){
   try {
     systemState = await api('/api/system');
     const s = systemState;
-    $('systemStats').textContent = `${s.workers} workers · ${s.queue_depth} waiting · ${formatBytes(s.disk?.free)} free · storage: ${s.storage?.mode || 'local'}`;
+    const coreLabel=s.core?.bootstrapped?'core loaded':'core not loaded';
+    $('systemStats').textContent = `${s.workers} workers · ${s.queue_depth} waiting · ${formatBytes(s.disk?.free)} free · storage: ${s.storage?.mode || 'local'} · ${coreLabel} · ${s.tool_count||0} agent tools`;
     $('syncProject').hidden = !s.storage?.configured;
   } catch (_) {
     systemState = null;
@@ -125,7 +161,7 @@ async function createProject(){
   const name=$('newProjectName').value.trim(); if(!name)return;
   const d=await api('/api/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})}); await loadProjects(d.project.id); $('newProjectName').value=''; await refreshAll();
 }
-async function refreshAll(){ await Promise.allSettled([loadAssets(),loadJobs(),loadSystem()]); }
+async function refreshAll(){ await Promise.allSettled([loadAssets(),loadJobs(),loadSystem(),loadCoreStatus()]); }
 
 $('upload').addEventListener('click',uploadMedia);
 $('project').addEventListener('change',()=>{currentAssetId=null;refreshAll();});
@@ -134,10 +170,11 @@ $('refreshJobs').addEventListener('click',loadJobs);
 $('runJob').addEventListener('click',()=>api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'ffmpeg_check',project:projectId()})}).then(loadJobs));
 $('prepareProject').addEventListener('click',prepareProject);
 $('syncProject').addEventListener('click',syncProject);
+$('loadCore').addEventListener('click',bootstrapCore);
 $('deleteAsset').addEventListener('click',deleteAsset);
 document.querySelectorAll('[data-op]').forEach(b=>b.addEventListener('click',()=>operation(b.dataset.op)));
 $('newProject').addEventListener('click',()=>$('projectDialog').showModal());
 $('createProject').addEventListener('click',e=>{e.preventDefault();createProject().then(()=>$('projectDialog').close());});
 
-(async()=>{ await Promise.allSettled([loadHealth(),loadCapabilities(),loadProjects(),loadSystem()]); await refreshAll(); })();
+(async()=>{ await Promise.allSettled([loadHealth(),loadCapabilities(),loadProjects(),loadSystem(),loadCoreStatus()]); await refreshAll(); })();
 setInterval(()=>refreshAll(),2500);
