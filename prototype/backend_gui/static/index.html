@@ -61,12 +61,16 @@
     </section>
 
     <details class="advanced card">
-      <summary><span><strong>System activity</strong><small>Runtime details and background jobs</small></span><span>Show</span></summary>
+      <summary><span><strong>System activity</strong><small>Runtime details, canonical engine and background jobs</small></span><span>Show</span></summary>
       <section class="lower-grid">
         <article>
           <div class="section-head"><div><h2>Computer tools</h2><p class="muted">What this machine can use.</p></div><button id="runJob" class="secondary">Test video engine</button></div>
           <div id="capabilities" class="stack"></div>
           <div id="systemStats" class="system-stats muted"></div>
+          <div class="core-box">
+            <div class="section-head"><div><h2>Production engine</h2><p id="coreStatus" class="muted">Checking canonical AIVideoEdit core…</p></div><button id="loadCore" class="secondary">Load current core</button></div>
+            <div id="coreDetails" class="system-stats muted"></div>
+          </div>
         </article>
         <article class="jobs-card">
           <div class="section-head"><div><h2>Background work</h2><p class="muted">Recent tasks and their status.</p></div><button id="refreshJobs" class="icon secondary">↻</button></div>
@@ -75,7 +79,7 @@
       </section>
     </details>
 
-    <footer class="footer"><span>Runs on this device</span><span>Media stays out of GitHub Actions storage</span><span>Single-user alpha</span></footer>
+    <footer class="footer"><span>Runs on this device</span><span>Canonical core comes from current main</span><span>Media stays out of GitHub Actions storage</span></footer>
   </main>
   <dialog id="projectDialog"><form method="dialog"><h3>Create a project</h3><p class="muted">Give this video project a simple name.</p><label>Project name<input id="newProjectName" placeholder="My music video" maxlength="100" /></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="createProject" value="default">Create project</button></div></form></dialog>
   <script src="/app.js"></script>
