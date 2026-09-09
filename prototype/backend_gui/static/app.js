@@ -32,6 +32,7 @@ function formatDuration(n) { n=Number(n); if(!Number.isFinite(n)) return '—'; 
 function formatTime(ts) { return ts ? new Date(ts*1000).toLocaleTimeString() : '—'; }
 function friendlyJob(type){ return ({analyze_media:'Reading media',make_proxy:'Making preview copy',extract_review_frames:'Creating review snapshots',qc_media:'Checking media',ffmpeg_check:'Testing video engine',sync_project:'Backing up project'})[type] || type.replaceAll('_',' '); }
 function friendlyStatus(status){ return ({complete:'Done',failed:'Needs attention',running:'Working',queued:'Waiting',interrupted:'Stopped'})[status] || status; }
+function friendlyStage(stage){ return ({INITIALIZED:'Project started',SOURCE_INGESTED:'Source media added',REFERENCES_ANALYZED:'Media analyzed',APPROACH_ESTABLISHED:'Creative approach set',STORYBOARD_LOCKED:'Storyboard locked',SHOT_PACKAGES_BUILT:'Shots prepared',SHOT_PROOFS_ACCEPTED:'Shot proofs accepted',FX_LOCKED:'Effects locked',ASSEMBLED:'Video assembled',FINAL_QC_PASSED:'Final check passed',ARCHIVED:'Archived'})[stage] || String(stage||'').replaceAll('_',' ').toLowerCase(); }
 
 async function loadHealth(){
   try { await api('/api/health'); $('health').textContent='Ready'; $('health').classList.add('online'); }
@@ -81,7 +82,10 @@ function updateProductionButtons(){
   const initialized=!!productionState?.initialized;
   $('startProjectEngine').hidden=initialized;
   $('verifyProjectEngine').hidden=!initialized;
+  $('syncProductionAssets').hidden=!initialized;
+  $('advanceProduction').hidden=!initialized || !productionState?.next_stage;
   $('startProjectEngine').disabled=!coreState?.bootstrapped;
+  if(productionState?.next_stage){ $('advanceProduction').textContent=`Continue: ${friendlyStage(productionState.next_stage)}`; }
 }
 async function loadProductionStatus(){
   if(!$('project').value){ return; }
@@ -89,10 +93,10 @@ async function loadProductionStatus(){
     productionState = await toolCall('production.status',{project_id:projectId()});
     if(!productionState.initialized){
       $('productionStatus').textContent=coreState?.bootstrapped?'This project is not connected to the production engine yet.':'Load the canonical core first, then start the project engine.';
-    } else if(productionState.guard_pass){
-      $('productionStatus').textContent=`Production workspace ready · ${productionState.stage||'INITIALIZED'} · verified against main ${String(productionState.main_commit||'').slice(0,12)}.`;
     } else {
-      $('productionStatus').textContent=`Production workspace exists at ${productionState.stage||'unknown'} but needs verification.`;
+      const media = productionState.workstation_asset_sync_complete ? ` · ${productionState.workstation_ready_asset_count}/${productionState.workstation_asset_count} media synced` : ' · media not synced';
+      const verify = productionState.guard_pass ? 'verified' : 'needs verification';
+      $('productionStatus').textContent=`${friendlyStage(productionState.stage||'INITIALIZED')} · ${verify}${media}${productionState.next_stage?` · next: ${friendlyStage(productionState.next_stage)}`:''}.`;
     }
   } catch(e) {
     productionState=null;
@@ -107,11 +111,44 @@ async function startProjectEngine(){
     if(!coreState?.bootstrapped){ await bootstrapCore(); }
     if(!coreState?.bootstrapped) throw new Error('Canonical core is not loaded.');
     productionState=await toolCall('production.initialize',{project_id:projectId()});
-    $('productionStatus').textContent=productionState.guard_pass?`Production workspace ready · ${productionState.stage||'INITIALIZED'}.`:'Production workspace was created but the canonical guard did not pass.';
+    $('productionStatus').textContent=productionState.guard_pass?`Production workspace ready · ${friendlyStage(productionState.stage||'INITIALIZED')}.`:'Production workspace was created but the canonical guard did not pass.';
   } catch(e){
     $('productionStatus').textContent=e.message;
   } finally {
     $('startProjectEngine').disabled=false;
+    await loadProductionStatus();
+  }
+}
+async function syncProductionAssets(){
+  $('syncProductionAssets').disabled=true;
+  $('productionStatus').textContent='Syncing workstation media into the canonical project manifests…';
+  try {
+    productionState=await toolCall('production.sync_assets',{project_id:projectId()});
+    $('productionStatus').textContent=`Synced ${productionState.asset_count||0} media items to the production engine. Run Verify project before relying on this state.`;
+  } catch(e){
+    $('productionStatus').textContent=e.message;
+  } finally {
+    $('syncProductionAssets').disabled=false;
+    await loadProductionStatus();
+  }
+}
+async function advanceProduction(){
+  if(!productionState?.next_stage) return;
+  const target=productionState.next_stage;
+  $('advanceProduction').disabled=true;
+  $('productionStatus').textContent=`Checking whether the project can continue to ${friendlyStage(target)}…`;
+  try {
+    const result=await toolCall('production.advance',{project_id:projectId(),target_stage:target});
+    productionState=result;
+    if(result.advanced){
+      $('productionStatus').textContent=`Continued to ${friendlyStage(result.stage)}. Canonical guard PASS.`;
+    } else {
+      $('productionStatus').textContent=`Could not continue. ${result.guard_stderr||result.error||'Required production evidence is still missing.'}`;
+    }
+  } catch(e){
+    $('productionStatus').textContent=e.message;
+  } finally {
+    $('advanceProduction').disabled=false;
     await loadProductionStatus();
   }
 }
@@ -120,7 +157,7 @@ async function verifyProjectEngine(){
   $('productionStatus').textContent='Running the canonical production guard…';
   try {
     productionState=await toolCall('production.guard',{project_id:projectId()});
-    $('productionStatus').textContent=productionState.guard_pass?`Verified · ${productionState.stage||'INITIALIZED'} · guard PASS.`:`Verification failed. ${productionState.stderr||'Project state needs attention.'}`;
+    $('productionStatus').textContent=productionState.guard_pass?`Verified · ${friendlyStage(productionState.stage||'INITIALIZED')} · guard PASS.`:`Verification failed. ${productionState.stderr||'Project state needs attention.'}`;
   } catch(e){
     $('productionStatus').textContent=e.message;
   } finally {
@@ -233,6 +270,8 @@ $('prepareProject').addEventListener('click',prepareProject);
 $('syncProject').addEventListener('click',syncProject);
 $('loadCore').addEventListener('click',bootstrapCore);
 $('startProjectEngine').addEventListener('click',startProjectEngine);
+$('syncProductionAssets').addEventListener('click',syncProductionAssets);
+$('advanceProduction').addEventListener('click',advanceProduction);
 $('verifyProjectEngine').addEventListener('click',verifyProjectEngine);
 $('deleteAsset').addEventListener('click',deleteAsset);
 document.querySelectorAll('[data-op]').forEach(b=>b.addEventListener('click',()=>operation(b.dataset.op)));
