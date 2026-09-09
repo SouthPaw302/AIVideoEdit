@@ -18,6 +18,7 @@ from urllib.parse import urlparse
 import server as base
 import storage
 import tool_api
+import production_analysis
 from core_adapter import CORE
 
 WORKER_COUNT = max(1, int(os.environ.get("AIVE_WORKERS", "2")))
@@ -48,6 +49,33 @@ def sync_project_job(job: dict) -> None:
         )
 
 
+def analyze_production_job(job: dict) -> None:
+    project_id = job["project"]
+    base.update_job(job["id"], status="running", started_at=base.now(), progress=5, result="Starting canonical reference analysis…")
+
+    def progress(index: int, total: int, message: str) -> None:
+        pct = min(90, 10 + int(index / max(1, total) * 75))
+        base.update_job(job["id"], progress=pct, result=message[:600])
+
+    try:
+        result = production_analysis.analyze_project(project_id, progress=progress)
+        needs = []
+        if not result.get("lyrics_status_resolved"):
+            needs.append("lyrics status")
+        if not result.get("genre_authority_resolved"):
+            needs.append("genre")
+        suffix = f" · needs {', '.join(needs)}" if needs else ""
+        base.update_job(
+            job["id"], status="complete", progress=100,
+            result=f"Reference/music analysis complete{suffix}", finished_at=base.now(),
+        )
+    except Exception as exc:
+        base.update_job(
+            job["id"], status="failed", progress=100,
+            result=str(exc)[:600], finished_at=base.now(),
+        )
+
+
 def execute_job(job: dict) -> None:
     handlers = {
         "ffmpeg_check": lambda: base.run_ffmpeg_check(job["id"]),
@@ -56,6 +84,7 @@ def execute_job(job: dict) -> None:
         "extract_review_frames": lambda: base.extract_review_frames(job["id"], job["asset_id"]),
         "qc_media": lambda: base.qc_asset(job["id"], job["asset_id"]),
         "sync_project": lambda: sync_project_job(job),
+        "analyze_production": lambda: analyze_production_job(job),
     }
     fn = handlers.get(job.get("type"))
     if not fn:
@@ -154,7 +183,7 @@ def _json_body(handler) -> dict:
 
 
 class StackHandler(base.Handler):
-    server_version = "AIVideoEditAlphaStack/0.4"
+    server_version = "AIVideoEditAlphaStack/0.5"
 
     def do_GET(self):
         path = urlparse(self.path).path
@@ -216,7 +245,6 @@ class StackHandler(base.Handler):
 
 if __name__ == "__main__":
     base.load_state()
-    # Replace the stable server's thread-per-job dispatch with the bounded queue.
     base.dispatch_job = dispatch_job
     start_workers()
     host = os.environ.get("AIVE_HOST", "0.0.0.0")
