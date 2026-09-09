@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """AIVideoEdit alpha stack runtime.
 
-Layers a bounded worker queue, project-wide orchestration and optional external
-storage mirroring on top of the stable alpha server without changing the
-existing server/API contract.
+Layers a bounded worker queue, project-wide orchestration, canonical-core
+adapter, provider-neutral Tool API and optional external storage mirroring on
+top of the stable alpha server.
 """
 from __future__ import annotations
 
+import json
 import os
 import queue
 import shutil
@@ -16,6 +17,8 @@ from urllib.parse import urlparse
 
 import server as base
 import storage
+import tool_api
+from core_adapter import CORE
 
 WORKER_COUNT = max(1, int(os.environ.get("AIVE_WORKERS", "2")))
 JOB_QUEUE: queue.Queue[dict] = queue.Queue()
@@ -114,6 +117,8 @@ def system_snapshot() -> dict:
         "stored_bytes": stored_bytes,
         "disk": {"total": usage.total, "used": usage.used, "free": usage.free},
         "storage": storage.status(),
+        "core": CORE.status(),
+        "tool_count": len(tool_api.schemas()),
     }
 
 
@@ -138,8 +143,18 @@ def prepare_project(project_id: str) -> list[dict]:
     return created
 
 
+def _json_body(handler) -> dict:
+    length = int(handler.headers.get("Content-Length", "0") or 0)
+    raw = handler.rfile.read(length) if length else b"{}"
+    try:
+        data = json.loads(raw.decode("utf-8"))
+        return data if isinstance(data, dict) else {}
+    except Exception as exc:
+        raise ValueError(f"invalid JSON: {exc}")
+
+
 class StackHandler(base.Handler):
-    server_version = "AIVideoEditAlphaStack/0.3"
+    server_version = "AIVideoEditAlphaStack/0.4"
 
     def do_GET(self):
         path = urlparse(self.path).path
@@ -147,10 +162,38 @@ class StackHandler(base.Handler):
             return self.send_json(system_snapshot())
         if path == "/api/storage":
             return self.send_json(storage.status())
+        if path == "/api/core":
+            return self.send_json(CORE.status())
+        if path == "/api/tools":
+            return self.send_json({"schema": "aivideoedit.tools.v1", "tools": tool_api.schemas()})
         return super().do_GET()
 
     def do_POST(self):
         path = urlparse(self.path).path
+        if path == "/api/core/bootstrap":
+            try:
+                data = _json_body(self)
+                result = CORE.bootstrap(bool(data.get("offline", False)))
+                return self.send_json(result, 200 if result.get("bootstrapped") else 409)
+            except Exception as exc:
+                return self.send_json({"error": str(exc)}, 400)
+        if path == "/api/tools/call":
+            try:
+                data = _json_body(self)
+                name = str(data.get("name") or "")
+                if not name:
+                    return self.send_json({"error": "tool name is required"}, 400)
+                result = tool_api.call_tool(
+                    name,
+                    data.get("arguments") if isinstance(data.get("arguments"), dict) else {},
+                    dispatch_job=dispatch_job,
+                    prepare_project=prepare_project,
+                )
+                return self.send_json({"ok": True, "tool": name, "result": result})
+            except ValueError as exc:
+                return self.send_json({"ok": False, "error": str(exc)}, 400)
+            except Exception as exc:
+                return self.send_json({"ok": False, "error": str(exc)}, 500)
         if path.startswith("/api/projects/") and path.endswith("/prepare"):
             parts = path.strip("/").split("/")
             project_id = parts[2]
@@ -183,4 +226,8 @@ if __name__ == "__main__":
     print(f"Workspace: {base.RUNTIME}")
     print(f"Workers: {WORKER_COUNT}")
     print(f"Storage: {storage.status()['detail']}")
+    print(f"Canonical core: {'loaded' if CORE.status().get('bootstrapped') else 'not bootstrapped'}")
+    print(f"Tool API: {len(tool_api.schemas())} tools")
+    if os.environ.get("AIVE_CORE_AUTOBOOT", "").strip().lower() in {"1", "true", "yes"}:
+        threading.Thread(target=CORE.bootstrap, name="aive-core-bootstrap", daemon=True).start()
     ThreadingHTTPServer((host, port), StackHandler).serve_forever()
