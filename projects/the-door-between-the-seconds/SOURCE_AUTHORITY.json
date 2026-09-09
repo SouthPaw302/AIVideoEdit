@@ -1,20 +1,23 @@
 {
-  "schema": "aivideoedit.source-authority.v1",
+  "schema": "aivideoedit.source-authority.v2",
   "allow": {
     "current_user_instruction": true,
     "current_chat_audio": true,
     "current_chat_lyrics": true,
     "current_chat_images": true,
+    "recovered_current_project_media": true,
     "historical_chats": false,
-    "historical_summaries": false,
-    "unrelated_song_branches": false,
-    "prior_project_storyboards": false,
-    "prior_project_visual_dna": false,
-    "prior_project_media": false
+    "unrelated_song_branches": false
   },
-  "explicit_user_authorizations": [],
+  "explicit_user_authorizations": [
+    "Pandora the Vampire is the subject/protagonist",
+    "lyrics must drive storyboard and script",
+    "add silent Pandora intro before music",
+    "do not scrap existing media; work it into the script",
+    "continue through final render without pausing; perform agent cinematic scan after render"
+  ],
   "notes": [
-    "Current user requires dense animation-like motion and/or short video inserts rather than low-density still holds.",
-    "Current user explicitly selected option 1: the six supplied still images are authorized for direct final-picture reuse and animation, while also serving as character/style/lighting continuity anchors."
+    "The six originally supplied stills remain authorized for direct final-picture reuse.",
+    "Recovered generated imagery and accepted 8-second motion benchmark are authorized continuation material for this same production."
   ]
 }
