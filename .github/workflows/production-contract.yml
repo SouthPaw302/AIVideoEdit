@@ -1,6 +1,8 @@
 name: AIVideoEdit Production Contract
 
 on:
+  push:
+    branches: ["main", "song/**"]
   pull_request:
   workflow_dispatch:
 
