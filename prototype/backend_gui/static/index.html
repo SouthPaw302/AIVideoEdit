@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIVideoEdit Prototype</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AIVideoEdit</p>
+        <h1>Backend Control Prototype</h1>
+        <p class="sub">One browser GUI controlling one local/server-side worker runtime.</p>
+      </div>
+      <div id="health" class="status">Connecting…</div>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Runtime</h2>
+        <p class="muted">What this machine can execute right now.</p>
+        <div id="capabilities" class="stack"></div>
+      </article>
+
+      <article class="card">
+        <h2>Worker Test</h2>
+        <p class="muted">Queue a backend job and let the server execute it outside GitHub Actions.</p>
+        <label>Project
+          <input id="project" value="prototype/backend-gui" />
+        </label>
+        <button id="runJob">Run FFmpeg worker check</button>
+        <p id="jobMessage" class="muted"></p>
+      </article>
+    </section>
+
+    <section class="card jobs-card">
+      <div class="section-head">
+        <div>
+          <h2>Job Queue</h2>
+          <p class="muted">In-memory for this prototype. Production will persist this state.</p>
+        </div>
+        <button id="refresh" class="secondary">Refresh</button>
+      </div>
+      <div id="jobs" class="jobs"></div>
+    </section>
+
+    <section class="card architecture">
+      <h2>Prototype Flow</h2>
+      <div class="flow">
+        <span>Browser GUI</span><b>→</b><span>Backend API</span><b>→</b><span>Worker</span><b>→</b><span>Local temp disk</span><b>→</b><span>Future object storage</span>
+      </div>
+      <p class="muted">GitHub remains source control and project history; it is not the render machine or media warehouse.</p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
