@@ -1,6 +1,13 @@
 name: AIVideoEdit Main System Verification
 
 on:
+  push:
+    branches: ["main", "fx/canonical-v2"]
+    paths:
+      - "general/reusable/**"
+      - "projects/PROJECT_TEMPLATE.md"
+      - "SYSTEM_INDEX.md"
+      - ".github/workflows/fx-v2-precompile-gate.yml"
   pull_request:
     paths:
       - "general/reusable/**"
