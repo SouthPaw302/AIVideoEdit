@@ -8,6 +8,7 @@ later stage advancement.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -87,6 +88,49 @@ def _git_commit_paths(engine: Path, paths: list[Path], message: str) -> str | No
         raise RuntimeError((commit.stderr or commit.stdout or "git commit failed")[-1200:])
     sha = _run(["git", "rev-parse", "HEAD"], engine, timeout=20)
     return sha.stdout.strip() if sha.returncode == 0 else None
+
+
+def _sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _head(engine: Path) -> str | None:
+    proc = _run(["git", "rev-parse", "HEAD"], engine, timeout=20)
+    return proc.stdout.strip() if proc.returncode == 0 and proc.stdout.strip() else None
+
+
+def _guard_marker_path(engine: Path) -> Path:
+    return engine / ".aivideoedit" / "workstation_guard.json"
+
+
+def _clear_guard_marker(engine: Path) -> None:
+    try:
+        _guard_marker_path(engine).unlink()
+    except FileNotFoundError:
+        pass
+
+
+def _write_guard_marker(project_id: str) -> None:
+    engine = _engine_root(project_id)
+    project_dir = _canonical_project_dir(engine, project_id)
+    state_path = project_dir / "PROJECT_STATE.json"
+    if not engine.is_dir() or not state_path.is_file():
+        return
+    marker = {
+        "schema": "aivideoedit.workstation-guard.v1",
+        "project_id": project_id,
+        "branch": _branch(project_id),
+        "verified_head": _head(engine),
+        "verified_state_sha256": _sha256_file(state_path),
+        "verified_at": base.now(),
+    }
+    path = _guard_marker_path(engine)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(path, marker)
 
 
 def _scaffold(project_id: str, name: str, engine: Path) -> Path:
@@ -190,6 +234,7 @@ def initialize(project_id: str) -> dict:
             "stdout": (boot.stdout or "")[-4000:],
             "stderr": (boot.stderr or "")[-4000:],
         }
+    _write_guard_marker(project_id)
     return status(project_id)
 
 
@@ -286,6 +331,7 @@ def sync_assets(project_id: str) -> dict:
         [project_dir / "ASSET_MANIFEST.json", project_dir / "REFERENCE_MANIFEST.json", state_path],
         "Sync workstation media into production manifests",
     )
+    _clear_guard_marker(engine)
     return {
         **status(project_id),
         "asset_count": len(records),
@@ -307,6 +353,15 @@ def status(project_id: str) -> dict:
     state_path = project_dir / "PROJECT_STATE.json"
     session = _read_json(session_path, {})
     state = _read_json(state_path, {})
+    marker = _read_json(_guard_marker_path(engine), {})
+    current_head = _head(engine) if engine.is_dir() else None
+    state_hash = _sha256_file(state_path) if state_path.is_file() else None
+    verified = bool(
+        marker
+        and marker.get("branch") == _branch(project_id)
+        and marker.get("verified_head") == current_head
+        and marker.get("verified_state_sha256") == state_hash
+    )
     contract = CORE.production_contract()
     states = contract.get("states", [])
     stage = state.get("stage")
@@ -317,7 +372,7 @@ def status(project_id: str) -> dict:
     return {
         "ok": True,
         "initialized": engine.is_dir() and project_dir.is_dir(),
-        "guard_pass": session.get("guard_result") == "PASS" and session.get("branch") == _branch(project_id),
+        "guard_pass": verified and session.get("guard_result") == "PASS" and session.get("branch") == _branch(project_id),
         "branch": _branch(project_id),
         "stage": stage,
         "next_stage": next_stage,
@@ -352,6 +407,10 @@ def run_guard(project_id: str) -> dict:
         [sys.executable, str(guard), "--branch", _branch(project_id)],
         cwd=str(engine), env=env, capture_output=True, text=True, timeout=120, check=False,
     )
+    if proc.returncode == 0:
+        _write_guard_marker(project_id)
+    else:
+        _clear_guard_marker(engine)
     latest = status(project_id)
     latest.update({
         "ok": proc.returncode == 0,
@@ -408,6 +467,7 @@ def advance(project_id: str, target_stage: str) -> dict:
     if not guard.get("guard_pass"):
         state_path.write_text(old_state, encoding="utf-8")
         status_path.write_text(old_status, encoding="utf-8")
+        _clear_guard_marker(engine)
         return {
             **status(project_id),
             "ok": False,
@@ -420,6 +480,7 @@ def advance(project_id: str, target_stage: str) -> dict:
 
     status_path.write_text(f"# Status\n\nStage: {target_stage}\n\nCanonical production guard: PASS.\n", encoding="utf-8")
     commit = _git_commit_paths(engine, [state_path, status_path], f"Advance production to {target_stage}")
+    _write_guard_marker(project_id)
     return {
         **status(project_id),
         "ok": True,
