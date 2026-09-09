@@ -1,22 +1,50 @@
 {
-  "schema": "aivideoedit.media-plan.v1",
+  "schema": "aivideoedit.media-plan.v2",
   "user_approach_established": true,
-  "selected_capabilities": ["source_images","generated_stills","generated_support_imagery","living_painting","layered_composite","depth_25d","atmospheric_plate","transition_media","conventional_video"],
+  "subject": "Pandora the Vampire",
+  "lyrics_directing_authority": true,
+  "cold_open": {
+    "duration_seconds": 6.0,
+    "audio": "silence",
+    "purpose": "introduce Pandora before song",
+    "source": "accepted 8-second gothic window motion benchmark"
+  },
+  "selected_capabilities": [
+    "authorized_source_images",
+    "recovered_generated_stills",
+    "accepted_motion_benchmark_video",
+    "layered_composite",
+    "living_still_fx",
+    "reflection_echo",
+    "perspective_transform",
+    "atmospheric_plate",
+    "transition_media",
+    "conventional_video"
+  ],
+  "existing_media_policy": {
+    "scrap_existing_media": false,
+    "rule": "reuse all useful recovered media within lyric-driven shot roles",
+    "chamber_window_role": "recurring Pandora memory-home motif"
+  },
   "temporal_density": {
-    "directive_source": "current_user_instruction",
     "mode": "dense_animation_like",
     "target_output_fps": 30,
-    "static_hold_policy": "no static holds in working render; every output frame receives camera, atmosphere, lighting, particle and/or audio-reactive state change",
-    "keyframe_density_target": "27 editorial scenes over 163.12 seconds with continuous per-frame motion and additional generated continuation/story frames",
-    "video_insert_policy": "short animation-like inserts and impact cuts at major musical and narrative transitions",
-    "intermediate_frame_policy": "continuous 30 fps authored transforms plus atmosphere and transient accents; interpolation is not used to disguise static content"
+    "target_video_duration_seconds": 169.12,
+    "song_offset_seconds": 6.0,
+    "static_hold_policy": "no unchanged static holds",
+    "shot_count": 34
   },
-  "visual_reference_content_reuse": {
-    "status": "authorized",
-    "authorized_by": "current_user_instruction",
-    "recorded_user_instruction": "1",
-    "meaning": "use the exact six supplied images in the final video and animate them",
-    "rule": "the six supplied stills are authorized as final-picture source content and as continuity/style anchors"
+  "visual_progression": {
+    "verse_scale": "intimate/interior",
+    "chorus_scale": "cathedral/impossible depth",
+    "verse2_spatial_event": "quiet thunder, gravity failure, endless hallway, almost-touch",
+    "outro": "crypt sanctuary and silent morning"
   },
-  "working_render": {"duration_seconds":163.12,"fps":30,"native_working_resolution":[960,540],"delivery_upscale":[1920,1080],"scene_count":27,"audio_reactive":true}
+  "final_qc": [
+    "decode and black-frame scan",
+    "freeze scan",
+    "time-distributed contact sheet",
+    "export_variety_qc",
+    "manual cinematic scan requested by current user"
+  ]
 }
