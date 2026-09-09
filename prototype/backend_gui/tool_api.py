@@ -7,22 +7,26 @@ implementation stays behind this module.
 """
 from __future__ import annotations
 
-from typing import Callable, Any
+from typing import Callable
 
 import server as base
 import storage
+import production_project
 from core_adapter import CORE
 
 
 TOOL_SCHEMAS = [
     {"name": "core.status", "description": "Show canonical AIVideoEdit OS/bootstrap status.", "input_schema": {"type": "object", "properties": {}}},
-    {"name": "core.bootstrap", "description": "Materialize and attest the exact current-main AIVideoEdit OS.", "input_schema": {"type": "object", "properties": {"offline": {"type": "boolean"}}}},
+    {"name": "core.bootstrap", "description": "Install and attest an isolated exact current-main AIVideoEdit core.", "input_schema": {"type": "object", "properties": {"offline": {"type": "boolean"}}}},
     {"name": "capabilities.list", "description": "List canonical media capabilities from the bootstrapped OS.", "input_schema": {"type": "object", "properties": {}}},
     {"name": "fx.list", "description": "List reusable effects from the canonical FX registry.", "input_schema": {"type": "object", "properties": {}}},
     {"name": "project.list", "description": "List local workstation projects.", "input_schema": {"type": "object", "properties": {}}},
     {"name": "project.create", "description": "Create a local workstation project.", "input_schema": {"type": "object", "required": ["name"], "properties": {"name": {"type": "string"}}}},
     {"name": "project.status", "description": "Return project media and QC summary.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "project.prepare", "description": "Queue all missing preview, review-frame and QC work for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.initialize", "description": "Create an isolated canonical song-branch production workspace for a browser project and validate INITIALIZED state with the current-main guard.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.status", "description": "Show canonical production branch, stage and guard status for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
+    {"name": "production.guard", "description": "Re-run the bootstrapped current-main production guard for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "media.list", "description": "List registered media assets for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "media.prepare", "description": "Queue one preparation operation for a registered asset.", "input_schema": {"type": "object", "required": ["asset_id", "operation"], "properties": {"asset_id": {"type": "string"}, "operation": {"type": "string", "enum": ["make_proxy", "extract_review_frames", "qc_media"]}}}},
     {"name": "storage.status", "description": "Show local/external storage configuration.", "input_schema": {"type": "object", "properties": {}}},
@@ -84,6 +88,7 @@ def _project_status(project_id: str) -> dict:
         "unchecked": max(0, len(assets) - qc_pass - qc_fail),
         "active_jobs": sum(1 for j in jobs if j.get("status") in {"queued", "running"}),
         "canonical_core": CORE.status(),
+        "production": production_project.status(project_id),
     }
 
 
@@ -118,6 +123,18 @@ def call_tool(
         _project(project_id)
         jobs = prepare_project(project_id)
         return {"project_id": project_id, "queued": len(jobs), "jobs": jobs}
+    if name == "production.initialize":
+        project_id = str(args.get("project_id") or "")
+        _project(project_id)
+        return production_project.initialize(project_id)
+    if name == "production.status":
+        project_id = str(args.get("project_id") or "")
+        _project(project_id)
+        return production_project.status(project_id)
+    if name == "production.guard":
+        project_id = str(args.get("project_id") or "")
+        _project(project_id)
+        return production_project.run_guard(project_id)
     if name == "media.list":
         project_id = str(args.get("project_id") or "")
         _project(project_id)
