@@ -73,6 +73,8 @@
             <div class="operation-bar">
               <button id="startProjectEngine" class="secondary">Start project engine</button>
               <button id="syncProductionAssets" class="secondary" hidden>Sync media to engine</button>
+              <button id="analyzeProduction" class="secondary" hidden>Analyze references & music</button>
+              <button id="songContext" class="secondary" hidden>Set song context</button>
               <button id="advanceProduction" class="secondary" hidden>Continue production</button>
               <button id="verifyProjectEngine" class="secondary" hidden>Verify project</button>
             </div>
@@ -80,7 +82,7 @@
           </div>
         </article>
         <article class="jobs-card">
-          <div class="section-head"><div><h2>Background work</h2><p class="muted">Recent tasks and their status.</p></div><button id="refreshJobs" class="icon secondary">↻</button></div>
+          <div class="section-head"><div><h2>Background work</h2><p class="muted">Recent tasks and their status.</p></div><button id="refreshJobs" class="icon secondary" title="Refresh">↻</button></div>
           <div id="jobs" class="jobs"></div>
         </article>
       </section>
@@ -89,6 +91,7 @@
     <footer class="footer"><span>Runs on this device</span><span>Canonical core comes from current main</span><span>Media stays out of GitHub Actions storage</span></footer>
   </main>
   <dialog id="projectDialog"><form method="dialog"><h3>Create a project</h3><p class="muted">Give this video project a simple name.</p><label>Project name<input id="newProjectName" placeholder="My music video" maxlength="100" /></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="createProject" value="default">Create project</button></div></form></dialog>
+  <dialog id="songContextDialog"><form method="dialog"><h3>Song context</h3><p class="muted">These are creative authority inputs, so Studio asks instead of guessing.</p><label>Genre<input id="songGenre" placeholder="Trip-hop, folk noir, ambient…" maxlength="120" /></label><label>Lyrics<select id="lyricsStatus"><option value="absent">No lyrics</option><option value="present">Lyrics are present</option></select></label><label id="lyricsTextLabel" hidden>Lyrics<textarea id="lyricsText" rows="10" placeholder="Paste verified lyrics here"></textarea></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveSongContext" value="default">Save context</button></div></form></dialog>
   <script src="/app.js"></script>
 </body>
 </html>
