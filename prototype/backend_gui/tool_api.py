@@ -13,6 +13,7 @@ import server as base
 import storage
 import production_project
 import production_analysis
+import production_stage
 from core_adapter import CORE
 
 
@@ -31,7 +32,7 @@ TOOL_SCHEMAS = [
     {"name": "production.analyze", "description": "Queue evidence-producing reference extraction and music signal analysis for a SOURCE_INGESTED project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "production.set_music_context", "description": "Record explicit lyrics status/text and genre authority. This does not infer or fabricate either value.", "input_schema": {"type": "object", "required": ["project_id", "lyrics_status", "genre"], "properties": {"project_id": {"type": "string"}, "lyrics_status": {"type": "string", "enum": ["present", "absent"]}, "genre": {"type": "string"}, "lyrics_text": {"type": "string"}, "directing_use": {"type": "string"}}}},
     {"name": "production.guard", "description": "Re-run the bootstrapped current-main production guard for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
-    {"name": "production.advance", "description": "Request exactly the next canonical production stage. The change is rolled back unless the current-main production guard passes.", "input_schema": {"type": "object", "required": ["project_id", "target_stage"], "properties": {"project_id": {"type": "string"}, "target_stage": {"type": "string"}}}},
+    {"name": "production.advance", "description": "Request exactly the next canonical production stage. Workstation evidence preconditions and the current-main guard must both pass.", "input_schema": {"type": "object", "required": ["project_id", "target_stage"], "properties": {"project_id": {"type": "string"}, "target_stage": {"type": "string"}}}},
     {"name": "media.list", "description": "List registered media assets for a project.", "input_schema": {"type": "object", "required": ["project_id"], "properties": {"project_id": {"type": "string"}}}},
     {"name": "media.prepare", "description": "Queue one preparation operation for a registered asset.", "input_schema": {"type": "object", "required": ["asset_id", "operation"], "properties": {"asset_id": {"type": "string"}, "operation": {"type": "string", "enum": ["make_proxy", "extract_review_frames", "qc_media"]}}}},
     {"name": "storage.status", "description": "Show local/external storage configuration.", "input_schema": {"type": "object", "properties": {}}},
@@ -164,7 +165,7 @@ def call_tool(
         project_id = str(args.get("project_id") or "")
         target_stage = str(args.get("target_stage") or "")
         _project(project_id)
-        return production_project.advance(project_id, target_stage)
+        return production_stage.advance(project_id, target_stage)
     if name == "media.list":
         project_id = str(args.get("project_id") or "")
         _project(project_id)
