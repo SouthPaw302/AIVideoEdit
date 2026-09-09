@@ -1,6 +1,7 @@
 const $ = id => document.getElementById(id);
 let currentAssetId = null;
 let assetsCache = [];
+let systemState = null;
 
 async function api(url, options) {
   const res = await fetch(url, options);
@@ -14,12 +15,12 @@ const projectId = () => $('project').value || 'prototype';
 
 function formatBytes(n) {
   n = Number(n); if (!Number.isFinite(n)) return '—';
-  const u=['B','KB','MB','GB']; let i=0; while(n>=1024&&i<u.length-1){n/=1024;i++;}
+  const u=['B','KB','MB','GB','TB']; let i=0; while(n>=1024&&i<u.length-1){n/=1024;i++;}
   return `${n.toFixed(i?1:0)} ${u[i]}`;
 }
 function formatDuration(n) { n=Number(n); if(!Number.isFinite(n)) return '—'; const m=Math.floor(n/60), s=Math.round(n%60); return `${m}:${String(s).padStart(2,'0')}`; }
 function formatTime(ts) { return ts ? new Date(ts*1000).toLocaleTimeString() : '—'; }
-function friendlyJob(type){ return ({analyze_media:'Reading media',make_proxy:'Making preview copy',extract_review_frames:'Creating review snapshots',qc_media:'Checking media',ffmpeg_check:'Testing video engine'})[type] || type.replaceAll('_',' '); }
+function friendlyJob(type){ return ({analyze_media:'Reading media',make_proxy:'Making preview copy',extract_review_frames:'Creating review snapshots',qc_media:'Checking media',ffmpeg_check:'Testing video engine',sync_project:'Backing up project'})[type] || type.replaceAll('_',' '); }
 function friendlyStatus(status){ return ({complete:'Done',failed:'Needs attention',running:'Working',queued:'Waiting',interrupted:'Stopped'})[status] || status; }
 
 async function loadHealth(){
@@ -31,6 +32,18 @@ async function loadCapabilities(){
   const caps=d.capabilities.map(c=>c.name==='Python'&&!c.available?{...c,available:true,detail:'Running this app'}:c);
   $('capabilities').innerHTML=caps.map(c=>`<div class="cap"><span class="dot ${c.available?'ok':'bad'}"></span><div><strong>${esc(c.name)}</strong><small>${esc(c.available?'Ready':c.detail)}</small></div></div>`).join('');
 }
+async function loadSystem(){
+  try {
+    systemState = await api('/api/system');
+    const s = systemState;
+    $('systemStats').textContent = `${s.workers} workers · ${s.queue_depth} waiting · ${formatBytes(s.disk?.free)} free · storage: ${s.storage?.mode || 'local'}`;
+    $('syncProject').hidden = !s.storage?.configured;
+  } catch (_) {
+    systemState = null;
+    $('systemStats').textContent = 'Run stack.py or the platform launcher to enable queued workers and storage telemetry.';
+    $('syncProject').hidden = true;
+  }
+}
 async function loadProjects(selectId){
   const d=await api('/api/projects');
   $('project').innerHTML=d.projects.map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
@@ -41,7 +54,7 @@ function updateNextAction(){
   button.hidden=true; button.onclick=null;
   if(!assetsCache.length){ title.textContent='Add your first media file'; text.textContent='Choose a video, song, or image above, then click “Add to project”.'; return; }
   const a=assetsCache.find(x=>x.id===currentAssetId) || assetsCache[0];
-  if(!currentAssetId){ title.textContent='Choose a file from Your media'; text.textContent='Pick the video or audio you want to work on next.'; return; }
+  if(!currentAssetId){ title.textContent='Choose a file from Your media'; text.textContent='Pick the video or audio you want to work on next, or prepare the whole project at once.'; return; }
   if(a.status==='analyzing'||a.status==='uploaded'){ title.textContent='Reading your media…'; text.textContent='The app is checking the file and preparing its basic information.'; return; }
   if(a.status==='failed'){ title.textContent='This file needs attention'; text.textContent=a.error||'The app could not prepare this media.'; return; }
   if(!a.proxy_url&&a.metadata?.video_codec){ title.textContent='Make a smooth preview copy'; text.textContent='This creates a smaller version that is easier to play while you work.'; button.textContent='Make preview copy'; button.hidden=false; button.onclick=()=>operation('make_proxy'); return; }
@@ -92,6 +105,18 @@ async function operation(type){
   try{ await api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type,project:projectId(),asset_id:currentAssetId})}); await loadJobs(); updateNextAction(); }
   catch(e){$('uploadMessage').textContent=e.message;}
 }
+async function prepareProject(){
+  $('prepareProject').disabled=true; $('uploadMessage').textContent='Preparing everything that still needs work…';
+  try { const d=await api(`/api/projects/${encodeURIComponent(projectId())}/prepare`,{method:'POST'}); $('uploadMessage').textContent=d.count?`${d.count} background tasks added.`:'Everything is already prepared.'; await loadJobs(); }
+  catch(e){ $('uploadMessage').textContent=e.message; }
+  finally { $('prepareProject').disabled=false; }
+}
+async function syncProject(){
+  $('syncProject').disabled=true; $('uploadMessage').textContent='Starting project backup…';
+  try { await api(`/api/projects/${encodeURIComponent(projectId())}/sync`,{method:'POST'}); $('uploadMessage').textContent='Backup queued.'; await loadJobs(); }
+  catch(e){ $('uploadMessage').textContent=e.message; }
+  finally { $('syncProject').disabled=false; }
+}
 async function deleteAsset(){
   if(!currentAssetId||!confirm('Remove this media and its local preview files from this project?')) return;
   await api(`/api/assets/${encodeURIComponent(currentAssetId)}`,{method:'DELETE'}); currentAssetId=null; await refreshAll();
@@ -100,17 +125,19 @@ async function createProject(){
   const name=$('newProjectName').value.trim(); if(!name)return;
   const d=await api('/api/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})}); await loadProjects(d.project.id); $('newProjectName').value=''; await refreshAll();
 }
-async function refreshAll(){ await Promise.allSettled([loadAssets(),loadJobs()]); }
+async function refreshAll(){ await Promise.allSettled([loadAssets(),loadJobs(),loadSystem()]); }
 
 $('upload').addEventListener('click',uploadMedia);
 $('project').addEventListener('change',()=>{currentAssetId=null;refreshAll();});
 $('refreshAssets').addEventListener('click',loadAssets);
 $('refreshJobs').addEventListener('click',loadJobs);
 $('runJob').addEventListener('click',()=>api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'ffmpeg_check',project:projectId()})}).then(loadJobs));
+$('prepareProject').addEventListener('click',prepareProject);
+$('syncProject').addEventListener('click',syncProject);
 $('deleteAsset').addEventListener('click',deleteAsset);
 document.querySelectorAll('[data-op]').forEach(b=>b.addEventListener('click',()=>operation(b.dataset.op)));
 $('newProject').addEventListener('click',()=>$('projectDialog').showModal());
 $('createProject').addEventListener('click',e=>{e.preventDefault();createProject().then(()=>$('projectDialog').close());});
 
-(async()=>{ await Promise.allSettled([loadHealth(),loadCapabilities(),loadProjects()]); await refreshAll(); })();
+(async()=>{ await Promise.allSettled([loadHealth(),loadCapabilities(),loadProjects(),loadSystem()]); await refreshAll(); })();
 setInterval(()=>refreshAll(),2500);
