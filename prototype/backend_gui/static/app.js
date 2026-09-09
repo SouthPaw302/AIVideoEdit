@@ -30,7 +30,7 @@ function formatBytes(n) {
 }
 function formatDuration(n) { n=Number(n); if(!Number.isFinite(n)) return '—'; const m=Math.floor(n/60), s=Math.round(n%60); return `${m}:${String(s).padStart(2,'0')}`; }
 function formatTime(ts) { return ts ? new Date(ts*1000).toLocaleTimeString() : '—'; }
-function friendlyJob(type){ return ({analyze_media:'Reading media',make_proxy:'Making preview copy',extract_review_frames:'Creating review snapshots',qc_media:'Checking media',ffmpeg_check:'Testing video engine',sync_project:'Backing up project'})[type] || type.replaceAll('_',' '); }
+function friendlyJob(type){ return ({analyze_media:'Reading media',make_proxy:'Making preview copy',extract_review_frames:'Creating review snapshots',qc_media:'Checking media',ffmpeg_check:'Testing video engine',sync_project:'Backing up project',analyze_production:'Analyzing references & music'})[type] || type.replaceAll('_',' '); }
 function friendlyStatus(status){ return ({complete:'Done',failed:'Needs attention',running:'Working',queued:'Waiting',interrupted:'Stopped'})[status] || status; }
 function friendlyStage(stage){ return ({INITIALIZED:'Project started',SOURCE_INGESTED:'Source media added',REFERENCES_ANALYZED:'Media analyzed',APPROACH_ESTABLISHED:'Creative approach set',STORYBOARD_LOCKED:'Storyboard locked',SHOT_PACKAGES_BUILT:'Shots prepared',SHOT_PROOFS_ACCEPTED:'Shot proofs accepted',FX_LOCKED:'Effects locked',ASSEMBLED:'Video assembled',FINAL_QC_PASSED:'Final check passed',ARCHIVED:'Archived'})[stage] || String(stage||'').replaceAll('_',' ').toLowerCase(); }
 
@@ -80,9 +80,12 @@ async function bootstrapCore(){
 }
 function updateProductionButtons(){
   const initialized=!!productionState?.initialized;
+  const analysisStage=['SOURCE_INGESTED','REFERENCES_ANALYZED'].includes(productionState?.stage);
   $('startProjectEngine').hidden=initialized;
   $('verifyProjectEngine').hidden=!initialized;
   $('syncProductionAssets').hidden=!initialized;
+  $('analyzeProduction').hidden=!initialized || !analysisStage;
+  $('songContext').hidden=!initialized || !analysisStage;
   $('advanceProduction').hidden=!initialized || !productionState?.next_stage;
   $('startProjectEngine').disabled=!coreState?.bootstrapped;
   if(productionState?.next_stage){ $('advanceProduction').textContent=`Continue: ${friendlyStage(productionState.next_stage)}`; }
@@ -129,6 +132,38 @@ async function syncProductionAssets(){
     $('productionStatus').textContent=e.message;
   } finally {
     $('syncProductionAssets').disabled=false;
+    await loadProductionStatus();
+  }
+}
+async function analyzeProduction(){
+  $('analyzeProduction').disabled=true;
+  $('productionStatus').textContent='Queueing full reference coverage and music signal analysis…';
+  try {
+    const result=await toolCall('production.analyze',{project_id:projectId()});
+    $('productionStatus').textContent=`Analysis queued as ${result.job?.id||'background job'}. Long references may take a while.`;
+    await loadJobs();
+  } catch(e){
+    $('productionStatus').textContent=e.message;
+  } finally {
+    $('analyzeProduction').disabled=false;
+  }
+}
+async function saveSongContext(){
+  const genre=$('songGenre').value.trim();
+  const lyricsStatus=$('lyricsStatus').value;
+  const lyricsText=$('lyricsText').value.trim();
+  if(!genre){ $('productionStatus').textContent='Enter the genre before saving song context.'; return false; }
+  if(lyricsStatus==='present'&&!lyricsText){ $('productionStatus').textContent='Paste the verified lyrics when lyrics are present.'; return false; }
+  $('saveSongContext').disabled=true;
+  try {
+    await toolCall('production.set_music_context',{project_id:projectId(),genre,lyrics_status:lyricsStatus,lyrics_text:lyricsText,directing_use:'default'});
+    $('productionStatus').textContent='Song context recorded as explicit production authority.';
+    return true;
+  } catch(e){
+    $('productionStatus').textContent=e.message;
+    return false;
+  } finally {
+    $('saveSongContext').disabled=false;
     await loadProductionStatus();
   }
 }
@@ -271,6 +306,10 @@ $('syncProject').addEventListener('click',syncProject);
 $('loadCore').addEventListener('click',bootstrapCore);
 $('startProjectEngine').addEventListener('click',startProjectEngine);
 $('syncProductionAssets').addEventListener('click',syncProductionAssets);
+$('analyzeProduction').addEventListener('click',analyzeProduction);
+$('songContext').addEventListener('click',()=>$('songContextDialog').showModal());
+$('lyricsStatus').addEventListener('change',()=>{$('lyricsTextLabel').hidden=$('lyricsStatus').value!=='present';});
+$('saveSongContext').addEventListener('click',e=>{e.preventDefault();saveSongContext().then(ok=>{if(ok)$('songContextDialog').close();});});
 $('advanceProduction').addEventListener('click',advanceProduction);
 $('verifyProjectEngine').addEventListener('click',verifyProjectEngine);
 $('deleteAsset').addEventListener('click',deleteAsset);
