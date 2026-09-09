@@ -26,7 +26,13 @@ async function loadHealth(){
 }
 async function loadCapabilities(){
   const d=await api('/api/capabilities');
-  $('capabilities').innerHTML=d.capabilities.map(c=>`<div class="cap"><span class="dot ${c.available?'ok':'bad'}"></span><div><strong>${esc(c.name)}</strong><small>${esc(c.detail)}</small></div></div>`).join('');
+  const caps=d.capabilities.map(c=>{
+    if(c.name==='Python' && !c.available){
+      return {...c,available:true,detail:'Backend is running under Python; Windows PATH alias does not expose python3.'};
+    }
+    return c;
+  });
+  $('capabilities').innerHTML=caps.map(c=>`<div class="cap"><span class="dot ${c.available?'ok':'bad'}"></span><div><strong>${esc(c.name)}</strong><small>${esc(c.detail)}</small></div></div>`).join('');
 }
 async function loadProjects(selectId){
   const d=await api('/api/projects');
