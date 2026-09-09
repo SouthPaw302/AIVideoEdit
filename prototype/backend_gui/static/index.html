@@ -3,71 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AIVideoEdit Prototype</title>
+  <title>AIVideoEdit Alpha</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <main class="shell">
     <header class="topbar">
-      <div>
-        <p class="eyebrow">AIVideoEdit</p>
-        <h1>Local Production Backend</h1>
-        <p class="sub">The browser controls a real media worker and local project workspace.</p>
-      </div>
+      <div><p class="eyebrow">AIVideoEdit</p><h1>Production Backend <span>ALPHA</span></h1><p class="sub">Single-user media workstation: browser control, local workers, persistent workspace.</p></div>
       <div id="health" class="status">Connecting…</div>
     </header>
 
-    <section class="grid">
+    <section class="toolbar card">
+      <label>Project<select id="project"></select></label>
+      <button id="newProject" class="secondary">New project</button>
+      <label class="file-picker">Media<input id="mediaFile" type="file" accept="video/*,audio/*,image/*" /></label>
+      <button id="upload">Ingest media</button>
+      <span id="uploadMessage" class="muted"></span>
+    </section>
+
+    <section class="workspace">
+      <aside class="card assets-panel">
+        <div class="section-head"><div><h2>Assets</h2><p class="muted">Backend workspace</p></div><button id="refreshAssets" class="icon secondary">↻</button></div>
+        <div id="assets" class="assets"></div>
+      </aside>
+
+      <section class="card inspector">
+        <div id="emptyInspector" class="empty"><h2>Select an asset</h2><p class="muted">Preview, process and QC it here.</p></div>
+        <div id="assetInspector" hidden>
+          <div class="section-head"><div><h2 id="assetTitle">Asset</h2><p id="assetSubtitle" class="muted"></p></div><span id="qcBadge" class="pill">UNCHECKED</span></div>
+          <div id="preview" class="preview"></div>
+          <div id="metadata" class="metadata"></div>
+          <div class="operation-bar">
+            <button data-op="make_proxy">Create proxy</button>
+            <button data-op="extract_review_frames" class="secondary">Review frames</button>
+            <button data-op="qc_media" class="secondary">Run QC</button>
+            <button id="deleteAsset" class="danger">Delete</button>
+          </div>
+          <div id="reviewFrames" class="review-frames"></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="lower-grid">
       <article class="card">
-        <h2>Runtime</h2>
-        <p class="muted">Tools available to this backend machine.</p>
+        <div class="section-head"><div><h2>Runtime</h2><p class="muted">Worker dependencies on this machine.</p></div><button id="runJob" class="secondary">Test FFmpeg</button></div>
         <div id="capabilities" class="stack"></div>
       </article>
-
-      <article class="card">
-        <h2>Ingest Media</h2>
-        <p class="muted">Upload directly into the backend workspace. FFprobe inspects it and FFmpeg creates a preview frame.</p>
-        <label>Project
-          <input id="project" value="prototype/backend-gui" />
-        </label>
-        <label class="file-picker">Media file
-          <input id="mediaFile" type="file" accept="video/*,audio/*,image/*" />
-        </label>
-        <button id="upload">Upload + Analyze</button>
-        <p id="uploadMessage" class="muted"></p>
+      <article class="card jobs-card">
+        <div class="section-head"><div><h2>Jobs</h2><p class="muted">Persistent local execution history.</p></div><button id="refreshJobs" class="icon secondary">↻</button></div>
+        <div id="jobs" class="jobs"></div>
       </article>
-    </section>
-
-    <section class="card assets-card">
-      <div class="section-head">
-        <div>
-          <h2>Workspace Assets</h2>
-          <p class="muted">Files reside on backend storage, not in GitHub Actions.</p>
-        </div>
-        <button id="refreshAssets" class="secondary">Refresh</button>
-      </div>
-      <div id="assets" class="assets"></div>
-    </section>
-
-    <section class="card jobs-card">
-      <div class="section-head">
-        <div>
-          <h2>Job Queue</h2>
-          <p class="muted">Worker activity is persisted locally so page refreshes do not erase history.</p>
-        </div>
-        <div class="actions"><button id="runJob" class="secondary">Test FFmpeg</button><button id="refresh" class="secondary">Refresh</button></div>
-      </div>
-      <div id="jobs" class="jobs"></div>
     </section>
 
     <section class="card architecture">
-      <h2>Current Flow</h2>
-      <div class="flow">
-        <span>Browser GUI</span><b>→</b><span>Backend API</span><b>→</b><span>Media Worker</span><b>→</b><span>Local Workspace</span><b>→</b><span>Next: Object Storage</span>
-      </div>
-      <p class="muted">GitHub stays source control and project history. Heavy media and execution move into this backend.</p>
+      <h2>Alpha Stack</h2>
+      <div class="flow"><span>Browser GUI</span><b>→</b><span>Python API</span><b>→</b><span>FFmpeg Workers</span><b>→</b><span>Persistent Workspace</span><b>→</b><span>QC</span></div>
+      <p class="muted">GitHub remains source control. Runtime media stays out of Git and GitHub Actions storage.</p>
     </section>
   </main>
+  <dialog id="projectDialog"><form method="dialog"><h3>New project</h3><label>Name<input id="newProjectName" placeholder="My video" maxlength="100" /></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="createProject" value="default">Create</button></div></form></dialog>
   <script src="/app.js"></script>
 </body>
 </html>
