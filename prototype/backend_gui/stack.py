@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """AIVideoEdit alpha stack runtime.
 
-Layers a bounded worker queue and project-wide orchestration on top of the
-stable alpha server without changing the existing server/API contract.
+Layers a bounded worker queue, project-wide orchestration and optional external
+storage mirroring on top of the stable alpha server without changing the
+existing server/API contract.
 """
 from __future__ import annotations
 
@@ -14,9 +15,34 @@ from http.server import ThreadingHTTPServer
 from urllib.parse import urlparse
 
 import server as base
+import storage
 
 WORKER_COUNT = max(1, int(os.environ.get("AIVE_WORKERS", "2")))
 JOB_QUEUE: queue.Queue[dict] = queue.Queue()
+
+
+def sync_project_job(job: dict) -> None:
+    project_id = job["project"]
+    base.update_job(job["id"], status="running", started_at=base.now(), progress=5)
+    with base.LOCK:
+        assets = [dict(a) for a in base.STATE["assets"] if a.get("project") == project_id]
+
+    def progress(index: int, total: int, name: str) -> None:
+        pct = 10 if total <= 0 else min(95, 10 + int(index / total * 85))
+        base.update_job(job["id"], progress=pct, result=f"Uploading {name} · {index}/{total}")
+
+    try:
+        manifest = storage.sync_project(project_id, assets, base.PROJECT_ROOT, progress=progress)
+        base.update_job(
+            job["id"], status="complete", progress=100,
+            result=f"External sync complete · {len(manifest['objects'])} objects",
+            finished_at=base.now(),
+        )
+    except Exception as exc:
+        base.update_job(
+            job["id"], status="failed", progress=100,
+            result=str(exc)[:600], finished_at=base.now(),
+        )
 
 
 def execute_job(job: dict) -> None:
@@ -26,6 +52,7 @@ def execute_job(job: dict) -> None:
         "make_proxy": lambda: base.make_proxy(job["id"], job["asset_id"]),
         "extract_review_frames": lambda: base.extract_review_frames(job["id"], job["asset_id"]),
         "qc_media": lambda: base.qc_asset(job["id"], job["asset_id"]),
+        "sync_project": lambda: sync_project_job(job),
     }
     fn = handlers.get(job.get("type"))
     if not fn:
@@ -86,6 +113,7 @@ def system_snapshot() -> dict:
         "assets": assets,
         "stored_bytes": stored_bytes,
         "disk": {"total": usage.total, "used": usage.used, "free": usage.free},
+        "storage": storage.status(),
     }
 
 
@@ -111,12 +139,14 @@ def prepare_project(project_id: str) -> list[dict]:
 
 
 class StackHandler(base.Handler):
-    server_version = "AIVideoEditAlphaStack/0.2"
+    server_version = "AIVideoEditAlphaStack/0.3"
 
     def do_GET(self):
         path = urlparse(self.path).path
         if path == "/api/system":
             return self.send_json(system_snapshot())
+        if path == "/api/storage":
+            return self.send_json(storage.status())
         return super().do_GET()
 
     def do_POST(self):
@@ -128,6 +158,16 @@ class StackHandler(base.Handler):
                 return self.send_json({"error": "project not found"}, 404)
             jobs = prepare_project(project_id)
             return self.send_json({"jobs": jobs, "count": len(jobs)}, 202)
+        if path.startswith("/api/projects/") and path.endswith("/sync"):
+            parts = path.strip("/").split("/")
+            project_id = parts[2]
+            if not base.find_project(project_id):
+                return self.send_json({"error": "project not found"}, 404)
+            if not storage.status().get("configured"):
+                return self.send_json({"error": "external storage is not configured", "storage": storage.status()}, 409)
+            job = base.add_job("sync_project", project_id, None)
+            dispatch_job(job)
+            return self.send_json(job, 202)
         return super().do_POST()
 
 
@@ -142,4 +182,5 @@ if __name__ == "__main__":
     print(f"LAN bind: {host}:{port}")
     print(f"Workspace: {base.RUNTIME}")
     print(f"Workers: {WORKER_COUNT}")
+    print(f"Storage: {storage.status()['detail']}")
     ThreadingHTTPServer((host, port), StackHandler).serve_forever()
