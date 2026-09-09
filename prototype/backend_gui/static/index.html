@@ -11,8 +11,8 @@
     <header class="topbar">
       <div>
         <p class="eyebrow">AIVideoEdit</p>
-        <h1>Backend Control Prototype</h1>
-        <p class="sub">One browser GUI controlling one local/server-side worker runtime.</p>
+        <h1>Local Production Backend</h1>
+        <p class="sub">The browser controls a real media worker and local project workspace.</p>
       </div>
       <div id="health" class="status">Connecting…</div>
     </header>
@@ -20,38 +20,52 @@
     <section class="grid">
       <article class="card">
         <h2>Runtime</h2>
-        <p class="muted">What this machine can execute right now.</p>
+        <p class="muted">Tools available to this backend machine.</p>
         <div id="capabilities" class="stack"></div>
       </article>
 
       <article class="card">
-        <h2>Worker Test</h2>
-        <p class="muted">Queue a backend job and let the server execute it outside GitHub Actions.</p>
+        <h2>Ingest Media</h2>
+        <p class="muted">Upload directly into the backend workspace. FFprobe inspects it and FFmpeg creates a preview frame.</p>
         <label>Project
           <input id="project" value="prototype/backend-gui" />
         </label>
-        <button id="runJob">Run FFmpeg worker check</button>
-        <p id="jobMessage" class="muted"></p>
+        <label class="file-picker">Media file
+          <input id="mediaFile" type="file" accept="video/*,audio/*,image/*" />
+        </label>
+        <button id="upload">Upload + Analyze</button>
+        <p id="uploadMessage" class="muted"></p>
       </article>
+    </section>
+
+    <section class="card assets-card">
+      <div class="section-head">
+        <div>
+          <h2>Workspace Assets</h2>
+          <p class="muted">Files reside on backend storage, not in GitHub Actions.</p>
+        </div>
+        <button id="refreshAssets" class="secondary">Refresh</button>
+      </div>
+      <div id="assets" class="assets"></div>
     </section>
 
     <section class="card jobs-card">
       <div class="section-head">
         <div>
           <h2>Job Queue</h2>
-          <p class="muted">In-memory for this prototype. Production will persist this state.</p>
+          <p class="muted">Worker activity is persisted locally so page refreshes do not erase history.</p>
         </div>
-        <button id="refresh" class="secondary">Refresh</button>
+        <div class="actions"><button id="runJob" class="secondary">Test FFmpeg</button><button id="refresh" class="secondary">Refresh</button></div>
       </div>
       <div id="jobs" class="jobs"></div>
     </section>
 
     <section class="card architecture">
-      <h2>Prototype Flow</h2>
+      <h2>Current Flow</h2>
       <div class="flow">
-        <span>Browser GUI</span><b>→</b><span>Backend API</span><b>→</b><span>Worker</span><b>→</b><span>Local temp disk</span><b>→</b><span>Future object storage</span>
+        <span>Browser GUI</span><b>→</b><span>Backend API</span><b>→</b><span>Media Worker</span><b>→</b><span>Local Workspace</span><b>→</b><span>Next: Object Storage</span>
       </div>
-      <p class="muted">GitHub remains source control and project history; it is not the render machine or media warehouse.</p>
+      <p class="muted">GitHub stays source control and project history. Heavy media and execution move into this backend.</p>
     </section>
   </main>
   <script src="/app.js"></script>
