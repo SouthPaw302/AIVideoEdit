@@ -19,70 +19,81 @@ function formatBytes(n) {
 }
 function formatDuration(n) { n=Number(n); if(!Number.isFinite(n)) return '—'; const m=Math.floor(n/60), s=Math.round(n%60); return `${m}:${String(s).padStart(2,'0')}`; }
 function formatTime(ts) { return ts ? new Date(ts*1000).toLocaleTimeString() : '—'; }
+function friendlyJob(type){ return ({analyze_media:'Reading media',make_proxy:'Making preview copy',extract_review_frames:'Creating review snapshots',qc_media:'Checking media',ffmpeg_check:'Testing video engine'})[type] || type.replaceAll('_',' '); }
+function friendlyStatus(status){ return ({complete:'Done',failed:'Needs attention',running:'Working',queued:'Waiting',interrupted:'Stopped'})[status] || status; }
 
 async function loadHealth(){
-  try { const d=await api('/api/health'); $('health').textContent=`Backend online · ${d.version}`; $('health').classList.add('online'); }
-  catch(_){ $('health').textContent='Backend offline'; $('health').classList.remove('online'); }
+  try { await api('/api/health'); $('health').textContent='Ready'; $('health').classList.add('online'); }
+  catch(_){ $('health').textContent='Offline'; $('health').classList.remove('online'); }
 }
 async function loadCapabilities(){
   const d=await api('/api/capabilities');
-  const caps=d.capabilities.map(c=>{
-    if(c.name==='Python' && !c.available){
-      return {...c,available:true,detail:'Backend is running under Python; Windows PATH alias does not expose python3.'};
-    }
-    return c;
-  });
-  $('capabilities').innerHTML=caps.map(c=>`<div class="cap"><span class="dot ${c.available?'ok':'bad'}"></span><div><strong>${esc(c.name)}</strong><small>${esc(c.detail)}</small></div></div>`).join('');
+  const caps=d.capabilities.map(c=>c.name==='Python'&&!c.available?{...c,available:true,detail:'Running this app'}:c);
+  $('capabilities').innerHTML=caps.map(c=>`<div class="cap"><span class="dot ${c.available?'ok':'bad'}"></span><div><strong>${esc(c.name)}</strong><small>${esc(c.available?'Ready':c.detail)}</small></div></div>`).join('');
 }
 async function loadProjects(selectId){
   const d=await api('/api/projects');
   $('project').innerHTML=d.projects.map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
   if(selectId && d.projects.some(p=>p.id===selectId)) $('project').value=selectId;
 }
+function updateNextAction(){
+  const title=$('nextActionTitle'), text=$('nextActionText'), button=$('nextActionButton');
+  button.hidden=true; button.onclick=null;
+  if(!assetsCache.length){ title.textContent='Add your first media file'; text.textContent='Choose a video, song, or image above, then click “Add to project”.'; return; }
+  const a=assetsCache.find(x=>x.id===currentAssetId) || assetsCache[0];
+  if(!currentAssetId){ title.textContent='Choose a file from Your media'; text.textContent='Pick the video or audio you want to work on next.'; return; }
+  if(a.status==='analyzing'||a.status==='uploaded'){ title.textContent='Reading your media…'; text.textContent='The app is checking the file and preparing its basic information.'; return; }
+  if(a.status==='failed'){ title.textContent='This file needs attention'; text.textContent=a.error||'The app could not prepare this media.'; return; }
+  if(!a.proxy_url&&a.metadata?.video_codec){ title.textContent='Make a smooth preview copy'; text.textContent='This creates a smaller version that is easier to play while you work.'; button.textContent='Make preview copy'; button.hidden=false; button.onclick=()=>operation('make_proxy'); return; }
+  if(!(a.review_frames||[]).length&&a.metadata?.video_codec){ title.textContent='Create review snapshots'; text.textContent='Generate six frames across the video so you can quickly inspect the whole piece.'; button.textContent='Create snapshots'; button.hidden=false; button.onclick=()=>operation('extract_review_frames'); return; }
+  if(a.qc?.status!=='pass'){ title.textContent='Check the media'; text.textContent='Verify that the file can be decoded cleanly before you continue editing.'; button.textContent='Check media'; button.hidden=false; button.onclick=()=>operation('qc_media'); return; }
+  title.textContent='This media is ready'; text.textContent='Preview copy, review snapshots, and media check are complete.';
+}
 async function loadAssets(){
   const d=await api(`/api/assets?project=${encodeURIComponent(projectId())}`); assetsCache=d.assets;
-  if(!d.assets.length){ $('assets').innerHTML='<p class="muted">No media yet.</p>'; currentAssetId=null; showInspector(null); return; }
+  if(!d.assets.length){ $('assets').innerHTML='<div class="empty-list"><strong>No media yet</strong><small>Add a file above to get started.</small></div>'; currentAssetId=null; showInspector(null); updateNextAction(); return; }
   $('assets').innerHTML=d.assets.map(a=>{
     const m=a.metadata||{}; const selected=a.id===currentAssetId?' selected':'';
-    const thumb=a.thumbnail_url?`<img src="${esc(a.thumbnail_url)}" alt="">`:`<div class="mini-placeholder">${esc(a.status)}</div>`;
-    const qc=a.qc?.status||'unchecked';
-    return `<button class="asset-row${selected}" data-asset="${esc(a.id)}">${thumb}<span><strong>${esc(a.filename)}</strong><small>${esc([m.width&&m.height?`${m.width}×${m.height}`:'',formatDuration(m.duration_seconds),formatBytes(a.size_bytes)].filter(Boolean).join(' · '))}</small></span><em class="mini-qc ${esc(qc)}">${esc(qc)}</em></button>`;
+    const thumb=a.thumbnail_url?`<img src="${esc(a.thumbnail_url)}" alt="">`:`<div class="mini-placeholder">${esc(a.status==='ready'?'media':a.status)}</div>`;
+    const qc=a.qc?.status||'unchecked'; const label=qc==='pass'?'checked':qc==='fail'?'issue':'';
+    return `<button class="asset-row${selected}" data-asset="${esc(a.id)}">${thumb}<span><strong>${esc(a.filename)}</strong><small>${esc([m.width&&m.height?`${m.width}×${m.height}`:'',formatDuration(m.duration_seconds),formatBytes(a.size_bytes)].filter(Boolean).join(' · '))}</small></span><em class="mini-qc ${esc(qc)}">${esc(label)}</em></button>`;
   }).join('');
   document.querySelectorAll('[data-asset]').forEach(el=>el.addEventListener('click',()=>selectAsset(el.dataset.asset)));
   if(currentAssetId){ const a=d.assets.find(x=>x.id===currentAssetId); showInspector(a||null); }
+  updateNextAction();
 }
 function selectAsset(id){ currentAssetId=id; const a=assetsCache.find(x=>x.id===id); showInspector(a); loadAssets(); }
 function showInspector(a){
   $('emptyInspector').hidden=!!a; $('assetInspector').hidden=!a; if(!a)return;
-  const m=a.metadata||{}; $('assetTitle').textContent=a.filename; $('assetSubtitle').textContent=`${a.id} · ${formatBytes(a.size_bytes)} · ${a.status}`;
-  const qc=a.qc?.status||'unchecked'; $('qcBadge').textContent=qc.toUpperCase(); $('qcBadge').className=`pill ${qc}`;
+  const m=a.metadata||{}; $('assetTitle').textContent=a.filename; $('assetSubtitle').textContent=`${formatBytes(a.size_bytes)} · ${a.status==='ready'?'Ready to work with':a.status}`;
+  const qc=a.qc?.status||'unchecked'; $('qcBadge').textContent=qc==='pass'?'CHECKED':qc==='fail'?'CHECK FAILED':'NOT CHECKED'; $('qcBadge').className=`pill ${qc}`;
   const url=a.proxy_url||a.source_url;
-  if(url && m.video_codec) $('preview').innerHTML=`<video controls preload="metadata" poster="${esc(a.thumbnail_url||'')}"><source src="${esc(url)}"></video>`;
-  else if(url && m.audio_codec) $('preview').innerHTML=`<audio controls src="${esc(url)}"></audio>`;
+  if(url&&m.video_codec) $('preview').innerHTML=`<video controls preload="metadata" poster="${esc(a.thumbnail_url||'')}"><source src="${esc(url)}"></video>`;
+  else if(url&&m.audio_codec) $('preview').innerHTML=`<audio controls src="${esc(url)}"></audio>`;
   else if(a.thumbnail_url) $('preview').innerHTML=`<img src="${esc(a.thumbnail_url)}" alt="Preview">`;
-  else $('preview').innerHTML=`<div class="preview-placeholder">${esc(a.status)}</div>`;
-  const rows=[['Duration',formatDuration(m.duration_seconds)],['Video',m.video_codec||'—'],['Resolution',m.width&&m.height?`${m.width} × ${m.height}`:'—'],['FPS',m.fps||'—'],['Audio',m.audio_codec||'—'],['SHA-256',a.sha256?`${a.sha256.slice(0,16)}…`:'—'],['Proxy',a.proxy_url?'Ready':'Not built'],['QC',qc]];
+  else $('preview').innerHTML='<div class="preview-placeholder">Preparing preview…</div>';
+  const rows=[['Length',formatDuration(m.duration_seconds)],['Video',m.video_codec||'—'],['Size',m.width&&m.height?`${m.width} × ${m.height}`:'—'],['Frame rate',m.fps||'—'],['Audio',m.audio_codec||'—'],['File size',formatBytes(a.size_bytes)],['Preview copy',a.proxy_url?'Ready':'Not made yet'],['Media check',qc==='pass'?'Passed':qc==='fail'?'Failed':'Not checked']];
   $('metadata').innerHTML=rows.map(([k,v])=>`<div><small>${esc(k)}</small><strong>${esc(v)}</strong></div>`).join('');
-  $('reviewFrames').innerHTML=(a.review_frames||[]).map(u=>`<img src="${esc(u)}" alt="Review frame">`).join('');
+  $('reviewFrames').innerHTML=(a.review_frames||[]).map(u=>`<img src="${esc(u)}" alt="Review snapshot">`).join('');
 }
 async function loadJobs(){
   const d=await api(`/api/jobs?project=${encodeURIComponent(projectId())}`);
-  if(!d.jobs.length){$('jobs').innerHTML='<p class="muted">No jobs yet.</p>';return;}
-  $('jobs').innerHTML=d.jobs.slice(0,20).map(j=>`<div class="job"><div><strong>${esc(j.type.replaceAll('_',' '))}</strong><small>${esc(j.id)} · ${formatTime(j.created_at)}</small></div><span class="job-state ${esc(j.status)}">${esc(j.status)}</span><div class="progress"><i style="width:${Number(j.progress||0)}%"></i></div><small class="job-result">${esc(j.result||'Working…')}</small></div>`).join('');
+  if(!d.jobs.length){$('jobs').innerHTML='<p class="muted">No background work yet.</p>';return;}
+  $('jobs').innerHTML=d.jobs.slice(0,20).map(j=>`<div class="job"><div><strong>${esc(friendlyJob(j.type))}</strong><small>${formatTime(j.created_at)}</small></div><span class="job-state ${esc(j.status)}">${esc(friendlyStatus(j.status))}</span><div class="progress"><i style="width:${Number(j.progress||0)}%"></i></div><small class="job-result">${esc(j.result||'Working…')}</small></div>`).join('');
 }
 async function uploadMedia(){
   const file=$('mediaFile').files[0]; if(!file){$('uploadMessage').textContent='Choose a file first.';return;}
-  $('upload').disabled=true; $('uploadMessage').textContent=`Uploading ${file.name}…`;
-  try{ const d=await api(`/api/assets?filename=${encodeURIComponent(file.name)}&project=${encodeURIComponent(projectId())}`,{method:'POST',headers:{'Content-Type':file.type||'application/octet-stream'},body:file}); currentAssetId=d.asset.id; $('uploadMessage').textContent='Stored. Analysis started.'; await refreshAll(); }
+  $('upload').disabled=true; $('uploadMessage').textContent=`Adding ${file.name}…`;
+  try{ const d=await api(`/api/assets?filename=${encodeURIComponent(file.name)}&project=${encodeURIComponent(projectId())}`,{method:'POST',headers:{'Content-Type':file.type||'application/octet-stream'},body:file}); currentAssetId=d.asset.id; $('uploadMessage').textContent='Added. Preparing media…'; await refreshAll(); }
   catch(e){$('uploadMessage').textContent=e.message;} finally{$('upload').disabled=false;}
 }
 async function operation(type){
   if(!currentAssetId)return;
-  try{ await api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type,project:projectId(),asset_id:currentAssetId})}); await loadJobs(); }
+  try{ await api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type,project:projectId(),asset_id:currentAssetId})}); await loadJobs(); updateNextAction(); }
   catch(e){$('uploadMessage').textContent=e.message;}
 }
 async function deleteAsset(){
-  if(!currentAssetId || !confirm('Delete this asset and its local derivatives?')) return;
+  if(!currentAssetId||!confirm('Remove this media and its local preview files from this project?')) return;
   await api(`/api/assets/${encodeURIComponent(currentAssetId)}`,{method:'DELETE'}); currentAssetId=null; await refreshAll();
 }
 async function createProject(){
