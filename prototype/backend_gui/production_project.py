@@ -9,6 +9,7 @@ later stage advancement.
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -113,7 +114,6 @@ def initialize(project_id: str) -> dict:
     branch = _branch(project_id)
     checkout = _run(["git", "checkout", "-b", branch, "main"], engine, timeout=60)
     if checkout.returncode != 0:
-        # Local clones may name the tracked main as origin/main only.
         checkout = _run(["git", "checkout", "-b", branch, "origin/main"], engine, timeout=60)
     if checkout.returncode != 0:
         shutil.rmtree(engine, ignore_errors=True)
@@ -192,7 +192,7 @@ def run_guard(project_id: str) -> dict:
     guard = os_root / "general/reusable/tools/production_guard.py"
     if not guard.is_file():
         raise RuntimeError("bootstrapped production guard is missing")
-    env = dict(__import__("os").environ)
+    env = dict(os.environ)
     env["AIVIDEOEDIT_REPO_ROOT"] = str(engine)
     env["AIVIDEOEDIT_OS_ROOT"] = str(os_root)
     env["AIVIDEOEDIT_PROJECT_DIR"] = f"projects/{_song_slug(project_id)}"
@@ -200,10 +200,11 @@ def run_guard(project_id: str) -> dict:
         [sys.executable, str(guard), "--branch", _branch(project_id)],
         cwd=str(engine), env=env, capture_output=True, text=True, timeout=120, check=False,
     )
-    return {
+    latest = status(project_id)
+    latest.update({
         "ok": proc.returncode == 0,
         "guard_pass": proc.returncode == 0,
         "stdout": (proc.stdout or "")[-4000:],
         "stderr": (proc.stderr or "")[-4000:],
-        **status(project_id),
-    }
+    })
+    return latest
