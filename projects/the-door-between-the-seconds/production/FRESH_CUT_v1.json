@@ -1,0 +1,26 @@
+{
+  "schema": "door-seconds.fresh-cut.v1",
+  "title": "The Door Between the Seconds",
+  "lead_character": "Pandora",
+  "restart_authorized_by_current_user": true,
+  "old_timeline_authority": false,
+  "source_strategy": "Treat prior renders and available branch/library media as raw source material; build a new edit order from scratch.",
+  "runtime_seconds": 169.13,
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "codec": "h264"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2
+  },
+  "segments": 38,
+  "cold_open_seconds": 6.0,
+  "output": "The_Door_Between_the_Seconds_FRESH_CUT_v1_720p.mp4",
+  "sha256": "0a9b21202e144f3eef0b25aa5278881a9509ee9a0d41c596b40a2a89df2241b5",
+  "library_path": "/Video Creation/The_Door_Between_the_Seconds_FRESH_CUT_v1_720p.mp4",
+  "creative_note": "Pandora is the lead character, not the title. This cut emphasizes realistic Pandora/cathedral footage, architecture and threshold progression, temporal imagery, and a dawn/underground ending while using the repetitive window repass only as brief memory-home material."
+}
