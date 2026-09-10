@@ -1,0 +1,25 @@
+name: Sandbox checkout export
+
+on:
+  push:
+    branches:
+      - song/the-door-between-the-seconds
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout active production branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Package checkout for ChatGPT sandbox
+        uses: actions/upload-artifact@v4
+        with:
+          name: aivideoedit-sandbox-checkout
+          path: |
+            .
+            !.git/**
+          include-hidden-files: true
+          compression-level: 6
+          retention-days: 1
