@@ -41,7 +41,7 @@
       "role": "fx_lock",
       "path": "fx.lock.json",
       "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
-      "status": "verified"
+      "status": "accepted"
     }
   ],
   "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."

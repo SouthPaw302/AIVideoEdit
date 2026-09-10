@@ -263,7 +263,7 @@ for e in ENTRIES:
         "media_evidence":[
             {"role":"primary_source","path":str(src.relative_to(ROOT)),"sha256":sha256(src),"status":"generated"},
             {"role":"proof_preview","path":str(proof.relative_to(ROOT)),"sha256":sha256(proof),"status":"derived"},
-            {"role":"fx_lock","path":"fx.lock.json","sha256":sha256(FX_LOCK),"status":"verified"}
+            {"role":"fx_lock","path":"fx.lock.json","sha256":sha256(FX_LOCK),"status":"accepted"}
         ],
         "notes":"Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
     }
