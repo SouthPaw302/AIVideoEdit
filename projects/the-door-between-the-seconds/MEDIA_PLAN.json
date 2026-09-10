@@ -12,17 +12,45 @@
     "purpose": "Introduce Pandora as the only stable conscious presence before the temporal house wakes",
     "source_policy": "Use current authorized Pandora source media; no v3 generated scene-bank material"
   },
-  "selected_capabilities": ["source_video","authorized_source_images","accepted_motion_benchmark_video","living_painting","living_still_fx","layered_composite","reflection_echo","depth_25d","perspective_transform","atmospheric_plate","reactive_plate","transition_media","conventional_video","analysis_qc_media"],
+  "selected_capabilities": [
+    "source_video",
+    "authorized_source_images",
+    "accepted_motion_benchmark_video",
+    "living_still_fx",
+    "layered_composite",
+    "reflection_echo",
+    "depth_25d",
+    "perspective_transform",
+    "atmospheric_plate",
+    "reactive_plate",
+    "transition_media",
+    "conventional_video",
+    "analysis_qc_media",
+    "generated_support_imagery",
+    "extracted_frames"
+  ],
   "source_media_policy": {
     "user_supplied_images": "authorized for final-picture use and derivation",
     "user_supplied_video": "authorized for final-picture use, motion study and source extraction",
     "old_agent_generated_media": "rejected",
     "old_v3_shot_packages": "rejected",
-    "new_support_media": "may be created only when the locked story needs coverage that cannot be derived from current authorized media"
+    "new_support_media": "authorized in current session; ten scene-specific Pandora support images generated from the locked story and used only where cinematic coverage needed expansion",
+    "pandora_zip": "current user supplied; 15 PNG binaries addressable and hashed; authorized for final-picture use and derivation"
   },
   "story_world": {
     "premise": "Pandora enters a house made from abandoned time to recover the last human morning she never lived.",
-    "recurring_motifs": ["red fabric and roses","rain","inward windows","wet footprints","iron memory","mirrors and temporal reflections","candles","cathedral distance","crypt stone","underground dawn"],
+    "recurring_motifs": [
+      "red fabric and roses",
+      "rain",
+      "inward windows",
+      "wet footprints",
+      "iron memory",
+      "mirrors and temporal reflections",
+      "candles",
+      "cathedral distance",
+      "crypt stone",
+      "underground dawn"
+    ],
     "second_presence_rule": "Any apparent second Pandora is a reflection/temporal state of the same identity, not a new protagonist."
   },
   "temporal_density": {
@@ -41,7 +69,11 @@
     {"section":"chorus_2","song_time":[110.02,138.02],"video_time":[116.02,144.02],"mode":"cinematic","function":"distance wakes and the house spatially folds"},
     {"section":"outro","song_time":[138.02,163.12],"video_time":[144.02,169.12],"mode":"hybrid","function":"descend to buried time and receive underground morning"}
   ],
-  "music_analysis_artifacts": {"edit_map":"rebuild_v1/analysis/edit_map.json","tempo_bpm_measured":112.347,"reactive_controls_status":"regenerated_locally_from_current WAV; persist with fresh shot packages rather than as current branch authority"},
+  "music_analysis_artifacts": {
+    "edit_map": "rebuild_v1/analysis/edit_map.json",
+    "tempo_bpm_measured": 112.347,
+    "reactive_controls_status": "regenerated locally from the current WAV and used by the clean rebuild renderer"
+  },
   "fresh_production_namespace": "rebuild_v1/",
-  "next_gate": "Make current-chat image binaries addressable, then build fresh rebuild_v1 shot packages from locked SCRIPT.json with real hashed media evidence and representative hybrid proofs."
+  "next_gate": "ARCHIVED: final master and QC persisted; resume only for user-requested revision."
 }
