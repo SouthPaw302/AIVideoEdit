@@ -1,0 +1,54 @@
+{
+  "schema": "aivideoedit.final-qc.v1",
+  "result": "PASS",
+  "master": "rebuild_v1/render/PANDORA_THE_UNMADE_DAY_FINAL_v2_960x540.mp4",
+  "sha256": "eb2d30f926f56d4bd7a7dbc0dff385cec9c914f73ae3bf427ac7e33420582332",
+  "video": {
+    "frames": 5074,
+    "fps": 30,
+    "width": 960,
+    "height": 540,
+    "duration_seconds": 169.133333,
+    "black_events": 0,
+    "freeze_events": 0
+  },
+  "audio": {
+    "source": "source_media/current_user/The_Door_between_the_Seconds.wav",
+    "delay_seconds": 6.0,
+    "source_initial_silence_seconds": 1.099771,
+    "final_detected_silence_end_seconds": 7.099792,
+    "note": "The first 6.0 seconds are inserted digital silence; the next ~1.10 seconds are silence already present at the head of the source WAV."
+  },
+  "fx": {
+    "precompile_gate": "PASS",
+    "lock_verify": "PASS",
+    "approved_effect_ids": [
+      "FX2-MOTION-002",
+      "FX2-MOTION-003",
+      "FX2-ATM-001",
+      "FX2-ATM-002",
+      "FX2-FIRE-002",
+      "FX2-LIGHT-001",
+      "FX2-LIGHT-002",
+      "FX2-SURFACE-001"
+    ]
+  },
+  "mode_aware_proofs": "PASS",
+  "variety_3s": {
+    "result": "PASS",
+    "similar_runs": [],
+    "mean_adjacent_similarity": 0.936420775949955
+  },
+  "variety_5s": {
+    "raw_result": "REVIEW",
+    "similar_runs": [{"sample_start": 0, "sample_end": 2, "seconds_start": 0.0, "seconds_end": 10.0}],
+    "disposition": "ACCEPTED_INTENTIONAL_COLD_OPEN",
+    "reason": "Only flagged run is 0-10s. The locked directing plan intentionally holds Pandora/window continuity through the six-second silent witness and first song reveal. Full contact-sheet inspection confirms later-act compositional progression."
+  },
+  "visual_inspection": {
+    "result": "PASS",
+    "notes": "Final 5s contact sheet reviewed after cinematic replacement pass; threshold, endless corridor, temporal double, memory-book, crypt descent and integration beats are visibly differentiated while Pandora identity/color continuity remains coherent."
+  },
+  "production_contract": "PASS",
+  "directing_contract": "PASS"
+}
