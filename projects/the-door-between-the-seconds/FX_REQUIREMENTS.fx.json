@@ -1,37 +1,20 @@
 {
-  "project": "the-door-between-the-seconds-pandora-v2",
+  "project": "the-door-between-the-seconds-pandora-v3-branch-picture",
   "runtime": "aivideoedit-fx-v2",
   "seed": 302,
   "render_inputs": [
-    "projects/the-door-between-the-seconds/production/build_pandora_final.py",
-    "projects/the-door-between-the-seconds/SCRIPT.json",
+    "projects/the-door-between-the-seconds/production/build_branch_picture.py",
+    "projects/the-door-between-the-seconds/production/generate_branch_scene_bank.py",
+    "projects/the-door-between-the-seconds/production/v3_snapshot_inputs/SCRIPT.json",
     "projects/the-door-between-the-seconds/MEDIA_PLAN.json"
   ],
   "effects": [
-    {
-      "id": "FX2-MOTION-002",
-      "strength": 0.32
-    },
-    {
-      "id": "FX2-ATM-001",
-      "strength": 0.45
-    },
-    {
-      "id": "FX2-ATM-002",
-      "strength": 0.58
-    },
-    {
-      "id": "FX2-FIRE-002",
-      "strength": 0.55
-    },
-    {
-      "id": "FX2-LIGHT-001",
-      "strength": 0.6
-    },
-    {
-      "id": "FX2-LIGHT-002",
-      "strength": 0.55
-    }
+    {"id": "FX2-MOTION-002", "strength": 0.42},
+    {"id": "FX2-ATM-001", "strength": 0.32},
+    {"id": "FX2-ATM-002", "strength": 0.40},
+    {"id": "FX2-FIRE-002", "strength": 0.38},
+    {"id": "FX2-LIGHT-001", "strength": 0.75},
+    {"id": "FX2-LIGHT-002", "strength": 0.80}
   ],
   "transitions": []
 }
