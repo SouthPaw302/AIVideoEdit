@@ -36,6 +36,7 @@
     {"path":"general/reusable/storage/github_release_storage.py","role":"media_storage_runtime"},
     {"path":"general/reusable/tools/production_guard.py","role":"fail_closed_production_guard"},
     {"path":"general/reusable/tools/narrative_guard.py","role":"fail_closed_directing_guard"},
+    {"path":"general/reusable/tools/test_director_brain.py","role":"director_brain_regression_test"},
     {"path":"general/reusable/tools/README.md","role":"tool_index"}
   ]
 }
