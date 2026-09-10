@@ -17,9 +17,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: aivideoedit-sandbox-checkout
-          path: |
-            .
-            !.git/**
+          path: .
           include-hidden-files: true
           compression-level: 6
           retention-days: 1
