@@ -15,6 +15,7 @@ import production_proofs
 import production_fx
 import production_assembly
 import production_final_qc
+import production_archive
 from core_adapter import CORE
 
 TOOL_SCHEMAS=[
@@ -63,6 +64,9 @@ TOOL_SCHEMAS=[
 {"name":"final_qc.run_technical","description":"Run decode, duration, black/freeze, audio/video, hash, and FX-lock checks on the full assembly.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"final_qc.accept_creative","description":"Accept the full export only after every scripted section and required mode-aware visual check has been reviewed.","input_schema":{"type":"object","required":["project_id","verified_shot_ids","mode_aware_checks","instruction"],"properties":{"project_id":{"type":"string"},"verified_shot_ids":{"type":"array","items":{"type":"string"}},"mode_aware_checks":{"type":"object"},"instruction":{"type":"string"}}}},
 {"name":"final_qc.reject","description":"Reject the final export and clear final/archive acceptance while preserving the assembled artifact for refinement.","input_schema":{"type":"object","required":["project_id","reason"],"properties":{"project_id":{"type":"string"},"reason":{"type":"string"}}}},
+{"name":"archive.status","description":"Show content-addressed production archive state.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"archive.build","description":"Build a Git-friendly archive manifest containing hashes of production records and a pointer/hash for heavy final media.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"},"note":{"type":"string"}}}},
+{"name":"archive.verify","description":"Re-hash archived production records and verify the final media still matches the archive manifest.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.guard","description":"Re-run the bootstrapped current-main production guard for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.advance","description":"Request exactly the next canonical production stage. Workstation evidence and canonical guards must pass.","input_schema":{"type":"object","required":["project_id","target_stage"],"properties":{"project_id":{"type":"string"},"target_stage":{"type":"string"}}}},
 {"name":"media.list","description":"List registered media assets for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
@@ -149,6 +153,9 @@ def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_projec
     if name=="final_qc.run_technical":_project(pid);return production_final_qc.run_technical(pid)
     if name=="final_qc.accept_creative":_project(pid);return production_final_qc.accept_creative(pid,verified_shot_ids=a.get("verified_shot_ids") if isinstance(a.get("verified_shot_ids"),list) else [],mode_aware_checks=a.get("mode_aware_checks") if isinstance(a.get("mode_aware_checks"),dict) else {},instruction=str(a.get("instruction") or ""))
     if name=="final_qc.reject":_project(pid);return production_final_qc.reject(pid,reason=str(a.get("reason") or ""))
+    if name=="archive.status":_project(pid);return production_archive.status(pid)
+    if name=="archive.build":_project(pid);return production_archive.build(pid,note=str(a.get("note") or ""))
+    if name=="archive.verify":_project(pid);return production_archive.verify(pid)
     if name=="production.guard":_project(pid);return production_project.run_guard(pid)
     if name=="production.advance":_project(pid);return production_stage.advance(pid,str(a.get("target_stage") or ""))
     if name=="media.list":
