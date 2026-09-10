@@ -7,7 +7,7 @@ The bootstrap materializes the *entire current main branch* into an ephemeral
 `.aivideoedit/os/` sandbox-local runtime, runs that current-main production
 guard against the active working branch, then writes:
   - `.aivideoedit/session.json`      immutable session attestation
-  - `.aivideoedit/SECOND_BRAIN.md`   generated branch/session working context
+  - `.aivideoedit/SECOND_BRAIN.md`   generated branch/session director context
 
 No production authority is duplicated here. GitHub `main` remains the OS.
 Stdlib only.
@@ -52,7 +52,7 @@ def http_bytes(url: str, timeout: int = 30) -> bytes:
     req = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "AIVideoEdit-bootstrap/1",
+            "User-Agent": "AIVideoEdit-bootstrap/2",
             "Accept": "application/vnd.github+json, application/octet-stream;q=0.9, */*;q=0.8",
         },
     )
@@ -232,11 +232,63 @@ def run_bootstrap_guard(repo: Path, os_root: Path, branch: str, project: Path | 
         raise SystemExit("BOOTSTRAP FAIL: current-main production contract rejected this workspace.")
 
 
+def handoff_to_current_main_bootstrap(
+    repo: Path,
+    os_root: Path,
+    branch: str,
+    args: argparse.Namespace,
+) -> None:
+    """Re-exec the exact current-main bootstrap on non-main branches.
+
+    Song branches can carry an older bootstrap.py. The loader may locate and
+    materialize current main, but current main must own Second Brain/session
+    behavior too. One environment flag prevents re-exec loops.
+    """
+    if branch == "main" or os.environ.get("AIVIDEOEDIT_BOOTSTRAP_REEXEC") == "1":
+        return
+    canonical = os_root / "bootstrap.py"
+    if not canonical.is_file():
+        raise SystemExit("BOOTSTRAP FAIL: current-main snapshot lacks bootstrap.py")
+
+    try:
+        this_file = Path(__file__).resolve()
+        same = this_file.is_file() and sha256_file(this_file) == sha256_file(canonical)
+    except Exception:
+        same = False
+    if same:
+        return
+
+    cmd = [
+        sys.executable,
+        str(canonical),
+        "boot",
+        "--repo-root",
+        str(repo),
+        "--branch",
+        branch,
+    ]
+    if args.project_dir:
+        cmd += ["--project-dir", str(args.project_dir)]
+    if args.offline:
+        cmd.append("--offline")
+
+    env = os.environ.copy()
+    env["AIVIDEOEDIT_BOOTSTRAP_REEXEC"] = "1"
+    os.execve(sys.executable, cmd, env)
+
+
 def read_json_if(path: Path) -> dict:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return {}
+
+
+def read_text_if(path: Path) -> str:
+    try:
+        return path.read_text(encoding="utf-8").strip()
+    except Exception:
+        return ""
 
 
 def next_stage(contract: dict, stage: str | None) -> str:
@@ -247,8 +299,22 @@ def next_stage(contract: dict, stage: str | None) -> str:
     return states[0] if states else "UNKNOWN"
 
 
-def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | None, main_sha: str, session_id: str) -> str:
+def fmt_list(value) -> str:
+    if isinstance(value, list) and value:
+        return "; ".join(str(x) for x in value)
+    return "none recorded"
+
+
+def build_second_brain(
+    repo: Path,
+    os_root: Path,
+    branch: str,
+    project: Path | None,
+    main_sha: str,
+    session_id: str,
+) -> str:
     contract = read_json_if(os_root / "general/reusable/PRODUCTION_CONTRACT.json")
+    prime = read_text_if(os_root / "PRIME_DIRECTIVE.md")
     lines = [
         "# AIVideoEdit Session Second Brain",
         "",
@@ -257,6 +323,10 @@ def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | N
         f"- Session: `{session_id}`",
         f"- Current-main OS commit: `{main_sha}`",
         f"- Active branch: `{branch}`",
+        "",
+        "## PRIME DIRECTIVE",
+        prime or "ERROR: PRIME_DIRECTIVE.md was not readable.",
+        "",
     ]
     if not project:
         lines += [
@@ -272,37 +342,107 @@ def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | N
     auth = read_json_if(project / "SOURCE_AUTHORITY.json")
     plan = read_json_if(project / "MEDIA_PLAN.json")
     refs = read_json_if(project / "REFERENCE_MANIFEST.json")
+    order = read_json_if(project / "OPERATING_ORDER.json")
     stage = state.get("stage")
     allow = [k for k, v in auth.get("allow", {}).items() if v is True]
     deny = [k for k, v in auth.get("allow", {}).items() if v is False]
+
     lines += [
+        "## ACTIVE PRODUCTION",
         f"- Project directory: `{project.relative_to(repo).as_posix()}`",
+        f"- Director Brain version: `{state.get('director_brain_version', 'legacy')}`",
         f"- Production stage: `{stage or 'UNKNOWN'}`",
         f"- Next contract stage: `{next_stage(contract, stage)}`",
         "",
+        "## DIRECTOR OPERATING ORDER",
+    ]
+
+    if order:
+        canon = order.get("canon_lock", {}) if isinstance(order.get("canon_lock"), dict) else {}
+        baseline = order.get("accepted_baseline", {}) if isinstance(order.get("accepted_baseline"), dict) else {}
+        refine = order.get("refinement_scope", {}) if isinstance(order.get("refinement_scope"), dict) else {}
+        lines += [
+            f"- Mission: {order.get('mission') or 'MISSING'}",
+            f"- Direction authority: `{order.get('direction_authority') or 'MISSING'}`",
+            f"- Production mode: `{order.get('production_mode') or 'MISSING'}`",
+            f"- Current user direction: {order.get('current_user_direction') or 'MISSING'}",
+            "",
+            "### Canon",
+            f"- Locked: `{canon.get('locked')}`",
+            f"- Picture language: {canon.get('picture_language') or 'none recorded'}",
+            f"- Canon items: {fmt_list(canon.get('items'))}",
+            "",
+            "### Accepted baseline",
+            f"- Status: `{baseline.get('status') or 'none'}`",
+            f"- File/locator: {baseline.get('file_or_locator') or 'none'}",
+            f"- SHA-256: {baseline.get('sha256') or 'none'}",
+            f"- User acceptance: {baseline.get('user_acceptance_statement') or 'none'}",
+            "",
+            "### Refinement scope",
+            f"- Active: `{refine.get('active')}`",
+            f"- Goal: {refine.get('goal') or 'none'}",
+            f"- Allowed changes: {fmt_list(refine.get('allowed_changes'))}",
+            f"- Forbidden changes: {fmt_list(refine.get('forbidden_changes'))}",
+            f"- Restart authorized: `{refine.get('restart_authorized')}`",
+            "",
+            "### EXACT NEXT ACTION",
+            order.get("exact_next_action") or "MISSING",
+            "",
+        ]
+        if refine.get("active") is True and refine.get("restart_authorized") is False:
+            lines += [
+                "## DO NOT RESTART",
+                "An accepted baseline is under active refinement. Preserve canon and the baseline. "
+                "Perform only the allowed changes above unless the current user changes authorization.",
+                "",
+            ]
+    else:
+        lines += [
+            "OPERATING_ORDER.json not present. This is permitted only for an unmigrated legacy project. "
+            "Do not invent canon/baseline/refinement state from history.",
+            "",
+        ]
+
+    lines += [
         "## Source authority snapshot",
         "Allowed: " + (", ".join(allow) if allow else "none recorded"),
         "",
         "Denied: " + (", ".join(deny) if deny else "none recorded"),
         "",
-        "Explicit historical authorizations: " + (", ".join(auth.get("explicit_user_authorizations", [])) or "none"),
+        "Explicit historical authorizations: "
+        + (", ".join(auth.get("explicit_user_authorizations", [])) or "none"),
         "",
         "## Media plan",
-        "Selected capabilities: " + (", ".join(plan.get("selected_capabilities", [])) or "not established"),
+        "Selected capabilities: "
+        + (", ".join(plan.get("selected_capabilities", [])) or "not established"),
         "",
         "## Reference inventory",
         f"- Videos: {len(refs.get('videos', []))}",
         f"- Images: {len(refs.get('images', []))}",
         "",
         "## Session rule",
-        "Do not advance stage, generate media, select FX, assemble, or claim QC from memory. Use active branch evidence and the current-main OS. Re-run the bootstrapped guard before stage-changing work.",
+        "Do not advance stage, generate media, select FX, assemble, or claim QC from memory. "
+        "Use the Prime Directive, active Operating Order, active branch evidence, and current-main OS. "
+        "Re-run the bootstrapped guard before stage-changing work.",
     ]
     return "\n".join(lines) + "\n"
 
 
-def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, main_sha: str, os_source: str, archive_source: str, manifest_hash: str, file_hashes: dict[str, str]) -> Path:
+def write_session(
+    repo: Path,
+    os_root: Path,
+    branch: str,
+    project: Path | None,
+    main_sha: str,
+    os_source: str,
+    archive_source: str,
+    manifest_hash: str,
+    file_hashes: dict[str, str],
+) -> Path:
     session_dir = repo / SESSION_DIRNAME
     session_id = str(uuid.uuid4())
+    order = read_json_if(project / "OPERATING_ORDER.json") if project else {}
+    state = read_json_if(project / "PROJECT_STATE.json") if project else {}
     rec = {
         "schema": SESSION_SCHEMA,
         "session_id": session_id,
@@ -317,10 +457,26 @@ def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, 
         "manifest_sha256": manifest_hash,
         "os_files": file_hashes,
         "guard_result": "PASS",
+        "director_brain_version": state.get("director_brain_version") if project else None,
+        "direction_authority": order.get("direction_authority") if order else None,
+        "production_mode": order.get("production_mode") if order else None,
+        "accepted_baseline_status": (
+            order.get("accepted_baseline", {}).get("status")
+            if isinstance(order.get("accepted_baseline"), dict)
+            else None
+        ),
+        "refinement_active": (
+            order.get("refinement_scope", {}).get("active")
+            if isinstance(order.get("refinement_scope"), dict)
+            else None
+        ),
     }
     path = session_dir / "session.json"
     path.write_text(json.dumps(rec, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    (session_dir / "SECOND_BRAIN.md").write_text(build_second_brain(repo, os_root, branch, project, main_sha, session_id), encoding="utf-8")
+    (session_dir / "SECOND_BRAIN.md").write_text(
+        build_second_brain(repo, os_root, branch, project, main_sha, session_id),
+        encoding="utf-8",
+    )
     return path
 
 
@@ -337,10 +493,21 @@ def boot(args: argparse.Namespace) -> int:
 
     main_sha, os_source = fetch_main_sha(args.offline, repo)
     archive_source = materialize_entire_main(repo, os_root, main_sha, args.offline)
+    handoff_to_current_main_bootstrap(repo, os_root, branch, args)
     manifest, manifest_bytes = load_os_manifest(os_root)
     file_hashes = attest_manifest_files(os_root, manifest)
     run_bootstrap_guard(repo, os_root, branch, project)
-    session_path = write_session(repo, os_root, branch, project, main_sha, os_source, archive_source, sha256_bytes(manifest_bytes), file_hashes)
+    session_path = write_session(
+        repo,
+        os_root,
+        branch,
+        project,
+        main_sha,
+        os_source,
+        archive_source,
+        sha256_bytes(manifest_bytes),
+        file_hashes,
+    )
 
     print("AIVideoEdit OS BOOTSTRAP: PASS")
     print(f"main={main_sha}")
@@ -370,11 +537,25 @@ def install(args: argparse.Namespace) -> int:
     dst.parent.mkdir(parents=True, exist_ok=True)
 
     if shutil.which("git"):
-        p = subprocess.run(["git", "clone", "--branch", DEFAULT_REF, "--single-branch", f"https://github.com/{REPOSITORY}.git", str(dst)], check=False)
+        p = subprocess.run(
+            [
+                "git",
+                "clone",
+                "--branch",
+                DEFAULT_REF,
+                "--single-branch",
+                f"https://github.com/{REPOSITORY}.git",
+                str(dst),
+            ],
+            check=False,
+        )
         if p.returncode != 0:
             raise SystemExit("INSTALL FAIL: git clone failed.")
     else:
-        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/refs/heads/{DEFAULT_REF}", timeout=90)
+        data = http_bytes(
+            f"https://codeload.github.com/{REPOSITORY}/tar.gz/refs/heads/{DEFAULT_REF}",
+            timeout=90,
+        )
         dst.mkdir(parents=True, exist_ok=True)
         with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf:
             safe_extract_tar(tf, dst, strip_first_component=True)
@@ -392,7 +573,11 @@ def main() -> int:
     b.add_argument("--repo-root")
     b.add_argument("--branch")
     b.add_argument("--project-dir")
-    b.add_argument("--offline", action="store_true", help="materialize exact local origin/main via git archive instead of GitHub")
+    b.add_argument(
+        "--offline",
+        action="store_true",
+        help="materialize exact local origin/main via git archive instead of GitHub",
+    )
     b.set_defaults(func=boot)
 
     s = sub.add_parser("status", help="show current session attestation")
