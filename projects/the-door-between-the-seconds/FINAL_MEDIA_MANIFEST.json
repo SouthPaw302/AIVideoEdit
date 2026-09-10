@@ -1,0 +1,37 @@
+{
+  "schema": "aivideoedit.final-media-manifest.v1",
+  "project": "the-door-between-the-seconds",
+  "branch": "song/the-door-between-the-seconds",
+  "canonical_master": "rebuild_v1/render/PANDORA_THE_UNMADE_DAY_FINAL_v2_960x540.mp4",
+  "canonical_master_sha256": "eb2d30f926f56d4bd7a7dbc0dff385cec9c914f73ae3bf427ac7e33420582332",
+  "persistent_media_folder": "/Video Creation/Pandora Clean Media",
+  "generated_media": {
+    "G01_rainy_threshold.png": "cfad2ed3aba87a9ec4484f15e9e94b611b1915f3d1c309b97e495269ce714e0e",
+    "G02_gallery_commit.png": "b99fd5fc06964e58a6736769fdcef28a1ebf9527b430e9cbe7b6b6de0d645646",
+    "G03_temporal_double.png": "454633146ebc81ea6d929548795865d15b8b960db4faa3e1565f50f64393f499",
+    "G04_crypt_descent.png": "a9d142acfd9939a1271eda1c3ac041514618c294c62c31978973cda760665ae3",
+    "G05_underground_dawn.png": "e1dc5bd56e554b75a45f212870bd5873653fddf9ad078b32f4f9b4d26335fcef",
+    "G06_memory_room.png": "cd447c53e9630778679179a224703cd444bb332999f41714816c720df6cc7af3",
+    "G07_endless_corridor.png": "cbbad179e703ead6a7598fb4681ad6e14c7d538e313eed59305260e29ba8232e",
+    "G08_integration.png": "62ae8d90aed84e252dfb2303d6a05dadef24d99aa2a37cf76d4bde1fba73adda",
+    "G09_secret_memory.png": "5b5772d9fb73893b94b043295d8cfb08ef0a3544ff4944a58abce49b84e6b57b",
+    "G10_rose_dawn.png": "dd42cb24d1a79eb2abd401a244236fb0825ed80728ac1a9d696a5f567907e5ff"
+  },
+  "canonical_cinematic_overrides": {
+    "S09": {"start": 44.5, "end": 50.0, "frames": 165, "source": "G02_gallery_commit.png"},
+    "S10": {"start": 50.0, "end": 55.333333, "frames": 160, "source": "G07_endless_corridor.png"},
+    "S14": {"start": 68.333333, "end": 76.0, "frames": 230, "source": "G01_rainy_threshold.png"},
+    "S17": {"start": 87.766667, "end": 92.066667, "frames": 129, "source": "G07_endless_corridor.png"},
+    "S20": {"start": 103.433333, "end": 110.466667, "frames": 211, "source": "G03_temporal_double.png"},
+    "S22": {"start": 116.0, "end": 121.3, "frames": 159, "source": "G08_integration.png"},
+    "S24": {"start": 126.7, "end": 132.0, "frames": 159, "source": "G09_secret_memory.png"},
+    "S26": {"start": 138.1, "end": 144.0, "frames": 177, "source": "G04_crypt_descent.png"},
+    "S29": {"start": 156.933333, "end": 163.1, "frames": 185, "source": "G08_integration.png"}
+  },
+  "support_usage": {
+    "G05_underground_dawn.png": ["S30"],
+    "G06_memory_room.png": ["S06"],
+    "G10_rose_dawn.png": ["S25", "S28"]
+  },
+  "authority_note": "This manifest records the canonical final-v2 media overrides and generated-support hashes. It supersedes pre-final visual_media labels for the listed shots without changing the locked story timing or production-mode assignments. Rejected v3 creative assets are historical provenance only."
+}
