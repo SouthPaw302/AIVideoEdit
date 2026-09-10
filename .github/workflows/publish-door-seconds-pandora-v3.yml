@@ -1,0 +1,60 @@
+name: Publish Door Seconds Pandora v3 Picture
+
+on:
+  push:
+    branches:
+      - song/the-door-between-the-seconds
+    paths:
+      - .github/workflows/publish-door-seconds-pandora-v3.yml
+
+permissions:
+  actions: read
+  contents: write
+
+env:
+  SOURCE_RUN_ID: "34428760717"
+  ARTIFACT_NAME: door-seconds-pandora-v3-picture
+  RELEASE_TAG: door-seconds-pandora-picture-v3
+  TARGET_BRANCH: song/the-door-between-the-seconds
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: song/the-door-between-the-seconds
+          fetch-depth: 1
+
+      - name: Recover successful picture artifact
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p release_payload
+          gh run download "$SOURCE_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$ARTIFACT_NAME" \
+            --dir release_payload
+          test -s release_payload/PANDORA_BRANCH_PICTURE_960x540.mp4
+          test -s release_payload/PANDORA_BRANCH_PICTURE_CONTACT_SHEET.jpg
+          test -s release_payload/PANDORA_BRANCH_PICTURE_QC.json
+          sha256sum release_payload/*
+
+      - name: Publish persistent release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" release_payload/* \
+              --repo "$GITHUB_REPOSITORY" --clobber
+          else
+            gh release create "$RELEASE_TAG" release_payload/* \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$TARGET_BRANCH" \
+              --title "The Door Between the Seconds — Pandora v3 Picture" \
+              --notes "Picture-only v3 production candidate. 169.133 seconds, 960x540, 30 fps, six-second silent cold open, 34-shot proof gate passed. Original source soundtrack is not fabricated; audio mux and final cinematic QC remain pending until the source audio bytes are addressable."
+          fi
