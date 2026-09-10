@@ -1,0 +1,88 @@
+{
+  "schema": "aivideoedit.project-capability-proof.v1",
+  "project": "the-door-between-the-seconds",
+  "subject": "Pandora the Vampire",
+  "current_main_qc_commit": "0fada7f78453339acea864dfbd1edfe73fb9ddec",
+  "renderer": {
+    "path": "production/build_pandora_final.py",
+    "sha256": "345fa5b63d0637dbeb4db328cd706204be8604ed76b44ea5c8c44be1e1914774"
+  },
+  "script_sha256": "c73b998e59264b5bf6894eb1253fe0de78094923dbefa5c5542b8f10e3a927e0",
+  "fx_lock": {
+    "path": "fx.lock.json",
+    "sha256": "c35f86cdb63fab1b8f59d39afb5fd5cc30f31960eb44a6246fd8a6f6811514c8",
+    "live_verification": "PASS"
+  },
+  "proofs": {
+    "rain_reflection": {
+      "path": "proofs/current_gate/PROOF_RAIN_REFLECTION.mp4",
+      "sha256": "bb32f55d9f5a79b645b22d89c499a26be6c13dca3de556574fabcbd30e6597f6",
+      "frames": 270,
+      "fps": 30.0,
+      "duration_seconds": 9.0,
+      "mean_adjacent_delta": 3.7347973294055103,
+      "p95_adjacent_delta": 5.829863425925925,
+      "black_frames_mean_lt4": 0
+    },
+    "hallway_revised": {
+      "path": "proofs/current_gate/PROOF_HALLWAY_REVISED.mp4",
+      "sha256": "6d11500f8f395b8c2446888a046ded76672da02105bba593b517b8f4896fd1f8",
+      "frames": 285,
+      "fps": 30.0,
+      "duration_seconds": 9.5,
+      "mean_adjacent_delta": 1.6025686112560134,
+      "p95_adjacent_delta": 3.3423602430555475,
+      "black_frames_mean_lt4": 0
+    },
+    "reverse_drift": {
+      "path": "proofs/current_gate/PROOF_S20_REVERSE_DRIFT.mp4",
+      "sha256": "3fe41105a7bb200e2968ff16a583af269306b4d5ad242c4276cc1d0b783d3e75",
+      "frames": 105,
+      "fps": 30.0,
+      "duration_seconds": 3.5,
+      "mean_adjacent_delta": 1.2962477309374012,
+      "p95_adjacent_delta": 2.934275816615225,
+      "black_frames_mean_lt4": 0
+    }
+  },
+  "capabilities": {
+    "reflection_echo": {
+      "implementation": "project-local bounded horizontal mirror blend in build_pandora_final.py::precompose",
+      "proof": "rain_reflection",
+      "geometry": "equal-size image-space horizontal reflection; 0.76/0.24 bounded blend; no true-3D claim",
+      "opacity_continuity": "constant bounded blend inside the shot; six-frame lyrical handoff at shot start",
+      "export_visible": "PASS",
+      "manual_qc": "PASS \u2014 reflection remains visible without destroying Pandora or room identity"
+    },
+    "perspective_transform": {
+      "implementation": "project-local bounded rotation/zoom/translation plus corridor architecture nesting",
+      "proofs": [
+        "hallway_revised",
+        "reverse_drift"
+      ],
+      "claim_guard": "image-space perspective/composition only; no true-3D claim",
+      "endpoint_crop_qc": "PASS \u2014 reflected borders/architecture crops fill 16:9 frame; no black edge leakage",
+      "manual_qc": "PASS after revision \u2014 person -> architecture corridor -> forward travel; rejected body-clone version excluded"
+    },
+    "transition_media": {
+      "implementation": "six-frame cosine-eased lyrical dissolve; hard cuts reserved for industrial anchors",
+      "proof": "rain_reflection",
+      "endpoint_identity": "PASS \u2014 transition begins from previous accepted frame and resolves to current shot within six frames",
+      "manual_qc": "PASS \u2014 no exposure flash or black interruption in proof"
+    },
+    "accepted_motion_benchmark_video": {
+      "path": "resume_payload/video/gothic_window_8s_fullscreen_720p.mp4",
+      "sha256": "acc0602d83e6563c7a806335d16b7381aa99b5712476bbbd636d322e905ea1ea",
+      "role": "current-user accepted motion benchmark and cold-open source; content reuse separately authorized",
+      "status": "accepted"
+    }
+  },
+  "technical_qc": {
+    "blackdetect": "PASS on three current-gate proofs (no >=0.25s black detections)",
+    "freezedetect": "PASS on three current-gate proofs (no >=1s freeze detections)",
+    "canonical_fx_precompile_gate": "PASS",
+    "canonical_fx_lock_live_verify": "PASS"
+  },
+  "decision": "PASS_SHORT_PROOFS",
+  "note": "This approves scaling to shot-package/full-render production only; it does not approve final assembly."
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "door-seconds.pandora-render.v1",
+  "subject": "Pandora the Vampire",
+  "runtime_seconds": 169.13333333333333,
+  "fps": 30,
+  "working_resolution": [
+    960,
+    540
+  ],
+  "delivery_resolution": [
+    1920,
+    1080
+  ],
+  "delivery_is_upscale": true,
+  "song_offset_seconds": 6.0,
+  "shot_count": 34,
+  "working_sha256": "acb81ba090995a5022c3c706634d0536eaeea63bc334b93d19abfd50f30b63f8",
+  "delivery_sha256": "3aeb9fae6ff55303f451ed6e75e9344d4a49ff1180979e88864926721973cc8e",
+  "working_bytes": 209355252,
+  "delivery_bytes": 134753623,
+  "recovered_media_rule": "retained and reassigned by lyric beat",
+  "support_inserts": {
+    "S04": "rainlit_gothic_aristocrat_at_the_window.jpg",
+    "S07": "gothic_velvet_candlelit_chamber.jpg",
+    "S13": "gothic_rainfall_by_candlelight.jpg",
+    "S21": "moonlit_gothic_velvet_reverie.jpg",
+    "S32": "moonlit_gothic_rose_chamber.jpg"
+  },
+  "reference_flash_shots": {
+    "S10": 0,
+    "S14": 1,
+    "S22": 2,
+    "S27": 3,
+    "S30": 4,
+    "S33": 5
+  }
+}

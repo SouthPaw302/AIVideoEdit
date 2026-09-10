@@ -1,0 +1,14 @@
+{
+  "schema": "aivideoedit.export-variety-qc.v1",
+  "video": "/mnt/data/AIVideoEdit_local/projects/the-door-between-the-seconds/production/final_pandora_v2_gate/The_Door_Between_the_Seconds_PANDORA_FINAL_540p_v3patch_mux.mp4",
+  "duration_seconds": 169.13332599999998,
+  "sample_interval_seconds": 5.0,
+  "samples": 34,
+  "similarity_threshold": 0.992,
+  "max_similar_run_samples": 3,
+  "mean_adjacent_similarity": 0.9534092563571352,
+  "max_adjacent_similarity": 0.9939779043197632,
+  "similar_runs": [],
+  "result": "PASS",
+  "interpretation": "REVIEW means consecutive sampled compositions remained highly similar; inspect the contact sheet. Motion metrics alone do not establish visual progression."
+}

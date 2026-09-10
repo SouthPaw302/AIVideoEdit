@@ -1,0 +1,2 @@
+snapshot_sha256=974b10f7db7c5ee73c20517adab538a6892c1329558b4839073dd5e4867e8769
+extracted_project_root=/home/runner/work/_temp/door_seconds_snapshot
