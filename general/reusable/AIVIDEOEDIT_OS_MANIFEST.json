@@ -18,6 +18,8 @@
     {"path":"general/reusable/PRODUCTION_MODES.md","role":"human_director_modes"},
     {"path":"general/reusable/DOCTRINE_LIVING_SCENE.md","role":"living_scene_doctrine"},
     {"path":"general/reusable/MODE_AWARE_QC.md","role":"mode_aware_qc_contract"},
+    {"path":"general/reusable/DRIFT_TESTS.md","role":"director_drift_test_contract"},
+    {"path":"general/reusable/NARRATIVE_CONTRACT.md","role":"directing_music_media_contract"},
     {"path":"general/reusable/MEDIA_CAPABILITY_MATRIX.json","role":"media_capabilities"},
     {"path":"general/reusable/PRODUCTION_PIPELINE.md","role":"production_pipeline"},
     {"path":"general/reusable/STYLE_CONTRACT.md","role":"style_contract"},
@@ -29,7 +31,8 @@
     {"path":"general/reusable/storage/README.md","role":"media_storage_contract"},
     {"path":"general/reusable/storage/STORAGE_MANIFEST.schema.json","role":"media_storage_schema"},
     {"path":"general/reusable/storage/github_release_storage.py","role":"media_storage_runtime"},
-    {"path":"general/reusable/tools/production_guard.py","role":"fail_closed_guard"},
+    {"path":"general/reusable/tools/production_guard.py","role":"fail_closed_production_guard"},
+    {"path":"general/reusable/tools/narrative_guard.py","role":"fail_closed_directing_guard"},
     {"path":"general/reusable/tools/README.md","role":"tool_index"}
   ]
 }
