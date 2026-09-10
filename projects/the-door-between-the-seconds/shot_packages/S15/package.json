@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S15",
+  "frame_span": [
+    2085,
+    2279
+  ],
+  "seconds": [
+    69.5,
+    76.0
+  ],
+  "story_action": "A pale dawn seam enters the gothic space without destroying the dark.",
+  "lyric_cue": "There is still an unmade day",
+  "source": "production/generated_scene_bank/gothic_dawn_in_the_cathedral_of_roses.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "dawn_bloom; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S15/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 195,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.40327820733104236,
+    "p05_adjacent_delta": 0.04983680555555556,
+    "max_near_static_run_frames": 2
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_dawn_in_the_cathedral_of_roses.jpg",
+      "sha256": "45ce70e13db7b0a6b945189358a2f8dfbc5d97088f59fd7d98dc714c487bf304",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S15/proof_320x180.mp4",
+      "sha256": "ea5cb0dff4462c0c862b8ca1b63a06117b72fb60ea9202d399c8054f204fed85",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

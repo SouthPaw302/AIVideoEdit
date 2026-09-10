@@ -1,0 +1,25 @@
+{
+  "schema": "door-seconds.branch-picture-qc.v1",
+  "subject": "Pandora the Vampire",
+  "picture": "PANDORA_BRANCH_PICTURE_960x540.mp4",
+  "sha256": "aae64ad655844c3a6d98f6fe0f722e39462688d56d85852f23504bd3c0d8e951",
+  "bytes": 14350524,
+  "runtime_seconds": 169.13333333333333,
+  "fps": 30,
+  "resolution": [
+    960,
+    540
+  ],
+  "audio": "not_muxed_source_audio_binary_unavailable",
+  "cold_open_seconds": 6.0,
+  "shot_count": 34,
+  "video_stats": {
+    "decoded_frames": 5074,
+    "black_frames_mean_lt3": 9,
+    "mean_adjacent_delta": 0.6299297752808989,
+    "p05_adjacent_delta": 0.16557407407407407,
+    "max_near_static_run_frames": 1
+  },
+  "shot_proof_result": "PASS",
+  "status": "PICTURE_CANDIDATE"
+}

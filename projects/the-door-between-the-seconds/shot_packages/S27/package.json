@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S27",
+  "frame_span": [
+    3750,
+    3899
+  ],
+  "seconds": [
+    125.0,
+    130.0
+  ],
+  "story_action": "Pandora is now explicitly framed as the vampire queen of this threshold world.",
+  "lyric_cue": "Do not ask the night to stay",
+  "source": "production/generated_scene_bank/gothic_vampiric_reverie_by_moonlit_window.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "vampire_portrait; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S27/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 150,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.43805571091225454,
+    "p05_adjacent_delta": 0.08747685185185185,
+    "max_near_static_run_frames": 2
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_vampiric_reverie_by_moonlit_window.jpg",
+      "sha256": "c1035d66657e32174cc68959fff49b38cad287788cdfa69e98ce515a73df26a1",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S27/proof_320x180.mp4",
+      "sha256": "72bdbe2fbe487ffab4a372b4790af327f7099a057dee7d3eb0214c097ef5e63b",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

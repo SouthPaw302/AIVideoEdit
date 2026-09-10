@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S33",
+  "frame_span": [
+    4875,
+    5073
+  ],
+  "seconds": [
+    162.5,
+    169.13333333333333
+  ],
+  "story_action": "Pandora becomes still beneath the first morning light; image slows toward near-stillness and fades to black.",
+  "lyric_cue": "We were underground",
+  "source": "production/generated_scene_bank/gothic_crypt_empress_in_morning_light.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "final_stillness; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S33/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 199,
+    "black_frames_mean_lt3": 6,
+    "mean_adjacent_delta": 0.3565205293677515,
+    "p05_adjacent_delta": 0.028155092592592596,
+    "max_near_static_run_frames": 8
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_crypt_empress_in_morning_light.jpg",
+      "sha256": "95f8f202b6153275c60b574c265f26a700b91458fcb4c74f5137b344d15a7f23",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S33/proof_320x180.mp4",
+      "sha256": "ffb99f722d268f0d48a2b4be1612d92ab255cbe31ef4bc86d800b0b3dec793fa",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

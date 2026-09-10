@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S02",
+  "frame_span": [
+    300,
+    419
+  ],
+  "seconds": [
+    10.0,
+    14.0
+  ],
+  "story_action": "Pandora crosses the threshold; the chamber she left in the cold open becomes part of a larger impossible manor.",
+  "lyric_cue": "instrumental opening",
+  "source": "production/generated_scene_bank/gothic_moonlit_departure.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "doorway_drift; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S02/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 120,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.7972340880796762,
+    "p05_adjacent_delta": 0.5577916666666666,
+    "max_near_static_run_frames": 0
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_moonlit_departure.jpg",
+      "sha256": "24aabbd8fafbb66856b0708c93f1b5f6432152f45a64b16cd618845c81b6c2f3",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S02/proof_320x180.mp4",
+      "sha256": "680d8c80e930722ff9fdc9cb7cf52dec82d5e5a18a1f7fc238bcb735d47027f9",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

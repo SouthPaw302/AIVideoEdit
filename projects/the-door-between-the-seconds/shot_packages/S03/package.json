@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S03",
+  "frame_span": [
+    420,
+    554
+  ],
+  "seconds": [
+    14.0,
+    18.5
+  ],
+  "story_action": "Pandora is framed against the rain-black entrance; architecture towers above her.",
+  "lyric_cue": "There is a house beneath the rain",
+  "source": "production/generated_scene_bank/rainy_gothic_castle_entrance.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "rain_push; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S03/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 135,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.7970695135433942,
+    "p05_adjacent_delta": 0.5423171296296296,
+    "max_near_static_run_frames": 0
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/rainy_gothic_castle_entrance.jpg",
+      "sha256": "db75e6d5d67f2e8e72c22328e486765f766e0deda880836bb42d0cd4a6e52c0d",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S03/proof_320x180.mp4",
+      "sha256": "a10761422f2158091588e100d62b64ae20f55985017eb421fdd41308745dad00",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

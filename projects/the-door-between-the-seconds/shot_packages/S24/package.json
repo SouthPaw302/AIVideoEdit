@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S24",
+  "frame_span": [
+    3360,
+    3480
+  ],
+  "seconds": [
+    112.0,
+    116.03333333333333
+  ],
+  "story_action": "The familiar window returns as a threshold shared with an unseen other; Pandora is changed by the contact.",
+  "lyric_cue": "Before strangers become friends",
+  "source": "production/generated_scene_bank/moonlit_gothic_romance_by_the_window.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "reflection_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S24/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 121,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.5031255787037037,
+    "p05_adjacent_delta": 0.07437268518518518,
+    "max_near_static_run_frames": 1
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/moonlit_gothic_romance_by_the_window.jpg",
+      "sha256": "f88e78e1691b0e004a88a8c232bb9d2304368d937b5b2ce6ec1f0fa0991a2db8",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S24/proof_320x180.mp4",
+      "sha256": "eea2a73806932c78b87e482865a99eab5ce41cd93657135f55b3359103cec904",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

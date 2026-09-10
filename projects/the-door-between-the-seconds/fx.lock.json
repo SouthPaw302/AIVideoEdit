@@ -1,18 +1,22 @@
 {
   "schema_version": 2,
   "gate": "aivideoedit-fx-precompile-v2",
-  "project": "the-door-between-the-seconds-pandora-v2",
+  "project": "the-door-between-the-seconds-pandora-v3-branch-picture",
   "runtime": "aivideoedit-fx-v2",
-  "manifest_sha256": "fd179df9faac5cc131641899919fe84bd738240e24d61f0c49a86c6b9595b3c9",
-  "registry_sha256": "2138156dbf51e66eab08ef3b629d67f780c4161bbe28bc39e09a643e815dd800",
+  "manifest_sha256": "4062007c31282bfb9b3feb004dec1ca7de5c6d1e03f6006587ac78b401ebca93",
+  "registry_sha256": "170f5a357edf25612865aa4f97024dc40a9c662c84c8d79ea20943390425bf05",
   "runtime_sha256": "6cfdf3ba68c1f79015c1f1b26174d4e3ca4de7b75b06b5ad9811580f5bc2cfa4",
   "render_inputs": [
     {
-      "path": "projects/the-door-between-the-seconds/production/build_pandora_final.py",
-      "sha256": "d24b63a234025ffce41f52b959325d4a9a60a68642ed0d34239fa5d97800c0ac"
+      "path": "projects/the-door-between-the-seconds/production/build_branch_picture.py",
+      "sha256": "4f686354860832749f2f93b44ee5d57984b318c4ed10b855c2ac8569b2096a17"
     },
     {
-      "path": "projects/the-door-between-the-seconds/SCRIPT.json",
+      "path": "projects/the-door-between-the-seconds/production/generate_branch_scene_bank.py",
+      "sha256": "26da7af6218ce111b7a11f872a1891e7495bebb295a46c409df3a1ee2878fb10"
+    },
+    {
+      "path": "projects/the-door-between-the-seconds/production/v3_snapshot_inputs/SCRIPT.json",
       "sha256": "c73b998e59264b5bf6894eb1253fe0de78094923dbefa5c5542b8f10e3a927e0"
     },
     {
@@ -43,10 +47,10 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 0.529965,
-        "temporal_delta_max": 1.003056,
-        "global_shift_px_max": 0.304191,
-        "sample_output_sha256": "989d812d5cafe2ccaaafa6da834ffeb02f87cf8c3d3411fec582ae77f7c1f6db"
+        "source_delta_max": 0.693536,
+        "temporal_delta_max": 1.286834,
+        "global_shift_px_max": 0.387351,
+        "sample_output_sha256": "6ad98b9c2b88e6505b4e435f394538ef9a5b6873f4b3295a4713223a6577cd14"
       }
     },
     {
@@ -71,10 +75,10 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 0.834659,
-        "temporal_delta_max": 1.136013,
-        "global_shift_px_max": 0.014383,
-        "sample_output_sha256": "6900b593312e470ae76584cd03c5891410dc579fbcaab3a5c250173cfdc084d4"
+        "source_delta_max": 0.609363,
+        "temporal_delta_max": 0.808316,
+        "global_shift_px_max": 0.008936,
+        "sample_output_sha256": "9a59e75b95bb3f96e2d1da1ad57f8f981f4edaea7c93280eaf68951232f69486"
       }
     },
     {
@@ -99,10 +103,10 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 1.530116,
-        "temporal_delta_max": 2.912894,
-        "global_shift_px_max": 0.055421,
-        "sample_output_sha256": "b3b4a3afcdd1fbb9a91b01a050d1a46e7d05e14278fa9ffed81cbb78eac89cd0"
+        "source_delta_max": 1.131956,
+        "temporal_delta_max": 2.115266,
+        "global_shift_px_max": 0.064809,
+        "sample_output_sha256": "51bd09d456d7f04612cd9948fa1e2e121d114c7c055d84efc86f4cfc16575a86"
       }
     },
     {
@@ -155,10 +159,10 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 1.333333,
-        "temporal_delta_max": 2.0,
+        "source_delta_max": 1.666667,
+        "temporal_delta_max": 2.333333,
         "global_shift_px_max": 0.021671,
-        "sample_output_sha256": "9b8598b25e5b50459f8f66c4a1edd050a98530809a07a82da20e3aea2c1a5c21"
+        "sample_output_sha256": "cf4808ab1e2083f31c6d291dd7dc5c1be84478d1aac6027031236afbe47f3e2e"
       }
     },
     {
@@ -183,13 +187,13 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 0.69963,
-        "temporal_delta_max": 0.24838,
-        "global_shift_px_max": 0.018816,
-        "sample_output_sha256": "8aac78771bbd3d945ca0684243ed3153d12360e0ddaece9e63a5f585bd8826e4"
+        "source_delta_max": 0.76445,
+        "temporal_delta_max": 0.355828,
+        "global_shift_px_max": 0.018885,
+        "sample_output_sha256": "4b9266d66c7133d5d33545ce6b9b5381fe5dbff27f2ef092bc7bf59371e2e5ee"
       }
     }
   ],
   "result": "PASS",
-  "evidence_fingerprint_sha256": "ed8c75ebfdf36049d5213385fb20c31528b5a944ec05437c2074205e3bb5d9ca"
+  "evidence_fingerprint_sha256": "ddaa2d2715e86985d17c79e4049471e248a6e868fa928e4ff75e0813fb065177"
 }

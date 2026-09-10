@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S31",
+  "frame_span": [
+    4500,
+    4679
+  ],
+  "seconds": [
+    150.0,
+    156.0
+  ],
+  "story_action": "Light enters silently through roses and stone, gentle rather than conquering.",
+  "lyric_cue": "Let it enter without sound",
+  "source": "production/generated_scene_bank/gothic_dawn_in_the_cathedral_of_roses.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "silent_light; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S31/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 180,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.30380108110904197,
+    "p05_adjacent_delta": 0.019368055555555562,
+    "max_near_static_run_frames": 7
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_dawn_in_the_cathedral_of_roses.jpg",
+      "sha256": "45ce70e13db7b0a6b945189358a2f8dfbc5d97088f59fd7d98dc714c487bf304",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S31/proof_320x180.mp4",
+      "sha256": "4d5a8ba1742964be562bebca9135b271add712516559309b897b07b421da7885",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

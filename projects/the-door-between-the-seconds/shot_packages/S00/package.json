@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S00",
+  "frame_span": [
+    0,
+    179
+  ],
+  "seconds": [
+    0.0,
+    6.0
+  ],
+  "story_action": "Pandora alone before the music; candlelight and rain move while she holds still, then subtly turns toward the house interior.",
+  "lyric_cue": "No lyric \u2014 silence",
+  "source": "production/generated_scene_bank/gothic_vampiric_reverie_by_moonlit_window.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "cold_open; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S00/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 180,
+    "black_frames_mean_lt3": 3,
+    "mean_adjacent_delta": 0.4495971704945169,
+    "p05_adjacent_delta": 0.022805555555555558,
+    "max_near_static_run_frames": 4
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_vampiric_reverie_by_moonlit_window.jpg",
+      "sha256": "c1035d66657e32174cc68959fff49b38cad287788cdfa69e98ce515a73df26a1",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S00/proof_320x180.mp4",
+      "sha256": "b70cda78b8531f5d43e45df7c87b8c237bd6fadd9a293220fbbed2882a354ea7",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

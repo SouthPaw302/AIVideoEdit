@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S13",
+  "frame_span": [
+    1755,
+    1889
+  ],
+  "seconds": [
+    58.5,
+    63.0
+  ],
+  "story_action": "Moon and rain remain beautiful but transient; Pandora no longer asks them to hold.",
+  "lyric_cue": "Do not ask the night to stay",
+  "source": "production/generated_scene_bank/moonlit_gothic_aristocrat_by_the_window.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "rain_reflection; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S13/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 135,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.9043492606412383,
+    "p05_adjacent_delta": 0.5526284722222222,
+    "max_near_static_run_frames": 0
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/moonlit_gothic_aristocrat_by_the_window.jpg",
+      "sha256": "5289cb9bc227a4fb16702021b082b532bf4166f5101d0e76dbde6ca3bff8f6ac",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S13/proof_320x180.mp4",
+      "sha256": "e5f2feb03fbbe8e81d03215a9aa82f9a424d6ef0c292064b1066c630a6950f3b",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

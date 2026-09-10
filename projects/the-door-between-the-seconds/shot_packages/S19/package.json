@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S19",
+  "frame_span": [
+    2820,
+    2924
+  ],
+  "seconds": [
+    94.0,
+    97.5
+  ],
+  "story_action": "The corridor repeats three times with mismatched perspective, extending beyond the frame.",
+  "lyric_cue": "Though the hallway had no end",
+  "source": "production/generated_scene_bank/gothic_moonlit_corridor_portrait.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "hallway_repeat; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S19/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 105,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.41067730591168095,
+    "p05_adjacent_delta": 0.1027326388888889,
+    "max_near_static_run_frames": 1
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_moonlit_corridor_portrait.jpg",
+      "sha256": "3881138e1db077991230cba4a7a6c0a241664225abf9d31bc56dc6d269b678c7",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S19/proof_320x180.mp4",
+      "sha256": "e67517fe61a31096d7ef9d75a27caa35a58952fa51ea3f4b35c20944e6ed58ad",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S21",
+  "frame_span": [
+    3030,
+    3134
+  ],
+  "seconds": [
+    101.0,
+    104.5
+  ],
+  "story_action": "Her reach is represented through a soft reflected double entering from the opposite side.",
+  "lyric_cue": "I reached for you and touched the moment",
+  "source": "production/generated_scene_bank/moonlit_gothic_romance_by_candlelight.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "reach_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S21/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 105,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.3732672275641025,
+    "p05_adjacent_delta": 0.07595023148148149,
+    "max_near_static_run_frames": 3
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/moonlit_gothic_romance_by_candlelight.jpg",
+      "sha256": "4dbeca6a9a79c677a17c4d47f6d2d2a43df83afca84346aa31f718f2e7943111",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S21/proof_320x180.mp4",
+      "sha256": "885d9c716826aaae0e6e26096963179ab70fec33a63b2468efe631ed3a432163",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

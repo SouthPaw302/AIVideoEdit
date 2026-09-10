@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S07",
+  "frame_span": [
+    960,
+    1079
+  ],
+  "seconds": [
+    32.0,
+    36.0
+  ],
+  "story_action": "Books, skulls, roses and dust become memory objects around Pandora.",
+  "lyric_cue": "Dust remembers every hand",
+  "source": "production/generated_scene_bank/a_cinematic_moody_gothic_fantasy_realistic_inte.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "dust_memory; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S07/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 120,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.4401999688764395,
+    "p05_adjacent_delta": 0.0796712962962963,
+    "max_near_static_run_frames": 1
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/a_cinematic_moody_gothic_fantasy_realistic_inte.jpg",
+      "sha256": "9b505ead725a130a5e6ce7ce8a8af98e066be77e4ed94d936003f67d55f191a0",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S07/proof_320x180.mp4",
+      "sha256": "4f2733b8a45e6f0c8dc080b79fd906ff82fa1a7ef4b25af67110963f52daed09",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

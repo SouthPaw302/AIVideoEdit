@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S12",
+  "frame_span": [
+    1620,
+    1754
+  ],
+  "seconds": [
+    54.0,
+    58.5
+  ],
+  "story_action": "The sleeping distance opens beyond candles into impossible depth.",
+  "lyric_cue": "Do not wake the sleeping distance",
+  "source": "production/generated_scene_bank/gothic_moonlit_baroque_sanctuary.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "depth_gate; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S12/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 135,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.5214341487009397,
+    "p05_adjacent_delta": 0.2618587962962963,
+    "max_near_static_run_frames": 0
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/gothic_moonlit_baroque_sanctuary.jpg",
+      "sha256": "ef816811ba7c8fc8d372bcac22f1b297dc7ba924e6cdd9ecb89e2db7134d98d7",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S12/proof_320x180.mp4",
+      "sha256": "b99ce41bf16c9ff9e71e52632e6e66a721c42f6c31426dc41cf9226897bafe9d",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

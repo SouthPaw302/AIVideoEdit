@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S25",
+  "frame_span": [
+    3481,
+    3614
+  ],
+  "seconds": [
+    116.03333333333333,
+    120.5
+  ],
+  "story_action": "The second chorus returns at larger scale and stronger motion.",
+  "lyric_cue": "Do not wake the sleeping distance",
+  "source": "production/generated_scene_bank/candlelit_gothic_cathedral_romance.jpg",
+  "source_role": "generated branch-recovery production source",
+  "motion_grammar": "cathedral_impact; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+  "canonical_fx_lock": "fx.lock.json",
+  "proof_preview": "shot_packages/S25/proof_320x180.mp4",
+  "proof_qc": {
+    "result": "PASS",
+    "decoded_frames": 134,
+    "black_frames_mean_lt3": 0,
+    "mean_adjacent_delta": 0.6036828181565023,
+    "p05_adjacent_delta": 0.29036111111111107,
+    "max_near_static_run_frames": 0
+  },
+  "media_evidence": [
+    {
+      "role": "primary_source",
+      "path": "production/generated_scene_bank/candlelit_gothic_cathedral_romance.jpg",
+      "sha256": "8b78ffed4711080161562432a7622b519e6e26b28a22c11e4b22221ff85a0525",
+      "status": "generated"
+    },
+    {
+      "role": "proof_preview",
+      "path": "shot_packages/S25/proof_320x180.mp4",
+      "sha256": "1545ca696f74b6e3f69105442fb7196a70562deef1871dfd8dade11ceef5c220",
+      "status": "derived"
+    },
+    {
+      "role": "fx_lock",
+      "path": "fx.lock.json",
+      "sha256": "7b70c72f947c9bd7247d94be8e82bafecaeea24dc52a9c5c423450daf361e76e",
+      "status": "verified"
+    }
+  ],
+  "notes": "Full-shot low-resolution proof derived from the 960x540 branch picture after live FX-lock verification."
+}

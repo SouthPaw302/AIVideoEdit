@@ -1,0 +1,178 @@
+{
+  "schema": "door-seconds.generated-scene-bank.v1",
+  "seed": 302,
+  "resolution": [
+    960,
+    540
+  ],
+  "assets": [
+    {
+      "name": "rainy_gothic_castle_entrance.jpg",
+      "family": "castle",
+      "sha256": "db75e6d5d67f2e8e72c22328e486765f766e0deda880836bb42d0cd4a6e52c0d",
+      "bytes": 108967,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_moonlit_departure.jpg",
+      "family": "threshold",
+      "sha256": "24aabbd8fafbb66856b0708c93f1b5f6432152f45a64b16cd618845c81b6c2f3",
+      "bytes": 108993,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_noblewoman_by_the_rainy_moonlit_window.jpg",
+      "family": "window",
+      "sha256": "be73ba7c2cb47407cf1a8afb69615aa8eb5582957e129752eb9ba6cc903e54bb",
+      "bytes": 109418,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_temptress_in_the_rain.jpg",
+      "family": "rain_portrait",
+      "sha256": "5420e55af7151f914ce42d678da2033dfe914f23490546278df94696b8f51423",
+      "bytes": 109854,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "a_cinematic_moody_gothic_fantasy_realistic_inte.jpg",
+      "family": "memory_room",
+      "sha256": "9b505ead725a130a5e6ce7ce8a8af98e066be77e4ed94d936003f67d55f191a0",
+      "bytes": 109864,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_moonlit_rose_chamber.jpg",
+      "family": "rose_chamber",
+      "sha256": "1cf1d5a9b25c795b49d09816bfd6dcaa5bf80fb1d09f609ce6f2d2466afd97ca",
+      "bytes": 109433,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_moonlit_corridor_portrait.jpg",
+      "family": "corridor",
+      "sha256": "3881138e1db077991230cba4a7a6c0a241664225abf9d31bc56dc6d269b678c7",
+      "bytes": 114337,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_moonlit_victorian_portrait.jpg",
+      "family": "portrait",
+      "sha256": "a2517d64d88867fd1c171353e6b2d95768463d5e53ab938a527151c67d11591f",
+      "bytes": 106773,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "candlelit_gothic_cathedral_romance.jpg",
+      "family": "cathedral",
+      "sha256": "8b78ffed4711080161562432a7622b519e6e26b28a22c11e4b22221ff85a0525",
+      "bytes": 120004,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_moonlit_baroque_sanctuary.jpg",
+      "family": "sanctuary",
+      "sha256": "ef816811ba7c8fc8d372bcac22f1b297dc7ba924e6cdd9ecb89e2db7134d98d7",
+      "bytes": 119682,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "moonlit_gothic_aristocrat_by_the_window.jpg",
+      "family": "window",
+      "sha256": "5289cb9bc227a4fb16702021b082b532bf4166f5101d0e76dbde6ca3bff8f6ac",
+      "bytes": 109489,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_noblewoman_s_temporal_echo.jpg",
+      "family": "temporal",
+      "sha256": "9955a3635ea7c740d47985bdcc3f4ef88146c2549215b041878bf1d69813b38c",
+      "bytes": 114182,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_dawn_in_the_cathedral_of_roses.jpg",
+      "family": "dawn_cathedral",
+      "sha256": "45ce70e13db7b0a6b945189358a2f8dfbc5d97088f59fd7d98dc714c487bf304",
+      "bytes": 114683,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "moonlit_gothic_romance_by_candlelight.jpg",
+      "family": "candle_contact",
+      "sha256": "4dbeca6a9a79c677a17c4d47f6d2d2a43df83afca84346aa31f718f2e7943111",
+      "bytes": 109734,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_romance_by_moonlit_rain.jpg",
+      "family": "rain_contact",
+      "sha256": "aa59f12ef000d57a5a9a7fbc8fc19fa70dac0786e0059974e56bdbba1ca17e59",
+      "bytes": 112848,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "moonlit_gothic_romance_by_the_window.jpg",
+      "family": "window_contact",
+      "sha256": "f88e78e1691b0e004a88a8c232bb9d2304368d937b5b2ce6ec1f0fa0991a2db8",
+      "bytes": 109773,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_vampiric_reverie_by_moonlit_window.jpg",
+      "family": "vampire_window",
+      "sha256": "c1035d66657e32174cc68959fff49b38cad287788cdfa69e98ce515a73df26a1",
+      "bytes": 110627,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_crypt_empress_in_morning_light.jpg",
+      "family": "crypt",
+      "sha256": "95f8f202b6153275c60b574c265f26a700b91458fcb4c74f5137b344d15a7f23",
+      "bytes": 108201,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_rose_studded_crypt_romance.jpg",
+      "family": "crypt_roses",
+      "sha256": "b5a0bab7814af69d99e0f24291936e50bcc9ecfcd0b083276c406108a0afee2b",
+      "bytes": 112870,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "rainlit_gothic_aristocrat_at_the_window.jpg",
+      "family": "window",
+      "sha256": "19adfa772c8fee974e8f57e3da1d7915e7fe736ffed394171c5526de55feb7fe",
+      "bytes": 109155,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_velvet_candlelit_chamber.jpg",
+      "family": "velvet_chamber",
+      "sha256": "1100f8900a933316a5268c29c347bd0ed94c15b0c71e070e3af1dc0285562242",
+      "bytes": 109453,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "gothic_rainfall_by_candlelight.jpg",
+      "family": "rain_candle",
+      "sha256": "74c3611d486e25d535dd96b9849a6316940e1bdf0094db3df0a8007efc72f683",
+      "bytes": 111190,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "moonlit_gothic_velvet_reverie.jpg",
+      "family": "velvet_reverie",
+      "sha256": "6688a89b8bea512645033bccb191a370034a585f0f9050261b0270f3b432cda9",
+      "bytes": 109815,
+      "status": "generated_production_source"
+    },
+    {
+      "name": "moonlit_gothic_rose_chamber.jpg",
+      "family": "rose_chamber",
+      "sha256": "03289aebeeca3032b3eaac4546291b4f2cb992e2f4c8defe069b33cb309f9dba",
+      "bytes": 109061,
+      "status": "generated_production_source"
+    }
+  ]
+}
