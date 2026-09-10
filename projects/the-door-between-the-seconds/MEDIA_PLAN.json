@@ -2,75 +2,46 @@
   "schema": "aivideoedit.media-plan.v2",
   "user_approach_established": true,
   "subject": "Pandora the Vampire",
+  "direction_authority": "music_led",
+  "production_mode": "hybrid",
   "lyrics_directing_authority": true,
+  "story_file": "STORY.md",
   "cold_open": {
     "duration_seconds": 6.0,
     "audio": "silence",
-    "purpose": "introduce Pandora before song",
-    "source": "accepted 8-second gothic window motion benchmark"
+    "purpose": "Introduce Pandora as the only stable conscious presence before the temporal house wakes",
+    "source_policy": "Use current authorized Pandora source media; no v3 generated scene-bank material"
   },
-  "selected_capabilities": [
-    "authorized_source_images",
-    "recovered_generated_stills",
-    "accepted_motion_benchmark_video",
-    "living_painting",
-    "layered_composite",
-    "reflection_echo",
-    "perspective_transform",
-    "atmospheric_plate",
-    "reactive_plate",
-    "transition_media",
-    "conventional_video"
-  ],
-  "existing_media_policy": {
-    "scrap_existing_media": false,
-    "rule": "reuse all useful recovered media within lyric-driven shot roles",
-    "chamber_window_role": "recurring Pandora memory-home motif"
+  "selected_capabilities": ["source_video","authorized_source_images","accepted_motion_benchmark_video","living_painting","living_still_fx","layered_composite","reflection_echo","depth_25d","perspective_transform","atmospheric_plate","reactive_plate","transition_media","conventional_video","analysis_qc_media"],
+  "source_media_policy": {
+    "user_supplied_images": "authorized for final-picture use and derivation",
+    "user_supplied_video": "authorized for final-picture use, motion study and source extraction",
+    "old_agent_generated_media": "rejected",
+    "old_v3_shot_packages": "rejected",
+    "new_support_media": "may be created only when the locked story needs coverage that cannot be derived from current authorized media"
+  },
+  "story_world": {
+    "premise": "Pandora enters a house made from abandoned time to recover the last human morning she never lived.",
+    "recurring_motifs": ["red fabric and roses","rain","inward windows","wet footprints","iron memory","mirrors and temporal reflections","candles","cathedral distance","crypt stone","underground dawn"],
+    "second_presence_rule": "Any apparent second Pandora is a reflection/temporal state of the same identity, not a new protagonist."
   },
   "temporal_density": {
-    "mode": "dense_animation_like",
     "target_output_fps": 30,
-    "target_video_duration_seconds": 169.12,
+    "song_duration_seconds": 163.12,
     "song_offset_seconds": 6.0,
-    "static_hold_policy": "no unchanged static holds",
-    "shot_count": 34
+    "target_video_duration_seconds": 169.12,
+    "static_hold_policy": "Strong compositions may breathe, but no unchanged static slideshow holds; internal motion must be visible before camera motion is used."
   },
-  "visual_progression": {
-    "verse_scale": "intimate/interior",
-    "chorus_scale": "cathedral/impossible depth",
-    "verse2_spatial_event": "quiet thunder, gravity failure, endless hallway, almost-touch",
-    "outro": "crypt sanctuary and silent morning"
-  },
-  "final_qc": [
-    "current narrative guard",
-    "current production guard",
-    "FX V2 precompile lock and live verify",
-    "shot-package media evidence hashes",
-    "shot proof decode/motion QC",
-    "decode and black-frame scan",
-    "freeze scan",
-    "cold-open audio-silence verification",
-    "time-distributed contact sheet",
-    "export_variety_qc",
-    "manual cinematic scan"
+  "section_grammar": [
+    {"section":"cold_open","video_time":[0.0,6.0],"mode":"living_scene","function":"silent witness / establish Pandora"},
+    {"section":"intro","song_time":[0.0,8.0],"video_time":[6.0,14.0],"mode":"cinematic","function":"establish the house beneath rain"},
+    {"section":"verse_1","song_time":[8.0,44.0],"video_time":[14.0,50.0],"mode":"hybrid","function":"threshold, footprints and matter remembering"},
+    {"section":"chorus_1","song_time":[44.0,70.0],"video_time":[50.0,76.0],"mode":"cinematic","function":"reveal sleeping distance and first seam of unmade dawn"},
+    {"section":"verse_2","song_time":[70.0,110.02],"video_time":[76.0,116.02],"mode":"hybrid","function":"gravity failure, endless corridor, temporal reflection and almost-touch"},
+    {"section":"chorus_2","song_time":[110.02,138.02],"video_time":[116.02,144.02],"mode":"cinematic","function":"distance wakes and the house spatially folds"},
+    {"section":"outro","song_time":[138.02,163.12],"video_time":[144.02,169.12],"mode":"hybrid","function":"descend to buried time and receive underground morning"}
   ],
-  "canonical_fx_runtime": {
-    "runtime": "aivideoedit-fx-v2",
-    "manifest": "FX_REQUIREMENTS.fx.json",
-    "lock": "fx.lock.json",
-    "required_ids": [
-      "FX2-MOTION-002",
-      "FX2-ATM-001",
-      "FX2-ATM-002",
-      "FX2-FIRE-002",
-      "FX2-LIGHT-001",
-      "FX2-LIGHT-002"
-    ],
-    "rule": "renderer must verify current fx.lock.json before emitting production frames"
-  },
-  "capability_proof": {
-    "reflection_echo": "proofs/current_gate/CAPABILITY_PROOF.json",
-    "perspective_transform": "proofs/current_gate/CAPABILITY_PROOF.json",
-    "transition_media": "proofs/current_gate/CAPABILITY_PROOF.json"
-  }
+  "music_analysis_artifacts": {"edit_map":"rebuild_v1/analysis/edit_map.json","tempo_bpm_measured":112.347,"reactive_controls_status":"regenerated_locally_from_current WAV; persist with fresh shot packages rather than as current branch authority"},
+  "fresh_production_namespace": "rebuild_v1/",
+  "next_gate": "Make current-chat image binaries addressable, then build fresh rebuild_v1 shot packages from locked SCRIPT.json with real hashed media evidence and representative hybrid proofs."
 }

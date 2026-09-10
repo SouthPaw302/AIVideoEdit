@@ -1,0 +1,33 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Rebuild Pandora's film from the verified song, lyrics, current user-supplied images and authorized source video around one coherent story: Pandora enters a temporal house to recover the last human morning she never lived.",
+  "direction_authority": "music_led",
+  "production_mode": "hybrid",
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Pandora is the stable single protagonist inside a gothic temporal-memory world of rain, candlelight, red fabric/roses, mirrors, iron, impossible cathedral distance, crypt stone and a pale underground dawn.",
+    "items": [
+      "Pandora the Vampire is the protagonist and identity anchor",
+      "verified lyrics plus measured source master drive narrative timing",
+      "six-second silent cold open occurs before the song",
+      "current user-supplied images and authorized source videos may be used as final-picture source material",
+      "old v3 generated scene bank, v3 shot packages, v3 render choices and v3 creative decisions are rejected as directing authority"
+    ]
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "current_user_direction": "Use the media and videos I uploaded, scrap other agents' work such as v3, follow the repo, scan the whole repo, and build a real story before continuing production.",
+  "exact_next_action": "Make the fifteen current-chat image binaries addressable, then build fresh rebuild_v1 shot packages with hashed media evidence from U01-U15/V01/V02 and render representative hybrid proofs.",
+  "updated_at_utc": "2026-09-10T06:20:00Z"
+}

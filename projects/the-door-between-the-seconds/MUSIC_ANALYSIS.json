@@ -4,7 +4,7 @@
   "duration_seconds": 163.12,
   "lyrics": {"status":"present","source":"current_user_instruction","text_file":"LYRICS.md","directing_use":"required"},
   "genre": {"status":"confident","label":"dark industrial rock / gothic electronic","source":"current_user_lyrics_and_arrangement_cues_plus_audio_analysis","confidence":0.86,"evidence":["full industrial percussion","distorted guitar stabs","distorted synth bass","driving industrial beat","heavy synth pads","layered vocal harmonies"]},
-  "rhythm": {"tempo_status":"measured","tempo_bpm":112.35,"pulse_description":"steady industrial mid-tempo pulse with dynamic dropouts and heavy re-entries","meter_or_groove":"4/4 industrial rock/electronic groove"},
+  "rhythm": {"tempo_status":"measured","tempo_bpm":112.347,"pulse_description":"steady industrial mid-tempo pulse with dynamic dropouts and heavy re-entries","meter_or_groove":"4/4 industrial rock/electronic groove"},
   "sections": [
     {"id":"INTRO","start_seconds":0.0,"end_seconds":8.0,"energy":"low/building","musical_cues":["rain-dark opening texture","first pulse emergence"],"narrative_function":"reveal the house beneath the rain"},
     {"id":"VERSE_1","start_seconds":8.0,"end_seconds":44.0,"energy":"low-to-rising","musical_cues":["vocal narrative","restrained pulse","texture accumulation"],"narrative_function":"threshold, footprints, dust and iron memory"},
@@ -12,5 +12,6 @@
     {"id":"VERSE_2","start_seconds":70.0,"end_seconds":110.02,"energy":"variable / drop-and-return","musical_cues":["drum reduction","breathing rhythm","distorted synth bass return"],"narrative_function":"endless hallway and impossible human contact"},
     {"id":"CHORUS_2","start_seconds":110.02,"end_seconds":138.02,"energy":"high / driving","musical_cues":["full band return","driving industrial beat"],"narrative_function":"distance opens into a city between night and dawn"},
     {"id":"OUTRO","start_seconds":138.02,"end_seconds":163.12,"energy":"expansive / resolving","musical_cues":["heavy synth pads","layered vocal harmonies","final intensity and release"],"narrative_function":"underground sanctuary and silent morning"}
-  ]
+  ],
+  "analysis_artifacts": {"current_user_audio":"The Door between the Seconds.wav","edit_map":"rebuild_v1/analysis/edit_map.json","verification":"duration and tempo independently regenerated from current user upload during clean rebuild","reactive_controls_status":"regenerated locally; persistence deferred to fresh shot-package build"}
 }

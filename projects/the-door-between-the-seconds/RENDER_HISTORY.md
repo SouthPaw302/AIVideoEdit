@@ -38,3 +38,6 @@
 - Patched 3-second export-variety QC: PASS.
 - Patched 5-second export-variety QC: PASS.
 - Full final proof/QC rerun after the latest renderer change remains pending; final acceptance is not recorded.
+
+## 2026-09-10 — current-user creative rejection / clean rebuild
+The current user explicitly rejected the prior other-agent/v3 creative path and instructed the production to use current supplied media/video, follow the repository, scan the repo, and establish a real story from scratch. All v3 renders, scene-bank assets, shot packages, proofs and creative decisions are historical provenance only. They are not an accepted baseline and cannot satisfy the active rebuild gates.

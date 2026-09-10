@@ -1,0 +1,14 @@
+{
+  "window": {
+    "frames": 240,
+    "mean_adjacent_absdiff": 1.0471,
+    "max_adjacent_absdiff": 4.6587,
+    "min_adjacent_absdiff": 0.0395
+  },
+  "repass": {
+    "frames": 16,
+    "mean_adjacent_absdiff": 21.006,
+    "max_adjacent_absdiff": 27.5463,
+    "min_adjacent_absdiff": 3.9881
+  }
+}

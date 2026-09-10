@@ -1,50 +1,282 @@
-# SCRIPT — The Door Between the Seconds — Pandora the Vampire
+# VIDEO SCRIPT — clean rebuild
 
-**Locked runtime:** 169.12 s. **Cold open:** 6.0 s of silence before the song. **Song starts:** 0:06.00. **Frame rate:** 30 fps.
+Frame-followable authority is `SCRIPT.json`. Song audio begins at 00:06.000 after the silent cold open.
 
-Existing recovered media is retained and deliberately reassigned. The familiar chamber/window is Pandora’s recurring memory-home. Corridor, castle, cathedral, rose, dawn, departure, temporal-echo and crypt assets provide the changing world around it.
+## S00 — Silent witness — 0.00–6.00s
+Pandora is already inside the chamber. She registers something beyond frame before the house wakes.
 
-| Shot | Time | Lyric / cue | Picture & action | Existing media | Motion grammar |
-|---|---:|---|---|---|---|
-| S00 | 0.00–6.00s | No lyric — silence | Pandora alone before the music; candlelight and rain move while she holds still, then subtly turns toward the house interior. | `gothic_window_8s_fullscreen_720p.mp4` | `cold_open` |
-| S01 | 6.00–10.00s | instrumental opening | The house beneath the rain is established around Pandora as the pulse first emerges. | `rainy_gothic_castle_entrance.jpg` | `rain_push` |
-| S02 | 10.00–14.00s | instrumental opening | Pandora crosses the threshold; the chamber she left in the cold open becomes part of a larger impossible manor. | `gothic_moonlit_departure.jpg` | `doorway_drift` |
-| S03 | 14.00–18.50s | There is a house beneath the rain | Pandora is framed against the rain-black entrance; architecture towers above her. | `rainy_gothic_castle_entrance.jpg` | `rain_push` |
-| S04 | 18.50–23.00s | Where every window faces in | The familiar moonlit window becomes an inward-looking surface; reflection and room seem to watch Pandora. | `gothic_noblewoman_by_the_rainy_moonlit_window.jpg` | `reflection_echo` |
-| S05 | 23.00–27.50s | I left my footsteps at the doorway | Pandora moves from doorway to wet stone; the hem of burgundy fabric trails across the threshold. | `gothic_moonlit_departure.jpg` | `doorway_drift` |
-| S06 | 27.50–32.00s | So the dark would know I'd been | She turns back toward the dark as if deliberately leaving evidence of her passage. | `gothic_temptress_in_the_rain.jpg` | `shadow_breath` |
-| S07 | 32.00–36.00s | Dust remembers every hand | Books, skulls, roses and dust become memory objects around Pandora. | `a_cinematic_moody_gothic_fantasy_realistic_inte.jpg` | `dust_memory` |
-| S08 | 36.00–40.00s | Iron remembers flame | Warm iron and candlelight flare against the cold room, suggesting remembered fire. | `gothic_moonlit_rose_chamber.jpg` | `ember_bloom` |
-| S09 | 40.00–45.00s | I heard the walls pronounce my silence | The corridor multiplies in vertical mirror strips; the house appears to form a word around Pandora. | `gothic_moonlit_corridor_portrait.jpg` | `mirror_corridor` |
-| S10 | 45.00–50.00s | Like they almost knew my name | Tight portrait of Pandora; delayed reflection ghosts make identity feel unstable. | `gothic_moonlit_victorian_portrait.jpg` | `portrait_echo` |
-| S11 | 50.00–54.00s | Do not wake the sleeping distance | First expansion: Pandora becomes small against cathedral scale. | `candlelit_gothic_cathedral_romance.jpg` | `cathedral_push` |
-| S12 | 54.00–58.50s | Do not wake the sleeping distance | The sleeping distance opens beyond candles into impossible depth. | `gothic_moonlit_baroque_sanctuary.jpg` | `depth_gate` |
-| S13 | 58.50–63.00s | Do not ask the night to stay | Moon and rain remain beautiful but transient; Pandora no longer asks them to hold. | `moonlit_gothic_aristocrat_by_the_window.jpg` | `rain_reflection` |
-| S14 | 63.00–69.50s | Somewhere under all our leaving | Multiple temporal Pandoras occupy one frame, departures preserved as echoes instead of erased. | `gothic_noblewoman_s_temporal_echo.jpg` | `temporal_echo` |
-| S15 | 69.50–76.00s | There is still an unmade day | A pale dawn seam enters the gothic space without destroying the dark. | `gothic_dawn_in_the_cathedral_of_roses.jpg` | `dawn_bloom` |
-| S16 | 76.00–82.00s | The ceiling fills with quiet thunder | Architecture darkens overhead; silent lightning pulses through the sanctuary. | `gothic_moonlit_baroque_sanctuary.jpg` | `quiet_thunder` |
-| S17 | 82.00–88.00s | The floor forgets which way is down | The room tilts and briefly inverts around Pandora while she remains the visual anchor. | `gothic_moonlit_departure.jpg` | `gravity_flip` |
-| S18 | 88.00–94.00s | You're standing in the hallway | A repeated corridor creates an unreachable human-shaped distance. | `gothic_moonlit_corridor_portrait.jpg` | `mirror_corridor` |
-| S19 | 94.00–97.50s | Though the hallway had no end | The corridor repeats three times with mismatched perspective, extending beyond the frame. | `gothic_moonlit_corridor_portrait.jpg` | `hallway_repeat` |
-| S20 | 97.50–101.00s | Though the hallway had no end | Pandora advances but the architecture appears to slide backward. | `gothic_moonlit_chamber_portrait.jpg` | `reverse_drift` |
-| S21 | 101.00–104.50s | I reached for you and touched the moment | Her reach is represented through a soft reflected double entering from the opposite side. | `moonlit_gothic_romance_by_candlelight.jpg` | `reach_echo` |
-| S22 | 104.50–108.00s | I reached for you and touched the moment | Time freezes into overlapping states just before contact. | `gothic_noblewoman_s_temporal_echo.jpg` | `temporal_echo` |
-| S23 | 108.00–112.00s | Before strangers become friends | The distance collapses into intimate candle-and-rain framing, still ambiguous rather than literal romance. | `gothic_romance_by_moonlit_rain.jpg` | `soft_contact` |
-| S24 | 112.00–116.02s | Before strangers become friends | The familiar window returns as a threshold shared with an unseen other; Pandora is changed by the contact. | `moonlit_gothic_romance_by_the_window.jpg` | `reflection_echo` |
-| S25 | 116.02–120.50s | Do not wake the sleeping distance | The second chorus returns at larger scale and stronger motion. | `candlelit_gothic_cathedral_romance.jpg` | `cathedral_impact` |
-| S26 | 120.50–125.00s | Do not wake the sleeping distance | Depth folds open instead of pushing Pandora away. | `gothic_moonlit_baroque_sanctuary.jpg` | `depth_gate` |
-| S27 | 125.00–130.00s | Do not ask the night to stay | Pandora is now explicitly framed as the vampire queen of this threshold world. | `gothic_vampiric_reverie_by_moonlit_window.jpg` | `vampire_portrait` |
-| S28 | 130.00–137.00s | Somewhere under all our leaving | Leaving becomes forward motion; rain and corridor geometry point toward passage. | `gothic_moonlit_departure.jpg` | `departure_drive` |
-| S29 | 137.00–144.02s | There is still an unmade day | Dawn opens wider and the cathedral-city shifts from prison to passage. | `gothic_dawn_in_the_cathedral_of_roses.jpg` | `dawn_bloom` |
-| S30 | 144.02–150.00s | If the morning finds this house | Pandora descends rather than escaping upward; morning reaches the crypt. | `gothic_crypt_empress_in_morning_light.jpg` | `crypt_dawn` |
-| S31 | 150.00–156.00s | Let it enter without sound | Light enters silently through roses and stone, gentle rather than conquering. | `gothic_dawn_in_the_cathedral_of_roses.jpg` | `silent_light` |
-| S32 | 156.00–162.50s | We were never lost | The underground sanctuary reveals preserved memory rather than burial. | `gothic_rose_studded_crypt_romance.jpg` | `crypt_memory` |
-| S33 | 162.50–169.12s | We were underground | Pandora becomes still beneath the first morning light; image slows toward near-stillness and fades to black. | `gothic_crypt_empress_in_morning_light.jpg` | `final_stillness` |
+Visual: U01 + V02 — Silent witness
+Animation: Hold authored composition; candle flames breathe independently, rain moves beyond glass, slight cloth/hair response; nearly imperceptible depth drift.
+Music: six seconds intentional silence
+Lyric: none / silent cold open
+Transition: hard music-entry cut
 
-## Directing rules
-- Pandora is the subject, not a generic gothic woman.
-- No music under S00. The first song audio sample begins at exactly 6.0 seconds.
-- Full-screen 16:9 only; no black pillar/letterboxing.
-- Repeated chamber material must return as motif with changed motion/composition, never as an unchanged hold.
-- Hard cuts are allowed on industrial impacts; lyrical transitions use short dissolves/reflection handoffs.
-- Final export receives time-distributed contact-sheet and variety QC plus a manual cinematic scan.
+## S01 — House beneath rain — 6.00–10.50s
+The first song texture reveals the impossible relation between Pandora, window, rain and distant house.
+
+Visual: V01 + U03 — House beneath rain
+Animation: Use source-video motion and a derived rear/window composition; move from interior reflection toward exterior depth without explaining geography.
+Music: song opening texture; first pulse emergence
+Lyric: There is a house beneath the rain
+Transition: window match cut
+
+## S02 — Every window faces in — 10.50–14.00s
+The exterior appears inside the window while candle reflections face back toward Pandora.
+
+Visual: U03 + U08 — Every window faces in
+Animation: Rain glass and reflections move on separate planes; candlelight breathes; restrained lateral camera drift.
+Music: vocal entrance; restrained pulse
+Lyric: Where every window faces in
+Transition: doorway depth gate
+
+## S03 — The anchor — 14.00–19.00s
+Pandora crosses the threshold and deliberately leaves wet footprints behind.
+
+Visual: U05 + U04 — The anchor
+Animation: Cut from full-body commitment to boots/wet stone insert; use real-pixel reframe and short perspective travel.
+Music: verse pulse settles
+Lyric: I left my footsteps at the doorway / So the dark would know I'd been
+Transition: red-fabric match cut
+
+## S04 — Dust remembers — 19.00–24.50s
+A close hand nears old fragments; dust rises toward her fingers instead of falling.
+
+Visual: U07 — Dust remembers
+Animation: Localized particle advection toward hand; tiny specular response on fragments; no face regeneration.
+Music: measured mid-tempo pulse; sparse vocal space
+Lyric: Dust remembers every hand
+Transition: iron glint handoff
+
+## S05 — Iron remembers flame — 24.50–29.50s
+Tarnished iron catches a remembered heat as Pandora passes.
+
+Visual: U06 — Iron remembers flame
+Animation: Localized heat memory only on metal/fire region; ember drift and practical-light breath; red cloth moves independently.
+Music: growing texture; transient accents
+Lyric: Iron remembers flame
+Transition: light-peak handoff
+
+## S06 — The walls know her — 29.50–35.00s
+Pandora listens. The room seems to pronounce her silence through shifting reflections and light.
+
+Visual: U08 — The walls know her
+Animation: Reflection delay, candle breath, slight wall-shadow movement; slow focus breath from architecture to face.
+Music: vocal phrase lengthens
+Lyric: I heard the walls pronounce my silence
+Transition: reflection gate
+
+## S07 — Almost a name — 35.00–40.20s
+A mirror fragment gives a first impossible hint that Pandora is not temporally alone.
+
+Visual: U01 + U13 — Almost a name
+Animation: Editorial move from hero portrait to fractured reflection; no morphing; preserve exact identity and let the reflection arrive a fraction late.
+Music: verse tension rises
+Lyric: Like they almost knew my name
+Transition: impact cut
+
+## S08 — Memory-home closes around her — 40.20–44.50s
+The chamber becomes more active while Pandora stays still: rain, candles, roses and curtains all respond on separate rhythms.
+
+Visual: U02 — Memory-home closes around her
+Animation: Independent rain/candle/rose/cloth motion; camera slowly pulls away to prepare scale expansion.
+Music: pre-chorus accumulation
+Lyric: Like they almost knew my name
+Transition: doorway depth gate
+
+## S09 — Commit to the interior — 44.50–50.00s
+Pandora turns from the familiar chamber and follows the red continuity thread deeper into the house.
+
+Visual: U09 + U03 — Commit to the interior
+Animation: Use red-cloak/fabric continuity across angle change; decisive forward camera travel.
+Music: last verse accents into chorus
+Lyric: instrumental lead-in to chorus
+Transition: hard impact cut
+
+## S10 — Sleeping distance revealed — 50.00–55.33s
+The first chorus opens the house into a cathedral corridor far larger than the chamber could contain.
+
+Visual: U10 — Sleeping distance revealed
+Animation: Wide architectural reveal with bounded perspective travel and a decisive lift on the downbeat; Pandora remains small but readable.
+Music: full industrial percussion; distorted guitar stabs
+Lyric: Do not wake the sleeping distance
+Transition: architecture match cut
+
+## S11 — Distance breathes — 55.33–59.67s
+The impossible corridor behaves like a sleeping organism without deforming its architecture.
+
+Visual: U10 derived wide — Distance breathes
+Animation: Separate haze, distant candles, rain traces and light shafts; slow depth travel; no whole-frame wobble.
+Music: chorus drive; strong sync accents
+Lyric: Do not ask the night to stay
+Transition: light-peak handoff
+
+## S12 — Windows multiply — 59.67–64.00s
+Inward-facing windows repeat through the distance and reflections begin showing incompatible versions of the same room.
+
+Visual: U03/U13 derived composite — Windows multiply
+Animation: Deterministic layered composite with clean perspective changes; no generative morph.
+Music: guitar/percussion impacts
+Lyric: Somewhere under all our leaving
+Transition: reflection gate
+
+## S13 — First seam of dawn — 64.00–68.33s
+A thin pale light appears impossibly far away, the first visible evidence of the unmade day.
+
+Visual: U08/U10 derived — First seam of dawn
+Animation: Localized dawn seam grows subtly while foreground candles remain warm; independent atmosphere and floor reflection.
+Music: chorus sustained power
+Lyric: There is still an unmade day
+Transition: pigment gate
+
+## S14 — She chooses to continue — 68.33–76.00s
+Pandora faces the distant light and advances rather than retreating.
+
+Visual: U09 — She chooses to continue
+Animation: Strong but controlled push/lift; cloak/fabric carries screen direction into next section.
+Music: chorus release into drum dropout
+Lyric: There is still an unmade day
+Transition: shadow wipe
+
+## S15 — Quiet thunder — 76.00–81.27s
+With the drums gone, the room becomes physically wrong: small objects begin moving on conflicting gravity vectors.
+
+Visual: U11 — Quiet thunder
+Animation: Independent cloth, dust, petals, hair and hanging elements drift in different directions; Pandora remains visually stable.
+Music: drums drop out; rhythmic breathing returns
+Lyric: The ceiling fills with quiet thunder
+Transition: perspective handoff
+
+## S16 — Floor forgets down — 81.27–87.77s
+Architecture rotates in meaning rather than through cheap whole-frame spin; floor and ceiling exchange visual authority.
+
+Visual: U11 + U10 — Floor forgets down
+Animation: Use bounded perspective transformation and angle change across two derived shots; keep Pandora upright as reference.
+Music: breathing rhythm; reduced percussion
+Lyric: The floor forgets which way is down
+Transition: hard bass re-entry cut
+
+## S17 — Hallway without end — 87.77–92.07s
+The corridor repeats beyond logical distance as the distorted synth bass returns.
+
+Visual: U10 — Hallway without end
+Animation: Forward travel through repeated real architectural layers; variation in scale and parallax prevents a simple loop.
+Music: distorted synth bass re-enters
+Lyric: You're standing in the hallway / Though the hallway had no end
+Transition: reflection gate
+
+## S18 — The other Pandora — 92.07–98.57s
+The cracked mirror reveals a second temporal state of Pandora moving slightly out of phase.
+
+Visual: U13 — The other Pandora
+Animation: Reflection echo only inside mirror regions; face identity remains exact; ambient candle/rain motion continues independently.
+Music: verse-two pulse rebuilds
+Lyric: You're standing in the hallway
+Transition: red-fabric match cut
+
+## S19 — Reach — 98.57–103.43s
+A hand crosses red fabric toward the temporal surface; the gesture is slow and deliberate.
+
+Visual: U12 — Reach
+Animation: Localized cloth tension, tiny ring/specular sweep, shallow focus breath; no global camera shake.
+Music: rising phrase; selected transient accents
+Lyric: I reached for you
+Transition: reflection handoff
+
+## S20 — Two times approach — 103.43–110.47s
+Fragments, mirror and hand coverage alternate as two versions of one moment approach alignment.
+
+Visual: U07 + U13 — Two times approach
+Animation: Shorter editorial coverage on measured sync points; consistent screen direction and exact hand/identity continuity.
+Music: rising transient density
+Lyric: and touched the moment
+Transition: match cut through hand position
+
+## S21 — Before strangers — 110.47–116.00s
+For a single beat, present Pandora and remembered human Pandora align perfectly in the mirror. The house falls still.
+
+Visual: U13 derived close — Before strangers
+Animation: Reflection phase offset converges to zero; environmental motion decays nearly to stillness; restrained light lift.
+Music: brief tension plateau before chorus
+Lyric: Before strangers become friends
+Transition: hard full-band cut
+
+## S22 — Distance wakes — 116.00–121.30s
+The second chorus detonates spatially: corridor and chamber now coexist through match cuts and layered depth.
+
+Visual: U10 + U09 — Distance wakes
+Animation: Fast but readable coverage on sync points; red fabric maintains continuity across impossible spaces.
+Music: full band return; driving industrial beat
+Lyric: Do not wake the sleeping distance
+Transition: impact cut
+
+## S23 — Red thread across rooms — 121.30–126.70s
+Pandora's red fabric visually crosses shot boundaries, stitching separated rooms into one temporal body.
+
+Visual: U09/U04 derived — Red thread across rooms
+Animation: Cloth motion and rose-petal drift bridge derived living scenes; audio-reactive light strength is smoothed.
+Music: driving chorus pulse
+Lyric: Do not ask the night to stay
+Transition: red-fabric match cut
+
+## S24 — House folds inward — 126.70–132.00s
+Window, mirror, cathedral and chamber interlock without losing geographic intention: every route leads deeper.
+
+Visual: U03 + U10 + U13 — House folds inward
+Animation: Layered perspective and reflection gates create genuine progression, not repeated portrait reframes.
+Music: chorus sync points around 126-132 video seconds
+Lyric: Somewhere under all our leaving
+Transition: doorway depth gate
+
+## S25 — Dawn leaks below — 132.00–138.10s
+The pale unmade dawn appears under doors, in floor reflections and inside cracks rather than from a normal horizon.
+
+Visual: U14 derived + U10 — Dawn leaks below
+Animation: Localized pale light migration, floor shimmer, haze shafts and candle response; preserve blacks and highlights.
+Music: chorus expansion toward release
+Lyric: There is still an unmade day
+Transition: light-peak handoff
+
+## S26 — Carry the day downward — 138.10–144.00s
+Pandora stops chasing the distant light and turns downward toward the crypt, carrying its pale reflection with her.
+
+Visual: U09 + U14 — Carry the day downward
+Animation: Decisive direction change and descent transition; red-to-stone visual match.
+Music: chorus release; transition into heavy pads
+Lyric: There is still an unmade day
+Transition: shadow/doorway descent
+
+## S27 — Crypt of buried time — 144.00–150.43s
+The crypt is revealed as the oldest memory layer: coffin, stone, roses and candles storing abandoned time.
+
+Visual: U14 — Crypt of buried time
+Animation: Candle flame, petal drift, subtle haze and localized reflection; very restrained camera descent.
+Music: heavy synth pads begin
+Lyric: If the morning finds this house
+Transition: pigment soften
+
+## S28 — Morning enters without sound — 150.43–156.93s
+Pale light moves through cracks and beneath stone while candles quietly surrender brightness.
+
+Visual: U14 derived detail — Morning enters without sound
+Animation: Slow temporal palette migration; dawn shaft and candle fade are independent; no white blowout.
+Music: layered vocal harmonies; resolving expansion
+Lyric: Let it enter without sound
+Transition: light lift
+
+## S29 — Integration — 156.93–163.10s
+Pandora rises or stands fully present as cloak/shadow opens into a wing-like geometry; the human and vampire temporal states are no longer separated.
+
+Visual: U15 — Integration
+Animation: Controlled reveal from crypt intimacy to centered monumental composition; no monster transformation or identity rewrite.
+Music: late-song intensity increases
+Lyric: We were never lost
+Transition: slow resolve cut
+
+## S30 — Underground day — 163.10–169.13s
+The final image holds Pandora inside the impossible dawn she can inhabit. Rain continues far above; the house no longer pulls at her.
+
+Visual: U15 + U01 derived close — Underground day
+Animation: Reduce motion toward stillness: faint cloth/hair response, distant haze and minimal practical-light decay; end on stable face/silhouette.
+Music: final layered harmonies and tail
+Lyric: We were underground
+Transition: fade to black after audio end
