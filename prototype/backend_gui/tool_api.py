@@ -13,6 +13,7 @@ import production_shots
 import production_generated
 import production_proofs
 import production_fx
+import production_assembly
 from core_adapter import CORE
 
 TOOL_SCHEMAS=[
@@ -46,7 +47,7 @@ TOOL_SCHEMAS=[
 {"name":"generated.accept","description":"Record explicit creative acceptance of a generated production asset.","input_schema":{"type":"object","required":["project_id","asset_id","instruction"],"properties":{"project_id":{"type":"string"},"asset_id":{"type":"string"},"instruction":{"type":"string"}}}},
 {"name":"generated.reject","description":"Record creative rejection and clear dependent proof/final-QC acceptance flags.","input_schema":{"type":"object","required":["project_id","asset_id","reason"],"properties":{"project_id":{"type":"string"},"asset_id":{"type":"string"},"reason":{"type":"string"}}}},
 {"name":"proofs.status","description":"Show per-shot proof readiness and explicit creative acceptance status.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
-{"name":"proofs.record","description":"Bind a real proof asset to a shot package and record required mode-aware checks.","input_schema":{"type":"object","required":["project_id","shot_id","proof_asset_id","checks"],"properties":{"project_id":{"type":"string"},"shot_id":{"type":"string"},"proof_asset_id":{"type":"string"},"checks":{"type":"object"},"production_mode":{"type":"string"},"notes":{"type":"string"}}}},
+{"name":"proofs.record","description":"Bind a real proof video to a shot package and record required mode-aware checks.","input_schema":{"type":"object","required":["project_id","shot_id","proof_asset_id","checks"],"properties":{"project_id":{"type":"string"},"shot_id":{"type":"string"},"proof_asset_id":{"type":"string"},"checks":{"type":"object"},"production_mode":{"type":"string"},"notes":{"type":"string"}}}},
 {"name":"proofs.accept","description":"Explicitly accept one proof after technical/mode checks pass.","input_schema":{"type":"object","required":["project_id","shot_id","instruction"],"properties":{"project_id":{"type":"string"},"shot_id":{"type":"string"},"instruction":{"type":"string"}}}},
 {"name":"proofs.finalize","description":"Finalize the proof set only when every shot proof is independently accepted.","input_schema":{"type":"object","required":["project_id","instruction"],"properties":{"project_id":{"type":"string"},"instruction":{"type":"string"}}}},
 {"name":"proofs.reject","description":"Reject a shot proof and roll dependent accepted production state back.","input_schema":{"type":"object","required":["project_id","shot_id","reason"],"properties":{"project_id":{"type":"string"},"shot_id":{"type":"string"},"reason":{"type":"string"}}}},
@@ -55,6 +56,8 @@ TOOL_SCHEMAS=[
 {"name":"fx.set_requirements","description":"Write production FX requirements using only canonical registered effects/transitions.","input_schema":{"type":"object","required":["project_id","effects","transitions"],"properties":{"project_id":{"type":"string"},"effects":{"type":"array","items":{"type":"object"}},"transitions":{"type":"array","items":{"type":"object"}},"seed":{"type":"integer"},"allow_conditional":{"type":"array","items":{"type":"string"}},"conditional_preflight":{"type":"object"}}}},
 {"name":"fx.lock","description":"Run the canonical FX precompile gate, runtime smoke tests, write fx.lock.json, then verify it live.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"fx.verify","description":"Re-run live verification against the existing immutable FX lock.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"assembly.status","description":"Show verified assembled workprint status and browser-playable output asset.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"assembly.run","description":"Queue FFmpeg assembly of accepted proof videos against the locked script and source song.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"},"width":{"type":"integer"},"height":{"type":"integer"}}}},
 {"name":"production.guard","description":"Re-run the bootstrapped current-main production guard for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.advance","description":"Request exactly the next canonical production stage. Workstation evidence and canonical guards must pass.","input_schema":{"type":"object","required":["project_id","target_stage"],"properties":{"project_id":{"type":"string"},"target_stage":{"type":"string"}}}},
 {"name":"media.list","description":"List registered media assets for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
@@ -134,6 +137,9 @@ def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_projec
     if name=="fx.set_requirements":_project(pid);return production_fx.set_requirements(pid,effects=a.get("effects") if isinstance(a.get("effects"),list) else [],transitions=a.get("transitions") if isinstance(a.get("transitions"),list) else [],seed=int(a.get("seed") or 302),allow_conditional=a.get("allow_conditional") if isinstance(a.get("allow_conditional"),list) else [],conditional_preflight=a.get("conditional_preflight") if isinstance(a.get("conditional_preflight"),dict) else {})
     if name=="fx.lock":_project(pid);return production_fx.lock(pid)
     if name=="fx.verify":_project(pid);return production_fx.verify(pid)
+    if name=="assembly.status":_project(pid);return production_assembly.status(pid)
+    if name=="assembly.run":
+        _project(pid);job=base.add_job("assemble_production",pid,None);job["width"]=int(a.get("width") or 1280);job["height"]=int(a.get("height") or 720);dispatch_job(job);return {"job":job}
     if name=="production.guard":_project(pid);return production_project.run_guard(pid)
     if name=="production.advance":_project(pid);return production_stage.advance(pid,str(a.get("target_stage") or ""))
     if name=="media.list":
