@@ -1,41 +1,20 @@
-# HANDOFF — Pandora clean rebuild
+# Handoff — clean Pandora final
 
-## Authority
-Current explicit user instruction is to use the media/videos they supplied, scrap other agents' creative work such as v3, follow the repository, scan the whole repo, and build a real story before continuing.
+Boot current `main` authority, then branch `song/the-door-between-the-seconds`.
 
-## Current production state
-- Branch: `song/the-door-between-the-seconds`
-- Current-main Director Brain v2 is already merged into this branch.
-- `PROJECT_STATE.json` was rolled back after the user rejected the prior v3 creative path and is now `STORYBOARD_LOCKED` after the clean story and 31-shot script passed both current-main guards.
-- `OPERATING_ORDER.json` now exists and is Director Brain v2 authority.
-- Direction authority: `music_led` with explicit current-user constraints.
-- Production mode: `hybrid`.
+Current stage: **ARCHIVED**. Do not resume rejected v3 production unless the user explicitly asks to revisit it.
 
-## Locked canon
-- Pandora the Vampire is the single protagonist/identity anchor.
-- Verified lyrics and measured source master drive narrative timing.
-- Six-second silent cold open before the song.
-- Current user-supplied images and authorized source video may be used as final-picture material.
-- Old v3 production-specific generated media, shot choices and renders are rejected as current creative authority.
+Canonical active master: `rebuild_v1/render/PANDORA_THE_UNMADE_DAY_FINAL_v2_960x540.mp4`.
+Canonical SHA-256: `eb2d30f926f56d4bd7a7dbc0dff385cec9c914f73ae3bf427ac7e33420582332`.
+Canonical final QC: `rebuild_v1/render/qc_final_v2/FINAL_QC_PASS.json`.
 
-## New story
-Read `STORY.md` before doing anything else. Premise: Pandora enters a temporal house made from the moments she abandoned when she became a vampire. She is seeking the last human morning she never lived. The lyric's sleeping distance is the separation between her present vampire self and that buried human time; the apparent second Pandora is a reflection/temporal state of the same identity.
+The active film is the clean story-led **Pandora / The Unmade Day** rebuild. It uses the current-user WAV, source videos, Pandora.zip stills, extracted source-video frames, and ten story-specific support images generated only after the clean story lock. Approved FX v2 effects are used for living-scene material; cinematic replacement shots use restrained camera movement rather than unregistered effects.
 
-## Visual language
-Read `VISUAL_DNA.md`. Red fabric/roses are the continuity thread; rain, inward windows, footprints, iron, mirrors, candles, cathedral distance, crypt stone and pale underground dawn each have explicit story jobs.
+Final checks passed: exact 5074 frames / 30 fps / 169.133333 s, zero black events, zero freeze events, FX precompile PASS + lock verification PASS, mode-aware proof PASS, 3-second export-variety PASS, final contact-sheet progression PASS, production guard PASS, narrative guard PASS. The 5-second variety tool retains one warning at 0-10 s; this is the intentionally locked six-second silent witness plus first window reveal and was visually accepted rather than suppressed.
 
-## Source analysis
-- WAV: 163.12 s; measured tempo 112.347 BPM.
-- `rebuild_v1/analysis/edit_map.json` and `reactive_controls.json` were regenerated from the current user WAV.
-- Current user long source video was sampled across its full duration; it is primarily one living Pandora chamber/window composition rather than conventional multi-shot coverage.
-- Short window benchmark: all 240 frames extracted under `rebuild_v1/reference_samples/window_all/`.
-- Fifteen current-chat images were visually inspected and assigned story roles in `REFERENCE_MANIFEST.json`; their exact binary bytes still need addressable ingestion before shot packages can claim hashes.
+The final master and QC/contact-sheet evidence are also persisted in `/Video Creation` as:
+- `PANDORA_THE_UNMADE_DAY_FINAL_v2_960x540.mp4`
+- `PANDORA_FINAL_QC_PASS.json`
+- `PANDORA_FINAL_CONTACT_SHEET.jpg`
 
-## Forbidden drift
-Do not resume `production/generated_scene_bank`, `production/final_pandora_v2_gate`, old v3 `shot_packages`, `production/v3_snapshot_inputs`, or prior v3 story/shot choices as production truth. Reusable main tools are allowed; v3-specific creative decisions are not.
-
-## Storyboard/script state
-The clean rebuild now has a fresh locked 31-shot / 5074-frame storyboard and hybrid `SCRIPT.json`. It passed both current-main guards at `STORYBOARD_LOCKED`.
-
-## Exact next action
-Make the fifteen current-chat image binaries addressable, then create fresh `rebuild_v1/shot_packages/` with hashes and real media evidence. Build representative living-scene/cinematic proofs before FX lock or assembly.
+Archive status: COMPLETE. Resume only for a user-requested revision; otherwise this master is canonical.
