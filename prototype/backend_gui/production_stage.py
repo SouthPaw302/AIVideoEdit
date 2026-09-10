@@ -9,13 +9,14 @@ import production_storyboard
 import production_shots
 import production_proofs
 import production_fx
+import production_assembly
 from core_adapter import CORE
 
 def _read_json(path,default):
     try:return json.loads(Path(path).read_text(encoding="utf-8"))
     except Exception:return default
 
-def _write_json(path,payload): Path(path).write_text(json.dumps(payload,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+def _write_json(path,payload):Path(path).write_text(json.dumps(payload,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
 def _reference_policy_ok(refs,contract):
     problems=[];p=contract.get("reference_policy",{});ms=float(p.get("short_video_max_seconds",30));mf=int(p.get("short_video_max_frames",1800))
@@ -127,5 +128,14 @@ def advance(project_id,target_stage):
         if missing:raise RuntimeError("FX_LOCKED gate is not satisfied: "+"; ".join(missing))
         live=production_fx.verify(project_id)
         if not live.get("ok"):raise RuntimeError("FX_LOCKED live verification failed: "+str(live.get("stderr") or live.get("stdout") or live.get("error") or "unknown")[-1600:])
+        return _generic_guarded_advance(project_id,target_stage,narrative=True)
+    if target_stage=="ASSEMBLED":
+        assembly=production_assembly.status(project_id);missing=[]
+        if not assembly.get("assembly_complete"):missing.append("verified assembly is incomplete")
+        if not assembly.get("output_present"):missing.append("assembly output artifact is missing or hash-invalid")
+        if not (assembly.get("assembly") or {}).get("qc"):missing.append("assembly QC evidence is missing")
+        if missing:raise RuntimeError("ASSEMBLED gate is not satisfied: "+"; ".join(missing))
+        live=production_fx.verify(project_id)
+        if not live.get("ok"):raise RuntimeError("ASSEMBLED requires current FX lock verification")
         return _generic_guarded_advance(project_id,target_stage,narrative=True)
     return _generic_guarded_advance(project_id,target_stage)
