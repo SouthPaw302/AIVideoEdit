@@ -106,6 +106,49 @@ def _generic_guarded_advance(project_id: str, target_stage: str) -> dict:
     }
 
 
+def _validate_approach(project_dir: Path) -> tuple[dict, dict, list[str]]:
+    state = _read_json(project_dir / "PROJECT_STATE.json", {})
+    plan = _read_json(project_dir / "MEDIA_PLAN.json", {})
+    refs = _read_json(project_dir / "REFERENCE_MANIFEST.json", {"videos": [], "images": []})
+    problems: list[str] = []
+    valid = {str(x.get("id")) for x in CORE.capabilities() if isinstance(x, dict) and x.get("id")}
+    selected = plan.get("selected_capabilities") if isinstance(plan.get("selected_capabilities"), list) else []
+    if not selected:
+        problems.append("select at least one canonical media capability")
+    unknown = [str(x) for x in selected if str(x) not in valid]
+    if unknown:
+        problems.append("unknown media capabilities: " + ", ".join(unknown))
+    if not str(plan.get("approach_summary") or "").strip():
+        problems.append("explicit approach summary is missing")
+    if not state.get("media_plan_valid"):
+        problems.append("media plan has not been validated")
+    if not state.get("visual_approach_established"):
+        problems.append("visual/media approach is not established")
+
+    no_visual_reference = not bool(refs.get("videos") or refs.get("images"))
+    if no_visual_reference:
+        gate = plan.get("visual_direction_gate")
+        if not isinstance(gate, dict):
+            problems.append("no-reference production requires three visual-direction routes")
+        else:
+            options = gate.get("options") if isinstance(gate.get("options"), list) else []
+            min_options = int(CORE.production_contract().get("reference_policy", {}).get("no_visual_reference_min_options", 3))
+            if len(options) < min_options:
+                problems.append(f"no-reference production requires at least {min_options} routes")
+            if not gate.get("presented_in_chat"):
+                problems.append("visual-direction routes have not been presented to the user")
+            if not gate.get("locked"):
+                problems.append("visual-direction selection is not locked")
+            selection = gate.get("user_selection")
+            if not isinstance(selection, dict) or not selection.get("selected_option_numbers"):
+                problems.append("explicit user route selection is missing")
+            if not str((selection or {}).get("recorded_user_instruction") or "").strip():
+                problems.append("current user selection instruction is not recorded")
+            if not plan.get("user_approach_established"):
+                problems.append("user approach selection is not established")
+    return state, plan, problems
+
+
 def advance(project_id: str, target_stage: str) -> dict:
     current = production_project.status(project_id)
     if not current.get("initialized"):
@@ -148,6 +191,18 @@ def advance(project_id: str, target_stage: str) -> dict:
         _write_json(project_dir / "PROJECT_STATE.json", state)
         engine = Path(current["engine_root"])
         production_project._git_commit_paths(engine, [project_dir / "PROJECT_STATE.json"], "Record reference-analysis gate evidence")
+        production_project._clear_guard_marker(engine)
+
+    if target_stage == "APPROACH_ESTABLISHED":
+        project_dir = Path(current["project_dir"])
+        state, _plan, problems = _validate_approach(project_dir)
+        if problems:
+            raise RuntimeError("APPROACH_ESTABLISHED gate is not satisfied: " + "; ".join(problems))
+        state["visual_approach_established"] = True
+        state["media_plan_valid"] = True
+        _write_json(project_dir / "PROJECT_STATE.json", state)
+        engine = Path(current["engine_root"])
+        production_project._git_commit_paths(engine, [project_dir / "PROJECT_STATE.json"], "Record approach gate evidence")
         production_project._clear_guard_marker(engine)
 
     # All later transitions preserve the already-analyzed canonical manifests.
