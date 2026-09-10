@@ -10,6 +10,7 @@ import production_shots
 import production_proofs
 import production_fx
 import production_assembly
+import production_final_qc
 from core_adapter import CORE
 
 def _read_json(path,default):
@@ -26,7 +27,7 @@ def _reference_policy_ok(refs,contract):
         if short:
             if r.get("extraction_policy")!="all_frames" or e!=t or t<=0:problems.append(f"{n}: short reference requires all-frame evidence")
         else:
-            if r.get("extraction_policy")!="meaningful_sampling":problems.append(f"{n}: long reference requires meaningful sampling")
+            if r.get("extraction_policy")!="meaningful_sampling":problems.append(f"{n}: long reference requires meaningful_sampling")
             if e<=0 or not r.get("sampling_description") or not r.get("coverage"):problems.append(f"{n}: long-reference sampling evidence incomplete")
     for r in refs.get("images",[]):
         if not r.get("analysis_complete"):problems.append(f"{r.get('name') or 'image'}: image inspection incomplete")
@@ -137,5 +138,17 @@ def advance(project_id,target_stage):
         if missing:raise RuntimeError("ASSEMBLED gate is not satisfied: "+"; ".join(missing))
         live=production_fx.verify(project_id)
         if not live.get("ok"):raise RuntimeError("ASSEMBLED requires current FX lock verification")
+        return _generic_guarded_advance(project_id,target_stage,narrative=True)
+    if target_stage=="FINAL_QC_PASSED":
+        qc=production_final_qc.status(project_id);missing=[]
+        if not qc.get("technical_pass"):missing.append("technical final QC has not passed")
+        if qc.get("creative_status")!="accepted":missing.append("full export has not been creatively accepted")
+        if not qc.get("final_pass"):missing.append("final QC evidence is incomplete")
+        if not qc.get("mode_aware_qc_passed"):missing.append("mode-aware final QC has not passed")
+        record=qc.get("qc") or {};assembly=production_assembly.status(project_id).get("assembly") or {}
+        if assembly.get("sha256")!=record.get("assembly_sha256"):missing.append("assembly changed after final QC")
+        if not (project_dir/"SCRIPT.json").is_file() or production_final_qc._sha(project_dir/"SCRIPT.json")!=record.get("script_sha256"):missing.append("script changed after final QC")
+        if not (project_dir/"fx.lock.json").is_file() or production_final_qc._sha(project_dir/"fx.lock.json")!=record.get("fx_lock_sha256"):missing.append("FX lock changed after final QC")
+        if missing:raise RuntimeError("FINAL_QC_PASSED gate is not satisfied: "+"; ".join(missing))
         return _generic_guarded_advance(project_id,target_stage,narrative=True)
     return _generic_guarded_advance(project_id,target_stage)
