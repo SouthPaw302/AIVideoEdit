@@ -33,8 +33,6 @@ jobs:
           tar -tzf "$ARCHIVE" | sort > "$PROJECT/continuation_snapshot/SNAPSHOT_FILE_LIST.txt"
           tar -xzf "$ARCHIVE" -C "$EXTRACT"
 
-          # Find the extracted project root regardless of whether the tar stored
-          # paths relative to the project or from a higher workspace directory.
           ROOT=""
           while IFS= read -r candidate; do
             ROOT="$(dirname "$candidate")"
@@ -44,7 +42,6 @@ jobs:
             echo "build_pandora_final.py not found in verified snapshot" >&2
             exit 1
           fi
-          # If production/ is the dirname, project root is its parent.
           if [[ "$(basename "$ROOT")" == "production" ]]; then ROOT="$(dirname "$ROOT")"; fi
 
           copy_if_present() {
@@ -55,9 +52,8 @@ jobs:
             fi
           }
 
-          # Restore code and evidence records, but intentionally do not overwrite
-          # PROJECT_STATE.json: the branch was rolled back to the last verifiable
-          # stage and must advance only after rebuilt evidence exists.
+          # Restore code/evidence records, but never overwrite the truthful
+          # current PROJECT_STATE.json during recovery.
           for rel in \
             production/build_pandora_final.py \
             production/build_shot_packages_from_v2.py \
@@ -70,7 +66,18 @@ jobs:
             copy_if_present "$rel"
           done
 
-          # Preserve exact extracted file listing for audit/recovery.
+          # Preserve renderer-matched snapshot inputs alongside the current
+          # canonical records so neither history nor authority is destroyed.
+          mkdir -p "$PROJECT/production/v3_snapshot_inputs"
+          for rel in SCRIPT.json SCRIPT.md MEDIA_PLAN.json SHOT_LIST.md STORYBOARD.md VISUAL_DNA.md; do
+            if [[ -f "$ROOT/$rel" ]]; then
+              cp "$ROOT/$rel" "$PROJECT/production/v3_snapshot_inputs/$rel"
+            fi
+          done
+          if [[ -f "$ROOT/PROJECT_STATE.json" ]]; then
+            cp "$ROOT/PROJECT_STATE.json" "$PROJECT/continuation_snapshot/PROJECT_STATE.snapshot.json"
+          fi
+
           echo "snapshot_sha256=974b10f7db7c5ee73c20517adab538a6892c1329558b4839073dd5e4867e8769" > "$PROJECT/continuation_snapshot/RECOVERY_RESULT.txt"
           echo "extracted_project_root=$ROOT" >> "$PROJECT/continuation_snapshot/RECOVERY_RESULT.txt"
 
@@ -85,5 +92,5 @@ jobs:
             echo "No recoverable files changed"
             exit 0
           fi
-          git commit -m "Restore Door Seconds renderer and snapshot evidence"
+          git commit -m "Restore Door Seconds renderer snapshot inputs"
           git push origin HEAD:song/the-door-between-the-seconds
