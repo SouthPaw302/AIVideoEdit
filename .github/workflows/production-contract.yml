@@ -37,8 +37,16 @@ jobs:
         if: github.event_name == 'pull_request' && github.base_ref == 'main'
         shell: bash
         run: |
+          python -m py_compile bootstrap.py general/reusable/tools/production_guard.py general/reusable/tools/narrative_guard.py general/reusable/tools/test_director_brain.py
           python general/reusable/tools/production_guard.py --bootstrap-phase --branch main
           python general/reusable/tools/narrative_guard.py --branch main
+          python general/reusable/tools/test_director_brain.py
+      - name: Validate Director Brain on main
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        shell: bash
+        run: |
+          python -m py_compile bootstrap.py general/reusable/tools/production_guard.py general/reusable/tools/narrative_guard.py general/reusable/tools/test_director_brain.py
+          python general/reusable/tools/test_director_brain.py
       - name: Verify bootstrapped production contract
         shell: bash
         run: |
@@ -46,7 +54,7 @@ jobs:
           if [[ -f .aivideoedit/os/general/reusable/tools/narrative_guard.py ]]; then
             python .aivideoedit/os/general/reusable/tools/narrative_guard.py --branch "$CONTRACT_BRANCH"
           elif [[ "$GITHUB_EVENT_NAME" == "pull_request" && "$GITHUB_BASE_REF" == "main" ]]; then
-            echo "Narrative guard is new in this candidate main and was validated in the candidate-main step."
+            echo "Directing/media guard is new in this candidate main and was validated in the candidate-main step."
           else
             echo "FAIL: bootstrapped current-main OS is missing narrative_guard.py"
             exit 1

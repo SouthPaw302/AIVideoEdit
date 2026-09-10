@@ -12,6 +12,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -28,8 +29,10 @@ elif SCRIPT_ROOT.name == "os" and SCRIPT_ROOT.parent.name == ".aivideoedit":
     OS_ROOT = SCRIPT_ROOT.resolve()
 else:
     OS_ROOT = ROOT
+
 CONTRACT_PATH = OS_ROOT / "general/reusable/PRODUCTION_CONTRACT.json"
 MEDIA_PATH = OS_ROOT / "general/reusable/MEDIA_CAPABILITY_MATRIX.json"
+MODES_PATH = OS_ROOT / "general/reusable/PRODUCTION_MODES.json"
 SESSION_PATH = ROOT / ".aivideoedit/session.json"
 
 
@@ -60,6 +63,16 @@ def sha256_file(path: Path) -> str:
 
 def truthy(v):
     return v is True
+
+
+def nonempty_string(v):
+    return isinstance(v, str) and bool(v.strip())
+
+
+def string_list(v, *, nonempty=False):
+    if not isinstance(v, list) or not all(isinstance(x, str) and x.strip() for x in v):
+        return False
+    return bool(v) if nonempty else True
 
 
 def fail(msg, errors):
@@ -103,8 +116,11 @@ def verify_bootstrap_session(branch: str):
     recorded = session.get("os_files", {})
     critical = [
         "AGENTS.md",
+        "PRIME_DIRECTIVE.md",
         "SOUL.md",
         "general/reusable/PRODUCTION_CONTRACT.json",
+        "general/reusable/PRODUCTION_MODES.json",
+        "general/reusable/MODE_AWARE_QC.md",
         "general/reusable/MEDIA_CAPABILITY_MATRIX.json",
         "general/reusable/tools/production_guard.py",
         "general/reusable/fx_v2/registry.json",
@@ -132,7 +148,7 @@ def verify_bootstrap_session(branch: str):
     return errors
 
 
-def validate_no_reference_visual_direction_gate(plan, contract, errors):
+def validate_no_reference_visual_direction_gate(plan, contract, modes, errors):
     """Validate explicit user selection among multiple no-reference visual routes."""
     if not truthy(plan.get("user_approach_established")):
         fail(
@@ -170,6 +186,7 @@ def validate_no_reference_visual_direction_gate(plan, contract, errors):
             "no_visual_reference_min_storyboard_beats", 3
         )
     )
+    valid_modes = set(modes.get("production_modes", {}).keys())
     options = gate.get("options")
     if not isinstance(options, list) or len(options) < min_options:
         fail(
@@ -198,18 +215,25 @@ def validate_no_reference_visual_direction_gate(plan, contract, errors):
         name = option.get("name")
         story_approach = option.get("story_approach")
         rendering_route = option.get("rendering_route")
-        if not isinstance(name, str) or not name.strip():
+        production_mode = option.get("production_mode")
+        if not nonempty_string(name):
             fail(f"visual direction option {index} requires a name", errors)
         else:
             names.append(name.strip().casefold())
-        if not isinstance(story_approach, str) or not story_approach.strip():
+        if not nonempty_string(story_approach):
             fail(f"visual direction option {index} requires story_approach", errors)
         else:
             story_routes.append(story_approach.strip().casefold())
-        if not isinstance(rendering_route, str) or not rendering_route.strip():
+        if not nonempty_string(rendering_route):
             fail(f"visual direction option {index} requires rendering_route", errors)
         else:
             render_routes.append(rendering_route.strip().casefold())
+        if production_mode not in valid_modes:
+            fail(
+                f"visual direction option {index} requires valid production_mode "
+                f"({', '.join(sorted(valid_modes))})",
+                errors,
+            )
 
         storyboard = option.get("storyboard")
         if not isinstance(storyboard, list) or len(storyboard) < min_beats:
@@ -243,7 +267,7 @@ def validate_no_reference_visual_direction_gate(plan, contract, errors):
                 )
             else:
                 beat_numbers.append(beat_number)
-            if not isinstance(description, str) or not description.strip():
+            if not nonempty_string(description):
                 fail(
                     f"visual direction option {index} storyboard beat {beat_index} "
                     "requires a description",
@@ -292,7 +316,7 @@ def validate_no_reference_visual_direction_gate(plan, contract, errors):
             fail("hybrid status must reference at least two option numbers", errors)
 
     recorded = selection.get("recorded_user_instruction")
-    if not isinstance(recorded, str) or not recorded.strip():
+    if not nonempty_string(recorded):
         fail(
             "visual direction gate requires recorded_user_instruction from the "
             "current user's explicit selection/modification",
@@ -300,21 +324,213 @@ def validate_no_reference_visual_direction_gate(plan, contract, errors):
         )
 
 
+def validate_operating_order(project, state, stage, states, modes, errors):
+    version = state.get("director_brain_version", 0)
+    try:
+        version = int(version or 0)
+    except (TypeError, ValueError):
+        fail("PROJECT_STATE director_brain_version must be an integer", errors)
+        return None
+
+    path = project / "OPERATING_ORDER.json"
+    if version < 2:
+        return load_json(path) if path.is_file() else None
+
+    if not path.is_file():
+        fail("Director Brain v2 requires OPERATING_ORDER.json", errors)
+        return None
+
+    order = load_json(path)
+    if order.get("schema") != "aivideoedit.operating-order.v1":
+        fail("OPERATING_ORDER.json has invalid schema", errors)
+
+    valid_authorities = set(modes.get("direction_authorities", []))
+    valid_modes = set(modes.get("production_modes", {}).keys())
+    authority = order.get("direction_authority")
+    mode = order.get("production_mode")
+
+    for key in ("mission", "current_user_direction", "exact_next_action"):
+        if not nonempty_string(order.get(key)):
+            fail(f"OPERATING_ORDER.{key} must be a non-empty string", errors)
+
+    if authority not in valid_authorities:
+        fail(
+            "OPERATING_ORDER.direction_authority must be one of: "
+            + ", ".join(sorted(valid_authorities)),
+            errors,
+        )
+    if mode not in valid_modes:
+        fail(
+            "OPERATING_ORDER.production_mode must be one of: "
+            + ", ".join(sorted(valid_modes)),
+            errors,
+        )
+
+    canon = order.get("canon_lock")
+    if not isinstance(canon, dict):
+        fail("OPERATING_ORDER.canon_lock must be an object", errors)
+        canon = {}
+    canon_locked = canon.get("locked")
+    if not isinstance(canon_locked, bool):
+        fail("OPERATING_ORDER.canon_lock.locked must be boolean", errors)
+    if canon_locked:
+        if not nonempty_string(canon.get("picture_language")):
+            fail("locked canon requires canon_lock.picture_language", errors)
+        if not isinstance(canon.get("items"), list) or not canon.get("items"):
+            fail("locked canon requires at least one canon_lock.items entry", errors)
+
+    baseline = order.get("accepted_baseline")
+    if not isinstance(baseline, dict):
+        fail("OPERATING_ORDER.accepted_baseline must be an object", errors)
+        baseline = {}
+    status = baseline.get("status")
+    if status not in {"none", "accepted", "retired"}:
+        fail("accepted_baseline.status must be none, accepted, or retired", errors)
+    if status == "accepted":
+        if canon_locked is not True:
+            fail("an accepted baseline requires canon_lock.locked=true", errors)
+        if not nonempty_string(baseline.get("file_or_locator")):
+            fail("accepted baseline requires file_or_locator", errors)
+        if not nonempty_string(baseline.get("sha256")):
+            fail("accepted baseline requires sha256", errors)
+        elif not re.fullmatch(r"[0-9a-fA-F]{64}", baseline.get("sha256").strip()):
+            fail("accepted baseline sha256 must contain 64 hexadecimal characters", errors)
+        if not nonempty_string(baseline.get("user_acceptance_statement")):
+            fail("accepted baseline requires user_acceptance_statement", errors)
+
+        locator = baseline.get("file_or_locator")
+        if nonempty_string(locator):
+            candidate = Path(locator)
+            if not candidate.is_absolute():
+                candidate = project / candidate
+            if candidate.is_file() and nonempty_string(baseline.get("sha256")):
+                if sha256_file(candidate).lower() != baseline.get("sha256").strip().lower():
+                    fail("accepted baseline local file hash does not match OPERATING_ORDER", errors)
+
+    refinement = order.get("refinement_scope")
+    if not isinstance(refinement, dict):
+        fail("OPERATING_ORDER.refinement_scope must be an object", errors)
+        refinement = {}
+    active = refinement.get("active")
+    if not isinstance(active, bool):
+        fail("OPERATING_ORDER.refinement_scope.active must be boolean", errors)
+    if active:
+        if status != "accepted":
+            fail("active refinement requires accepted_baseline.status=accepted", errors)
+        if not nonempty_string(refinement.get("goal")):
+            fail("active refinement requires refinement_scope.goal", errors)
+        if not string_list(refinement.get("allowed_changes"), nonempty=True):
+            fail("active refinement requires non-empty allowed_changes", errors)
+        if not string_list(refinement.get("forbidden_changes"), nonempty=True):
+            fail("active refinement requires non-empty forbidden_changes", errors)
+        if not isinstance(refinement.get("restart_authorized"), bool):
+            fail("refinement_scope.restart_authorized must be boolean", errors)
+
+    idx = states.index(stage)
+
+    def at(name):
+        return idx >= states.index(name)
+
+    if at("STORYBOARD_LOCKED") and mode in {"living_scene", "hybrid"}:
+        script_path = project / "SCRIPT.json"
+        if script_path.is_file():
+            script = load_json(script_path)
+            entries = script.get("entries")
+            if not isinstance(entries, list) or not entries:
+                fail("Director Brain v2 SCRIPT.json requires entries", errors)
+            else:
+                for i, entry in enumerate(entries, start=1):
+                    if not isinstance(entry, dict):
+                        fail(f"SCRIPT entry {i} must be an object", errors)
+                        continue
+                    entry_mode = mode
+                    if mode == "hybrid":
+                        entry_mode = entry.get("production_mode")
+                        if entry_mode not in {"living_scene", "cinematic"}:
+                            fail(
+                                f"hybrid SCRIPT entry {i} requires production_mode "
+                                "living_scene or cinematic",
+                                errors,
+                            )
+                            continue
+                    if entry_mode == "living_scene":
+                        if not string_list(entry.get("motion_regions"), nonempty=True):
+                            fail(
+                                f"living-scene SCRIPT entry {i} requires semantic motion_regions",
+                                errors,
+                            )
+                        if not string_list(entry.get("protected_regions"), nonempty=True):
+                            fail(
+                                f"living-scene SCRIPT entry {i} requires protected_regions",
+                                errors,
+                            )
+
+    if at("SHOT_PROOFS_ACCEPTED") and not truthy(state.get("mode_aware_proofs_accepted")):
+        fail(
+            "Director Brain v2 SHOT_PROOFS_ACCEPTED requires mode_aware_proofs_accepted=true",
+            errors,
+        )
+    if at("FINAL_QC_PASSED") and not truthy(state.get("mode_aware_qc_passed")):
+        fail(
+            "Director Brain v2 FINAL_QC_PASSED requires mode_aware_qc_passed=true",
+            errors,
+        )
+
+    return order
+
+
+def validate_asset_lifecycle(project, state, contract, errors):
+    try:
+        version = int(state.get("director_brain_version", 0) or 0)
+    except (TypeError, ValueError):
+        return
+    if version < 2:
+        return
+
+    manifest = load_json(project / "ASSET_MANIFEST.json")
+    allowed = set(contract.get("asset_lifecycle_policy", {}).get("statuses", []))
+    entries = manifest.get("assets")
+    if entries is None:
+        entries = manifest.get("entries")
+    if entries is None:
+        return
+    if not isinstance(entries, list):
+        fail("ASSET_MANIFEST assets/entries must be a list", errors)
+        return
+    for i, entry in enumerate(entries, start=1):
+        if not isinstance(entry, dict):
+            continue
+        status = entry.get("lifecycle_status")
+        if status is not None and status not in allowed:
+            fail(
+                f"ASSET_MANIFEST entry {i} has invalid lifecycle_status: {status}",
+                errors,
+            )
+
+
 def validate(branch: str):
     contract = load_json(CONTRACT_PATH)
     media = load_json(MEDIA_PATH)
+    modes = load_json(MODES_PATH)
     errors = []
 
     if branch == "main":
         for p in [
             "AGENTS.md",
+            "PRIME_DIRECTIVE.md",
             "SOUL.md",
             "BIBLE.md",
             "SYSTEM_INDEX.md",
             "general/reusable/AIVIDEOEDIT_OS_MANIFEST.json",
+            "general/reusable/PRODUCTION_CONTRACT.json",
+            "general/reusable/PRODUCTION_MODES.json",
+            "general/reusable/PRODUCTION_MODES.md",
+            "general/reusable/DOCTRINE_LIVING_SCENE.md",
+            "general/reusable/MODE_AWARE_QC.md",
             "general/reusable/PRODUCTION_PIPELINE.md",
             "general/reusable/STYLE_CONTRACT.md",
             "general/reusable/fx_v2/registry.json",
+            "projects/OPERATING_ORDER_TEMPLATE.json",
         ]:
             if not (OS_ROOT / p).is_file():
                 fail(f"missing system file: {p}", errors)
@@ -354,6 +570,9 @@ def validate(branch: str):
 
     def at(name):
         return idx >= states.index(name)
+
+    validate_operating_order(project, state, stage, states, modes, errors)
+    validate_asset_lifecycle(project, state, contract, errors)
 
     if at("SOURCE_INGESTED") and not truthy(state.get("source_ingest_complete")):
         fail("SOURCE_INGESTED requires source_ingest_complete=true", errors)
@@ -407,7 +626,7 @@ def validate(branch: str):
         if not truthy(state.get("visual_approach_established")):
             fail("visual/media approach not established", errors)
         if not videos and not images:
-            validate_no_reference_visual_direction_gate(plan, contract, errors)
+            validate_no_reference_visual_direction_gate(plan, contract, modes, errors)
 
     checks = {
         "STORYBOARD_LOCKED": "storyboard_locked",
