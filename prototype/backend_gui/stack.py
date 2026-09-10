@@ -2,6 +2,7 @@
 """AIVideoEdit alpha stack runtime."""
 from __future__ import annotations
 import json,os,queue,shutil,threading
+from pathlib import Path
 from http.server import ThreadingHTTPServer
 from urllib.parse import urlparse
 import server as base
@@ -10,6 +11,7 @@ import tool_api
 import operating_tools
 import production_analysis
 import production_assembly
+import production_project
 from core_adapter import CORE
 
 WORKER_COUNT=max(1,int(os.environ.get("AIVE_WORKERS","2")))
@@ -23,11 +25,40 @@ def sync_project_job(job):
     try:
         manifest=storage.sync_project(pid,assets,base.PROJECT_ROOT,progress=progress);base.update_job(job["id"],status="complete",progress=100,result=f"External sync complete · {len(manifest['objects'])} objects",finished_at=base.now())
     except Exception as exc:base.update_job(job["id"],status="failed",progress=100,result=str(exc)[:600],finished_at=base.now())
+
+def _capture_music_authority(pid):
+    try:
+        s=production_project.status(pid);project_dir=Path(s.get("project_dir") or "")
+        music=production_analysis._read_json(project_dir/"MUSIC_ANALYSIS.json",{}) if project_dir.is_dir() else {}
+        lyrics=music.get("lyrics") if isinstance(music.get("lyrics"),dict) else None
+        genre=music.get("genre") if isinstance(music.get("genre"),dict) else None
+        state=production_analysis._read_json(project_dir/"PROJECT_STATE.json",{}) if project_dir.is_dir() else {}
+        if not state.get("lyrics_status_resolved") and not state.get("genre_authority_resolved"):return None
+        return {"lyrics":dict(lyrics) if lyrics else None,"genre":dict(genre) if genre else None,"lyrics_status_resolved":bool(state.get("lyrics_status_resolved")),"genre_authority_resolved":bool(state.get("genre_authority_resolved"))}
+    except Exception:return None
+
+def _restore_music_authority(pid,preserved):
+    if not preserved:return
+    s=production_project.status(pid);engine=Path(s["engine_root"]);project_dir=Path(s["project_dir"]);music_path=project_dir/"MUSIC_ANALYSIS.json";state_path=project_dir/"PROJECT_STATE.json"
+    music=production_analysis._read_json(music_path,{})
+    if preserved.get("lyrics"):music["lyrics"]=preserved["lyrics"]
+    if preserved.get("genre"):music["genre"]=preserved["genre"]
+    production_analysis._write_json(music_path,music)
+    state=production_analysis._read_json(state_path,{})
+    if preserved.get("lyrics_status_resolved"):state["lyrics_status_resolved"]=True
+    if preserved.get("genre_authority_resolved"):state["genre_authority_resolved"]=True
+    production_analysis._write_json(state_path,state)
+    production_project._git_commit_paths(engine,[music_path,state_path],"Preserve explicit music authority after signal analysis")
+    production_project._clear_guard_marker(engine)
+
 def analyze_production_job(job):
     pid=job["project"];base.update_job(job["id"],status="running",started_at=base.now(),progress=5,result="Starting canonical reference analysis…")
     def progress(index,total,message):base.update_job(job["id"],progress=min(90,10+int(index/max(1,total)*75)),result=message[:600])
     try:
-        result=production_analysis.analyze_project(pid,progress=progress);needs=[]
+        preserved=_capture_music_authority(pid);result=production_analysis.analyze_project(pid,progress=progress);_restore_music_authority(pid,preserved)
+        if preserved:
+            result=production_project.status(pid)|{"lyrics_status_resolved":bool(preserved.get("lyrics_status_resolved")),"genre_authority_resolved":bool(preserved.get("genre_authority_resolved"))}
+        needs=[]
         if not result.get("lyrics_status_resolved"):needs.append("lyrics status")
         if not result.get("genre_authority_resolved"):needs.append("genre")
         suffix=f" · needs {', '.join(needs)}" if needs else "";base.update_job(job["id"],status="complete",progress=100,result=f"Reference/music analysis complete{suffix}",finished_at=base.now())
@@ -74,7 +105,7 @@ def _json_body(handler):
     except Exception as exc:raise ValueError(f"invalid JSON: {exc}")
 
 class StackHandler(base.Handler):
-    server_version="AIVideoEditAlphaStack/0.7"
+    server_version="AIVideoEditAlphaStack/0.8"
     def do_GET(self):
         path=urlparse(self.path).path
         if path=="/api/system":return self.send_json(system_snapshot())
