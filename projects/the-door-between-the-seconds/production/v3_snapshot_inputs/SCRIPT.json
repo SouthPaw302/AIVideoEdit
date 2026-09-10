@@ -1,0 +1,495 @@
+{
+  "schema": "aivideoedit.video-script.v1",
+  "locked": true,
+  "based_on_storyboard": true,
+  "subject": "Pandora the Vampire",
+  "target_fps": 30,
+  "duration_seconds": 169.13333333333333,
+  "total_frames": 5074,
+  "basis": [
+    "storyboard",
+    "music_analysis",
+    "lyrics",
+    "current_user_instruction"
+  ],
+  "cold_open_seconds": 6.0,
+  "song_offset_seconds": 6.0,
+  "entries": [
+    {
+      "shot_id": "S00",
+      "start_frame": 0,
+      "end_frame": 179,
+      "story_action": "Pandora alone before the music; candlelight and rain move while she holds still, then subtly turns toward the house interior.",
+      "visual_media": "gothic_window_8s_fullscreen_720p.mp4",
+      "animation_behavior": "cold_open; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "intentional pre-song silence",
+        "visual cold-open timing"
+      ],
+      "lyric_cue": "No lyric \u2014 silence",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S01",
+      "start_frame": 180,
+      "end_frame": 299,
+      "story_action": "The house beneath the rain is established around Pandora as the pulse first emerges.",
+      "visual_media": "rainy_gothic_castle_entrance.jpg",
+      "animation_behavior": "rain_push; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "song intro pulse",
+        "section-timed edit"
+      ],
+      "lyric_cue": "instrumental opening",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S02",
+      "start_frame": 300,
+      "end_frame": 419,
+      "story_action": "Pandora crosses the threshold; the chamber she left in the cold open becomes part of a larger impossible manor.",
+      "visual_media": "gothic_moonlit_departure.jpg",
+      "animation_behavior": "doorway_drift; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "song intro pulse",
+        "section-timed edit"
+      ],
+      "lyric_cue": "instrumental opening",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S03",
+      "start_frame": 420,
+      "end_frame": 554,
+      "story_action": "Pandora is framed against the rain-black entrance; architecture towers above her.",
+      "visual_media": "rainy_gothic_castle_entrance.jpg",
+      "animation_behavior": "rain_push; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "There is a house beneath the rain",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S04",
+      "start_frame": 555,
+      "end_frame": 689,
+      "story_action": "The familiar moonlit window becomes an inward-looking surface; reflection and room seem to watch Pandora.",
+      "visual_media": "gothic_noblewoman_by_the_rainy_moonlit_window.jpg",
+      "animation_behavior": "reflection_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Where every window faces in",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S05",
+      "start_frame": 690,
+      "end_frame": 824,
+      "story_action": "Pandora moves from doorway to wet stone; the hem of burgundy fabric trails across the threshold.",
+      "visual_media": "gothic_moonlit_departure.jpg",
+      "animation_behavior": "doorway_drift; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "I left my footsteps at the doorway",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S06",
+      "start_frame": 825,
+      "end_frame": 959,
+      "story_action": "She turns back toward the dark as if deliberately leaving evidence of her passage.",
+      "visual_media": "gothic_temptress_in_the_rain.jpg",
+      "animation_behavior": "shadow_breath; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "So the dark would know I'd been",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S07",
+      "start_frame": 960,
+      "end_frame": 1079,
+      "story_action": "Books, skulls, roses and dust become memory objects around Pandora.",
+      "visual_media": "a_cinematic_moody_gothic_fantasy_realistic_inte.jpg",
+      "animation_behavior": "dust_memory; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Dust remembers every hand",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S08",
+      "start_frame": 1080,
+      "end_frame": 1199,
+      "story_action": "Warm iron and candlelight flare against the cold room, suggesting remembered fire.",
+      "visual_media": "gothic_moonlit_rose_chamber.jpg",
+      "animation_behavior": "ember_bloom; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Iron remembers flame",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S09",
+      "start_frame": 1200,
+      "end_frame": 1349,
+      "story_action": "The corridor multiplies in vertical mirror strips; the house appears to form a word around Pandora.",
+      "visual_media": "gothic_moonlit_corridor_portrait.jpg",
+      "animation_behavior": "mirror_corridor; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "I heard the walls pronounce my silence",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S10",
+      "start_frame": 1350,
+      "end_frame": 1499,
+      "story_action": "Tight portrait of Pandora; delayed reflection ghosts make identity feel unstable.",
+      "visual_media": "gothic_moonlit_victorian_portrait.jpg",
+      "animation_behavior": "portrait_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Like they almost knew my name",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S11",
+      "start_frame": 1500,
+      "end_frame": 1619,
+      "story_action": "First expansion: Pandora becomes small against cathedral scale.",
+      "visual_media": "candlelit_gothic_cathedral_romance.jpg",
+      "animation_behavior": "cathedral_push; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Do not wake the sleeping distance",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S12",
+      "start_frame": 1620,
+      "end_frame": 1754,
+      "story_action": "The sleeping distance opens beyond candles into impossible depth.",
+      "visual_media": "gothic_moonlit_baroque_sanctuary.jpg",
+      "animation_behavior": "depth_gate; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Do not wake the sleeping distance",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S13",
+      "start_frame": 1755,
+      "end_frame": 1889,
+      "story_action": "Moon and rain remain beautiful but transient; Pandora no longer asks them to hold.",
+      "visual_media": "moonlit_gothic_aristocrat_by_the_window.jpg",
+      "animation_behavior": "rain_reflection; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Do not ask the night to stay",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S14",
+      "start_frame": 1890,
+      "end_frame": 2084,
+      "story_action": "Multiple temporal Pandoras occupy one frame, departures preserved as echoes instead of erased.",
+      "visual_media": "gothic_noblewoman_s_temporal_echo.jpg",
+      "animation_behavior": "temporal_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Somewhere under all our leaving",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S15",
+      "start_frame": 2085,
+      "end_frame": 2279,
+      "story_action": "A pale dawn seam enters the gothic space without destroying the dark.",
+      "visual_media": "gothic_dawn_in_the_cathedral_of_roses.jpg",
+      "animation_behavior": "dawn_bloom; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "There is still an unmade day",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S16",
+      "start_frame": 2280,
+      "end_frame": 2459,
+      "story_action": "Architecture darkens overhead; silent lightning pulses through the sanctuary.",
+      "visual_media": "gothic_moonlit_baroque_sanctuary.jpg",
+      "animation_behavior": "quiet_thunder; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "The ceiling fills with quiet thunder",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S17",
+      "start_frame": 2460,
+      "end_frame": 2639,
+      "story_action": "The room tilts and briefly inverts around Pandora while she remains the visual anchor.",
+      "visual_media": "gothic_moonlit_departure.jpg",
+      "animation_behavior": "gravity_flip; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "The floor forgets which way is down",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S18",
+      "start_frame": 2640,
+      "end_frame": 2819,
+      "story_action": "A repeated corridor creates an unreachable human-shaped distance.",
+      "visual_media": "gothic_moonlit_corridor_portrait.jpg",
+      "animation_behavior": "mirror_corridor; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "You're standing in the hallway",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S19",
+      "start_frame": 2820,
+      "end_frame": 2924,
+      "story_action": "The corridor repeats three times with mismatched perspective, extending beyond the frame.",
+      "visual_media": "gothic_moonlit_corridor_portrait.jpg",
+      "animation_behavior": "hallway_repeat; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Though the hallway had no end",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S20",
+      "start_frame": 2925,
+      "end_frame": 3029,
+      "story_action": "Pandora advances but the architecture appears to slide backward.",
+      "visual_media": "gothic_moonlit_corridor_portrait.jpg",
+      "animation_behavior": "reverse_drift; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Though the hallway had no end",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S21",
+      "start_frame": 3030,
+      "end_frame": 3134,
+      "story_action": "Her reach is represented through a soft reflected double entering from the opposite side.",
+      "visual_media": "moonlit_gothic_romance_by_candlelight.jpg",
+      "animation_behavior": "reach_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "I reached for you and touched the moment",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S22",
+      "start_frame": 3135,
+      "end_frame": 3239,
+      "story_action": "Time freezes into overlapping states just before contact.",
+      "visual_media": "gothic_noblewoman_s_temporal_echo.jpg",
+      "animation_behavior": "temporal_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "I reached for you and touched the moment",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S23",
+      "start_frame": 3240,
+      "end_frame": 3359,
+      "story_action": "The distance collapses into intimate candle-and-rain framing, still ambiguous rather than literal romance.",
+      "visual_media": "gothic_romance_by_moonlit_rain.jpg",
+      "animation_behavior": "soft_contact; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Before strangers become friends",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S24",
+      "start_frame": 3360,
+      "end_frame": 3480,
+      "story_action": "The familiar window returns as a threshold shared with an unseen other; Pandora is changed by the contact.",
+      "visual_media": "moonlit_gothic_romance_by_the_window.jpg",
+      "animation_behavior": "reflection_echo; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "verse phrasing",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Before strangers become friends",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S25",
+      "start_frame": 3481,
+      "end_frame": 3614,
+      "story_action": "The second chorus returns at larger scale and stronger motion.",
+      "visual_media": "candlelit_gothic_cathedral_romance.jpg",
+      "animation_behavior": "cathedral_impact; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Do not wake the sleeping distance",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S26",
+      "start_frame": 3615,
+      "end_frame": 3749,
+      "story_action": "Depth folds open instead of pushing Pandora away.",
+      "visual_media": "gothic_moonlit_baroque_sanctuary.jpg",
+      "animation_behavior": "depth_gate; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Do not wake the sleeping distance",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S27",
+      "start_frame": 3750,
+      "end_frame": 3899,
+      "story_action": "Pandora is now explicitly framed as the vampire queen of this threshold world.",
+      "visual_media": "gothic_vampiric_reverie_by_moonlit_window.jpg",
+      "animation_behavior": "vampire_portrait; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Do not ask the night to stay",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S28",
+      "start_frame": 3900,
+      "end_frame": 4109,
+      "story_action": "Leaving becomes forward motion; rain and corridor geometry point toward passage.",
+      "visual_media": "gothic_moonlit_departure.jpg",
+      "animation_behavior": "departure_drive; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Somewhere under all our leaving",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S29",
+      "start_frame": 4110,
+      "end_frame": 4320,
+      "story_action": "Dawn opens wider and the cathedral-city shifts from prison to passage.",
+      "visual_media": "gothic_dawn_in_the_cathedral_of_roses.jpg",
+      "animation_behavior": "dawn_bloom; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "chorus impact",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "There is still an unmade day",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S30",
+      "start_frame": 4321,
+      "end_frame": 4499,
+      "story_action": "Pandora descends rather than escaping upward; morning reaches the crypt.",
+      "visual_media": "gothic_crypt_empress_in_morning_light.jpg",
+      "animation_behavior": "crypt_dawn; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "outro release",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "If the morning finds this house",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S31",
+      "start_frame": 4500,
+      "end_frame": 4679,
+      "story_action": "Light enters silently through roses and stone, gentle rather than conquering.",
+      "visual_media": "gothic_dawn_in_the_cathedral_of_roses.jpg",
+      "animation_behavior": "silent_light; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "outro release",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "Let it enter without sound",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S32",
+      "start_frame": 4680,
+      "end_frame": 4874,
+      "story_action": "The underground sanctuary reveals preserved memory rather than burial.",
+      "visual_media": "gothic_rose_studded_crypt_romance.jpg",
+      "animation_behavior": "crypt_memory; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "outro release",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "We were never lost",
+      "transition": "hard_cut_or_short_dissolve"
+    },
+    {
+      "shot_id": "S33",
+      "start_frame": 4875,
+      "end_frame": 5073,
+      "story_action": "Pandora becomes still beneath the first morning light; image slows toward near-stillness and fades to black.",
+      "visual_media": "gothic_crypt_empress_in_morning_light.jpg",
+      "animation_behavior": "final_stillness; dense full-screen 16:9 motion with bounded camera/internal atmosphere treatment",
+      "music_cues": [
+        "outro release",
+        "lyric-synchronized visual action"
+      ],
+      "lyric_cue": "We were underground",
+      "transition": "hard_cut_or_short_dissolve"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+# SHOT LIST — Pandora the Vampire
+
+**34 locked shots** · 30 fps · 169.12 s total
+
+- **S00 0.00–6.00s — COLD_OPEN** — No lyric — silence. Source: `gothic_window_8s_fullscreen_720p.mp4`. Pandora alone before the music; candlelight and rain move while she holds still, then subtly turns toward the house interior. Motion: `cold_open`.
+- **S01 6.00–10.00s — MUSIC_INTRO** — instrumental opening. Source: `rainy_gothic_castle_entrance.jpg`. The house beneath the rain is established around Pandora as the pulse first emerges. Motion: `rain_push`.
+- **S02 10.00–14.00s — MUSIC_INTRO** — instrumental opening. Source: `gothic_moonlit_departure.jpg`. Pandora crosses the threshold; the chamber she left in the cold open becomes part of a larger impossible manor. Motion: `doorway_drift`.
+- **S03 14.00–18.50s — VERSE_1** — There is a house beneath the rain. Source: `rainy_gothic_castle_entrance.jpg`. Pandora is framed against the rain-black entrance; architecture towers above her. Motion: `rain_push`.
+- **S04 18.50–23.00s — VERSE_1** — Where every window faces in. Source: `gothic_noblewoman_by_the_rainy_moonlit_window.jpg`. The familiar moonlit window becomes an inward-looking surface; reflection and room seem to watch Pandora. Motion: `reflection_echo`.
+- **S05 23.00–27.50s — VERSE_1** — I left my footsteps at the doorway. Source: `gothic_moonlit_departure.jpg`. Pandora moves from doorway to wet stone; the hem of burgundy fabric trails across the threshold. Motion: `doorway_drift`.
+- **S06 27.50–32.00s — VERSE_1** — So the dark would know I'd been. Source: `gothic_temptress_in_the_rain.jpg`. She turns back toward the dark as if deliberately leaving evidence of her passage. Motion: `shadow_breath`.
+- **S07 32.00–36.00s — VERSE_1** — Dust remembers every hand. Source: `a_cinematic_moody_gothic_fantasy_realistic_inte.jpg`. Books, skulls, roses and dust become memory objects around Pandora. Motion: `dust_memory`.
+- **S08 36.00–40.00s — VERSE_1** — Iron remembers flame. Source: `gothic_moonlit_rose_chamber.jpg`. Warm iron and candlelight flare against the cold room, suggesting remembered fire. Motion: `ember_bloom`.
+- **S09 40.00–45.00s — VERSE_1** — I heard the walls pronounce my silence. Source: `gothic_moonlit_corridor_portrait.jpg`. The corridor multiplies in vertical mirror strips; the house appears to form a word around Pandora. Motion: `mirror_corridor`.
+- **S10 45.00–50.00s — VERSE_1** — Like they almost knew my name. Source: `gothic_moonlit_victorian_portrait.jpg`. Tight portrait of Pandora; delayed reflection ghosts make identity feel unstable. Motion: `portrait_echo`.
+- **S11 50.00–54.00s — CHORUS_1** — Do not wake the sleeping distance. Source: `candlelit_gothic_cathedral_romance.jpg`. First expansion: Pandora becomes small against cathedral scale. Motion: `cathedral_push`.
+- **S12 54.00–58.50s — CHORUS_1** — Do not wake the sleeping distance. Source: `gothic_moonlit_baroque_sanctuary.jpg`. The sleeping distance opens beyond candles into impossible depth. Motion: `depth_gate`.
+- **S13 58.50–63.00s — CHORUS_1** — Do not ask the night to stay. Source: `moonlit_gothic_aristocrat_by_the_window.jpg`. Moon and rain remain beautiful but transient; Pandora no longer asks them to hold. Motion: `rain_reflection`.
+- **S14 63.00–69.50s — CHORUS_1** — Somewhere under all our leaving. Source: `gothic_noblewoman_s_temporal_echo.jpg`. Multiple temporal Pandoras occupy one frame, departures preserved as echoes instead of erased. Motion: `temporal_echo`.
+- **S15 69.50–76.00s — CHORUS_1** — There is still an unmade day. Source: `gothic_dawn_in_the_cathedral_of_roses.jpg`. A pale dawn seam enters the gothic space without destroying the dark. Motion: `dawn_bloom`.
+- **S16 76.00–82.00s — VERSE_2** — The ceiling fills with quiet thunder. Source: `gothic_moonlit_baroque_sanctuary.jpg`. Architecture darkens overhead; silent lightning pulses through the sanctuary. Motion: `quiet_thunder`.
+- **S17 82.00–88.00s — VERSE_2** — The floor forgets which way is down. Source: `gothic_moonlit_departure.jpg`. The room tilts and briefly inverts around Pandora while she remains the visual anchor. Motion: `gravity_flip`.
+- **S18 88.00–94.00s — VERSE_2** — You're standing in the hallway. Source: `gothic_moonlit_corridor_portrait.jpg`. A repeated corridor creates an unreachable human-shaped distance. Motion: `mirror_corridor`.
+- **S19 94.00–97.50s — VERSE_2** — Though the hallway had no end. Source: `gothic_moonlit_corridor_portrait.jpg`. The corridor repeats three times with mismatched perspective, extending beyond the frame. Motion: `hallway_repeat`.
+- **S20 97.50–101.00s — VERSE_2** — Though the hallway had no end. Source: `moonlit_gothic_chamber_portrait.jpg`. Pandora advances but the architecture appears to slide backward. Motion: `reverse_drift`.
+- **S21 101.00–104.50s — VERSE_2** — I reached for you and touched the moment. Source: `moonlit_gothic_romance_by_candlelight.jpg`. Her reach is represented through a soft reflected double entering from the opposite side. Motion: `reach_echo`.
+- **S22 104.50–108.00s — VERSE_2** — I reached for you and touched the moment. Source: `gothic_noblewoman_s_temporal_echo.jpg`. Time freezes into overlapping states just before contact. Motion: `temporal_echo`.
+- **S23 108.00–112.00s — VERSE_2** — Before strangers become friends. Source: `gothic_romance_by_moonlit_rain.jpg`. The distance collapses into intimate candle-and-rain framing, still ambiguous rather than literal romance. Motion: `soft_contact`.
+- **S24 112.00–116.02s — VERSE_2** — Before strangers become friends. Source: `moonlit_gothic_romance_by_the_window.jpg`. The familiar window returns as a threshold shared with an unseen other; Pandora is changed by the contact. Motion: `reflection_echo`.
+- **S25 116.02–120.50s — CHORUS_2** — Do not wake the sleeping distance. Source: `candlelit_gothic_cathedral_romance.jpg`. The second chorus returns at larger scale and stronger motion. Motion: `cathedral_impact`.
+- **S26 120.50–125.00s — CHORUS_2** — Do not wake the sleeping distance. Source: `gothic_moonlit_baroque_sanctuary.jpg`. Depth folds open instead of pushing Pandora away. Motion: `depth_gate`.
+- **S27 125.00–130.00s — CHORUS_2** — Do not ask the night to stay. Source: `gothic_vampiric_reverie_by_moonlit_window.jpg`. Pandora is now explicitly framed as the vampire queen of this threshold world. Motion: `vampire_portrait`.
+- **S28 130.00–137.00s — CHORUS_2** — Somewhere under all our leaving. Source: `gothic_moonlit_departure.jpg`. Leaving becomes forward motion; rain and corridor geometry point toward passage. Motion: `departure_drive`.
+- **S29 137.00–144.02s — CHORUS_2** — There is still an unmade day. Source: `gothic_dawn_in_the_cathedral_of_roses.jpg`. Dawn opens wider and the cathedral-city shifts from prison to passage. Motion: `dawn_bloom`.
+- **S30 144.02–150.00s — OUTRO** — If the morning finds this house. Source: `gothic_crypt_empress_in_morning_light.jpg`. Pandora descends rather than escaping upward; morning reaches the crypt. Motion: `crypt_dawn`.
+- **S31 150.00–156.00s — OUTRO** — Let it enter without sound. Source: `gothic_dawn_in_the_cathedral_of_roses.jpg`. Light enters silently through roses and stone, gentle rather than conquering. Motion: `silent_light`.
+- **S32 156.00–162.50s — OUTRO** — We were never lost. Source: `gothic_rose_studded_crypt_romance.jpg`. The underground sanctuary reveals preserved memory rather than burial. Motion: `crypt_memory`.
+- **S33 162.50–169.12s — OUTRO** — We were underground. Source: `gothic_crypt_empress_in_morning_light.jpg`. Pandora becomes still beneath the first morning light; image slows toward near-stillness and fades to black. Motion: `final_stillness`.
