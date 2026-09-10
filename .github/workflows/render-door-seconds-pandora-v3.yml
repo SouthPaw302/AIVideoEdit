@@ -1,0 +1,130 @@
+name: Render Door Seconds Pandora v3
+
+on:
+  push:
+    branches:
+      - song/the-door-between-the-seconds
+    paths:
+      - .github/workflows/render-door-seconds-pandora-v3.yml
+
+permissions:
+  contents: write
+
+env:
+  PROJECT: projects/the-door-between-the-seconds
+  RELEASE_TAG: door-seconds-pandora-picture-v3
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: song/the-door-between-the-seconds
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install render dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python-headless
+          ffmpeg -version | head -n 1
+
+      - name: Generate fresh Pandora scene bank
+        run: python "$PROJECT/production/generate_branch_scene_bank.py"
+
+      - name: Compile and verify FX lock
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest "$PROJECT/FX_REQUIREMENTS.fx.json" \
+            --lock-out "$PROJECT/fx.lock.json"
+          python general/reusable/fx_v2/precompile_gate.py \
+            --manifest "$PROJECT/FX_REQUIREMENTS.fx.json" \
+            --verify-lock "$PROJECT/fx.lock.json"
+
+      - name: Render full 169-second Pandora picture and shot proofs
+        run: python "$PROJECT/production/build_branch_picture.py"
+
+      - name: Decode-check rendered picture
+        run: |
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,nb_frames -show_entries format=duration,size -of json "$PROJECT/production/branch_render/PANDORA_BRANCH_PICTURE_960x540.mp4"
+          ffmpeg -v error -i "$PROJECT/production/branch_render/PANDORA_BRANCH_PICTURE_960x540.mp4" -f null -
+
+      - name: Promote branch state through verified picture gate
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('projects/the-door-between-the-seconds')
+          qc=json.loads((p/'production/branch_render/PANDORA_BRANCH_PICTURE_QC.json').read_text())
+          sq=json.loads((p/'proofs/current_gate/SHOT_PROOF_QC.branch.json').read_text())
+          if qc.get('status')!='PICTURE_CANDIDATE' or sq.get('result')!='PASS':
+              raise SystemExit('picture/shot QC did not pass')
+          s=json.loads((p/'PROJECT_STATE.json').read_text())
+          s.update({
+              'stage':'FX_LOCKED',
+              'shot_packages_built':True,
+              'media_evidence_verified':True,
+              'shot_proofs_accepted':True,
+              'fx_lock_verified':True,
+              'assembly_complete':False,
+              'final_qc_passed':False,
+              'archive_complete':False,
+              'working_render_exists':True,
+              'working_render_note':'Full 169.133s Pandora v3 branch picture candidate rendered at 960x540 with 34 verified shot proofs. Picture is ready for source-audio mux; source song binary is not addressable in this checkout, so assembly/final QC remain false.',
+              'current_directing_note':'Pandora vampire canon; 34-shot lyric-driven v3 picture; silent six-second cold open; fresh branch-generated scene bank plus canonical FX2 motion/atmosphere/light treatment.',
+              'agent_cinematic_scan':'REQUIRED_AFTER_AUDIO_MUX'
+          })
+          (p/'PROJECT_STATE.json').write_text(json.dumps(s,indent=2)+'\n')
+          PY
+
+      - name: Commit durable source bank, proofs, lock and QC
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$PROJECT/production/generated_scene_bank" \
+                  "$PROJECT/fx.lock.json" \
+                  "$PROJECT/shot_packages" \
+                  "$PROJECT/proofs/current_gate/SHOT_PROOF_QC.branch.json" \
+                  "$PROJECT/production/branch_render/PANDORA_BRANCH_PICTURE_CONTACT_SHEET.jpg" \
+                  "$PROJECT/production/branch_render/PANDORA_BRANCH_PICTURE_QC.json" \
+                  "$PROJECT/PROJECT_STATE.json"
+          git commit -m "Build Pandora v3 picture sources and verified shot proofs"
+          git push origin HEAD:song/the-door-between-the-seconds
+
+      - name: Upload render artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: door-seconds-pandora-v3-picture
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 0
+          path: |
+            ${{ env.PROJECT }}/production/branch_render/PANDORA_BRANCH_PICTURE_960x540.mp4
+            ${{ env.PROJECT }}/production/branch_render/PANDORA_BRANCH_PICTURE_CONTACT_SHEET.jpg
+            ${{ env.PROJECT }}/production/branch_render/PANDORA_BRANCH_PICTURE_QC.json
+
+      - name: Publish persistent branch release assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          PIC="$PROJECT/production/branch_render/PANDORA_BRANCH_PICTURE_960x540.mp4"
+          SHEET="$PROJECT/production/branch_render/PANDORA_BRANCH_PICTURE_CONTACT_SHEET.jpg"
+          QC="$PROJECT/production/branch_render/PANDORA_BRANCH_PICTURE_QC.json"
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" "$PIC" "$SHEET" "$QC" --clobber
+          else
+            gh release create "$RELEASE_TAG" --target HEAD \
+              --title "The Door Between the Seconds — Pandora v3 Picture" \
+              --notes "Picture-only v3 production candidate. 169.133 seconds, 960x540, 30 fps, six-second silent cold open, 34-shot proof gate passed. Source soundtrack binary is intentionally not fabricated; audio mux remains pending until the original song bytes are addressable." \
+              "$PIC" "$SHEET" "$QC"
+          fi
