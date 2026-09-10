@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import server as base
 import production_project
 from core_adapter import CORE
 
@@ -56,14 +57,13 @@ def set_capabilities(project_id: str, capabilities: list[str], approach_summary:
     plan["selected_capabilities"] = selected
     plan["approach_summary"] = summary
     plan["approach_authority"] = "explicit_current_user_or_agent_input"
-    plan["capabilities_locked_at"] = production_project.base.now()
+    plan["capabilities_locked_at"] = base.now()
     _write_json(plan_path, plan)
 
     state_path = project_dir / "PROJECT_STATE.json"
     state = _read_json(state_path, {})
     state["media_plan_valid"] = True
     state["selected_capability_count"] = len(selected)
-    # Visual approach is only established immediately when a visual reference exists.
     refs = _read_json(project_dir / "REFERENCE_MANIFEST.json", {"videos": [], "images": []})
     if _visual_refs(refs):
         state["visual_approach_established"] = True
@@ -71,9 +71,7 @@ def set_capabilities(project_id: str, capabilities: list[str], approach_summary:
         _write_json(plan_path, plan)
     _write_json(state_path, state)
 
-    commit = production_project._git_commit_paths(
-        engine, [plan_path, state_path], "Record canonical media approach"
-    )
+    commit = production_project._git_commit_paths(engine, [plan_path, state_path], "Record canonical media approach")
     production_project._clear_guard_marker(engine)
     return {
         **production_project.status(project_id),
@@ -85,7 +83,7 @@ def set_capabilities(project_id: str, capabilities: list[str], approach_summary:
     }
 
 
-def set_routes(project_id: str, routes: list[dict]) -> dict:
+def set_routes(project_id: str, routes: list[dict], presentation_channel: str = "studio") -> dict:
     current, engine, project_dir = _project_dir(project_id)
     if current.get("stage") not in {"REFERENCES_ANALYZED", "APPROACH_ESTABLISHED"}:
         raise RuntimeError("visual direction routes require REFERENCES_ANALYZED stage")
@@ -125,19 +123,20 @@ def set_routes(project_id: str, routes: list[dict]) -> dict:
         if key_name in names or key_story in stories or key_render in renders:
             raise ValueError("routes must be materially distinct in name, story approach, and rendering route")
         names.add(key_name); stories.add(key_story); renders.add(key_render)
-        normalized.append({
-            "number": number,
-            "name": name,
-            "story_approach": story,
-            "rendering_route": rendering,
-            "storyboard": board,
-        })
+        normalized.append({"number": number, "name": name, "story_approach": story, "rendering_route": rendering, "storyboard": board})
 
+    channel = str(presentation_channel or "studio").strip().lower()
+    if channel not in {"chat", "studio"}:
+        raise ValueError("presentation_channel must be chat or studio")
     plan_path = project_dir / "MEDIA_PLAN.json"
     plan = _read_json(plan_path, {})
     plan["visual_direction_gate"] = {
         "required": True,
+        # Canonical v1 uses this legacy field name. Studio presentation is also
+        # explicit user-facing presentation, and the actual surface is recorded below.
         "presented_in_chat": True,
+        "presentation_channel": channel,
+        "presented_to_user": True,
         "locked": False,
         "options": normalized,
         "user_selection": None,
@@ -151,7 +150,7 @@ def set_routes(project_id: str, routes: list[dict]) -> dict:
     _write_json(state_path, state)
     commit = production_project._git_commit_paths(engine, [plan_path, state_path], "Record visual direction routes")
     production_project._clear_guard_marker(engine)
-    return {**production_project.status(project_id), "routes": normalized, "route_gate_required": True, "commit": commit}
+    return {**production_project.status(project_id), "routes": normalized, "route_gate_required": True, "presentation_channel": channel, "commit": commit}
 
 
 def select_route(project_id: str, selected_option_numbers: list[int], recorded_user_instruction: str, status: str = "selected") -> dict:
@@ -176,11 +175,7 @@ def select_route(project_id: str, selected_option_numbers: list[int], recorded_u
     if not instruction:
         raise ValueError("recorded_user_instruction is required")
 
-    gate["user_selection"] = {
-        "status": selection_status,
-        "selected_option_numbers": numbers,
-        "recorded_user_instruction": instruction,
-    }
+    gate["user_selection"] = {"status": selection_status, "selected_option_numbers": numbers, "recorded_user_instruction": instruction}
     gate["locked"] = True
     plan["visual_direction_gate"] = gate
     plan["user_approach_established"] = True
@@ -193,12 +188,7 @@ def select_route(project_id: str, selected_option_numbers: list[int], recorded_u
     _write_json(state_path, state)
     commit = production_project._git_commit_paths(engine, [plan_path, state_path], "Lock visual direction selection")
     production_project._clear_guard_marker(engine)
-    return {
-        **production_project.status(project_id),
-        "selection": gate["user_selection"],
-        "selected_capabilities": plan.get("selected_capabilities", []),
-        "commit": commit,
-    }
+    return {**production_project.status(project_id), "selection": gate["user_selection"], "selected_capabilities": plan.get("selected_capabilities", []), "commit": commit}
 
 
 def status(project_id: str) -> dict:
@@ -215,5 +205,6 @@ def status(project_id: str) -> dict:
         "route_options": gate.get("options", []) if gate else [],
         "route_locked": bool(gate and gate.get("locked")),
         "route_selection": gate.get("user_selection") if gate else None,
+        "presentation_channel": gate.get("presentation_channel") if gate else None,
         "user_approach_established": bool(plan.get("user_approach_established")),
     }
