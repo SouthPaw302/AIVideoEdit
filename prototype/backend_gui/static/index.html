@@ -75,10 +75,14 @@
               <button id="syncProductionAssets" class="secondary" hidden>Sync media to engine</button>
               <button id="analyzeProduction" class="secondary" hidden>Analyze references & music</button>
               <button id="songContext" class="secondary" hidden>Set song context</button>
+              <button id="setApproach" class="secondary" hidden>Set creative approach</button>
+              <button id="setRoutes" class="secondary" hidden>Enter visual routes</button>
+              <button id="selectRoute" class="secondary" hidden>Choose visual route</button>
               <button id="advanceProduction" class="secondary" hidden>Continue production</button>
               <button id="verifyProjectEngine" class="secondary" hidden>Verify project</button>
             </div>
             <p id="productionStatus" class="helper">The current project has not been connected to a canonical production workspace yet.</p>
+            <p id="approachStatus" class="helper" hidden></p>
           </div>
         </article>
         <article class="jobs-card">
@@ -90,8 +94,17 @@
 
     <footer class="footer"><span>Runs on this device</span><span>Canonical core comes from current main</span><span>Media stays out of GitHub Actions storage</span></footer>
   </main>
+
   <dialog id="projectDialog"><form method="dialog"><h3>Create a project</h3><p class="muted">Give this video project a simple name.</p><label>Project name<input id="newProjectName" placeholder="My music video" maxlength="100" /></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="createProject" value="default">Create project</button></div></form></dialog>
+
   <dialog id="songContextDialog"><form method="dialog"><h3>Song context</h3><p class="muted">These are creative authority inputs, so Studio asks instead of guessing.</p><label>Genre<input id="songGenre" placeholder="Trip-hop, folk noir, ambient…" maxlength="120" /></label><label>Lyrics<select id="lyricsStatus"><option value="absent">No lyrics</option><option value="present">Lyrics are present</option></select></label><label id="lyricsTextLabel" hidden>Lyrics<textarea id="lyricsText" rows="10" placeholder="Paste verified lyrics here"></textarea></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveSongContext" value="default">Save context</button></div></form></dialog>
+
+  <dialog id="approachDialog"><form method="dialog"><h3>Creative approach</h3><p class="muted">Choose the canonical production capabilities this video is allowed to use, then describe the intended media treatment.</p><div id="approachCapabilities" class="stack"></div><label>Approach summary<textarea id="approachSummary" rows="5" placeholder="Describe how the video should be built and treated visually."></textarea></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveApproach" value="default">Save approach</button></div></form></dialog>
+
+  <dialog id="routesDialog"><form method="dialog"><h3>Three visual directions</h3><p class="muted">No visual reference was supplied, so the production contract requires at least three materially different routes before production imagery can begin.</p><div id="routeForms"></div><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveRoutes" value="default">Save routes</button></div></form></dialog>
+
+  <dialog id="routeSelectionDialog"><form method="dialog"><h3>Choose visual direction</h3><p class="muted">Select one route, or select multiple routes to create a hybrid.</p><div id="routeChoices" class="stack"></div><label>Your instruction<textarea id="routeInstruction" rows="4" placeholder="Use route 2, but keep the restrained lighting from route 1…"></textarea></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveRouteSelection" value="default">Lock direction</button></div></form></dialog>
+
   <script src="/app.js"></script>
 </body>
 </html>
