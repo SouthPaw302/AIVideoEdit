@@ -10,6 +10,7 @@ import production_stage
 import production_approach
 import production_storyboard
 import production_shots
+import production_generated
 from core_adapter import CORE
 
 TOOL_SCHEMAS=[
@@ -36,6 +37,11 @@ TOOL_SCHEMAS=[
 {"name":"storyboard.guard","description":"Run the bootstrapped canonical narrative guard against the current project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"shots.status","description":"Show shot package and media-evidence status.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"shots.build_packages","description":"Build one package per locked script shot using explicit real media asset assignments and hashes.","input_schema":{"type":"object","required":["project_id","assignments"],"properties":{"project_id":{"type":"string"},"assignments":{"type":"array","items":{"type":"object"}}}}},
+{"name":"generated.status","description":"Show pending generation requests and registered generated production assets.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"generated.request","description":"Create a shot-scoped generation request. A request is intent only and does not count as media evidence.","input_schema":{"type":"object","required":["project_id","shot_id","capability","prompt"],"properties":{"project_id":{"type":"string"},"shot_id":{"type":"string"},"capability":{"type":"string"},"prompt":{"type":"string"},"provider_hint":{"type":"string"},"notes":{"type":"string"}}}},
+{"name":"generated.register","description":"Register an existing ready + hashed project asset as generated production media with provenance.","input_schema":{"type":"object","required":["project_id","asset_id","shot_id","capability"],"properties":{"project_id":{"type":"string"},"asset_id":{"type":"string"},"shot_id":{"type":"string"},"capability":{"type":"string"},"request_id":{"type":"string"},"provider":{"type":"string"},"model":{"type":"string"},"prompt":{"type":"string"},"role":{"type":"string"}}}},
+{"name":"generated.accept","description":"Record explicit creative acceptance of a generated production asset.","input_schema":{"type":"object","required":["project_id","asset_id","instruction"],"properties":{"project_id":{"type":"string"},"asset_id":{"type":"string"},"instruction":{"type":"string"}}}},
+{"name":"generated.reject","description":"Record creative rejection and clear dependent proof/final-QC acceptance flags.","input_schema":{"type":"object","required":["project_id","asset_id","reason"],"properties":{"project_id":{"type":"string"},"asset_id":{"type":"string"},"reason":{"type":"string"}}}},
 {"name":"production.guard","description":"Re-run the bootstrapped current-main production guard for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.advance","description":"Request exactly the next canonical production stage. Workstation evidence and canonical guards must pass.","input_schema":{"type":"object","required":["project_id","target_stage"],"properties":{"project_id":{"type":"string"},"target_stage":{"type":"string"}}}},
 {"name":"media.list","description":"List registered media assets for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
@@ -100,6 +106,11 @@ def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_projec
     if name=="storyboard.guard": _project(pid); return production_storyboard.run_narrative_guard(pid)
     if name=="shots.status": _project(pid); return production_shots.status(pid)
     if name=="shots.build_packages": _project(pid); return production_shots.build_packages(pid,a.get("assignments") if isinstance(a.get("assignments"),list) else [])
+    if name=="generated.status": _project(pid); return production_generated.status(pid)
+    if name=="generated.request": _project(pid); return production_generated.request_generation(pid,shot_id=str(a.get("shot_id") or ""),capability=str(a.get("capability") or ""),prompt=str(a.get("prompt") or ""),provider_hint=str(a.get("provider_hint") or ""),notes=str(a.get("notes") or ""))
+    if name=="generated.register": _project(pid); return production_generated.register_generated(pid,asset_id=str(a.get("asset_id") or ""),shot_id=str(a.get("shot_id") or ""),capability=str(a.get("capability") or ""),request_id=str(a.get("request_id") or ""),provider=str(a.get("provider") or ""),model=str(a.get("model") or ""),prompt=str(a.get("prompt") or ""),role=str(a.get("role") or "generated_visual"))
+    if name=="generated.accept": _project(pid); return production_generated.accept_generated(pid,asset_id=str(a.get("asset_id") or ""),instruction=str(a.get("instruction") or ""))
+    if name=="generated.reject": _project(pid); return production_generated.reject_generated(pid,asset_id=str(a.get("asset_id") or ""),reason=str(a.get("reason") or ""))
     if name=="production.guard": _project(pid); return production_project.run_guard(pid)
     if name=="production.advance": _project(pid); return production_stage.advance(pid,str(a.get("target_stage") or ""))
     if name=="media.list":
