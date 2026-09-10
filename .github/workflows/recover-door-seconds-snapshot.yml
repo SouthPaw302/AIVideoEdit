@@ -1,0 +1,89 @@
+name: Recover Door Seconds Snapshot
+
+on:
+  push:
+    branches:
+      - song/the-door-between-the-seconds
+    paths:
+      - .github/workflows/recover-door-seconds-snapshot.yml
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: song/the-door-between-the-seconds
+          fetch-depth: 0
+
+      - name: Verify and unpack continuation snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT="projects/the-door-between-the-seconds"
+          SNAP="$PROJECT/continuation_snapshot"
+          ARCHIVE="$RUNNER_TEMP/door_seconds_text_snapshot_20260909.tar.gz"
+          EXTRACT="$RUNNER_TEMP/door_seconds_snapshot"
+          mkdir -p "$EXTRACT"
+          cat "$SNAP/chunk_00.b64" "$SNAP/chunk_01.b64" "$SNAP/chunk_02.b64" "$SNAP/chunk_03.b64" | base64 -d > "$ARCHIVE"
+          echo "974b10f7db7c5ee73c20517adab538a6892c1329558b4839073dd5e4867e8769  $ARCHIVE" | sha256sum -c -
+          tar -tzf "$ARCHIVE" | sort > "$PROJECT/continuation_snapshot/SNAPSHOT_FILE_LIST.txt"
+          tar -xzf "$ARCHIVE" -C "$EXTRACT"
+
+          # Find the extracted project root regardless of whether the tar stored
+          # paths relative to the project or from a higher workspace directory.
+          ROOT=""
+          while IFS= read -r candidate; do
+            ROOT="$(dirname "$candidate")"
+            break
+          done < <(find "$EXTRACT" -type f -name 'build_pandora_final.py' -print)
+          if [[ -z "$ROOT" ]]; then
+            echo "build_pandora_final.py not found in verified snapshot" >&2
+            exit 1
+          fi
+          # If production/ is the dirname, project root is its parent.
+          if [[ "$(basename "$ROOT")" == "production" ]]; then ROOT="$(dirname "$ROOT")"; fi
+
+          copy_if_present() {
+            local rel="$1"
+            if [[ -f "$ROOT/$rel" ]]; then
+              mkdir -p "$(dirname "$PROJECT/$rel")"
+              cp "$ROOT/$rel" "$PROJECT/$rel"
+            fi
+          }
+
+          # Restore code and evidence records, but intentionally do not overwrite
+          # PROJECT_STATE.json: the branch was rolled back to the last verifiable
+          # stage and must advance only after rebuilt evidence exists.
+          for rel in \
+            production/build_pandora_final.py \
+            production/build_shot_packages_from_v2.py \
+            fx.lock.json \
+            proofs/current_gate/CAPABILITY_PROOF.json \
+            proofs/current_gate/SHOT_PROOF_QC.json \
+            production/final_pandora_v2_gate/RENDER_METADATA.json \
+            production/final_pandora_v2_gate/FINAL_VARIETY_3S_v3patch_mux.json \
+            production/final_pandora_v2_gate/FINAL_VARIETY_5S_v3patch_mux.json; do
+            copy_if_present "$rel"
+          done
+
+          # Preserve exact extracted file listing for audit/recovery.
+          echo "snapshot_sha256=974b10f7db7c5ee73c20517adab538a6892c1329558b4839073dd5e4867e8769" > "$PROJECT/continuation_snapshot/RECOVERY_RESULT.txt"
+          echo "extracted_project_root=$ROOT" >> "$PROJECT/continuation_snapshot/RECOVERY_RESULT.txt"
+
+      - name: Commit recovered production state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projects/the-door-between-the-seconds
+          if git diff --cached --quiet; then
+            echo "No recoverable files changed"
+            exit 0
+          fi
+          git commit -m "Restore Door Seconds renderer and snapshot evidence"
+          git push origin HEAD:song/the-door-between-the-seconds
