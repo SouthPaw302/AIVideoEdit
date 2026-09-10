@@ -49,6 +49,7 @@
 
         <div id="surface-direction" class="stage-surface">
           <div class="surface-head"><div><span class="kicker">CREATIVE DIRECTION</span><h2>Choose the visual language</h2><p>Set what the film is allowed to use and lock the artistic route before production media is created.</p></div><span id="directionState" class="state-pill">Not set</span></div>
+          <div id="directorModeCard" class="director-mode-card"><div><span class="kicker">DIRECTOR MODE</span><strong id="directorModeLabel">Legacy / not configured</strong><small id="directorModeMeta">Choose how the film is directed and what kind of motion language it uses.</small></div><button id="configureDirector" class="soft">Configure</button></div>
           <div id="directionSummary" class="surface-body empty-surface">Connect the production engine and analyze the song to begin.</div>
           <div class="surface-actions"><button id="directionApproach">Set approach</button><button id="directionRoutes" class="soft">Visual routes</button><button id="directionChoose" class="soft">Choose route</button></div>
         </div>
@@ -96,9 +97,11 @@
   <dialog id="routesDialog"><form method="dialog"><h3>Visual directions</h3><p>Three materially different routes are required when no visual reference exists.</p><div id="routeForms"></div><div class="dialog-actions"><button value="cancel" class="soft">Cancel</button><button id="saveRoutes">Save routes</button></div></form></dialog>
   <dialog id="routeSelectionDialog"><form method="dialog"><h3>Choose visual direction</h3><div id="routeChoices" class="stack"></div><label>Your instruction<textarea id="routeInstruction" rows="4"></textarea></label><div class="dialog-actions"><button value="cancel" class="soft">Cancel</button><button id="saveRouteSelection">Lock direction</button></div></form></dialog>
   <dialog id="storyboardDialog"><form method="dialog"><h3>Production storyboard</h3><div class="toolbar"><label>FPS<input id="storyboardFps" type="number" min="1" max="240" step="1" value="30"></label><label>Summary<input id="storyboardSummary"></label><button id="addStoryboardRow" type="button" class="soft">+ Shot</button></div><div id="storyboardRows"></div><label>Lock instruction<textarea id="storyboardLockInstruction" rows="3"></textarea></label><div class="dialog-actions"><button value="cancel" class="soft">Cancel</button><button id="saveStoryboard" type="button" class="soft">Save draft</button><button id="lockStoryboard" type="button">Save & lock</button></div></form></dialog>
+  <dialog id="directorDialog"><form method="dialog"><h3>Director mode</h3><p>Choose the directing authority and production behavior. This enables Director Brain v2 for the project.</p><label>Direction authority<select id="directionAuthority"><option value="music_led">Music-led</option><option value="reference_led">Reference-led</option><option value="user_directed">User-directed</option></select></label><label>Production mode<select id="productionMode"><option value="cinematic">Cinematic</option><option value="living_scene">Living scene</option><option value="hybrid">Hybrid</option></select></label><label>Mission<textarea id="directorMission" rows="3" placeholder="What this film is trying to accomplish"></textarea></label><label>Current direction<textarea id="directorCurrentDirection" rows="3" placeholder="The current creative instruction"></textarea></label><label>Exact next action<input id="directorNextAction" placeholder="Build the visual direction options"></label><div class="dialog-actions"><button value="cancel" class="soft">Cancel</button><button id="saveDirectorMode" type="button">Enable Director Brain v2</button></div></form></dialog>
 
   <script src="/app.js"></script>
   <script src="/storyboard.js"></script>
   <script src="/studio.js"></script>
+  <script src="/workflow_ui.js"></script>
 </body>
 </html>
