@@ -1,19 +1,18 @@
-# QC — clean rebuild
+# QC — clean rebuild final
 
-Prior v3 proof, variety and render QC records are historical only. Current-user creative rejection invalidated their acceptance for the active production path.
+Active master: `PANDORA_THE_UNMADE_DAY_FINAL_v2_960x540.mp4`
+SHA-256: `eb2d30f926f56d4bd7a7dbc0dff385cec9c914f73ae3bf427ac7e33420582332`
 
-## Current gate truth
-- Source/audio verification: PASS for current WAV metadata and duration.
-- Music edit-map regeneration: PASS.
-- Long source-video meaningful sampling: PASS.
-- Short 8-second reference all-frame extraction: PASS (240/240).
-- Story/directing approach: PASS and locked under Director Brain v2.
-- New storyboard/script: PASS — 31 contiguous shots / 5074 frames / hybrid per-shot modes / required living-scene motion and protected regions.
-- Current-main production guard at `STORYBOARD_LOCKED`: PASS.
-- Current-main narrative guard at `STORYBOARD_LOCKED`: PASS.
-- Current-chat still binary hashing/materialization: PENDING before shot-package evidence.
-- New shot packages: PENDING.
-- New mode-aware proofs: PENDING.
-- New FX lock: PENDING.
-- New assembly: PENDING.
-- New final QC: PENDING.
+## Final result: PASS
+- Exact picture: 5074 frames, 30 fps, 960x540, 169.133333 s.
+- Black-frame scan: PASS — 0 events.
+- Freeze scan (1.5 s threshold): PASS — 0 events.
+- Audio: PASS — exact 6.0 s inserted digital-silence offset before the unmodified source WAV. Source WAV itself contains ~1.10 s of initial silence, so final silence detector ends at ~7.10 s by design.
+- FX precompile: PASS; immediate lock verification: PASS.
+- Mode-aware representative proofs: PASS.
+- Export variety at 3 s: PASS, no similar runs.
+- Export variety at 5 s: REVIEW only for 0-10 s; accepted as the intentional locked cold-open/window reveal. The warning is retained rather than suppressed.
+- Final contact-sheet visual inspection: PASS after cinematic replacement pass. Later acts now have distinct corridor, temporal-double, memory, crypt and integration geography.
+- Production contract: PASS at archive state.
+- Directing/narrative contract: PASS at archive state.
+- Rejected v3 scene-bank creative work: not used as active source authority.
