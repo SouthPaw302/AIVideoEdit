@@ -4,7 +4,10 @@
   "authority_ref": "main",
   "purpose": "Critical files whose exact current-main hashes are attested at every agent-session bootstrap. The bootstrap materializes the entire main branch, not only this list.",
   "files": [
+    {"path":"bootstrap.py","role":"portable_current_main_loader"},
     {"path":"AGENTS.md","role":"universal_agent_entry"},
+    {"path":".github/copilot-instructions.md","role":"copilot_agent_entry"},
+    {"path":"CLAUDE.md","role":"claude_agent_entry"},
     {"path":"PRIME_DIRECTIVE.md","role":"universal_director_law"},
     {"path":"SOUL.md","role":"permanent_project_identity"},
     {"path":"README.md","role":"repository_entry"},
