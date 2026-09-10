@@ -78,11 +78,13 @@
               <button id="setApproach" class="secondary" hidden>Set creative approach</button>
               <button id="setRoutes" class="secondary" hidden>Enter visual routes</button>
               <button id="selectRoute" class="secondary" hidden>Choose visual route</button>
+              <button id="storyboardEditor" class="secondary" hidden>Build storyboard</button>
               <button id="advanceProduction" class="secondary" hidden>Continue production</button>
               <button id="verifyProjectEngine" class="secondary" hidden>Verify project</button>
             </div>
             <p id="productionStatus" class="helper">The current project has not been connected to a canonical production workspace yet.</p>
             <p id="approachStatus" class="helper" hidden></p>
+            <p id="storyboardStatus" class="helper" hidden></p>
           </div>
         </article>
         <article class="jobs-card">
@@ -105,6 +107,9 @@
 
   <dialog id="routeSelectionDialog"><form method="dialog"><h3>Choose visual direction</h3><p class="muted">Select one route, or select multiple routes to create a hybrid.</p><div id="routeChoices" class="stack"></div><label>Your instruction<textarea id="routeInstruction" rows="4" placeholder="Use route 2, but keep the restrained lighting from route 1…"></textarea></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveRouteSelection" value="default">Lock direction</button></div></form></dialog>
 
+  <dialog id="storyboardDialog"><form method="dialog"><h3>Production storyboard</h3><p class="muted">Map the chosen approach across the whole song. Every row must connect continuously to the next; Studio converts times to exact frame ranges.</p><div class="toolbar"><label>FPS<input id="storyboardFps" type="number" min="1" max="240" step="1" value="30"></label><label>Summary<input id="storyboardSummary" placeholder="Overall storyboard intent"></label><button id="addStoryboardRow" type="button" class="secondary">+ Add shot</button></div><div id="storyboardRows"></div><label>Lock instruction<textarea id="storyboardLockInstruction" rows="3" placeholder="Approve and lock this storyboard for production."></textarea></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveStoryboard" type="button" class="secondary">Save draft</button><button id="lockStoryboard" type="button">Save & lock</button></div></form></dialog>
+
   <script src="/app.js"></script>
+  <script src="/storyboard.js"></script>
 </body>
 </html>
