@@ -12,6 +12,7 @@ import production_storyboard
 import production_shots
 import production_generated
 import production_proofs
+import production_fx
 from core_adapter import CORE
 
 TOOL_SCHEMAS=[
@@ -49,6 +50,11 @@ TOOL_SCHEMAS=[
 {"name":"proofs.accept","description":"Explicitly accept one proof after technical/mode checks pass.","input_schema":{"type":"object","required":["project_id","shot_id","instruction"],"properties":{"project_id":{"type":"string"},"shot_id":{"type":"string"},"instruction":{"type":"string"}}}},
 {"name":"proofs.finalize","description":"Finalize the proof set only when every shot proof is independently accepted.","input_schema":{"type":"object","required":["project_id","instruction"],"properties":{"project_id":{"type":"string"},"instruction":{"type":"string"}}}},
 {"name":"proofs.reject","description":"Reject a shot proof and roll dependent accepted production state back.","input_schema":{"type":"object","required":["project_id","shot_id","reason"],"properties":{"project_id":{"type":"string"},"shot_id":{"type":"string"},"reason":{"type":"string"}}}},
+{"name":"fx.status","description":"Show FX requirements and immutable lock status.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"fx.registry","description":"List canonical FX with gate status and implementation class for project selection.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"fx.set_requirements","description":"Write production FX requirements using only canonical registered effects/transitions.","input_schema":{"type":"object","required":["project_id","effects","transitions"],"properties":{"project_id":{"type":"string"},"effects":{"type":"array","items":{"type":"object"}},"transitions":{"type":"array","items":{"type":"object"}},"seed":{"type":"integer"},"allow_conditional":{"type":"array","items":{"type":"string"}},"conditional_preflight":{"type":"object"}}}},
+{"name":"fx.lock","description":"Run the canonical FX precompile gate, runtime smoke tests, write fx.lock.json, then verify it live.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"fx.verify","description":"Re-run live verification against the existing immutable FX lock.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.guard","description":"Re-run the bootstrapped current-main production guard for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.advance","description":"Request exactly the next canonical production stage. Workstation evidence and canonical guards must pass.","input_schema":{"type":"object","required":["project_id","target_stage"],"properties":{"project_id":{"type":"string"},"target_stage":{"type":"string"}}}},
 {"name":"media.list","description":"List registered media assets for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
@@ -56,87 +62,91 @@ TOOL_SCHEMAS=[
 {"name":"storage.status","description":"Show local/external storage configuration.","input_schema":{"type":"object","properties":{}}},
 {"name":"storage.sync","description":"Queue external backup for a project when storage is configured.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},]
 
-def schemas(): return TOOL_SCHEMAS
+def schemas():return TOOL_SCHEMAS
 
 def _project(pid):
     p=base.find_project(pid)
-    if not p: raise ValueError("project not found")
+    if not p:raise ValueError("project not found")
     return p
 
 def _asset(aid):
     a=base.find_asset(aid)
-    if not a: raise ValueError("asset not found")
+    if not a:raise ValueError("asset not found")
     return a
 
 def _create_project(name):
     clean=(name or "").strip()
-    if not clean: raise ValueError("project name is required")
-    root=base.slugify(clean); pid=root; n=2
+    if not clean:raise ValueError("project name is required")
+    root=base.slugify(clean);pid=root;n=2
     with base.LOCK:
         existing={p.get("id") for p in base.STATE["projects"]}
-        while pid in existing: pid=f"{root}-{n}"; n+=1
-        p={"id":pid,"name":clean[:100],"created_at":base.now(),"updated_at":base.now()}; base.STATE["projects"].append(p); base.PROJECT_ROOT.joinpath(pid).mkdir(parents=True,exist_ok=True); base.save_state()
+        while pid in existing:pid=f"{root}-{n}";n+=1
+        p={"id":pid,"name":clean[:100],"created_at":base.now(),"updated_at":base.now()};base.STATE["projects"].append(p);base.PROJECT_ROOT.joinpath(pid).mkdir(parents=True,exist_ok=True);base.save_state()
     return p
 
 def _project_status(pid):
     p=_project(pid)
-    with base.LOCK:
-        assets=[base.public_asset(a) for a in base.STATE["assets"] if a.get("project")==pid]; jobs=[dict(j) for j in base.STATE["jobs"] if j.get("project")==pid]
-    qp=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="pass"); qf=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="fail")
+    with base.LOCK:assets=[base.public_asset(a) for a in base.STATE["assets"] if a.get("project")==pid];jobs=[dict(j) for j in base.STATE["jobs"] if j.get("project")==pid]
+    qp=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="pass");qf=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="fail")
     return {"project":p,"assets":len(assets),"ready_assets":sum(1 for a in assets if a.get("status")=="ready"),"qc_pass":qp,"qc_fail":qf,"unchecked":max(0,len(assets)-qp-qf),"active_jobs":sum(1 for j in jobs if j.get("status") in {"queued","running"}),"canonical_core":CORE.status(),"production":production_project.status(pid)}
 
 def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
-    a=arguments or {}; pid=str(a.get("project_id") or "")
-    if name=="core.status": return CORE.status()
-    if name=="core.bootstrap": return CORE.bootstrap(bool(a.get("offline",False)))
+    a=arguments or {};pid=str(a.get("project_id") or "")
+    if name=="core.status":return CORE.status()
+    if name=="core.bootstrap":return CORE.bootstrap(bool(a.get("offline",False)))
     if name=="capabilities.list":
-        s=CORE.status(); return {"core":s,"capabilities":CORE.capabilities() if s.get("bootstrapped") else []}
+        s=CORE.status();return {"core":s,"capabilities":CORE.capabilities() if s.get("bootstrapped") else []}
     if name=="fx.list":
-        s=CORE.status(); return {"core":s,"effects":CORE.effects() if s.get("bootstrapped") else []}
+        s=CORE.status();return {"core":s,"effects":CORE.effects() if s.get("bootstrapped") else []}
     if name=="project.list":
-        with base.LOCK: return {"projects":[dict(p) for p in base.STATE["projects"]]}
-    if name=="project.create": return {"project":_create_project(str(a.get("name") or ""))}
-    if name=="project.status": return _project_status(pid)
-    if name=="project.prepare": _project(pid); jobs=prepare_project(pid); return {"project_id":pid,"queued":len(jobs),"jobs":jobs}
-    if name=="production.initialize": _project(pid); return production_project.initialize(pid)
-    if name=="production.status": _project(pid); return production_project.status(pid)
-    if name=="production.sync_assets": _project(pid); return production_project.sync_assets(pid)
-    if name=="production.analyze": _project(pid); job=base.add_job("analyze_production",pid,None); dispatch_job(job); return {"job":job}
-    if name=="production.set_music_context": _project(pid); return production_analysis.set_music_context(pid,lyrics_status=str(a.get("lyrics_status") or ""),genre=str(a.get("genre") or ""),lyrics_text=str(a.get("lyrics_text") or ""),directing_use=str(a.get("directing_use") or "default"))
-    if name=="approach.status": _project(pid); return production_approach.status(pid)
-    if name=="approach.set_capabilities": _project(pid); return production_approach.set_capabilities(pid,a.get("capabilities") if isinstance(a.get("capabilities"),list) else [],str(a.get("approach_summary") or ""))
-    if name=="approach.set_routes": _project(pid); return production_approach.set_routes(pid,a.get("routes") if isinstance(a.get("routes"),list) else [],str(a.get("presentation_channel") or "studio"))
-    if name=="approach.select_route": _project(pid); return production_approach.select_route(pid,a.get("selected_option_numbers") if isinstance(a.get("selected_option_numbers"),list) else [],str(a.get("recorded_user_instruction") or ""),str(a.get("status") or "selected"))
-    if name=="storyboard.status": _project(pid); return production_storyboard.status(pid)
-    if name=="storyboard.set": _project(pid); return production_storyboard.set_storyboard(pid,a.get("entries") if isinstance(a.get("entries"),list) else [],target_fps=float(a.get("target_fps") or 30),summary=str(a.get("summary") or ""),authority=str(a.get("authority") or "current_user_or_agent"))
-    if name=="storyboard.lock": _project(pid); return production_storyboard.lock_storyboard(pid,str(a.get("recorded_instruction") or ""))
-    if name=="storyboard.guard": _project(pid); return production_storyboard.run_narrative_guard(pid)
-    if name=="shots.status": _project(pid); return production_shots.status(pid)
-    if name=="shots.template": _project(pid); return production_shots.template(pid)
-    if name=="shots.build_packages": _project(pid); return production_shots.build_packages(pid,a.get("assignments") if isinstance(a.get("assignments"),list) else [])
-    if name=="generated.status": _project(pid); return production_generated.status(pid)
-    if name=="generated.request": _project(pid); return production_generated.request_generation(pid,shot_id=str(a.get("shot_id") or ""),capability=str(a.get("capability") or ""),prompt=str(a.get("prompt") or ""),provider_hint=str(a.get("provider_hint") or ""),notes=str(a.get("notes") or ""))
-    if name=="generated.register": _project(pid); return production_generated.register_generated(pid,asset_id=str(a.get("asset_id") or ""),shot_id=str(a.get("shot_id") or ""),capability=str(a.get("capability") or ""),request_id=str(a.get("request_id") or ""),provider=str(a.get("provider") or ""),model=str(a.get("model") or ""),prompt=str(a.get("prompt") or ""),role=str(a.get("role") or "generated_visual"))
-    if name=="generated.accept": _project(pid); return production_generated.accept_generated(pid,asset_id=str(a.get("asset_id") or ""),instruction=str(a.get("instruction") or ""))
-    if name=="generated.reject": _project(pid); return production_generated.reject_generated(pid,asset_id=str(a.get("asset_id") or ""),reason=str(a.get("reason") or ""))
-    if name=="proofs.status": _project(pid); return production_proofs.status(pid)
-    if name=="proofs.record": _project(pid); return production_proofs.record_proof(pid,shot_id=str(a.get("shot_id") or ""),proof_asset_id=str(a.get("proof_asset_id") or ""),checks=a.get("checks") if isinstance(a.get("checks"),dict) else {},production_mode=str(a.get("production_mode") or ""),notes=str(a.get("notes") or ""))
-    if name=="proofs.accept": _project(pid); return production_proofs.accept_proof(pid,shot_id=str(a.get("shot_id") or ""),instruction=str(a.get("instruction") or ""))
-    if name=="proofs.finalize": _project(pid); return production_proofs.finalize_acceptance(pid,instruction=str(a.get("instruction") or ""))
-    if name=="proofs.reject": _project(pid); return production_proofs.reject_proof(pid,shot_id=str(a.get("shot_id") or ""),reason=str(a.get("reason") or ""))
-    if name=="production.guard": _project(pid); return production_project.run_guard(pid)
-    if name=="production.advance": _project(pid); return production_stage.advance(pid,str(a.get("target_stage") or ""))
+        with base.LOCK:return {"projects":[dict(p) for p in base.STATE["projects"]]}
+    if name=="project.create":return {"project":_create_project(str(a.get("name") or ""))}
+    if name=="project.status":return _project_status(pid)
+    if name=="project.prepare":_project(pid);jobs=prepare_project(pid);return {"project_id":pid,"queued":len(jobs),"jobs":jobs}
+    if name=="production.initialize":_project(pid);return production_project.initialize(pid)
+    if name=="production.status":_project(pid);return production_project.status(pid)
+    if name=="production.sync_assets":_project(pid);return production_project.sync_assets(pid)
+    if name=="production.analyze":_project(pid);job=base.add_job("analyze_production",pid,None);dispatch_job(job);return {"job":job}
+    if name=="production.set_music_context":_project(pid);return production_analysis.set_music_context(pid,lyrics_status=str(a.get("lyrics_status") or ""),genre=str(a.get("genre") or ""),lyrics_text=str(a.get("lyrics_text") or ""),directing_use=str(a.get("directing_use") or "default"))
+    if name=="approach.status":_project(pid);return production_approach.status(pid)
+    if name=="approach.set_capabilities":_project(pid);return production_approach.set_capabilities(pid,a.get("capabilities") if isinstance(a.get("capabilities"),list) else [],str(a.get("approach_summary") or ""))
+    if name=="approach.set_routes":_project(pid);return production_approach.set_routes(pid,a.get("routes") if isinstance(a.get("routes"),list) else [],str(a.get("presentation_channel") or "studio"))
+    if name=="approach.select_route":_project(pid);return production_approach.select_route(pid,a.get("selected_option_numbers") if isinstance(a.get("selected_option_numbers"),list) else [],str(a.get("recorded_user_instruction") or ""),str(a.get("status") or "selected"))
+    if name=="storyboard.status":_project(pid);return production_storyboard.status(pid)
+    if name=="storyboard.set":_project(pid);return production_storyboard.set_storyboard(pid,a.get("entries") if isinstance(a.get("entries"),list) else [],target_fps=float(a.get("target_fps") or 30),summary=str(a.get("summary") or ""),authority=str(a.get("authority") or "current_user_or_agent"))
+    if name=="storyboard.lock":_project(pid);return production_storyboard.lock_storyboard(pid,str(a.get("recorded_instruction") or ""))
+    if name=="storyboard.guard":_project(pid);return production_storyboard.run_narrative_guard(pid)
+    if name=="shots.status":_project(pid);return production_shots.status(pid)
+    if name=="shots.template":_project(pid);return production_shots.template(pid)
+    if name=="shots.build_packages":_project(pid);return production_shots.build_packages(pid,a.get("assignments") if isinstance(a.get("assignments"),list) else [])
+    if name=="generated.status":_project(pid);return production_generated.status(pid)
+    if name=="generated.request":_project(pid);return production_generated.request_generation(pid,shot_id=str(a.get("shot_id") or ""),capability=str(a.get("capability") or ""),prompt=str(a.get("prompt") or ""),provider_hint=str(a.get("provider_hint") or ""),notes=str(a.get("notes") or ""))
+    if name=="generated.register":_project(pid);return production_generated.register_generated(pid,asset_id=str(a.get("asset_id") or ""),shot_id=str(a.get("shot_id") or ""),capability=str(a.get("capability") or ""),request_id=str(a.get("request_id") or ""),provider=str(a.get("provider") or ""),model=str(a.get("model") or ""),prompt=str(a.get("prompt") or ""),role=str(a.get("role") or "generated_visual"))
+    if name=="generated.accept":_project(pid);return production_generated.accept_generated(pid,asset_id=str(a.get("asset_id") or ""),instruction=str(a.get("instruction") or ""))
+    if name=="generated.reject":_project(pid);return production_generated.reject_generated(pid,asset_id=str(a.get("asset_id") or ""),reason=str(a.get("reason") or ""))
+    if name=="proofs.status":_project(pid);return production_proofs.status(pid)
+    if name=="proofs.record":_project(pid);return production_proofs.record_proof(pid,shot_id=str(a.get("shot_id") or ""),proof_asset_id=str(a.get("proof_asset_id") or ""),checks=a.get("checks") if isinstance(a.get("checks"),dict) else {},production_mode=str(a.get("production_mode") or ""),notes=str(a.get("notes") or ""))
+    if name=="proofs.accept":_project(pid);return production_proofs.accept_proof(pid,shot_id=str(a.get("shot_id") or ""),instruction=str(a.get("instruction") or ""))
+    if name=="proofs.finalize":_project(pid);return production_proofs.finalize_acceptance(pid,instruction=str(a.get("instruction") or ""))
+    if name=="proofs.reject":_project(pid);return production_proofs.reject_proof(pid,shot_id=str(a.get("shot_id") or ""),reason=str(a.get("reason") or ""))
+    if name=="fx.status":_project(pid);return production_fx.status(pid)
+    if name=="fx.registry":_project(pid);return production_fx.registry(pid)
+    if name=="fx.set_requirements":_project(pid);return production_fx.set_requirements(pid,effects=a.get("effects") if isinstance(a.get("effects"),list) else [],transitions=a.get("transitions") if isinstance(a.get("transitions"),list) else [],seed=int(a.get("seed") or 302),allow_conditional=a.get("allow_conditional") if isinstance(a.get("allow_conditional"),list) else [],conditional_preflight=a.get("conditional_preflight") if isinstance(a.get("conditional_preflight"),dict) else {})
+    if name=="fx.lock":_project(pid);return production_fx.lock(pid)
+    if name=="fx.verify":_project(pid);return production_fx.verify(pid)
+    if name=="production.guard":_project(pid);return production_project.run_guard(pid)
+    if name=="production.advance":_project(pid);return production_stage.advance(pid,str(a.get("target_stage") or ""))
     if name=="media.list":
         _project(pid)
-        with base.LOCK: assets=[base.public_asset(x) for x in base.STATE["assets"] if x.get("project")==pid]
+        with base.LOCK:assets=[base.public_asset(x) for x in base.STATE["assets"] if x.get("project")==pid]
         return {"assets":assets}
     if name=="media.prepare":
-        aid=str(a.get("asset_id") or ""); op=str(a.get("operation") or ""); asset=_asset(aid)
-        if op not in {"make_proxy","extract_review_frames","qc_media"}: raise ValueError("unsupported media preparation operation")
-        job=base.add_job(op,asset.get("project") or "prototype",aid); dispatch_job(job); return {"job":job}
-    if name=="storage.status": return storage.status()
+        aid=str(a.get("asset_id") or "");op=str(a.get("operation") or "");asset=_asset(aid)
+        if op not in {"make_proxy","extract_review_frames","qc_media"}:raise ValueError("unsupported media preparation operation")
+        job=base.add_job(op,asset.get("project") or "prototype",aid);dispatch_job(job);return {"job":job}
+    if name=="storage.status":return storage.status()
     if name=="storage.sync":
         _project(pid)
-        if not storage.status().get("configured"): raise ValueError("external storage is not configured")
-        job=base.add_job("sync_project",pid,None); dispatch_job(job); return {"job":job}
+        if not storage.status().get("configured"):raise ValueError("external storage is not configured")
+        job=base.add_job("sync_project",pid,None);dispatch_job(job);return {"job":job}
     raise ValueError(f"unknown tool: {name}")
