@@ -7,6 +7,7 @@ import server as base
 import production_project
 import production_storyboard
 import production_shots
+import production_proofs
 from core_adapter import CORE
 
 def _read_json(path,default):
@@ -16,9 +17,9 @@ def _read_json(path,default):
 def _write_json(path,payload): Path(path).write_text(json.dumps(payload,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
 def _reference_policy_ok(refs,contract):
-    problems=[]; p=contract.get("reference_policy",{}); ms=float(p.get("short_video_max_seconds",30)); mf=int(p.get("short_video_max_frames",1800))
+    problems=[];p=contract.get("reference_policy",{});ms=float(p.get("short_video_max_seconds",30));mf=int(p.get("short_video_max_frames",1800))
     for r in refs.get("videos",[]):
-        n=str(r.get("name") or "video"); d=float(r.get("duration_seconds") or 0); t=int(r.get("total_frames") or 0); e=int(r.get("extracted_frames") or 0); short=d<=ms and t<=mf
+        n=str(r.get("name") or "video");d=float(r.get("duration_seconds") or 0);t=int(r.get("total_frames") or 0);e=int(r.get("extracted_frames") or 0);short=d<=ms and t<=mf
         if not r.get("analysis_complete"):problems.append(f"{n}: reference analysis incomplete")
         if short:
             if r.get("extraction_policy")!="all_frames" or e!=t or t<=0:problems.append(f"{n}: short reference requires all-frame evidence")
@@ -30,10 +31,10 @@ def _reference_policy_ok(refs,contract):
     return not problems,problems
 
 def _validate_next_stage(current,target):
-    states=CORE.production_contract().get("states",[]); cur=current.get("stage")
+    states=CORE.production_contract().get("states",[]);cur=current.get("stage")
     if cur not in states:raise RuntimeError(f"current production stage is invalid: {cur}")
     if target not in states:raise ValueError(f"unknown production stage: {target}")
-    i=states.index(cur); expected=states[i+1] if i+1<len(states) else None
+    i=states.index(cur);expected=states[i+1] if i+1<len(states) else None
     if target!=expected:raise ValueError(f"only the next stage may be requested; expected {expected or 'none'}")
 
 def _generic_guarded_advance(project_id,target_stage,*,narrative=False):
@@ -42,7 +43,7 @@ def _generic_guarded_advance(project_id,target_stage,*,narrative=False):
     old_state=state_path.read_text(encoding="utf-8");old_status=status_path.read_text(encoding="utf-8") if status_path.is_file() else ""
     state=_read_json(state_path,{});state["stage"]=target_stage;state["stage_requested_by"]="aivideoedit-workstation";state["stage_requested_at"]=base.now();_write_json(state_path,state)
     status_path.write_text(f"# Status\n\nStage: {target_stage}\n\nPending canonical guard verification.\n",encoding="utf-8");production_project._clear_guard_marker(engine)
-    guard=production_project.run_guard(project_id); ng={"ok":True,"stdout":"","stderr":""}
+    guard=production_project.run_guard(project_id);ng={"ok":True,"stdout":"","stderr":""}
     if guard.get("guard_pass") and narrative:ng=production_storyboard.run_narrative_guard(project_id)
     if not guard.get("guard_pass") or not ng.get("ok"):
         state_path.write_text(old_state,encoding="utf-8");status_path.write_text(old_status,encoding="utf-8");production_project._clear_guard_marker(engine)
@@ -103,6 +104,18 @@ def advance(project_id,target_stage):
         if not shots.get("shot_packages_built"):missing.append("shot_packages_built evidence is false")
         if not shots.get("media_evidence_verified"):missing.append("real media evidence has not been verified")
         if any(int(x.get("media_evidence_count") or 0)<=0 for x in shots.get("packages",[])):missing.append("one or more shot packages have no media evidence")
+        if any(bool(x.get("contains_rejected_media")) for x in shots.get("packages",[])):missing.append("one or more shot packages contain rejected media")
         if missing:raise RuntimeError("SHOT_PACKAGES_BUILT gate is not satisfied: "+"; ".join(missing))
+        return _generic_guarded_advance(project_id,target_stage,narrative=True)
+    if target_stage=="SHOT_PROOFS_ACCEPTED":
+        proofs=production_proofs.status(project_id);shots=production_shots.status(project_id);missing=[]
+        expected=int(shots.get("package_count") or 0)
+        if expected<=0:missing.append("no shot packages exist")
+        if int(proofs.get("proof_count") or 0)!=expected:missing.append(f"proof count {proofs.get('proof_count',0)} does not match package count {expected}")
+        if int(proofs.get("accepted_count") or 0)!=expected:missing.append("every shot proof must be explicitly accepted")
+        if int(proofs.get("rejected_count") or 0)>0:missing.append("rejected proofs remain")
+        if not proofs.get("shot_proofs_accepted"):missing.append("proof set has not been finalized")
+        if not proofs.get("mode_aware_proofs_accepted"):missing.append("mode-aware proof acceptance is incomplete")
+        if missing:raise RuntimeError("SHOT_PROOFS_ACCEPTED gate is not satisfied: "+"; ".join(missing))
         return _generic_guarded_advance(project_id,target_stage,narrative=True)
     return _generic_guarded_advance(project_id,target_stage)
