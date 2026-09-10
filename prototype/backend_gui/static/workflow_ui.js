@@ -42,10 +42,7 @@
   }
 
   async function saveDirector(){
-    const args={
-      project_id:projectId(),direction_authority:id('directionAuthority').value,production_mode:id('productionMode').value,
-      mission:id('directorMission').value.trim(),current_user_direction:id('directorCurrentDirection').value.trim(),exact_next_action:id('directorNextAction').value.trim()
-    };
+    const args={project_id:projectId(),direction_authority:id('directionAuthority').value,production_mode:id('productionMode').value,mission:id('directorMission').value.trim(),current_user_direction:id('directorCurrentDirection').value.trim(),exact_next_action:id('directorNextAction').value.trim()};
     if(!args.mission||!args.current_user_direction||!args.exact_next_action){id('productionStatus').textContent='Mission, current direction, and exact next action are required.';return;}
     id('saveDirectorMode').disabled=true;
     try{operatingState=await toolCall('operating.configure_v2',args);id('directorDialog').close();id('productionStatus').textContent='Director Brain v2 enabled with explicit authority and production mode.';await refreshOperating();}
@@ -57,18 +54,13 @@
     document.querySelectorAll('#routeForms [data-route]').forEach((fs,i)=>{
       if(fs.querySelector('[data-route-mode]'))return;
       const existing=approachState?.route_options?.[i]?.production_mode||operatingState?.production_mode||'cinematic';
-      const label=document.createElement('label');label.className='stage-mode-select';label.innerHTML=`Production mode<select data-route-mode><option value="cinematic">Cinematic</option><option value="living_scene">Living scene</option><option value="hybrid">Hybrid</option></select>`;fs.insertBefore(label,fs.querySelector('[data-route-story]')?.closest('label')||fs.firstChild);label.querySelector('select').value=existing;
+      const label=document.createElement('label');label.className='stage-mode-select';label.innerHTML='Production mode<select data-route-mode><option value="cinematic">Cinematic</option><option value="living_scene">Living scene</option><option value="hybrid">Hybrid</option></select>';fs.insertBefore(label,fs.querySelector('[data-route-story]')?.closest('label')||fs.firstChild);label.querySelector('select').value=existing;
     });
   }
 
   async function saveRoutesModeAware(e){
-    e.preventDefault();e.stopImmediatePropagation();
-    enhanceRouteForms();
-    const routes=[...document.querySelectorAll('#routeForms [data-route]')].map(fs=>({
-      number:Number(fs.dataset.route),name:fs.querySelector('[data-route-name]').value.trim(),production_mode:fs.querySelector('[data-route-mode]').value,
-      story_approach:fs.querySelector('[data-route-story]').value.trim(),rendering_route:fs.querySelector('[data-route-render]').value.trim(),
-      storyboard:[...fs.querySelectorAll('[data-route-beat]')].map(b=>({number:Number(b.dataset.routeBeat),description:b.value.trim()}))
-    }));
+    e.preventDefault();e.stopImmediatePropagation();enhanceRouteForms();
+    const routes=[...document.querySelectorAll('#routeForms [data-route]')].map(fs=>({number:Number(fs.dataset.route),name:fs.querySelector('[data-route-name]').value.trim(),production_mode:fs.querySelector('[data-route-mode]').value,story_approach:fs.querySelector('[data-route-story]').value.trim(),rendering_route:fs.querySelector('[data-route-render]').value.trim(),storyboard:[...fs.querySelectorAll('[data-route-beat]')].map(b=>({number:Number(b.dataset.routeBeat),description:b.value.trim()}))}));
     if(routes.some(r=>!r.name||!r.story_approach||!r.rendering_route||!r.production_mode||r.storyboard.some(b=>!b.description))){id('productionStatus').textContent='Complete the mode, concept, rendering treatment, and three beats for every route.';return;}
     id('saveRoutes').disabled=true;
     try{approachState=await toolCall('approach.set_routes',{project_id:projectId(),routes,presentation_channel:'studio'});id('routesDialog').close();id('productionStatus').textContent='Visual routes saved with explicit production modes.';await loadApproachStatus();}
@@ -77,30 +69,19 @@
   }
 
   async function groupCapabilities(){
-    const host=id('approachCapabilities');
-    if(!host||host.dataset.grouped==='1')return;
+    const host=id('approachCapabilities');if(!host)return;
     const labels=[...host.querySelectorAll(':scope > label')];if(!labels.length)return;
     let caps=[];try{caps=(await toolCall('capabilities.list')).capabilities||[];}catch(_){return;}
-    const byId=new Map(caps.map(c=>[String(c.id),c]));
-    const groups=new Map();
-    labels.forEach(label=>{
-      const input=label.querySelector('[data-capability]');if(!input)return;
-      const name=capabilityGroup(byId.get(input.dataset.capability)||{id:input.dataset.capability});
-      if(!groups.has(name))groups.set(name,[]);groups.get(name).push(label);
-    });
+    const byId=new Map(caps.map(c=>[String(c.id),c])),groups=new Map();
+    labels.forEach(label=>{const input=label.querySelector('[data-capability]');if(!input)return;const name=capabilityGroup(byId.get(input.dataset.capability)||{id:input.dataset.capability});if(!groups.has(name))groups.set(name,[]);groups.get(name).push(label);});
     host.innerHTML='';
-    for(const [name,items] of groups){const box=document.createElement('section');box.className='capability-group';box.innerHTML=`<h4>${safe(name)}</h4>`;items.forEach(label=>{label.classList.add('capability-option');box.appendChild(label)});host.appendChild(box)}
-    host.dataset.grouped='1';
+    for(const [name,items] of groups){const box=document.createElement('section');box.className='capability-group';box.innerHTML=`<h4>${safe(name)}</h4>`;items.forEach(label=>{label.classList.add('capability-option');box.appendChild(label)});host.appendChild(box);}
   }
 
   const routeObserver=new MutationObserver(()=>enhanceRouteForms());
   if(id('routeForms'))routeObserver.observe(id('routeForms'),{childList:true,subtree:true});
-  const capObserver=new MutationObserver(()=>{id('approachCapabilities').dataset.grouped='';setTimeout(groupCapabilities,0)});
-  if(id('approachCapabilities'))capObserver.observe(id('approachCapabilities'),{childList:true});
-
   id('configureDirector')?.addEventListener('click',openDirector);
   id('saveDirectorMode')?.addEventListener('click',saveDirector);
   id('saveRoutes')?.addEventListener('click',saveRoutesModeAware,true);
-  id('routesDialog')?.addEventListener('toggle',()=>setTimeout(enhanceRouteForms,0));
-  setInterval(refreshOperating,2200);setTimeout(refreshOperating,600);
+  setInterval(()=>{refreshOperating();groupCapabilities();},1800);setTimeout(()=>{refreshOperating();groupCapabilities();},500);
 })();
