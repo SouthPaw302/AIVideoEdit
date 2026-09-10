@@ -1,5 +1,5 @@
 {
-  "schema": "aivideoedit.production-contract.v1",
+  "schema": "aivideoedit.production-contract.v2",
   "authority": [
     "current_user_instruction",
     "active_song_branch_state",
@@ -26,6 +26,29 @@
     "FINAL_QC_PASSED",
     "ARCHIVED"
   ],
+  "director_brain_policy": {
+    "current_version": 2,
+    "version_state_key": "director_brain_version",
+    "operating_order_file": "OPERATING_ORDER.json",
+    "new_projects_use_version": 2,
+    "legacy_projects_may_remain_unmigrated_until_explicitly_updated": true,
+    "direction_authorities": [
+      "reference_led",
+      "music_led",
+      "user_directed"
+    ],
+    "production_modes": [
+      "living_scene",
+      "cinematic",
+      "hybrid"
+    ],
+    "selection_rule": "direction authority and production mode are separate decisions and must be locked before production media generation",
+    "approval_creates_canon": true,
+    "accepted_baseline_rule": "an explicitly user-accepted full picture baseline must record locator, sha256, and acceptance statement and becomes protected production truth",
+    "refinement_rule": "when refinement_scope.active=true, change only allowed_changes, preserve forbidden_changes, and do not restart/reinterpret canon when restart_authorized=false",
+    "accepted_master_recovery_rule": "an accepted master is itself a recoverable source of truth and may be analyzed to reconstruct lost production structure",
+    "local_repair_preference": true
+  },
   "reference_policy": {
     "short_video_max_seconds": 30.0,
     "short_video_max_frames": 1800,
@@ -34,7 +57,7 @@
     "images_rule": "inspect_all_supplied_images",
     "reference_role_rule": "every visual reference must have an explicit authorized production role; style, motion-language, palette, composition, lighting, or effect references teach those properties only and do not authorize reuse of the reference subject, scene, source frames, or source footage as final-picture content unless the current user explicitly authorizes content reuse",
     "reference_content_reuse_default": "denied_unless_current_user_explicitly_authorizes",
-    "no_visual_reference_rule": "before production media generation present at least three materially distinct numbered artistic-rendering routes in chat; each route must include a name, story interpretation, rendering/media treatment, and numbered mini-storyboard of at least three beats/frames; record all routes plus the current user's explicit selection/hybrid/modification in MEDIA_PLAN.json and lock the selection",
+    "no_visual_reference_rule": "before production media generation present at least three materially distinct numbered artistic-rendering routes in chat; each route must include a name, story interpretation, rendering/media treatment, production mode, and numbered mini-storyboard of at least three beats/frames; record all routes plus the current user's explicit selection/hybrid/modification in MEDIA_PLAN.json and lock the selection",
     "no_visual_reference_min_options": 3,
     "no_visual_reference_min_storyboard_beats": 3,
     "no_visual_reference_decision_artifacts_rule": "concept/storyboard previews made solely for route selection are allowed before lock but are not production assets unless the selected direction explicitly adopts them"
@@ -43,7 +66,7 @@
     "lyrics_status_must_be_resolved": true,
     "lyrics_present_rule": "preserve verified lyrics in LYRICS.md; present lyrics are directing authority by default unless the current user explicitly excludes them",
     "lyrics_exclusion_rule": "if the current user explicitly excludes present lyrics from directing, keep lyrics.status=present, record directing_use=excluded_by_current_user plus the current user instruction, omit lyrics from SCRIPT.basis and lyric_cue fields, and use music analysis as primary directing authority",
-    "no_lyrics_rule": "music analysis becomes the primary narrative authority; absence of lyrics never permits skipping story construction",
+    "no_lyrics_rule": "music analysis becomes the primary directing authority unless the current user supplies a stronger current direction; absence of lyrics never permits skipping deliberate production-mode selection",
     "genre_rule": "if genre/song type cannot be identified confidently, ask the current user before approach/story lock and record the user's declaration as authoritative",
     "minimum_genre_confidence_when_inferred": 0.65,
     "music_analysis_required": [
@@ -63,10 +86,34 @@
     "generated_capability_requires_generated_asset_evidence": true,
     "shot_package_requires_media_evidence": true
   },
+  "asset_lifecycle_policy": {
+    "statuses": [
+      "exploratory",
+      "candidate",
+      "approved",
+      "canonical",
+      "derived",
+      "rejected",
+      "retired"
+    ],
+    "canonical_replacement_rule": "canonical assets may not be silently regenerated or replaced while canon_lock.locked=true"
+  },
+  "mode_aware_qc_policy": {
+    "rules_file": "general/reusable/MODE_AWARE_QC.md",
+    "director_brain_v2_requires_mode_aware_proofs": true,
+    "director_brain_v2_requires_mode_aware_final_qc": true,
+    "technical_pass_is_not_creative_pass": true
+  },
+  "delivery_mastering_policy": {
+    "separate_artistic_and_platform_master_when_packaging_changes": true,
+    "platform_packaging_must_not_overwrite_accepted_artistic_master": true
+  },
   "creative_acceptance_policy": {
     "technical_pass_is_not_artistic_acceptance": true,
-    "current_user_rejection_rule": "an explicit current-user rejection of a proof, media set, visual direction, or final export invalidates any prior accepted/final-QC status for the affected material; mark affected assets/proofs rejected, clear dependent acceptance booleans, and roll the project back to the earliest stage that must be redone",
-    "rejected_media_must_not_be_promoted": true
+    "approval_creates_canon": true,
+    "current_user_rejection_rule": "an explicit current-user rejection of a proof, media set, visual direction, or final export invalidates any prior accepted/final-QC status for the affected material; mark affected assets/proofs rejected, clear dependent acceptance booleans, and roll the project back to the earliest stage that must be redone without disturbing unrelated accepted canon",
+    "rejected_media_must_not_be_promoted": true,
+    "accepted_work_must_be_preserved_outside_explicit_refinement_scope": true
   },
   "required_project_files": [
     "PROJECT.md",
@@ -99,19 +146,22 @@
     "APPROACH_ESTABLISHED": [
       "media_plan_valid",
       "visual_approach_established",
-      "no_reference_visual_direction_gate_if_applicable"
+      "no_reference_visual_direction_gate_if_applicable",
+      "director_brain_v2_operating_order_if_applicable"
     ],
     "STORYBOARD_LOCKED": [
       "storyboard_locked",
       "script_locked",
-      "frame_followable_script"
+      "frame_followable_script",
+      "semantic_motion_regions_if_applicable"
     ],
     "SHOT_PACKAGES_BUILT": [
       "shot_packages_built",
       "media_evidence_verified"
     ],
     "SHOT_PROOFS_ACCEPTED": [
-      "shot_proofs_accepted"
+      "shot_proofs_accepted",
+      "mode_aware_proofs_if_director_brain_v2"
     ],
     "FX_LOCKED": [
       "fx_lock_verified"
@@ -120,7 +170,8 @@
       "assembly_complete"
     ],
     "FINAL_QC_PASSED": [
-      "final_qc_passed"
+      "final_qc_passed",
+      "mode_aware_final_qc_if_director_brain_v2"
     ],
     "ARCHIVED": [
       "archive_complete"
