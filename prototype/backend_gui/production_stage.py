@@ -8,6 +8,7 @@ import production_project
 import production_storyboard
 import production_shots
 import production_proofs
+import production_fx
 from core_adapter import CORE
 
 def _read_json(path,default):
@@ -108,8 +109,7 @@ def advance(project_id,target_stage):
         if missing:raise RuntimeError("SHOT_PACKAGES_BUILT gate is not satisfied: "+"; ".join(missing))
         return _generic_guarded_advance(project_id,target_stage,narrative=True)
     if target_stage=="SHOT_PROOFS_ACCEPTED":
-        proofs=production_proofs.status(project_id);shots=production_shots.status(project_id);missing=[]
-        expected=int(shots.get("package_count") or 0)
+        proofs=production_proofs.status(project_id);shots=production_shots.status(project_id);missing=[];expected=int(shots.get("package_count") or 0)
         if expected<=0:missing.append("no shot packages exist")
         if int(proofs.get("proof_count") or 0)!=expected:missing.append(f"proof count {proofs.get('proof_count',0)} does not match package count {expected}")
         if int(proofs.get("accepted_count") or 0)!=expected:missing.append("every shot proof must be explicitly accepted")
@@ -117,5 +117,15 @@ def advance(project_id,target_stage):
         if not proofs.get("shot_proofs_accepted"):missing.append("proof set has not been finalized")
         if not proofs.get("mode_aware_proofs_accepted"):missing.append("mode-aware proof acceptance is incomplete")
         if missing:raise RuntimeError("SHOT_PROOFS_ACCEPTED gate is not satisfied: "+"; ".join(missing))
+        return _generic_guarded_advance(project_id,target_stage,narrative=True)
+    if target_stage=="FX_LOCKED":
+        fx=production_fx.status(project_id);missing=[]
+        if not fx.get("requirements_present"):missing.append("FX requirements are missing")
+        if not fx.get("lock_present"):missing.append("fx.lock.json is missing")
+        if fx.get("lock_result")!="PASS":missing.append("FX precompile lock does not contain PASS")
+        if not fx.get("fx_lock_verified"):missing.append("FX lock has not been verified")
+        if missing:raise RuntimeError("FX_LOCKED gate is not satisfied: "+"; ".join(missing))
+        live=production_fx.verify(project_id)
+        if not live.get("ok"):raise RuntimeError("FX_LOCKED live verification failed: "+str(live.get("stderr") or live.get("stdout") or live.get("error") or "unknown")[-1600:])
         return _generic_guarded_advance(project_id,target_stage,narrative=True)
     return _generic_guarded_advance(project_id,target_stage)
