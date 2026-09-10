@@ -11,6 +11,7 @@ import production_proofs
 import production_fx
 import production_assembly
 import production_final_qc
+import production_archive
 from core_adapter import CORE
 
 def _read_json(path,default):
@@ -150,5 +151,13 @@ def advance(project_id,target_stage):
         if not (project_dir/"SCRIPT.json").is_file() or production_final_qc._sha(project_dir/"SCRIPT.json")!=record.get("script_sha256"):missing.append("script changed after final QC")
         if not (project_dir/"fx.lock.json").is_file() or production_final_qc._sha(project_dir/"fx.lock.json")!=record.get("fx_lock_sha256"):missing.append("FX lock changed after final QC")
         if missing:raise RuntimeError("FINAL_QC_PASSED gate is not satisfied: "+"; ".join(missing))
+        return _generic_guarded_advance(project_id,target_stage,narrative=True)
+    if target_stage=="ARCHIVED":
+        archive=production_archive.status(project_id);missing=[]
+        if not archive.get("archive_complete"):missing.append("archive manifest has not been built")
+        if not archive.get("manifest_present"):missing.append("ARCHIVE_MANIFEST.json is missing")
+        live=production_archive.verify(project_id)
+        if not live.get("ok"):missing.extend(live.get("problems") or [live.get("error") or "archive verification failed"])
+        if missing:raise RuntimeError("ARCHIVED gate is not satisfied: "+"; ".join(str(x) for x in missing))
         return _generic_guarded_advance(project_id,target_stage,narrative=True)
     return _generic_guarded_advance(project_id,target_stage)
