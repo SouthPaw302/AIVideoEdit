@@ -232,6 +232,51 @@ def run_bootstrap_guard(repo: Path, os_root: Path, branch: str, project: Path | 
         raise SystemExit("BOOTSTRAP FAIL: current-main production contract rejected this workspace.")
 
 
+def handoff_to_current_main_bootstrap(
+    repo: Path,
+    os_root: Path,
+    branch: str,
+    args: argparse.Namespace,
+) -> None:
+    """Re-exec the exact current-main bootstrap on non-main branches.
+
+    Song branches can carry an older bootstrap.py. The loader may locate and
+    materialize current main, but current main must own Second Brain/session
+    behavior too. One environment flag prevents re-exec loops.
+    """
+    if branch == "main" or os.environ.get("AIVIDEOEDIT_BOOTSTRAP_REEXEC") == "1":
+        return
+    canonical = os_root / "bootstrap.py"
+    if not canonical.is_file():
+        raise SystemExit("BOOTSTRAP FAIL: current-main snapshot lacks bootstrap.py")
+
+    try:
+        this_file = Path(__file__).resolve()
+        same = this_file.is_file() and sha256_file(this_file) == sha256_file(canonical)
+    except Exception:
+        same = False
+    if same:
+        return
+
+    cmd = [
+        sys.executable,
+        str(canonical),
+        "boot",
+        "--repo-root",
+        str(repo),
+        "--branch",
+        branch,
+    ]
+    if args.project_dir:
+        cmd += ["--project-dir", str(args.project_dir)]
+    if args.offline:
+        cmd.append("--offline")
+
+    env = os.environ.copy()
+    env["AIVIDEOEDIT_BOOTSTRAP_REEXEC"] = "1"
+    os.execve(sys.executable, cmd, env)
+
+
 def read_json_if(path: Path) -> dict:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -448,6 +493,7 @@ def boot(args: argparse.Namespace) -> int:
 
     main_sha, os_source = fetch_main_sha(args.offline, repo)
     archive_source = materialize_entire_main(repo, os_root, main_sha, args.offline)
+    handoff_to_current_main_bootstrap(repo, os_root, branch, args)
     manifest, manifest_bytes = load_os_manifest(os_root)
     file_hashes = attest_manifest_files(os_root, manifest)
     run_bootstrap_guard(repo, os_root, branch, project)
