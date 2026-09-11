@@ -22,7 +22,9 @@ The result must be authored and intentional, not a slideshow, generic visualizer
 ## Hard production order
 Initialize -> ingest sources -> extract/analyze visual references -> analyze music -> resolve lyrics status -> resolve genre authority -> choose direction authority + production mode -> establish visual/media approach -> lock storyboard/shot map -> lock frame-followable script -> build real shot media/packages -> animate/composite -> accept short mode-aware proofs -> lock FX -> assemble -> render -> inspect actual export with mode-aware QC -> accept/lock/refine when applicable -> archive.
 
-`general/reusable/tools/production_guard.py` and `general/reusable/tools/narrative_guard.py` are fail-closed authorities.
+A supported source-library recovery/recut specialization is defined in `general/reusable/RECUT_REFINEMENT.md`. It specializes the normal order for already-good canonical visual material; it does not bypass script, proof, FX, assembly, or final-export QC.
+
+`general/reusable/tools/production_guard.py`, `general/reusable/tools/narrative_guard.py`, and `general/reusable/tools/recut_guard.py` are fail-closed authorities in current-main versions that provide them.
 
 ## Director Brain law
 New projects use Director Brain v2 and `OPERATING_ORDER.json`.
@@ -33,11 +35,17 @@ The Operating Order records:
 - production mode;
 - canon lock;
 - accepted baseline;
-- current refinement scope;
+- accepted source library;
+- current baseline-refinement scope;
+- current source-library recut scope;
 - current user direction;
 - exact next action.
 
-Approval creates canon. If the user accepts a baseline and then names defects, preserve the accepted foundation and repair only the authorized scope unless the user explicitly authorizes restart/reinterpretation.
+Approval creates canon, but the scope of acceptance matters. `accepted_baseline` means the complete picture/edit is accepted. `accepted_source_library` means specific approved pixels/shots/world/identity are canonical reusable visual source material while the timeline remains editable. Reference presence alone never authorizes content reuse.
+
+If the user accepts a baseline and then names defects, preserve the accepted foundation and repair only the authorized baseline-refinement scope unless the user explicitly authorizes restart/reinterpretation.
+
+If the user accepts a source library and names edit/coverage defects, diagnose first, preserve source canon, repair only the named recut defects, and prefer editorial/source-derived coverage over unnecessary regeneration. The source-library sequence is `CANON -> DIAGNOSE -> EXTRACT COVERAGE -> RE-EDIT -> COMPARE -> PROMOTE`.
 
 ## Music, lyrics and genre law
 - Lyrics status must be explicitly resolved.
@@ -53,6 +61,7 @@ Approval creates canon. If the user accepts a baseline and then names defects, p
 - Analyze references for composition, motion language, camera behavior, internal motion, lighting, pacing, scene-change frequency, and loop behavior.
 - A reference video does not automatically mean cinematic production. It may teach living-scene, cinematic, hybrid, or other visual behavior.
 - Reference content is not final-picture material unless the current user explicitly authorizes content reuse.
+- Explicitly accepted source-library content is different from a style/motion reference: it has its own locator/hash/acceptance statement/reuse authorization and may be reused according to its recut scope.
 - No visual references: enter the Visual Direction Selection Gate. Before production media, present at least three materially distinct numbered artistic-rendering routes. Each route includes a named interpretation, rendering/media treatment, proposed production mode, and numbered mini-storyboard. The user selects, combines, or modifies; record and lock the decision before production proceeds.
 
 ## Script law
@@ -69,6 +78,14 @@ Cinematic work requires deliberate coverage, readable action, continuity, shot p
 ## Hybrid law
 Hybrid work uses living-scene and cinematic methods deliberately by section/shot. Each section must pass the appropriate mode-specific proof rules while remaining inside one coherent visual world.
 
+When a canonical source library exists, hybrid coverage may expand that approved living visual world cinematically through source-derived environment/detail inserts, alternate framing, source-range motion, canonical optical states, returns to the hero composition, and shorter coverage near musical acceleration. This is a supported strategy, not a universal formula; every derived shot remains traceable to the accepted source hash.
+
+## Canonical hero-library law
+An approved video may be mined into a hero/shot library. Final selection is based on actual measured quality and perceptual/composition diversity, not on blindly retaining every Nth second. Preserve source/frame hashes, selected time, measured signature/diversity evidence, nearby source range, lifecycle status, and duplicate-heavy warnings. Do not claim semantic subject identity, shot scale, or narrative meaning unless those properties were actually measured or annotated.
+
+## Source-derived coverage law
+Crops/reframes, close/detail extraction, alternate framing, source-range reuse, conservative pan/scan, restrained depth/parallax, masked/layered treatments, source-derived environmental inserts, and authorized source-inherent optical/color states may be used to expand coverage without changing identity. Such assets record the accepted source-library SHA-256, source time/range, and derivation. Generated new content is a separate origin and must not be mislabeled as source-derived.
+
 ## Shot-package law
 Every selected scene becomes a genuine branch-local shot package with source, masks/alpha, layers, depth where needed, generated support, FX assets, transitions/loops, proof preview, notes, QC, and actual hashed media evidence. Metadata-only packages are forbidden. Preview means a short finished proof, not premature assembly.
 
@@ -77,7 +94,12 @@ Director Brain v2 visual assets should carry lifecycle status: `exploratory`, `c
 ## Real-media law
 Before inventing technology, inspect `SYSTEM_INDEX.md`, `MEDIA_CAPABILITY_MATRIX.json`, `fx_v2/registry.json`, the generative engine, and relevant neutral capability folders. The production media plan deliberately selects suitable media forms rather than defaulting to stills + zoom or procedural geometry.
 
-If generated media capabilities are selected, generated visual assets must actually exist and be recorded in `ASSET_MANIFEST.json`. A request to keep chat light or suppress previews never authorizes replacing required production media with geometric/procedural placeholders.
+If generated media capabilities are selected, generated visual assets must actually exist and be recorded in `ASSET_MANIFEST.json`. If source-derived coverage is selected, it must have actual source provenance. A request to keep chat light or suppress previews never authorizes replacing required production media with geometric/procedural placeholders.
+
+## Backend and FX truth law
+Creative recipe is separate from render backend. A proof backend may differ from the production backend only when backend/parameter mappings are recorded and a representative equivalence proof passes with behavior preserved, effects visible, and traceable render implementation. Never rely on "it should look the same."
+
+Canonical reusable FX authority remains `general/reusable/fx_v2/`. A project-local experimental adapter may be used only through its fail-closed local gate with real implementation and inputs, deterministic/recorded parameters where applicable, proof hash, visible pixel change, PASS QC, truthful naming, and current precompile lock. Project-local validation never silently promotes an effect into reusable `main`.
 
 ## Technical truthfulness
 2.5D means depth/layer image-space motion. NeRF means an actual trained radiance field. 3DGS means actual Gaussian-splat scene primitives. A Gaussian light/noise field is not 3DGS. A custom reactive field is not projectM/MilkDrop unless that engine is actually used.
@@ -87,10 +109,14 @@ Code existence is not proof. Preserve implementation/backend, parameters, proof 
 
 Apply `MODE_AWARE_QC.md` according to the declared production mode. Technical export checks cannot compensate for the wrong visual behavior.
 
-## Convergence law
-When the current user accepts a full baseline, record its locator, SHA-256, and acceptance statement; lock the approved canon. If changes are requested, create a refinement scope with goal, allowed changes, forbidden changes, and restart authorization.
+For source-library recuts, preserve PRE and POST QC for repetition/composition, runtime, black/freeze, framing/aspect, audio sync, continuity warnings, mode-aware QC, and source/canon integrity. The post-edit source/canon integrity result must PASS. Metrics are evidence, not an automatic artistic verdict.
 
-Default behavior after acceptance is local repair and comparison, not restart. The accepted master is itself a recoverable source of truth if intermediate material is lost.
+## Convergence law
+When the current user accepts a full baseline, record its locator, SHA-256, and acceptance statement; lock the approved complete edit. If changes are requested, create a baseline refinement scope with goal, allowed changes, forbidden changes, and restart authorization.
+
+When the current user accepts visual source material for reuse while permitting a rebuilt edit, record it separately as `accepted_source_library` with role, locator, SHA-256, acceptance statement, `content_reuse_authorized=true`, and `timeline_locked=false`. If recut work is requested, name defects and define allowed/forbidden recut changes without silently authorizing source replacement.
+
+Default behavior after either kind of acceptance is local repair and comparison, not restart. An accepted master and an accepted source library are both recoverable sources of truth, but they protect different things.
 
 ## Delivery law
 Keep the artistic master separate from a platform/delivery master when titles, intros, outros, packaging, or platform requirements differ. Do not overwrite an accepted artistic master merely to satisfy delivery packaging.

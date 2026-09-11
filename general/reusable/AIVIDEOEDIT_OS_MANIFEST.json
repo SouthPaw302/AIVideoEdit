@@ -20,6 +20,7 @@
     {"path":"general/reusable/PRODUCTION_MODES.json","role":"machine_director_modes"},
     {"path":"general/reusable/PRODUCTION_MODES.md","role":"human_director_modes"},
     {"path":"general/reusable/DOCTRINE_LIVING_SCENE.md","role":"living_scene_doctrine"},
+    {"path":"general/reusable/RECUT_REFINEMENT.md","role":"canonical_source_recut_doctrine"},
     {"path":"general/reusable/MODE_AWARE_QC.md","role":"mode_aware_qc_contract"},
     {"path":"general/reusable/DRIFT_TESTS.md","role":"director_drift_test_contract"},
     {"path":"general/reusable/NARRATIVE_CONTRACT.md","role":"directing_music_media_contract"},
@@ -31,12 +32,18 @@
     {"path":"general/reusable/fx_v2/living_still_fx.py","role":"living_still_fx_runtime"},
     {"path":"general/reusable/fx_v2/verify_living_still_fx.py","role":"living_still_fx_verifier"},
     {"path":"general/reusable/fx_v2/PRECOMPILE_FX_GATE.md","role":"fx_gate_contract"},
+    {"path":"general/reusable/fx_v2/project_local_fx_gate.py","role":"project_local_fx_gate"},
     {"path":"general/reusable/storage/README.md","role":"media_storage_contract"},
     {"path":"general/reusable/storage/STORAGE_MANIFEST.schema.json","role":"media_storage_schema"},
     {"path":"general/reusable/storage/github_release_storage.py","role":"media_storage_runtime"},
     {"path":"general/reusable/tools/production_guard.py","role":"fail_closed_production_guard"},
     {"path":"general/reusable/tools/narrative_guard.py","role":"fail_closed_directing_guard"},
+    {"path":"general/reusable/tools/recut_guard.py","role":"fail_closed_recut_guard"},
+    {"path":"general/reusable/tools/hero_library_extract.py","role":"canonical_hero_library_extractor"},
+    {"path":"general/reusable/tools/export_variety_qc.py","role":"export_variety_qc"},
+    {"path":"general/reusable/tools/refinement_qc_compare.py","role":"before_after_refinement_qc"},
     {"path":"general/reusable/tools/test_director_brain.py","role":"director_brain_regression_test"},
+    {"path":"general/reusable/tools/test_recut_system.py","role":"recut_regression_test"},
     {"path":"general/reusable/tools/README.md","role":"tool_index"}
   ]
 }

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Fail-closed validation for canonical-source recovery/recut workflows.
 
-This guard supplements the existing production and narrative guards without changing
-accepted-baseline semantics. It activates only for Director Brain projects using the
-new source-library/recut fields or related artifacts.
+This companion guard extends Director Brain without changing accepted-baseline
+semantics. Existing Operating Orders that do not use source-library/recut fields
+remain valid; once those fields or artifacts are used, their evidence fails closed.
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import os
@@ -41,16 +42,24 @@ def load_json(path: Path) -> dict:
         return json.loads(path.read_text(encoding="utf-8"))
     except FileNotFoundError:
         raise ValueError(f"missing {path}")
-    except Exception as e:
-        raise ValueError(f"invalid JSON {path}: {e}")
+    except Exception as exc:
+        raise ValueError(f"invalid JSON {path}: {exc}")
 
 
-def nonempty(v: Any) -> bool:
-    return isinstance(v, str) and bool(v.strip())
+def nonempty(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
 
 
-def valid_sha(v: Any) -> bool:
-    return nonempty(v) and bool(re.fullmatch(r"[0-9a-fA-F]{64}", v.strip()))
+def valid_sha(value: Any) -> bool:
+    return nonempty(value) and bool(re.fullmatch(r"[0-9a-fA-F]{64}", value.strip()))
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def discover_project() -> Path | None:
@@ -59,12 +68,10 @@ def discover_project() -> Path | None:
         p = Path(env)
         return p.resolve() if p.is_absolute() else (ROOT / p).resolve()
     candidates = [p.parent for p in ROOT.glob("projects/*/PROJECT_STATE.json")]
-    if len(candidates) == 1:
-        return candidates[0]
-    return None
+    return candidates[0] if len(candidates) == 1 else None
 
 
-def _import_module(path: Path, name: str):
+def import_module(path: Path, name: str):
     spec = importlib.util.spec_from_file_location(name, path)
     if spec is None or spec.loader is None:
         raise ValueError(f"cannot import {path}")
@@ -73,7 +80,7 @@ def _import_module(path: Path, name: str):
     return module
 
 
-def validate_source_library(order: dict, errors: list[str]) -> dict:
+def validate_source_library(order: dict, errors: list[str], project: Path | None = None) -> dict:
     source = order.get("accepted_source_library")
     if source is None:
         return {"status": "none"}
@@ -97,6 +104,13 @@ def validate_source_library(order: dict, errors: list[str]) -> dict:
             errors.append("accepted source library requires content_reuse_authorized=true")
         if source.get("timeline_locked") is not False:
             errors.append("accepted source library requires timeline_locked=false so the edit remains editable")
+        locator = source.get("file_or_locator")
+        if project is not None and nonempty(locator) and valid_sha(source.get("sha256")):
+            candidate = Path(locator)
+            if not candidate.is_absolute():
+                candidate = project / candidate
+            if candidate.is_file() and sha256_file(candidate).lower() != source["sha256"].strip().lower():
+                errors.append("accepted source library local file hash does not match OPERATING_ORDER")
     return source
 
 
@@ -107,11 +121,10 @@ def validate_recut_scope(order: dict, source: dict, errors: list[str]) -> dict:
     if not isinstance(scope, dict):
         errors.append("OPERATING_ORDER.recut_scope must be an object")
         return {"active": False}
-    active = scope.get("active")
-    if not isinstance(active, bool):
+    if not isinstance(scope.get("active"), bool):
         errors.append("recut_scope.active must be boolean")
         return scope
-    if active:
+    if scope.get("active") is True:
         if source.get("status") != "accepted":
             errors.append("active recut_scope requires accepted_source_library.status=accepted")
         defects = scope.get("named_defects")
@@ -132,8 +145,9 @@ def validate_render_recipe(project: Path, errors: list[str]) -> None:
         return
     try:
         recipe = load_json(path)
-    except ValueError as e:
-        errors.append(str(e)); return
+    except ValueError as exc:
+        errors.append(str(exc))
+        return
     if recipe.get("schema") != "aivideoedit.render-recipe.v1":
         errors.append("RENDER_RECIPE.json has invalid schema")
     for key in ("recipe_identity", "proof_backend", "production_backend"):
@@ -142,98 +156,122 @@ def validate_render_recipe(project: Path, errors: list[str]) -> None:
     impl = recipe.get("render_implementation")
     if not isinstance(impl, dict) or not nonempty(impl.get("file_or_locator")) or not valid_sha(impl.get("sha256")):
         errors.append("RENDER_RECIPE.render_implementation requires locator and sha256")
-    if recipe.get("proof_backend") != recipe.get("production_backend"):
-        mapping = recipe.get("backend_mapping")
-        if not isinstance(mapping, dict) or not mapping:
-            errors.append("backend substitution requires non-empty backend_mapping")
-        proof = recipe.get("equivalence_proof")
-        if not isinstance(proof, dict):
-            errors.append("backend substitution requires equivalence_proof")
-        else:
-            if proof.get("status") != "PASS": errors.append("backend substitution requires equivalence_proof.status=PASS")
-            if proof.get("behavior_preserved") is not True: errors.append("equivalence proof requires behavior_preserved=true")
-            if proof.get("effects_visible") is not True: errors.append("equivalence proof requires effects_visible=true")
-            if proof.get("traceable") is not True: errors.append("equivalence proof requires traceable=true")
-            media = proof.get("representative_proof")
-            if not isinstance(media, dict) or not nonempty(media.get("file_or_locator")) or not valid_sha(media.get("sha256")):
-                errors.append("equivalence proof requires representative proof locator and sha256")
+    if recipe.get("proof_backend") == recipe.get("production_backend"):
+        return
+    mapping = recipe.get("backend_mapping")
+    if not isinstance(mapping, dict) or not mapping:
+        errors.append("backend substitution requires non-empty backend_mapping")
+    proof = recipe.get("equivalence_proof")
+    if not isinstance(proof, dict):
+        errors.append("backend substitution requires equivalence_proof")
+        return
+    if proof.get("status") != "PASS":
+        errors.append("backend substitution requires equivalence_proof.status=PASS")
+    if proof.get("behavior_preserved") is not True:
+        errors.append("equivalence proof requires behavior_preserved=true")
+    if proof.get("effects_visible") is not True:
+        errors.append("equivalence proof requires effects_visible=true")
+    if proof.get("traceable") is not True:
+        errors.append("equivalence proof requires traceable=true")
+    representative = proof.get("representative_proof")
+    if not isinstance(representative, dict) or not nonempty(representative.get("file_or_locator")) or not valid_sha(representative.get("sha256")):
+        errors.append("equivalence proof requires representative proof locator and sha256")
 
 
-def _asset_entries(project: Path) -> list[dict]:
+def asset_entries(project: Path) -> list[dict]:
     path = project / "ASSET_MANIFEST.json"
-    if not path.is_file(): return []
-    try: data = load_json(path)
-    except ValueError: return []
+    if not path.is_file():
+        return []
+    try:
+        data = load_json(path)
+    except ValueError:
+        return []
     entries = data.get("assets") if isinstance(data.get("assets"), list) else data.get("entries")
     return [x for x in entries if isinstance(x, dict)] if isinstance(entries, list) else []
 
 
 def validate_source_derived_provenance(project: Path, source: dict, scope: dict, errors: list[str]) -> None:
     accepted_sha = source.get("sha256") if source.get("status") == "accepted" else None
-    for i, asset in enumerate(_asset_entries(project), 1):
-        prov = asset.get("provenance") if isinstance(asset.get("provenance"), dict) else {}
-        source_derived = asset.get("origin") == "source_derived" or prov.get("kind") == "source_derived"
+    for index, asset in enumerate(asset_entries(project), 1):
+        provenance = asset.get("provenance") if isinstance(asset.get("provenance"), dict) else {}
+        source_derived = asset.get("origin") == "source_derived" or provenance.get("kind") == "source_derived"
         if not source_derived:
             continue
-        if not valid_sha(prov.get("source_library_sha256")):
-            errors.append(f"ASSET_MANIFEST source-derived entry {i} requires provenance.source_library_sha256")
-        elif accepted_sha and prov.get("source_library_sha256").lower() != accepted_sha.lower():
-            errors.append(f"ASSET_MANIFEST source-derived entry {i} does not derive from the accepted source library")
-        if not nonempty(prov.get("derivation")):
-            errors.append(f"ASSET_MANIFEST source-derived entry {i} requires provenance.derivation")
-        has_time = isinstance(prov.get("source_time_seconds"), (int, float)) and not isinstance(prov.get("source_time_seconds"), bool)
-        rng = prov.get("source_range_seconds")
-        has_range = isinstance(rng, list) and len(rng) == 2 and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in rng)
+        derived_sha = provenance.get("source_library_sha256")
+        if not valid_sha(derived_sha):
+            errors.append(f"ASSET_MANIFEST source-derived entry {index} requires provenance.source_library_sha256")
+        elif accepted_sha and derived_sha.lower() != accepted_sha.lower():
+            errors.append(f"ASSET_MANIFEST source-derived entry {index} does not derive from the accepted source library")
+        if not nonempty(provenance.get("derivation")):
+            errors.append(f"ASSET_MANIFEST source-derived entry {index} requires provenance.derivation")
+        has_time = isinstance(provenance.get("source_time_seconds"), (int, float)) and not isinstance(provenance.get("source_time_seconds"), bool)
+        source_range = provenance.get("source_range_seconds")
+        has_range = isinstance(source_range, list) and len(source_range) == 2 and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in source_range)
         if not (has_time or has_range):
-            errors.append(f"ASSET_MANIFEST source-derived entry {i} requires source time or range evidence")
+            errors.append(f"ASSET_MANIFEST source-derived entry {index} requires source time or range evidence")
         if scope.get("active") is True and scope.get("source_replacement_authorized") is False and asset.get("replaces_source_library") is True:
-            errors.append(f"ASSET_MANIFEST source-derived entry {i} cannot silently replace locked source canon")
+            errors.append(f"ASSET_MANIFEST source-derived entry {index} cannot silently replace locked source canon")
 
 
-def validate_hero_library(project: Path, plan: dict, scope: dict, errors: list[str], warnings: list[str]) -> None:
+def validate_hero_library(project: Path, plan: dict, scope: dict, source: dict, errors: list[str], warnings: list[str]) -> None:
     selected = plan.get("selected_capabilities", []) if isinstance(plan, dict) else []
     required = "canonical_hero_library" in selected or scope.get("active") is True
     path = project / "HERO_LIBRARY.json"
-    if not required and not path.is_file(): return
+    if not required and not path.is_file():
+        return
     if required and not path.is_file():
-        errors.append("canonical hero-library workflow requires HERO_LIBRARY.json"); return
+        errors.append("canonical hero-library workflow requires HERO_LIBRARY.json")
+        return
     try:
-        module = _import_module(TOOLS / "hero_library_extract.py", "hero_library_extract")
+        module = import_module(TOOLS / "hero_library_extract.py", "aivideoedit_hero_library_extract")
         manifest = load_json(path)
         errors.extend("HERO_LIBRARY: " + e for e in module.validate_library_manifest(manifest))
         warnings.extend("HERO_LIBRARY: " + w for w in module.library_warnings(manifest))
-    except Exception as e:
-        errors.append(f"cannot validate HERO_LIBRARY.json: {e}")
+        accepted_sha = source.get("sha256") if source.get("status") == "accepted" else None
+        hero_source = manifest.get("source", {}) if isinstance(manifest.get("source"), dict) else {}
+        if accepted_sha and valid_sha(hero_source.get("sha256")) and hero_source.get("sha256").lower() != accepted_sha.lower():
+            errors.append("HERO_LIBRARY source sha256 does not match accepted source library")
+    except Exception as exc:
+        errors.append(f"cannot validate HERO_LIBRARY.json: {exc}")
 
 
 def validate_project_local_fx(project: Path, errors: list[str]) -> None:
     root = project / "project_fx"
-    if not root.is_dir(): return
+    if not root.is_dir():
+        return
     try:
-        gate = _import_module(FX / "project_local_fx_gate.py", "project_local_fx_gate")
-    except Exception as e:
-        errors.append(f"cannot load project-local FX gate: {e}"); return
+        gate = import_module(FX / "project_local_fx_gate.py", "aivideoedit_project_local_fx_gate")
+    except Exception as exc:
+        errors.append(f"cannot load project-local FX gate: {exc}")
+        return
     for manifest_path in sorted(root.glob("*.json")):
-        if manifest_path.name.endswith(".lock.json"): continue
-        try: manifest = load_json(manifest_path)
-        except ValueError as e: errors.append(str(e)); continue
+        if manifest_path.name.endswith(".lock.json"):
+            continue
+        try:
+            manifest = load_json(manifest_path)
+        except ValueError as exc:
+            errors.append(str(exc))
+            continue
         errors.extend(f"{manifest_path.name}: {e}" for e in gate.validate_manifest(manifest, project))
-        lock = manifest_path.with_suffix(".lock.json")
-        errors.extend(f"{manifest_path.name}: {e}" for e in gate.validate_lock(manifest_path, lock, project))
+        lock_path = manifest_path.with_suffix(".lock.json")
+        errors.extend(f"{manifest_path.name}: {e}" for e in gate.validate_lock(manifest_path, lock_path, project))
 
 
 def validate_refinement_qc(project: Path, source: dict, scope: dict, stage: str, states: list[str], errors: list[str]) -> None:
-    if scope.get("active") is not True or source.get("status") != "accepted": return
-    if stage not in states or states.index(stage) < states.index("FINAL_QC_PASSED"): return
+    if scope.get("active") is not True or source.get("status") != "accepted":
+        return
+    if stage not in states or states.index(stage) < states.index("FINAL_QC_PASSED"):
+        return
     path = project / "REFINEMENT_QC.json"
     if not path.is_file():
-        errors.append("recut FINAL_QC_PASSED requires REFINEMENT_QC.json with before/after evidence"); return
+        errors.append("recut FINAL_QC_PASSED requires REFINEMENT_QC.json with before/after evidence")
+        return
     try:
-        tool = _import_module(TOOLS / "refinement_qc_compare.py", "refinement_qc_compare")
+        tool = import_module(TOOLS / "refinement_qc_compare.py", "aivideoedit_refinement_qc_compare")
         data = load_json(path)
         errors.extend("REFINEMENT_QC: " + e for e in tool.validate_comparison(data, source.get("sha256")))
-    except Exception as e:
-        errors.append(f"cannot validate REFINEMENT_QC.json: {e}")
+    except Exception as exc:
+        errors.append(f"cannot validate REFINEMENT_QC.json: {exc}")
 
 
 def validate(branch: str) -> tuple[list[str], list[str]]:
@@ -247,7 +285,8 @@ def validate(branch: str) -> tuple[list[str], list[str]]:
             "general/reusable/tools/recut_guard.py",
             "general/reusable/fx_v2/project_local_fx_gate.py",
         ):
-            if not (OS_ROOT / rel).is_file(): errors.append(f"missing recut system file: {rel}")
+            if not (OS_ROOT / rel).is_file():
+                errors.append(f"missing recut system file: {rel}")
         return errors, warnings
     if not branch.startswith("song/"):
         return errors, warnings
@@ -259,17 +298,19 @@ def validate(branch: str) -> tuple[list[str], list[str]]:
         order = load_json(project / "OPERATING_ORDER.json") if (project / "OPERATING_ORDER.json").is_file() else {}
         plan = load_json(project / "MEDIA_PLAN.json") if (project / "MEDIA_PLAN.json").is_file() else {}
         contract = load_json(CONTRACT_PATH)
-    except ValueError as e:
-        return [str(e)], warnings
-    try: version = int(state.get("director_brain_version", 0) or 0)
-    except Exception: version = 0
+    except ValueError as exc:
+        return [str(exc)], warnings
+    try:
+        version = int(state.get("director_brain_version", 0) or 0)
+    except (TypeError, ValueError):
+        version = 0
     if version < 2 or not order:
         return errors, warnings
-    source = validate_source_library(order, errors)
+    source = validate_source_library(order, errors, project)
     scope = validate_recut_scope(order, source, errors)
     validate_render_recipe(project, errors)
     validate_source_derived_provenance(project, source, scope, errors)
-    validate_hero_library(project, plan, scope, errors, warnings)
+    validate_hero_library(project, plan, scope, source, errors, warnings)
     validate_project_local_fx(project, errors)
     validate_refinement_qc(project, source, scope, state.get("stage", ""), contract.get("states", []), errors)
     return errors, warnings
@@ -280,12 +321,15 @@ def main() -> int:
     ap.add_argument("--branch", default=os.environ.get("GITHUB_REF_NAME") or os.environ.get("AIVIDEOEDIT_BRANCH") or "")
     args = ap.parse_args()
     if not args.branch:
-        print("AIVideoEdit recut contract: FAIL\n- branch required"); return 1
+        print("AIVideoEdit recut contract: FAIL\n- branch required")
+        return 1
     errors, warnings = validate(args.branch)
-    for w in warnings: print("AIVideoEdit recut contract: WARN - " + w)
+    for warning in warnings:
+        print("AIVideoEdit recut contract: WARN - " + warning)
     if errors:
         print("AIVideoEdit recut contract: FAIL")
-        for e in errors: print("- " + e)
+        for error in errors:
+            print("- " + error)
         return 1
     print("AIVideoEdit recut contract: PASS")
     return 0
