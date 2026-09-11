@@ -6,15 +6,25 @@ from __future__ import annotations
 Samples a rendered video, builds a contact sheet, and reports perceptual runs
 that remain too compositionally similar. This is a creative-warning gate, not a
 substitute for human inspection: motion can exist while visual progression is
-still absent.
+still absent. The report is designed to be preserved as BEFORE/AFTER evidence
+for recut/refinement work.
 """
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
 import cv2
 import numpy as np
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def signature(frame: np.ndarray) -> np.ndarray:
@@ -33,6 +43,38 @@ def signature(frame: np.ndarray) -> np.ndarray:
 
 def cosine(a, b):
     return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b) + 1e-8))
+
+
+def summarize_report(report: dict) -> dict:
+    return {
+        "result": report.get("result"),
+        "similar_runs_count": len(report.get("similar_runs", [])) if isinstance(report.get("similar_runs"), list) else 0,
+        "metrics": {
+            "mean_adjacent_similarity": report.get("mean_adjacent_similarity"),
+            "max_adjacent_similarity": report.get("max_adjacent_similarity"),
+            "samples": report.get("samples"),
+            "sample_interval_seconds": report.get("sample_interval_seconds"),
+            "similarity_threshold": report.get("similarity_threshold"),
+            "max_similar_run_samples": report.get("max_similar_run_samples"),
+        },
+    }
+
+
+def compare_reports(before: dict, after: dict) -> dict:
+    b = summarize_report(before)
+    a = summarize_report(after)
+    bm = b["metrics"].get("mean_adjacent_similarity")
+    am = a["metrics"].get("mean_adjacent_similarity")
+    return {
+        "schema": "aivideoedit.export-variety-comparison.v1",
+        "before": b,
+        "after": a,
+        "delta": {
+            "similar_runs": a["similar_runs_count"] - b["similar_runs_count"],
+            "mean_adjacent_similarity": (am - bm) if isinstance(am, (int, float)) and isinstance(bm, (int, float)) else None,
+        },
+        "interpretation": "Metrics are evidence for comparison, not an automatic artistic decision.",
+    }
 
 
 def analyze(video: Path, interval: float, threshold: float, max_run: int, sheet: Path | None):
@@ -72,9 +114,10 @@ def analyze(video: Path, interval: float, threshold: float, max_run: int, sheet:
             canvas[(i // cols) * 180:(i // cols + 1) * 180, (i % cols) * 320:(i % cols + 1) * 320] = th
         sheet.parent.mkdir(parents=True, exist_ok=True)
         cv2.imwrite(str(sheet), canvas)
-    return {
-        "schema": "aivideoedit.export-variety-qc.v1",
+    report = {
+        "schema": "aivideoedit.export-variety-qc.v2",
         "video": str(video),
+        "video_sha256": sha256_file(video) if video.is_file() else None,
         "duration_seconds": duration,
         "sample_interval_seconds": interval,
         "samples": len(imgs),
@@ -83,9 +126,12 @@ def analyze(video: Path, interval: float, threshold: float, max_run: int, sheet:
         "mean_adjacent_similarity": float(np.mean(similarities)) if similarities else None,
         "max_adjacent_similarity": float(np.max(similarities)) if similarities else None,
         "similar_runs": runs,
+        "similar_runs_count": len(runs),
         "result": "REVIEW" if runs else "PASS",
         "interpretation": "REVIEW means consecutive sampled compositions remained highly similar; inspect the contact sheet. Motion metrics alone do not establish visual progression."
     }
+    report["metrics"] = summarize_report(report)["metrics"]
+    return report
 
 
 def main():
@@ -96,12 +142,21 @@ def main():
     ap.add_argument("--max-run", type=int, default=3)
     ap.add_argument("--contact-sheet", type=Path)
     ap.add_argument("--json", dest="json_path", type=Path)
+    ap.add_argument("--compare-before", type=Path, help="prior export_variety_qc JSON to preserve/compare")
+    ap.add_argument("--comparison-json", type=Path)
     a = ap.parse_args()
     report = analyze(a.video, a.interval, a.threshold, a.max_run, a.contact_sheet)
     text = json.dumps(report, indent=2) + "\n"
     if a.json_path:
         a.json_path.parent.mkdir(parents=True, exist_ok=True)
         a.json_path.write_text(text, encoding="utf-8")
+    if a.compare_before:
+        before = json.loads(a.compare_before.read_text(encoding="utf-8"))
+        comparison = compare_reports(before, report)
+        ctext = json.dumps(comparison, indent=2) + "\n"
+        if a.comparison_json:
+            a.comparison_json.parent.mkdir(parents=True, exist_ok=True)
+            a.comparison_json.write_text(ctext, encoding="utf-8")
     print(text, end="")
 
 

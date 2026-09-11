@@ -13,7 +13,7 @@ If the repository is not present in the sandbox, `bootstrap.py install --workspa
 
 A session is not production-capable until bootstrap prints `AIVideoEdit OS BOOTSTRAP: PASS`.
 
-Bootstrap materializes the **entire exact current `main` commit** into `.aivideoedit/os/`, runs the current-main production guard against the active working branch, then writes:
+Bootstrap materializes the **entire exact current `main` commit** into `.aivideoedit/os/`, runs the current-main production and recut guards against the active working branch, then writes:
 - `.aivideoedit/session.json` — session attestation
 - `.aivideoedit/SECOND_BRAIN.md` — generated current-session director context
 
@@ -22,7 +22,7 @@ After bootstrap, read in this order:
 2. `.aivideoedit/SECOND_BRAIN.md`
 3. `.aivideoedit/os/SOUL.md`
 
-For Director Brain v2 projects, `SECOND_BRAIN.md` must surface the active `OPERATING_ORDER.json`; do not begin production until you know the direction authority, production mode, canon state, accepted baseline, refinement scope, forbidden changes, and exact next action.
+For Director Brain v2 projects, `SECOND_BRAIN.md` must surface the active `OPERATING_ORDER.json`; do not begin production until you know the direction authority, production mode, canon state, accepted baseline, accepted source library, baseline-refinement scope, source-library recut scope, forbidden changes, named defects, and exact next action.
 
 ## Authority
 1. Current explicit user instruction.
@@ -36,10 +36,12 @@ Nothing else is automatically authoritative. Historical chats, summaries, unrela
 
 In particular:
 - choose direction authority and production mode before production media generation;
-- approval creates canon;
-- preserve an accepted baseline;
+- approval creates canon, but acceptance scope matters;
+- preserve an accepted complete-edit baseline;
+- preserve an accepted source library as canonical visual source material while keeping its timeline editable;
 - if the user says “keep this, fix that,” change only the named defect unless broader change is explicitly authorized;
-- do not restart or reinterpret locked canon by habit;
+- when canonical source material exists, diagnose first and prefer editorial/source-derived repair over unnecessary regeneration;
+- do not restart, replace source canon, or reinterpret locked canon by habit;
 - internal scene motion precedes camera motion for living-scene work;
 - visible production quality outranks metadata completion.
 
@@ -56,22 +58,26 @@ Production mode:
 - `cinematic`
 - `hybrid`
 
-A supplied reference can lead any of the three production modes. Never assume “reference video” means “cinematic.” Analyze the reference motion/composition language first.
+A supplied reference can lead any of the three production modes. Never assume “reference video” means “cinematic.” Analyze the reference motion/composition language first. A reference does not authorize content reuse; `accepted_source_library` requires explicit current-user authorization.
 
 ## Runtime law
 - Do not bypass bootstrap by manually copying rules into a sandbox.
 - Do not use a stale branch copy of the guard when the bootstrapped current-main guard differs.
-- Before stage-changing work, run both:
+- Before stage-changing work, run:
   - `python .aivideoedit/os/general/reusable/tools/production_guard.py --branch <current-branch>`
   - `python .aivideoedit/os/general/reusable/tools/narrative_guard.py --branch <current-branch>`
+  - `python .aivideoedit/os/general/reusable/tools/recut_guard.py --branch <current-branch>` when present in the current-main OS (it is mandatory for current-main versions that provide it).
 - If the session attestation is missing, branch-mismatched, or its critical OS hashes changed, the guard must fail.
 - Start every new agent/session with a fresh bootstrap, even when reusing the same sandbox.
-- For a Director Brain v2 project, do not perform an action outside `refinement_scope.allowed_changes` while refinement is active unless the current user updates authorization.
+- For a Director Brain v2 project, do not perform an action outside `refinement_scope.allowed_changes` while baseline refinement is active unless the current user updates authorization.
+- For an active source-library recut, do not act outside `recut_scope.allowed_changes`, do not violate `forbidden_changes`, and do not replace source canon when `source_replacement_authorized=false`.
 
 ## Non-negotiable sequence
 Source ingest -> reference + music analysis -> resolve lyrics status -> resolve genre authority -> choose direction authority + production mode -> visual/media approach -> storyboard -> frame-followable video script -> shot packages with real media evidence -> short finished mode-aware proofs -> FX lock -> assembly -> actual-export mode-aware QC -> archive.
 
 Short reference videos are fully extracted. Long references use recorded meaningful sampling.
+
+A supported recovery/recut specialization for productions with already-good canonical visual source material is documented in `general/reusable/RECUT_REFINEMENT.md`. It does not bypass the normal sequence; it specializes ingest/coverage/edit/QC around an accepted source library.
 
 ### Music / lyrics / genre authority gate
 Before story direction is locked:
@@ -106,13 +112,26 @@ The script must cover the complete target frame range and map each span to: shot
 
 For Director Brain v2 `living_scene` work, every script entry must identify semantic `motion_regions` and protected regions. For `hybrid`, every entry must declare whether that shot is using `living_scene` or `cinematic` behavior and meet the corresponding requirements.
 
-### Canon and refinement law
+### Canon, baseline refinement, and source-library recut law
 For Director Brain v2 projects:
 - canonical assets are never disposable source material;
 - asset lifecycle is `exploratory -> candidate -> approved -> canonical -> derived`, with `rejected` and `retired` terminal/side states as appropriate;
-- an accepted baseline must record its locator, hash, and current-user acceptance statement;
-- an active refinement scope must name the goal, allowed changes, and forbidden changes;
-- `restart_authorized=false` means do not rebuild/reinterpret the accepted foundation.
+- an accepted baseline must record its locator, hash, and current-user acceptance statement and protects the complete edit;
+- an accepted source library is separate and must record role, locator, hash, current-user acceptance statement, `content_reuse_authorized=true`, and `timeline_locked=false`;
+- reference presence alone never creates source-library authorization;
+- an active baseline refinement scope must name the goal, allowed changes, and forbidden changes; `restart_authorized=false` means do not rebuild/reinterpret the accepted foundation;
+- an active source-library recut must name actual defects plus allowed and forbidden changes; `source_replacement_authorized=false` means preserve approved source pixels/world and solve defects with traceable coverage/editing instead of silently regenerating the canon;
+- source-derived assets must record the accepted source-library hash, source time/range, and the derivation performed;
+- generated new content must never be mislabeled as source-derived coverage.
+
+### Canonical hero-library gate
+When an approved source video is used as a hero/shot library, use `general/reusable/tools/hero_library_extract.py` or an equivalent implementation that produces the same evidence. Do not simply keep every Nth second as final coverage. The selected library must be non-empty, reject/warn on near-duplicates, record source/frame hashes and measured diversity evidence, and avoid semantic claims that were not actually measured.
+
+### Backend-equivalence gate
+Creative recipe and render backend are separate. If the proof backend and production backend differ, `RENDER_RECIPE.json` must record both backends, parameter mappings, the render implementation, and a representative PASS equivalence proof demonstrating preserved behavior, visible effects, and traceability. "It should look the same" is not a valid proof.
+
+### Project-local FX gate
+Canonical reusable FX remain under `general/reusable/fx_v2/`. A one-off production effect may live under the active project's `project_fx/` only if `general/reusable/fx_v2/project_local_fx_gate.py` validates its real implementation/inputs, deterministic or recorded parameters where applicable, proof media/hash, visible pixel change, truthful naming, PASS QC, and current precompile lock. Project-local validation never promotes an effect into canonical `fx_v2`.
 
 ### Real-media evidence gate
 A storyboard is never a substitute for shot production. A successful command is never artistic QC.
@@ -120,6 +139,7 @@ A storyboard is never a substitute for shot production. A successful command is 
 - A shot package consisting only of `README.md`, JSON metadata, or procedural placeholders is invalid.
 - Every shot package needs hashed `media_evidence` pointing to actual source/generated/derived visual media.
 - If `MEDIA_PLAN.json` selects generated stills/support imagery/living paintings, `ASSET_MANIFEST.json` must contain actual generated visual asset evidence.
+- If source-derived coverage is selected, `ASSET_MANIFEST.json` must preserve its accepted-source provenance.
 - A request to keep chat light or avoid previews **must never** be interpreted as permission to skip real image generation. If the active generation runtime necessarily surfaces image previews in chat, those previews are allowed and should be kept concise.
 
 Effects must be visible and traceable. Technology names must be truthful.
@@ -128,7 +148,8 @@ Effects must be visible and traceable. Technology names must be truthful.
 Use `general/reusable/MODE_AWARE_QC.md`.
 - `living_scene`: prove internal motion, independent material behavior, identity stability, restrained camera, clean loops/joins.
 - `cinematic`: prove readable action, sufficient coverage, continuity, progression, music-directed pacing.
-- `hybrid`: apply the correct checks per section and prove the methods belong to one coherent film.
+- `hybrid`: apply the correct checks per section and prove the methods belong to one coherent film; source-derived coverage may expand an accepted living world while remaining traceable to source canon.
 - `reference_led`: also compare the proof's actual behavior against the authorized reference language.
+- source-library recut: preserve PRE and POST QC for repetition/composition, runtime, black/freeze, framing/aspect, audio sync, continuity warnings, mode-aware QC, and source/canon integrity. Post-edit canon integrity must PASS.
 
-Technical success never creates artistic acceptance.
+Technical success never creates artistic acceptance. Numerical improvement is evidence, not the director.

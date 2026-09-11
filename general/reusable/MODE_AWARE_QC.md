@@ -39,8 +39,23 @@ Each section/shot must declare whether it is using living-scene or cinematic beh
 - intentional transitions between methods;
 - no complexity added merely to demonstrate capability.
 
+When an accepted source library exists, hybrid coverage may expand the canonical living visual world with source-derived environment/detail inserts, alternate framing, source-range motion, canonical optical states, and shorter cinematic coverage where the music benefits. Verify source provenance and canon integrity for every such derived shot.
+
 ## Reference comparison
 When direction authority is `reference_led`, proof evidence must also state what motion/composition behavior was taken from the reference and whether the proof reproduces that behavior without unauthorized content reuse.
 
+## Source-library recut comparison
+When `accepted_source_library.status=accepted` and a recut is active, preserve a PRE-EDIT QC snapshot and a POST-EDIT QC snapshot. At minimum compare:
+- repetition/composition evidence (including `similar_runs_count` where export-variety QC is used);
+- runtime;
+- black/freeze result;
+- framing/aspect result;
+- audio coverage/sync result;
+- continuity warnings;
+- mode-aware QC result;
+- source/canon integrity, including the accepted source-library SHA-256.
+
+The post-edit source/canon integrity result must PASS before final recut acceptance. Numerical metrics are evidence, not the director: do not trade away artistic quality merely to improve a score.
+
 ## Acceptance rule
-Technical pass never creates artistic acceptance. User acceptance may lock a baseline. Once locked, later QC compares the refinement against that accepted baseline and verifies that forbidden canon was not changed.
+Technical pass never creates artistic acceptance. User acceptance may lock a baseline or may separately authorize a canonical source library. A locked baseline protects the complete edit. An accepted source library protects its approved source pixels/world while keeping the timeline editable. Later QC must verify the correct protection rule for the active workflow.

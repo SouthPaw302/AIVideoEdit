@@ -1,5 +1,5 @@
 {
-  "schema": "aivideoedit.production-contract.v2",
+  "schema": "aivideoedit.production-contract.v3",
   "authority": [
     "current_user_instruction",
     "active_song_branch_state",
@@ -45,8 +45,17 @@
     "selection_rule": "direction authority and production mode are separate decisions and must be locked before production media generation",
     "approval_creates_canon": true,
     "accepted_baseline_rule": "an explicitly user-accepted full picture baseline must record locator, sha256, and acceptance statement and becomes protected production truth",
+    "accepted_source_library_rule": "media explicitly accepted by the current user as canonical source material must separately record role, locator, sha256, acceptance statement, content_reuse_authorized=true, and timeline_locked=false; source-library acceptance does not mean the complete edit is accepted",
+    "accepted_source_library_roles": [
+      "hero_library",
+      "shot_library",
+      "visual_world",
+      "reference_content"
+    ],
     "refinement_rule": "when refinement_scope.active=true, change only allowed_changes, preserve forbidden_changes, and do not restart/reinterpret canon when restart_authorized=false",
+    "recut_rule": "when recut_scope.active=true, diagnose named defects first, use only allowed_changes, preserve forbidden_changes, keep accepted source canon intact, and do not silently replace the accepted source library",
     "accepted_master_recovery_rule": "an accepted master is itself a recoverable source of truth and may be analyzed to reconstruct lost production structure",
+    "accepted_source_recovery_rule": "an accepted source library is canonical visual source truth and may be analyzed/extracted into traceable source-derived coverage while the timeline remains editable",
     "local_repair_preference": true
   },
   "reference_policy": {
@@ -57,6 +66,7 @@
     "images_rule": "inspect_all_supplied_images",
     "reference_role_rule": "every visual reference must have an explicit authorized production role; style, motion-language, palette, composition, lighting, or effect references teach those properties only and do not authorize reuse of the reference subject, scene, source frames, or source footage as final-picture content unless the current user explicitly authorizes content reuse",
     "reference_content_reuse_default": "denied_unless_current_user_explicitly_authorizes",
+    "accepted_source_library_conversion_rule": "a reference becomes an accepted source library only through explicit current-user content-reuse authorization plus accepted_source_library identity/hash; never infer this state from reference presence",
     "no_visual_reference_rule": "before production media generation present at least three materially distinct numbered artistic-rendering routes in chat; each route must include a name, story interpretation, rendering/media treatment, production mode, and numbered mini-storyboard of at least three beats/frames; record all routes plus the current user's explicit selection/hybrid/modification in MEDIA_PLAN.json and lock the selection",
     "no_visual_reference_min_options": 3,
     "no_visual_reference_min_storyboard_beats": 3,
@@ -84,7 +94,60 @@
   "media_evidence_policy": {
     "metadata_only_shot_packages_forbidden": true,
     "generated_capability_requires_generated_asset_evidence": true,
-    "shot_package_requires_media_evidence": true
+    "shot_package_requires_media_evidence": true,
+    "source_derived_coverage_requires_provenance": true,
+    "source_derived_required_fields": [
+      "source_library_sha256",
+      "derivation",
+      "source_time_or_range"
+    ],
+    "generated_new_content_must_not_be_mislabeled_source_derived": true
+  },
+  "hero_library_policy": {
+    "manifest_file": "HERO_LIBRARY.json",
+    "tool": "general/reusable/tools/hero_library_extract.py",
+    "final_selection_rule": "quality/perceptual-composition diversity selection; uniform interval may seed candidates but must not be the final selection rule",
+    "empty_library_forbidden": true,
+    "near_duplicates_warn": true,
+    "semantic_claims_require_measurement_or_annotation": true
+  },
+  "render_recipe_policy": {
+    "manifest_file": "RENDER_RECIPE.json",
+    "creative_recipe_separate_from_backend": true,
+    "backend_substitution_requires": [
+      "recorded_backend_mapping",
+      "representative_equivalence_proof_pass",
+      "behavior_preserved",
+      "effects_visible",
+      "traceable_render_implementation"
+    ]
+  },
+  "project_local_fx_policy": {
+    "directory": "project_fx",
+    "gate": "general/reusable/fx_v2/project_local_fx_gate.py",
+    "canonical_authority_remains": "general/reusable/fx_v2",
+    "requires_real_implementation": true,
+    "requires_real_render_inputs": true,
+    "requires_visible_pixel_change": true,
+    "requires_proof_hash_qc_and_lock": true,
+    "placeholders_forbidden": true,
+    "promotion_to_canonical_is_separate": true
+  },
+  "refinement_qc_policy": {
+    "comparison_file": "REFINEMENT_QC.json",
+    "tool": "general/reusable/tools/refinement_qc_compare.py",
+    "preserve_before_and_after": true,
+    "required_evidence": [
+      "repetition_composition",
+      "runtime",
+      "black_freeze",
+      "framing_aspect",
+      "audio_sync",
+      "continuity_warnings",
+      "mode_aware_qc",
+      "source_canon_integrity"
+    ],
+    "metrics_are_evidence_not_direction": true
   },
   "asset_lifecycle_policy": {
     "statuses": [
@@ -171,7 +234,8 @@
     ],
     "FINAL_QC_PASSED": [
       "final_qc_passed",
-      "mode_aware_final_qc_if_director_brain_v2"
+      "mode_aware_final_qc_if_director_brain_v2",
+      "before_after_refinement_qc_if_recut_active"
     ],
     "ARCHIVED": [
       "archive_complete"
