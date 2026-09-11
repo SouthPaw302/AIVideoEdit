@@ -1,10 +1,13 @@
 {
-  "schema": "aivideoedit.media-capabilities.v1",
+  "schema": "aivideoedit.media-capabilities.v2",
   "capabilities": [
     {"id":"source_video","kind":"source","requires":"supplied or authorized video"},
     {"id":"extracted_frames","kind":"source-derived","requires":"reference video"},
     {"id":"source_images","kind":"source","requires":"supplied or authorized images"},
     {"id":"authorized_source_images","kind":"source","requires":"images explicitly supplied or authorized for the current production; provenance recorded"},
+    {"id":"accepted_source_library","kind":"source-canon","requires":"current-user acceptance with locator, sha256, content_reuse_authorized=true, and timeline_locked=false"},
+    {"id":"canonical_hero_library","kind":"source-derived","requires":"accepted source library plus HERO_LIBRARY.json with non-empty perceptually diverse selections and source/hash/diversity evidence"},
+    {"id":"source_derived_coverage","kind":"source-derived","requires":"accepted source library; each derived asset records source-library sha256, source time/range, and derivation; locked source canon is preserved"},
     {"id":"generated_stills","kind":"generated","requires":"established visual/media approach; locked identity when applicable"},
     {"id":"recovered_generated_stills","kind":"generated-recovered","requires":"previously generated stills with recoverable provenance, hashes, and explicit authority for reuse in the current production"},
     {"id":"generated_support_imagery","kind":"generated","requires":"established visual/media approach"},
