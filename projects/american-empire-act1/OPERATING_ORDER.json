@@ -1,0 +1,13 @@
+{
+  "project": "american-empire-act1",
+  "direction_authority": "user_directed",
+  "production_mode": "hybrid",
+  "primary_behavior": "cinematic",
+  "secondary_behavior": "living_scene",
+  "production_logic": ["story", "storyboard", "hero_frames", "animation_fx", "dialogue_foley", "score", "final_mix_qc"],
+  "music_relationship": "score_is_composed_to_picture_after_scene_structure_is_locked",
+  "visual_route": "lighter French cyberpunk noir",
+  "scene_1_target_seconds": 80,
+  "scene_1_hero_count": 6,
+  "scene_1_animation_language": ["2.5D multiplane parallax", "living rain", "reflection displacement", "restrained camera drift", "subtle practical-light breathing", "controlled depth haze"]
+}
