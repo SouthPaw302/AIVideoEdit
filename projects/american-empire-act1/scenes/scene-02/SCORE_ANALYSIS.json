@@ -1,0 +1,21 @@
+{
+  "schema":"aivideoedit.scene-score-analysis.v1",
+  "scene":"scene-02",
+  "source":"Synchronized Silence.wav",
+  "source_duration_seconds":189.6,
+  "sample_rate":48000,
+  "channels":2,
+  "editorial_use":{"start":0.0,"end":96.0,"duration":96.0,"source_remainder_reserved":true},
+  "tempo":{"detected_full_pulse_bpm":143.6,"editorial_half_time_bpm":71.8,"interpretation":"Use the half-time pulse as continuity with Scene 01; do not cut every detected beat."},
+  "measured_energy_change_points_seconds":[2.5,6.5,16.0,23.0,33.0,39.0,43.5,50.5,56.5,66.5,71.0],
+  "directing_interpretation":[
+    {"range":[0.0,16.0],"function":"continuity aftermath; restrained unease"},
+    {"range":[16.0,33.0],"function":"ordinary systems begin behaving in coordination"},
+    {"range":[33.0,56.5],"function":"city-scale pattern becomes legible"},
+    {"range":[56.5,71.0],"function":"information/dialogue turn; score may be ducked beneath speech"},
+    {"range":[71.0,84.0],"function":"proof/revelation; permit a short editorial attenuation before re-entry"},
+    {"range":[84.0,96.0],"function":"Claire acts; forward-motion ending"}
+  ],
+  "mix_policy":{"dialogue_duck_db":"-6 to -10 dB as needed","reveal_near_silence":"authorized for approximately 0.5-1.5 s if picture benefits","return_behavior":"bring score back with existing source energy rather than artificial EDM-style drop","hard_music_edits":"crossfade or phrase-cut only"},
+  "status":"locked_for_scene02_script"
+}
