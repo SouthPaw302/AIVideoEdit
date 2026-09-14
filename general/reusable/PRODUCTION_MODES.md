@@ -1,6 +1,6 @@
 # AIVideoEdit Production Modes
 
-Production mode describes **what kind of finished visual experience is being made**. Direction authority describes **where the directing language comes from**. They are separate decisions.
+Production mode describes **what kind of finished visual experience is being made**. Direction authority describes **where the directing language comes from**. Shot behavior describes **how an individual shot is rendered**. These are separate decisions.
 
 ## Direction authority
 - `reference_led` — supplied visual reference teaches the visual/motion language. It does not automatically authorize content reuse.
@@ -35,20 +35,52 @@ Primary proof questions:
 ### `hybrid`
 A deliberate combination of cinematic progression and living-scene construction. Sections or shots declare which behavior they use. This is not permission to mix methods randomly; each section must have a reason and mode-appropriate proof criteria.
 
-An accepted source library may be expanded inside hybrid mode through **source-derived coverage** without abandoning its visual world. One stable hero composition can yield environment/detail inserts, alternate framings, a return to the hero, canonical optical/effect states, source-range motion, and progressively shorter coverage around musical acceleration. This is a directing strategy, not a required rhythm. Every derived shot remains traceable to the accepted source hash and does not become "generated new content" merely because it was re-framed or composited.
+An accepted source library may be expanded inside hybrid mode through **source-derived coverage** without abandoning its visual world. One stable hero composition can yield environment/detail inserts, alternate framings, a return to the hero, canonical optical/effect states, source-range motion, and progressively shorter coverage around musical acceleration. Every derived shot remains traceable to accepted source hashes.
+
+Hybrid production may also use bounded true-video continuation where real articulated action is required. The video-generation backend must inherit the same locked character/world state and may not become a new directing authority.
 
 Primary proof questions:
-- Does each section clearly serve either living-scene or cinematic behavior?
-- Do the two methods share one visual world and continuity language?
+- Does each section clearly serve living-scene, source-derived, conventional cinematic, or generated-continuation behavior?
+- Do the methods share one visual world and continuity language?
 - Are transitions between methods intentional?
 - When canonical source pixels are reused, is source provenance intact and unauthorized replacement absent?
 - Does complexity improve the film?
 
+## Shot behaviors
+
+### `LIVING_STILL`
+Canonical plate plus semantic internal motion, 2.5D depth, localized atmosphere/light/material response, and restrained camera.
+
+### `SOURCE_DERIVED`
+Reframing, semantic compositing, inserts, optical states, or other traceable coverage derived from canonical source material without whole-scene regeneration.
+
+### `CINEMATIC_COVERAGE`
+Conventional shot coverage with authored staging and continuity control.
+
+### `GENERATED_CONTINUATION`
+True temporal video generated from a canonical start state when real articulated motion is required. It must declare:
+- canonical start source/hash;
+- immutable identity/world anchors;
+- allowed character/prop/environment actions;
+- camera envelope;
+- environmental force state;
+- duration/cadence;
+- audio policy;
+- terminal-frame handling.
+
+The preferred chain is:
+`canonical start -> bounded continuation -> temporal QC -> approved terminal frame -> next shot`.
+
+Generated continuation is appropriate for walking, turning, speaking with visible articulation, manipulating props, doors opening, cloth/curtains reacting to wind, or other motions that cannot be convincingly represented as a living still. It is not appropriate merely because a provider can generate video.
+
+## Generated audio behavior
+If a video backend returns synchronized audio, classify it explicitly as `keep`, `duck`, `replace`, `isolate_sfx`, `isolate_ambience`, or `discard`. Generated audio never silently overrides locked score/dialogue.
+
 ## Selection rule
-Before production media generation, record both direction authority and production mode in the active project's `OPERATING_ORDER.json`.
+Before production media generation, record direction authority and production mode in the active project's `OPERATING_ORDER.json`. Each production shot must also declare its shot behavior before final render.
 
 When there is no usable visual reference, the existing no-reference visual-direction gate still applies: present materially distinct routes to the user, let the user select or combine them, then record the resulting direction authority and production mode.
 
-When there is a supplied visual reference, analyze it before selecting production mode. Do not assume that a moving reference implies cinematic production; it may demonstrate a living-scene or hybrid motion language.
+When there is a supplied visual reference, analyze it before selecting production mode. Do not assume that a moving reference implies cinematic production; it may demonstrate living-scene, generated-continuation, or hybrid motion language.
 
 For recovery/recut productions with an accepted source library, diagnose the actual defect before considering regeneration. See `RECUT_REFINEMENT.md`.
