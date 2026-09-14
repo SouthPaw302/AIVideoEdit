@@ -2,7 +2,7 @@
 
 Branch: `project/american-empire-act1/scene-02`
 Canonical project root: `project/american-empire-act1/main`
-Stage: `SCRIPT_LOCKED / EXECUTION_MAP_LOCKED / MEDIA_BUILD_READY`
+Stage: `SCRIPT_LOCKED / EXECUTION_MAP_LOCKED / FX_LANGUAGE_ACCEPTED / VISUAL_PROOF_REJECTED / MEDIA_BUILD_REQUIRED`
 Director rules: current rebooted `main`, including bounded `GENERATED_CONTINUATION` behavior and coherent-storm FX doctrine.
 
 Scene 01 accepted continuity baseline remains `Scene01_FULL_ASSEMBLY03.mp4` until a later Scene 01 candidate is explicitly accepted by the current user. Newer Scene 01 candidates may inform FX behavior only; they do not silently replace continuity canon.
@@ -41,6 +41,18 @@ All continuation shots require a canonical start-frame lock, explicit allowed/fo
 
 The coherent storm behaves as one force system across moving cloud mass, depth-layered exterior rain, gust direction, glass/wet response, haze, lightning and source-local room illumination. Weather remains exterior/window/glass constrained; the room does not receive whole-frame rain or global weather overlays.
 
+## Scene02_FX_PROOF01 verdict
+The current user rejected the proof as Scene 02 media because it reused Scene 01 stills and did not create the new Scene 02 visual/script continuation required by `MEDIA_PLAN.json` and `SCRIPT.json`.
+
+Do not promote, reuse, or treat `Scene02_FX_PROOF01` as Scene 02 visual canon.
+
+What survives from the rejected proof:
+- improved coherent-storm behavior;
+- stronger rain/cloud/wet-surface/lightning coupling;
+- improved depth separation and localized lighting response.
+
+These effect behaviors are accepted as a useful direction and should be carried into the next proof, but only after actual Scene 02 hero media is created from the seven authorized roles.
+
 Media plan still authorizes only the seven named Scene 02 hero roles. They must inherit Claire identity/wardrobe, apartment topology, window/city orientation, graphic-novel line language, palette, and source-coupled lighting from Scene 01. The previously generated glossy/cyber-thriller storyboard is rejected and must never be used as canon or as a generation reference.
 
-Next action: build continuity-safe Scene 02 hero/reference media role-by-role, then produce a representative proof covering (a) room/device synchronization, (b) city/storm coordination, and (c) one bounded generated-continuation character beat before full 96-second assembly.
+Next action: create genuine Scene 02 media role-by-role from `MEDIA_PLAN.json`, beginning with S2H01 continuity-after-window and S2H02 first-device-anomaly, then construct a new representative proof from those new assets. Do not build another proof from Scene 01 stills alone.
