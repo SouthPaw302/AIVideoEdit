@@ -12,7 +12,24 @@ The six approved Scene 01 hero panels are protected source canon. Do not regener
 ### Canonical-byte materialization status
 The current Git branch does **not** contain the six canonical PNG bytes at the manifest paths under `scenes/scene-01/hero_frames/`; it contains only their identities, hashes, dimensions, roles and shot-package references. The previously rendered recovery proof is likewise referenced only by an `active-workspace://` locator in `PROOF01_QC.json` and is not committed as a GitHub artifact or release asset.
 
-This is now a fail-closed production blocker. No agent may regenerate lookalike replacements, substitute other images, or claim a new representative proof from metadata alone. Before another render, the exact original canonical PNG bytes must be materialized into the production workspace and verified against all six SHA-256 values in `ASSET_MANIFEST.json` (or recovered from a byte-identical persistent artifact if one is later located).
+This remains a fail-closed production blocker. No agent may regenerate lookalike replacements, substitute other images, recover canon from a rejected/compressed proof, or claim a new representative proof from metadata alone. Before another render, the exact original canonical PNG bytes must be materialized into the production workspace and verified against all six SHA-256 values in `ASSET_MANIFEST.json` (or recovered from a byte-identical persistent artifact if one is later located).
+
+## Proof05 — REJECTED BY CURRENT USER
+Reviewed artifact: `Scene01_LAYERED_FX_PROOF05.mp4`, 8.0 seconds, 720x404, 24 fps.
+
+Current-user verdict: **FAILED — REDO IT.**
+
+Proof05 is rejected production media. It must not be promoted, used as an accepted baseline, used to satisfy the representative proof gate, or used as a surrogate source for the missing canonical hero frames.
+
+Redo policy:
+- return to the six canonical hero panels, not Proof05 frames;
+- build actual multiplane depth with independently moving real foreground/midground layers rather than a weak whole-picture drift;
+- make foreground/internal motion materially readable while keeping Claire/phone/window geometry locked;
+- constrain rain/reflection behavior to exterior/window/glass semantic regions only;
+- tie practical illumination and lightning to visible scene sources with coherent falloff/decay rather than generic brightness changes;
+- keep camera movement subordinate to scene motion;
+- captions must remain readable without obscuring faces, phone, lightning or foreground action;
+- do not carry Proof05 forward as the foundation of Proof06.
 
 ## Score
 `Pre-dawn in Paris.wav` is ingested as the real Scene 01 score.
@@ -29,7 +46,7 @@ Captions are required before picture lock. Exact wording and working timings are
 ## Shot-package preparation
 All 12 Scene 01 shot packages exist under `shot_packages/S01` through `S12`. Each records canonical hero media evidence, semantic motion regions, protected regions, and assigned existing FX IDs. Interior packages explicitly constrain rain to window/outside regions.
 
-## Rejected proof
+## Rejected earlier full FX pass
 The previous full FX pass is rejected and must not be promoted. Named defects:
 - rain visibly present inside the room;
 - no convincing 2.5D foreground/midground/background separation;
@@ -38,10 +55,10 @@ The previous full FX pass is rejected and must not be promoted. Named defects:
 - global effect application instead of semantic region assignment.
 
 ## Current direction
-No more image generation. Work only from the approved six hero panels and existing repo capabilities. Use the ingested score and captions as active production media.
+No more image generation. Work only from the approved six hero panels and existing repo capabilities. Use the ingested score and captions as active production media. Proof05 is rejected; the next proof is a clean rebuild from canon after the original bytes are restored and hash-verified.
 
 ## Prepared next proof
-`PROOF_PLAN.md` defines a four-part representative proof using H01, H02, H04/H06 and H05. After the exact canonical bytes are restored and hash-verified, the proof must visibly demonstrate 2.5D separation, motivated foreground motion, region-limited weather/reflections, source-coupled lighting, identity stability and caption readability before FX lock or another full Scene 01 assembly.
+`PROOF_PLAN.md` remains the governing four-part representative proof using H01, H02, H04/H06 and H05. The redo must visibly demonstrate stronger practical 2.5D separation, motivated foreground/internal motion, region-limited weather/reflections, source-coupled lighting, identity stability and caption readability before FX lock or another full Scene 01 assembly.
 
 ## Guard compatibility
 This child branch uses the existing `song/...` namespace expected by current-main production/narrative guards while preserving `movie/american-empire-act1` as the canonical parent story branch. Do not discard or rename the movie branch.
