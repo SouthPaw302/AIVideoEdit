@@ -1,14 +1,39 @@
 {
   "schema":"aivideoedit.operating-order.v1",
-  "mission":"Finish The American Empire Act I Scene 01 as an approximately 80-second cinematic comic-book sequence from the six approved hero panels, using the existing AIVideoEdit production system, with captions integrated before picture lock and the ingested Suno score mapped to the existing picture structure.",
+  "mission":"Begin The American Empire Act I Scene 02 from the accepted Scene 01 continuity baseline while preserving character, environment, picture language and production discipline. Develop Scene 02 staging and shot architecture now; leave score-dependent timing open until the current user supplies the Scene 02 score.",
   "direction_authority":"user_directed",
   "production_mode":"hybrid",
-  "canon_lock":{"locked":true,"picture_language":"Cinematic comic book / graphic novel: bold inked value separation, restrained halftone/print texture, pale gray-blue pre-dawn Paris, cream stone, muted cyan technology, warm amber practical light, no saturated neon, stable Claire identity and apartment geography.","items":["Scene 01 storyboard: 5:47 AM, Paris","Six approved Scene 01 hero panels and their exact hashes in ASSET_MANIFEST.json","Claire Delacroix identity, wardrobe, apartment architecture, window geometry, phone design and city orientation","Captions preserve the existing dialogue and are integrated before picture lock","Scene 01 score is Pre-dawn in Paris.wav, measured at ~68 BPM and mapped in SCORE_INGEST.json/SCORE_MAP.md","Lightning/revelation picture event is synchronized near the measured 58.35s score turn","Internal scene motion before camera motion","No replacement or regeneration of the six canonical hero panels without explicit user authorization"]},
-  "accepted_baseline":{"status":"none","file_or_locator":null,"sha256":null,"user_acceptance_statement":null},
-  "accepted_source_library":{"status":"accepted","role":"hero_library","file_or_locator":"active-workspace://projects/american-empire-act1/scenes/scene-01/hero_frames/","sha256":"a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57","user_acceptance_statement":"User approved the comic direction and six hero assets, then instructed: 'We have the assets please follow the rules and try again.'","content_reuse_authorized":true,"timeline_locked":false},
+  "canon_lock":{
+    "locked":true,
+    "picture_language":"Cinematic comic book / graphic novel: bold inked value separation, restrained halftone/print texture, pale gray-blue environment, cream stone, muted cyan technology, warm amber practical light, no saturated neon, stable Claire identity and world geography.",
+    "items":[
+      "Scene 01 accepted master Scene01_FULL_ASSEMBLY03.mp4, sha256 599e21039c303e287d8e729af46209132b5273bbf9ef2f760925563d931eb71e",
+      "Claire Delacroix identity, anatomy, established wardrobe continuity and facial structure",
+      "Apartment architecture, window geometry, Paris orientation and established spatial relationships where relevant",
+      "Accepted Scene 01 FX language: practical multiplane 2.5D, semantic internal motion, physically constrained weather, source-coupled lighting and subordinate camera motion",
+      "Cinematic comic-book / graphic-novel picture language and restrained palette",
+      "Captions/dialogue are integrated before picture lock and must avoid faces, hands, phones and major visual events",
+      "No continuity-breaking redesign or replacement of locked Scene 01 canon without explicit current-user authorization"
+    ]
+  },
+  "accepted_baseline":{
+    "status":"accepted",
+    "file_or_locator":"active-workspace://Scene01_FULL_ASSEMBLY03/Scene01_FULL_ASSEMBLY03.mp4",
+    "sha256":"599e21039c303e287d8e729af46209132b5273bbf9ef2f760925563d931eb71e",
+    "user_acceptance_statement":"Good warp that up move to scene 2. Maintaining continuity. I'll mane you the score when ready director."
+  },
+  "accepted_source_library":{
+    "status":"accepted",
+    "role":"scene01_continuity_canon",
+    "file_or_locator":"projects/american-empire-act1/ASSET_MANIFEST.json",
+    "sha256":"a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57",
+    "user_acceptance_statement":"Scene 01 approved and wrapped; maintain continuity into Scene 02.",
+    "content_reuse_authorized":true,
+    "timeline_locked":true
+  },
   "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},
   "recut_scope":{"active":false,"named_defects":[],"allowed_changes":[],"forbidden_changes":[],"source_replacement_authorized":false},
-  "current_user_direction":"Proof05 failed. Redo the representative FX proof from the six canonical hero panels. Do not reuse Proof05 as source material or as a baseline. Preserve canon, score, captions and storyboard while materially improving physical multiplane depth, foreground/internal motion, semantic weather isolation and source-coupled lighting.",
-  "exact_next_action":"Fail closed until the exact six canonical Scene 01 PNG bytes are materialized from the original active production workspace or another byte-identical persistent copy and verified against every SHA-256 in ASSET_MANIFEST.json. Do not regenerate, substitute, or recover them from Proof05. Once all six hashes pass, rebuild a fresh representative proof from canon: H01 exterior with clear foreground/midground/background differential; H02/H03 interior with real phone/table foreground and dry room/window-only weather; H04/H06 profile/reflection with independent foreground/glass motion and locked Claire identity; H05 coherent source-driven lightning event. Captions remain active and readable. Do not assemble the full 80-second scene until the current user accepts this new proof.",
-  "updated_at_utc":"2026-09-14T05:35:00Z"
+  "current_user_direction":"Wrap Scene 01, move to Scene 02, maintain continuity, and wait for the user to provide the Scene 02 score when the director is ready.",
+  "exact_next_action":"Create/open the dedicated Scene 02 production branch from this accepted Scene 01 continuity state. Establish Scene 02 narrative beats, staging, continuity anchors and storyboard/shot architecture without inventing score timing. Preserve Claire/world continuity and the accepted FX language. When the user supplies the Scene 02 score, ingest/analyze it and then lock Scene 02 timing and music-event mapping before production media assembly.",
+  "updated_at_utc":"2026-09-14T06:00:00Z"
 }
