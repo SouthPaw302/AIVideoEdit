@@ -1,0 +1,47 @@
+{
+  "schema": "aivideoedit.scene-proof-qc.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-01",
+  "proof_id": "Scene01_FX_RECOVERY_PROOF01",
+  "status": "CANDIDATE_USER_REVIEW_REQUIRED",
+  "artifact": {
+    "locator": "active-workspace://projects/american-empire-act1/scenes/scene-01/proofs/fx_recovery_01/Scene01_FX_RECOVERY_PROOF01.mp4",
+    "sha256": "b72ed4e4ccf597b9728498575e25125f3b768d7b4495f8f3c0dc334f212ba450",
+    "duration_seconds": 10.0,
+    "fps": 24.0,
+    "frames": 240,
+    "resolution": [960, 540]
+  },
+  "technical_qc": {
+    "decoded_frames": 240,
+    "black_frames": 0,
+    "freeze_adjacent_pairs": 0,
+    "mean_adjacent_frame_delta": 2.995398051832051
+  },
+  "motion_evidence": {
+    "H01_parallax_sample_frames": [10, 40],
+    "foreground_left_building_median_flow_px": 6.70289421081543,
+    "mid_city_median_flow_px": 1.2930188179016113,
+    "distant_skyline_median_flow_px": 1.3252060413360596,
+    "foreground_to_distant_ratio": 5.058001549749681,
+    "note": "Dense-flow evidence supports differential motion but is not artistic acceptance."
+  },
+  "lightning_evidence": {
+    "proof_time_seconds": 9.5,
+    "source_score_time_seconds": 58.35,
+    "whole_frame_luma_at_peak": 62.59316743827161,
+    "pre_event_mean_whole_frame_luma": 59.12516420717593,
+    "room_luma_at_peak": 52.78048076923077,
+    "pre_event_mean_room_luma": 51.498331374643875,
+    "window_luma_at_peak": 74.18997895622896,
+    "pre_event_mean_window_luma": 68.13869391835017
+  },
+  "visual_qc_notes": [
+    "Contact-sheet inspection shows weather constrained to exterior/window regions rather than a whole-bedroom rain overlay.",
+    "H01 shows strong differential foreground versus distant motion.",
+    "H04 proof includes a dialogue caption while foreground/glass motion remains visible.",
+    "H05 revelation caption clears before the synchronized lightning event.",
+    "User visual acceptance is still required before FX lock or full Scene 01 assembly."
+  ],
+  "forbidden_promotions": ["FX_LOCKED", "ASSEMBLED", "FINAL_QC_PASSED"]
+}
