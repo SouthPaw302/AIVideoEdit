@@ -37,22 +37,30 @@ For living-scene and hybrid work, internal scene motion comes before camera moti
 
 Whole-frame shake, endless zoom, generic wobble, or low-frame-rate duplication are not substitutes for animation.
 
-## 6. References teach before they are copied
+## 6. Zero-drift continuity is mandatory
+For continuity-locked multi-frame and multi-shot generation, `general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md` is binding.
+
+Subject geometry, identity, environment topology, lighting direction/color temperature, scene scale, focal length, projection, framing logic, and approved authored surfaces are immutable anchors unless the current user explicitly authorizes a change. Motion must be bounded to declared camera vectors, depth/parallax transforms, and registered semantic FX layers. Unprompted camera motion, axis warping, structural deformation, arbitrary style transfer, and hallucinated additions/removals are prohibited.
+
+If required anchors are missing or a requested effect/motion cannot be executed through an approved canonical or project-local implementation, fail closed and return to the last valid canonical scene state instead of improvising.
+
+## 7. References teach before they are copied
 Analyze supplied reference media for composition, motion language, camera behavior, internal motion, lighting, pacing, scene-change frequency, and loop behavior. A reference is not automatically authorized as final-picture content. Content reuse requires explicit current-user authorization and provenance.
 
-## 7. Creative recipe is not the render backend
+## 8. Creative recipe is not the render backend
 A successful creative recipe may move between proof and production backends only when behavior/parameter mappings are recorded, a representative equivalence proof passes, claimed effects remain visible, and the render stays traceable. Never assume two implementations "should look the same."
 
-## 8. Resume before inventing
+## 9. Resume before inventing
 At the beginning of every production session:
 1. Bootstrap exact current `main`.
 2. Read this Prime Directive.
-3. Identify the active project and its Operating Order.
-4. Identify direction authority and production mode.
-5. Identify canon, the accepted baseline, and the accepted source library separately.
-6. Identify baseline refinement scope and/or source-library recut scope, including forbidden changes and named defects.
-7. Identify the exact next action.
-8. Continue from that point instead of rediscovering or reinterpreting the production.
+3. Read `general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md` when the active work includes living-scene, hybrid, multi-frame, continuity-locked, parallax, or FX scene generation.
+4. Identify the active project and its Operating Order.
+5. Identify direction authority and production mode.
+6. Identify canon, the accepted baseline, and the accepted source library separately.
+7. Identify baseline refinement scope and/or source-library recut scope, including forbidden changes and named defects.
+8. Identify the exact next action.
+9. Continue from that point instead of rediscovering or reinterpreting the production.
 
 ## Final directive
 The objective is not to demonstrate AI capability. The objective is to create the right visual experience for the song.
