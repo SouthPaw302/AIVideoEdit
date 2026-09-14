@@ -2,57 +2,45 @@
 
 Branch: `project/american-empire-act1/scene-02`
 Canonical project root: `project/american-empire-act1/main`
-Stage: `SCRIPT_LOCKED / EXECUTION_MAP_LOCKED / FX_LANGUAGE_ACCEPTED / VISUAL_PROOF_REJECTED / MEDIA_BUILD_REQUIRED`
+Stage: `ASSEMBLY02_CANDIDATE / USER_REVIEW_REQUIRED`
 Director rules: current rebooted `main`, including bounded `GENERATED_CONTINUATION` behavior and coherent-storm FX doctrine.
 
-Scene 01 accepted continuity baseline remains `Scene01_FULL_ASSEMBLY03.mp4` until a later Scene 01 candidate is explicitly accepted by the current user. Newer Scene 01 candidates may inform FX behavior only; they do not silently replace continuity canon.
+Scene 01 accepted continuity baseline remains `Scene01_FULL_ASSEMBLY03.mp4` until a later Scene 01 candidate is explicitly accepted by the current user.
 
-Scene 02 score source: `Synchronized Silence.wav`. Editorial picture use is locked to source 0:00–1:36. The source pulse measures ~143.6 BPM but is directed as ~71.8 BPM half-time for continuity; picture does not cut every beat.
+Scene 02 score source: `Synchronized Silence.wav`. Editorial picture use remains source 0:00–1:36. Locked Scene 02 duration is 96.0 seconds / 2304 frames at 24 fps.
 
-Locked Scene 02 duration: 96.0 seconds / 2304 frames at 24 fps.
+## Current candidate
+- file: `Scene02_FULL_ASSEMBLY02.mp4`
+- duration: 96.000 seconds
+- fps: 24
+- frames: 2304
+- resolution: 640x360
+- audio: continuous first 96 seconds of `Synchronized Silence.wav`; no per-shot hard splices
+- dialogue score duck: 56.5–69.1s
+- near silence: 69.1–72.0s
+- score return: 72.0–76.0s, full thereafter
+- captions: locked `CAPTION_TIMING.json`
+- sha256: `056418250d5163525816bb04a75e74845c5367043a572110c3ab9f60add731b9`
 
-Narrative progression:
-1. Scene 01 aftermath.
-2. First ordinary device anomaly.
-3. Claire notices.
-4. Separate apartment systems synchronize.
-5. Paris begins coordinated state changes.
-6. City-scale pattern proves control rather than collapse.
-7. Daniel: the systems are changing authority, not failing.
-8. Brief processing/near-silence beat.
-9. Grounded diegetic proof of a prepared transition system.
-10. Claire acts and moves, carrying the story toward Scene 03.
+## Picture construction
+The candidate uses 18 editorial picture segments:
+- 14 still-angle segments built from the current continuity-safe Claire/Paris Scene 02 source pool;
+- 4 actual animated GIF inserts for device anomaly, room synchronization, city coordination, and transition/proof beats;
+- 0.25-second controlled crossfades/dissolves/wipes between segments;
+- restrained crop travel instead of global wobble;
+- rain/weather remains visually exterior/window-led;
+- local cyan response is confined to device/system beats;
+- stronger storm/city response is reserved for coordination/proof beats.
 
-Dialogue, score ducking, and near-silence windows remain locked in `CAPTION_TIMING.json` and `SCORE_MAP.md`.
+Important provenance note: the 14 still-angle segments are not 14 unique generated source images. The current cut uses 10 distinct generated Scene 02 still sources plus 4 alternate derived framings/crops. Do not claim the missing four unique alternate-angle generations exist. If the current user wants strict 14-unique-image coverage before final lock, generate and substitute those four alternates in a later pass.
 
-## Rebooted shot execution map
-- S2-01: `LIVING_SCENE`
-- S2-02: `LIVING_SCENE_COMPOSITE`
-- S2-03: `GENERATED_CONTINUATION_CANDIDATE` — bounded attention shift only.
-- S2-04: `LIVING_SCENE_COMPOSITE`
-- S2-05: `LIVING_SCENE`
-- S2-06: `LIVING_SCENE`
-- S2-07: `GENERATED_CONTINUATION_CANDIDATE` — subtle listening/speaking response only.
-- S2-08: `GENERATED_CONTINUATION_CANDIDATE` — small processing/glance beat only.
-- S2-09: `LIVING_SCENE_COMPOSITE`
-- S2-10: `GENERATED_CONTINUATION_REQUIRED` — first substantial real character action; accepted terminal frame must chain into Scene 03 continuity.
+## GIF inserts
+- `gif01_device_anomaly.gif`
+- `gif02_room_sync.gif`
+- `gif03_city_coordination.gif`
+- `gif04_transition_proof.gif`
 
-All continuation shots require a canonical start-frame lock, explicit allowed/forbidden action envelope, temporal/identity/environment QC, and terminal-frame chaining. Generated audio/ambience may be retained only after mix/QC; locked dialogue/caption timing remains authoritative.
+## Prior rejected proof
+`Scene02_FX_PROOF01` remains rejected as Scene 02 visual canon because it reused Scene 01 stills as finished Scene 02 media. Only its improved FX language survives.
 
-The coherent storm behaves as one force system across moving cloud mass, depth-layered exterior rain, gust direction, glass/wet response, haze, lightning and source-local room illumination. Weather remains exterior/window/glass constrained; the room does not receive whole-frame rain or global weather overlays.
-
-## Scene02_FX_PROOF01 verdict
-The current user rejected the proof as Scene 02 media because it reused Scene 01 stills and did not create the new Scene 02 visual/script continuation required by `MEDIA_PLAN.json` and `SCRIPT.json`.
-
-Do not promote, reuse, or treat `Scene02_FX_PROOF01` as Scene 02 visual canon.
-
-What survives from the rejected proof:
-- improved coherent-storm behavior;
-- stronger rain/cloud/wet-surface/lightning coupling;
-- improved depth separation and localized lighting response.
-
-These effect behaviors are accepted as a useful direction and should be carried into the next proof, but only after actual Scene 02 hero media is created from the seven authorized roles.
-
-Media plan still authorizes only the seven named Scene 02 hero roles. They must inherit Claire identity/wardrobe, apartment topology, window/city orientation, graphic-novel line language, palette, and source-coupled lighting from Scene 01. The previously generated glossy/cyber-thriller storyboard is rejected and must never be used as canon or as a generation reference.
-
-Next action: create genuine Scene 02 media role-by-role from `MEDIA_PLAN.json`, beginning with S2H01 continuity-after-window and S2H02 first-device-anomaly, then construct a new representative proof from those new assets. Do not build another proof from Scene 01 stills alone.
+Assembly02 is a candidate until current-user review. Do not promote it to accepted Scene 02 master without explicit approval.
