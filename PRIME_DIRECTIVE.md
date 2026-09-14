@@ -40,31 +40,59 @@ Whole-frame shake, endless zoom, generic wobble, or low-frame-rate duplication a
 ## 6. Zero-drift continuity is mandatory
 For continuity-locked multi-frame and multi-shot generation, `general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md` is binding.
 
-Subject geometry, identity, environment topology, lighting direction/color temperature, scene scale, focal length, projection, framing logic, and approved authored surfaces are immutable anchors unless the current user explicitly authorizes a change. Motion must be bounded to declared camera vectors, depth/parallax transforms, and registered semantic FX layers. Unprompted camera motion, axis warping, structural deformation, arbitrary style transfer, and hallucinated additions/removals are prohibited.
+Subject geometry, identity, environment topology, lighting direction/color temperature, scene scale, focal length, projection, framing logic, and approved authored surfaces are immutable anchors unless the current user explicitly authorizes a change. Motion must be bounded to declared camera vectors, depth/parallax transforms, registered semantic FX layers, or a declared generated-continuation action envelope. Unprompted camera motion, axis warping, structural deformation, arbitrary style transfer, and hallucinated additions/removals are prohibited.
 
 If required anchors are missing or a requested effect/motion cannot be executed through an approved canonical or project-local implementation, fail closed and return to the last valid canonical scene state instead of improvising.
 
-## 7. References teach before they are copied
-Analyze supplied reference media for composition, motion language, camera behavior, internal motion, lighting, pacing, scene-change frequency, and loop behavior. A reference is not automatically authorized as final-picture content. Content reuse requires explicit current-user authorization and provenance.
+## 7. True video continuation is a controlled render mode, not a license to drift
+A shot that requires real articulated character, prop, or environmental action may declare `GENERATED_CONTINUATION` inside cinematic or hybrid production.
 
-## 8. Creative recipe is not the render backend
+The continuation must begin from approved canonical visual state and define:
+- start-frame/source identity and hash;
+- immutable character, wardrobe, prop, set, lens, palette, and topology anchors;
+- explicit allowed subject/object actions;
+- bounded camera behavior;
+- coherent environmental forces and FX state;
+- duration and target cadence;
+- whether generated sound is accepted, discarded, isolated as SFX/ambience, or mixed under the master audio plan.
+
+The preferred continuity chain is:
+
+`CANONICAL START FRAME -> BOUNDED VIDEO CONTINUATION -> TEMPORAL QC -> APPROVED TERMINAL FRAME -> NEXT CONTINUATION OR EDIT`
+
+A terminal frame is not automatically canon. It becomes a valid next-shot anchor only after identity, geometry, topology, lighting, temporal motion, and project-specific QC pass.
+
+Generated video must not silently rewrite character identity, room geometry, weather logic, props, screen direction, or scene state. If continuity fails, reject the continuation and return to the previous canonical state.
+
+## 8. Generated audio is subordinate to the sound plan
+When a video backend produces audio, preserve it as a separable production element whenever possible. Generated dialogue, ambience, Foley, weather, and music are not automatically accepted merely because the picture is usable.
+
+The director must explicitly classify generated audio as `keep`, `duck`, `replace`, `isolate_sfx`, `isolate_ambience`, or `discard`. The master score/dialogue plan remains authoritative unless the current user approves a change.
+
+## 9. References teach before they are copied
+Analyze supplied reference media for composition, motion language, camera behavior, internal motion, lighting, pacing, scene-change frequency, loop behavior, true articulated action, environmental coupling, and audio behavior. A reference is not automatically authorized as final-picture content. Content reuse requires explicit current-user authorization and provenance.
+
+## 10. Creative recipe is not the render backend
 A successful creative recipe may move between proof and production backends only when behavior/parameter mappings are recorded, a representative equivalence proof passes, claimed effects remain visible, and the render stays traceable. Never assume two implementations "should look the same."
 
-## 9. Resume before inventing
+Video-generation providers are interchangeable render backends, not directing authorities. Prompts and provider-specific controls must be compiled from the same canonical shot contract so changing providers does not change story, identity, geography, or approved visual intent.
+
+## 11. Resume before inventing
 At the beginning of every production session:
 1. Bootstrap exact current `main`.
 2. Read this Prime Directive.
-3. Read `general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md` when the active work includes living-scene, hybrid, multi-frame, continuity-locked, parallax, or FX scene generation.
+3. Read `general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md` when the active work includes living-scene, hybrid, multi-frame, continuity-locked, parallax, FX scene generation, or generated video continuation.
 4. Identify the active project and its Operating Order.
 5. Identify direction authority and production mode.
 6. Identify canon, the accepted baseline, and the accepted source library separately.
-7. Identify baseline refinement scope and/or source-library recut scope, including forbidden changes and named defects.
-8. Identify the exact next action.
-9. Continue from that point instead of rediscovering or reinterpreting the production.
+7. Identify each shot behavior: living-scene, source-derived composite, conventional cinematic coverage, or `GENERATED_CONTINUATION`.
+8. Identify baseline refinement scope and/or source-library recut scope, including forbidden changes and named defects.
+9. Identify the exact next action.
+10. Continue from that point instead of rediscovering or reinterpreting the production.
 
 ## Final directive
-The objective is not to demonstrate AI capability. The objective is to create the right visual experience for the song.
+The objective is not to demonstrate AI capability. The objective is to create the right visual experience for the song or film.
 
-Sometimes that is a full cinematic film. Sometimes it is an extraordinary living painting. Sometimes it is both.
+Sometimes that is a full cinematic film. Sometimes it is an extraordinary living painting. Sometimes it is a true generated continuation. Sometimes it is all three inside one coherent world.
 
 Choose deliberately. Preserve what works. Repair what does not. Finish the production.
