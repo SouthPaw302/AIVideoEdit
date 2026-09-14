@@ -1,0 +1,17 @@
+{
+  "schema":"aivideoedit.caption-timing.v1",
+  "scene":"scene-01",
+  "timebase":"seconds",
+  "items":[
+    {"id":"C01","start":0.80,"end":3.60,"speaker":null,"text":"PARIS — 5:47 A.M.","shots":["S01"]},
+    {"id":"C02","start":24.70,"end":27.00,"speaker":"CLAIRE","text":"Daniel?","shots":["S05"]},
+    {"id":"C03","start":38.30,"end":42.80,"speaker":"DANIEL","text":"You remember what I told you about continuity government?","shots":["S07"]},
+    {"id":"C04","start":45.10,"end":47.30,"speaker":"CLAIRE","text":"That conspiracy theory?","shots":["S08"]},
+    {"id":"C05","start":48.20,"end":49.60,"speaker":"DANIEL","text":"I was wrong.","shots":["S08"]},
+    {"id":"C06","start":50.50,"end":51.90,"speaker":"CLAIRE","text":"About what?","shots":["S08"]},
+    {"id":"C07","start":52.60,"end":57.70,"speaker":"DANIEL","text":"It's not the government that survives the collapse.","shots":["S09"]},
+    {"id":"C08","start":66.20,"end":71.80,"speaker":"DANIEL","text":"It's the government that was waiting for it.","shots":["S11"]}
+  ],
+  "protected_event":{"time":58.35,"rule":"No caption entrance or exit on the lightning/score structural turn."},
+  "status":"working_locked_for_fx_proof"
+}
