@@ -1,0 +1,15 @@
+{
+  "schema":"aivideoedit.caption-timing.v1",
+  "scene":"scene-02",
+  "timebase":"seconds",
+  "items":[
+    {"id":"S2-C01","start":56.9,"end":59.4,"speaker":"CLAIRE","text":"Daniel... what is happening?","shots":["S2-07"]},
+    {"id":"S2-C02","start":60.3,"end":62.2,"speaker":"DANIEL","text":"Look at the city.","shots":["S2-07"]},
+    {"id":"S2-C03","start":63.0,"end":66.6,"speaker":"DANIEL","text":"Those systems aren't failing. They're changing authority.","shots":["S2-07"]},
+    {"id":"S2-C04","start":67.7,"end":69.1,"speaker":"CLAIRE","text":"To who?","shots":["S2-08"]},
+    {"id":"S2-C05","start":72.8,"end":76.0,"speaker":"DANIEL","text":"The people who were waiting.","shots":["S2-09"]},
+    {"id":"S2-C06","start":86.0,"end":88.1,"speaker":"DANIEL","text":"Claire. You need to move.","shots":["S2-10"]}
+  ],
+  "mix_notes":{"score_duck_window_seconds":[56.5,76.5],"near_silence_window_seconds":[69.1,72.0],"score_return":"begin under S2-C05 and rise after 76.0"},
+  "status":"locked_for_scene02_media_build"
+}
