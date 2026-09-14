@@ -1,0 +1,21 @@
+{
+  "schema": "aivideoedit.score-ingest.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-01",
+  "source_filename": "Pre-dawn in Paris.wav",
+  "source_sha256": "a3046606c8a12b9f8790e7e0d189d48392e73701c47c0b7ec2277b73d02777b1",
+  "source_duration_seconds": 84.36,
+  "sample_rate_hz": 48000,
+  "channels": 2,
+  "measured_tempo_bpm": 67.9996,
+  "estimated_key": "C minor",
+  "scene_edit": {
+    "duration_seconds": 80.0,
+    "edit_rule": "Use source from 0.0s to 80.0s with a restrained 2.5s tail fade beginning at 77.5s.",
+    "working_master_sha256": "ef49e810e844059c79dabf7fc957506dc2ef8dda354f2f0a28d892cdbaa6f0cb",
+    "working_master_locator": "active-workspace://projects/american-empire-act1/audio/scene01_score_80s.wav"
+  },
+  "analysis_boundaries_seconds": [0.0, 6.04, 34.25, 58.35, 79.74, 84.36],
+  "lightning_sync_seconds": 58.35,
+  "status": "ingested_and_analyzed"
+}
