@@ -1,0 +1,19 @@
+{
+  "schema":"aivideoedit.scene-media-plan.v1",
+  "scene":"scene-02",
+  "production_mode":"hybrid",
+  "continuity_source":"Scene01_FULL_ASSEMBLY03 accepted baseline plus six Scene 01 canonical hero assets",
+  "visual_language":"Same cinematic comic-book/graphic-novel world: bold inked value separation, restrained halftone texture, pale gray-blue pre-dawn Paris, cream stone, muted cyan technology, warm amber practical light, no saturated neon.",
+  "new_hero_assets":[
+    {"id":"S2H01","role":"continuity_after_window","shots":["S2-01"],"description":"Claire immediately after Scene 01 at the same apartment window, phone lowered slightly, same wardrobe, same weather and city orientation; alert fear, not panic."},
+    {"id":"S2H02","role":"first_device_anomaly","shots":["S2-02","S2-03"],"description":"Same apartment geography with an ordinary router/status display or believable civilian device changing state; Claire notices from profile/detail coverage; no holograms."},
+    {"id":"S2H03","role":"synchronized_room_systems","shots":["S2-04"],"description":"Room-wide composition showing multiple ordinary devices/screens/indicators visibly separate but changing in coordination; muted cyan accents remain local to sources."},
+    {"id":"S2H04","role":"paris_coordination","shots":["S2-05","S2-06"],"description":"Same window/city orientation with Paris infrastructure changing in organized bands while selected systems remain powered; clear foreground/midground/distant planes; controlled transition, not blackout."},
+    {"id":"S2H05","role":"dialogue_return","shots":["S2-07","S2-08"],"description":"Claire and phone in established profile language, city/system behavior still visible behind; tense processing beat with stable face/hands/phone."},
+    {"id":"S2H06","role":"prepared_transition_proof","shots":["S2-09"],"description":"Grounded diegetic proof on an ordinary public/civil screen or established display: a prepared transition status/protocol visibly pre-existing; no floating UI and no full-screen exposition card."},
+    {"id":"S2H07","role":"claire_moves","shots":["S2-10"],"description":"Claire finally acts, turning away from the window to gather essentials or follow Daniel's instruction; same apartment topology and wardrobe until action motivates any change; controlled city transition remains behind her."}
+  ],
+  "reuse_policy":{"scene01_pixels":"May be used for continuity reference and source-derived coverage only; do not lazily replay Scene 01 compositions as finished Scene 02 shots.","new_generation":"Authorized only for the seven named Scene 02 hero roles. Each new hero must preserve Claire identity, apartment topology, window orientation, palette and graphic-novel line language."},
+  "fx_policy":{"depth":"real semantic multiplane 2.5D","weather":"rain exterior/window only","lighting":"source-coupled local response","camera":"near-locked unless shot function requires restrained move","forbidden":["global wobble","generic zoom","whole-frame rain","cyberpunk neon drift","floating holograms","identity/wardrobe drift"]},
+  "status":"ready_for_hero_media_creation"
+}
