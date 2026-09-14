@@ -9,6 +9,6 @@
   "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},
   "recut_scope":{"active":false,"named_defects":[],"allowed_changes":[],"forbidden_changes":[],"source_replacement_authorized":false},
   "current_user_direction":"Use the uploaded Pre-dawn in Paris.wav as the Scene 01 score, keep the existing six hero assets, continue the FX recovery pass from the repo, and do not forget the captions.",
-  "exact_next_action":"Run the short representative FX proof from the prepared shot packages using existing repo effects, the ingested score cues, and CAPTION_TIMING.json; do not assemble the full 80-second Scene 01 until the proof visibly passes 2.5D separation, dry interior/window-only rain, foreground motion, source-coupled lighting, identity stability, and caption readability.",
-  "updated_at_utc":"2026-09-14T03:33:00Z"
+  "exact_next_action":"Fail closed until the exact six canonical Scene 01 PNG bytes are materialized from the original active production workspace or another byte-identical persistent copy and verified against every SHA-256 in ASSET_MANIFEST.json. Do not regenerate or substitute them. Once all six hashes pass, immediately run the short representative FX proof from PROOF_PLAN.md using the prepared shot packages, existing repo effects, score cues and CAPTION_TIMING.json; do not assemble the full scene until that proof visibly passes 2.5D separation, dry interior/window-only rain, foreground motion, source-coupled lighting, identity stability and caption readability.",
+  "updated_at_utc":"2026-09-14T05:20:00Z"
 }
