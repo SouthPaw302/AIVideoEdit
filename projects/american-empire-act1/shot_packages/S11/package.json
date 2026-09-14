@@ -1,0 +1,7 @@
+{
+  "schema":"aivideoedit.shot-package.v1","shot":"S11","scene":"scene-01","frame_range":[1584,1751],"source_asset_id":"H06","production_mode":"living_scene","lifecycle_status":"candidate",
+  "media_evidence":[{"kind":"generated_image","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero06_isolation.png","sha256":"867d85899c6953834ed7659550b02b836fb7a146bb38b20b080612c4d185c8e6","status":"accepted"}],
+  "derivation":{"kind":"canonical","source_library_sha256":"a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57","source_asset_id":"H06","rule":"preserve canonical pixels/identity; only crop/reframe/layer masks/depth treatment as specified"},
+  "semantic_motion_regions":["glass reflection","window rain","distant haze","practical light"],"protected_regions":["Claire face/body","primary reflection identity","window geometry"],
+  "fx_ids":["FX2-ATM-003","FX2-SURFACE-003","FX2-ATM-001","FX2-LIGHT-001"],"weather_policy":"exterior rain only; for interiors rain is restricted to window glass/outside regions","camera_policy":"near-locked or restrained depth-motivated movement; no global shake","proof_status":"required"
+}

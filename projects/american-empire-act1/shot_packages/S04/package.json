@@ -1,0 +1,7 @@
+{
+  "schema":"aivideoedit.shot-package.v1","shot":"S04","scene":"scene-01","frame_range":[432,575],"source_asset_id":"H02","production_mode":"living_scene","lifecycle_status":"candidate",
+  "media_evidence":[{"kind":"generated_image","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero02_phone.png","sha256":"a3b7ed6f8049afa11386385c14ebf3a096dccdc6965fe55d2d4e5689b9111947","status":"accepted"}],
+  "derivation":{"kind":"source_derived_reframe","source_library_sha256":"a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57","source_asset_id":"H02","rule":"preserve canonical pixels/identity; only crop/reframe/layer masks/depth treatment as specified"},
+  "semantic_motion_regions":["foreground furnishing/curtain","window glass","outside rain","practical light spill"],"protected_regions":["Claire face","Claire hands","phone","room architecture"],
+  "fx_ids":["FX2-SPATIAL-001","FX2-MOTION-002","FX2-ATM-003","FX2-LIGHT-001"],"weather_policy":"exterior rain only; for interiors rain is restricted to window glass/outside regions","camera_policy":"near-locked or restrained depth-motivated movement; no global shake","proof_status":"required"
+}

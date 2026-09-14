@@ -1,0 +1,7 @@
+{
+  "schema":"aivideoedit.shot-package.v1","shot":"S09","scene":"scene-01","frame_range":[1248,1415],"source_asset_id":"H05","production_mode":"living_scene","lifecycle_status":"candidate",
+  "media_evidence":[{"kind":"generated_image","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero05_lightning.png","sha256":"9b7f7d45fd95bd472797c412b5cf8d26a421777d31bb0642eb0efec4a95d7197","status":"accepted"}],
+  "derivation":{"kind":"canonical","source_library_sha256":"a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57","source_asset_id":"H05","rule":"preserve canonical pixels/identity; only crop/reframe/layer masks/depth treatment as specified"},
+  "semantic_motion_regions":["foreground room edge","window glass","outside rain","city haze","lightning-driven illumination"],"protected_regions":["Claire silhouette","face/anatomy","window geometry","ink linework"],
+  "fx_ids":["FX2-SPATIAL-001","FX2-ATM-003","FX2-LIGHT-002"],"weather_policy":"exterior rain only; for interiors rain is restricted to window glass/outside regions","camera_policy":"near-locked or restrained depth-motivated movement; no global shake","proof_status":"required"
+}

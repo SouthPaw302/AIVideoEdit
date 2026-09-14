@@ -1,0 +1,7 @@
+{
+  "schema":"aivideoedit.shot-package.v1","shot":"S08","scene":"scene-01","frame_range":[1080,1247],"source_asset_id":"H04","production_mode":"living_scene","lifecycle_status":"candidate",
+  "media_evidence":[{"kind":"generated_image","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero04_warning.png","sha256":"d36133fd75d3cdc4e2c3df726de5a824eb0c51f24760963a2bd7b959db41931d","status":"accepted"}],
+  "derivation":{"kind":"source_derived_reframe","source_library_sha256":"a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57","source_asset_id":"H04","rule":"preserve canonical pixels/identity; only crop/reframe/layer masks/depth treatment as specified"},
+  "semantic_motion_regions":["foreground obstruction","glass reflection","light spill","distant city"],"protected_regions":["Claire face","phone","architectural linework"],
+  "fx_ids":["FX2-MOTION-002","FX2-SURFACE-003","FX2-LIGHT-001","FX2-LIGHT-002"],"weather_policy":"exterior rain only; for interiors rain is restricted to window glass/outside regions","camera_policy":"near-locked or restrained depth-motivated movement; no global shake","proof_status":"required"
+}
