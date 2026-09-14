@@ -1,6 +1,6 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Finish The American Empire Act I Scene 01 as an approximately 80-second cinematic comic-book sequence from the six approved hero panels, using the existing AIVideoEdit production system and deferring score/audio until picture lock.",
+  "mission": "Finish The American Empire Act I Scene 01 as an approximately 80-second cinematic comic-book sequence from the six approved hero panels, using the existing AIVideoEdit production system, with captions integrated before picture lock and a restrained instrumental score created to the existing picture structure.",
   "direction_authority": "user_directed",
   "production_mode": "hybrid",
   "canon_lock": {
@@ -10,7 +10,8 @@
       "Scene 01 storyboard: 5:47 AM, Paris",
       "Six approved Scene 01 hero panels and their exact hashes in ASSET_MANIFEST.json",
       "Claire Delacroix identity, wardrobe, apartment architecture, window geometry, phone design and city orientation",
-      "Picture-first workflow; dialogue/foley/score deferred until picture lock",
+      "Captions preserve the existing dialogue and are integrated before picture lock",
+      "Scene 01 receives an instrumental score composed to the existing picture structure; score does not drive replacement of approved visual canon",
       "Internal scene motion before camera motion",
       "No replacement or regeneration of the six canonical hero panels without explicit user authorization"
     ]
@@ -44,7 +45,7 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Do not generate more images. Work from the repo, keep the existing six Scene 01 assets, follow the AIVideoEdit rules, sync/follow current main, and retry the FX pass correctly. Score/audio comes later.",
-  "exact_next_action": "Build and verify the six-hero-derived shot packages and run a short mode-aware FX proof using existing repo effects with semantic motion/protected regions, visible 2.5D foreground-midground-background separation, motivated foreground motion, and source-coupled lighting; do not assemble another full Scene 01 render until that proof passes.",
-  "updated_at_utc": "2026-09-14T03:01:33Z"
+  "current_user_direction": "Do not generate more images. Work from the repo, keep the existing six Scene 01 assets, follow the AIVideoEdit rules, retry the FX pass correctly, add captions, and create a Scene 01 score with Suno so music can be ingested and analyzed as part of the production.",
+  "exact_next_action": "Receive the Suno Scene 01 score, ingest/analyze it into MUSIC_ANALYSIS.json, preserve the caption plan, then run the short mode-aware FX proof using the prepared shot packages and existing repo effects before any full Scene 01 assembly.",
+  "updated_at_utc": "2026-09-14T03:25:00Z"
 }
