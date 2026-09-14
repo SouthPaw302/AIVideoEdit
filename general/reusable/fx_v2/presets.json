@@ -24,6 +24,28 @@
         {"id":"FX2-SURFACE-001","strength":0.50}
       ]
     },
+    "coherent_storm_system": {
+      "camera_rule": "near-locked camera; storm motion, semantic foreground response and source-coupled light carry the scene",
+      "system_rule": "rain, wind, cloud motion, lightning, wet reflections and exposed foreground motion must share one authored storm state; never animate as unrelated overlays",
+      "effects": [
+        {"id":"FX2-ATM-002","roi":[0.0,0.0,1.0,1.0],"strength":0.72,"semantic_scope":"exterior_only","depth_layers":3},
+        {"id":"FX2-ATM-003","roi":[0.0,0.0,1.0,1.0],"strength":0.58,"semantic_scope":"glass_only"},
+        {"id":"FX2-ATM-004","roi":[0.0,0.0,1.0,0.72],"strength":0.62,"semantic_scope":"sky_cloud_mass"},
+        {"id":"FX2-ATM-001","roi":[0.0,0.0,1.0,0.82],"strength":0.28,"semantic_scope":"distant_depth_haze"},
+        {"id":"FX2-MOTION-002","roi":[0.0,0.0,1.0,1.0],"strength":0.42,"semantic_scope":"wind_exposed_foreground_only"},
+        {"id":"FX2-MOTION-003","roi":[0.0,0.48,1.0,1.0],"strength":0.62,"reflect":true,"semantic_scope":"wet_surfaces_only"},
+        {"id":"FX2-LIGHT-002","origin":[0.72,0.14],"strength":0.72,"semantic_scope":"lightning_source_coupled"},
+        {"id":"FX2-LIGHT-001","roi":[0.0,0.0,1.0,1.0],"strength":0.30,"semantic_scope":"visible_practicals_only"},
+        {"id":"FX2-SURFACE-003","strength":0.46,"semantic_scope":"glass_reflection_only"}
+      ],
+      "coupling": {
+        "gust_event":"increase exterior rain angle/speed + exposed foreground travel + cloud advection together; camera stays stable",
+        "lightning_event":"sky source flashes first, then environment receives brief coherent illumination; no arbitrary full-frame white flash",
+        "wet_response":"reflection displacement/intensity follows rain and light events only on plausible wet/glass surfaces",
+        "interior_rule":"room remains dry; interior fabrics or curtains may react only to believable wind path/opening",
+        "depth_rule":"near rain/foreground travels most, midground less, distant cloud/sky slowest"
+      }
+    },
     "rain_window_memory": {
       "camera_rule": "nearly locked; focus/perception changes are stronger than camera travel",
       "effects": [
