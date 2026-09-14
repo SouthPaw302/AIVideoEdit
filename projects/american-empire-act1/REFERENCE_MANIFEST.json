@@ -1,8 +1,16 @@
 {
   "schema": "aivideoedit.reference-manifest.v1",
   "project": "american-empire-act1",
-  "usable_visual_references": [],
+  "videos": [],
+  "images": [
+    {"name":"H01 Paris hero","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero01_paris.png","sha256":"53873926e63b6142dc0e2f668b45fd9aa081428561fd43c8e1de1766893dc438","role":"accepted canonical hero/source image","analysis_complete":true},
+    {"name":"H02 phone hero","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero02_phone.png","sha256":"a3b7ed6f8049afa11386385c14ebf3a096dccdc6965fe55d2d4e5689b9111947","role":"accepted canonical hero/source image","analysis_complete":true},
+    {"name":"H03 answer hero","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero03_answer.png","sha256":"71b3067cf818805c6f2ea2d0525f6f46a69094c5aa3f690465f985284288aa12","role":"accepted canonical hero/source image","analysis_complete":true},
+    {"name":"H04 warning hero","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero04_warning.png","sha256":"d36133fd75d3cdc4e2c3df726de5a824eb0c51f24760963a2bd7b959db41931d","role":"accepted canonical hero/source image","analysis_complete":true},
+    {"name":"H05 lightning hero","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero05_lightning.png","sha256":"9b7f7d45fd95bd472797c412b5cf8d26a421777d31bb0642eb0efec4a95d7197","role":"accepted canonical hero/source image","analysis_complete":true},
+    {"name":"H06 isolation hero","path":"projects/american-empire-act1/scenes/scene-01/hero_frames/hero06_isolation.png","sha256":"867d85899c6953834ed7659550b02b836fb7a146bb38b20b080612c4d185c8e6","role":"accepted canonical hero/source image","analysis_complete":true}
+  ],
   "reference_analysis_complete": true,
-  "policy_resolution": "No external visual reference is active. The current user directly specified and approved the cinematic comic-book direction, and the six approved hero panels are production canon rather than references.",
+  "policy_resolution": "The six user-approved canonical hero panels are the active visual source/reference set for Scene 01. They are also protected production canon and may not be regenerated or replaced without explicit user authorization.",
   "content_reuse_from_external_references_authorized": false
 }
