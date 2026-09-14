@@ -22,10 +22,17 @@ The previous full FX pass is rejected and must not be promoted. Named defects:
 - global effect application instead of semantic region assignment.
 
 ## Current direction
-No more image generation. Work only from the approved six hero panels and existing repo capabilities. Dialogue, foley and score remain deferred until picture lock.
+No more image generation. Work only from the approved six hero panels and existing repo capabilities.
+
+Scene 01 now also requires:
+- captions/subtitles from `CAPTION_PLAN.md` before picture lock;
+- a new instrumental Suno score following `SCORE_BRIEF.md`;
+- score ingest and real music analysis before claiming music evidence.
+
+No invented BPM, section, or music-analysis evidence is permitted before the actual score file is received.
 
 ## Prepared next proof
 `PROOF_PLAN.md` defines a four-part representative proof using H01, H02, H04/H06 and H05. The proof must visibly demonstrate 2.5D separation, motivated foreground motion, region-limited weather/reflections and source-coupled lighting before FX lock or another full Scene 01 assembly.
 
 ## Current blocker
-Current-main `production_guard.py` and `narrative_guard.py` reject non-`song/` production branches, while the narrative/music contract has no honest score-deferred movie-scene state. Do not spoof branch/music evidence or bypass bootstrap to obtain a false PASS.
+Current-main `production_guard.py` and `narrative_guard.py` reject non-`song/` production branches. Adding a real score resolves the music-evidence side once ingested, but the `movie/...` branch-prefix restriction remains a separate guard compatibility issue unless the production is moved/mirrored to an allowed branch name or the guard is extended.
