@@ -7,23 +7,29 @@ Captions are a required picture layer for Scene 01. Use restrained cinematic com
 - Preserve the exact existing story dialogue; do not rewrite it for style.
 - Add only one non-dialogue location/time card unless the user later authorizes narration.
 - Keep text off faces, hands, the phone, major lighting events, and important foreground action.
-- Caption timing follows the final picture rhythm and may be adjusted after the FX proof, but wording remains locked unless the story changes.
+- Score remains subordinate to caption readability.
+- Avoid caption entrances/exits directly on the measured 58.35s musical/lightning turn.
 
-## Planned text beats
-- Opening card: `PARIS — 5:47 A.M.`
-- Claire: `Daniel?`
-- Daniel: `You remember what I told you about continuity government?`
-- Claire: `That conspiracy theory?`
-- Daniel: `I was wrong.`
-- Claire: `About what?`
-- Daniel: `It's not the government that survives the collapse.`
-- Daniel: `It's the government that was waiting for it.`
+## Locked wording and working timing
+- 00:00.80–00:03.60 — `PARIS — 5:47 A.M.`
+- 00:24.70–00:27.00 — CLAIRE: `Daniel?`
+- 00:38.30–00:42.80 — DANIEL: `You remember what I told you about continuity government?`
+- 00:45.10–00:47.30 — CLAIRE: `That conspiracy theory?`
+- 00:48.20–00:49.60 — DANIEL: `I was wrong.`
+- 00:50.50–00:51.90 — CLAIRE: `About what?`
+- 00:52.60–00:57.70 — DANIEL: `It's not the government that survives the collapse.`
+- 00:66.20–00:71.80 — DANIEL: `It's the government that was waiting for it.`
+
+## Shot relationship
+- S01/S02: location/time card, then clear frame.
+- S05: Claire's first line.
+- S07/S08: warning exchange, broken into separate readable beats.
+- S09: first revelation line is established before the 58.35s score/lightning turn; keep the actual flash area clear of text.
+- S10: clean visual aftermath after the light event.
+- S11: final line.
+- S12: clean visual hold with no new text before fade.
 
 ## Placement intent
-- S01/S02: location/time card, then clear the frame.
-- S05: Claire's first line.
-- S07/S08: warning exchange, broken into readable beats rather than a large paragraph.
-- S09/S10: first revelation line; do not cover lightning or Claire silhouette.
-- S11/S12: final line, then allow a clean silent visual hold before fade.
+Default lower-third placement is allowed only when it does not cover Claire, the phone, important window reflections, or foreground motion. Shift left/right or use an upper safe region shot-by-shot as necessary. Keep speaker labels restrained and consistent.
 
-Captions are included before picture lock. Score and caption timing should support each other, with music remaining subordinate to readability and story beats.
+Timing may move by a few frames during the actual proof/edit, but wording and general beat placement are locked unless the story changes.
