@@ -1,0 +1,63 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "project": "american-empire-act1",
+  "asset_set": "scene-01-canonical-hero-library",
+  "aggregate_sha256": "a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57",
+  "storage_note": "The exact canonical PNG bytes are present in the active production workspace. This manifest preserves their identities and intended repo paths; binary repository storage must preserve these hashes when materialized.",
+  "assets": [
+    {
+      "id": "H01",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero01_paris.png",
+      "sha256": "53873926e63b6142dc0e2f668b45fd9aa081428561fd43c8e1de1766893dc438",
+      "dimensions": [1672, 941],
+      "origin": "generated",
+      "lifecycle_status": "canonical",
+      "role": "Paris before dawn exterior"
+    },
+    {
+      "id": "H02",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero02_phone.png",
+      "sha256": "a3b7ed6f8049afa11386385c14ebf3a096dccdc6965fe55d2d4e5689b9111947",
+      "dimensions": [1672, 941],
+      "origin": "generated",
+      "lifecycle_status": "canonical",
+      "role": "ringing phone / bedroom"
+    },
+    {
+      "id": "H03",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero03_answer.png",
+      "sha256": "71b3067cf818805c6f2ea2d0525f6f46a69094c5aa3f690465f985284288aa12",
+      "dimensions": [1672, 941],
+      "origin": "generated",
+      "lifecycle_status": "canonical",
+      "role": "Claire answers"
+    },
+    {
+      "id": "H04",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero04_warning.png",
+      "sha256": "d36133fd75d3cdc4e2c3df726de5a824eb0c51f24760963a2bd7b959db41931d",
+      "dimensions": [1672, 941],
+      "origin": "generated",
+      "lifecycle_status": "canonical",
+      "role": "warning profile / foreground obstruction"
+    },
+    {
+      "id": "H05",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero05_lightning.png",
+      "sha256": "9b7f7d45fd95bd472797c412b5cf8d26a421777d31bb0642eb0efec4a95d7197",
+      "dimensions": [1672, 941],
+      "origin": "generated",
+      "lifecycle_status": "canonical",
+      "role": "lightning / city reveal"
+    },
+    {
+      "id": "H06",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero06_isolation.png",
+      "sha256": "867d85899c6953834ed7659550b02b836fb7a146bb38b20b080612c4d185c8e6",
+      "dimensions": [1672, 941],
+      "origin": "generated",
+      "lifecycle_status": "canonical",
+      "role": "final isolation / glass reflection"
+    }
+  ]
+}

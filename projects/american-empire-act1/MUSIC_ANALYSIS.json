@@ -1,0 +1,59 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": true,
+  "project_context": "narrative movie scene; picture-first phase",
+  "lyrics": {
+    "status": "not_applicable",
+    "source": "current_user_direction",
+    "text_file": null,
+    "directing_use": "none"
+  },
+  "genre": {
+    "status": "user_directed_non_song_scene",
+    "label": "cinematic narrative score deferred until picture lock",
+    "source": "current_user_instruction",
+    "confidence": 1.0,
+    "user_declaration": "Score/audio will be added later after the comic-book picture is locked."
+  },
+  "rhythm": {
+    "tempo_status": "not_applicable_before_score",
+    "tempo_bpm": null,
+    "pulse_description": "Picture timing is story/dialogue-caption driven during the current visual-only phase.",
+    "meter_or_groove": "not applicable"
+  },
+  "sections": [
+    {
+      "id": "A",
+      "start_seconds": 0.0,
+      "end_seconds": 12.0,
+      "energy": "quiet / foreboding",
+      "musical_cues": [],
+      "narrative_function": "establish rain-soaked pre-dawn Paris"
+    },
+    {
+      "id": "B",
+      "start_seconds": 12.0,
+      "end_seconds": 36.0,
+      "energy": "alert / rising",
+      "musical_cues": [],
+      "narrative_function": "phone wakes Claire and the warning begins"
+    },
+    {
+      "id": "C",
+      "start_seconds": 36.0,
+      "end_seconds": 64.0,
+      "energy": "tense / revelation",
+      "musical_cues": [],
+      "narrative_function": "continuity-government warning and lightning reveal"
+    },
+    {
+      "id": "D",
+      "start_seconds": 64.0,
+      "end_seconds": 80.0,
+      "energy": "cold aftermath",
+      "musical_cues": [],
+      "narrative_function": "final isolation and the replacement-government line"
+    }
+  ],
+  "score_policy": "Do not compose, select or time score until picture lock."
+}

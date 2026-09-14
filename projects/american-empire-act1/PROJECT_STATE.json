@@ -1,0 +1,37 @@
+{
+  "schema": "aivideoedit.project-state.v1",
+  "project": "american-empire-act1",
+  "branch": "movie/american-empire-act1",
+  "director_brain_version": 2,
+  "stage": "STORYBOARD_LOCKED",
+  "source_ingest_complete": true,
+  "reference_policy_satisfied": true,
+  "reference_analysis_complete": true,
+  "music_analysis_complete": true,
+  "lyrics_status_resolved": true,
+  "genre_authority_resolved": true,
+  "media_plan_valid": true,
+  "visual_approach_established": true,
+  "storyboard_locked": true,
+  "script_locked": true,
+  "frame_followable_script": true,
+  "semantic_motion_regions_if_applicable": true,
+  "shot_packages_built": false,
+  "media_evidence_verified": false,
+  "shot_proofs_accepted": false,
+  "fx_lock_verified": false,
+  "assembly_complete": false,
+  "final_qc_passed": false,
+  "archive_complete": false,
+  "last_rejected_proof": {
+    "kind": "fx_pass",
+    "status": "rejected_by_current_user",
+    "named_defects": [
+      "rain applied inside the room instead of being constrained to exterior/window regions",
+      "no clearly visible 2.5D foreground-midground-background parallax",
+      "insufficient foreground/internal animation",
+      "lighting behavior was weak and not convincingly coupled to practical/lightning sources",
+      "effects were applied too globally rather than by semantic shot region"
+    ]
+  }
+}

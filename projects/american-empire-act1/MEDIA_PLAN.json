@@ -1,0 +1,44 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "selected_capabilities": [
+    "generated_stills",
+    "layered_composite",
+    "living_painting",
+    "depth_25d",
+    "atmospheric_plate",
+    "analysis_qc_media",
+    "conventional_video"
+  ],
+  "visual_direction_gate": {
+    "required": false,
+    "reason": "The current user directly specified comic-book style and explicitly approved the resulting route/hero set; the agent is not inferring an unapproved visual direction.",
+    "presented_in_chat": true,
+    "user_selection": {
+      "status": "selected_by_explicit_current_user_direction",
+      "recorded_user_instruction": "Make it comic book style; user later approved the comic direction and instructed the agent to keep the existing assets and retry from the repo."
+    },
+    "locked": true
+  },
+  "production_direction": {
+    "format": "cinematic comic book / graphic novel",
+    "production_mode": "hybrid",
+    "shot_behavior": "living_scene for hero-derived shots; cinematic editorial assembly after proofs",
+    "source_set": "six canonical Scene 01 hero panels",
+    "audio_policy": "deferred_until_picture_lock",
+    "motion_priority": [
+      "semantic foreground/internal motion",
+      "visible 2.5D depth separation",
+      "motivated weather/reflection motion",
+      "source-coupled lighting",
+      "restrained camera movement"
+    ],
+    "forbidden_shortcuts": [
+      "global rain over interiors",
+      "whole-frame wobble as animation",
+      "camera drift substituted for internal motion",
+      "new replacement still generation",
+      "full assembly before proof and FX lock"
+    ]
+  }
+}

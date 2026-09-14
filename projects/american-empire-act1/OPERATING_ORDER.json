@@ -1,13 +1,50 @@
 {
-  "project": "american-empire-act1",
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Finish The American Empire Act I Scene 01 as an approximately 80-second cinematic comic-book sequence from the six approved hero panels, using the existing AIVideoEdit production system and deferring score/audio until picture lock.",
   "direction_authority": "user_directed",
   "production_mode": "hybrid",
-  "primary_behavior": "cinematic",
-  "secondary_behavior": "living_scene",
-  "production_logic": ["story", "storyboard", "hero_frames", "animation_fx", "dialogue_foley", "score", "final_mix_qc"],
-  "music_relationship": "score_is_composed_to_picture_after_scene_structure_is_locked",
-  "visual_route": "lighter French cyberpunk noir",
-  "scene_1_target_seconds": 80,
-  "scene_1_hero_count": 6,
-  "scene_1_animation_language": ["2.5D multiplane parallax", "living rain", "reflection displacement", "restrained camera drift", "subtle practical-light breathing", "controlled depth haze"]
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Cinematic comic book / graphic novel: bold inked value separation, restrained halftone/print texture, pale gray-blue pre-dawn Paris, cream stone, muted cyan technology, warm amber practical light, no saturated neon, stable Claire identity and apartment geography.",
+    "items": [
+      "Scene 01 storyboard: 5:47 AM, Paris",
+      "Six approved Scene 01 hero panels and their exact hashes in ASSET_MANIFEST.json",
+      "Claire Delacroix identity, wardrobe, apartment architecture, window geometry, phone design and city orientation",
+      "Picture-first workflow; dialogue/foley/score deferred until picture lock",
+      "Internal scene motion before camera motion",
+      "No replacement or regeneration of the six canonical hero panels without explicit user authorization"
+    ]
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "accepted_source_library": {
+    "status": "accepted",
+    "role": "hero_library",
+    "file_or_locator": "active-workspace://projects/american-empire-act1/scenes/scene-01/hero_frames/",
+    "sha256": "a5d2835b46291839efd9d7d51e89da167131eaebe0fffab9809aad14fe354f57",
+    "user_acceptance_statement": "User approved the comic direction and six hero assets, then instructed: 'We have the assets please follow the rules and try again.'",
+    "content_reuse_authorized": true,
+    "timeline_locked": false
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "source_replacement_authorized": false
+  },
+  "current_user_direction": "Do not generate more images. Work from the repo, keep the existing six Scene 01 assets, follow the AIVideoEdit rules, sync/follow current main, and retry the FX pass correctly. Score/audio comes later.",
+  "exact_next_action": "Build and verify the six-hero-derived shot packages and run a short mode-aware FX proof using existing repo effects with semantic motion/protected regions, visible 2.5D foreground-midground-background separation, motivated foreground motion, and source-coupled lighting; do not assemble another full Scene 01 render until that proof passes.",
+  "updated_at_utc": "2026-09-14T03:01:33Z"
 }

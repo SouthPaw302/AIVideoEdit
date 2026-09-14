@@ -1,0 +1,33 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "project": "american-empire-act1",
+  "authorized_sources": [
+    {
+      "kind": "current_user_instruction",
+      "role": "highest_authority"
+    },
+    {
+      "kind": "active_branch",
+      "ref": "movie/american-empire-act1",
+      "role": "project_state_and_canon"
+    },
+    {
+      "kind": "current_main",
+      "ref": "main",
+      "role": "aivideoedit_os_and_reusable_capabilities"
+    },
+    {
+      "kind": "historical_branch_methods",
+      "refs": ["song/silver-coin", "song/leave-it-by-the-door"],
+      "role": "method_reference_only",
+      "authorization": "Current user explicitly directed the agent to use successful prior branch production methods because those branches already used the repo FX stack successfully.",
+      "content_reuse_authorized": false
+    }
+  ],
+  "denied_by_default": [
+    "historical_chat_story_content",
+    "unrelated_project_media",
+    "unrelated_project_characters",
+    "unrelated_project_storyboards"
+  ]
+}

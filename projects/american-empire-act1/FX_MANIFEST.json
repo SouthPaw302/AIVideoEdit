@@ -1,0 +1,36 @@
+{
+  "schema": "aivideoedit.fx-manifest.v1",
+  "project": "american-empire-act1-scene01",
+  "runtime": "aivideoedit-fx-v2",
+  "status": "candidate_proof_required",
+  "seed": 302,
+  "effects": [
+    {"id": "FX2-SPATIAL-001", "role": "visible 2.5D foreground-midground-background separation", "gate_status": "proof_required"},
+    {"id": "FX2-MOTION-002", "role": "localized foreground/curtain/hair material motion", "gate_status": "approved"},
+    {"id": "FX2-MOTION-003", "role": "wet/reflection movement on plausible surfaces only", "gate_status": "approved"},
+    {"id": "FX2-ATM-001", "role": "depth/region-limited haze", "gate_status": "approved"},
+    {"id": "FX2-ATM-002", "role": "exterior rain plane only", "gate_status": "approved"},
+    {"id": "FX2-ATM-003", "role": "window rain-on-glass only", "gate_status": "proof_required"},
+    {"id": "FX2-LIGHT-001", "role": "practical phone/lamp light breathing", "gate_status": "approved"},
+    {"id": "FX2-LIGHT-002", "role": "source-motivated moving light / light-event support", "gate_status": "approved"},
+    {"id": "FX2-SURFACE-003", "role": "glass/reflection shimmer only", "gate_status": "proof_required"}
+  ],
+  "shot_assignments": {
+    "S01": ["FX2-SPATIAL-001", "FX2-ATM-002", "FX2-ATM-001", "FX2-MOTION-003"],
+    "S02": ["FX2-SPATIAL-001", "FX2-ATM-002", "FX2-ATM-001", "FX2-MOTION-003"],
+    "S03": ["FX2-SPATIAL-001", "FX2-ATM-003", "FX2-LIGHT-001"],
+    "S04": ["FX2-SPATIAL-001", "FX2-MOTION-002", "FX2-ATM-003", "FX2-LIGHT-001"],
+    "S05": ["FX2-MOTION-002", "FX2-ATM-003", "FX2-LIGHT-001"],
+    "S06": ["FX2-SPATIAL-001", "FX2-MOTION-002", "FX2-ATM-003", "FX2-SURFACE-003"],
+    "S07": ["FX2-SPATIAL-001", "FX2-MOTION-002", "FX2-ATM-003", "FX2-LIGHT-002"],
+    "S08": ["FX2-MOTION-002", "FX2-SURFACE-003", "FX2-LIGHT-001", "FX2-LIGHT-002"],
+    "S09": ["FX2-SPATIAL-001", "FX2-ATM-003", "FX2-LIGHT-002"],
+    "S10": ["FX2-SPATIAL-001", "FX2-ATM-003", "FX2-LIGHT-002"],
+    "S11": ["FX2-ATM-003", "FX2-SURFACE-003", "FX2-ATM-001", "FX2-LIGHT-001"],
+    "S12": ["FX2-ATM-003", "FX2-SURFACE-003", "FX2-ATM-001", "FX2-LIGHT-001"]
+  },
+  "roi_policy": "ROIs/masks are shot-package semantic evidence derived from the actual canonical hero; no global full-frame weather/light ROI is allowed.",
+  "identity_policy": "Protect Claire face, hands, anatomy, phone and critical ink/architectural linework from broad warp.",
+  "camera_policy": "Near-locked or very slow depth-motivated movement; camera motion cannot substitute for internal animation.",
+  "lock_status": "not_locked_until_representative_proof_and_precompile_gate_pass"
+}

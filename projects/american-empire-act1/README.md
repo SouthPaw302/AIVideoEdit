@@ -2,6 +2,10 @@
 
 Movie-mode production branch.
 
-Production order is story -> storyboard -> hero frames -> animation/effects -> dialogue/foley -> score -> final mix/QC.
+Scene 01 is a picture-first cinematic comic-book sequence set in pre-dawn Paris. The current user has approved six hero panels as protected source canon. No further still generation is authorized for this scene.
 
-Scene 1 is the first production scene. Visual direction: cyberpunk noir with French influence, but lighter than dystopian neon; pre-dawn Paris, wet stone, muted cyan technology, warm practical lights, restrained 2.5D multiplane parallax.
+Current production order is:
+
+`storyboard -> frame-followable script -> shot packages -> representative mode-aware FX proof -> FX lock -> visual assembly -> picture lock -> score/audio later -> final QC`
+
+The previous full FX pass is rejected and may not be promoted. The recovery pass must use the existing AIVideoEdit repo methods for visible 2.5D parallax, semantic foreground/internal motion, motivated weather/reflections and source-coupled lighting while preserving comic linework and Claire continuity.
