@@ -67,6 +67,8 @@ A supplied reference can lead any of the three production modes. Never assume â€
   - `python .aivideoedit/os/general/reusable/tools/production_guard.py --branch <current-branch>`
   - `python .aivideoedit/os/general/reusable/tools/narrative_guard.py --branch <current-branch>`
   - `python .aivideoedit/os/general/reusable/tools/recut_guard.py --branch <current-branch>` when present in the current-main OS (it is mandatory for current-main versions that provide it).
+  - `python .aivideoedit/os/general/reusable/tools/workflow_guard.py --branch <current-branch>` when present; this resolves and validates the project-neutral standard workflow set for the active production.
+- Use `python .aivideoedit/os/general/reusable/tools/workflow_resolver.py --project <project-dir> --json` to inspect the selected standard workflows; do not substitute historical production names for capability names.
 - If the session attestation is missing, branch-mismatched, or its critical OS hashes changed, the guard must fail.
 - Start every new agent/session with a fresh bootstrap, even when reusing the same sandbox.
 - For a Director Brain v2 project, do not perform an action outside `refinement_scope.allowed_changes` while baseline refinement is active unless the current user updates authorization.

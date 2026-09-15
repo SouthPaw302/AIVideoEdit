@@ -18,3 +18,8 @@ Project-local experimental FX live under the active project's `project_fx/` dire
 Song-specific scripts stay on the relevant `song/<slug>` branch.
 
 Do not create production-named reusable directories and do not recreate the superseded `general/reusable/embedded-tools/` tree.
+
+## Standard workflow tools
+- `workflow_resolver.py` — validates the neutral workflow registry and resolves the workflow set for a project from its current mode/media capabilities.
+- `workflow_guard.py` — fail-closed bootstrap/stage guard for standard workflow selection.
+- `promote_standard_library.py` — idempotent migration/generator used to build the neutral standard effect/workflow registries and proofs.

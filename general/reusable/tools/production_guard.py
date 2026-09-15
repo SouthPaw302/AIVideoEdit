@@ -122,6 +122,10 @@ def verify_bootstrap_session(branch: str):
         "general/reusable/MEDIA_CAPABILITY_MATRIX.json",
         "general/reusable/tools/production_guard.py",
         "general/reusable/fx_v2/registry.json",
+        "general/reusable/fx_v2/promoted_effects.py",
+        "general/reusable/STANDARD_WORKFLOW_REGISTRY.json",
+        "general/reusable/tools/workflow_resolver.py",
+        "general/reusable/tools/workflow_guard.py",
     ]
     for rel in critical:
         p = os_root / rel
@@ -528,6 +532,10 @@ def validate(branch: str):
             "general/reusable/PRODUCTION_PIPELINE.md",
             "general/reusable/STYLE_CONTRACT.md",
             "general/reusable/fx_v2/registry.json",
+        "general/reusable/fx_v2/promoted_effects.py",
+        "general/reusable/STANDARD_WORKFLOW_REGISTRY.json",
+        "general/reusable/tools/workflow_resolver.py",
+        "general/reusable/tools/workflow_guard.py",
             "projects/OPERATING_ORDER_TEMPLATE.json",
         ]:
             if not (OS_ROOT / p).is_file():

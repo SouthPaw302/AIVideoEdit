@@ -1,8 +1,9 @@
 # Capability Lineage
-Reusable capabilities are identified by what they do, not by the production where they were discovered. Production origin is optional provenance only.
 
-Families: living/painterly motion; atmosphere/environment; light; surface; spatial/2.5D/radiance-field/3DGS; transitions; audio/reactivity; QC.
+Reusable capabilities are identified exclusively by what they do. Production names and origin projects are not runtime identities and are not inputs to selection.
 
-Promotion stages: production experiment -> proof/QC -> generic extraction -> project-neutral naming/path cleanup -> canonical proof -> registry promotion -> ongoing CI/lock verification.
+Two canonical families exist:
+- callable visual/audio-reactive effects under `fx_v2/registry.json`;
+- non-effect production workflows under `STANDARD_WORKFLOW_REGISTRY.json`.
 
-Callable state lives in `general/reusable/fx_v2/registry.json`.
+Promotion requires: real implementation or explicit workflow recipe -> verification/QC -> neutral naming -> registry entry -> CI/guard coverage. The active project chooses capabilities from its current direction, production mode, media plan, source authority and explicit user instruction.
