@@ -45,6 +45,34 @@
       "role": "locked eight-hero storyboard architecture"
     },
     {
+      "id": "S3-REF-CLAIRE-A",
+      "kind": "source_derived_reference",
+      "role": "claire_identity_lock",
+      "name": "S3_REF_Claire_identity_A.jpg",
+      "sha256": "bf23a2bc3dd27b76b5af8b7b1a339eed9ceb7164d15a3b02f6d3b2ef7bf6528f",
+      "dimensions": [199, 227],
+      "drive_file_id": "117q-pMDQTVBjF5FAeTzhDksFlzMEGQ4F",
+      "drive_folder_id": "1CRtH6WMgR0Yz2wOW6xy3cjSz8WOL5FMO",
+      "source_drive_file_id": "1r6N3b4Psxop5eP4sytP0Eu_sjtIT72mo",
+      "source_name": "s1_hero_contact.jpg",
+      "origin": "source_derived",
+      "lifecycle_status": "approved_reference_only"
+    },
+    {
+      "id": "S3-REF-CLAIRE-B",
+      "kind": "source_derived_reference",
+      "role": "claire_identity_lock_secondary",
+      "name": "S3_REF_Claire_identity_B.jpg",
+      "sha256": "a6af8f044524d35709b549ded3a9534b1fc8b204e92aa7e500ca7c264895fdb3",
+      "dimensions": [204, 219],
+      "drive_file_id": "17DC4THwafAED8t8M_uTrpMUggoMFWNIk",
+      "drive_folder_id": "1CRtH6WMgR0Yz2wOW6xy3cjSz8WOL5FMO",
+      "source_drive_file_id": "1r6N3b4Psxop5eP4sytP0Eu_sjtIT72mo",
+      "source_name": "s1_hero_contact.jpg",
+      "origin": "source_derived",
+      "lifecycle_status": "approved_reference_only"
+    },
+    {
       "id": "S3H01-ATTEMPT01",
       "kind": "generated_still",
       "role": "departure_state_continuity_attempt",
@@ -95,11 +123,25 @@
       "origin": "generated",
       "lifecycle_status": "rejected",
       "rejection_reason": "reference-isolated retry still jumped to later lobby/street authority imagery, propaganda text and militarized surveillance instead of the locked apartment departure state"
+    },
+    {
+      "id": "S3H01-ATTEMPT05",
+      "kind": "generated_still",
+      "role": "departure_state_continuity_attempt",
+      "name": "S3H01_attempt05_REJECTED_single-reference-street-drift.png",
+      "sha256": "93d1796bd2d560ce97f0fc89a98a9c5c5ce289dc682c07e505edb69717969645",
+      "dimensions": [1672, 941],
+      "drive_file_id": "1kDL6sZTz08VrMaQWzrSKcHADG6s9yh8Q",
+      "drive_folder_id": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf",
+      "origin": "generated",
+      "lifecycle_status": "rejected",
+      "rejection_reason": "single-reference edit still escaped the apartment into a controlled Paris street and invented surveillance/signage; native generation route is not respecting the shot-local constraint"
     }
   ],
   "archive_folders": {
     "generated_images": "1TswQhZfoUYfcoMoU4OfYB06WLDsUoIDr",
-    "rejected_and_alternates": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf"
+    "rejected_and_alternates": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf",
+    "reference_frames": "1CRtH6WMgR0Yz2wOW6xy3cjSz8WOL5FMO"
   },
   "planned_picture_assets": [
     "S3H01",
@@ -111,6 +153,6 @@
     "S3H07",
     "S3H08"
   ],
-  "picture_asset_status": "generation_paused_after_four_rejected_s3h01_attempts_diagnose_before_regenerating",
+  "picture_asset_status": "s3h01_unaccepted_native_generation_route_suspended_after_five_qc_failures",
   "rule": "Every future accepted, alternate, rejected, storyboard, QC and proof image/video must be recorded here and archived to AE / Act I / Scene 03."
 }
