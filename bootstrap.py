@@ -85,6 +85,29 @@ def detect_branch(repo: Path, explicit: str | None) -> str:
     raise SystemExit("BOOTSTRAP FAIL: branch cannot be determined. Use --branch.")
 
 
+def declared_project_scene_dir(repo: Path, branch: str) -> Path | None:
+    """Resolve only explicitly declared project/<slug>/scene-XX production branches."""
+    parts = branch.split("/")
+    if len(parts) != 3 or parts[0] != "project" or not parts[1]:
+        return None
+    scene = parts[2]
+    suffix = scene.removeprefix("scene-")
+    if scene == suffix or not suffix.isdigit() or len(suffix) < 2:
+        return None
+    project_root = repo / "projects" / parts[1]
+    policy = project_root / "PROJECT_BRANCHES.md"
+    exact = project_root / "scenes" / scene
+    if not policy.is_file() or not (exact / "PROJECT_STATE.json").is_file():
+        return None
+    try:
+        declared = policy.read_text(encoding="utf-8")
+    except Exception:
+        return None
+    if f"`{branch}`" not in declared:
+        return None
+    return exact.resolve()
+
+
 def detect_project_dir(repo: Path, branch: str, explicit: str | None) -> Path | None:
     if explicit:
         p = Path(explicit)
@@ -97,7 +120,11 @@ def detect_project_dir(repo: Path, branch: str, explicit: str | None) -> Path | 
         exact = repo / "projects" / branch.split("/", 1)[1]
         if (exact / "PROJECT_STATE.json").is_file():
             return exact
+    project_scene = declared_project_scene_dir(repo, branch)
+    if project_scene is not None:
+        return project_scene
     candidates = [p.parent for p in (repo / "projects").glob("*/PROJECT_STATE.json")]
+    candidates += [p.parent for p in (repo / "projects").glob("*/scenes/*/PROJECT_STATE.json")]
     return candidates[0] if len(candidates) == 1 else None
 
 

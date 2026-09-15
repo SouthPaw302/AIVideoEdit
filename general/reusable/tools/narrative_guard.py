@@ -7,6 +7,8 @@ import json
 import os
 from pathlib import Path
 
+from branch_policy import resolve_production_project
+
 SCRIPT_ROOT = Path(__file__).resolve().parents[3]
 if os.environ.get("AIVIDEOEDIT_REPO_ROOT"):
     ROOT = Path(os.environ["AIVIDEOEDIT_REPO_ROOT"]).resolve()
@@ -33,17 +35,13 @@ def fail(msg, errors):
     errors.append(msg)
 
 
-def discover_project():
-    env = os.environ.get("AIVIDEOEDIT_PROJECT_DIR")
-    if env:
-        p = Path(env)
-        return p if p.is_absolute() else ROOT / p
-    candidates = [p.parent for p in ROOT.glob("projects/*/PROJECT_STATE.json")]
-    if len(candidates) == 1:
-        return candidates[0]
-    if not candidates:
-        raise SystemExit("FAIL: no projects/*/PROJECT_STATE.json found")
-    raise SystemExit("FAIL: multiple project states found; set AIVIDEOEDIT_PROJECT_DIR")
+def discover_project(branch: str):
+    project, error = resolve_production_project(ROOT, branch)
+    if error:
+        raise SystemExit(f"FAIL: {error}")
+    if project is None:
+        raise SystemExit("FAIL: production project could not be resolved")
+    return project
 
 
 def validate_music_analysis(project: Path, state: dict, errors: list[str]):
@@ -317,10 +315,12 @@ def validate(branch: str):
                 fail(f"missing directing system file: {rel}", errors)
         return errors
 
-    if not branch.startswith("song/"):
-        return [f"production work must use song/<slug>; got {branch}"]
+    project, branch_error = resolve_production_project(ROOT, branch)
+    if branch_error:
+        return [branch_error]
+    if project is None:
+        return [f"production project could not be resolved for {branch}"]
 
-    project = discover_project()
     state = load_json(project / "PROJECT_STATE.json")
     plan = load_json(project / "MEDIA_PLAN.json")
     stage = state.get("stage")
