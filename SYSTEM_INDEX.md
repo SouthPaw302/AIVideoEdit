@@ -61,3 +61,13 @@ Permanent-system index only. No active production names or unrelated song links 
 
 ## Branch selection
 New supplied audio master -> new `song/<slug>` from current `main`. Explicit request to continue a named existing branch -> continue it. Otherwise never infer continuation from historical names.
+
+## Standard capability selection
+- `general/reusable/fx_v2/registry.json` — callable effect authority, including neutral standard effects promoted from prior technique work.
+- `general/reusable/fx_v2/promoted_effects.py` — project-neutral runtime implementation for the standardized effect library.
+- `general/reusable/fx_v2/verify_standard_effects.py` — per-effect visible/temporal/determinism verification and proof-report generator.
+- `general/reusable/STANDARD_WORKFLOW_REGISTRY.json` — project-neutral non-effect workflow authority.
+- `general/reusable/tools/workflow_resolver.py` — selects standard workflows from current production mode + media capabilities.
+- `general/reusable/tools/workflow_guard.py` — fail-closed registry/project selection verification; bootstrap runs it when present.
+
+Historical production names are not capability identities and are not used for automatic selection.

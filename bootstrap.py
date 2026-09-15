@@ -230,6 +230,9 @@ def run_bootstrap_guards(repo: Path, os_root: Path, branch: str, project: Path |
     recut = os_root / "general/reusable/tools/recut_guard.py"
     if recut.is_file():
         run_guard(recut, ["--branch", branch], env, "recut contract")
+    workflow = os_root / "general/reusable/tools/workflow_guard.py"
+    if workflow.is_file():
+        run_guard(workflow, ["--branch", branch], env, "standard workflow contract")
 
 
 def handoff_to_current_main_bootstrap(repo: Path, os_root: Path, branch: str, args: argparse.Namespace) -> None:
@@ -278,6 +281,23 @@ def next_stage(contract: dict, stage: str | None) -> str:
 
 def fmt_list(value) -> str:
     return "; ".join(str(x) for x in value) if isinstance(value, list) and value else "none recorded"
+
+
+def resolve_standard_workflows(os_root: Path, project: Path | None) -> list[str]:
+    if project is None:
+        return []
+    tool = os_root / "general/reusable/tools/workflow_resolver.py"
+    if not tool.is_file():
+        return []
+    p = subprocess.run([sys.executable, str(tool), "--project", str(project), "--json"], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+    if p.returncode != 0:
+        return ["ERROR: standard workflow resolution failed"]
+    try:
+        data = json.loads(p.stdout)
+    except Exception:
+        return ["ERROR: standard workflow resolver returned invalid JSON"]
+    vals = data.get("selected_workflow_names", [])
+    return [str(x) for x in vals] if isinstance(vals, list) else []
 
 
 def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | None, main_sha: str, session_id: str) -> str:
@@ -340,11 +360,13 @@ def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | N
             lines += ["## PRESERVE SOURCE CANON", "A canonical source library is under defect-first recut. Preserve its approved pixels/world and repair only named defects with traceable source-derived coverage unless the current user changes authorization.", ""]
     else:
         lines += ["OPERATING_ORDER.json not present. This is permitted only for an unmigrated legacy project. Do not invent canon/baseline/source-library/refinement state from history.", ""]
+    standard_workflows = resolve_standard_workflows(os_root, project)
     lines += [
         "## Source authority snapshot", "Allowed: " + (", ".join(allow) if allow else "none recorded"), "",
         "Denied: " + (", ".join(deny) if deny else "none recorded"), "",
         "Explicit historical authorizations: " + (", ".join(auth.get("explicit_user_authorizations", [])) or "none"), "",
         "## Media plan", "Selected capabilities: " + (", ".join(plan.get("selected_capabilities", [])) or "not established"), "",
+        "## Standard workflow selection", "Selected workflows: " + (", ".join(standard_workflows) or "none resolved"), "",
         "## Reference inventory", f"- Videos: {len(refs.get('videos', []))}", f"- Images: {len(refs.get('images', []))}", "",
         "## Session rule", "Do not advance stage, generate media, select FX, assemble, or claim QC from memory. Use the Prime Directive, active Operating Order, active branch evidence, and current-main OS. Re-run the bootstrapped production, narrative, and recut guards before stage-changing work.",
     ]
@@ -361,6 +383,7 @@ def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, 
     source = order.get("accepted_source_library", {}) if isinstance(order.get("accepted_source_library"), dict) else {}
     refine = order.get("refinement_scope", {}) if isinstance(order.get("refinement_scope"), dict) else {}
     recut = order.get("recut_scope", {}) if isinstance(order.get("recut_scope"), dict) else {}
+    standard_workflows = resolve_standard_workflows(os_root, project) if project else []
     rec = {
         "schema": SESSION_SCHEMA, "session_id": session_id,
         "started_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "repository": REPOSITORY,
@@ -372,6 +395,7 @@ def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, 
         "production_mode": order.get("production_mode") if order else None,
         "accepted_baseline_status": baseline.get("status"), "accepted_source_library_status": source.get("status"),
         "refinement_active": refine.get("active"), "recut_active": recut.get("active"),
+        "standard_workflows": standard_workflows,
     }
     path = session_dir / "session.json"
     path.write_text(json.dumps(rec, indent=2, sort_keys=True) + "\n", encoding="utf-8")
