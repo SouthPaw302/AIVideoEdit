@@ -69,6 +69,19 @@
       "origin": "generated",
       "lifecycle_status": "rejected",
       "rejection_reason": "shot advanced prematurely into street/public-authority imagery and introduced unapproved spectacle/branding instead of remaining inside the S3-01 apartment departure state"
+    },
+    {
+      "id": "S3H01-ATTEMPT03",
+      "kind": "generated_still",
+      "role": "departure_state_continuity_attempt",
+      "name": "S3H01_attempt03_REJECTED_poster-and-spectacle-drift.png",
+      "sha256": "4de3ee5353e6e4a69d2c73bae0ceac58b3a45abb03efbd7bd163b5550bb8525a",
+      "dimensions": [1672, 940],
+      "drive_file_id": "1C9w5xGo44RmMw6q9fJzgyHRH5J0BnYhS",
+      "drive_folder_id": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf",
+      "origin": "generated",
+      "lifecycle_status": "rejected",
+      "rejection_reason": "poster/title treatment plus drones, armed spectacle, invented branding and street-scale authority imagery violated S3-01 apartment-only continuity and zero-drift narrative scope"
     }
   ],
   "archive_folders": {
@@ -85,6 +98,6 @@
     "S3H07",
     "S3H08"
   ],
-  "picture_asset_status": "generation_in_progress_s3h01_not_yet_accepted",
+  "picture_asset_status": "generation_paused_after_three_rejected_s3h01_attempts_pending_reference-isolated_retry",
   "rule": "Every future accepted, alternate, rejected, storyboard, QC and proof image/video must be recorded here and archived to AE / Act I / Scene 03."
 }
