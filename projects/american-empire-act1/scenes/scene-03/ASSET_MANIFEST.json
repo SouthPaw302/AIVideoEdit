@@ -82,6 +82,19 @@
       "origin": "generated",
       "lifecycle_status": "rejected",
       "rejection_reason": "poster/title treatment plus drones, armed spectacle, invented branding and street-scale authority imagery violated S3-01 apartment-only continuity and zero-drift narrative scope"
+    },
+    {
+      "id": "S3H01-ATTEMPT04",
+      "kind": "generated_still",
+      "role": "departure_state_continuity_attempt",
+      "name": "S3H01_attempt04_REJECTED_later-scene-propaganda-drift.png",
+      "sha256": "c53095f98e4809ddb39162e8e3c19192641cac7cb69d21c841562f2283a4f6c2",
+      "dimensions": [1672, 940],
+      "drive_file_id": "1OdK34Dd4CuTIUHkdPruFc7iQrMoZ5alt",
+      "drive_folder_id": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf",
+      "origin": "generated",
+      "lifecycle_status": "rejected",
+      "rejection_reason": "reference-isolated retry still jumped to later lobby/street authority imagery, propaganda text and militarized surveillance instead of the locked apartment departure state"
     }
   ],
   "archive_folders": {
@@ -98,6 +111,6 @@
     "S3H07",
     "S3H08"
   ],
-  "picture_asset_status": "generation_paused_after_three_rejected_s3h01_attempts_pending_reference-isolated_retry",
+  "picture_asset_status": "generation_paused_after_four_rejected_s3h01_attempts_diagnose_before_regenerating",
   "rule": "Every future accepted, alternate, rejected, storyboard, QC and proof image/video must be recorded here and archived to AE / Act I / Scene 03."
 }
