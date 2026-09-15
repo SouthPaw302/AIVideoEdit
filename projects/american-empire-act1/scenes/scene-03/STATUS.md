@@ -2,11 +2,12 @@
 
 Branch: `project/american-empire-act1/scene-03`
 Canonical project root: `project/american-empire-act1/main`
-Stage: `APPROACH_LOCKED / STORYBOARD_LOCKED / SCORE_LOCKED / SCRIPT_LOCKED / MEDIA_GENERATION_NOT_STARTED`
+Stage: `APPROACH_LOCKED / STORYBOARD_LOCKED / SCORE_LOCKED / SCRIPT_LOCKED / RUNTIME_GATE_PASSED / MEDIA_GENERATION_NOT_STARTED`
 Direction authority: `user_directed`
 Production mode: `hybrid`
 
 ## Current continuity anchor
+
 Scene 03 begins immediately from Scene 02 shot `S2-10`: Claire has moved away from the window, gathered an approved essential, retained her phone and committed to leave while the controlled systems transition continues outside.
 
 Planning inheritance of this terminal state does not by itself promote any still-unapproved Scene 02 picture candidate to accepted master.
@@ -50,6 +51,21 @@ The score is instrumental. Lead and backing vocal stems contain no meaningful vo
 
 No new dialogue is locked for Scene 03. Do not invent explanatory dialogue, narration or intelligible public announcements. Captions are not required unless dialogue is explicitly approved later; any later dialogue requires a caption-timing revision before assembly.
 
+## Runtime gate
+
+The exact active branch passed the current-main runtime gate through GitHub Actions Production Contract run `#155` / run ID `34948338331`.
+
+- Validated Scene 03 head: `cd944a50b6624cd627d7858b6b46cf02b253d2d4`
+- Current-main OS commit: `f2493f226039dad1dfcececf584a9ffd03bd0ef7`
+- Resolved project directory: `projects/american-empire-act1/scenes/scene-03`
+- AIVideoEdit OS bootstrap: `PASS`
+- Production contract: `PASS`
+- Directing/narrative contract: `PASS`
+- Recut contract: `PASS`
+- Durable record: `RUNTIME_ATTESTATION.json`
+
+This gate authorizes the first named hero proof under the locked script. It does not mark any picture media, shot proof, FX pass, assembly or final QC as accepted.
+
 ## Media status
 
 No Scene 03 production images or video continuations have been generated yet.
@@ -60,19 +76,15 @@ Google Drive durable archive folder:
 
 All future generated media, including accepted, alternate, rejected, storyboard/contact-sheet, QC and proof material, must be archived according to the project handoff directive.
 
-## Runtime gate and known compatibility fault
+## Exact next action
 
-The American Empire branch policy explicitly authorizes:
+Generate and archive **`S3H01` only**: the departure-state hero/continuity proof for frames `0-191`.
 
-`project/american-empire-act1/scene-03`
+Before scaling to `S3H02`, verify:
 
-The current generic repository production guard still rejects non-`song/*` production branches. GitHub Actions successfully checked out and attempted to bootstrap Scene 03, then failed specifically on that branch-name incompatibility before media generation.
-
-Do not bypass the guard and do not move Scene 03 into a song branch.
-
-Next action:
-
-1. add narrow fail-closed support on repository `main` for project branches declared by a project's `PROJECT_BRANCHES.md`;
-2. synchronize that reusable fix into `project/american-empire-act1/main` and `project/american-empire-act1/scene-03`;
-3. rerun bootstrap plus production/narrative/recut guards;
-4. after PASS, generate the eight named hero compositions in script order, beginning with `S3H01`.
+- Claire identity, facial structure, anatomy and dark wavy hair;
+- phone and approved essential continuity;
+- apartment topology, window orientation and wardrobe continuity;
+- coherent exterior storm and source-local reflections;
+- the real secure/lift/shoulder/turn action envelope;
+- locked camera and absence of global wobble, fake handheld or architecture drift.
