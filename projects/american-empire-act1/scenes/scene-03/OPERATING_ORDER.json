@@ -1,0 +1,44 @@
+{
+  "schema":"aivideoedit.operating-order.v1",
+  "mission":"Build American Empire Act I Scene 03 as the first outward public consequence of the authority transition. Begin immediately from Scene 02's terminal narrative state, preserve the accepted Scene 01-derived motion/picture language, move Claire physically from apartment to street, and reveal coordinated systemic change through ordinary infrastructure rather than spectacle.",
+  "direction_authority":"user_directed",
+  "production_mode":"hybrid",
+  "canon_lock":{
+    "locked":true,
+    "picture_language":"Graphic-novel/noir digital illustration with bold inked value separation, restrained print texture, slate/pale gray-blue environment, cream Paris stone, muted cyan technology, warm amber practical light, deep charcoal shadows and rain-slick reflections.",
+    "items":[
+      "Claire identity, anatomy, facial structure, apparent age, dark wavy hair and established apartment wardrobe continuity",
+      "Paris apartment topology, window orientation, major furniture relationships and city geography inherited from Scenes 01-02",
+      "Scene 01-derived motion language: world/character/weather/light/depth motion before camera motion",
+      "Coherent storm behavior with rain exterior/window-associated and source-driven lightning/reflections",
+      "Standardized restrained caption system",
+      "No cyberpunk neon drift, floating UI, architecture warping, fake handheld motion or arbitrary A/B oscillation"
+    ]
+  },
+  "accepted_baseline":{
+    "status":"accepted_scene01_project_baseline",
+    "file_or_locator":"Scene01_FULL_ASSEMBLY03.mp4",
+    "sha256":"599e21039c303e287d8e729af46209132b5273bbf9ef2f760925563d931eb71e",
+    "note":"Scene 01 remains the accepted motion-language baseline."
+  },
+  "scene03_entry_anchor":{
+    "authority":"current_user_instruction_plus_scene02_script_terminal_state",
+    "source":"projects/american-empire-act1/scenes/scene-02/SCRIPT.json#S2-10",
+    "source_github_blob_sha":"d99eb5447c333549d87b649c07afbc5123bae10b",
+    "state":"Claire has moved away from the window, gathered an approved essential, retained her phone and committed to leave while the controlled city transition remains active behind her.",
+    "promotion_rule":"Using this terminal narrative state for Scene 03 planning does not by itself promote an unapproved Scene 02 picture candidate to accepted master."
+  },
+  "scene03_story_function":"Private warning becomes visible systemic change. Ordinary building, transit, traffic and civic systems behave with coordinated purpose, implying a prepared authority handoff. The city remains functional and controlled rather than destroyed.",
+  "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},
+  "recut_scope":{"active":false,"named_defects":[],"allowed_changes":[],"forbidden_changes":[],"source_replacement_authorized":false},
+  "current_user_direction":"Begin Scene 03 immediately after Scene 02; Claire moves forward out of the apartment; expand apartment -> hallway -> building -> street/Paris; use approximately 6-8 primary hero compositions, real character-state progression, living-scene motion before camera motion, coherent storm behavior, standardized captions, smooth audio, and archive all generated media to Google Drive. Do not generate random image volume or restore shaky Scene 02 behavior.",
+  "runtime_gate":{
+    "bootstrap_required":true,
+    "production_guard_required":true,
+    "narrative_guard_required":true,
+    "recut_guard_if_present":true,
+    "media_generation_allowed_before_gate_pass":false
+  },
+  "exact_next_action":"After bootstrap/guard attestation, review and lock STORYBOARD_DRAFT.md and MEDIA_PLAN.json, establish Scene 03 score/audio structure and frame timing, then create SCRIPT.md and frame-followable SCRIPT.json before generating the eight named hero compositions.",
+  "updated_at_utc":"2026-09-15T07:40:00Z"
+}
