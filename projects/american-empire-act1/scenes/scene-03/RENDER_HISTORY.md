@@ -64,4 +64,20 @@ Added or strengthened:
 - continuous Assembly02 audio/caption track
 - Drive ID: `1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI`
 
-Assembly03 is a visual effects proof only and does not supersede Assembly02 as the approved pre-production reference until reviewed.
+Assembly03 is retained as the effects rollback reference.
+
+## Assembly04 — artifact-clean effects review
+
+Built directly from Assembly03, preserving its successful effect behavior and exact edit timing while suppressing production/debug corner-note contamination. No shot was reordered, retimed or compositionally redesigned.
+
+`Scene03_ASSEMBLY04_CLEAN_ACTION_PASS.mp4`
+
+- SHA-256: `07bccc75f5e54b6b89b0142c90c3d7224cd976d2a91afce1030997f9219a5bb7`
+- 1280x720
+- 24 fps
+- exactly 98.000 s
+- exactly 2352 frames
+- existing score/caption track preserved
+- Drive ID: `1udCJWNJMpK2oSdSir6Qfwmcndzx6p9Og`
+
+QC spot comparison against Assembly03 shows changes concentrated in the production-note edge regions with negligible central-composition drift. Assembly04 is a review candidate only; Assembly02 remains the approved pre-production basis until a later candidate is explicitly accepted.
