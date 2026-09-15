@@ -16,10 +16,11 @@
     ]
   },
   "accepted_baseline":{
-    "status":"accepted_scene01_project_baseline",
+    "status":"accepted",
     "file_or_locator":"Scene01_FULL_ASSEMBLY03.mp4",
     "sha256":"599e21039c303e287d8e729af46209132b5273bbf9ef2f760925563d931eb71e",
-    "note":"Scene 01 remains the accepted motion-language baseline."
+    "user_acceptance_statement":"Scene 01 is the accepted motion and picture-language baseline for the continuous American Empire film.",
+    "note":"Scene 01 remains the accepted motion-language baseline; Scene 02 terminal narrative continuity does not automatically promote an unapproved Scene 02 picture candidate."
   },
   "scene03_entry_anchor":{
     "authority":"current_user_instruction_plus_scene02_script_terminal_state",
@@ -29,16 +30,30 @@
     "promotion_rule":"Using this terminal narrative state for Scene 03 planning does not by itself promote an unapproved Scene 02 picture candidate to accepted master."
   },
   "scene03_story_function":"Private warning becomes visible systemic change. Ordinary building, transit, traffic and civic systems behave with coordinated purpose, implying a prepared authority handoff. The city remains functional and controlled rather than destroyed.",
+  "score_lock":{
+    "status":"locked",
+    "title":"L'Atmosphère",
+    "source":"L'Atmosphère.wav",
+    "sha256":"96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25",
+    "duration_seconds":98.0,
+    "target_fps":24,
+    "total_frames":2352,
+    "analysis_file":"SCORE_ANALYSIS.json",
+    "script_file":"SCRIPT.json",
+    "drive_master_file_id":"1hOhmd5xt6nQvslYE-271Yg2SUskCJ64E",
+    "drive_stems_file_id":"1Rv-60STTQY_kOZ91O01p8GaJP_ib0170"
+  },
   "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},
   "recut_scope":{"active":false,"named_defects":[],"allowed_changes":[],"forbidden_changes":[],"source_replacement_authorized":false},
-  "current_user_direction":"Begin Scene 03 immediately after Scene 02; Claire moves forward out of the apartment; expand apartment -> hallway -> building -> street/Paris; use approximately 6-8 primary hero compositions, real character-state progression, living-scene motion before camera motion, coherent storm behavior, standardized captions, smooth audio, and archive all generated media to Google Drive. Do not generate random image volume or restore shaky Scene 02 behavior.",
+  "current_user_direction":"Begin Scene 03 immediately after Scene 02; Claire moves forward out of the apartment; expand apartment -> hallway -> building -> street/Paris; use eight primary hero compositions, real character-state progression, living-scene motion before camera motion, coherent storm behavior, standardized captions if dialogue is later approved, smooth audio, and archive all generated media to Google Drive. Do not generate random image volume or restore shaky Scene 02 behavior.",
   "runtime_gate":{
     "bootstrap_required":true,
     "production_guard_required":true,
     "narrative_guard_required":true,
     "recut_guard_if_present":true,
-    "media_generation_allowed_before_gate_pass":false
+    "media_generation_allowed_before_gate_pass":false,
+    "known_compatibility_issue":"Current generic production_guard rejects the declared project/american-empire-act1/scene-03 production branch even though PROJECT_BRANCHES.md explicitly authorizes this hierarchy. Resolve narrowly on repository main and synchronize into the project before generation."
   },
-  "exact_next_action":"After bootstrap/guard attestation, review and lock STORYBOARD_DRAFT.md and MEDIA_PLAN.json, establish Scene 03 score/audio structure and frame timing, then create SCRIPT.md and frame-followable SCRIPT.json before generating the eight named hero compositions.",
-  "updated_at_utc":"2026-09-15T07:40:00Z"
+  "exact_next_action":"Add fail-closed support for declared project/<slug>/scene-XX production branches to the current-main guard, bootstrap and run all guards on project/american-empire-act1/scene-03, then generate the eight named Scene 03 hero compositions in SCRIPT.json order beginning with S3H01.",
+  "updated_at_utc":"2026-09-15T08:29:29Z"
 }
