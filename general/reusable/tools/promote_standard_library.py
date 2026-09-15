@@ -66,14 +66,14 @@ def verify_effect_identity(promoted, name_registry: dict, aliases: dict) -> None
     if len(alias_records) != len(promoted.LEGACY_ALIASES):
         raise RuntimeError("effect alias count does not match promoted runtime aliases")
     for label, expected_name in promoted.LEGACY_ALIASES.items():
-        rec = alias_records.get(label)
-        if not isinstance(rec, dict):
-            raise RuntimeError(f"alias {label!r} must retain object record schema")
-        if rec.get("effect_name") != expected_name:
-            raise RuntimeError(f"alias {label!r} resolves to {rec.get('effect_name')!r}, expected {expected_name!r}")
-        canonical = effects.get(expected_name, {})
-        if rec.get("effect_id") != canonical.get("id"):
-            raise RuntimeError(f"alias {label!r} effect_id does not match neutral effect registry")
+        resolved_name = alias_records.get(label)
+        if not isinstance(resolved_name, str) or not resolved_name.strip():
+            raise RuntimeError(f"alias {label!r} must resolve directly to a neutral effect name")
+        if resolved_name != expected_name:
+            raise RuntimeError(f"alias {label!r} resolves to {resolved_name!r}, expected {expected_name!r}")
+        canonical = effects.get(expected_name)
+        if not isinstance(canonical, dict) or not canonical.get("id"):
+            raise RuntimeError(f"alias {label!r} resolves to effect without a canonical neutral ID")
 
 
 def promote_effects_into_canonical_registry(promoted, name_registry: dict) -> None:
