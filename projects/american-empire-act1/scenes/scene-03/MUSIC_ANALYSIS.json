@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "project": "american-empire-act1-scene-03",
+  "source": "L'Atmosphère.wav",
+  "source_sha256": "96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25",
+  "duration_seconds": 98.0,
+  "target_fps": 24,
+  "total_frames": 2352,
+  "lyrics": {
+    "status": "absent",
+    "directing_use": "none",
+    "resolution": "instrumental score; lead and backing vocal stems are effectively silent"
+  },
+  "genre": {
+    "authority": "current_user_selected_score_plus_audio_analysis",
+    "description": "cinematic noir tension score with restrained trip-hop/industrial pulse, low strings, guitar, bass, synth texture, sparse brass and unresolved electronic tail",
+    "confidence": 0.94
+  },
+  "rhythm_or_pulse": "Purposeful low pulse that strengthens after 15 seconds, locks into a mechanical drive around 30 seconds, opens near 78 seconds and recedes into an unresolved tail after 89 seconds.",
+  "tempo_or_non_metric_status": {
+    "estimated_primary_bpm": 78.125,
+    "detected_subdivision_bpm": 156.25,
+    "status": "metric with cinematic rubato/texture at section edges"
+  },
+  "meter_or_groove": "Slow duple/4-4 cinematic pulse with restrained trip-hop and industrial relay character; no EDM drop.",
+  "section_map": [
+    {"range_seconds":[0.0,8.0],"frames":[0,191],"function":"unresolved handoff and departure"},
+    {"range_seconds":[8.0,15.0],"frames":[192,359],"function":"threshold thinning and exposed mechanism"},
+    {"range_seconds":[15.0,30.0],"frames":[360,719],"function":"gathering movement and hallway coordination"},
+    {"range_seconds":[30.0,49.0],"frames":[720,1175],"function":"mechanical lock-in and elevator descent"},
+    {"range_seconds":[49.0,66.0],"frames":[1176,1583],"function":"strongest building-scale handoff"},
+    {"range_seconds":[66.0,78.0],"frames":[1584,1871],"function":"exterior expansion and street reorganization"},
+    {"range_seconds":[78.0,89.0],"frames":[1872,2135],"function":"opened texture for public proof"},
+    {"range_seconds":[89.0,98.0],"frames":[2136,2351],"function":"unresolved forward movement into Paris"}
+  ],
+  "energy_curve": "Low but immediate at the opening, briefly thinned at 8 seconds, steadily rising from 15 seconds, strongest and most sustained from 30-78 seconds, strategically opened at 78-89 seconds, then unresolved rather than conclusively resolved.",
+  "musical_cues": [
+    "8s texture thinning",
+    "15s purposeful pulse gathering",
+    "30s full mechanical rhythm lock",
+    "49s strongest sustained section",
+    "66s exterior expansion",
+    "78s rhythmic opening for proof",
+    "89s unresolved tail"
+  ],
+  "narrative_function": "Move the film from private warning to physical departure and public systemic proof while making the transition feel prepared, intelligent and inevitable rather than chaotic.",
+  "mix_policy": "Full mix is editorial authority. Stems may create smooth space for Foley and system events using ramps only; no hard score cuts. Generated video music/dialogue is discarded, while useful isolated ambience or Foley may be reviewed separately."
+}
