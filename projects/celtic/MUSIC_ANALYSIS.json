@@ -1,0 +1,26 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": false,
+  "source": {
+    "name": "Celtic.wav",
+    "locator": "current_conversation_upload"
+  },
+  "lyrics": {
+    "status": "unresolved",
+    "source": null,
+    "text_file": null
+  },
+  "genre": {
+    "status": "pending_analysis",
+    "label": null,
+    "source": null,
+    "confidence": null
+  },
+  "rhythm": {
+    "tempo_status": "pending_analysis",
+    "tempo_bpm": null,
+    "pulse_description": null,
+    "meter_or_groove": null
+  },
+  "sections": []
+}

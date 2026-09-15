@@ -1,0 +1,12 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [
+    {
+      "name": "shot_010.mp4",
+      "locator": "current_conversation_upload",
+      "role": "visual_continuity_reference",
+      "analysis_complete": false
+    }
+  ],
+  "images": []
+}

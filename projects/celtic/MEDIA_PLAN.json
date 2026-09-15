@@ -1,0 +1,8 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "selected_capabilities": [],
+  "production_mode": "living_scene",
+  "direction_authority": "user_directed",
+  "notes": "User explicitly supplied the core visual direction. Production capability selection follows media analysis."
+}
