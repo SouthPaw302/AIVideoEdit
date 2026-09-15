@@ -43,8 +43,38 @@
       "path": "STORYBOARD_DRAFT.md",
       "lifecycle_status": "approved",
       "role": "locked eight-hero storyboard architecture"
+    },
+    {
+      "id": "S3H01-ATTEMPT01",
+      "kind": "generated_still",
+      "role": "departure_state_continuity_attempt",
+      "name": "S3H01_attempt01_REJECTED_identity-drift.png",
+      "sha256": "1dc3f4d0f8081b560b0ce15f8fbd036f12916781b4a1f509d333c983de3ee9ca",
+      "dimensions": [1672, 941],
+      "drive_file_id": "1BtKoKumYcCAE3zFh1sAe29AMq3J7wtk9",
+      "drive_folder_id": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf",
+      "origin": "generated",
+      "lifecycle_status": "rejected",
+      "rejection_reason": "identity continuity insufficient against accepted Scene 01 Claire/apartment contact reference; composition logic retained only as a diagnostic"
+    },
+    {
+      "id": "S3H01-ATTEMPT02",
+      "kind": "generated_still",
+      "role": "departure_state_continuity_attempt",
+      "name": "S3H01_attempt02_REJECTED_narrative-drift.png",
+      "sha256": "08cf97b81a2f0ae3a7ab31724574dafbfe1fd0c72ff6a03072466c71193acda2",
+      "dimensions": [1672, 941],
+      "drive_file_id": "1Kc94cXYP8oMP-Rzi4P317Gjp6Mcof8fa",
+      "drive_folder_id": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf",
+      "origin": "generated",
+      "lifecycle_status": "rejected",
+      "rejection_reason": "shot advanced prematurely into street/public-authority imagery and introduced unapproved spectacle/branding instead of remaining inside the S3-01 apartment departure state"
     }
   ],
+  "archive_folders": {
+    "generated_images": "1TswQhZfoUYfcoMoU4OfYB06WLDsUoIDr",
+    "rejected_and_alternates": "1H159HEnur5k9GtPPVjdW-4tBL7zwYykf"
+  },
   "planned_picture_assets": [
     "S3H01",
     "S3H02",
@@ -55,6 +85,6 @@
     "S3H07",
     "S3H08"
   ],
-  "picture_asset_status": "not_generated",
+  "picture_asset_status": "generation_in_progress_s3h01_not_yet_accepted",
   "rule": "Every future accepted, alternate, rejected, storyboard, QC and proof image/video must be recorded here and archived to AE / Act I / Scene 03."
 }
