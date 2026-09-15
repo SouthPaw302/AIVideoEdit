@@ -192,6 +192,14 @@
     {
       "path": "general/reusable/tools/workflow_guard.py",
       "role": "fail_closed_standard_workflow_guard"
+    },
+    {
+      "path": "general/reusable/fx_v2/effect_name_registry.json",
+      "role": "neutral_standard_effect_name_registry"
+    },
+    {
+      "path": "general/reusable/fx_v2/verify_promoted_effects.py",
+      "role": "neutral_standard_effect_verifier"
     }
   ],
   "purpose": "Critical files whose exact current-main hashes are attested at every agent-session bootstrap. The bootstrap materializes the entire main branch, not only this list.",
