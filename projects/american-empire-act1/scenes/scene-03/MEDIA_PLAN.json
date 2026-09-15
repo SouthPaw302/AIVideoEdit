@@ -46,6 +46,15 @@
     "camera":"locked or near-locked; motivated bounded move only",
     "forbidden":["global wobble","fake handheld","endless zoom","whole-frame rain inside dry interiors","whole-frame lightning flash","cyberpunk neon drift","floating holograms","architecture warp","identity/body drift"]
   },
-  "music_timing":"unlocked_pending_scene03_audio_structure",
-  "status":"storyboard_defined_media_generation_not_started"
+  "music_timing":{
+    "status":"locked",
+    "score":"L'Atmosphère.wav",
+    "score_sha256":"96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25",
+    "duration_seconds":98.0,
+    "target_fps":24,
+    "total_frames":2352,
+    "analysis":"SCORE_ANALYSIS.json",
+    "script":"SCRIPT.json"
+  },
+  "status":"script_locked_media_generation_not_started"
 }
