@@ -1,0 +1,3 @@
+production_mode=hybrid
+source=MEDIA_PLAN.selected_capabilities
+resolver=general/reusable/tools/workflow_resolver.py
