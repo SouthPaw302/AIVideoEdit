@@ -2,7 +2,7 @@
 
 Branch: `project/american-empire-act1/scene-03`
 Canonical project root: `project/american-empire-act1/main`
-Stage: `APPROACH_LOCKED / STORYBOARD_LOCKED / SCORE_LOCKED / SCRIPT_LOCKED / RUNTIME_GATE_PASSED / MEDIA_GENERATION_NOT_STARTED`
+Stage: `APPROACH_LOCKED / STORYBOARD_LOCKED / SCORE_LOCKED / SCRIPT_LOCKED / RUNTIME_GATE_PASSED / MEDIA_GENERATION_IN_PROGRESS / S3H01_NOT_ACCEPTED`
 Direction authority: `user_directed`
 Production mode: `hybrid`
 
@@ -53,9 +53,8 @@ No new dialogue is locked for Scene 03. Do not invent explanatory dialogue, narr
 
 ## Runtime gate
 
-The exact active branch passed the current-main runtime gate through GitHub Actions Production Contract run `#155` / run ID `34948338331`.
+The exact active branch passed the current-main runtime gate through GitHub Actions Production Contract run `#155` / run ID `34948338331` and the final documented head passed again in run `#158` / run ID `34948441682`.
 
-- Validated Scene 03 head: `cd944a50b6624cd627d7858b6b46cf02b253d2d4`
 - Current-main OS commit: `f2493f226039dad1dfcececf584a9ffd03bd0ef7`
 - Resolved project directory: `projects/american-empire-act1/scenes/scene-03`
 - AIVideoEdit OS bootstrap: `PASS`
@@ -64,21 +63,36 @@ The exact active branch passed the current-main runtime gate through GitHub Acti
 - Recut contract: `PASS`
 - Durable record: `RUNTIME_ATTESTATION.json`
 
-This gate authorizes the first named hero proof under the locked script. It does not mark any picture media, shot proof, FX pass, assembly or final QC as accepted.
+This gate authorizes named hero proofs under the locked script. It does not mark any picture media, shot proof, FX pass, assembly or final QC as accepted.
 
 ## Media status
 
-No Scene 03 production images or video continuations have been generated yet.
+`S3H01` generation has begun, but **no Scene 03 picture is accepted yet**.
+
+Five `S3H01` attempts have been generated, rejected by continuity QC and archived under:
+
+`AE / Act I / Scene 03 / Rejected & Alternates`
+
+Failure pattern: the native image-generation route repeatedly expands the broader American Empire premise into later street/security/propaganda beats instead of staying inside the locked `S3-01` apartment departure state. Blind retries are suspended.
+
+Reference isolation is complete under:
+
+`AE / Act I / Scene 03 / Reference Frames`
+
+- `S3_REF_Claire_identity_A.jpg`
+- `S3_REF_Claire_identity_B.jpg`
+
+See `S3H01_QC.md` and `ASSET_MANIFEST.json` for the exact rejection record and reference IDs.
 
 Google Drive durable archive folder:
 
 `AE / Act I / Scene 03`
 
-All future generated media, including accepted, alternate, rejected, storyboard/contact-sheet, QC and proof material, must be archived according to the project handoff directive.
+All generated media, including accepted, alternate, rejected, storyboard/contact-sheet, QC and proof material, remains subject to the archive rule.
 
 ## Exact next action
 
-Generate and archive **`S3H01` only**: the departure-state hero/continuity proof for frames `0-191`.
+Retry **`S3H01` only** using a backend that supports explicit character/reference locking and shot-local prompting, or a traceable source-derived edit/composite route. Do not use another broad native text-to-image interpretation.
 
 Before scaling to `S3H02`, verify:
 
@@ -86,5 +100,6 @@ Before scaling to `S3H02`, verify:
 - phone and approved essential continuity;
 - apartment topology, window orientation and wardrobe continuity;
 - coherent exterior storm and source-local reflections;
+- no hallway/lobby/street/security/propaganda content in `S3H01`;
 - the real secure/lift/shoulder/turn action envelope;
 - locked camera and absence of global wobble, fake handheld or architecture drift.
