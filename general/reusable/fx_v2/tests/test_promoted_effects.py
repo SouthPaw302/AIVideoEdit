@@ -21,9 +21,8 @@ def test_every_legacy_alias_resolves_to_live_effect_name():
     registry = json.loads((FX / 'effect_name_registry.json').read_text())['effects']
     aliases = json.loads((FX / 'effect_aliases.json').read_text())['aliases']
     assert set(registry) == set(EFFECT_NAMES)
-    for label, rec in aliases.items():
-        name = rec['effect_name']
+    for label, name in aliases.items():
         assert name in registry, label
-        assert registry[name]['id'] == rec['effect_id']
         assert registry[name]['status'] == 'approved'
         assert registry[name]['call'] == 'apply_effect'
+        assert LEGACY_ALIASES[label] == name
