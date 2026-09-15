@@ -16,6 +16,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from branch_policy import resolve_production_project
+
 SCRIPT_ROOT = Path(__file__).resolve().parents[3]
 if os.environ.get("AIVIDEOEDIT_REPO_ROOT"):
     ROOT = Path(os.environ["AIVIDEOEDIT_REPO_ROOT"]).resolve()
@@ -62,13 +64,11 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def discover_project() -> Path | None:
-    env = os.environ.get("AIVIDEOEDIT_PROJECT_DIR")
-    if env:
-        p = Path(env)
-        return p.resolve() if p.is_absolute() else (ROOT / p).resolve()
-    candidates = [p.parent for p in ROOT.glob("projects/*/PROJECT_STATE.json")]
-    return candidates[0] if len(candidates) == 1 else None
+def discover_project(branch: str) -> Path | None:
+    project, error = resolve_production_project(ROOT, branch)
+    if error:
+        return None
+    return project
 
 
 def import_module(path: Path, name: str):
@@ -288,11 +288,13 @@ def validate(branch: str) -> tuple[list[str], list[str]]:
             if not (OS_ROOT / rel).is_file():
                 errors.append(f"missing recut system file: {rel}")
         return errors, warnings
-    if not branch.startswith("song/"):
-        return errors, warnings
-    project = discover_project()
+
+    project, branch_error = resolve_production_project(ROOT, branch)
+    if branch_error:
+        return [branch_error], warnings
     if project is None:
-        return errors, warnings
+        return [f"production project could not be resolved for {branch}"], warnings
+
     try:
         state = load_json(project / "PROJECT_STATE.json")
         order = load_json(project / "OPERATING_ORDER.json") if (project / "OPERATING_ORDER.json").is_file() else {}
