@@ -43,29 +43,49 @@
     "drive_master_file_id":"1hOhmd5xt6nQvslYE-271Yg2SUskCJ64E",
     "drive_stems_file_id":"1Rv-60STTQY_kOZ91O01p8GaJP_ib0170"
   },
-  "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},
+  "refinement_scope":{
+    "active":true,
+    "goal":"Preserve the user-approved Assembly02 pre-production look while completing missing diegetic effects/actions and preparing artifact cleanup for the final Scene 03 master.",
+    "allowed_changes":[
+      "registered weather/reflection/light effect refinement",
+      "access/elevator/lobby/traffic/transit/public-display state progression",
+      "production/debug annotation cleanup without changing approved composition",
+      "bounded shot-local timing/intensity adjustments that preserve the locked 98-second edit"
+    ],
+    "forbidden_changes":[
+      "wholesale hero regeneration",
+      "Claire identity or wardrobe redesign",
+      "city/apartment/hallway/elevator/lobby topology redesign",
+      "shot-order or score-timing restart",
+      "cyberpunk spectacle or military escalation",
+      "fake handheld or arbitrary repeated camera oscillation"
+    ],
+    "restart_authorized":false
+  },
   "recut_scope":{"active":false,"named_defects":[],"allowed_changes":[],"forbidden_changes":[],"source_replacement_authorized":false},
-  "current_user_direction":"Begin Scene 03 immediately after Scene 02; Claire moves forward out of the apartment; expand apartment -> hallway -> building -> street/Paris; use eight primary hero compositions, real character-state progression, living-scene motion before camera motion, coherent storm behavior, standardized captions if dialogue is later approved, smooth audio, and archive all generated media to Google Drive. Do not generate random image volume or restore shaky Scene 02 behavior.",
+  "current_user_direction":"Assembly02 is good pre-production and is the approved foundation. Work from Assembly02: preserve its feel, Claire continuation, city design, shot order, timing, score and picture language. Complete the missing scene-specific effects/actions, remove production/debug artifacts before final master, and do not restart or regenerate the approved production wholesale.",
   "runtime_gate":{
     "bootstrap_required":true,
     "production_guard_required":true,
     "narrative_guard_required":true,
     "recut_guard_if_present":true,
+    "workflow_guard_required":true,
     "status":"PASS",
     "media_generation_allowed_before_gate_pass":false,
     "media_generation_now_authorized":true,
     "attestation_file":"RUNTIME_ATTESTATION.json",
     "validated_scene_head":"cd944a50b6624cd627d7858b6b46cf02b253d2d4",
-    "current_main_os_commit":"f2493f226039dad1dfcececf584a9ffd03bd0ef7",
+    "current_main_os_commit":"5fe4a688d9c83f80a0e73dc5bf88cfe632c88a16",
     "workflow_run_id":34948338331,
     "workflow_run_number":155,
     "results":{
       "bootstrap":"PASS",
       "production_guard":"PASS",
       "narrative_guard":"PASS",
-      "recut_guard":"PASS"
+      "recut_guard":"PASS",
+      "workflow_guard":"required_on_next_exact_head_validation"
     }
   },
-  "exact_next_action":"Generate and archive S3H01 only: the departure-state hero/continuity proof for SCRIPT.json frames 0-191. Validate Claire identity/anatomy, phone and essential continuity, apartment topology, wardrobe, coherent storm, locked camera and the bounded secure/lift/shoulder/turn action before authorizing S3H02 or any batch generation.",
-  "updated_at_utc":"2026-09-15T08:43:00Z"
+  "exact_next_action":"Review Scene03_ASSEMBLY03_EFFECTS_PROOF.mp4 against Assembly02 for effect placement/intensity. Retain only effect improvements that preserve the approved pre-production look; then clean production/debug annotations and run final semantic/action QC before master promotion.",
+  "updated_at_utc":"2026-09-15T20:20:00Z"
 }
