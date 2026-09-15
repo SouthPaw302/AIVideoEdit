@@ -28,20 +28,22 @@
   "score_ingested": true,
   "score_analysis_file": "SCORE_ANALYSIS.json",
   "picture_media_generated": true,
-  "last_validated_frame_range": [0,2351],
+  "last_validated_frame_range": [0, 2351],
   "active_picture_candidate": "Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4",
   "active_picture_sha256": "3baa68d24c02e985f9c1c67396cec7ce8f9d1fc1940374837886e5402868efa5",
   "active_picture_status": "approved_preproduction_reference",
-  "effects_review_candidate": "Scene03_ASSEMBLY03_EFFECTS_PROOF.mp4",
-  "effects_review_sha256": "77e2ea51c3ea22ed3c1b3dab4c46a64d9f99ae71bf301fd25bfa866246584438",
-  "effects_review_drive_file_id": "1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI",
-  "effects_review_status": "pending_user_review",
+  "effects_proof_candidate": "Scene03_ASSEMBLY03_EFFECTS_PROOF.mp4",
+  "effects_proof_sha256": "77e2ea51c3ea22ed3c1b3dab4c46a64d9f99ae71bf301fd25bfa866246584438",
+  "effects_proof_drive_file_id": "1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI",
+  "review_candidate": "Scene03_ASSEMBLY04_CLEAN_ACTION_PASS.mp4",
+  "review_candidate_sha256": "07bccc75f5e54b6b89b0142c90c3d7224cd976d2a91afce1030997f9219a5bb7",
+  "review_candidate_drive_file_id": "1udCJWNJMpK2oSdSir6Qfwmcndzx6p9Og",
+  "review_candidate_status": "pending_user_review",
   "master_blockers": [
-    "production_debug_annotation_cleanup",
-    "effect_placement_intensity_review",
+    "assembly04_artistic_review",
     "final_semantic_action_qc",
     "user_master_acceptance"
   ],
-  "system_main_authority": "5fe4a688d9c83f80a0e73dc5bf88cfe632c88a16",
-  "updated_at_utc": "2026-09-15T20:20:00Z"
+  "system_main_authority": "0126b1c2978dc96810a02956a270feccdf02bdcf",
+  "updated_at_utc": "2026-09-15T21:58:00Z"
 }
