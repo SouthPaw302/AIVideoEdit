@@ -2,39 +2,29 @@
 
 ## Authority
 
-Work only on `project/american-empire-act1/scene-03`. Repository `main` is the AIVideoEdit OS authority; `project/american-empire-act1/main` is the film integration branch.
+Work only on `project/american-empire-act1/scene-03`. Repository `main` remains the AIVideoEdit OS authority; `project/american-empire-act1/main` is the film integration branch.
 
 ## Resume state
 
-Scene 03 is score-, storyboard- and script-locked at 98 seconds / 2,352 frames. No Scene 03 picture assets have been generated. Begin with `S3H01` only after the exact active branch passes current-main bootstrap plus production, narrative and recut guards.
+Scene 03 is assembled at 98.000 seconds / 2352 frames with the current technical candidate:
 
-## Read first
+`Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4`  
+SHA-256 `3baa68d24c02e985f9c1c67396cec7ce8f9d1fc1940374837886e5402868efa5`
 
-1. `OPERATING_ORDER.json`
-2. `PROJECT_STATE.json`
-3. `SCRIPT.md`
-4. `SCRIPT.json`
-5. `MEDIA_PLAN.json`
-6. `SCORE_ANALYSIS.json`
-7. `STORYBOARD_DRAFT.md`
-8. `STATUS.md`
-9. Project-root `MOTION_LANGUAGE.md`
-10. Repository `PRIME_DIRECTIVE.md` and current-main reusable doctrines
+The eight hero images were explicitly approved by the current user. Do not regenerate or reinterpret them.
 
-## Continuity
+## Current motion implementation
 
-Begin from Scene 02 `S2-10`: Claire has gathered one approved essential, retained her phone and committed to leave. This is a narrative entry anchor only; it does not promote any unapproved Scene 02 picture candidate.
+Each hero has a deterministic matched-angle pair at ±0.85° Y-axis micro-yaw. Existing localized diegetic FX are retained inside the corrected GIF loops. The movement correction is source-locked and does not redraw Claire, props, architecture, or scene topology.
 
-## Production order
+## Next phase
 
-Generate the eight named heroes in script order. Use alternates only for the three authorized physical state changes. Archive every generation—including rejected and unused material—to `AE / Act I / Scene 03`, then record it in `ASSET_MANIFEST.json`.
+Run final mode-aware QC on Assembly02, inspect loop seams/shot boundaries/caption beats, then package the accepted Scene 03 candidate for Act I integration. Do not promote to accepted master without current-user approval.
 
 ## Non-negotiable
 
-- Do not move Scene 03 to a `song/*` branch.
-- Do not reset Claire at the window.
-- Do not invent dialogue, narrator copy or public exposition.
-- Do not use random image volume, global wobble, fake handheld, endless zoom or oscillating A/B crops.
-- Keep rain exterior/window/doorway associated and lighting source-driven.
-- Movement comes from Claire, systems, weather, reflections and depth before camera movement.
-- Do not claim proof acceptance, FX lock, assembly or QC before real media exists and the user approves it.
+- Preserve the eight approved heroes.
+- Preserve the 98-second score/frame map and canon dialogue unless the user changes them.
+- No fake handheld, global wobble, oscillating crop, endless zoom, identity drift, or topology mutation.
+- Keep weather/light/system effects physically registered.
+- Drive uploads remain checkpoint/final-handoff storage, not constant scratch synchronization.

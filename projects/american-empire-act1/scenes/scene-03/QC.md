@@ -1,34 +1,35 @@
 # Scene 03 QC Record
 
-## Completed pre-media checks
+## Current technical candidate
 
-- **Audio duration:** source is 98.04 seconds; editorial range locked to exactly 98.00 seconds.
-- **Frame calculation:** 98.00 × 24 fps = 2,352 frames.
-- **Script coverage:** entries begin at frame 0 and end at frame 2351.
-- **Continuity:** no gaps or overlaps between the eight script entries.
-- **Score identity:** SHA-256 recorded in source authority, asset manifest, score analysis and script.
-- **Stem package:** 12 stems verified at matching duration; vocal stems contain no meaningful vocal performance.
-- **Dialogue:** no new dialogue or captions falsely claimed.
-- **Picture status:** no Scene 03 images or video have been generated, reviewed or accepted.
-- **Branch status:** active production remains `project/american-empire-act1/scene-03`.
+`Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4`
 
-## Not yet testable
+- SHA-256: `3baa68d24c02e985f9c1c67396cec7ce8f9d1fc1940374837886e5402868efa5`
+- duration: `98.000 s`
+- frame rate: `24 fps`
+- total frames: `2352`
+- resolution: `1280x720`
+- score: continuous `L'Atmosphère.wav` editorial range `0–98 s`
+- dialogue/captions: nine canon Daniel/Claire lower-third events
 
-The following remain **NOT RUN / NOT PASSED** because picture media does not exist:
+## Picture / movement QC
 
-- identity and anatomy continuity
-- apartment/hallway/elevator/lobby/street topology
-- generated-continuation temporal stability
-- living-scene visible motion
-- 2.5D depth and crop safety
-- weather and source-light coupling
-- caption placement
-- audio/picture sync
-- shot proofs
-- FX lock
-- assembly QC
-- final artistic acceptance
+- Eight approved hero plates are retained without generative redraw.
+- Each hero has a deterministic matched-angle A/B pair at `-0.85°` and `+0.85°` Y-axis micro-yaw.
+- 1.025x overscan plus reflected edge padding prevents synthetic black edge gaps.
+- Existing localized rain/reflection/haze/practical/access/elevator/display/traffic-state FX are retained inside the angle loops.
+- No translation wobble, fake handheld, orbit, lens jump, zoom pumping, identity redraw, or topology mutation is introduced.
 
-## Runtime gate
+## Timing QC
 
-The repository's current generic production guard still requires a narrow compatibility update for the explicitly declared `project/<slug>/scene-XX` hierarchy. Do not mark runtime bootstrap PASS until that change is merged to repository `main`, synchronized into the project branches and verified by the existing production-contract workflow.
+Locked shot frame counts are `192 / 168 / 360 / 456 / 408 / 288 / 264 / 216`. They total exactly `2352` frames with no gaps or overlaps.
+
+## Gate status
+
+- hero-set creative approval: `PASS` by current user
+- matched-angle technical QC: `PASS`
+- project-local FX lock: pending exact GitHub commit verification
+- exact branch Production Contract: pending exact GitHub commit verification
+- final artistic/master acceptance: `PENDING`
+
+Assembly02 may advance to `FINAL_QC` after the exact branch checks pass. It is not yet the accepted Scene 03 master.

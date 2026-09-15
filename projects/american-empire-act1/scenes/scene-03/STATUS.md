@@ -1,54 +1,46 @@
 # Scene 03 — Status
 
-Branch: `project/american-empire-act1/scene-03`
-Canonical project root: `project/american-empire-act1/main`
-Stage: `STORYBOARD_LOCKED / SCORE_LOCKED / SCRIPT+CAPTIONS_LOCKED / RUNTIME_GATE_PASSED / EIGHT_HERO_SET_GENERATED / FX_LOOPS_GENERATED / ASSEMBLY01_RENDERED / RECOVERY_CHECKPOINT_UPLOADED / USER_REVIEW_REQUIRED`
+Branch: `project/american-empire-act1/scene-03`  
+Canonical project root: `project/american-empire-act1/main`  
+Stage: `ASSEMBLED / TECHNICAL_PHASE_GATE_PASSED / FINAL_QC_NEXT`
 
 ## Continuity and timing
-- Starts from the actual extracted final frame of the Scene 02 assembly.
-- Duration: `98.000 s`
-- FPS: `24`
-- Frames: `2352`
-- Score: `L'Atmosphère.wav`
-- Score SHA-256: `96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25`
+- Starts from the actual extracted final frame of Scene 02.
+- Score authority: `L'Atmosphère.wav`.
+- Duration: `98.000 s`; frame rate: `24 fps`; frames: `2352`; resolution: `1280x720`.
 
-## Dialogue
-Scene 03 dialogue uses the established canon lower-third treatment. `CAPTION_TIMING.json` locks nine restrained Daniel/Claire lines. No narrator or intelligible public announcement is introduced.
+## User-approved picture basis
+The current user explicitly approved the generated hero imagery. Scene 03 therefore preserves the eight approved hero plates `S3H01`–`S3H08` and does not regenerate their subjects or environments.
 
-## Picture and effects
-- Eight user-approved hero stills: `S3H01`–`S3H08`
-- Eight A/B hero micro-motion pairs
-- Eight localized `1.2 s` GIF loops
-- Camera motion in loops: `none`
-- Effects remain localized to registered rain/reflection/haze/practical/access/elevator/display/traffic-state changes.
-- Project-local FX gate: `PASS`
+## Corrected movement implementation
+The first effects pass used localized loops with `camera_motion:none`. The user then explicitly required copies of each hero at slightly different angles for movement. That correction is now implemented as eight source-locked matched-angle A/B pairs:
 
-## Assembly candidate
-`Scene03_ASSEMBLY01_HERO_FX_CAPTIONS.mp4`
-- 1280x720
-- 24 fps
-- 98.000 s
-- 2352 frames
-- SHA-256 `a54d80da742780f6692df76ff1675f0c46af105bfd8320dbdc2589530774f80f`
+- A viewpoint: `-0.85°` Y-axis micro-yaw
+- B viewpoint: `+0.85°` Y-axis micro-yaw
+- overscan: `1.025x`
+- focal model: `1700 px`
+- no inpainting, no subject redraw, no new architecture, no translation wobble
+- existing registered rain/reflection/haze/practical/access/elevator/display/traffic-state effects are retained inside the angle loops
 
-This remains `USER_REVIEW_REQUIRED`; it is not an accepted master.
+Authoritative records: `ANGLE_PAIR_MANIFEST.json`, `FX_MANIFEST.json`, `project_fx/AE_S3_MATCHED_ANGLE.project-fx.json`, and its lock.
 
-## GitHub validation
-- Production Contract run `#164` / run ID `34954121197`: `SUCCESS`
-- Validated head before recovery-index documentation: `06424f2a58f82fa48deafee1443e9c95b380f22d`
-- A final exact-head contract run is required after this recovery/status documentation commit.
+## Assembly02
+`Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4`
+- SHA-256 `3baa68d24c02e985f9c1c67396cec7ce8f9d1fc1940374837886e5402868efa5`
+- exact `98.000 s`
+- exact `2352` frames
+- eight locked script shots at `192, 168, 360, 456, 408, 288, 264, 216` frames
+- canon dialogue/captions burned in
+- continuous Scene 03 score
+- matched-angle GIF loops used as picture source for every shot
 
-## Drive recovery checkpoint
-Folder: `AE / Act I / Scene 03 / Recovery Batches`
-Drive folder ID: `1CIY-ob7TNYFHNHnCSozOc9MdT-a9djU7`
+Assembly01 remains preserved as historical proof; Assembly02 supersedes it as the active technical candidate.
 
-- Batch 01 storyboard + heroes: `1cYwCsz62ItQOkNvsHUtZG8Z6JXkTW5P5`
-- Batch 02 FX loops: `1gAIvwotuIKMDtyNNyzEHUt_swblr--ix`
-- Batch 03 assembly + QC: `1CQAzxr5GrrVMUzVg5KAmWLn4-tVyUacb`
-- Recovery index: `16yUA4XJO9diko941hJoYcIbJA0j3KGWB`
-- Checksum file: `1qm03PxKaO5IbIlvn6Twc6vxlUuJKr3tr`
+## Phase gate
+The hero/shot proof requirement is satisfied by explicit user approval of the hero set. The matched-angle correction is a deterministic source-locked refinement, not new creative generation. Local geometry/frame/audio/caption QC is `PASS`. Project-local FX gate and exact GitHub production workflows must pass on this documentation commit before final-QC/mastering work.
 
-Heavy redundant sandbox files were removed only after these recovery batches were verified uploaded. Active Scene 03 working media remains in the sandbox.
+## Drive recovery
+Existing numbered recovery batches remain under `AE / Act I / Scene 03 / Recovery Batches`. Heavy Assembly02 media remains in the sandbox until the next cleanup/final checkpoint, per user storage policy.
 
-## Next action
-Run the exact documented Scene 03 head through the GitHub production contract. If green, keep Assembly01 as the current review candidate and proceed to refinement only from user review/QC findings rather than regenerating the approved hero set.
+## Next phase
+`FINAL_QC`: inspect Assembly02 at shot boundaries and caption beats, verify no loop seam or continuity defect, then package the accepted Scene 03 candidate for integration with the Act I master. Final artistic/master acceptance remains a user decision.
