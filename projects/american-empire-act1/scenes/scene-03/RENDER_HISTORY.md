@@ -25,7 +25,7 @@ The user required copies of each hero with slightly different angles for movemen
 
 Created eight matched-angle pairs and eight corrected GIF loops.
 
-## Assembly02
+## Assembly02 — approved pre-production basis
 
 Rendered `Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4`.
 
@@ -38,4 +38,30 @@ Rendered `Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4`.
 - continuous score
 - exact script shot frame counts preserved
 
-Assembly02 supersedes Assembly01 as the active technical candidate. Final artistic/master acceptance remains pending.
+The current user accepted Assembly02 as good pre-production: the feel, character continuation and city design are the foundation for further work. It is not the final master because production/debug annotations remain visible and several scripted effects/actions are incomplete.
+
+## Assembly03 — effects-completion proof
+
+Built directly from Assembly02 using the same eight shot spans. The render was performed shot-by-shot/resumably and reassembled to the exact original timing.
+
+Added or strengthened:
+- coherent exterior/window rain response
+- wet-road/reflection movement
+- corridor/access-light progression
+- elevator route/indicator progression
+- lobby access/exit state progression
+- traffic signal synchronization and restrained vehicle-light flow
+- municipal/public-display state progression
+- continuing coordinated city state in the closing shot
+
+`Scene03_ASSEMBLY03_EFFECTS_PROOF.mp4`
+
+- SHA-256: `77e2ea51c3ea22ed3c1b3dab4c46a64d9f99ae71bf301fd25bfa866246584438`
+- 1280x720
+- 24 fps
+- exactly 98.000 s
+- exactly 2352 frames
+- continuous Assembly02 audio/caption track
+- Drive ID: `1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI`
+
+Assembly03 is a visual effects proof only and does not supersede Assembly02 as the approved pre-production reference until reviewed.
