@@ -41,12 +41,16 @@ jobs:
       - name: Commit generated canonical system state to PR branch
         if: github.event_name == 'pull_request'
         run: |
+          # GitHub Apps cannot self-update existing workflow definitions without
+          # workflows permission. Keep workflow wiring out of this generated commit;
+          # connector-authored workflow changes remain separately reviewable.
+          git checkout -- .github/workflows/fx-v2-precompile-gate.yml
           if git diff --quiet; then
             echo "No generated changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add bootstrap.py AGENTS.md SYSTEM_INDEX.md general/reusable .github/workflows/fx-v2-precompile-gate.yml
+          git add bootstrap.py AGENTS.md SYSTEM_INDEX.md general/reusable
           git commit -m "Generate neutral standard effect and workflow library"
           git push origin HEAD:${GITHUB_HEAD_REF}
