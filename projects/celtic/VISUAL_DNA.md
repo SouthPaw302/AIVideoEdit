@@ -1,22 +1,23 @@
-# Visual DNA
+# Celtic Visual DNA
 
-## Style
-Graphic novel / noir digital illustration. Muted slate blues, warm interior lamps, deep shadows, rain-slicked highlights.
+## Source authority
+Only the current user-supplied `Celtic.wav` and `shot_010.mp4` establish this production. Generated media is permitted and required, but must derive its visual language from the supplied pageant footage and current-user approvals.
 
-## Lighting
-High-contrast warm indoor key light against cold blue-gray exterior ambience. Volumetric lightning flashes only on intended high-intensity beats.
+## Picture language
+Mid-century black-and-white televised pageant documentary expanded into cinematic archival memory. Authentic period staging, restrained performance, practical stage lighting, soft monochrome contrast, visible grain, mild gate weave, halation and sparse scratches.
 
-## Atmosphere
-Continuous foreground condensation, rain streaks, atmospheric haze, and coherent storm behavior.
-
-## Claire
-Dark wavy hair, fair complexion, dark silk robe/peignoir. Facial structure, hair length, body proportions, and attire are continuity locks.
-
-## Environment
-Parisian apartment with wrought-iron balcony and Eiffel Tower skyline. Window-frame architecture, lamp placement, scene scale, and environment topology remain stable.
+## Continuity anchors
+- Same apparent pageant venue and night.
+- Curtain backdrop, risers/steps, stage edge and classic microphone remain architecturally coherent.
+- Contestants use period satin/swimsuit silhouettes, heels, pageant sashes and coiffed 1950s–60s hair.
+- Human movement stays subtle and observational rather than modern commercial-model posing.
+- Generated coverage may include backstage wings, audience/judges, host/announcer, ceremony and close detail only as plausible extensions of the source event.
 
 ## Camera
-Restrained 2.5D parallax with stable foreground/midground/background spatial relationships. Slow pans and subtle pushes. No unprompted camera motion or sudden axis changes.
+Slow pans, small pushes, formal stage compositions, restrained portrait coverage, occasional period-documentary reframes. No handheld shake as a default. No rapid modern cutting language.
 
-## Text / Audio
-Minimal sans-serif lower thirds in `CHARACTER_NAME: Dialogue text` format. Rain, rolling thunder, phone-ring FX, and low-register piano/cello score synchronize to explicit visual markers.
+## Texture
+Monochrome, slightly soft archival optics, natural film grain, occasional dust/scratch, subtle exposure breathing and gate weave. Avoid fake over-damage that obscures faces.
+
+## Drift prohibitions
+No unrelated cities or exterior locations; no modern fashion; no modern stage technology; no contemporary audience devices; no sudden colorization; no unrelated narrative characters; no borrowing from any other AIVideoEdit project.
