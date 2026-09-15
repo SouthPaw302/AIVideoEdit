@@ -1,0 +1,60 @@
+{
+  "schema": "aivideoedit.asset-manifest.v2",
+  "project": "american-empire-act1-scene-03",
+  "assets": [
+    {
+      "id": "S3-AUDIO-MASTER",
+      "kind": "audio_master",
+      "name": "AE_Scene03_LAtmosphere_Master.wav",
+      "sha256": "96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25",
+      "drive_file_id": "1hOhmd5xt6nQvslYE-271Yg2SUskCJ64E",
+      "duration_seconds": 98.04,
+      "editorial_range_seconds": [0.0, 98.0],
+      "lifecycle_status": "approved",
+      "role": "Scene 03 score and timing authority"
+    },
+    {
+      "id": "S3-AUDIO-STEMS",
+      "kind": "audio_stems_archive",
+      "name": "AE_Scene03_LAtmosphere_Stems.zip",
+      "sha256": "39f92ac0ad00f43b4501ec3dc7260b413d2ac7fe74a6ff84954146121073f0f6",
+      "drive_file_id": "1Rv-60STTQY_kOZ91O01p8GaJP_ib0170",
+      "stem_count": 12,
+      "lifecycle_status": "approved",
+      "role": "smooth score automation and sound-design support"
+    },
+    {
+      "id": "S3-SCRIPT-MD",
+      "kind": "production_document",
+      "path": "SCRIPT.md",
+      "lifecycle_status": "approved",
+      "role": "human-readable locked production script"
+    },
+    {
+      "id": "S3-SCRIPT-JSON",
+      "kind": "production_document",
+      "path": "SCRIPT.json",
+      "lifecycle_status": "approved",
+      "role": "frame-followable machine-readable script"
+    },
+    {
+      "id": "S3-STORYBOARD",
+      "kind": "production_document",
+      "path": "STORYBOARD_DRAFT.md",
+      "lifecycle_status": "approved",
+      "role": "locked eight-hero storyboard architecture"
+    }
+  ],
+  "planned_picture_assets": [
+    "S3H01",
+    "S3H02",
+    "S3H03",
+    "S3H04",
+    "S3H05",
+    "S3H06",
+    "S3H07",
+    "S3H08"
+  ],
+  "picture_asset_status": "not_generated",
+  "rule": "Every future accepted, alternate, rejected, storyboard, QC and proof image/video must be recorded here and archived to AE / Act I / Scene 03."
+}
