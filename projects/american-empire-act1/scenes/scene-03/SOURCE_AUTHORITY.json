@@ -1,0 +1,63 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "project": "american-empire-act1-scene-03",
+  "authority_order": [
+    "current_user_instruction",
+    "active_scene_branch",
+    "accepted_scene01_baseline",
+    "scene02_terminal_narrative_state",
+    "current_repository_main"
+  ],
+  "authorized_sources": [
+    {
+      "kind": "current_user_instruction",
+      "role": "highest_authority",
+      "scope": "Scene 03 story, visual continuity, archive and production direction"
+    },
+    {
+      "kind": "uploaded_audio",
+      "name": "L'Atmosphère.wav",
+      "sha256": "96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25",
+      "role": "accepted Scene 03 score and editorial timing authority"
+    },
+    {
+      "kind": "uploaded_audio_stems",
+      "name": "L'Atmosphère Stems.zip",
+      "sha256": "39f92ac0ad00f43b4501ec3dc7260b413d2ac7fe74a6ff84954146121073f0f6",
+      "role": "mix automation and sound-design support"
+    },
+    {
+      "kind": "accepted_baseline",
+      "name": "Scene01_FULL_ASSEMBLY03.mp4",
+      "sha256": "599e21039c303e287d8e729af46209132b5273bbf9ef2f760925563d931eb71e",
+      "role": "motion and picture-language canon"
+    },
+    {
+      "kind": "narrative_continuity",
+      "ref": "projects/american-empire-act1/scenes/scene-02/SCRIPT.json#S2-10",
+      "blob_sha": "d99eb5447c333549d87b649c07afbc5123bae10b",
+      "role": "Scene 03 entry state only",
+      "picture_promotion_authorized": false
+    },
+    {
+      "kind": "current_main",
+      "ref": "main",
+      "role": "AIVideoEdit OS, contracts, guards and reusable capabilities"
+    }
+  ],
+  "allow": {
+    "historical_chats": false,
+    "historical_summaries": false,
+    "unrelated_song_branches": false,
+    "prior_project_storyboards": false,
+    "prior_project_visual_dna": false,
+    "prior_project_media": false
+  },
+  "explicit_user_authorizations": [
+    "use_current_project_chat_direction_for_scene03",
+    "use_scene01_accepted_motion_and_picture_language",
+    "use_scene02_S2-10_terminal_narrative_state_without_picture_promotion",
+    "use_LAtmosphere_master_and_stems_for_scene03"
+  ],
+  "content_reuse_rule": "Only the accepted American Empire canon and current Scene 03 materials may supply final-picture content. Other branches may teach methods but may not donate story, characters or pixels without new explicit authorization."
+}
