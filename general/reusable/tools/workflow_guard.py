@@ -11,8 +11,20 @@ from pathlib import Path
 from branch_policy import resolve_production_project
 
 SCRIPT_ROOT = Path(__file__).resolve().parents[3]
-ROOT = Path(os.environ.get("AIVIDEOEDIT_REPO_ROOT") or SCRIPT_ROOT).resolve()
-OS_ROOT = Path(os.environ.get("AIVIDEOEDIT_OS_ROOT") or ROOT).resolve()
+if os.environ.get("AIVIDEOEDIT_REPO_ROOT"):
+    ROOT = Path(os.environ["AIVIDEOEDIT_REPO_ROOT"]).resolve()
+elif SCRIPT_ROOT.name == "os" and SCRIPT_ROOT.parent.name == ".aivideoedit":
+    ROOT = SCRIPT_ROOT.parent.parent.resolve()
+else:
+    ROOT = SCRIPT_ROOT.resolve()
+
+if os.environ.get("AIVIDEOEDIT_OS_ROOT"):
+    OS_ROOT = Path(os.environ["AIVIDEOEDIT_OS_ROOT"]).resolve()
+elif SCRIPT_ROOT.name == "os" and SCRIPT_ROOT.parent.name == ".aivideoedit":
+    OS_ROOT = SCRIPT_ROOT.resolve()
+else:
+    OS_ROOT = ROOT
+
 REGISTRY = OS_ROOT / "general/reusable/STANDARD_WORKFLOW_REGISTRY.json"
 RESOLVER = OS_ROOT / "general/reusable/tools/workflow_resolver.py"
 MEDIA = OS_ROOT / "general/reusable/MEDIA_CAPABILITY_MATRIX.json"
