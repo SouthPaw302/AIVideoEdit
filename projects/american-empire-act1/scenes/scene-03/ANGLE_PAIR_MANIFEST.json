@@ -1,0 +1,18 @@
+{
+  "schema":"aivideoedit.hero-angle-pairs.v2",
+  "scene":"scene-03",
+  "version":2,
+  "intent":"matched alternate angles for movement-loop phase",
+  "source_lock":"approved Scene 03 hero stills only; no generative identity or topology changes",
+  "transform":{"yaw_degrees":[-0.85,0.85],"overscan_scale":1.025,"focal_length_px":1700.0,"loop_frames":12,"frame_duration_ms":83,"border_fill":"BORDER_REFLECT_101","synthetic_zero_fill":false},
+  "heroes":[
+    {"hero_id":"S3H01","source":"heroes/S3H01.png","angle_a":"angle_pairs_v2/S3H01_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H01_ANGLE_B.png","gif":"loops_v2/S3H01_FX_ANGLE_LOOP.gif","sha256":{"A":"f37163a806836ecccea141e4d4118c6aa33b2291a6d3c405e213933589f29a2d","B":"d89e98a19270445de26c47160c92088a5361b8468b3a0adb5ade188b1617cdf7","gif":"90591e96d66723cc85f7901ae780281c29e99c6ec098af3f2d41c64276b1db3c"}},
+    {"hero_id":"S3H02","source":"heroes/S3H02.png","angle_a":"angle_pairs_v2/S3H02_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H02_ANGLE_B.png","gif":"loops_v2/S3H02_FX_ANGLE_LOOP.gif","sha256":{"A":"e314c19d028efaa1e8786ea1821971ef17215f6e3d967c136b1c9207dc672cc8","B":"d3291224d0f0b82cebd7347be28794372e912aa595d26977195ae35474b91a9b","gif":"953e3b4794cab5bf6670cf332849dbf38ac981e788b36e65744ac7f3abadc2b8"}},
+    {"hero_id":"S3H03","source":"heroes/S3H03.png","angle_a":"angle_pairs_v2/S3H03_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H03_ANGLE_B.png","gif":"loops_v2/S3H03_FX_ANGLE_LOOP.gif","sha256":{"A":"16cfa09a4fbb8baa38b4e1b046047f27a259ef8f07b0ce781a47987218ccbfa9","B":"e00190b2ca759f68a0bab575e7e466faae789714e87f78653dada062b981637f","gif":"572efea348ed993d754ed723aa0316427291e2fa834c51545e903ff8be031ed1"}},
+    {"hero_id":"S3H04","source":"heroes/S3H04.png","angle_a":"angle_pairs_v2/S3H04_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H04_ANGLE_B.png","gif":"loops_v2/S3H04_FX_ANGLE_LOOP.gif","sha256":{"A":"7094d39f7ba8793a70b02e0f448f63e982fbd090d635d23e04cec3996c3ae8ba","B":"7d0db5e7ef5d85c452da4daf6161b6b8cd04f8316ec667379d2461b99feed8f1","gif":"53aaf10deede2e8cfb349c70ee01838224d071272e073e0256e6e95b12fe4236"}},
+    {"hero_id":"S3H05","source":"heroes/S3H05.png","angle_a":"angle_pairs_v2/S3H05_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H05_ANGLE_B.png","gif":"loops_v2/S3H05_FX_ANGLE_LOOP.gif","sha256":{"A":"69de4c567301924299c68505838a4f21ecdae32f64a7d95f6b683350fea76df1","B":"eea5a67663cb732ddd375d248b68cd05eaf6b40130cf654f06cd85cb5753bf20","gif":"1ef29ebb5347c2aca49083d0e21fb32ac5717b994ae702296d2b605bc3c49d14"}},
+    {"hero_id":"S3H06","source":"heroes/S3H06.png","angle_a":"angle_pairs_v2/S3H06_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H06_ANGLE_B.png","gif":"loops_v2/S3H06_FX_ANGLE_LOOP.gif","sha256":{"A":"e6b36609176d496a4d34929821206bbe066f7bfaf8439f4ddb0e94702ea760a7","B":"195772245109fc1b2618af1ad08c0a1db15ae0cba3eebf02b2c253d8d477ee91","gif":"de3253434d4b68b5e9b207b722d0296f4786409d67f47c57ea6cb363ff6b7509"}},
+    {"hero_id":"S3H07","source":"heroes/S3H07.png","angle_a":"angle_pairs_v2/S3H07_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H07_ANGLE_B.png","gif":"loops_v2/S3H07_FX_ANGLE_LOOP.gif","sha256":{"A":"75bcaf12fbf0ec2eae9fe13fdc946ae8f538fe6f50b3c9892fd6564b5d6042fd","B":"1136d8d30c30f41f0561c567410957cc900ef165c07b851fa69781e07b3ad6ef","gif":"10f7900bdf8c185b4af5f20c911d409161732eb4cb324bd077b6d6b048c07ccf"}},
+    {"hero_id":"S3H08","source":"heroes/S3H08.png","angle_a":"angle_pairs_v2/S3H08_ANGLE_A.png","angle_b":"angle_pairs_v2/S3H08_ANGLE_B.png","gif":"loops_v2/S3H08_FX_ANGLE_LOOP.gif","sha256":{"A":"5823ea1728b02910e7dd98f0cc52397106051cfa5640913319fb430929b59c57","B":"5d5a9cd8bf8a61e3580e718c56ab97ddc2f2fe40a74e5d0716321e54ca57abf4","gif":"137d7eb407f5a46d8b592c105be5ad411f10396dfb26b032b93cf7731f9915ee"}}
+  ]
+}

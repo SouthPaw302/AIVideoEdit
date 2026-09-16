@@ -1,0 +1,114 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "project": "american-empire-act1-scene-03",
+  "source": "L'Atmosphère.wav",
+  "source_sha256": "96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25",
+  "duration_seconds": 98.0,
+  "target_fps": 24,
+  "total_frames": 2352,
+  "analysis_complete": true,
+  "lyrics": {
+    "status": "instrumental",
+    "directing_use": "none",
+    "resolution": "Lead and backing vocal stems are effectively silent; there is no lyric authority for this scene."
+  },
+  "genre": {
+    "status": "confident",
+    "label": "cinematic noir tension score with restrained trip-hop and industrial pulse",
+    "confidence": 0.94,
+    "source": "audio_analysis_and_current_user_selection",
+    "description": "Low strings, guitar, bass, synth texture, sparse brass and an unresolved electronic tail."
+  },
+  "rhythm": {
+    "tempo_status": "measured",
+    "tempo_bpm": 78.125,
+    "subdivision_bpm": 156.25,
+    "pulse_description": "A purposeful low pulse strengthens after 15 seconds, locks into mechanical forward drive around 30 seconds, opens near 78 seconds and recedes after 89 seconds.",
+    "meter_or_groove": "Slow duple/4-4 cinematic groove with restrained trip-hop and industrial relay character; no EDM drop."
+  },
+  "sections": [
+    {
+      "id": "M3-01",
+      "start_seconds": 0.0,
+      "end_seconds": 8.0,
+      "start_frame": 0,
+      "end_frame": 191,
+      "musical_cues": ["unresolved handoff", "restrained bass/guitar/synth entrance"],
+      "energy": "low but immediate",
+      "visual_function": "Complete Claire's departure action without replaying the window revelation."
+    },
+    {
+      "id": "M3-02",
+      "start_seconds": 8.0,
+      "end_seconds": 15.0,
+      "start_frame": 192,
+      "end_frame": 359,
+      "musical_cues": ["texture thinning", "exposed guitar-led tension"],
+      "energy": "briefly reduced and suspended",
+      "visual_function": "Expose the apartment threshold, latch and first ordered building relays."
+    },
+    {
+      "id": "M3-03",
+      "start_seconds": 15.0,
+      "end_seconds": 30.0,
+      "start_frame": 360,
+      "end_frame": 719,
+      "musical_cues": ["bass and strings gather", "purposeful rhythm emerges"],
+      "energy": "steadily rising",
+      "visual_function": "Carry Claire through the hallway while separate apartments coordinate."
+    },
+    {
+      "id": "M3-04",
+      "start_seconds": 30.0,
+      "end_seconds": 49.0,
+      "start_frame": 720,
+      "end_frame": 1175,
+      "musical_cues": ["full drums/bass/strings lock", "mechanical pulse"],
+      "energy": "strong and sustained",
+      "visual_function": "Support the elevator's prepared route and physically ordinary system behavior."
+    },
+    {
+      "id": "M3-05",
+      "start_seconds": 49.0,
+      "end_seconds": 66.0,
+      "start_frame": 1176,
+      "end_frame": 1583,
+      "musical_cues": ["strongest sustained coordination", "sparse brass emergence"],
+      "energy": "peak building-scale intensity",
+      "visual_function": "Reveal the lobby access system routing occupants outward."
+    },
+    {
+      "id": "M3-06",
+      "start_seconds": 66.0,
+      "end_seconds": 78.0,
+      "start_frame": 1584,
+      "end_frame": 1871,
+      "musical_cues": ["persistent exterior drive", "widened rhythmic field"],
+      "energy": "high and expansive",
+      "visual_function": "Open onto the rainy street as traffic and transit systems reorganize."
+    },
+    {
+      "id": "M3-07",
+      "start_seconds": 78.0,
+      "end_seconds": 89.0,
+      "start_frame": 1872,
+      "end_frame": 2135,
+      "musical_cues": ["rhythm opens", "keyboard/percussion/bass remain"],
+      "energy": "reduced to create proof-reading space",
+      "visual_function": "Let the public display and calm civic response become unmistakable."
+    },
+    {
+      "id": "M3-08",
+      "start_seconds": 89.0,
+      "end_seconds": 98.0,
+      "start_frame": 2136,
+      "end_frame": 2351,
+      "musical_cues": ["unresolved keyboard/synth/bass tail", "drums recede"],
+      "energy": "purposeful but unresolved",
+      "visual_function": "End with Claire moving forward into Paris and preserve momentum for Scene 04."
+    }
+  ],
+  "energy_curve": "Low but immediate at the opening, briefly thinned at 8 seconds, steadily rising from 15 seconds, strongest from 30-78 seconds, opened at 78-89 seconds, then unresolved rather than conclusively resolved.",
+  "narrative_function": "Move the film from private warning to physical departure and public systemic proof while making the transition feel prepared, intelligent and inevitable rather than chaotic.",
+  "mix_policy": "The full mix is editorial authority. Stems may create smooth space for Foley and system events using ramps only; no hard score cuts. Generated video music/dialogue is discarded, while useful isolated ambience or Foley may be reviewed separately."
+}
