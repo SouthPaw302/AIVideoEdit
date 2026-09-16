@@ -29,21 +29,37 @@
   "score_analysis_file": "SCORE_ANALYSIS.json",
   "picture_media_generated": true,
   "last_validated_frame_range": [0, 2351],
-  "active_picture_candidate": "Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4",
-  "active_picture_sha256": "3baa68d24c02e985f9c1c67396cec7ce8f9d1fc1940374837886e5402868efa5",
-  "active_picture_status": "approved_preproduction_reference",
-  "effects_proof_candidate": "Scene03_ASSEMBLY03_EFFECTS_PROOF.mp4",
-  "effects_proof_sha256": "77e2ea51c3ea22ed3c1b3dab4c46a64d9f99ae71bf301fd25bfa866246584438",
-  "effects_proof_drive_file_id": "1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI",
-  "review_candidate": "Scene03_ASSEMBLY04_CLEAN_ACTION_PASS.mp4",
-  "review_candidate_sha256": "07bccc75f5e54b6b89b0142c90c3d7224cd976d2a91afce1030997f9219a5bb7",
-  "review_candidate_drive_file_id": "1udCJWNJMpK2oSdSir6Qfwmcndzx6p9Og",
+  "approved_preproduction_reference": {
+    "file": "Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4",
+    "sha256": "3baa68d24c02e985f9c1c67396cec7ce8f9d1fc1940374837886e5402868efa5"
+  },
+  "effects_rollback_reference": {
+    "file": "Scene03_ASSEMBLY03_EFFECTS_PROOF.mp4",
+    "sha256": "77e2ea51c3ea22ed3c1b3dab4c46a64d9f99ae71bf301fd25bfa866246584438",
+    "drive_file_id": "1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI"
+  },
+  "previous_review_candidate": {
+    "file": "Scene03_ASSEMBLY04_CLEAN_ACTION_PASS.mp4",
+    "sha256": "07bccc75f5e54b6b89b0142c90c3d7224cd976d2a91afce1030997f9219a5bb7",
+    "drive_file_id": "1udCJWNJMpK2oSdSir6Qfwmcndzx6p9Og"
+  },
+  "review_candidate": "Scene03_ASSEMBLY05_MULTIIMAGE_GIF_FX_REVIEW_COMPACT.mp4",
+  "review_candidate_sha256": "3969e3a12020d5f7d7cd71a80ba0a8f19833ba55d164188d03fd86d6e8eaa9b1",
   "review_candidate_status": "pending_user_review",
+  "review_candidate_duration_seconds": 98.0,
+  "review_candidate_frame_count": 2352,
+  "review_candidate_media_segment_count": 29,
+  "review_candidate_media_plan": "ASSEMBLY05_MEDIA_PLAN.json",
+  "review_candidate_new_image_generation": false,
+  "review_candidate_real_gif_assets": true,
+  "review_candidate_ab_motion_pairs": true,
+  "drive_review_folder_id": "1IVSkeT8lfxHIXpMPC9o9fDuKZskO9aOy",
+  "drive_render_upload_status": "pending_connector_file_reference",
   "master_blockers": [
-    "assembly04_artistic_review",
+    "assembly05_artistic_review",
     "final_semantic_action_qc",
     "user_master_acceptance"
   ],
   "system_main_authority": "0126b1c2978dc96810a02956a270feccdf02bdcf",
-  "updated_at_utc": "2026-09-15T21:58:00Z"
+  "updated_at_utc": "2026-09-16T00:50:00Z"
 }
