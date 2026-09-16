@@ -39,44 +39,53 @@
     "status": "USER_PASS_LOCKED",
     "user_feedback": "That is a pass for continuity. But the effects pass failed."
   },
-  "previous_visible_fx_status": "USER_FAIL_SUPERSEDED",
-  "review_candidate": "Scene03_ASSEMBLY10_CINEMATIC_REMASTER_REVIEW.mp4",
-  "review_candidate_sha256": "089184e0a92feca6570c8753a480ea4b97d38d429cffeaa3a5175b8987976b5a",
-  "review_candidate_status": "pending_user_cinematic_fx_and_remaster_review",
+  "finishing_reference": {
+    "file": "AE_ACT1_S1_S2_720P_MASTER.mp4",
+    "drive_file_id": "1bs1mU03AiuLK-I6zAePKj_tSc6YXATmU",
+    "duration_seconds": 186.0,
+    "resolution": "1280x720",
+    "fps": 24,
+    "integrated_loudness_lufs": -16.4,
+    "caption_language": "dark translucent bordered dialogue window with cyan speaker and white dialogue"
+  },
+  "previous_review_candidate": {
+    "file": "Scene03_ASSEMBLY10_CINEMATIC_REMASTER_REVIEW.mp4",
+    "status": "superseded_by_s1_s2_master_match"
+  },
+  "review_candidate": "Scene03_FINAL_S12_MATCH_REMASTER.mp4",
+  "review_candidate_sha256": "e377a0d4dae4a580ce0d884b7e34990d2363130337426309455b903e53c0aa3f",
+  "review_candidate_status": "pending_user_final_master_review",
   "review_candidate_duration_seconds": 98.0,
   "review_candidate_frame_count": 2352,
   "review_candidate_media_segment_count": 40,
-  "review_candidate_media_plan": "ASSEMBLY08_MEDIA_PLAN.json",
+  "review_candidate_media_plan": "ASSEMBLY11_S12_MASTER_MATCH_PLAN.json",
   "review_candidate_new_image_generation": false,
   "review_candidate_uses_full_reachable_media_pool": true,
   "review_candidate_continuity_inherited_from_assembly08": true,
-  "review_candidate_cinematic_fx": true,
-  "review_candidate_remastered": true,
+  "review_candidate_s1_s2_caption_match": true,
+  "review_candidate_s1_s2_audio_loudness_match": true,
+  "review_candidate_integrated_loudness_lufs": -16.4,
+  "review_candidate_true_peak_dbfs": -2.8,
   "review_candidate_generated_video_folder_usage": "reference_only_not_inserted",
-  "review_candidate_contact_sheet": "Scene03_ASSEMBLY10_CONTACT_SHEET.jpg",
-  "review_candidate_contact_sheet_sha256": "2484e0c788b25f511004997bded1e00c53618a60c03e67d620cb17514bb03bd6",
+  "review_candidate_contact_sheet": "Scene03_FINAL_S12_MATCH_CONTACT.jpg",
+  "review_candidate_contact_sheet_sha256": "db2a3c7d0035fae20a7b4f765a36cf4ba723bb653172f7a14e6c798bab053bc3",
   "review_candidate_technical_qc": "PASS",
+  "review_candidate_caption_qc": "PASS",
   "fx_gate": {
     "workflow": "AIVideoEdit Main System Verification",
-    "run_number": 130,
-    "result": "PASS",
-    "hard_precompile_fx_gate": "PASS",
-    "immutable_fx_lock_recheck": "PASS",
-    "determinism": "PASS",
-    "unapproved_fx_block": "PASS",
-    "note": "technical registry/gate validation is separate from artistic FX approval"
+    "last_confirmed_run_number": 130,
+    "last_confirmed_result": "PASS",
+    "note": "bookkeeping updates may trigger a newer workflow run; final branch-head verification required before promotion"
   },
   "production_contract": {
-    "run_number": 265,
-    "result": "PASS"
+    "last_confirmed_run_number": 265,
+    "last_confirmed_result": "PASS"
   },
   "drive_review_folder_id": "1IVSkeT8lfxHIXpMPC9o9fDuKZskO9aOy",
   "drive_render_upload_status": "pending_checkpoint_upload",
   "master_blockers": [
-    "assembly10_cinematic_fx_and_remaster_review",
-    "final_semantic_action_and_mode_aware_qc",
-    "user_master_acceptance"
+    "user_final_master_acceptance"
   ],
   "system_main_authority": "0126b1c2978dc96810a02956a270feccdf02bdcf",
-  "updated_at_utc": "2026-09-16T08:38:25Z"
+  "updated_at_utc": "2026-09-16T09:08:55Z"
 }
