@@ -1,0 +1,253 @@
+{
+  "schema": "aivideoedit.scene-continuation-architecture.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-03",
+  "branch": "project/american-empire-act1/scene-03",
+  "director_directive": "ZERO_DRIFT",
+  "direction_authority": "user_directed",
+  "production_mode": "hybrid",
+  "timeline_lock": {
+    "duration_seconds": 98.0,
+    "fps": 24,
+    "frame_count": 2352,
+    "resolution": "1280x720",
+    "score": "L'Atmosphère.wav",
+    "score_sha256": "96ee4e0f5e34e0955272ab9e5327f1850254e82978e79aa9d9422e9898316b25"
+  },
+  "resume_state": {
+    "current_review_candidate": "Scene03_ASSEMBLY05_MULTIIMAGE_GIF_FX_REVIEW_COMPACT.mp4",
+    "current_review_candidate_sha256": "3969e3a12020d5f7d7cd71a80ba0a8f19833ba55d164188d03fd86d6e8eaa9b1",
+    "rollback_preproduction_reference": "Scene03_ASSEMBLY02_ANGLE_FX_CAPTIONS.mp4",
+    "rollback_preproduction_sha256": "3baa68d24c02e985f9c1c67396cec7ce8f9d1fc1940374837886e5402868efa5",
+    "storyboard_beats": 8,
+    "assembly05_existing_segments": 29,
+    "assembly05_segments_are_cap": false
+  },
+  "media_policy": {
+    "full_scene03_media_pool_required": true,
+    "heroes_are_continuity_anchors_not_exclusive_sources": true,
+    "use_only_eight_heroes": false,
+    "assembly05_29_segments_are_minimum_current_cut_not_source_limit": true,
+    "inventory_every_approved_or_promoted_asset": true,
+    "map_every_approved_or_promoted_asset_to_role_or_document_nonuse_reason": true,
+    "filename_text_is_not_lifecycle_authority": true,
+    "legacy_rejected_filename_can_be_usable_when_manifest_promoted": true,
+    "genuinely_rejected_drift_media_requires_current_user_promotion": true,
+    "coverage_sources": [
+      "hero anchors",
+      "approved/promoted generated stills and variations",
+      "Assembly05 clean multi-image coverage",
+      "matched-angle A/B companions",
+      "actual GIF shot assets",
+      "Scene 02 terminal continuity source-derived material",
+      "Claire identity reference frames",
+      "canonical/approved recovery-batch media",
+      "approved project-local FX outputs",
+      "registered atmospheric/material FX layers",
+      "additional Scene 03 Drive media that passes provenance and continuity QC"
+    ]
+  },
+  "visual_lock": {
+    "style": "graphic-novel noir digital illustration",
+    "palette": [
+      "slate and pale gray-blue atmosphere",
+      "cream Paris stone",
+      "muted cyan diegetic technology",
+      "warm amber practical lamps",
+      "deep charcoal shadows",
+      "rain-slick reflections"
+    ],
+    "forbidden": [
+      "saturated cyberpunk neon",
+      "anime drift",
+      "glossy photorealism",
+      "floating holograms",
+      "new emblem or propaganda spectacle",
+      "military escalation",
+      "architecture mutation"
+    ]
+  },
+  "character_lock": {
+    "Claire": {
+      "identity": "same established Claire",
+      "hair": "dark wavy hair; fixed length and silhouette",
+      "complexion": "fair",
+      "wardrobe_entry": "dark silk robe/peignoir",
+      "outer_layer_rule": "dark charcoal outer layer only through an on-screen motivated action already permitted by locked script",
+      "props": ["phone", "approved essential"],
+      "immutable": ["face", "apparent age", "anatomy", "body proportions", "body scale", "hair identity", "phone geometry", "essential identity"]
+    }
+  },
+  "environment_lock": {
+    "locations": [
+      "established Paris apartment",
+      "stable apartment threshold and corridor",
+      "ordinary elevator",
+      "dry lobby",
+      "rainy Paris street"
+    ],
+    "immutable": [
+      "door geometry",
+      "hallway vanishing points",
+      "elevator panel housing",
+      "lobby topology",
+      "Paris architecture",
+      "screen direction",
+      "skyline/city geography",
+      "weather force direction"
+    ]
+  },
+  "motion_hierarchy": [
+    "character action or micro-action",
+    "weather and atmosphere",
+    "source-driven light and reflections",
+    "foreground/environmental object movement",
+    "semantic depth and restrained 2.5D parallax",
+    "camera only when still justified"
+  ],
+  "camera_policy": {
+    "default": "locked_or_near_locked",
+    "allowed": "slow bounded narratively motivated vectors",
+    "forbidden": [
+      "global shake",
+      "fake handheld",
+      "repeated push-pull",
+      "oscillating crop",
+      "endless zoom",
+      "pan/zoom pretending to be walking",
+      "unplanned orbit",
+      "lens shift"
+    ]
+  },
+  "parallax_policy": {
+    "mode": "2.5D",
+    "layers": ["foreground", "midground", "background"],
+    "rule": "translate protected depth layers only within bounded vectors; never deform canonical geometry or invent hidden surfaces",
+    "registered_motion": ["rain", "haze", "condensation", "reflections", "practical lights", "vehicle flow", "cloth/hair edge response", "physical indicators"]
+  },
+  "storm_policy": {
+    "single_coherent_force_system": true,
+    "rain": "exterior/on glass unless a space is physically open",
+    "lightning": "source-driven through sky, glass and surfaces; no whole-frame white flash",
+    "reflections": "respond only to local physical sources",
+    "practical_lights": "local and source-coupled"
+  },
+  "beats": [
+    {
+      "id": "S3-01",
+      "frames": [0, 191],
+      "time": "00:00-00:08",
+      "behavior": "GENERATED_CONTINUATION_REQUIRED",
+      "action": "Claire completes departure state, retains phone and essential, turns toward exit",
+      "dialogue": ["DANIEL: Take the phone. Leave everything else."]
+    },
+    {
+      "id": "S3-02",
+      "frames": [192, 359],
+      "time": "00:08-00:15",
+      "behavior": "GENERATED_CONTINUATION_REQUIRED",
+      "action": "Claire opens apartment door and crosses into stable corridor as access states synchronize",
+      "dialogue": ["CLAIRE: The locks just changed.", "DANIEL: I know."]
+    },
+    {
+      "id": "S3-03",
+      "frames": [360, 719],
+      "time": "00:15-00:30",
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "action": "Hallway coordination; Claire moves outward while unrelated doors/locks answer in ordered sequence",
+      "dialogue": []
+    },
+    {
+      "id": "S3-04",
+      "frames": [720, 1175],
+      "time": "00:30-00:49",
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "action": "Ordinary elevator selects prepared route without Claire input",
+      "dialogue": ["CLAIRE: I didn't press anything.", "DANIEL: Neither did anyone else."]
+    },
+    {
+      "id": "S3-05",
+      "frames": [1176, 1583],
+      "time": "00:49-01:06",
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "action": "Lobby systems route occupants outward while rain remains beyond glass",
+      "dialogue": ["CLAIRE: Daniel... what is this?"]
+    },
+    {
+      "id": "S3-06",
+      "frames": [1584, 1871],
+      "time": "01:06-01:18",
+      "behavior": "LIVING_SCENE_2_5D",
+      "action": "Street traffic and transit reorganize calmly in true depth",
+      "dialogue": []
+    },
+    {
+      "id": "S3-07",
+      "frames": [1872, 2135],
+      "time": "01:18-01:29",
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "action": "Public proof through ordinary municipal/transit/security systems",
+      "dialogue": ["DANIEL: A handoff.", "CLAIRE: To who?"]
+    },
+    {
+      "id": "S3-08",
+      "frames": [2136, 2351],
+      "time": "01:29-01:38",
+      "behavior": "GENERATED_CONTINUATION_REQUIRED",
+      "action": "Claire walks purposefully into reorganized Paris; end on forward motion",
+      "dialogue": ["DANIEL: Keep moving."]
+    }
+  ],
+  "generated_continuation_contract": {
+    "required_fields": [
+      "canonical_start_asset",
+      "canonical_start_hash",
+      "subject_lock",
+      "environment_lock",
+      "wardrobe_prop_state_lock",
+      "allowed_actions",
+      "forbidden_mutations",
+      "camera_vector_envelope",
+      "weather_force_state",
+      "duration_seconds",
+      "target_fps",
+      "audio_policy",
+      "terminal_frame_policy"
+    ],
+    "default_audio_policy": "isolate_sfx_or_discard",
+    "terminal_frame_policy": "qc_before_reuse"
+  },
+  "edit_rules": {
+    "storyboard_is_timing_and_narrative_authority_not_picture_cap": true,
+    "multiple_visual_moments_per_beat": true,
+    "prefer_motivated_cuts_over_synthetic_camera_motion": true,
+    "do_not_regenerate_when_existing_coverage_solves_the_need": true,
+    "shot_order_locked": true,
+    "score_timing_locked": true,
+    "dialogue_wording_locked": true
+  },
+  "qc_gates": [
+    "full_media_inventory_complete",
+    "semantic_action_qc",
+    "temporal_continuity_qc",
+    "zero_drift_qc",
+    "Scene01_motion_language_comparison",
+    "caption_boundary_qc",
+    "audio_ramp_and_sound_boundary_qc",
+    "weather_and_material_registration_qc",
+    "terminal_frame_qc_for_scene04_handoff"
+  ],
+  "fail_closed": [
+    "Claire identity/wardrobe/phone/essential drift",
+    "environment topology mutation",
+    "unapproved emblem/crowd/military/propaganda invention",
+    "weather inside without physical cause",
+    "unbounded camera motion",
+    "parallax geometry deformation",
+    "unresolved asset provenance/lifecycle",
+    "material score/dialogue timing change",
+    "collapse to eight static hero cards",
+    "genuinely rejected drift media inserted without current-user promotion"
+  ],
+  "next_execution_goal": "Refine Assembly05 into the strongest Scene 03 cut by using the full valid Scene 03 media pool while preserving all locked timing, story, character, geography, score and motion-language constraints."
+}
