@@ -1,0 +1,70 @@
+{
+  "schema": "aivideoedit.scene-media-audit.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-03",
+  "drive_root_folder_id": "1AfqnZQrN_eiLJwYZ0wRgBmBzCl-fTPkz",
+  "policy": {
+    "use_full_approved_promoted_pool": true,
+    "heroes_are_anchors_not_exclusive_sources": true,
+    "assembly05_29_segments_are_current_cut_not_source_ceiling": true,
+    "filename_rejected_text_is_not_authoritative": true,
+    "genuinely_rejected_collage_assets_excluded": true,
+    "unresolved_anonymous_media_fail_closed_until_semantically_matched": true
+  },
+  "known_named_generated_coverage": [
+    {"name":"S3_GEN_noir_paris_departure.png","drive_file_id":"1M-BIdyvEERJEZPDEhMp9kur1-BZ7CMFL","map":"S3-01","status":"eligible"},
+    {"name":"S3_GEN_noir_corridor_departure.png","drive_file_id":"1IRVy5AIDjqh2NMxq9aE0X1p0XzsFWsIY","map":"S3-02","status":"eligible"},
+    {"name":"S3_GEN_noir_hallway_vigilance.png","drive_file_id":"1ieoCIecFHQGKo57VZWJO64ztyS-G4o3h","map":"S3-03","status":"eligible"},
+    {"name":"S3_GEN_rainy_noir_elevator_corridor.png","drive_file_id":"182KVXKZZPV7hVwqRBeoLlggSoThpyBbd","map":"S3-03/S3-04","status":"eligible"},
+    {"name":"S3_GEN_golden_noir_elevator_ascent.png","drive_file_id":"1gvD_r7Nj3O-6X9PQEKVwKkHnx0KL1k-f","map":"S3-04","status":"eligible"},
+    {"name":"S3_GEN_rainy_paris_noir_lobby.png","drive_file_id":"13XeM88eltt9bZLW-iW06jbqGkIM0k3hM","map":"S3-05","status":"eligible"},
+    {"name":"S3_GEN_rainy_noir_lobby_in_paris.png","drive_file_id":"1RfuoIzofhvRgFGjHiGa-Wryr83PLHmTs","map":"S3-05","status":"eligible"},
+    {"name":"S3_GEN_neon_noir_paris_under_watch.png","drive_file_id":"1iC1XhFgPcLx0h1to275uAtOaQN79BP7M","map":"S3-07","status":"eligible_with_palette_check","note":"Title says neon; final use must still satisfy muted-noir visual DNA and avoid cyberpunk drift."},
+    {"name":"S3_GEN_rainy_boulevard_eiffel.png","drive_file_id":"144WI-L_ym-CjPXmlHzcsRyJrZGbBy6Bw","map":"S3-07","status":"eligible"},
+    {"name":"S3_GEN_rainy_paris_nocturne_eiffel.png","drive_file_id":"1UO028KfoifDwlD8iIpO9b3dW-9Sa-Y9j","map":"S3-08","status":"eligible"},
+    {"name":"S3_GEN_claire_at_dawn.png","drive_file_id":"154NYcyUG24LTDklMeYDHNGlCYygWEHO7","map":"none","status":"hold_fail_closed","reason":"Scene 03 remains a rainy nocturnal continuity state; dawn is a time-of-day drift unless explicitly promoted for a later scene."}
+  ],
+  "legacy_promoted_assets_from_asset_manifest": [
+    {"name":"S3H01_attempt01_REJECTED_identity-drift.png","drive_file_id":"1BtKoKumYcCAE3zFh1sAe29AMq3J7wtk9","mapped_role":"S3H01","status":"approved_by_promotion"},
+    {"name":"S3H01_attempt02_REJECTED_narrative-drift.png","drive_file_id":"1Kc94cXYP8oMP-Rzi4P317Gjp6Mcof8fa","mapped_role":"S3H06","status":"approved_by_promotion"},
+    {"name":"S3H01_attempt03_REJECTED_poster-and-spectacle-drift.png","drive_file_id":"1C9w5xGo44RmMw6q9fJzgyHRH5J0BnYhS","mapped_role":"ALT","status":"approved_by_promotion_but_use_only_if_continuity_safe"},
+    {"name":"S3H01_attempt04_REJECTED_later-scene-propaganda-drift.png","drive_file_id":"1OdK34Dd4CuTIUHkdPruFc7iQrMoZ5alt","mapped_role":"S3H05","status":"approved_by_promotion"},
+    {"name":"S3H01_attempt05_REJECTED_single-reference-street-drift.png","drive_file_id":"1kDL6sZTz08VrMaQWzrSKcHADG6s9yh8Q","mapped_role":"S3H08","status":"approved_by_promotion"}
+  ],
+  "anonymous_generated_files": {
+    "count": 12,
+    "status": "inventory_only_until_matched",
+    "reason": "Current Drive names are opaque file_*.png identifiers. They must be matched to canonical named source/provenance or visually classified before final timeline use; do not guess their beat assignment.",
+    "names": [
+      "file_00000000810481f5861f3e6cc609ae96.png",
+      "file_00000000d78081f59ab9cfafd458ae48.png",
+      "file_00000000f65481f583b750d73b856261.png",
+      "file_00000000227881f5929c7f526f9db248.png",
+      "file_000000000fa481f5ac05e7252b29dc56.png",
+      "file_00000000ad8c81f5b22f6ecaa274f485.png",
+      "file_0000000040d481f5b200befd803dfa48.png",
+      "file_0000000046e081f58d55321729861b18.png",
+      "file_00000000f51c81f581fdeb26d8d8563a.png",
+      "file_000000005e9c81f59529d781646c8f0a.png",
+      "file_00000000ce7081f5b2ca6cbb334d47bb.png",
+      "file_00000000a1c881f5a5f144bccf46dc75.png"
+    ]
+  },
+  "reference_frames": [
+    {"name":"S3_REF_Claire_identity_A.jpg","drive_file_id":"117q-pMDQTVBjF5FAeTzhDksFlzMEGQ4F","role":"identity lock","final_picture_default":false},
+    {"name":"S3_REF_Claire_identity_B.jpg","drive_file_id":"17DC4THwafAED8t8M_uTrpMUggoMFWNIk","role":"identity lock","final_picture_default":false}
+  ],
+  "recovery_sources": [
+    {"name":"AE_S3_RECOVERY_BATCH_01_STORYBOARD_HEROES.zip","drive_file_id":"1cYwCsz62ItQOkNvsHUtZG8Z6JXkTW5P5","role":"heroes/script/caption recovery"},
+    {"name":"AE_S3_RECOVERY_BATCH_02_FX_LOOPS.zip","drive_file_id":"1gAIvwotuIKMDtyNNyzEHUt_swblr--ix","role":"A/B companions and GIF loops"},
+    {"name":"AE_S3_RECOVERY_BATCH_03_ASSEMBLY_QC.zip","drive_file_id":"1CQAzxr5GrrVMUzVg5KAmWLn4-tVyUacb","role":"assembly/QC recovery"},
+    {"name":"Scene03_ASSEMBLY03_EFFECTS_PROOF.mp4","drive_file_id":"1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI","role":"effects rollback/reference"},
+    {"name":"Scene03_ASSEMBLY04_CLEAN_ACTION_PASS.mp4","drive_file_id":"1udCJWNJMpK2oSdSir6Qfwmcndzx6p9Og","role":"clean action reference"}
+  ],
+  "hard_exclusions": [
+    {"name":"S3_REBUILD_REJECTED_collage_attempt01.png","drive_file_id":"145PPrgd-SekHHLjwa5kRIBdCI7wsz6WQ","reason":"collage drift"},
+    {"name":"S3_REBUILD_REJECTED_collage_attempt02.png","drive_file_id":"1kzJbHtfolW4FzVMqGRukIucKeXfikywe","reason":"collage drift"},
+    {"name":"S3_REBUILD_REJECTED_collage_attempt03.png","drive_file_id":"1cdRlmvcju8cCngEPNyWUCk_qHd0p98Bb","reason":"collage drift"}
+  ],
+  "assembly05_note": "ASSEMBLY05_MEDIA_PLAN.json remains the current 29-segment review cut. The renderer may add eligible coverage beyond those 29 segments while preserving each locked beat/frame range."
+}
