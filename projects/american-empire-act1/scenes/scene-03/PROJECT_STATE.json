@@ -46,7 +46,7 @@
   },
   "review_candidate": "Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_REVIEW.mp4",
   "review_candidate_sha256": "fdaa3461e8a03ec16df452ff74cfae1c8520f6a334e4db6087ac6198af21ebb1",
-  "review_candidate_status": "pending_fx_gate_and_user_review",
+  "review_candidate_status": "pending_user_review",
   "review_candidate_duration_seconds": 98.0,
   "review_candidate_frame_count": 2352,
   "review_candidate_media_segment_count": 40,
@@ -57,14 +57,26 @@
   "review_candidate_opening_wardrobe_continuity": "PASS",
   "review_candidate_technical_qc": "PASS",
   "review_candidate_picture_sha256": "9a79a57669a3deb1d789698fdfd288a5cab5540daa153ef3d426d54458639b4b",
+  "fx_gate": {
+    "workflow": "AIVideoEdit Main System Verification",
+    "run_number": 127,
+    "result": "PASS",
+    "hard_precompile_fx_gate": "PASS",
+    "immutable_fx_lock_recheck": "PASS",
+    "determinism": "PASS",
+    "unapproved_fx_block": "PASS"
+  },
+  "production_contract": {
+    "run_number": 259,
+    "result": "PASS"
+  },
   "drive_review_folder_id": "1IVSkeT8lfxHIXpMPC9o9fDuKZskO9aOy",
   "drive_render_upload_status": "pending_checkpoint_upload",
   "master_blockers": [
-    "assembly08_fx_gate",
     "assembly08_artistic_review",
     "final_semantic_action_and_mode_aware_qc",
     "user_master_acceptance"
   ],
   "system_main_authority": "0126b1c2978dc96810a02956a270feccdf02bdcf",
-  "updated_at_utc": "2026-09-16T07:38:00Z"
+  "updated_at_utc": "2026-09-16T07:40:00Z"
 }
