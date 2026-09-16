@@ -1,0 +1,68 @@
+{
+  "schema": "aivideoedit.scene-media-plan.v1",
+  "scene": "american-empire-act1-scene-03",
+  "candidate": "Scene03_ASSEMBLY05_MULTIIMAGE_GIF_FX_REVIEW_COMPACT.mp4",
+  "candidate_sha256": "3969e3a12020d5f7d7cd71a80ba0a8f19833ba55d164188d03fd86d6e8eaa9b1",
+  "duration_seconds": 98.0,
+  "fps": 24,
+  "frame_count": 2352,
+  "resolution": "1280x720",
+  "storyboard_beat_count": 8,
+  "media_segment_count": 29,
+  "policy": {
+    "storyboard_is_timing_and_narrative_authority_not_final_picture_media": true,
+    "use_existing_scene03_media_pool": true,
+    "new_image_generation_forbidden_for_this_pass": true,
+    "explicitly_rejected_media_excluded": true,
+    "deterministic_ab_motion_companion_required_for_stills": true,
+    "actual_gif_asset_required_for_still_segments": true,
+    "production_debug_labels_forbidden_in_picture": true
+  },
+  "beats": [
+    {"beat":"S3-01","frames":[0,191],"duration":8.0,"segments":[
+      {"id":"S3-01a","source":"noir_paris_call_claire_must_move.png","duration":2.7},
+      {"id":"S3-01b","source":"rainy_rue_de_rivoli_claire_s_call.png","duration":2.6},
+      {"id":"S3-01c","source":"noir_paris_departure.png","duration":2.7}
+    ]},
+    {"beat":"S3-02","frames":[192,359],"duration":7.0,"segments":[
+      {"id":"S3-02a","source":"noir_hallway_escape.png","duration":3.5},
+      {"id":"S3-02b","source":"noir_woman_in_a_rain_lit_parisian_hallway.png","duration":3.5}
+    ]},
+    {"beat":"S3-03","frames":[360,719],"duration":15.0,"segments":[
+      {"id":"S3-03a","source":"noir_hallway_vigilance.png","duration":4.0},
+      {"id":"S3-03b","source":"noir_hallway_did_you_hear_that.png","duration":4.0},
+      {"id":"S3-03c","source":"rainy_paris_noir_elevator_corridor.png","duration":3.5},
+      {"id":"S3-03d","source":"rainy_noir_elevator_corridor.png","duration":3.5}
+    ]},
+    {"beat":"S3-04","frames":[720,1175],"duration":19.0,"segments":[
+      {"id":"S3-04a","source":"noir_elevator_call.png","duration":4.0},
+      {"id":"S3-04b","source":"noir_elevator_button_seven.png","duration":4.0},
+      {"id":"S3-04c","source":"midnight_ride_to_floor_seven.png","duration":4.0},
+      {"id":"S3-04d","source":"golden_noir_elevator_ascent.png","duration":4.0},
+      {"id":"S3-04e","source":"noir_elevator_loop_ground_level.png","duration":3.0}
+    ]},
+    {"beat":"S3-05","frames":[1176,1583],"duration":17.0,"segments":[
+      {"id":"S3-05a","source":"rainy_paris_noir_lobby.png","duration":3.4},
+      {"id":"S3-05b","source":"noir_lobby_access_update.png","duration":3.4},
+      {"id":"S3-05c","source":"claire_at_the_american_empire_lobby.png","duration":3.4},
+      {"id":"S3-05d","source":"rainy_noir_lobby_in_paris.png","duration":3.4},
+      {"id":"S3-05e","source":"paris_noir_corporate_lobby_intrigue.png","duration":3.4}
+    ]},
+    {"beat":"S3-06","frames":[1584,1871],"duration":12.0,"segments":[
+      {"id":"S3-06a","source":"rainy_neo_noir_paris_metro.png","duration":3.0},
+      {"id":"S3-06b","source":"rainy_paris_metro_noir.png","duration":3.0},
+      {"id":"S3-06c","source":"rainy_paris_escape.png","duration":3.0},
+      {"id":"S3-06d","source":"claire_leaves_into_the_rain.png","duration":3.0}
+    ]},
+    {"beat":"S3-07","frames":[1872,2135],"duration":11.0,"segments":[
+      {"id":"S3-07a","source":"neon_noir_paris_under_watch.png","duration":3.7},
+      {"id":"S3-07b","source":"rainy_cyber_noir_boulevard_to_the_eiffel_tower.png","duration":3.7},
+      {"id":"S3-07c","source":"rainy_parisian_reflection.png","duration":3.6}
+    ]},
+    {"beat":"S3-08","frames":[2136,2351],"duration":9.0,"segments":[
+      {"id":"S3-08a","source":"rainy_parisian_night_between_reflections.png","duration":3.0},
+      {"id":"S3-08b","source":"rainy_paris_nocturne_with_eiffel_tower.png","duration":3.0},
+      {"id":"S3-08c","source":"rainy_paris_noir_with_eiffel_tower_glow.png","duration":3.0}
+    ]}
+  ]
+}
