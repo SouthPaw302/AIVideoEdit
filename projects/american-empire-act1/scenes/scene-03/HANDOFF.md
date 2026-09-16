@@ -59,7 +59,13 @@ Using all media does not mean forcing drifted or semantically contradictory fram
 
 Use reusable FX resources from current repository `main`. Apply approved current-main FX only where semantically appropriate. Existing proved project-local micro-motion/matched-angle assets remain valid source/reference resources. Do not auto-use proof-required, conditional or unavailable FX and do not blindly apply stale preset entries.
 
-The next required system check is the hard precompile FX gate / AIVideoEdit Main System Verification on the Assembly08 branch revision.
+Assembly08 system validation completed successfully:
+- AIVideoEdit Main System Verification run 127 — PASS
+- hard precompile FX gate — PASS
+- immutable FX-lock recheck — PASS
+- deterministic runtime test — PASS
+- unapproved-FX blocking test — PASS
+- AIVideoEdit Production Contract run 259 — PASS
 
 ## Motion implementation
 
@@ -67,7 +73,7 @@ Maintain source-locked, bounded movement. World/character/weather/light/depth mo
 
 ## Next phase
 
-Run the FX/system gate on Assembly08. If it passes, review Assembly08 visually. If ordering/pacing is accepted, make only targeted semantic/continuity fixes, then run final semantic/action QC, temporal QC, zero-drift QC, caption/audio-boundary checks and terminal-frame QC.
+Review Assembly08 visually. If ordering/pacing is accepted, make only targeted semantic/continuity fixes, then run final semantic/action QC, temporal QC, zero-drift QC, caption/audio-boundary checks and terminal-frame QC.
 
 Do not promote to accepted master without current-user approval.
 
