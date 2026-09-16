@@ -1,16 +1,12 @@
 # Scene 03 Production Handoff
 
 ## Authority
-
-Work only on `project/american-empire-act1/scene-03`. Repository `main` remains the AIVideoEdit OS and reusable-FX authority; `project/american-empire-act1/main` is the film integration branch.
+Work only on `project/american-empire-act1/scene-03`. Repository `main` remains the AIVideoEdit OS/reusable-FX authority; `project/american-empire-act1/main` is the film integration branch.
 
 Read before continuing:
 - `SCENE03_CONTINUATION_DIRECTIVE.md`
-- `SCENE03_CONTINUATION_ARCHITECTURE.json`
-- `SCENE03_ZERO_DRIFT_PROMPT_PACK.json`
-- `SCENE03_FX_EXECUTION_PLAN.json`
-- `SCENE03_MEDIA_AUDIT.json`
 - `ASSEMBLY08_MEDIA_PLAN.json`
+- `ASSEMBLY11_S12_MASTER_MATCH_PLAN.json`
 - `STATUS.md`
 - `PROJECT_STATE.json`
 - locked `SCRIPT.json`
@@ -19,65 +15,57 @@ Read before continuing:
 - project `MOTION_LANGUAGE.md`
 - `PRIME_DIRECTIVE.md`
 - `general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md`
-- `general/reusable/DOCTRINE_LIVING_SCENE.md`
-- current-main `general/reusable/fx_v2/registry.json`
 
 ## Resume state
+Scene 03 remains exactly `98.000 s / 2352 frames / 24 fps / 1280x720`.
 
-Scene 03 remains exactly 98.000 seconds / 2352 frames / 24 fps / 1280x720.
+Continuity baseline: `Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_REVIEW.mp4` — USER PASS / LOCKED.
 
-Continuity baseline:
+Current final-review candidate:
 
-`Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_REVIEW.mp4`
+`Scene03_FINAL_S12_MATCH_REMASTER.mp4`
 
-The user explicitly passed Assembly08 for continuity and explicitly failed its visible effects treatment. Continuity is therefore locked; do not reopen story order, wardrobe order, Claire identity, geography, dialogue, score timing or the 40-media editorial structure to solve FX problems.
+SHA-256 `e377a0d4dae4a580ce0d884b7e34990d2363130337426309455b903e53c0aa3f`
 
-Current cinematic FX/remaster review candidate:
+Contact sheet: `Scene03_FINAL_S12_MATCH_CONTACT.jpg`  
+SHA-256 `db2a3c7d0035fae20a7b4f765a36cf4ba723bb653172f7a14e6c798bab053bc3`
 
-`Scene03_ASSEMBLY10_CINEMATIC_REMASTER_REVIEW.mp4`
+## S1/S2 master-match authority
+The finishing reference is the combined master `AE_ACT1_S1_S2_720P_MASTER.mp4`, Drive ID `1bs1mU03AiuLK-I6zAePKj_tSc6YXATmU`.
 
-SHA-256 `089184e0a92feca6570c8753a480ea4b97d38d429cffeaa3a5175b8987976b5a`
+Assembly11 was rebuilt from the clean Assembly08 picture after direct visual/technical comparison with that master and branch review of Scene 01/02 caption/motion documents.
 
-Assembly10 keeps Assembly08 continuity intact and applies a restrained director-led living-scene treatment: subtle beat-level push/pull, local breathing of existing practical/city highlights, additional independent soft-light depth in exterior Paris, and restrained picture mastering. The generated-video files in the new Drive `Generated Videos` folder were scanned for motion-language reference but were not inserted.
-
-Assembly02 remains the immutable approved pre-production rollback/reference for feel, Claire continuity, Paris/city design, shot order and score timing.
+Applied finishing language:
+- dark translucent lower-third dialogue window;
+- thin pale border;
+- centered cyan uppercase speaker label;
+- centered white dialogue;
+- safe lower margin and shot-by-shot face/hand/action clearance;
+- restrained color saturation and slight exposure lift rather than the warmer/magenta Assembly10 master;
+- score level matched to approximately `-16.4 LUFS` integrated, with source score continuity preserved.
 
 ## Locked continuity authority
+- S3-01 stays entirely in Claire's robe/phone state.
+- Dressed/shoulder-bag state begins in S3-02.
+- Accepted Assembly08 ordering, 40-media structure and beat functions remain unchanged.
+- No manual elevator-floor press contradiction.
+- No tied-hair terminal drift.
+- Claire identity, wardrobe order, phone, geography, dialogue and score timing remain locked.
 
-S3-01 remains entirely Claire's robe/phone state. The dressed/shoulder-bag apartment state begins only in S3-02. S3-03 through S3-08 preserve the accepted Assembly08 ordering and semantics. Do not move the dressed frames back into S3-01 and do not reintroduce the manual elevator-button contradiction or tied-hair terminal drift.
-
-## Director FX authority
-
-Treat FX as cinematography, not as a feature checklist. The motion hierarchy is:
-1. character action or micro-action;
-2. weather and atmosphere;
-3. source-driven lighting/reflections;
-4. foreground and environmental object motion;
-5. semantic depth / restrained 2.5D parallax;
-6. camera motion last.
-
-Paris is the primary living environment. Practical lamps, windows, corridor/elevator illumination, transit indicators, wet pavement, passing city light and reflections may animate subtly and asynchronously. Claire should remain restrained: micro-motion, cloth/hair edge response, phone/light interaction and subtle shot breathing only where the source supports it.
-
-Foreground GIF/cutout/perspective work is encouraged when it functions as part of the set rather than an overlay demonstration. Crop or isolate only the useful moving region when possible. Protect Claire, architecture and topology. Loops must not advertise their reset; vary cycle lengths and preserve stillness.
-
-A slight push into the same image is valid cinematic motion when it remains nearly imperceptible. If the viewer notices the zoom as an effect, it is too much. No fake handheld, global wobble, repeated push-pull or pan/zoom pretending to be walking.
-
-## Main FX rule
-
-Use reusable FX resources from current repository `main` only where semantically appropriate. The technical gate and production contract pass means the registry/runtime is valid; it does not mean an artistic FX pass has been approved by the user.
-
-Do not stack effects merely because they are approved. One primary living effect per visual moment, occasionally one secondary support effect, is the default. Some shots should remain almost still.
+## Director/motion authority
+Accepted Scene 01 remains the project motion-language baseline. Movement comes from character state, weather, practical light, reflections and depth before camera. Camera stays locked/near-locked unless a small motivated move is genuinely useful. No global wobble, fake handheld, repeated push-pull or pan/zoom pretending to be walking.
 
 ## Generated Videos folder
+The Drive `Generated Videos` folder was scanned. It remains reference-only for this revision; no generated-video clip was inserted into Assembly11.
 
-Drive folder `Generated Videos` was scanned. It contains earlier Scene 01/02/03 passes, layered FX proofs and generated Gemini video clips. The generated clips remain reference material for now. Two Gemini files are exact duplicate coverage. Do not insert generated-video material into Scene 03 unless the current user authorizes it or a later director decision identifies a continuity-safe need.
-
-## Remastering rule
-
-Remastering is separate from FX direction. It may unify contrast, clean compression/noise, control saturation, refine highlight rolloff/glow and apply restrained sharpening, but it must not introduce new story/motion ideas or materially alter the locked score.
+## QC completed
+- technical conform: PASS
+- exact 98.000-second / 2352-frame lock: PASS
+- continuity: USER PASS / LOCKED
+- S1/S2 caption language: PASS
+- caption face/hand/action clearance: PASS
+- audio loudness match: PASS
+- no new image generation: PASS
 
 ## Next phase
-
-Current-user visual review of Assembly10. If the cinematic FX/remaster treatment is accepted, run final semantic/action QC, temporal QC, zero-drift QC, caption/audio-boundary checks, terminal-frame QC and final master preparation.
-
-Do not promote Assembly10 to accepted master without current-user approval.
+Await current-user final visual/master acceptance. If accepted, promote this exact file/state to master and integrate forward. Do not reopen continuity, regenerate the world, or return to Assembly10 unless the user identifies a specific defect.
