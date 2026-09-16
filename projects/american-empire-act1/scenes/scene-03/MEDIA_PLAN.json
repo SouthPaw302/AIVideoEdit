@@ -7,6 +7,7 @@
   "selected_capabilities":[
     "authorized_source_images",
     "generated_stills",
+    "recovered_generated_stills",
     "generated_support_imagery",
     "accepted_motion_benchmark_video",
     "living_painting",
@@ -17,8 +18,6 @@
     "atmospheric_plate",
     "transition_media",
     "conventional_video",
-    "generated_continuation",
-    "source_derived_composite",
     "analysis_qc_media"
   ],
   "reference_route":"Accepted American Empire Scene 01 identity/environment heroes and motion benchmark are active references; this is not a no-reference production.",
@@ -56,6 +55,7 @@
   },
   "generated_continuation_policy":{
     "candidate_shots":["S3-01","S3-02","S3-08"],
+    "execution_capability":"conventional_video",
     "required_for":"Only real articulated actions not adequately covered by approved existing media, such as securing/shouldering an essential, opening a door while moving through it, or sustained walking.",
     "existing_media_first":true,
     "start_frame_lock":true,
@@ -69,6 +69,7 @@
   "reuse_policy":{
     "scene01_scene02_canon":"Use accepted/authorized continuity material as reference or traceable source-derived coverage only. Preserve identity, environment topology, palette and motion language.",
     "scene03_existing_media":"Exhaust the approved/promoted Scene 03 source pool before requesting replacement generation. Preserve valid non-hero coverage and proved loop assets.",
+    "source_derived_behavior":"Source-derived compositing is performed under layered_composite/depth_25d/conventional_video as appropriate; source_derived_coverage is not claimed unless the accepted-source-library requirements are independently satisfied.",
     "new_generation":"No wholesale hero/library regeneration. New generation is limited to specific missing articulated continuation/action coverage authorized by SCRIPT.json and the zero-drift continuation contract."
   },
   "fx_policy":{
