@@ -10,7 +10,7 @@ Read before continuing:
 - `SCENE03_ZERO_DRIFT_PROMPT_PACK.json`
 - `SCENE03_FX_EXECUTION_PLAN.json`
 - `SCENE03_MEDIA_AUDIT.json`
-- `ASSEMBLY07_MEDIA_PLAN.json`
+- `ASSEMBLY08_MEDIA_PLAN.json`
 - `STATUS.md`
 - `PROJECT_STATE.json`
 - locked `SCRIPT.json`
@@ -27,42 +27,39 @@ Scene 03 is assembled at exactly 98.000 seconds / 2352 frames / 24 fps / 1280x72
 
 Current review candidate:
 
-`Scene03_ASSEMBLY07_REORDERED_ALLMEDIA_MAINFX_REVIEW.mp4`
+`Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_REVIEW.mp4`
 
-SHA-256 `fedb314e76ae7991f28838f28332a5175bafd425d0fe371591e598e6bd347759`
+SHA-256 `fdaa3461e8a03ec16df452ff74cfae1c8520f6a334e4db6087ac6198af21ebb1`
 
-Assembly07 contains 40 on-screen media segments across the eight locked beats. Assembly06 was reviewed by the user as a good pass with several stills out of order; Assembly07 corrects those placements without restarting or weakening the successful current-main FX direction.
+Assembly08 preserves all 40 visible Assembly07 segments but moves two fully dressed/shoulder-bag apartment frames out of S3-01 and into S3-02. This removes the robe-to-dressed-to-robe jump reported by the user without discarding media or disturbing S3-03 through S3-08.
 
-Assembly02 remains the immutable approved pre-production rollback/reference for feel, Claire continuity, Paris/city design, shot order and score timing. It is not the current resume candidate.
+Assembly02 remains the immutable approved pre-production rollback/reference for feel, Claire continuity, Paris/city design, shot order and score timing.
+
+## Opening wardrobe continuity authority
+
+S3-01 must remain entirely in Claire's robe/phone state:
+- `noir_paris_call_claire_must_move.png`
+- `rainy_paris_escape.png`
+- `S3H01_FX_LOOP.gif`
+
+The dressed/shoulder-bag apartment state begins only in S3-02:
+- `a_cinematic_moody_comic_graphic_novel_style_scen.png`
+- `file_00000000ad8c81f5b22f6ecaa274f485.png`
+- followed by the existing dressed departure/corridor coverage.
+
+Do not move those two dressed frames back into S3-01.
 
 ## Full-media rule
 
-The eight Scene 03 heroes are continuity/composition anchors, not the complete source library and not an editorial cap.
+The eight Scene 03 heroes are continuity/composition anchors, not the complete source library and not an editorial cap. Continue from the full reachable approved/promoted Scene 03 media pool. `ASSEMBLY08_MEDIA_PLAN.json` records the current correction and inherits the traceable reference/QC/provenance roles from Assembly07.
 
-Continue from the full reachable approved/promoted Scene 03 media pool. `ASSEMBLY07_MEDIA_PLAN.json` records which resources are visible and which are intentionally reference/QC/provenance-only. Using all media does not mean forcing drifted or semantically contradictory frames into final picture.
-
-Filename text alone is not lifecycle authority. Manifest-promoted legacy files remain usable despite old `REJECTED` filenames. Exact duplicates may be represented once in final picture and still retain their provenance role. Genuine collage/debug material and unresolved identity/action drift remain off final picture unless the current user explicitly changes that decision and they can pass continuity/QC.
-
-The Claire identity references are active QC authority, not final-picture inserts. Previous assemblies remain available as action/order/motion-language reference.
-
-## Assembly07 ordering authority
-
-The exact current order is `ASSEMBLY07_MEDIA_PLAN.json`. Important corrections from Assembly06 include:
-- apartment/escape imagery returned to S3-01;
-- apartment coat/threshold coverage returned to S3-02;
-- corridor progression kept in S3-03;
-- elevator imagery that visibly shows Claire pressing a floor button is reference-only, because the locked beat says the elevator already knows and Claire did not press anything;
-- lobby coverage remains S3-05;
-- Rue de Rivoli/street/café coverage is S3-06;
-- Metro/civic/display coverage is S3-07;
-- tied-hair Seine terminal imagery is reference-only because it breaks Claire identity/hair continuity;
-- S3-08 ends on forward-moving Eiffel-street Claire with loose-hair continuity.
+Using all media does not mean forcing drifted or semantically contradictory frames into final picture. Manifest-promoted legacy files remain usable despite old `REJECTED` filenames; genuine collage/debug and unresolved identity/action drift stay off final picture unless explicitly promoted and able to pass current QC.
 
 ## Main FX rule
 
-Use reusable FX resources from current repository `main`, not a hero-only local effect recipe. The current full-media FX continuation has already passed both AIVideoEdit Main System Verification and AIVideoEdit Production Contract.
+Use reusable FX resources from current repository `main`. Apply approved current-main FX only where semantically appropriate. Existing proved project-local micro-motion/matched-angle assets remain valid source/reference resources. Do not auto-use proof-required, conditional or unavailable FX and do not blindly apply stale preset entries.
 
-Apply approved current-main FX only where semantically appropriate. Existing proved project-local micro-motion/matched-angle assets remain valid source/reference resources. Do not auto-use proof-required, conditional or unavailable FX and do not blindly apply stale preset entries.
+The next required system check is the hard precompile FX gate / AIVideoEdit Main System Verification on the Assembly08 branch revision.
 
 ## Motion implementation
 
@@ -70,13 +67,14 @@ Maintain source-locked, bounded movement. World/character/weather/light/depth mo
 
 ## Next phase
 
-Review Assembly07 visually. If ordering/pacing is accepted, make only targeted semantic/continuity fixes, then run final semantic/action QC, temporal QC, zero-drift QC, caption/audio-boundary checks and terminal-frame QC.
+Run the FX/system gate on Assembly08. If it passes, review Assembly08 visually. If ordering/pacing is accepted, make only targeted semantic/continuity fixes, then run final semantic/action QC, temporal QC, zero-drift QC, caption/audio-boundary checks and terminal-frame QC.
 
 Do not promote to accepted master without current-user approval.
 
 ## Non-negotiable
 
 - Preserve Claire identity, anatomy, dark wavy hair, phone, approved essential and wardrobe continuity.
+- Preserve the S3-01 robe state and begin the dressed/shoulder-bag state only in S3-02.
 - Preserve all eight beat functions and the exact 98-second score/frame map.
 - Preserve locked dialogue wording.
 - Preserve Paris apartment/corridor/elevator/lobby/street geography and coherent storm logic.
