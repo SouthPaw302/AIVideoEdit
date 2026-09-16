@@ -39,27 +39,30 @@
     "drive_file_id": "1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI"
   },
   "previous_review_candidate": {
-    "file": "Scene03_ASSEMBLY04_CLEAN_ACTION_PASS.mp4",
-    "sha256": "07bccc75f5e54b6b89b0142c90c3d7224cd976d2a91afce1030997f9219a5bb7",
-    "drive_file_id": "1udCJWNJMpK2oSdSir6Qfwmcndzx6p9Og"
+    "file": "Scene03_ASSEMBLY06_FULLMEDIA_MAINFX_REVIEW.mp4",
+    "status": "reviewed_good_pass_ordering_changes_requested",
+    "user_feedback": "A few of the stills are out of order but good pass"
   },
-  "review_candidate": "Scene03_ASSEMBLY05_MULTIIMAGE_GIF_FX_REVIEW_COMPACT.mp4",
-  "review_candidate_sha256": "3969e3a12020d5f7d7cd71a80ba0a8f19833ba55d164188d03fd86d6e8eaa9b1",
+  "review_candidate": "Scene03_ASSEMBLY07_REORDERED_ALLMEDIA_MAINFX_REVIEW.mp4",
+  "review_candidate_sha256": "fedb314e76ae7991f28838f28332a5175bafd425d0fe371591e598e6bd347759",
   "review_candidate_status": "pending_user_review",
   "review_candidate_duration_seconds": 98.0,
   "review_candidate_frame_count": 2352,
-  "review_candidate_media_segment_count": 29,
-  "review_candidate_media_plan": "ASSEMBLY05_MEDIA_PLAN.json",
+  "review_candidate_media_segment_count": 40,
+  "review_candidate_media_plan": "ASSEMBLY07_MEDIA_PLAN.json",
   "review_candidate_new_image_generation": false,
-  "review_candidate_real_gif_assets": true,
-  "review_candidate_ab_motion_pairs": true,
+  "review_candidate_uses_full_reachable_media_pool": true,
+  "review_candidate_main_fx": true,
+  "review_candidate_contact_sheet": "Scene03_ASSEMBLY07_CONTACT_SHEET.jpg",
+  "review_candidate_contact_sheet_sha256": "dcb0299cbc5375b07b84ff8f67344d6e0448d676aa3066a2772bc86788f99b6d",
+  "review_candidate_technical_qc": "PASS",
   "drive_review_folder_id": "1IVSkeT8lfxHIXpMPC9o9fDuKZskO9aOy",
-  "drive_render_upload_status": "pending_connector_file_reference",
+  "drive_render_upload_status": "pending_checkpoint_upload",
   "master_blockers": [
-    "assembly05_artistic_review",
-    "final_semantic_action_qc",
+    "assembly07_artistic_review",
+    "final_semantic_action_and_mode_aware_qc",
     "user_master_acceptance"
   ],
   "system_main_authority": "0126b1c2978dc96810a02956a270feccdf02bdcf",
-  "updated_at_utc": "2026-09-16T00:50:00Z"
+  "updated_at_utc": "2026-09-16T06:55:00Z"
 }
