@@ -2,62 +2,75 @@
 
 Branch: `project/american-empire-act1/scene-03`  
 Canonical project root: `project/american-empire-act1/main`  
-Stage: `ASSEMBLED / CONTINUITY_LOCKED / ASSEMBLY10_CINEMATIC_REMASTER_REVIEW`
+Stage: `ASSEMBLED / CONTINUITY_LOCKED / ASSEMBLY11_S1_S2_MASTER_MATCH_FINAL_REVIEW`
 
-## Continuity and timing
-- Starts from the actual extracted final frame of Scene 02.
-- Score authority: `L'Atmosphère.wav`.
+## Locked continuity
+- User passed Assembly08 for continuity. Continuity remains locked unless explicitly reopened.
 - Duration: `98.000 s`; frame rate: `24 fps`; frames: `2352`; resolution: `1280x720`.
-- User explicitly passed Assembly08 for continuity. Continuity is now locked unless the current user reopens it.
+- Score authority: `L'Atmosphère.wav`.
+- S3-01 remains Claire's robe/phone state; dressed/shoulder-bag coverage begins in S3-02.
+- The accepted Assembly08 40-media editorial structure, dialogue, geography, beat boundaries and Claire identity remain unchanged.
 
-## Approved foundation
-Assembly02 remains the immutable user-approved pre-production reference for feel, Claire continuity, Paris/city design, shot order and score timing.
+## S1 + S2 finishing authority
+The current finishing reference is the combined accepted film master:
 
-Assembly06 established the successful full-media/current-main-FX pipeline. Assembly07 corrected still ordering and expanded the visible pool to 40 segments. Assembly08 repaired the remaining opening wardrobe discontinuity by moving the two fully dressed/shoulder-bag apartment frames from S3-01 into S3-02. The user then explicitly accepted Assembly08 continuity but rejected the effects treatment as insufficient.
+`AE_ACT1_S1_S2_720P_MASTER.mp4`  
+Drive file ID `1bs1mU03AiuLK-I6zAePKj_tSc6YXATmU`
 
-## Assembly10 — current review candidate
-Assembly10 keeps the locked Assembly08 continuity and applies a new director-led cinematic FX/remaster treatment without changing story order, dialogue, beat boundaries or Claire continuity.
+Measured reference properties:
+- `186.000 s`
+- `1280x720`, `24 fps`
+- integrated audio loudness approximately `-16.4 LUFS`
+- restrained cinematic-comic caption windows: dark translucent box, thin pale border, cyan uppercase speaker label, white centered dialogue
+- accepted Scene 01 motion language remains the project baseline: world/character/weather/light/depth before camera, near-locked framing, no repeated push-pull or global wobble
 
-`Scene03_ASSEMBLY10_CINEMATIC_REMASTER_REVIEW.mp4`
-- SHA-256 `089184e0a92feca6570c8753a480ea4b97d38d429cffeaa3a5175b8987976b5a`
+Reference branch material scanned:
+- Scene 01 `CAPTION_PLAN.md` and `CAPTION_TIMING.json`
+- Scene 01 `VISUAL_LOCK.md`
+- Scene 02 `CAPTION_TIMING.json` and `STATUS.md`
+- project `MOTION_LANGUAGE.md`
+
+## Assembly11 — current final-review candidate
+`Scene03_FINAL_S12_MATCH_REMASTER.mp4`
+
+- SHA-256 `e377a0d4dae4a580ce0d884b7e34990d2363130337426309455b903e53c0aa3f`
 - exact `98.000 s`
 - exact `2352` frames
 - `1280x720`, `24 fps`
-- locked score/audio retained
-- continuity and 40-media editorial structure inherited from accepted Assembly08
-- camera motion restricted to subtle beat-level pushes/pulls rather than fake walking or global wobble
-- existing bright practical/city sources receive restrained local glow/breath treatment
-- exterior Paris receives an additional independent soft-light layer for depth while architecture remains locked
-- remaster is restrained: mild cleanup, contrast unification, saturation control and sharpening only
-- generated-video material from the new Drive `Generated Videos` folder was reviewed as direction/reference only and was not inserted into Assembly10
+- H.264 picture / AAC 48 kHz stereo
+- integrated audio loudness `-16.4 LUFS`
+- true peak approximately `-2.8 dBFS`
+- no new image generation
+- no generated-video insertion
+- continuity inherited directly from the Assembly08 clean picture
 
-Contact sheet: `Scene03_ASSEMBLY10_CONTACT_SHEET.jpg`  
-Contact sheet SHA-256: `2484e0c788b25f511004997bded1e00c53618a60c03e67d620cb17514bb03bd6`
+Assembly11 replaces the Assembly10 finishing treatment. Assembly10 was too warm/magenta and its caption treatment did not match the combined S1+S2 film closely enough.
 
-## Director FX principle
-The FX pass is not a library demonstration. Follow the directive motion hierarchy: character/micro-action first; weather/atmosphere; source-driven light/reflections; foreground/environment object motion; semantic depth/parallax; camera last.
+### Caption match
+All nine Scene 03 captions retain locked wording/timing but now use the S1/S2 visual language:
+- dark translucent lower-third dialogue window
+- thin pale outline
+- cyan uppercase speaker label
+- centered white dialogue
+- consistent bottom safe margin
+- visual QC confirms the cards remain clear of faces, hands and primary action
 
-Use Paris as a living light environment: practical lamps, windows, transit indicators, wet pavement, passing illumination and reflections may move subtly and independently. Claire remains restrained. Foreground GIF/cutout/parallax ideas are permitted when they preserve protected geometry and do not advertise loops. Do not stack effects simply because they are available.
+### Picture remaster
+The remaster starts from `Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_PICTURE.mp4`, not Assembly10. This avoids carrying the prior oversaturated/magenta master forward. The new finish uses a slight exposure lift and restrained saturation reduction to sit closer to S1/S2 while preserving the approved Scene 03 FX already present in the clean picture.
 
-## Full-media rule
-The eight Scene 03 heroes are continuity anchors, not the complete source library. Every reachable Scene 03 asset remains either visible in the cut or assigned a traceable reference/QC/provenance role. Continuity-approved media order is inherited from Assembly08.
+Contact sheet: `Scene03_FINAL_S12_MATCH_CONTACT.jpg`  
+Contact sheet SHA-256: `db2a3c7d0035fae20a7b4f765a36cf4ba723bb653172f7a14e6c798bab053bc3`
 
-## Main FX authority
-Scene 03 consumes the reusable FX system from current repository `main` through bootstrap. Only approved/proven current-main FX are allowed automatically; proof-required, conditional or unavailable FX fail closed.
+Plan: `ASSEMBLY11_S12_MASTER_MATCH_PLAN.json`
 
-The repository FX gate passing does not itself mean the artistic FX treatment passed user review. Assembly08 continuity passed while its visible FX treatment was rejected; Assembly10 is the new artistic FX/remaster review candidate.
+## QC
+- continuity: `PASS / USER LOCKED`
+- exact frame/timing conform: `PASS`
+- S1/S2 caption-language match: `PASS`
+- caption face/hand/action clearance: `PASS`
+- audio loudness match: `PASS`
+- generated-video folder: reference only, not inserted
+- user master acceptance: `PENDING`
 
-## Current review evidence
-- Continuity baseline: Assembly08 — USER PASS / LOCKED
-- Previous visible FX treatment: USER FAIL / superseded
-- Current review video: `Scene03_ASSEMBLY10_CINEMATIC_REMASTER_REVIEW.mp4`
-- Current review SHA-256: `089184e0a92feca6570c8753a480ea4b97d38d429cffeaa3a5175b8987976b5a`
-- Technical timing/frame QC: PASS
-- Artistic cinematic-FX/remaster status: pending current-user review
-
-## Remaining master blockers
-- current-user review of Assembly10 cinematic FX and remaster
-- final semantic/action and mode-aware QC after artistic approval
-- final user master acceptance
-
-Do not reopen continuity or rebuild the story to solve FX problems. Do not promote Assembly10 to accepted master without current-user approval.
+## Remaining blocker
+Only current-user final visual/master acceptance remains before master promotion and integration. Do not reopen continuity or rebuild story/media unless the user explicitly identifies a defect.
