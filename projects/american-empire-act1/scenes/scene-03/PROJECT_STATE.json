@@ -39,30 +39,32 @@
     "drive_file_id": "1sNbipscEqAKSoCQX_FpljMKsrc7mlbXI"
   },
   "previous_review_candidate": {
-    "file": "Scene03_ASSEMBLY06_FULLMEDIA_MAINFX_REVIEW.mp4",
-    "status": "reviewed_good_pass_ordering_changes_requested",
-    "user_feedback": "A few of the stills are out of order but good pass"
+    "file": "Scene03_ASSEMBLY07_REORDERED_ALLMEDIA_MAINFX_REVIEW.mp4",
+    "sha256": "fedb314e76ae7991f28838f28332a5175bafd425d0fe371591e598e6bd347759",
+    "status": "reviewed_wardrobe_discontinuity_identified",
+    "user_feedback": "There is one Scene that has a weird change of dress in the beginning."
   },
-  "review_candidate": "Scene03_ASSEMBLY07_REORDERED_ALLMEDIA_MAINFX_REVIEW.mp4",
-  "review_candidate_sha256": "fedb314e76ae7991f28838f28332a5175bafd425d0fe371591e598e6bd347759",
-  "review_candidate_status": "pending_user_review",
+  "review_candidate": "Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_REVIEW.mp4",
+  "review_candidate_sha256": "fdaa3461e8a03ec16df452ff74cfae1c8520f6a334e4db6087ac6198af21ebb1",
+  "review_candidate_status": "pending_fx_gate_and_user_review",
   "review_candidate_duration_seconds": 98.0,
   "review_candidate_frame_count": 2352,
   "review_candidate_media_segment_count": 40,
-  "review_candidate_media_plan": "ASSEMBLY07_MEDIA_PLAN.json",
+  "review_candidate_media_plan": "ASSEMBLY08_MEDIA_PLAN.json",
   "review_candidate_new_image_generation": false,
   "review_candidate_uses_full_reachable_media_pool": true,
   "review_candidate_main_fx": true,
-  "review_candidate_contact_sheet": "Scene03_ASSEMBLY07_CONTACT_SHEET.jpg",
-  "review_candidate_contact_sheet_sha256": "dcb0299cbc5375b07b84ff8f67344d6e0448d676aa3066a2772bc86788f99b6d",
+  "review_candidate_opening_wardrobe_continuity": "PASS",
   "review_candidate_technical_qc": "PASS",
+  "review_candidate_picture_sha256": "9a79a57669a3deb1d789698fdfd288a5cab5540daa153ef3d426d54458639b4b",
   "drive_review_folder_id": "1IVSkeT8lfxHIXpMPC9o9fDuKZskO9aOy",
   "drive_render_upload_status": "pending_checkpoint_upload",
   "master_blockers": [
-    "assembly07_artistic_review",
+    "assembly08_fx_gate",
+    "assembly08_artistic_review",
     "final_semantic_action_and_mode_aware_qc",
     "user_master_acceptance"
   ],
   "system_main_authority": "0126b1c2978dc96810a02956a270feccdf02bdcf",
-  "updated_at_utc": "2026-09-16T06:55:00Z"
+  "updated_at_utc": "2026-09-16T07:38:00Z"
 }
