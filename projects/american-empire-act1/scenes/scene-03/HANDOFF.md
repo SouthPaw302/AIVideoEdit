@@ -19,72 +19,65 @@ Read before continuing:
 - project `MOTION_LANGUAGE.md`
 - `PRIME_DIRECTIVE.md`
 - `general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md`
+- `general/reusable/DOCTRINE_LIVING_SCENE.md`
 - current-main `general/reusable/fx_v2/registry.json`
 
 ## Resume state
 
-Scene 03 is assembled at exactly 98.000 seconds / 2352 frames / 24 fps / 1280x720.
+Scene 03 remains exactly 98.000 seconds / 2352 frames / 24 fps / 1280x720.
 
-Current review candidate:
+Continuity baseline:
 
 `Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_REVIEW.mp4`
 
-SHA-256 `fdaa3461e8a03ec16df452ff74cfae1c8520f6a334e4db6087ac6198af21ebb1`
+The user explicitly passed Assembly08 for continuity and explicitly failed its visible effects treatment. Continuity is therefore locked; do not reopen story order, wardrobe order, Claire identity, geography, dialogue, score timing or the 40-media editorial structure to solve FX problems.
 
-Assembly08 preserves all 40 visible Assembly07 segments but moves two fully dressed/shoulder-bag apartment frames out of S3-01 and into S3-02. This removes the robe-to-dressed-to-robe jump reported by the user without discarding media or disturbing S3-03 through S3-08.
+Current cinematic FX/remaster review candidate:
+
+`Scene03_ASSEMBLY10_CINEMATIC_REMASTER_REVIEW.mp4`
+
+SHA-256 `089184e0a92feca6570c8753a480ea4b97d38d429cffeaa3a5175b8987976b5a`
+
+Assembly10 keeps Assembly08 continuity intact and applies a restrained director-led living-scene treatment: subtle beat-level push/pull, local breathing of existing practical/city highlights, additional independent soft-light depth in exterior Paris, and restrained picture mastering. The generated-video files in the new Drive `Generated Videos` folder were scanned for motion-language reference but were not inserted.
 
 Assembly02 remains the immutable approved pre-production rollback/reference for feel, Claire continuity, Paris/city design, shot order and score timing.
 
-## Opening wardrobe continuity authority
+## Locked continuity authority
 
-S3-01 must remain entirely in Claire's robe/phone state:
-- `noir_paris_call_claire_must_move.png`
-- `rainy_paris_escape.png`
-- `S3H01_FX_LOOP.gif`
+S3-01 remains entirely Claire's robe/phone state. The dressed/shoulder-bag apartment state begins only in S3-02. S3-03 through S3-08 preserve the accepted Assembly08 ordering and semantics. Do not move the dressed frames back into S3-01 and do not reintroduce the manual elevator-button contradiction or tied-hair terminal drift.
 
-The dressed/shoulder-bag apartment state begins only in S3-02:
-- `a_cinematic_moody_comic_graphic_novel_style_scen.png`
-- `file_00000000ad8c81f5b22f6ecaa274f485.png`
-- followed by the existing dressed departure/corridor coverage.
+## Director FX authority
 
-Do not move those two dressed frames back into S3-01.
+Treat FX as cinematography, not as a feature checklist. The motion hierarchy is:
+1. character action or micro-action;
+2. weather and atmosphere;
+3. source-driven lighting/reflections;
+4. foreground and environmental object motion;
+5. semantic depth / restrained 2.5D parallax;
+6. camera motion last.
 
-## Full-media rule
+Paris is the primary living environment. Practical lamps, windows, corridor/elevator illumination, transit indicators, wet pavement, passing city light and reflections may animate subtly and asynchronously. Claire should remain restrained: micro-motion, cloth/hair edge response, phone/light interaction and subtle shot breathing only where the source supports it.
 
-The eight Scene 03 heroes are continuity/composition anchors, not the complete source library and not an editorial cap. Continue from the full reachable approved/promoted Scene 03 media pool. `ASSEMBLY08_MEDIA_PLAN.json` records the current correction and inherits the traceable reference/QC/provenance roles from Assembly07.
+Foreground GIF/cutout/perspective work is encouraged when it functions as part of the set rather than an overlay demonstration. Crop or isolate only the useful moving region when possible. Protect Claire, architecture and topology. Loops must not advertise their reset; vary cycle lengths and preserve stillness.
 
-Using all media does not mean forcing drifted or semantically contradictory frames into final picture. Manifest-promoted legacy files remain usable despite old `REJECTED` filenames; genuine collage/debug and unresolved identity/action drift stay off final picture unless explicitly promoted and able to pass current QC.
+A slight push into the same image is valid cinematic motion when it remains nearly imperceptible. If the viewer notices the zoom as an effect, it is too much. No fake handheld, global wobble, repeated push-pull or pan/zoom pretending to be walking.
 
 ## Main FX rule
 
-Use reusable FX resources from current repository `main`. Apply approved current-main FX only where semantically appropriate. Existing proved project-local micro-motion/matched-angle assets remain valid source/reference resources. Do not auto-use proof-required, conditional or unavailable FX and do not blindly apply stale preset entries.
+Use reusable FX resources from current repository `main` only where semantically appropriate. The technical gate and production contract pass means the registry/runtime is valid; it does not mean an artistic FX pass has been approved by the user.
 
-Assembly08 system validation completed successfully:
-- AIVideoEdit Main System Verification run 127 — PASS
-- hard precompile FX gate — PASS
-- immutable FX-lock recheck — PASS
-- deterministic runtime test — PASS
-- unapproved-FX blocking test — PASS
-- AIVideoEdit Production Contract run 259 — PASS
+Do not stack effects merely because they are approved. One primary living effect per visual moment, occasionally one secondary support effect, is the default. Some shots should remain almost still.
 
-## Motion implementation
+## Generated Videos folder
 
-Maintain source-locked, bounded movement. World/character/weather/light/depth motion precedes camera movement. Scene 01 remains the motion-language baseline. Do not redraw Claire, props, architecture or topology to manufacture movement.
+Drive folder `Generated Videos` was scanned. It contains earlier Scene 01/02/03 passes, layered FX proofs and generated Gemini video clips. The generated clips remain reference material for now. Two Gemini files are exact duplicate coverage. Do not insert generated-video material into Scene 03 unless the current user authorizes it or a later director decision identifies a continuity-safe need.
+
+## Remastering rule
+
+Remastering is separate from FX direction. It may unify contrast, clean compression/noise, control saturation, refine highlight rolloff/glow and apply restrained sharpening, but it must not introduce new story/motion ideas or materially alter the locked score.
 
 ## Next phase
 
-Review Assembly08 visually. If ordering/pacing is accepted, make only targeted semantic/continuity fixes, then run final semantic/action QC, temporal QC, zero-drift QC, caption/audio-boundary checks and terminal-frame QC.
+Current-user visual review of Assembly10. If the cinematic FX/remaster treatment is accepted, run final semantic/action QC, temporal QC, zero-drift QC, caption/audio-boundary checks, terminal-frame QC and final master preparation.
 
-Do not promote to accepted master without current-user approval.
-
-## Non-negotiable
-
-- Preserve Claire identity, anatomy, dark wavy hair, phone, approved essential and wardrobe continuity.
-- Preserve the S3-01 robe state and begin the dressed/shoulder-bag state only in S3-02.
-- Preserve all eight beat functions and the exact 98-second score/frame map.
-- Preserve locked dialogue wording.
-- Preserve Paris apartment/corridor/elevator/lobby/street geography and coherent storm logic.
-- Use the full approved/promoted/reachable Scene 03 media pool as picture or traceable reference/QC evidence.
-- Do not collapse back to one image per beat.
-- No fake handheld, global wobble, endless zoom, identity drift, topology mutation, or manually pressed elevator floor selection in S3-04.
-- Keep weather/light/system effects physically registered.
+Do not promote Assembly10 to accepted master without current-user approval.
