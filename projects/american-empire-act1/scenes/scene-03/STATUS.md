@@ -45,11 +45,15 @@ Scene 03 consumes the reusable FX system from current repository `main` through 
 - Opening contact sheet: `Scene03_ASSEMBLY08_OPENING_CONTACT.jpg`
 - Technical timing/frame QC: PASS
 - Opening wardrobe continuity QC: PASS
-- FX gate: pending run on this branch revision
+- AIVideoEdit Main System Verification run `127`: PASS
+- Hard precompile FX gate: PASS
+- Immutable FX-lock recheck: PASS
+- Determinism check: PASS
+- Unapproved-FX block test: PASS
+- AIVideoEdit Production Contract run `259`: PASS
 - Artistic/semantic master status: pending current-user review
 
 ## Remaining master blockers
-- FX hard precompile/system verification on the Assembly08 branch revision
 - current-user visual review of Assembly08
 - final semantic/action and mode-aware QC after review
 - final user master acceptance
