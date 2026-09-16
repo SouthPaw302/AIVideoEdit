@@ -1,0 +1,181 @@
+{
+  "schema": "aivideoedit.scene-fx-execution-plan.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-03",
+  "branch": "project/american-empire-act1/scene-03",
+  "timeline": {
+    "fps": 24,
+    "frames": 2352,
+    "duration_seconds": 98.0,
+    "resolution": [1280, 720]
+  },
+  "main_fx_authority": {
+    "branch": "main",
+    "commit": "0126b1c2978dc96810a02956a270feccdf02bdcf",
+    "registry": "general/reusable/fx_v2/registry.json",
+    "registry_blob_sha": "64eaf9b7b681e1868532c9ed690fc31c88b23312",
+    "runtime": "general/reusable/fx_v2/runtime.py",
+    "promoted_effects": "general/reusable/fx_v2/promoted_effects.py",
+    "storm_doctrine": "general/reusable/fx_v2/COHERENT_STORM_SYSTEM.md",
+    "depth_parallax": "general/reusable/depth-parallax-25d/depth_parallax_25d.py",
+    "painterly_motion": "general/reusable/painterly-motion",
+    "policy": "Use current-main neutral FX identities. Apply only gate_status=approved automatically. proof_required effects require a scene-local proof before use. unavailable effects are forbidden."
+  },
+  "project_local_fx": [
+    {
+      "id": "AE-S3-MICRO-MOTION-LOOPS-v1",
+      "manifest": "project_fx/AE_S3_MICRO_MOTION.project-fx.json",
+      "status": "PASS",
+      "role": "source-locked localized material/light/rain micro-motion already embedded in approved loop assets"
+    },
+    {
+      "id": "AE-S3-MATCHED-ANGLE-LOOPS-v2",
+      "manifest": "project_fx/AE_S3_MATCHED_ANGLE.project-fx.json",
+      "status": "PASS",
+      "role": "bounded source-locked matched-angle companions; use as optional coverage, never as mandatory oscillation"
+    }
+  ],
+  "full_media_policy": {
+    "hero_only": false,
+    "assembly05_is_cap": false,
+    "inventory_all_approved_promoted_media": true,
+    "use_existing_media_before_regeneration": true,
+    "legacy_filename_text_is_not_lifecycle_authority": true,
+    "genuinely_rejected_collage_or_drift_assets_forbidden": true,
+    "unmapped_media_rule": "Inventory it. Map it to a beat after semantic/continuity review or record a concrete fail-closed reason for exclusion."
+  },
+  "automatic_gate": {
+    "allowed_registry_status": ["approved"],
+    "proof_required_default": "skip",
+    "unavailable_default": "fail",
+    "geometry_rule": "Effects that can warp protected subject/architecture regions must be blended conservatively or require a protection mask.",
+    "storm_rule": "Rain is exterior/on glass only. Whole-frame rain is allowed only for clearly exterior street coverage."
+  },
+  "shots": [
+    {
+      "shot_id": "S3-01",
+      "frames": [0, 191],
+      "energy": 0.34,
+      "coverage": ["all approved apartment/departure/call coverage", "S3H01 anchor", "promoted Scene 03 departure variants"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.55, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-LIGHT-001", "engine": "runtime", "mix": 0.34, "semantic_scope": "visible_practicals_only"},
+        {"id": "FX2-LIGHT-002", "engine": "runtime", "mix": 0.18, "semantic_scope": "source_coupled_storm_spill_only"}
+      ],
+      "forbidden": ["whole-frame rain", "fake camera travel", "identity warp"]
+    },
+    {
+      "shot_id": "S3-02",
+      "frames": [192, 359],
+      "energy": 0.28,
+      "coverage": ["all approved threshold/corridor departure coverage", "S3H02 anchor"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.55, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-LIGHT-001", "engine": "runtime", "mix": 0.40, "semantic_scope": "corridor_practicals_only"},
+        {"id": "FX2-LIGHT-026", "engine": "promoted", "effect_name": "threshold_reflection_lamp_flicker", "mix": 0.24, "semantic_scope": "threshold_reflection_and_lamp_only"}
+      ],
+      "forbidden": ["doorway geometry morph", "whole-frame weather", "floating UI"]
+    },
+    {
+      "shot_id": "S3-03",
+      "frames": [360, 719],
+      "energy": 0.48,
+      "coverage": ["all approved hallway/corridor coverage", "S3H03 anchor", "valid non-hero corridor states"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.52, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-LIGHT-001", "engine": "runtime", "mix": 0.42, "semantic_scope": "ordered_corridor_practicals"},
+        {"id": "FX2-SPATIAL-021", "engine": "promoted", "effect_name": "pseudo_depth_field", "mix": 0.16, "semantic_scope": "corridor_depth_only"}
+      ],
+      "forbidden": ["pan_zoom_fake_walking", "A_B_oscillation", "resident_count_above_two"]
+    },
+    {
+      "shot_id": "S3-04",
+      "frames": [720, 1175],
+      "energy": 0.68,
+      "coverage": ["all approved elevator/corridor/control coverage", "S3H04 anchor"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.52, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-LIGHT-001", "engine": "runtime", "mix": 0.36, "semantic_scope": "elevator_practicals_only"},
+        {"id": "FX2-LIGHT-002", "engine": "runtime", "mix": 0.26, "semantic_scope": "panel_indicator_spill_only"},
+        {"id": "FX2-LIGHT-028", "engine": "promoted", "effect_name": "warm_halation_bloom", "mix": 0.12, "semantic_scope": "warm_practical_highlights_only"}
+      ],
+      "forbidden": ["whole-frame wobble", "holographic panel", "camera orbit"]
+    },
+    {
+      "shot_id": "S3-05",
+      "frames": [1176, 1583],
+      "energy": 0.76,
+      "coverage": ["all approved lobby/access-system coverage", "S3H05 anchor", "valid promoted lobby variants"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.50, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-LIGHT-001", "engine": "runtime", "mix": 0.36, "semantic_scope": "lobby_practicals_only"},
+        {"id": "FX2-LIGHT-026", "engine": "promoted", "effect_name": "threshold_reflection_lamp_flicker", "mix": 0.20, "semantic_scope": "entrance_glass_and_reflection_only"}
+      ],
+      "forbidden": ["interior rain", "new emblem", "spectacle escalation"]
+    },
+    {
+      "shot_id": "S3-06",
+      "frames": [1584, 1871],
+      "energy": 0.82,
+      "coverage": ["all approved street/metro/escape coverage", "S3H06 geography anchor", "valid Paris depth plates"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.48, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-ATM-002", "engine": "runtime", "mix": 0.56, "semantic_scope": "exterior_rain_only", "requires_exterior": true},
+        {"id": "FX2-ATM-021", "engine": "promoted", "effect_name": "atmospheric_fog", "mix": 0.20, "semantic_scope": "distant_atmosphere"},
+        {"id": "FX2-SPATIAL-021", "engine": "promoted", "effect_name": "pseudo_depth_field", "mix": 0.18, "semantic_scope": "true_depth_planes_only"},
+        {"id": "FX2-ATM-025", "engine": "promoted", "effect_name": "wet_road_rain_reflection", "mix": 0.28, "semantic_scope": "wet_road_only"},
+        {"id": "FX2-SURFACE-021", "engine": "promoted", "effect_name": "puddle_shimmer", "mix": 0.16, "semantic_scope": "puddles_and_wet_lower_plane"},
+        {"id": "FX2-LIGHT-002", "engine": "runtime", "mix": 0.16, "semantic_scope": "source_coupled_lightning_or_signal_spill"}
+      ],
+      "forbidden": ["global zoom", "global shake", "invented occluded geometry"]
+    },
+    {
+      "shot_id": "S3-07",
+      "frames": [1872, 2135],
+      "energy": 0.54,
+      "coverage": ["all approved public-display/security/Paris-reflection coverage", "S3H07 geography anchor"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.48, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-ATM-002", "engine": "runtime", "mix": 0.46, "semantic_scope": "exterior_rain_only", "requires_exterior": true},
+        {"id": "FX2-ATM-021", "engine": "promoted", "effect_name": "atmospheric_fog", "mix": 0.15, "semantic_scope": "distant_atmosphere"},
+        {"id": "FX2-ATM-025", "engine": "promoted", "effect_name": "wet_road_rain_reflection", "mix": 0.24, "semantic_scope": "wet_road_only"},
+        {"id": "FX2-LIGHT-001", "engine": "runtime", "mix": 0.28, "semantic_scope": "physical_display_and_practicals_only"},
+        {"id": "FX2-SURFACE-023", "engine": "promoted", "effect_name": "wet_reflection_ripple", "mix": 0.14, "semantic_scope": "wet_reflection_only"}
+      ],
+      "forbidden": ["UI_outside_physical_screen", "riot_tableau", "propaganda_spectacle"]
+    },
+    {
+      "shot_id": "S3-08",
+      "frames": [2136, 2351],
+      "energy": 0.42,
+      "coverage": ["all approved Paris-night/forward-motion coverage", "S3H08 continuity anchor", "valid destination states"],
+      "effects": [
+        {"id": "FX2-SURFACE-001", "engine": "runtime", "mix": 0.48, "semantic_scope": "whole_frame_canvas_lock"},
+        {"id": "FX2-ATM-002", "engine": "runtime", "mix": 0.48, "semantic_scope": "exterior_rain_only", "requires_exterior": true},
+        {"id": "FX2-ATM-021", "engine": "promoted", "effect_name": "atmospheric_fog", "mix": 0.16, "semantic_scope": "distant_atmosphere"},
+        {"id": "FX2-SPATIAL-021", "engine": "promoted", "effect_name": "pseudo_depth_field", "mix": 0.14, "semantic_scope": "street_depth_only"},
+        {"id": "FX2-ATM-025", "engine": "promoted", "effect_name": "wet_road_rain_reflection", "mix": 0.25, "semantic_scope": "wet_road_only"},
+        {"id": "FX2-SURFACE-023", "engine": "promoted", "effect_name": "wet_reflection_ripple", "mix": 0.12, "semantic_scope": "wet_reflection_only"}
+      ],
+      "forbidden": ["fake_walking_by_zoom", "identity_or_prop_warp", "new_crowd_or_vehicle_spawn"]
+    }
+  ],
+  "explicitly_not_auto_used": [
+    {
+      "id": "FX2-ATM-003",
+      "reason": "rain_glass is proof_required in the current main registry; do not auto-promote it. Existing scene-local proved rain/glass motion may remain in source loops."
+    },
+    {
+      "id": "FX2-ATM-004",
+      "reason": "unavailable in current main registry despite an older preset reference; forbidden for automatic execution."
+    },
+    {
+      "id": "FX2-MOTION-001",
+      "reason": "proof_required; use approved FX2-SPATIAL-021 or already-gated Scene 03 local motion instead."
+    },
+    {
+      "id": "FX2-SPATIAL-003",
+      "reason": "conditional genuine 3DGS only; no 2D Gaussian claim substitution."
+    }
+  ]
+}
