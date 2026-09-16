@@ -8,31 +8,46 @@
     "authorized_source_images",
     "generated_stills",
     "generated_support_imagery",
+    "accepted_motion_benchmark_video",
     "living_painting",
     "living_still_fx",
+    "loop_media",
     "layered_composite",
     "depth_25d",
     "atmospheric_plate",
     "transition_media",
     "conventional_video",
+    "generated_continuation",
+    "source_derived_composite",
     "analysis_qc_media"
   ],
   "reference_route":"Accepted American Empire Scene 01 identity/environment heroes and motion benchmark are active references; this is not a no-reference production.",
   "continuity_source":"Scene 02 terminal narrative state S2-10 plus accepted Scene 01 motion/picture language; using Scene 02 terminal continuity for planning does not auto-promote any still-unapproved Scene 02 picture candidate.",
   "visual_language":"Same cinematic comic-book/graphic-novel world: bold inked value separation, restrained halftone/print texture, slate and pale gray-blue environment, cream Paris stone, muted cyan technology, warm amber practical light, deep charcoal shadows, rain-slick reflections, no saturated cyberpunk neon.",
+  "full_media_policy":{
+    "active":true,
+    "hero_only":false,
+    "assembly05_segment_cap":false,
+    "rule":"Use the full approved/promoted Scene 03 source pool. The eight heroes are continuity/composition anchors and the Assembly05 29-segment map is the current edit, not the maximum coverage library.",
+    "inventory":"SCENE03_MEDIA_AUDIT.json",
+    "current_cut":"ASSEMBLY05_MEDIA_PLAN.json",
+    "fx_execution":"SCENE03_FX_EXECUTION_PLAN.json",
+    "renderer":"render_scene03_assembly06_fullmedia_fx.py",
+    "exclusion":"Genuinely rejected/unpromoted drift media stays excluded. Legacy filename text is not lifecycle authority when ASSET_MANIFEST records explicit promotion."
+  },
   "primary_hero_assets":[
-    {"id":"S3H01","role":"departure_state","shots":["S3-01"],"description":"Immediate continuation from S2-10 in the same apartment geography: Claire secures/carries the already-approved essential, phone retained, storm/city transition visible behind. Camera locked."},
-    {"id":"S3H02","role":"apartment_threshold","shots":["S3-02"],"description":"Claire at the apartment door opening into the same building hallway; motivated dark charcoal outer layer may be introduced on-screen over established wardrobe; corridor practical/access indicators begin synchronized change."},
-    {"id":"S3H03","role":"hallway_coordination","shots":["S3-03"],"description":"Long-axis corridor with Claire moving outward and no more than one or two anonymous residents cautiously appearing; multiple access indicators/doors change state in ordered sequence; no panic crowd."},
-    {"id":"S3H04","role":"elevator_priority_route","shots":["S3-04"],"description":"Locked elevator interior with Claire and ordinary control panel; building selects/overrides toward lobby/ground route through diegetic indicator behavior. Interface remains practical, not holographic."},
-    {"id":"S3H05","role":"lobby_system_handoff","shots":["S3-05"],"description":"Building lobby with exterior rain through glass and dry interior; exit/access hardware changes state in a coordinated mechanically plausible sequence; prepared transition motif must inherit Scene 02 proof language."},
-    {"id":"S3H06","role":"street_threshold","shots":["S3-06"],"description":"Claire foreground at the building threshold facing a rain-dark Paris street; traffic and transit systems reorganize in a controlled sequence; deep semantic foreground/midground/background planes and restrained parallax."},
-    {"id":"S3H07","role":"public_transition_proof","shots":["S3-07"],"description":"Claire profile/over-shoulder toward ordinary municipal/transit display and distant civic/security activity; same prepared transition status appears across independent systems; controlled authority transfer, no invasion spectacle."},
-    {"id":"S3H08","role":"forward_into_city","shots":["S3-08"],"description":"Long street composition with Claire moving with purpose into Paris, phone in hand, coordinated city behavior continuing behind; walking requires bounded generated continuation or a motivated cut between stable states."}
+    {"id":"S3H01","role":"departure_state","shots":["S3-01"],"description":"Immediate continuation from S2-10 in the same apartment geography: Claire secures/carries the already-approved essential, phone retained, storm/city transition visible behind. Camera locked. Hero is an anchor, not exclusive coverage."},
+    {"id":"S3H02","role":"apartment_threshold","shots":["S3-02"],"description":"Claire at the apartment door opening into the same building hallway; motivated dark charcoal outer layer may be introduced on-screen over established wardrobe; corridor practical/access indicators begin synchronized change. Hero is an anchor, not exclusive coverage."},
+    {"id":"S3H03","role":"hallway_coordination","shots":["S3-03"],"description":"Long-axis corridor with Claire moving outward and no more than one or two anonymous residents cautiously appearing; multiple access indicators/doors change state in ordered sequence; no panic crowd. Hero is an anchor, not exclusive coverage."},
+    {"id":"S3H04","role":"elevator_priority_route","shots":["S3-04"],"description":"Locked elevator interior with Claire and ordinary control panel; building selects/overrides toward lobby/ground route through diegetic indicator behavior. Interface remains practical, not holographic. Hero is an anchor, not exclusive coverage."},
+    {"id":"S3H05","role":"lobby_system_handoff","shots":["S3-05"],"description":"Building lobby with exterior rain through glass and dry interior; exit/access hardware changes state in a coordinated mechanically plausible sequence; prepared transition motif must inherit Scene 02 proof language. Hero is an anchor, not exclusive coverage."},
+    {"id":"S3H06","role":"street_threshold","shots":["S3-06"],"description":"Claire foreground at the building threshold facing a rain-dark Paris street; traffic and transit systems reorganize in a controlled sequence; deep semantic foreground/midground/background planes and restrained parallax. Hero is an anchor, not exclusive coverage."},
+    {"id":"S3H07","role":"public_transition_proof","shots":["S3-07"],"description":"Claire profile/over-shoulder toward ordinary municipal/transit display and distant civic/security activity; same prepared transition status appears across independent systems; controlled authority transfer, no invasion spectacle. Hero is an anchor, not exclusive coverage."},
+    {"id":"S3H08","role":"forward_into_city","shots":["S3-08"],"description":"Long street composition with Claire moving with purpose into Paris, phone in hand, coordinated city behavior continuing behind; walking requires bounded generated continuation or a motivated cut between stable states. Hero is an anchor, not exclusive coverage."}
   ],
   "alternate_state_policy":{
-    "maximum_planned_pairs":3,
-    "allowed":[
+    "allowed":"Existing approved/promoted Scene 03 stills, clean generated support imagery, GIFs, matched-angle companions and source-derived states may all be used as motivated coverage when continuity/QC passes.",
+    "generated_pairs":[
       {"hero":"S3H01","states":"essential unsecured -> secured/carried","reason":"real character-state progression"},
       {"hero":"S3H02","states":"door closed -> door physically open into identical hallway topology","reason":"real physical state change"},
       {"hero":"S3H08","states":"start/destination only if generated continuation is unavailable","reason":"motivated cut fallback, not fake motion"}
@@ -41,7 +56,8 @@
   },
   "generated_continuation_policy":{
     "candidate_shots":["S3-01","S3-02","S3-08"],
-    "required_for":"real articulated actions such as securing/shouldering an essential, opening a door while moving through it, and sustained walking",
+    "required_for":"Only real articulated actions not adequately covered by approved existing media, such as securing/shouldering an essential, opening a door while moving through it, or sustained walking.",
+    "existing_media_first":true,
     "start_frame_lock":true,
     "terminal_frame_qc_before_reuse":true,
     "forbidden_mutations":["Claire identity drift","hair redesign","unmotivated wardrobe redesign","new apartment topology","new hallway topology within a chained action","camera orbit","lens shift","new props during continuation"]
@@ -52,13 +68,18 @@
   },
   "reuse_policy":{
     "scene01_scene02_canon":"Use accepted/authorized continuity material as reference or traceable source-derived coverage only. Preserve identity, environment topology, palette and motion language.",
-    "new_generation":"Authorized only for the eight named Scene 03 hero roles and the explicitly limited matched states above. Do not generate dozens of exploratory images after the storyboard is established."
+    "scene03_existing_media":"Exhaust the approved/promoted Scene 03 source pool before requesting replacement generation. Preserve valid non-hero coverage and proved loop assets.",
+    "new_generation":"No wholesale hero/library regeneration. New generation is limited to specific missing articulated continuation/action coverage authorized by SCRIPT.json and the zero-drift continuation contract."
   },
   "fx_policy":{
-    "depth":"real semantic multiplane 2.5D",
+    "authority":"current repository main through CANONICAL_EFFECT_REGISTRY -> fx_v2/registry.json",
+    "execution_plan":"SCENE03_FX_EXECUTION_PLAN.json",
+    "depth":"real semantic multiplane 2.5D or approved restrained pseudo-depth where the registry and shot contract permit",
     "weather":"coherent storm; rain exterior/window/doorway exposure only",
     "lighting":"source-coupled local response",
     "camera":"locked or near-locked; motivated bounded move only",
+    "automatic_gate":"Only current-main effects with gate_status=approved execute automatically. proof_required/conditional/unavailable effects fail closed unless their exact gate is satisfied.",
+    "project_local":"Existing Scene 03 micro-motion and matched-angle project-local FX remain usable because their project-local gate/QC passed.",
     "forbidden":["global wobble","fake handheld","endless zoom","whole-frame rain inside dry interiors","whole-frame lightning flash","cyberpunk neon drift","floating holograms","architecture warp","identity/body drift"]
   },
   "music_timing":{
@@ -71,5 +92,7 @@
     "analysis":"SCORE_ANALYSIS.json",
     "script":"SCRIPT.json"
   },
-  "status":"script_locked_media_generation_not_started"
+  "current_review_candidate":"Scene03_ASSEMBLY05_MULTIIMAGE_GIF_FX_REVIEW_COMPACT.mp4",
+  "next_candidate":"Assembly06 full-media + current-main approved FX pass",
+  "status":"assembly05_review_assembly06_fullmedia_fx_prepared"
 }
