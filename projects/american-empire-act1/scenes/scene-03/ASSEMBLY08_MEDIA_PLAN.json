@@ -1,0 +1,60 @@
+{
+  "schema": "aivideoedit.assembly-media-plan.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-03",
+  "assembly": "08",
+  "candidate": "Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_REVIEW.mp4",
+  "candidate_sha256": "fdaa3461e8a03ec16df452ff74cfae1c8520f6a334e4db6087ac6198af21ebb1",
+  "timeline": {"duration_seconds": 98.0, "fps": 24, "frames": 2352, "resolution": [1280, 720]},
+  "basis": "Assembly07 retained one opening wardrobe discontinuity: two fully dressed/shoulder-bag apartment frames appeared inside S3-01 between robe/phone coverage. Assembly08 is a surgical editorial correction only.",
+  "policy": {
+    "hero_only": false,
+    "use_all_reachable_valid_media": true,
+    "main_fx_authority": true,
+    "no_media_lost_from_assembly07": true,
+    "fail_closed_on_identity_or_semantic_conflict": true
+  },
+  "on_screen_segment_count": 40,
+  "changes_from_assembly07": [
+    {
+      "asset": "a_cinematic_moody_comic_graphic_novel_style_scen.png",
+      "from": "S3-01",
+      "to": "S3-02",
+      "reason": "fully dressed/shoulder-bag state caused a robe-to-dressed-to-robe discontinuity inside the opening beat"
+    },
+    {
+      "asset": "file_00000000ad8c81f5b22f6ecaa274f485.png",
+      "from": "S3-01",
+      "to": "S3-02",
+      "reason": "fully dressed/shoulder-bag state belongs with threshold/departure coverage"
+    }
+  ],
+  "opening_order": {
+    "S3-01": [
+      "noir_paris_call_claire_must_move.png",
+      "rainy_paris_escape.png",
+      "S3H01_FX_LOOP.gif"
+    ],
+    "S3-02": [
+      "a_cinematic_moody_comic_graphic_novel_style_scen.png",
+      "file_00000000ad8c81f5b22f6ecaa274f485.png",
+      "rainy_paris_nocturne_with_eiffel_tower.png",
+      "noir_paris_departure.png",
+      "noir_corridor_departure.png",
+      "file_00000000810481f5861f3e6cc609ae96.png"
+    ]
+  },
+  "remaining_shots": "S3-03 through S3-08 are unchanged from ASSEMBLY07_MEDIA_PLAN.json and reuse the validated Assembly07 picture segments.",
+  "qc": {
+    "technical": "PASS",
+    "opening_wardrobe_continuity": "PASS",
+    "duration_seconds": 98.0,
+    "frame_count": 2352,
+    "fps": 24,
+    "resolution": "1280x720",
+    "review_sha256": "fdaa3461e8a03ec16df452ff74cfae1c8520f6a334e4db6087ac6198af21ebb1",
+    "picture_sha256": "9a79a57669a3deb1d789698fdfd288a5cab5540daa153ef3d426d54458639b4b",
+    "opening_contact_sheet": "Scene03_ASSEMBLY08_OPENING_CONTACT.jpg",
+    "status": "pending_fx_gate_and_user_review"
+  }
+}
