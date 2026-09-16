@@ -1,0 +1,29 @@
+{
+  "schema": "aivideoedit.runtime-attestation.v1",
+  "scene": "scene-03",
+  "branch": "project/american-empire-act1/scene-03",
+  "validated_scene_head": "cd944a50b6624cd627d7858b6b46cf02b253d2d4",
+  "current_main_os_commit": "f2493f226039dad1dfcececf584a9ffd03bd0ef7",
+  "validation": {
+    "provider": "github_actions",
+    "workflow": "AIVideoEdit Production Contract",
+    "run_id": 34948338331,
+    "run_number": 155,
+    "job_id": 104313007478,
+    "result": "PASS",
+    "completed_at_utc": "2026-09-15T08:41:32Z"
+  },
+  "bootstrap": {
+    "result": "PASS",
+    "resolved_project_dir": "projects/american-empire-act1/scenes/scene-03",
+    "session_written": true,
+    "second_brain_written": true
+  },
+  "guards": {
+    "production_contract": "PASS",
+    "directing_narrative_contract": "PASS",
+    "recut_contract": "PASS"
+  },
+  "authorization_boundary": "This attestation permits progression to the first named Scene 03 hero proof under the locked script and media plan. It does not mark any picture media, shot proof, FX pass, assembly or final QC as accepted.",
+  "next_action": "Generate and archive S3H01 departure-state hero/continuity proof only, then perform identity, anatomy, prop, apartment-geometry and temporal-action QC before scaling to S3H02."
+}

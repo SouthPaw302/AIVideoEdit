@@ -1,0 +1,34 @@
+{
+  "schema": "aivideoedit.recovery-index.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-03",
+  "drive_folder_id": "1CIY-ob7TNYFHNHnCSozOc9MdT-a9djU7",
+  "branch": "project/american-empire-act1/scene-03",
+  "validated_head": "06424f2a58f82fa48deafee1443e9c95b380f22d",
+  "production_contract_run": {
+    "run_number": 164,
+    "run_id": 34954121197,
+    "conclusion": "success"
+  },
+  "project_local_fx_gate": "PASS",
+  "batches": [
+    {
+      "name": "AE_S3_RECOVERY_BATCH_01_STORYBOARD_HEROES.zip",
+      "sha256": "81622313b1659c8508e0bcff426b996e4f883459e3fee0dff3ff31281b9a8f89",
+      "drive_file_id": "1cYwCsz62ItQOkNvsHUtZG8Z6JXkTW5P5",
+      "contains": "Scene 02 terminal reference, locked storyboard, eight hero stills, script/caption records"
+    },
+    {
+      "name": "AE_S3_RECOVERY_BATCH_02_FX_LOOPS.zip",
+      "sha256": "2c14d40e796b6303ae3c22609f6a66b5c505ae33b2e965b39339a5f87fd43ffa",
+      "drive_file_id": "1gAIvwotuIKMDtyNNyzEHUt_swblr--ix",
+      "contains": "eight A/B micro-motion still pairs, eight 1.2-second GIF loops, FX manifests and implementation"
+    },
+    {
+      "name": "AE_S3_RECOVERY_BATCH_03_ASSEMBLY_QC.zip",
+      "sha256": "862a393f05698546c8b76c860b74fce43af6a1bd4ed5384e07c45052255a31f7",
+      "drive_file_id": "1CQAzxr5GrrVMUzVg5KAmWLn4-tVyUacb",
+      "contains": "98-second Assembly01 candidate, QC contact sheet, QC report and render recipe"
+    }
+  ]
+}

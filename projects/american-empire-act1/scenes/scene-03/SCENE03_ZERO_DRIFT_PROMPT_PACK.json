@@ -1,0 +1,149 @@
+{
+  "schema": "aivideoedit.zero-drift-prompt-pack.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-03",
+  "branch": "project/american-empire-act1/scene-03",
+  "timeline": {
+    "fps": 24,
+    "frames": 2352,
+    "duration_seconds": 98.0,
+    "resolution": "1280x720"
+  },
+  "global_media_selector": {
+    "scope": "all approved/promoted Scene 03 media",
+    "hero_only": false,
+    "assembly05_segment_cap": false,
+    "required_sources": [
+      "ASSEMBLY05_MEDIA_PLAN.json coverage",
+      "ASSET_MANIFEST.json approved/promoted picture assets",
+      "Drive Generated Images pool",
+      "Drive Reference Frames",
+      "canonical Recovery Batches",
+      "approved matched-angle companions",
+      "actual GIF assets",
+      "valid project-local FX outputs"
+    ],
+    "exclusion_rule": "exclude only genuinely rejected/unpromoted drift assets or assets failing current continuity/QC; legacy filename text alone does not determine lifecycle"
+  },
+  "global_negative_prompt": [
+    "no Claire identity drift",
+    "no hair-length change",
+    "no wardrobe redesign",
+    "no phone or essential mutation",
+    "no architecture warp",
+    "no new room/corridor/elevator/lobby/street topology",
+    "no cyberpunk neon",
+    "no holograms",
+    "no new emblem",
+    "no propaganda spectacle",
+    "no military escalation",
+    "no crowd panic",
+    "no fake handheld",
+    "no whole-frame wobble",
+    "no repeated push-pull",
+    "no endless zoom",
+    "no whole-frame lightning flash",
+    "no indoor rain without physical opening"
+  ],
+  "shots": [
+    {
+      "shot_id": "S3-01",
+      "frames": [0, 191],
+      "duration_seconds": 8.0,
+      "behavior": "GENERATED_CONTINUATION",
+      "media_rule": "inventory and use all eligible apartment/departure coverage; hero S3H01 is an anchor, not the only source",
+      "prompt": "Continue directly from the Scene 02 terminal state in the established Paris apartment. Claire, unchanged in identity, dark wavy hair and dark silk robe/peignoir, finishes securing and carrying the one approved essential while retaining her phone, then turns toward the apartment exit. Preserve furniture, window orientation, scale, palette, storm state and established screen axis exactly. Use existing approved Scene 03 departure stills/variations/GIF or matched-angle media as coverage before generating any missing articulated motion. Character action and cloth/hair micro-response lead; rain and glass reflections remain localized behind her. Camera locked.",
+      "allowed_actions": ["secure approved essential", "lift/shoulder approved essential", "retain phone", "turn toward exit", "small hair/cloth response"],
+      "camera": {"mode": "locked", "vector": "X:0,Y:0,Z:0"},
+      "depth_planes": ["Claire/essential foreground", "apartment midground", "window/rain/city background"],
+      "dialogue": ["DANIEL: Take the phone. Leave everything else."],
+      "terminal_policy": "identity/anatomy/wardrobe/prop/topology QC before chaining"
+    },
+    {
+      "shot_id": "S3-02",
+      "frames": [192, 359],
+      "duration_seconds": 7.0,
+      "behavior": "GENERATED_CONTINUATION",
+      "media_rule": "use all eligible apartment-threshold and hallway coverage, including non-hero states and valid matched-angle/GIF assets",
+      "prompt": "From the validated S3-01 terminal state, Claire reaches the established apartment door, operates the physically correct handle and opens the same door into the same Parisian corridor. Door frame, hinges, hallway vanishing point, scale and screen direction remain fixed. Access indicators and corridor practicals change locally in synchronized sequence; relay clicks answer farther down the hall. A charcoal outer layer may appear only if shown as a motivated on-screen action. Use existing approved threshold/hallway media as motivated cut coverage wherever possible. No floating interface, no global flash, no door or hand deformation. Camera locked.",
+      "allowed_actions": ["hand to handle", "door swing", "single directional threshold step", "optional motivated outer-layer action", "localized corridor indicator/light changes"],
+      "camera": {"mode": "locked", "vector": "X:0,Y:0,Z:0"},
+      "depth_planes": ["Claire/door foreground", "threshold midground", "corridor background"],
+      "dialogue": ["CLAIRE: The locks just changed.", "DANIEL: I know."],
+      "terminal_policy": "door geometry/Claire identity/hallway topology QC before chaining"
+    },
+    {
+      "shot_id": "S3-03",
+      "frames": [360, 719],
+      "duration_seconds": 15.0,
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "media_rule": "use all eligible hallway coverage across multiple visual moments; do not hold one hero for the whole beat",
+      "prompt": "Build a deliberate hallway sequence from the complete approved Scene 03 hallway media pool. Claire remains the human anchor moving in one consistent direction. One or two anonymous residents may cautiously appear at their own doors, subordinate in scale and identity. Separate access indicators, locks and practicals answer in an ordered sequence down the stable corridor. Use motivated cuts between compatible source states, localized material/indicator FX and restrained depth separation. Do not simulate walking with pan/zoom and do not oscillate A/B framings.",
+      "allowed_actions": ["Claire directional progression", "maximum two resident door states", "sequential lock/indicator changes", "localized practical-light response"],
+      "camera": {"mode": "locked_or_near_locked", "max_vector": "X:±0.005,Y:0,Z:0"},
+      "depth_planes": ["near door/foreground architecture", "Claire and corridor midground", "far doors/window reflections background"],
+      "dialogue": []
+    },
+    {
+      "shot_id": "S3-04",
+      "frames": [720, 1175],
+      "duration_seconds": 19.0,
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "media_rule": "use all eligible elevator-entry/interior/control coverage; hero S3H04 is only the topology/identity anchor",
+      "prompt": "Assemble the elevator passage from all approved Scene 03 elevator media. Preserve an ordinary physical elevator, panel housing, typography, reflective materials, Claire identity, phone and essential. The system selects the ground/lobby route before or as Claire approaches the controls. Animate only registered indicator/button states, localized cyan spill, reflections and Claire micro-balance/breath. Convey elevator motion through local character/material response and sound, never whole-frame wobble. Use motivated coverage changes from the broader media pool rather than a single repeated card.",
+      "allowed_actions": ["Claire small balance/breath", "indicator progression", "button illumination", "localized reflections"],
+      "camera": {"mode": "locked", "vector": "X:0,Y:0,Z:0"},
+      "depth_planes": ["Claire foreground", "panel/elevator interior midground", "reflective surfaces background"],
+      "dialogue": ["CLAIRE: I didn't press anything.", "DANIEL: Neither did anyone else."]
+    },
+    {
+      "shot_id": "S3-05",
+      "frames": [1176, 1583],
+      "duration_seconds": 17.0,
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "media_rule": "use all eligible lobby/access-system coverage across multiple shots/states; do not reduce to one lobby hero",
+      "prompt": "Build the lobby handoff using the entire valid lobby media pool. The interior remains dry; rain is visible only beyond entrance glass. Preserve ordinary lobby architecture, elevator relationship, access hardware and the already-established transition motif. Animate elevator doors, locks, turnstile/door states, terminal status, local practicals and physically registered reflections in coordinated sequence. Claire recognizes that the building itself is participating. No invented emblem, no floating UI, no spectacle. Use the strongest compatible non-hero and hero media as real coverage.",
+      "allowed_actions": ["elevator doors", "mechanical unlock sequence", "terminal state change", "local practical response", "Claire restrained reaction", "rain beyond glass"],
+      "camera": {"mode": "anchored", "max_vector": "X:±0.004,Y:0,Z:0"},
+      "depth_planes": ["Claire/near hardware foreground", "lobby midground", "entrance glass/rain background"],
+      "dialogue": ["CLAIRE: Daniel... what is this?"]
+    },
+    {
+      "shot_id": "S3-06",
+      "frames": [1584, 1871],
+      "duration_seconds": 12.0,
+      "behavior": "LIVING_SCENE_2_5D",
+      "media_rule": "use all eligible street/metro/escape coverage and valid Paris depth plates; hero S3H06 anchors geography only",
+      "prompt": "Open the scene into the rainy Paris street using the full approved street and transit media pool. Keep Claire foreground and continuous in identity/silhouette. Traffic signals synchronize, limited vehicles slow and change flow, transit displays reroute and a corridor clears calmly without panic or collision. Separate true foreground, midground and background layers from approved media and apply restrained 2.5D parallax only. Rain, haze, signals, vehicle motion and wet reflections provide most movement. No global zoom or shake and no geometry invention behind occluded regions.",
+      "allowed_actions": ["Claire foreground micro-action", "exterior rain", "signal changes", "limited vehicle flow", "transit display state", "wet reflection response", "haze/cloud depth"],
+      "camera": {"mode": "near_locked_parallax", "max_vector": "X:±0.008,Y:0,Z:+0.006"},
+      "depth_planes": ["Claire/building threshold foreground", "street/vehicles midground", "Paris architecture/cloud/haze background"],
+      "dialogue": []
+    },
+    {
+      "shot_id": "S3-07",
+      "frames": [1872, 2135],
+      "duration_seconds": 11.0,
+      "behavior": "LIVING_SCENE_COMPOSITE",
+      "media_rule": "use all eligible public-display/security/Paris reflection coverage; hero S3H07 anchors Claire and street geography only",
+      "prompt": "Create public proof from the full valid Scene 03 civic/transit/security media pool. Claire remains restrained in profile or over-shoulder. An ordinary municipal/transit display shows the same prepared transition status already established; nearby security personnel remain small, calm and procedural while one barrier or traffic movement is redirected. UI stays inside physical screen housings and screen light spills only locally. Keep continuous rain and reflections. No tanks, riot imagery, screaming crowd or propaganda tableau.",
+      "allowed_actions": ["display state change", "source-local screen spill", "one barrier/traffic action", "small security reposition", "Claire eyes/head response", "rain/reflections"],
+      "camera": {"mode": "locked_or_near_locked", "max_vector": "X:±0.004,Y:0,Z:0"},
+      "depth_planes": ["Claire foreground", "display/barrier midground", "security/Paris street background"],
+      "dialogue": ["DANIEL: A handoff.", "CLAIRE: To who?"]
+    },
+    {
+      "shot_id": "S3-08",
+      "frames": [2136, 2351],
+      "duration_seconds": 9.0,
+      "behavior": "GENERATED_CONTINUATION",
+      "media_rule": "use all eligible Paris-night/forward-motion coverage and destination states; do not fake the walk with one hero zoom",
+      "prompt": "From the validated public-proof state, Claire moves purposefully away from the building and into reorganized Paris, retaining the same phone, approved essential, identity, anatomy, wardrobe continuity and screen direction. Use the complete approved Scene 03 Paris-night media pool as source-derived coverage and destination states. Prefer true bounded articulated walking continuation only where existing media cannot communicate the action. Cloth and hair respond subtly to the same storm field; rain, wet reflections and limited coordinated traffic continue around her. Camera observes from a locked or explicitly bounded position. End on forward motion and an unresolved city, not a static reveal.",
+      "allowed_actions": ["purposeful bounded walk", "subtle cloth/hair storm response", "phone hand continuity", "limited vehicle flow", "rain/reflections", "distant coordinated lights"],
+      "camera": {"mode": "locked_or_single_bounded_observer_vector", "max_vector": "X:±0.01,Y:0,Z:+0.008"},
+      "depth_planes": ["Claire foreground", "wet street/limited traffic midground", "Paris architecture/lights/haze background"],
+      "dialogue": ["DANIEL: Keep moving."],
+      "terminal_policy": "must pass identity, anatomy, wardrobe, prop, geography, lighting, weather and temporal-motion QC before Scene 04 reuse"
+    }
+  ]
+}

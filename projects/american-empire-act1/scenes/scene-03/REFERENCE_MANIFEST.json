@@ -1,0 +1,67 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "project": "american-empire-act1-scene-03",
+  "videos": [],
+  "images": [
+    {
+      "name": "Scene 01 H01 Paris hero",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero01_paris.png",
+      "sha256": "53873926e63b6142dc0e2f668b45fd9aa081428561fd43c8e1de1766893dc438",
+      "role": "accepted Paris environment, palette and architecture reference",
+      "analysis_complete": true
+    },
+    {
+      "name": "Scene 01 H02 phone hero",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero02_phone.png",
+      "sha256": "a3b7ed6f8049afa11386385c14ebf3a096dccdc6965fe55d2d4e5689b9111947",
+      "role": "accepted Claire, phone and apartment continuity reference",
+      "analysis_complete": true
+    },
+    {
+      "name": "Scene 01 H03 answer hero",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero03_answer.png",
+      "sha256": "71b3067cf818805c6f2ea2d0525f6f46a69094c5aa3f690465f985284288aa12",
+      "role": "accepted Claire facial and lighting continuity reference",
+      "analysis_complete": true
+    },
+    {
+      "name": "Scene 01 H04 warning hero",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero04_warning.png",
+      "sha256": "d36133fd75d3cdc4e2c3df726de5a824eb0c51f24760963a2bd7b959db41931d",
+      "role": "accepted tension, phone and apartment composition reference",
+      "analysis_complete": true
+    },
+    {
+      "name": "Scene 01 H05 lightning hero",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero05_lightning.png",
+      "sha256": "9b7f7d45fd95bd472797c412b5cf8d26a421777d31bb0642eb0efec4a95d7197",
+      "role": "accepted source-driven storm-light response reference",
+      "analysis_complete": true
+    },
+    {
+      "name": "Scene 01 H06 isolation hero",
+      "path": "projects/american-empire-act1/scenes/scene-01/hero_frames/hero06_isolation.png",
+      "sha256": "867d85899c6953834ed7659550b02b836fb7a146bb38b20b080612c4d185c8e6",
+      "role": "accepted Claire silhouette, room geography and final Scene 01 continuity reference",
+      "analysis_complete": true
+    }
+  ],
+  "narrative_references": [
+    {
+      "name": "Scene 02 terminal shot S2-10",
+      "path": "projects/american-empire-act1/scenes/scene-02/SCRIPT.json#S2-10",
+      "blob_sha": "d99eb5447c333549d87b649c07afbc5123bae10b",
+      "role": "narrative entry state only; no automatic picture acceptance",
+      "analysis_complete": true
+    }
+  ],
+  "motion_reference": {
+    "name": "Scene01_FULL_ASSEMBLY03.mp4",
+    "sha256": "599e21039c303e287d8e729af46209132b5273bbf9ef2f760925563d931eb71e",
+    "role": "accepted motion-language benchmark",
+    "analysis_complete": true
+  },
+  "reference_analysis_complete": true,
+  "content_reuse_from_external_references_authorized": false,
+  "policy_resolution": "Scene 03 inherits only the accepted American Empire identity, environment, palette and motion canon. New hallway, elevator, lobby and street hero imagery must remain continuity-compatible and is not accepted until user review."
+}

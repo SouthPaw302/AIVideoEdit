@@ -1,0 +1,142 @@
+{
+  "schema": "aivideoedit.assembly-media-plan.v1",
+  "project": "american-empire-act1",
+  "scene": "scene-03",
+  "assembly": "07",
+  "candidate": "Scene03_ASSEMBLY07_REORDERED_ALLMEDIA_MAINFX_REVIEW.mp4",
+  "candidate_sha256": "fedb314e76ae7991f28838f28332a5175bafd425d0fe371591e598e6bd347759",
+  "timeline": {"duration_seconds": 98.0, "fps": 24, "frames": 2352, "resolution": [1280, 720]},
+  "basis": "Assembly06 accepted by user as a good pass with a few stills out of order; Assembly07 is an editorial reorder/coverage expansion, not a restart or wholesale regeneration.",
+  "policy": {
+    "hero_only": false,
+    "use_all_reachable_valid_media": true,
+    "main_fx_authority": true,
+    "reference_media_may_be_used_for_qc_without_being_visible_final_picture": true,
+    "fail_closed_on_identity_or_semantic_conflict": true
+  },
+  "on_screen_segment_count": 40,
+  "shots": [
+    {
+      "shot_id": "S3-01",
+      "frames": [0, 191],
+      "segments": [
+        "noir_paris_call_claire_must_move.png",
+        "rainy_paris_escape.png",
+        "a_cinematic_moody_comic_graphic_novel_style_scen.png",
+        "file_00000000ad8c81f5b22f6ecaa274f485.png",
+        "S3H01_FX_LOOP.gif"
+      ]
+    },
+    {
+      "shot_id": "S3-02",
+      "frames": [192, 359],
+      "segments": [
+        "rainy_paris_nocturne_with_eiffel_tower.png",
+        "noir_paris_departure.png",
+        "noir_corridor_departure.png",
+        "file_00000000810481f5861f3e6cc609ae96.png"
+      ]
+    },
+    {
+      "shot_id": "S3-03",
+      "frames": [360, 719],
+      "segments": [
+        "noir_hallway_escape.png",
+        "noir_hallway_did_you_hear_that.png",
+        "noir_hallway_vigilance.png",
+        "file_000000000fa481f5ac05e7252b29dc56.png",
+        "rainy_noir_elevator_corridor.png"
+      ]
+    },
+    {
+      "shot_id": "S3-04",
+      "frames": [720, 1175],
+      "segments": [
+        "file_00000000f65481f583b750d73b856261.png",
+        "noir_elevator_call.png",
+        "noir_elevator_loop_ground_level.png"
+      ]
+    },
+    {
+      "shot_id": "S3-05",
+      "frames": [1176, 1583],
+      "segments": [
+        "file_00000000227881f5929c7f526f9db248.png",
+        "file_00000000f51c81f581fdeb26d8d8563a.png",
+        "rainy_paris_noir_lobby.png",
+        "rainy_noir_lobby_in_paris.png",
+        "noir_lobby_access_update.png"
+      ]
+    },
+    {
+      "shot_id": "S3-06",
+      "frames": [1584, 1871],
+      "segments": [
+        "rainy_noir_evening_in_paris.png",
+        "file_00000000d78081f59ab9cfafd458ae48.png",
+        "rainy_rue_de_rivoli_claire_s_call.png",
+        "file_00000000a1c881f5a5f144bccf46dc75.png",
+        "S3H01_attempt02_REJECTED_narrative-drift.png",
+        "a_cinematic_moody_rainy_dystopian_paris_street.png",
+        "a_dramatic_cinematic_noir_style_rainy_night_metr.png"
+      ]
+    },
+    {
+      "shot_id": "S3-07",
+      "frames": [1872, 2135],
+      "segments": [
+        "rainy_paris_metro_noir.png",
+        "file_00000000ce7081f5b2ca6cbb334d47bb.png",
+        "file_0000000046e081f58d55321729861b18.png",
+        "neon_noir_paris_under_watch.png",
+        "rainy_cyber_noir_boulevard_to_the_eiffel_tower.png",
+        "rainy_paris_noir_a_more_stable_tomorrow.png",
+        "rainy_parisian_reflection.png"
+      ]
+    },
+    {
+      "shot_id": "S3-08",
+      "frames": [2136, 2351],
+      "segments": [
+        "file_0000000040d481f5b200befd803dfa48.png",
+        "rainy_parisian_night_between_reflections.png",
+        "rainy_parisian_night_by_the_seine.png",
+        "rainy_paris_noir_by_the_eiffel_tower.png"
+      ]
+    }
+  ],
+  "reference_qc_or_nonvisible_media": [
+    {"asset": "S3_REF_Claire_identity_A.jpg", "use": "identity/environment QC reference; not final picture"},
+    {"asset": "S3_REF_Claire_identity_B.jpg", "use": "Claire face/phone identity QC reference; not final picture"},
+    {"asset": "Scene03_ASSEMBLY04_CLEAN_ACTION_PASS.mp4", "use": "prior-order/action continuity reference"},
+    {"asset": "S3H01_attempt01_REJECTED_identity-drift.png", "use": "manifest-approved provenance duplicate of named rebuild coverage"},
+    {"asset": "S3H01_attempt03_REJECTED_poster-and-spectacle-drift.png", "use": "manifest-approved alternate/reference; poster/spectacle treatment conflicts with final picture language"},
+    {"asset": "S3H01_attempt04_REJECTED_later-scene-propaganda-drift.png", "use": "manifest-approved provenance duplicate represented by named Metro rebuild source"},
+    {"asset": "S3H01_attempt05_REJECTED_single-reference-street-drift.png", "use": "manifest-approved provenance duplicate represented by named street rebuild source"},
+    {"asset": "file_000000002af081f5990aa20bec2b6af1.png", "use": "elevator action/panel reference only; visible manual floor-button press contradicts locked automatic-route beat"},
+    {"asset": "file_000000005e9c81f59529d781646c8f0a.png", "use": "elevator lighting/composition reference only; Claire hair/identity drift"},
+    {"asset": "file_00000000d95881f5bed2d6a4fa658f0d.png", "use": "Seine composition reference only; terminal Claire hair/identity drift"},
+    {"asset": "rainy_paris_noir_claire_at_dawn.png", "use": "time-of-day reference only; dawn conflicts with locked rainy-night continuity"},
+    {"asset": "S3H02-S3H08 loop/A-B packages", "use": "motion/continuity reference; visible versions contain production/debug/emblem contamination in this source package"},
+    {"asset": "rebuild collage/contact-sheet/debug plates", "use": "provenance/QC only; not final picture"}
+  ],
+  "assembly07_corrections": [
+    "Moved rainy_paris_escape.png to departure state.",
+    "Moved rainy_rue_de_rivoli_claire_s_call.png to street threshold.",
+    "Moved noir_paris_departure.png and apartment-nocturne/coat coverage to threshold.",
+    "Moved rainy_paris_metro_noir.png to public-proof beat.",
+    "Removed visible manual elevator-button press from S3-04.",
+    "Removed tied-hair Seine terminal frame from S3-08.",
+    "Ends on forward-moving Eiffel-street Claire frame with loose-hair continuity."
+  ],
+  "qc": {
+    "technical": "PASS",
+    "duration_seconds": 98.0,
+    "frame_count": 2352,
+    "fps": 24,
+    "resolution": "1280x720",
+    "contact_sheet": "Scene03_ASSEMBLY07_CONTACT_SHEET.jpg",
+    "contact_sheet_sha256": "dcb0299cbc5375b07b84ff8f67344d6e0448d676aa3066a2772bc86788f99b6d",
+    "status": "pending_user_visual_review"
+  }
+}

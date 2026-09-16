@@ -1,0 +1,62 @@
+{
+  "schema": "aivideoedit.scene03.master-match.v1",
+  "scene": "scene-03",
+  "branch": "project/american-empire-act1/scene-03",
+  "continuity_source": "Scene03_ASSEMBLY08_WARDROBE_CONTINUITY_MAINFX_PICTURE.mp4",
+  "continuity_status": "USER_PASS_LOCKED",
+  "reference_master": "AE_ACT1_S1_S2_720P_MASTER.mp4",
+  "reference_master_drive_id": "1bs1mU03AiuLK-I6zAePKj_tSc6YXATmU",
+  "reference_duration_seconds": 186.0,
+  "reference_resolution": "1280x720",
+  "reference_fps": 24,
+  "reference_audio_loudness_lufs": -16.4,
+  "reference_motion_authority": "projects/american-empire-act1/MOTION_LANGUAGE.md",
+  "reference_caption_authority": [
+    "song/american-empire-act1-scene1:projects/american-empire-act1/CAPTION_PLAN.md",
+    "song/american-empire-act1-scene1:projects/american-empire-act1/CAPTION_TIMING.json",
+    "project/american-empire-act1/scene-02:projects/american-empire-act1/scenes/scene-02/CAPTION_TIMING.json"
+  ],
+  "output": "Scene03_FINAL_S12_MATCH_REMASTER.mp4",
+  "output_sha256": "e377a0d4dae4a580ce0d884b7e34990d2363130337426309455b903e53c0aa3f",
+  "contact_sheet": "Scene03_FINAL_S12_MATCH_CONTACT.jpg",
+  "contact_sheet_sha256": "db2a3c7d0035fae20a7b4f765a36cf4ba723bb653172f7a14e6c798bab053bc3",
+  "duration_seconds": 98.0,
+  "frames": 2352,
+  "fps": 24,
+  "resolution": "1280x720",
+  "audio_loudness_lufs": -16.4,
+  "audio_true_peak_dbfs": -2.8,
+  "caption_style": {
+    "layout": "contained lower-third dialogue window",
+    "background": "dark translucent",
+    "border": "thin pale outline",
+    "speaker": "small cyan uppercase centered",
+    "dialogue": "white centered",
+    "safe_margin_bottom_px": 48,
+    "source_wording_and_timing": "Scene03_CANON_CAPTIONS.ass"
+  },
+  "picture_mastering": {
+    "source": "Assembly08 clean continuity picture",
+    "brightness": "slight lift",
+    "contrast": "neutral / no aggressive expansion",
+    "saturation": "restrained to align with S1/S2",
+    "new_story_motion": false,
+    "new_image_generation": false,
+    "generated_video_inserted": false
+  },
+  "continuity_invariants": [
+    "S3-01 robe/phone state remains intact",
+    "dressed/shoulder-bag state begins in S3-02",
+    "40-media editorial structure remains inherited from Assembly08",
+    "no manual elevator-floor press contradiction",
+    "Claire identity, wardrobe order, geography, dialogue and beat timing remain locked"
+  ],
+  "qc": {
+    "technical_conform": "PASS",
+    "caption_visual_qc": "PASS",
+    "caption_face_hand_action_clearance": "PASS",
+    "audio_loudness_match": "PASS",
+    "continuity": "PASS_LOCKED",
+    "user_master_acceptance": "PENDING"
+  }
+}
