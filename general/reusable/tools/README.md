@@ -12,6 +12,7 @@ Before adding a tool, check whether it belongs in `fx_v2/`, `generative-engine/`
 - `hero_library_extract.py` — extracts a non-empty, perceptually diverse hero-frame library from approved video; dense time sampling is only a candidate pool, not the final selection rule, and unmeasured semantic properties are reported as unmeasured.
 - `export_variety_qc.py` — full-export repetition/composition warning tool with stable before/after summary fields and optional prior-report comparison.
 - `refinement_qc_compare.py` — builds/validates broad PRE/POST refinement evidence including repetition, runtime, freeze/black, framing, sync, continuity, mode-aware QC, and source/canon integrity.
+- `audio_map.py` — deterministic single-pass music analysis producing canonical `audiomap.json` timing, energy, onset, roll, silence, and phrase-candidate layers for audio-driven productions.
 
 Project-local experimental FX live under the active project's `project_fx/` directory and are validated/locked by `general/reusable/fx_v2/project_local_fx_gate.py`. They do not become canonical reusable FX without a separate promotion into `general/reusable/fx_v2/`.
 
@@ -23,3 +24,7 @@ Do not create production-named reusable directories and do not recreate the supe
 - `workflow_resolver.py` — validates the neutral workflow registry and resolves the workflow set for a project from its current mode/media capabilities.
 - `workflow_guard.py` — fail-closed bootstrap/stage guard for standard workflow selection.
 - `promote_standard_library.py` — idempotent migration/generator used to build the neutral standard effect/workflow registries and proofs.
+
+## Optional scene runtime
+
+`general/reusable/render_runtime/` contains the isolated deterministic browser-render/QC adapter. It is additive and does not replace agent boot, project state, production guards, or existing GitHub Actions. See `general/reusable/SCENE_RUNTIME_CONTRACT.md` and `general/reusable/render_runtime/README.md`.
