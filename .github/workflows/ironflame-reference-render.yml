@@ -1,0 +1,80 @@
+name: IronFlame Reference Render
+
+on:
+  push:
+    branches: ["song/ironflame-cleanroom-20260917"]
+    paths:
+      - "projects/ironflame-cleanroom/production/render_reference_cut.py"
+      - "projects/ironflame-cleanroom/assets/visual/reference_movement_pack.zip"
+      - "projects/ironflame-cleanroom/REFERENCE_MANIFEST.json"
+      - ".github/workflows/ironflame-reference-render.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install render dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python-headless
+      - name: Verify AIVideoEdit production authority
+        run: |
+          python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$GITHUB_REF_NAME"
+          python .aivideoedit/os/general/reusable/tools/narrative_guard.py --branch "$GITHUB_REF_NAME"
+          python .aivideoedit/os/general/reusable/tools/workflow_guard.py --branch "$GITHUB_REF_NAME"
+      - name: Render IronFlame reference-driven cut
+        run: |
+          python projects/ironflame-cleanroom/production/render_reference_cut.py --out-dir render_out
+      - name: Package QC
+        run: |
+          cd render_out
+          zip -9 IronFlame_FINAL_QC.zip qc.json contact_sheet.jpg SHA256SUMS.txt
+      - name: Publish durable final to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python general/reusable/storage/github_release_storage.py init \
+            --slug ironflame-cleanroom \
+            --branch song/ironflame-cleanroom-20260917 \
+            --manifest projects/ironflame-cleanroom/STORAGE_MANIFEST.json
+          python general/reusable/storage/github_release_storage.py upload \
+            --slug ironflame-cleanroom \
+            --branch song/ironflame-cleanroom-20260917 \
+            --category final \
+            --file render_out/IronFlame-reference-cut.mp4 \
+            --manifest projects/ironflame-cleanroom/STORAGE_MANIFEST.json
+          python general/reusable/storage/github_release_storage.py upload \
+            --slug ironflame-cleanroom \
+            --branch song/ironflame-cleanroom-20260917 \
+            --category qc \
+            --file render_out/IronFlame_FINAL_QC.zip \
+            --manifest projects/ironflame-cleanroom/STORAGE_MANIFEST.json
+      - name: Persist storage manifest on song branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projects/ironflame-cleanroom/STORAGE_MANIFEST.json
+          if git diff --cached --quiet; then
+            echo "Storage manifest unchanged"
+          else
+            git commit -m "chore(ironflame): record final release assets"
+            git push origin HEAD:song/ironflame-cleanroom-20260917
+          fi
+      - name: Final summary
+        run: |
+          cat render_out/qc.json
+          echo "Final release: https://github.com/SouthPaw302/AIVideoEdit/releases/tag/media-ironflame-cleanroom"
