@@ -14,19 +14,19 @@ function cmd(name, args = ['--version']) {
 const major = Number(process.versions.node.split('.')[0]);
 const ffmpeg = cmd('ffmpeg', ['-version']);
 const ffprobe = cmd('ffprobe', ['-version']);
-let producer = false;
-let cli = false;
-let shaders = false;
+let renderCore = false;
+let renderCli = false;
+let transitionCore = false;
 for (const [key, path] of [
-  ['producer', './node_modules/@hyperframes/producer/package.json'],
-  ['cli', './node_modules/@hyperframes/cli/package.json'],
-  ['shaders', './node_modules/@hyperframes/shader-transitions/package.json'],
+  ['renderCore', './node_modules/aivideoedit-render-core/package.json'],
+  ['renderCli', './node_modules/aivideoedit-render-cli/package.json'],
+  ['transitionCore', './node_modules/aivideoedit-transition-core/package.json'],
 ]) {
   try {
     accessSync(new URL(path, import.meta.url), constants.R_OK);
-    if (key === 'producer') producer = true;
-    if (key === 'cli') cli = true;
-    if (key === 'shaders') shaders = true;
+    if (key === 'renderCore') renderCore = true;
+    if (key === 'renderCli') renderCli = true;
+    if (key === 'transitionCore') transitionCore = true;
   } catch {}
 }
 
@@ -36,8 +36,12 @@ const result = {
   node_ok: major >= 22,
   ffmpeg_ok: Boolean(ffmpeg),
   ffprobe_ok: Boolean(ffprobe),
-  dependencies: { producer, cli, shaders },
-  ready: major >= 22 && Boolean(ffmpeg) && Boolean(ffprobe) && producer && cli && shaders,
+  dependencies: {
+    render_core: renderCore,
+    render_cli: renderCli,
+    transition_core: transitionCore,
+  },
+  ready: major >= 22 && Boolean(ffmpeg) && Boolean(ffprobe) && renderCore && renderCli && transitionCore,
 };
 console.log(JSON.stringify(result, null, 2));
 process.exit(result.ready ? 0 : 2);
