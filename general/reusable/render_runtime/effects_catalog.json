@@ -1,0 +1,21 @@
+{
+  "schema": "aivideoedit.scene-effects.v1",
+  "status": "experimental_unpromoted",
+  "rule": "Effects are optional tools. They may not override Zero-Drift, scene continuity, or the existing effect-promotion gates.",
+  "effects": [
+    {"id":"domain-warp","family":"transition","description":"organic noise warp with edge glow"},
+    {"id":"ridged-burn","family":"transition","description":"ridged burn/reveal with heat glow"},
+    {"id":"whip-pan","family":"transition","description":"horizontal motion-blur transition"},
+    {"id":"sdf-iris","family":"transition","description":"circular iris wipe with edge ring"},
+    {"id":"ripple-waves","family":"transition","description":"concentric ripple distortion"},
+    {"id":"gravitational-lens","family":"transition","description":"lens warp with chromatic aberration"},
+    {"id":"cinematic-zoom","family":"transition","description":"radial zoom blur"},
+    {"id":"chromatic-split","family":"transition","description":"RGB channel separation"},
+    {"id":"glitch","family":"transition","description":"block displacement and scanline glitch"},
+    {"id":"swirl-vortex","family":"transition","description":"spiral noise warp"},
+    {"id":"thermal-distortion","family":"transition","description":"heat shimmer distortion"},
+    {"id":"flash-through-white","family":"transition","description":"white flash reveal"},
+    {"id":"cross-warp-morph","family":"transition","description":"noise-driven scene morph"},
+    {"id":"light-leak","family":"transition","description":"warm light-leak/lens-flare transition"}
+  ]
+}
