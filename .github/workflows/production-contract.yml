@@ -37,7 +37,7 @@ jobs:
         if: github.event_name == 'pull_request' && github.base_ref == 'main'
         shell: bash
         run: |
-          python -m py_compile bootstrap.py general/reusable/tools/branch_policy.py general/reusable/tools/production_guard.py general/reusable/tools/narrative_guard.py general/reusable/tools/recut_guard.py general/reusable/tools/workflow_resolver.py general/reusable/tools/workflow_guard.py general/reusable/tools/hero_library_extract.py general/reusable/tools/refinement_qc_compare.py general/reusable/tools/test_project_scene_branch.py general/reusable/tools/test_director_brain.py general/reusable/tools/test_recut_system.py general/reusable/fx_v2/project_local_fx_gate.py
+          python -m py_compile bootstrap.py general/reusable/tools/branch_policy.py general/reusable/tools/production_guard.py general/reusable/tools/narrative_guard.py general/reusable/tools/recut_guard.py general/reusable/tools/workflow_resolver.py general/reusable/tools/workflow_guard.py general/reusable/tools/hero_library_extract.py general/reusable/tools/refinement_qc_compare.py general/reusable/tools/test_project_scene_branch.py general/reusable/tools/test_director_brain.py general/reusable/tools/test_recut_system.py general/reusable/tools/test_workflow_authority.py general/reusable/fx_v2/project_local_fx_gate.py
           python general/reusable/tools/production_guard.py --bootstrap-phase --branch main
           python general/reusable/tools/narrative_guard.py --branch main
           python general/reusable/tools/recut_guard.py --branch main
@@ -46,16 +46,18 @@ jobs:
           python general/reusable/tools/test_project_scene_branch.py
           python general/reusable/tools/test_director_brain.py
           python general/reusable/tools/test_recut_system.py
+          python general/reusable/tools/test_workflow_authority.py
       - name: Validate Director Brain, workflow selection and recut system on main
         if: github.event_name == 'push' && github.ref_name == 'main'
         shell: bash
         run: |
-          python -m py_compile bootstrap.py general/reusable/tools/branch_policy.py general/reusable/tools/production_guard.py general/reusable/tools/narrative_guard.py general/reusable/tools/recut_guard.py general/reusable/tools/workflow_resolver.py general/reusable/tools/workflow_guard.py general/reusable/tools/hero_library_extract.py general/reusable/tools/refinement_qc_compare.py general/reusable/tools/test_project_scene_branch.py general/reusable/tools/test_director_brain.py general/reusable/tools/test_recut_system.py general/reusable/fx_v2/project_local_fx_gate.py
+          python -m py_compile bootstrap.py general/reusable/tools/branch_policy.py general/reusable/tools/production_guard.py general/reusable/tools/narrative_guard.py general/reusable/tools/recut_guard.py general/reusable/tools/workflow_resolver.py general/reusable/tools/workflow_guard.py general/reusable/tools/hero_library_extract.py general/reusable/tools/refinement_qc_compare.py general/reusable/tools/test_project_scene_branch.py general/reusable/tools/test_director_brain.py general/reusable/tools/test_recut_system.py general/reusable/tools/test_workflow_authority.py general/reusable/fx_v2/project_local_fx_gate.py
           python general/reusable/tools/workflow_resolver.py --verify --json
           python general/reusable/tools/workflow_guard.py --branch main
           python general/reusable/tools/test_project_scene_branch.py
           python general/reusable/tools/test_director_brain.py
           python general/reusable/tools/test_recut_system.py
+          python general/reusable/tools/test_workflow_authority.py
       - name: Verify bootstrapped production contract
         shell: bash
         run: |

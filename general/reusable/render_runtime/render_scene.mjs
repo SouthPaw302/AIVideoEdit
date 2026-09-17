@@ -9,6 +9,7 @@ import { mkdirSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import process from 'node:process';
 import { createRenderJob, executeRenderJob } from 'aivideoedit-render-core';
+import { assertRuntimeOptIn } from './runtime_opt_in.mjs';
 
 function usage(msg) {
   if (msg) console.error(`ERROR: ${msg}`);
@@ -74,6 +75,14 @@ try {
 } catch {
   usage(`composition not found: ${cfg.inputPath}`);
 }
+
+let projectRoot;
+try {
+  projectRoot = assertRuntimeOptIn(cfg.inputPath);
+} catch (err) {
+  usage(err.message);
+}
+
 mkdirSync(cfg.format === 'png-sequence' || cfg.format === 'hls' ? cfg.outputPath : dirname(cfg.outputPath), { recursive: true });
 
 const renderConfig = {
@@ -101,6 +110,7 @@ const result = await executeRenderJob(job, (p) => {
 
 const summary = {
   schema: 'aivideoedit.render-result.v1',
+  project_root: projectRoot,
   input: cfg.inputPath,
   output: result.outputPath ?? cfg.outputPath,
   format: cfg.format,

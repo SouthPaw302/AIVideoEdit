@@ -3,9 +3,19 @@ import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import process from 'node:process';
+import { assertRuntimeOptIn } from './runtime_opt_in.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const target = resolve(process.argv[2] ?? '.');
+
+let projectRoot;
+try {
+  projectRoot = assertRuntimeOptIn(target);
+} catch (err) {
+  console.error(`ERROR: ${err.message}`);
+  process.exit(2);
+}
+
 const vendor = resolve(target, 'vendor');
 mkdirSync(vendor, { recursive: true });
 
@@ -39,6 +49,7 @@ for (const item of assets) {
 
 console.log(JSON.stringify({
   schema: 'aivideoedit.runtime-assets.v1',
+  project_root: projectRoot,
   target: vendor,
   files: assets.map((x) => x.dst),
 }, null, 2));
