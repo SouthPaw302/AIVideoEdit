@@ -1,10 +1,121 @@
 {
   "schema": "aivideoedit.video-script.v1",
-  "locked": false,
-  "based_on_storyboard": false,
-  "target_fps": 30,
+  "locked": true,
+  "based_on_storyboard": true,
+  "target_fps": 24,
+  "total_frames": 5872,
   "duration_seconds": 244.68,
-  "total_frames": 7340,
-  "basis": [],
-  "entries": []
+  "basis": ["storyboard", "music_analysis", "lyrics"],
+  "entries": [
+    {
+      "shot_id":"MC-01","start_frame":0,"end_frame":743,"production_mode":"living_scene",
+      "visual_media":"deterministic procedural Molten Cartography contour field",
+      "visual_action":"Sparse pearl contours emerge from obsidian; shallow silver strata separate and the first fault seam opens at the terminal surge.",
+      "animation_behavior":"Slow tectonic contour drift; macro-energy breathing; transient-local glints; bounded shallow parallax.",
+      "transition":"organic_warp at the 31s measured surge, confined to existing contour topology",
+      "music_cues":["2s surge","28s drop","31s surge"],
+      "lyric_cue":"threshold, inward memory and evidence of passage",
+      "motion_regions":["base_contours","subsurface_silver","fault_seam"],
+      "protected_regions":["global_topology","obsidian_negative_space","line_weight_family","palette_contract"]
+    },
+    {
+      "shot_id":"MC-02","start_frame":744,"end_frame":1103,"production_mode":"living_scene",
+      "visual_media":"same procedural contour world with denser silver strata",
+      "visual_action":"Contour density increases while silver layers shear laterally; measured drops remove upper line families before pressure returns.",
+      "animation_behavior":"Bounded horizontal stratum shear plus local contour displacement; no free camera motion.",
+      "transition":"hard measured handoff at 46s with a brief ripple_waves proof candidate",
+      "music_cues":["31s surge","39s drop","44s drop","46s surge"],
+      "lyric_cue":"material memory and retained pressure",
+      "motion_regions":["upper_contours","silver_strata","fault_seam"],
+      "protected_regions":["world_topology","line_weight_family","palette_contract","negative_space_ratio"]
+    },
+    {
+      "shot_id":"MC-03","start_frame":1104,"end_frame":1607,"production_mode":"living_scene",
+      "visual_media":"same procedural contour world with additional depth strata",
+      "visual_action":"Deeper map layers become visible; high-strength transients briefly tighten line spacing and create cold microglints.",
+      "animation_behavior":"Energy-scaled depth separation, deterministic glints and short transient ripples; restrained orthographic drift.",
+      "transition":"contour compression into MC-04 on the 67s surge",
+      "music_cues":["46s surge","53s surge","67s surge"],
+      "lyric_cue":"distance, departure and an unformed future",
+      "motion_regions":["deep_strata","mid_contours","microglints"],
+      "protected_regions":["fault_network","palette_contract","line_weight_family","orthographic_orientation"]
+    },
+    {
+      "shot_id":"MC-04","start_frame":1608,"end_frame":1895,"production_mode":"living_scene",
+      "visual_media":"compressed state of the same procedural contour world",
+      "visual_action":"The field narrows toward a central pressure band, then releases outward at 79 seconds.",
+      "animation_behavior":"Deterministic convergence of existing lines; lower parallax amplitude; release uses existing geometry only.",
+      "transition":"ripple_waves proof candidate at the 79s measured surge",
+      "music_cues":["67s surge","79s surge"],
+      "lyric_cue":"quiet thunder and destabilized orientation expressed only as abstract pressure",
+      "motion_regions":["central_band","secondary_contours","subsurface_silver"],
+      "protected_regions":["global_topology","palette_contract","line_identity","frame_axes"]
+    },
+    {
+      "shot_id":"MC-05","start_frame":1896,"end_frame":3959,"production_mode":"living_scene",
+      "visual_media":"expanded multi-stratum Molten Cartography field",
+      "visual_action":"The main expanse opens into stacked contour sheets and moire interference while roll clusters travel as short local ripple trains.",
+      "animation_behavior":"Slow independent layer drift, bounded 2.5D separation, energy breathing, roll-driven local waves; camera remains secondary.",
+      "transition":"organic_warp pressure contraction at 165s without changing world identity",
+      "music_cues":["79s surge","sustained high-energy plateau","measured roll clusters","165s surge"],
+      "lyric_cue":"endless distance and contact with a fleeting moment, translated nonliterally into layered proximity",
+      "motion_regions":["foreground_contours","mid_strata","deep_strata","moire_layer","roll_ripples"],
+      "protected_regions":["fault_network","palette_contract","line_weight_family","layer_order","frame_axes"]
+    },
+    {
+      "shot_id":"MC-06","start_frame":3960,"end_frame":4247,"production_mode":"living_scene",
+      "visual_media":"contracted state of the same multi-stratum map",
+      "visual_action":"Broad plates converge toward a single seam as reflective width decreases and pressure rebuilds.",
+      "animation_behavior":"Bounded inward material motion; contour breathing follows canonical energy; no new geometry families.",
+      "transition":"controlled chromatic_split proof candidate at 177s, limited to the central seam",
+      "music_cues":["165s surge","177s surge"],
+      "lyric_cue":"approach, separation and the instant before contact",
+      "motion_regions":["broad_plates","central_fault","reflective_strata"],
+      "protected_regions":["global_topology","palette_contract","line_identity","plate_order"]
+    },
+    {
+      "shot_id":"MC-07","start_frame":4248,"end_frame":4511,"production_mode":"living_scene",
+      "visual_media":"high-pressure convergence state of the same contour system",
+      "visual_action":"Contours accelerate inward and refractive pressure rises until the deepest layer becomes visible at 188 seconds.",
+      "animation_behavior":"Time-bounded convergence, localized refraction and higher transient response; no unbounded zoom.",
+      "transition":"gravity_lens proof candidate at 188s confined to the existing fault region",
+      "music_cues":["177s surge","188s major surge"],
+      "lyric_cue":"the brief moment where boundaries become permeable",
+      "motion_regions":["converging_contours","fault_region","refractive_layer"],
+      "protected_regions":["world_topology","palette_contract","line_weight_family","frame_axes"]
+    },
+    {
+      "shot_id":"MC-08","start_frame":4512,"end_frame":5039,"production_mode":"living_scene",
+      "visual_media":"deep silver stratum of the same Molten Cartography world",
+      "visual_action":"The deepest stratum opens; 192s and 209s drops simplify its distortion before coherent plates return at 210s.",
+      "animation_behavior":"Localized lens distortion, layer opacity subtraction at drops and deterministic recovery at the 210s surge.",
+      "transition":"morph_warp proof candidate ending exactly at the 210s measured surge",
+      "music_cues":["188s surge","192s drop","209s drop","210s surge"],
+      "lyric_cue":"entry without sound and emergence from hidden depth",
+      "motion_regions":["deep_silver","fault_region","secondary_contours"],
+      "protected_regions":["plate_geometry","palette_contract","fault_location","line_identity"]
+    },
+    {
+      "shot_id":"MC-09","start_frame":5040,"end_frame":5591,"production_mode":"living_scene",
+      "visual_media":"resolved broad-plate state of the same procedural map",
+      "visual_action":"Large plates settle into coherence while micro-reactive contour motion persists and overall complexity falls toward the terminal drop.",
+      "animation_behavior":"Reduced-amplitude layer drift, transient microglints and gradual deterministic layer simplification.",
+      "transition":"hard subtraction boundary at 233s; no decorative transition may mask the measured drop",
+      "music_cues":["210s surge","dense transients","233s terminal drop"],
+      "lyric_cue":"not lost but hidden below the visible surface",
+      "motion_regions":["broad_plates","micro_contours","microglints"],
+      "protected_regions":["global_topology","palette_contract","fault_network","negative_space_ratio"]
+    },
+    {
+      "shot_id":"MC-10","start_frame":5592,"end_frame":5871,"production_mode":"living_scene",
+      "visual_media":"terminal subtraction state of the same contour world",
+      "visual_action":"Interference, silver strata and secondary contours disappear in order until one pearl line dims into black.",
+      "animation_behavior":"Monotonic deterministic opacity subtraction with minimal residual drift; no new layer may appear after 233s.",
+      "transition":"fade residual line to full black at canonical audio end",
+      "music_cues":["233s strongest terminal drop","decay to 244.68s"],
+      "lyric_cue":"underground / hidden-state resolution without literal depiction",
+      "motion_regions":["residual_contour","remaining_silver"],
+      "protected_regions":["black_field","terminal_subtraction_order","palette_contract","final_black_frame"]
+    }
+  ]
 }

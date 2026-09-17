@@ -19,5 +19,5 @@
   "refinement_scope": {"active": false, "goal": null, "allowed_changes": [], "forbidden_changes": [], "restart_authorized": false},
   "recut_scope": {"active": false, "named_defects": [], "allowed_changes": [], "forbidden_changes": [], "source_replacement_authorized": false},
   "current_user_direction": "Choose a failed song attempt and create a new production video that is not visually related to what was produced before. Please Don't stop.",
-  "exact_next_action": "Lock the Molten Cartography storyboard and frame-followable script to the canonical audiomap, then build procedural shot packages and render proofs."
+  "exact_next_action": "Build deterministic Molten Cartography shot packages with concrete procedural media evidence, then render representative proofs before FX lock."
 }
