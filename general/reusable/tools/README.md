@@ -15,6 +15,8 @@ Before adding a tool, check whether it belongs in `fx_v2/`, `generative-engine/`
 - `audio_map.py` — deterministic single-pass music analysis producing canonical `audiomap.json` timing, energy, onset, roll, silence, and phrase-candidate layers for audio-driven productions.
 - `scene_timeline.py` — validates director-authored scene timelines and can snap explicit cut/transition timestamps to nearby canonical audio anchors without changing scene order.
 - `test_scene_timeline.py` — regression tests for audio-anchor selection, boundary snapping, and transition-effect validation.
+- `audio_mix.py` — validates project-neutral track/bus effect chains and compiles declared voice timing into deterministic music-bed ducking automation without guessing spectral carve settings.
+- `test_audio_mix.py` — regression tests for deterministic ducking, voice-source enforcement, and effect-automation safety.
 
 Project-local experimental FX live under the active project's `project_fx/` directory and are validated/locked by `general/reusable/fx_v2/project_local_fx_gate.py`. They do not become canonical reusable FX without a separate promotion into `general/reusable/fx_v2/`.
 
@@ -29,4 +31,4 @@ Do not create production-named reusable directories and do not recreate the supe
 
 ## Optional scene runtime
 
-`general/reusable/render_runtime/` contains the isolated deterministic browser-render/QC adapter, AIVideoEdit transition bridge, and local runtime asset staging. It is additive and does not replace agent boot, project state, production guards, or existing GitHub Actions. See `general/reusable/SCENE_RUNTIME_CONTRACT.md` and `general/reusable/render_runtime/README.md`.
+`general/reusable/render_runtime/` contains the isolated deterministic browser-render/QC adapter, AIVideoEdit transition bridge, audio-mix bridge, and local runtime asset staging. It is additive and does not replace agent boot, project state, production guards, or existing GitHub Actions. See `general/reusable/SCENE_RUNTIME_CONTRACT.md` and `general/reusable/render_runtime/README.md`.
