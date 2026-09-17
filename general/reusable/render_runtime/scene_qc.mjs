@@ -11,6 +11,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import process from 'node:process';
+import { assertRuntimeOptIn } from './runtime_opt_in.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const isWin = process.platform === 'win32';
@@ -27,6 +28,14 @@ const project = resolve(argv[0]);
 const snapshots = !argv.includes('--no-snapshots');
 const json = argv.includes('--json');
 if (!existsSync(project)) die(`project does not exist: ${project}`);
+
+let projectRoot;
+try {
+  projectRoot = assertRuntimeOptIn(project);
+} catch (err) {
+  die(err.message);
+}
+
 if (!existsSync(bin)) die(`runtime dependencies are not installed. Run npm install in ${here}`);
 
 const args = ['check', project];
@@ -39,6 +48,7 @@ const run = spawnSync(bin, args, {
 });
 const summary = {
   schema: 'aivideoedit.scene-qc-result.v1',
+  project_root: projectRoot,
   project,
   passed: run.status === 0,
   exit_code: run.status ?? 1,
