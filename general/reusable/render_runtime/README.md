@@ -47,24 +47,60 @@ Do not rely on CDNs in final renders. Stage pinned local copies into a compositi
 node stage_runtime_assets.mjs /path/to/composition-project
 ```
 
-Then reference:
+Then reference the AIVideoEdit-facing assets:
 
 ```html
 <script src="vendor/aivideoedit-gsap.min.js"></script>
-<script src="vendor/aivideoedit-shader-transitions.js"></script>
+<script src="vendor/aivideoedit-transition-core.js"></script>
+<script src="vendor/aivideoedit-transitions.js"></script>
 ```
 
-The available experimental transition names are in `effects_catalog.json`. They are not automatically promoted into the canonical effect library.
+Production compositions call `AIVideoEditTransitions`, not the implementation dependency directly:
+
+```html
+<script>
+  const timeline = gsap.timeline({ paused: true });
+  // Add scene animation to timeline here.
+
+  AIVideoEditTransitions.init({
+    compositionId: 'main',
+    bgColor: '#090909',
+    scenes: ['scene-01', 'scene-02'],
+    transitions: [
+      { time: 8.0, effect: 'light_leak', duration: 0.7 }
+    ],
+    timeline
+  });
+</script>
+```
+
+Available experimental transition names are in `effects_catalog.json`. Every imported transition remains `proof_required` until it passes the existing FX2 promotion gate.
 
 ## Audio-driven timing
 
-The companion analyzer is one directory up:
+Create one canonical machine timing analysis per source hash:
 
 ```bash
 python ../tools/audio_map.py song.wav -o /path/to/project/audiomap.json --print
 ```
 
-Once created for a source SHA-256, that `audiomap.json` is the production's canonical machine timing analysis unless the source file changes.
+Validate a director-authored timeline without changing it:
+
+```bash
+python ../tools/scene_timeline.py /path/to/project/timeline.json --check-only
+```
+
+Optionally snap explicit transition/cut boundaries to nearby canonical audio anchors:
+
+```bash
+python ../tools/scene_timeline.py /path/to/project/timeline.json \
+  --audio-map /path/to/project/audiomap.json \
+  --snap-window 0.25 \
+  --snap-all-boundaries \
+  -o /path/to/project/timeline.snapped.json
+```
+
+This operation never changes scene order and does not invent shots. It only moves explicit cut/transition timestamps within the requested snap window.
 
 ## Operational boundary
 
@@ -72,8 +108,8 @@ Once created for a source SHA-256, that `audiomap.json` is the production's cano
 - No modification of existing GitHub Actions.
 - No automatic effect promotion.
 - No replacement of `PRIME_DIRECTIVE.md`, project state, storyboard, narrative contracts, or Zero-Drift.
-- Rendering and QC are tools called by the existing director/agent workflow.
+- Rendering, timing, transitions, and QC are tools called by the existing director/agent workflow.
 
 ## Third-party implementation dependencies
 
-The initial adapter uses open-source packages from `heygen-com/hyperframes` behind AIVideoEdit-native entry points. The main upstream work is Apache-2.0; its shader-transition package is MIT. Package names remain visible here for license/dependency transparency but are not AIVideoEdit workflow or product names. See `THIRD_PARTY_NOTICES.md`.
+Third-party open-source packages are used behind AIVideoEdit-native entry points and may be replaced later. Their package identities and licenses are recorded only where required for dependency transparency and attribution. See `THIRD_PARTY_NOTICES.md`.
