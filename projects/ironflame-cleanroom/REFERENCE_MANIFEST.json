@@ -1,6 +1,27 @@
 {
   "schema": "aivideoedit.reference-manifest.v1",
-  "videos": [],
-  "images": [],
-  "notes": "No visual reference is authorized for this clean-room production. Historical IronFlame visuals are excluded."
+  "videos": [
+    {
+      "id": "ironflame-reference-video",
+      "kind": "authorized_visual_reference",
+      "duration_seconds": 244.68,
+      "dimensions": [1280, 720],
+      "fps": 24,
+      "content_reuse_authorized": true,
+      "authority": "user supplied reference video; visual style, sequence language and transition behavior"
+    }
+  ],
+  "images": [
+    {
+      "id": "reference-movement-pack",
+      "kind": "source-derived movement variants",
+      "path": "assets/visual/reference_movement_pack.zip",
+      "count": 12,
+      "dimensions": [1280, 720],
+      "content_reuse_authorized": true
+    }
+  ],
+  "usable_visual_reference": true,
+  "content_reuse_authorized": true,
+  "notes": "User explicitly replaced the earlier clean-room exclusion with the supplied IronFlame reference video. The 12 movement variants map the full 0-244.68 second reference sequence and are authorized production inputs."
 }

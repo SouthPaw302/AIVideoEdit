@@ -1,9 +1,11 @@
-# Molten Cartography Production Source
+# IronFlame Reference-Driven Production
 
-`index.html` is the deterministic browser composition. `build_control_map.py` compiles the canonical `analysis/audiomap.json` into a compact browser control map immediately before QC/render. The canonical WAV is reconstructed only in the render environment into `production/assets/ironflame.wav`; the full master is not duplicated in Git.
+The active assembly is reference-driven. The earlier `Molten Cartography` browser composition is retained only as historical proof and is not the final visual authority.
 
-Composition source SHA-256: `7d504bd377ead14dae1466a74890ab5de0674c7573ec5c20b6da40833c1ca027`
-Control-map builder SHA-256: `2b2a8704bbe68bd233b98df85ac1a85c4858a7d5086610c433681e3bf1773733`
-Timeline SHA-256: `03157ed1b7dace602bd2e4d688216261591b163d7dcc7d4cb11866b8988448e3`
+Final assembly uses:
+- canonical IronFlame WAV reconstructed from `assets/audio/canonical-wav.parts/` and verified against SHA-256 `76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962`;
+- `assets/visual/reference_movement_pack.zip`, containing 12 authorized 1280x720 movement variants spanning the entire 244.68-second reference sequence;
+- deterministic bounded pan/zoom and short crossfades only, with harder cuts near the source-reference boundaries around 210s and 233s;
+- project-local renderer `render_reference_cut.py` at native 24 fps.
 
-No wall-clock time, random number generator, asynchronous timeline construction or historical IronFlame visual asset is used by the composition.
+The branch-only GitHub Action renders the final MP4, runs duration/resolution/fps/audio QC, builds a contact sheet and checksums, and publishes the final + QC bundle to the song's GitHub Release. Main is not modified by this production workflow.
