@@ -1,0 +1,18 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "assets": [
+    {
+      "id": "ironflame-canonical-audio",
+      "kind": "audio_master_parts",
+      "origin": "recovered_canonical_audio",
+      "lifecycle_status": "canonical",
+      "path": "assets/audio/canonical-wav.parts/",
+      "reconstructed_filename": "Ironflame (Remastered).wav",
+      "expected_sha256": "76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962",
+      "duration_seconds": 244.680,
+      "sample_rate_hz": 48000,
+      "bit_depth": 16,
+      "channels": 2
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": false,
+  "selected_capabilities": [],
+  "visual_direction_gate": {
+    "required": true,
+    "presented_in_chat": false,
+    "options": [],
+    "user_selection": {"status": "pending", "selected_option_numbers": [], "recorded_user_instruction": null},
+    "locked": false
+  }
+}
