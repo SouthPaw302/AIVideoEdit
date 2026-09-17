@@ -13,6 +13,8 @@ Before adding a tool, check whether it belongs in `fx_v2/`, `generative-engine/`
 - `export_variety_qc.py` — full-export repetition/composition warning tool with stable before/after summary fields and optional prior-report comparison.
 - `refinement_qc_compare.py` — builds/validates broad PRE/POST refinement evidence including repetition, runtime, freeze/black, framing, sync, continuity, mode-aware QC, and source/canon integrity.
 - `audio_map.py` — deterministic single-pass music analysis producing canonical `audiomap.json` timing, energy, onset, roll, silence, and phrase-candidate layers for audio-driven productions.
+- `scene_timeline.py` — validates director-authored scene timelines and can snap explicit cut/transition timestamps to nearby canonical audio anchors without changing scene order.
+- `test_scene_timeline.py` — regression tests for audio-anchor selection, boundary snapping, and transition-effect validation.
 
 Project-local experimental FX live under the active project's `project_fx/` directory and are validated/locked by `general/reusable/fx_v2/project_local_fx_gate.py`. They do not become canonical reusable FX without a separate promotion into `general/reusable/fx_v2/`.
 
@@ -27,4 +29,4 @@ Do not create production-named reusable directories and do not recreate the supe
 
 ## Optional scene runtime
 
-`general/reusable/render_runtime/` contains the isolated deterministic browser-render/QC adapter. It is additive and does not replace agent boot, project state, production guards, or existing GitHub Actions. See `general/reusable/SCENE_RUNTIME_CONTRACT.md` and `general/reusable/render_runtime/README.md`.
+`general/reusable/render_runtime/` contains the isolated deterministic browser-render/QC adapter, AIVideoEdit transition bridge, and local runtime asset staging. It is additive and does not replace agent boot, project state, production guards, or existing GitHub Actions. See `general/reusable/SCENE_RUNTIME_CONTRACT.md` and `general/reusable/render_runtime/README.md`.
