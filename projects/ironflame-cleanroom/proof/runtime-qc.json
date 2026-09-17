@@ -1,0 +1,10 @@
+{
+  "schema": "aivideoedit.scene-qc-result.v1",
+  "project": "/home/runner/work/AIVideoEdit/AIVideoEdit/projects/ironflame-cleanroom/production",
+  "passed": true,
+  "exit_code": 0,
+  "snapshots_requested": false,
+  "elapsed_sec": 43.14,
+  "stdout": "◆  Checking production\n\nLint\n  ⚠ timeline_track_too_dense: Track 0 has 10 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.\n    /home/runner/work/AIVideoEdit/AIVideoEdit/projects/ironflame-cleanroom/production/index.html [data-composition-id] t=0s\n    Fix: Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate.\n  0 error(s), 1 warning(s), 0 info(s)\n\nRuntime\n  ◇ 0 errors, 0 warnings\n\nLayout\n  ◇ 0 issues across 9 sample(s)\n\nMotion\n  ◇ 0 errors, 0 warnings\n\nContrast\n  ◇ 0/0 text checks pass WCAG AA\n\nSnapshots\n  ◇ disabled\n\n◇  Check passed\n",
+  "stderr": "\n  Hyperframes collects anonymous usage data to improve the tool.\n  File paths and composition content are never collected.\n  If you sign in to HeyGen, your account (email, or username) is linked to your usage.\n\n  Disable anytime: hyperframes telemetry disable\n\n[hyperframes] browserGpuMode probe → software (WebGL unavailable)\n"
+}
