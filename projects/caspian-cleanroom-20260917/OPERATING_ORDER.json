@@ -1,0 +1,14 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Create a completely new production video for Caspian — The Day the Silence Sang using the current AIVideoEdit pipeline, with no reuse of prior Caspian visuals.",
+  "direction_authority": "music_led",
+  "production_mode": "hybrid",
+  "canon_lock": {"locked": false, "picture_language": null, "items": []},
+  "accepted_baseline": {"status": "none", "file_or_locator": null, "sha256": null, "user_acceptance_statement": null},
+  "accepted_source_library": {"status": "none", "role": null, "file_or_locator": null, "sha256": null, "user_acceptance_statement": null, "content_reuse_authorized": false, "timeline_locked": false},
+  "refinement_scope": {"active": false, "goal": null, "allowed_changes": [], "forbidden_changes": [], "restart_authorized": true},
+  "recut_scope": {"active": false, "named_defects": [], "allowed_changes": [], "forbidden_changes": [], "source_replacement_authorized": false},
+  "current_user_direction": "Use Caspian as a failed-attempt stress test. Create a new branch, boot, and build a new production visually unrelated to anything previously produced.",
+  "exact_next_action": "Pass bootstrap, then ingest only the authorized Caspian song audio and analyze it before presenting new visual routes.",
+  "updated_at_utc": "2026-09-17T08:05:00Z"
+}

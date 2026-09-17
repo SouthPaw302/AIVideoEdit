@@ -1,0 +1,8 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": false,
+  "lyrics": {"status": "unresolved", "source": null, "text_file": null},
+  "genre": {"status": "unresolved", "label": null, "source": null, "confidence": 0.0},
+  "rhythm": {},
+  "sections": []
+}

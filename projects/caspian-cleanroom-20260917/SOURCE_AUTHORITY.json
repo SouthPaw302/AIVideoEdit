@@ -1,0 +1,15 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "allow": {
+    "historical_chats": false,
+    "historical_summaries": false,
+    "unrelated_song_branches": false,
+    "prior_project_storyboards": false,
+    "prior_project_visual_dna": false,
+    "prior_project_media": false
+  },
+  "explicit_user_authorizations": [
+    "Recover only the Caspian song/audio source from song/caspian-the-day-the-silence-sang for this clean-room production; do not reuse prior visuals."
+  ],
+  "notes": "All prior visual production material is denied."
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [],
+  "images": [],
+  "usable_visual_reference": false,
+  "content_reuse_authorized": false,
+  "notes": "Clean-room rebuild: prior Caspian visuals are not references."
+}
