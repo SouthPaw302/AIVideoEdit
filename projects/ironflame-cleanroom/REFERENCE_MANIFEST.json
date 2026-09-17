@@ -2,26 +2,36 @@
   "schema": "aivideoedit.reference-manifest.v1",
   "videos": [
     {
+      "name": "IronFlame supplied reference video",
       "id": "ironflame-reference-video",
       "kind": "authorized_visual_reference",
       "duration_seconds": 244.68,
+      "total_frames": 5872,
+      "extracted_frames": 12,
+      "extraction_policy": "meaningful_sampling",
+      "sampling_description": "Twelve representative source-derived movement frames selected from contiguous reference sections at 2s, 22s, 56s, 77s, 103s, 115s, 123s, 149s, 167s, 196s, 216s, and 240s; additional hard-cut and key-frame inspection was performed during reference analysis.",
+      "coverage": "Continuous visual-sequence coverage through twelve contiguous ranges: 0-17s, 18-41s, 42-76s, 77-94s, 95-109s, 110-121s, 122-136s, 137-166s, 167-186s, 187-209s, 210-232s, 233-244.68s.",
+      "analysis_complete": true,
       "dimensions": [1280, 720],
       "fps": 24,
       "content_reuse_authorized": true,
-      "authority": "user supplied reference video; visual style, sequence language and transition behavior"
+      "authority": "User supplied reference video; visual style, sequence language and transition behavior."
     }
   ],
   "images": [
     {
+      "name": "reference movement variants",
       "id": "reference-movement-pack",
       "kind": "source-derived movement variants",
       "path": "assets/visual/reference_movement_pack.zip",
       "count": 12,
       "dimensions": [1280, 720],
+      "analysis_complete": true,
       "content_reuse_authorized": true
     }
   ],
   "usable_visual_reference": true,
   "content_reuse_authorized": true,
-  "notes": "User explicitly replaced the earlier clean-room exclusion with the supplied IronFlame reference video. The 12 movement variants map the full 0-244.68 second reference sequence and are authorized production inputs."
+  "reference_analysis_complete": true,
+  "notes": "User explicitly replaced the earlier clean-room exclusion with the supplied IronFlame reference video. The twelve movement variants map the complete reference sequence and are authorized production inputs."
 }
