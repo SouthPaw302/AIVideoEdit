@@ -1,0 +1,20 @@
+{
+  "name": "aivideoedit-scene-runtime",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "render": "node render_scene.mjs",
+    "qc": "node scene_qc.mjs",
+    "doctor": "node runtime_doctor.mjs"
+  },
+  "dependencies": {
+    "@hyperframes/cli": "0.8.45",
+    "@hyperframes/producer": "0.8.45",
+    "@hyperframes/shader-transitions": "0.8.45",
+    "gsap": "^3.13.0"
+  }
+}
