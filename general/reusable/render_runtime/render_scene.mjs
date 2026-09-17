@@ -8,7 +8,7 @@
 import { mkdirSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import process from 'node:process';
-import { createRenderJob, executeRenderJob } from '@hyperframes/producer';
+import { createRenderJob, executeRenderJob } from 'aivideoedit-render-core';
 
 function usage(msg) {
   if (msg) console.error(`ERROR: ${msg}`);
