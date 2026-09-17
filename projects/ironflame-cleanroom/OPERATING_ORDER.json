@@ -1,14 +1,23 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Create a completely new visual music video for the IronFlame song from its canonical audio without reusing prior IronFlame visual work.",
+  "mission": "Create a completely new visual music video for the canonical IronFlame song without reusing any historical IronFlame visual work.",
   "direction_authority": "music_led",
-  "production_mode": "hybrid",
-  "canon_lock": {"locked": false, "picture_language": null, "items": []},
+  "production_mode": "living_scene",
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Molten Cartography: abstract reactive topographic strata, contour pressure, liquid-metal sheets and moire interference on an obsidian field.",
+    "items": [
+      "no historical IronFlame visual reuse",
+      "no literal people, houses, wolves, armor, forge, rain-scene or flame iconography",
+      "internal material motion is primary and camera motion is restrained",
+      "all timing derives from analysis/audiomap.json",
+      "same timestamp must produce the same frame"
+    ]
+  },
   "accepted_baseline": {"status": "none", "file_or_locator": null, "sha256": null, "user_acceptance_statement": null},
   "accepted_source_library": {"status": "none", "role": null, "file_or_locator": null, "sha256": null, "user_acceptance_statement": null, "content_reuse_authorized": false, "timeline_locked": false},
   "refinement_scope": {"active": false, "goal": null, "allowed_changes": [], "forbidden_changes": [], "restart_authorized": false},
   "recut_scope": {"active": false, "named_defects": [], "allowed_changes": [], "forbidden_changes": [], "source_replacement_authorized": false},
-  "current_user_direction": "Choose a failed song attempt and make a new production video that is not visually related to what was produced before; boot a fresh branch and use the new pipeline.",
-  "exact_next_action": "Reconstruct and verify the canonical IronFlame WAV, analyze the music, then present three materially distinct clean-room visual routes before generating production imagery.",
-  "updated_at_utc": "2026-09-17T08:10:00Z"
+  "current_user_direction": "Choose a failed song attempt and create a new production video that is not visually related to what was produced before. Please Don't stop.",
+  "exact_next_action": "Lock the Molten Cartography storyboard and frame-followable script to the canonical audiomap, then build procedural shot packages and render proofs."
 }

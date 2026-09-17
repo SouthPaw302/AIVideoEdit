@@ -12,13 +12,16 @@
   "authorized_sources": [
     "current_user_instruction",
     "current_main_aivideoedit_os",
-    "canonical IronFlame audio bytes recovered from the historical IronFlame song archive"
+    "canonical IronFlame audio bytes recovered from the historical IronFlame song archive",
+    "canonical IronFlame lyric text originally supplied by the user; lyric text only, excluding historical production notes"
   ],
   "forbidden_visual_sources": [
     "all historical IronFlame images",
     "all historical IronFlame video/render frames",
     "historical IronFlame storyboards",
     "historical IronFlame visual DNA",
-    "historical IronFlame prompts and character anchors"
+    "historical IronFlame prompts",
+    "historical IronFlame character anchors and protagonist designs",
+    "historical IronFlame production notes that prescribe visual interpretation"
   ]
 }

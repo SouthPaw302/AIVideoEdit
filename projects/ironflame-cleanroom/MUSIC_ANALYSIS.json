@@ -1,8 +1,36 @@
 {
   "schema": "aivideoedit.music-analysis.v1",
-  "analysis_complete": false,
-  "lyrics": {"status": "unresolved", "source": null, "text_file": null},
-  "genre": {"status": "unresolved", "label": null, "source": null, "confidence": 0.0},
-  "rhythm": {"tempo_status": "unmeasured", "tempo_bpm": null, "pulse_description": null, "meter_or_groove": null},
-  "sections": []
+  "analysis_complete": true,
+  "canonical_audiomap": "analysis/audiomap.json",
+  "source_sha256": "76679c5e0d0c905635e80904ff67ba03b52c11893d3a71f09433e17feff0f962",
+  "lyrics": {
+    "status": "present",
+    "source": "canonical user-supplied song lyrics",
+    "text_file": "LYRICS.md",
+    "directing_use": "required"
+  },
+  "genre": {
+    "status": "confident",
+    "label": "cinematic dark folk / atmospheric alternative",
+    "source": "canonical audio plus lyric character",
+    "confidence": 0.72
+  },
+  "rhythm": {
+    "tempo_status": "measured",
+    "tempo_bpm": 89.1029,
+    "pulse_description": "Measured mid-tempo pulse with dense transient activity and repeated roll clusters; large-scale edit decisions follow canonical energy surges and drops rather than every beat.",
+    "meter_or_groove": "stable machine-estimated 4/4 phase with 339 detected beats"
+  },
+  "sections": [
+    {"start_seconds":0.0,"end_seconds":31.0,"energy":"low-to-medium emergence with an early surge at 2s and a marked drop at 28s","musical_cues":["2s surge","28s drop","31s strongest early surge"],"visual_function":"establish sparse contour field, then fracture the first map layer at the 31s surge"},
+    {"start_seconds":31.0,"end_seconds":46.0,"energy":"volatile medium/high passage with repeated release points","musical_cues":["31s surge","39s drop","44s drop","46s surge"],"visual_function":"increase contour density and introduce liquid-metal shear without changing the visual world"},
+    {"start_seconds":46.0,"end_seconds":67.0,"energy":"sustained medium/high drive","musical_cues":["46s surge","53s surge","67s surge"],"visual_function":"expand the topographic field into deeper stacked strata and stronger beat-coupled displacement"},
+    {"start_seconds":67.0,"end_seconds":79.0,"energy":"compressed transition into a stronger plateau","musical_cues":["67s surge","79s surge"],"visual_function":"tighten geometry, narrow the visual field, then release into the 79s expansion"},
+    {"start_seconds":79.0,"end_seconds":165.0,"energy":"long sustained high-energy plateau with internal rhythmic modulation","musical_cues":["79s surge","multiple measured roll clusters","165s surge"],"visual_function":"main cartographic expansion: large-scale folds, moire interference and depth-like parallax remain bounded and deterministic"},
+    {"start_seconds":165.0,"end_seconds":177.0,"energy":"renewed rise","musical_cues":["165s surge","177s surge"],"visual_function":"collapse the field toward a central fault line and rebuild pressure without introducing new iconography"},
+    {"start_seconds":177.0,"end_seconds":188.0,"energy":"short intensification toward a major peak","musical_cues":["177s surge","188s major surge"],"visual_function":"accelerate contour convergence and refractive distortion into the 188s event"},
+    {"start_seconds":188.0,"end_seconds":210.0,"energy":"peak passage with a sharp 192s release and 209s drop","musical_cues":["188s surge","192s drop","209s drop","210s surge"],"visual_function":"open the deepest stratum, use one major transition at the measured release, then recover immediately at 210s"},
+    {"start_seconds":210.0,"end_seconds":233.0,"energy":"final driven plateau","musical_cues":["210s surge","dense transients","233s strongest terminal drop"],"visual_function":"resolve the map into broad coherent plates while preserving micro-reactive line motion"},
+    {"start_seconds":233.0,"end_seconds":244.68,"energy":"terminal decay","musical_cues":["233s drop","final measured decay to 244.68s"],"visual_function":"strip contour layers away until only a single residual line remains and falls to black"}
+  ]
 }
