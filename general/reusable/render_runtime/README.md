@@ -53,6 +53,7 @@ Then reference the AIVideoEdit-facing assets:
 <script src="vendor/aivideoedit-gsap.min.js"></script>
 <script src="vendor/aivideoedit-transition-core.js"></script>
 <script src="vendor/aivideoedit-transitions.js"></script>
+<script src="vendor/aivideoedit-audio-mix.js"></script>
 ```
 
 Production compositions call `AIVideoEditTransitions`, not the implementation dependency directly:
@@ -102,13 +103,38 @@ python ../tools/scene_timeline.py /path/to/project/timeline.json \
 
 This operation never changes scene order and does not invent shots. It only moves explicit cut/transition timestamps within the requested snap window.
 
+## Audio mixing and ducking
+
+AIVideoEdit can now carry a project-neutral audio mix plan with track gain, effect chains, automation, submix groups, and deterministic voice-over ducking.
+
+Start from `audio_mix.example.json`, then validate/compile it:
+
+```bash
+python ../tools/audio_mix.py /path/to/project/audio_mix.json \
+  -o /path/to/project/audio_mix.compiled.json
+```
+
+The compiler converts declared voice timing into deterministic volume automation on the target bed. It does **not** guess a spectral voice carve; that requires measured voice analysis and remains a separate future capability.
+
+Apply the compiled mix inside the composition after the media elements exist:
+
+```html
+<script>
+  fetch('audio_mix.compiled.json')
+    .then(r => r.json())
+    .then(plan => AIVideoEditAudioMix.apply(plan));
+</script>
+```
+
+Supported effect families are gain, filters/EQ, compressor, limiter, gate, saturation, delay, reverb, chorus, phaser, and bitcrush. Automation is validated before render; unsupported automation targets fail closed in the mix planner.
+
 ## Operational boundary
 
 - No modification of agent boot.
 - No modification of existing GitHub Actions.
 - No automatic effect promotion.
 - No replacement of `PRIME_DIRECTIVE.md`, project state, storyboard, narrative contracts, or Zero-Drift.
-- Rendering, timing, transitions, and QC are tools called by the existing director/agent workflow.
+- Rendering, timing, transitions, audio mixing, and QC are tools called by the existing director/agent workflow.
 
 ## Third-party implementation dependencies
 

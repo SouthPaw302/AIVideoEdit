@@ -22,6 +22,10 @@ const assets = [
     src: resolve(here, 'transition_bridge.js'),
     dst: resolve(vendor, 'aivideoedit-transitions.js'),
   },
+  {
+    src: resolve(here, 'audio_mix_bridge.js'),
+    dst: resolve(vendor, 'aivideoedit-audio-mix.js'),
+  },
 ];
 
 for (const item of assets) {
