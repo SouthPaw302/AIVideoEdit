@@ -1,7 +1,7 @@
 {
   "name": "aivideoedit-scene-runtime",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "engines": {
     "node": ">=22"
@@ -13,7 +13,7 @@
     "stage-assets": "node stage_runtime_assets.mjs"
   },
   "dependencies": {
-    "aivideoedit-render-cli": "npm:@hyperframes/cli@0.8.45",
+    "aivideoedit-render-cli": "npm:hyperframes@0.8.45",
     "aivideoedit-render-core": "npm:@hyperframes/producer@0.8.45",
     "aivideoedit-transition-core": "npm:@hyperframes/shader-transitions@0.8.45",
     "gsap": "^3.13.0"
