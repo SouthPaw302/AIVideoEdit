@@ -1,0 +1,8 @@
+{
+  "schema":"aivideoedit.shot-package.v1","shot_id":"MC-01","production_mode":"living_scene","media_type":"reactive_plate","start_seconds":0,"end_seconds":31,"source_timing":"analysis/audiomap.json",
+  "media_evidence":[
+    {"path":"production/index.html","sha256":"ec193a26dc82d6bc92b8d22e93e806b1f0684669159933ff82d81fe563ebdf51","status":"generated"},
+    {"path":"production/build_control_map.py","sha256":"2b2a8704bbe68bd233b98df85ac1a85c4858a7d5086610c433681e3bf1773733","status":"generated"},
+    {"path":"production/timeline.json","sha256":"03157ed1b7dace602bd2e4d688216261591b163d7dcc7d4cb11866b8988448e3","status":"derived"}
+  ]
+}

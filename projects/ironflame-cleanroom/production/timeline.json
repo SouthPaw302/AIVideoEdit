@@ -1,0 +1,23 @@
+{
+  "schema": "aivideoedit.scene-timeline.v1",
+  "duration_sec": 244.68,
+  "scenes": [
+    {"id":"MC-01","start":0,"end":31},
+    {"id":"MC-02","start":31,"end":46},
+    {"id":"MC-03","start":46,"end":67},
+    {"id":"MC-04","start":67,"end":79},
+    {"id":"MC-05","start":79,"end":165},
+    {"id":"MC-06","start":165,"end":177},
+    {"id":"MC-07","start":177,"end":188},
+    {"id":"MC-08","start":188,"end":210},
+    {"id":"MC-09","start":210,"end":233},
+    {"id":"MC-10","start":233,"end":244.68}
+  ],
+  "transitions": [
+    {"at":31.0,"effect":"organic_warp","duration":0.7},
+    {"at":79.0,"effect":"ripple_waves","duration":0.8},
+    {"at":177.0,"effect":"chromatic_split","duration":0.55},
+    {"at":188.0,"effect":"gravity_lens","duration":0.85},
+    {"at":210.0,"effect":"morph_warp","duration":0.75}
+  ]
+}

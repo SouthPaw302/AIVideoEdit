@@ -1,23 +1,8 @@
 {
-  "schema": "aivideoedit.operating-order.v1",
-  "mission": "Create a completely new visual music video for the canonical IronFlame song without reusing any historical IronFlame visual work.",
-  "direction_authority": "music_led",
-  "production_mode": "living_scene",
-  "canon_lock": {
-    "locked": true,
-    "picture_language": "Molten Cartography: abstract reactive topographic strata, contour pressure, liquid-metal sheets and moire interference on an obsidian field.",
-    "items": [
-      "no historical IronFlame visual reuse",
-      "no literal people, houses, wolves, armor, forge, rain-scene or flame iconography",
-      "internal material motion is primary and camera motion is restrained",
-      "all timing derives from analysis/audiomap.json",
-      "same timestamp must produce the same frame"
-    ]
-  },
-  "accepted_baseline": {"status": "none", "file_or_locator": null, "sha256": null, "user_acceptance_statement": null},
-  "accepted_source_library": {"status": "none", "role": null, "file_or_locator": null, "sha256": null, "user_acceptance_statement": null, "content_reuse_authorized": false, "timeline_locked": false},
-  "refinement_scope": {"active": false, "goal": null, "allowed_changes": [], "forbidden_changes": [], "restart_authorized": false},
-  "recut_scope": {"active": false, "named_defects": [], "allowed_changes": [], "forbidden_changes": [], "source_replacement_authorized": false},
-  "current_user_direction": "Choose a failed song attempt and create a new production video that is not visually related to what was produced before. Please Don't stop.",
-  "exact_next_action": "Build deterministic Molten Cartography shot packages with concrete procedural media evidence, then render representative proofs before FX lock."
+  "schema":"aivideoedit.operating-order.v1","mission":"Create a completely new visual music video for the canonical IronFlame song without reusing any historical IronFlame visual work.","direction_authority":"music_led","production_mode":"living_scene",
+  "canon_lock":{"locked":true,"picture_language":"Molten Cartography: abstract reactive topographic strata, contour pressure, liquid-metal sheets and moire interference on an obsidian field.","items":["no historical IronFlame visual reuse","no literal people, houses, wolves, armor, forge, rain-scene or flame iconography","internal material motion is primary and camera motion is restrained","all timing derives from analysis/audiomap.json","same timestamp must produce the same frame"]},
+  "accepted_baseline":{"status":"none","file_or_locator":null,"sha256":null,"user_acceptance_statement":null},"accepted_source_library":{"status":"none","role":null,"file_or_locator":null,"sha256":null,"user_acceptance_statement":null,"content_reuse_authorized":false,"timeline_locked":false},
+  "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},"recut_scope":{"active":false,"named_defects":[],"allowed_changes":[],"forbidden_changes":[],"source_replacement_authorized":false},
+  "current_user_direction":"Choose a failed song attempt and create a new production video that is not visually related to what was produced before. Please Don't stop.",
+  "exact_next_action":"Run timeline/runtime QC and render representative Molten Cartography proofs from the canonical audio-control map; inspect proof frames before accepting shots or locking experimental transitions."
 }
