@@ -15,8 +15,12 @@ const assets = [
     dst: resolve(vendor, 'aivideoedit-gsap.min.js'),
   },
   {
-    src: resolve(here, 'node_modules', '@hyperframes', 'shader-transitions', 'dist', 'index.global.js'),
-    dst: resolve(vendor, 'aivideoedit-shader-transitions.js'),
+    src: resolve(here, 'node_modules', 'aivideoedit-transition-core', 'dist', 'index.global.js'),
+    dst: resolve(vendor, 'aivideoedit-transition-core.js'),
+  },
+  {
+    src: resolve(here, 'transition_bridge.js'),
+    dst: resolve(vendor, 'aivideoedit-transitions.js'),
   },
 ];
 
