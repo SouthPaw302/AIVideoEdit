@@ -11,6 +11,7 @@ ROOT = HERE.parents[2]
 DEFAULT_REGISTRY = ROOT / "general/reusable/STANDARD_WORKFLOW_REGISTRY.json"
 MEDIA_MATRIX = ROOT / "general/reusable/MEDIA_CAPABILITY_MATRIX.json"
 VALID_MODES = {"living_scene", "cinematic", "hybrid"}
+OPTIONAL_RUNTIME_IDS = {"browser_scene_runtime"}
 FORBIDDEN_KEYS = {"project", "origin_project", "source_project", "production_name"}
 
 
@@ -136,6 +137,17 @@ def resolve_project(project: Path, registry: dict):
     caps = plan.get("selected_capabilities", [])
     if not isinstance(caps, list):
         raise ValueError("MEDIA_PLAN.selected_capabilities must be a list")
+
+    optional_runtimes = order.get("optional_runtimes", [])
+    if optional_runtimes is None:
+        optional_runtimes = []
+    if not isinstance(optional_runtimes, list) or any(not isinstance(x, str) or not x.strip() for x in optional_runtimes):
+        raise ValueError("OPERATING_ORDER.optional_runtimes must be an array of non-empty runtime ids")
+    optional_runtimes = list(dict.fromkeys(optional_runtimes))
+    unknown_runtimes = sorted(set(optional_runtimes) - OPTIONAL_RUNTIME_IDS)
+    if unknown_runtimes:
+        raise ValueError("unknown optional runtime ids: " + ", ".join(unknown_runtimes))
+
     overrides = order.get("standard_workflow_overrides", {}) if isinstance(order.get("standard_workflow_overrides"), dict) else {}
     selected = resolve(registry, mode, caps, overrides.get("include"), overrides.get("exclude"))
     return {
@@ -143,6 +155,7 @@ def resolve_project(project: Path, registry: dict):
         "selected_capabilities": caps,
         "selected_workflows": [wf["id"] for wf in selected],
         "selected_workflow_names": [wf["name"] for wf in selected],
+        "optional_runtimes": optional_runtimes,
     }
 
 
@@ -189,7 +202,7 @@ def main():
     else:
         mode = args.mode or "hybrid"
         selected = resolve(reg, mode, args.capability, args.include, args.exclude)
-        result = {"mode": mode, "selected_capabilities": args.capability, "selected_workflows": [x["id"] for x in selected], "selected_workflow_names": [x["name"] for x in selected]}
+        result = {"mode": mode, "selected_capabilities": args.capability, "selected_workflows": [x["id"] for x in selected], "selected_workflow_names": [x["name"] for x in selected], "optional_runtimes": []}
     result["result"] = "PASS"
     print(json.dumps(result, indent=2) if args.json else "\n".join(result["selected_workflow_names"]))
     return 0
