@@ -29,6 +29,19 @@ REGISTRY = OS_ROOT / "general/reusable/STANDARD_WORKFLOW_REGISTRY.json"
 RESOLVER = OS_ROOT / "general/reusable/tools/workflow_resolver.py"
 MEDIA = OS_ROOT / "general/reusable/MEDIA_CAPABILITY_MATRIX.json"
 
+# Optional execution engines may extend an already-resolved AIVideoEdit workflow,
+# but they may never register themselves as workflow authority. This protects the
+# existing director/bootstrap/guard machinery from being silently replaced by an
+# implementation-specific renderer, transition package, or audio bridge.
+OPTIONAL_RUNTIME_MARKERS = {
+    "render_runtime",
+    "render_scene.mjs",
+    "aivideoedit-render-core",
+    "aivideoedit-render-cli",
+    "transition_bridge.js",
+    "audio_mix_bridge.js",
+}
+
 
 def load_module(path: Path):
     spec = importlib.util.spec_from_file_location("aivideoedit_workflow_resolver_guard", path)
@@ -44,6 +57,18 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def validate_optional_runtime_boundary(registry: dict):
+    serialized = json.dumps(registry, sort_keys=True).lower()
+    errors = []
+    for marker in sorted(OPTIONAL_RUNTIME_MARKERS):
+        if marker.lower() in serialized:
+            errors.append(
+                f"optional runtime implementation marker {marker!r} is forbidden in STANDARD_WORKFLOW_REGISTRY; "
+                "resolve the AIVideoEdit workflow first, then invoke optional runtime tools as subordinate capabilities"
+            )
+    return errors
+
+
 def validate(branch: str):
     errors = []
     if not REGISTRY.is_file():
@@ -55,6 +80,7 @@ def validate(branch: str):
     media = load_json(MEDIA) if MEDIA.is_file() else None
     errors.extend(mod.validate_registry(registry, media))
     errors.extend(mod.regression_scenarios(registry))
+    errors.extend(validate_optional_runtime_boundary(registry))
     if errors or branch == "main":
         return errors
 

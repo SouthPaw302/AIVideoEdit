@@ -2,6 +2,21 @@
 
 Optional deterministic rendering/QC support for AIVideoEdit productions. This directory is deliberately isolated from `bootstrap.py` and existing GitHub Actions. Installing its Node dependencies does not alter the repository's Python environment or agent boot sequence.
 
+## Invocation authority
+
+This runtime is **not** a workflow selector and must never become the default production path merely because this directory exists.
+
+The authoritative order is:
+
+1. Agent boot and production guards.
+2. `general/reusable/tools/workflow_resolver.py` resolves the approved standard workflow set from the active project.
+3. The director/storyboard/shot plan establishes what is being produced.
+4. Only then may this runtime be used as an implementation backend for a resolved workflow or an explicitly declared project capability.
+
+A production must not switch itself to browser composition, create a composition root, or replace normal assembly/rendering solely because `render_runtime/` is available. If the active project does not explicitly opt in to the scene runtime, use the resolved standard workflow exactly as before this runtime was added.
+
+The scene runtime may complement standard workflows for deterministic 2D/2.5D motion, overlays, particles, typography, reusable transparent layers, transitions, or local browser-rendered shots. It does not replace source extraction, hero-frame selection, generated-media creation, living-scene assembly, conventional video editing, FFmpeg assembly, project state, or delivery/QC.
+
 ## Requirements
 
 - Node.js 22+
@@ -105,7 +120,7 @@ This operation never changes scene order and does not invent shots. It only move
 
 ## Audio mixing and ducking
 
-AIVideoEdit can now carry a project-neutral audio mix plan with track gain, effect chains, automation, submix groups, and deterministic voice-over ducking.
+AIVideoEdit can carry a project-neutral audio mix plan with track gain, effect chains, automation, submix groups, and deterministic voice-over ducking.
 
 Start from `audio_mix.example.json`, then validate/compile it:
 
@@ -133,8 +148,9 @@ Supported effect families are gain, filters/EQ, compressor, limiter, gate, satur
 - No modification of agent boot.
 - No modification of existing GitHub Actions.
 - No automatic effect promotion.
-- No replacement of `PRIME_DIRECTIVE.md`, project state, storyboard, narrative contracts, or Zero-Drift.
-- Rendering, timing, transitions, audio mixing, and QC are tools called by the existing director/agent workflow.
+- No replacement of `PRIME_DIRECTIVE.md`, project state, storyboard, narrative contracts, Zero-Drift, the workflow resolver, or standard assembly/rendering.
+- Rendering, timing, transitions, audio mixing, and QC are optional tools called by the existing director/agent workflow after workflow selection.
+- Presence of this directory is never sufficient authority to select the runtime.
 
 ## Third-party implementation dependencies
 

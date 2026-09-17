@@ -1,10 +1,25 @@
 # AIVideoEdit Scene Runtime Contract
 
-This contract adds a deterministic browser-renderable scene format to AIVideoEdit. It is subordinate to `PRIME_DIRECTIVE.md`, `DOCTRINE_LIVING_SCENE.md`, `PRODUCTION_CONTRACT.json`, narrative/style contracts, branch policy, and project state. It does **not** replace agent boot, director logic, storyboard approval, asset provenance, continuity rules, or GitHub workflow guards.
+This contract adds a deterministic browser-renderable scene format to AIVideoEdit. It is subordinate to `PRIME_DIRECTIVE.md`, `DOCTRINE_LIVING_SCENE.md`, `PRODUCTION_CONTRACT.json`, narrative/style contracts, branch policy, project state, and the standard workflow resolver. It does **not** replace agent boot, director logic, storyboard approval, asset provenance, continuity rules, or GitHub workflow guards.
+
+## Invocation authority
+
+The scene runtime is an optional implementation backend, not a production workflow.
+
+The authoritative execution order is:
+
+1. Agent boot and production guards.
+2. Resolve the active project's approved standard workflow set with `general/reusable/tools/workflow_resolver.py`.
+3. Establish the director/storyboard/shot plan and approved media provenance.
+4. Use the scene runtime only when it complements a resolved workflow or the active project explicitly authorizes it.
+
+The mere presence of `general/reusable/render_runtime/` must never cause an agent to switch a production to browser composition, create a new composition architecture, bypass the normal assembly path, or replace FFmpeg/source-derived/generated-media workflows that were already resolved for the project.
+
+If there is ambiguity, the resolved standard workflow wins and the scene runtime stays unused.
 
 ## Purpose
 
-Use browser-renderable compositions when a production benefits from deterministic 2D/2.5D motion, typography, overlays, particles, SVG/canvas/WebGL effects, local video layers, or reusable transparent renders. The director still decides what the shot is; this runtime only makes the approved shot reproducible.
+Use browser-renderable compositions when an already-resolved production benefits from deterministic 2D/2.5D motion, typography, overlays, particles, SVG/canvas/WebGL effects, local video layers, reusable transparent renders, or transition layers. The director still decides what the shot is; this runtime only makes an approved shot or layer reproducible.
 
 ## Composition root
 
@@ -45,11 +60,12 @@ When a production uses `audiomap.json`, that file is the canonical machine timin
 A render candidate should pass, in order:
 
 1. Existing AIVideoEdit production/narrative/branch guards.
-2. Scene structural/runtime/layout/motion/contrast checks.
-3. Snapshot inspection at scene starts, strongest audio moments, hard stops/silences where relevant, and the tail frame.
-4. Existing mode-aware, continuity, drift, and export QC.
+2. Standard workflow resolution for the active project.
+3. Scene structural/runtime/layout/motion/contrast checks, if the runtime was actually selected.
+4. Snapshot inspection at scene starts, strongest audio moments, hard stops/silences where relevant, and the tail frame.
+5. Existing mode-aware, continuity, drift, and export QC.
 
-A scene-runtime QC pass cannot override an AIVideoEdit production guard failure.
+A scene-runtime QC pass cannot override an AIVideoEdit production guard or workflow-selection failure.
 
 ## Output
 
@@ -57,4 +73,6 @@ Default delivery is H.264/AAC MP4. Transparent intermediate layers may be MOV/Pr
 
 ## Implementation boundary
 
-The initial runtime uses maintained open-source rendering components behind AIVideoEdit wrappers. Their package/API names are implementation details, not workflow identities. AIVideoEdit commands, contracts, project state, and branches remain the public operational surface.
+The runtime uses maintained open-source rendering components behind AIVideoEdit wrappers. Their package/API names are implementation details, not workflow identities. AIVideoEdit commands, contracts, project state, standard workflow selection, and branches remain the public operational surface.
+
+The runtime must remain additive. It must not modify agent boot, existing GitHub Actions, or project workflow selection merely to make itself usable.
