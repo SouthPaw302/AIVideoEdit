@@ -1,0 +1,91 @@
+{
+  "output": "projects/ironflame-cleanroom/analysis/audiomap.json",
+  "duration_sec": 244.68,
+  "bpm": 89.1029,
+  "beats": 339,
+  "events": 738,
+  "rolls": 44,
+  "silences": 2,
+  "key_moments": [
+    {
+      "t": 233.0,
+      "kind": "drop",
+      "delta": -0.4658
+    },
+    {
+      "t": 31.0,
+      "kind": "surge",
+      "delta": 0.4011
+    },
+    {
+      "t": 188.0,
+      "kind": "surge",
+      "delta": 0.3469
+    },
+    {
+      "t": 210.0,
+      "kind": "surge",
+      "delta": 0.3208
+    },
+    {
+      "t": 28.0,
+      "kind": "drop",
+      "delta": -0.32
+    },
+    {
+      "t": 46.0,
+      "kind": "surge",
+      "delta": 0.3172
+    },
+    {
+      "t": 67.0,
+      "kind": "surge",
+      "delta": 0.3069
+    },
+    {
+      "t": 79.0,
+      "kind": "surge",
+      "delta": 0.3029
+    },
+    {
+      "t": 39.0,
+      "kind": "drop",
+      "delta": -0.2869
+    },
+    {
+      "t": 2.0,
+      "kind": "surge",
+      "delta": 0.2653
+    },
+    {
+      "t": 177.0,
+      "kind": "surge",
+      "delta": 0.2636
+    },
+    {
+      "t": 209.0,
+      "kind": "drop",
+      "delta": -0.2628
+    },
+    {
+      "t": 44.0,
+      "kind": "drop",
+      "delta": -0.2625
+    },
+    {
+      "t": 165.0,
+      "kind": "surge",
+      "delta": 0.2618
+    },
+    {
+      "t": 53.0,
+      "kind": "surge",
+      "delta": 0.2582
+    },
+    {
+      "t": 192.0,
+      "kind": "drop",
+      "delta": -0.2529
+    }
+  ]
+}
