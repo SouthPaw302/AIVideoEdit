@@ -1,0 +1,33 @@
+{
+  "schema":"aivideoedit.ironflame-fx-plan.v1",
+  "source_authority":"Drive reference_video.mp4 remains the locked picture/continuity authority; FX are additive only.",
+  "rules":{
+    "preserve_character_identity":true,
+    "preserve_environment_topology":true,
+    "preserve_source_edit_timing":true,
+    "no_generated_replacement_frames":true,
+    "audio_control_map":"projects/ironflame-cleanroom/analysis/audiomap.json"
+  },
+  "segments":[
+    {"start":0.0,"end":18.0,"effects":[["FX2-ATM-021",0.24],["FX2-LIGHT-025",0.16]]},
+    {"start":18.0,"end":42.0,"effects":[["FX2-ATM-025",0.30],["FX2-LIGHT-027",0.18]]},
+    {"start":42.0,"end":77.0,"effects":[["FX2-ATM-022",0.36],["FX2-LIGHT-023",0.26],["FX2-MOTION-024",0.16]]},
+    {"start":77.0,"end":95.0,"effects":[["FX2-ATM-021",0.28],["FX2-SPATIAL-021",0.13]]},
+    {"start":95.0,"end":110.0,"effects":[["FX2-DISTORT-021",0.18],["FX2-LIGHT-023",0.24]]},
+    {"start":110.0,"end":122.0,"effects":[["FX2-ATM-022",0.34],["FX2-LIGHT-027",0.18]]},
+    {"start":122.0,"end":137.0,"effects":[["FX2-CAMERA-024",0.18],["FX2-LIGHT-027",0.22]]},
+    {"start":137.0,"end":167.0,"effects":[["FX2-MOTION-024",0.16],["FX2-ATM-021",0.26]]},
+    {"start":167.0,"end":187.0,"effects":[["FX2-LIGHT-025",0.20],["FX2-ATM-025",0.28]]},
+    {"start":187.0,"end":210.0,"effects":[["FX2-SPATIAL-021",0.14],["FX2-DISTORT-021",0.18]]},
+    {"start":210.0,"end":233.0,"effects":[["FX2-LIGHT-027",0.22],["FX2-ATM-021",0.24]]},
+    {"start":233.0,"end":244.68,"effects":[["FX2-LIGHT-025",0.22],["FX2-CAMERA-024",0.16]]}
+  ],
+  "proof_windows":[
+    {"start":14.0,"duration":4.0},
+    {"start":52.0,"duration":4.0},
+    {"start":101.0,"duration":4.0},
+    {"start":146.0,"duration":4.0},
+    {"start":194.0,"duration":4.0},
+    {"start":222.0,"duration":4.0}
+  ]
+}
