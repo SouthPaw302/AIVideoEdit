@@ -1,0 +1,131 @@
+name: DeepSeek Harness Production Probe
+on:
+  push:
+    branches: [prototype/deepseek-harness]
+    paths: [".github/workflows/deepseek-harness-production.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  production-probe:
+    runs-on: ubuntu-latest
+    env:
+      AIVE_HOST: 127.0.0.1
+      AIVE_PORT: 8080
+      AIVE_RUNTIME: ${{ runner.temp }}/aive-runtime
+      PROJECT_ID: midnight-tribal-pulse-deepseek-harness-test
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: prototype/deepseek-harness
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Assert branch isolation
+        run: test "$(git branch --show-current)" = "prototype/deepseek-harness"
+      - name: Install FFmpeg
+        run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - name: Download supplied media
+        env:
+          AUDIO_URL: "https://sdmntpreastus2.oaiusercontent.com/files/00000000-4004-81f6-9af2-b46736a3b576/raw?se=2026-09-18T08%3A00%3A53Z&sp=r&sv=2026-02-06&sr=b&scid=a5236377-9d1d-5f87-bd17-aeacc2350844&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A24%3A39Z&ske=2026-09-19T02%3A24%3A39Z&sks=b&skv=2026-02-06&sig=W0MQHH5OaCpPvT29FsXbPKtggkg2hMXRh2E1wtJH/uc%3D"
+          VIDEO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-52fc-81f7-8ee0-558eaaadb9a6/raw?se=2026-09-18T08%3A00%3A54Z&sp=r&sv=2026-02-06&sr=b&scid=5537a5b0-539d-5663-bfee-704cfbf9feb3&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A07%3A25Z&ske=2026-09-19T02%3A07%3A25Z&sks=b&skv=2026-02-06&sig=88zjQtXEvu/AL0sJCU/dB0kdGY7MN7uGIAyjArK0mdA%3D"
+        run: |
+          mkdir -p "$RUNNER_TEMP/source"
+          curl -fL --retry 3 "$AUDIO_URL" -o "$RUNNER_TEMP/source/Midnight Tribal Pulse (Remastered).mp3"
+          curl -fL --retry 3 "$VIDEO_URL" -o "$RUNNER_TEMP/source/mescalito_living_scene.mp4"
+          ffprobe -v error -show_entries format=duration,size -of json "$RUNNER_TEMP/source/Midnight Tribal Pulse (Remastered).mp3"
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate -show_entries format=duration,size -of json "$RUNNER_TEMP/source/mescalito_living_scene.mp4"
+      - name: Start Tool API
+        run: |
+          python prototype/backend_gui/stack.py >"$RUNNER_TEMP/aive-stack.log" 2>&1 &
+          for i in $(seq 1 40); do curl -fsS http://127.0.0.1:8080/api/system >/dev/null && break; sleep 1; done
+      - name: Bootstrap core
+        run: |
+          curl -fsS -X POST http://127.0.0.1:8080/api/core/bootstrap -H 'Content-Type: application/json' --data '{"offline":false}' | tee "$RUNNER_TEMP/core.json"
+          python -c 'import json,os; p=json.load(open(os.environ["RUNNER_TEMP"]+"/core.json")); assert p["bootstrapped"] and p["host_branch"]=="prototype/deepseek-harness" and p["core_branch"]=="main" and p["guard_result"]=="PASS"'
+      - name: Create project and ingest media
+        run: |
+          curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data '{"name":"project.create","arguments":{"name":"Midnight Tribal Pulse DeepSeek Harness Test"}}' > "$RUNNER_TEMP/project.json"
+          curl -fsS -X POST "http://127.0.0.1:8080/api/assets?project=$PROJECT_ID&filename=Midnight%20Tribal%20Pulse%20(Remastered).mp3" -H 'Content-Type: audio/mpeg' --data-binary @"$RUNNER_TEMP/source/Midnight Tribal Pulse (Remastered).mp3" > "$RUNNER_TEMP/audio.json"
+          curl -fsS -X POST "http://127.0.0.1:8080/api/assets?project=$PROJECT_ID&filename=mescalito_living_scene.mp4" -H 'Content-Type: video/mp4' --data-binary @"$RUNNER_TEMP/source/mescalito_living_scene.mp4" > "$RUNNER_TEMP/video.json"
+          python - <<'PY'
+          import json,time,urllib.request,os
+          pid=os.environ["PROJECT_ID"]
+          for _ in range(120):
+              with urllib.request.urlopen(f"http://127.0.0.1:8080/api/assets?project={pid}") as r:data=json.load(r)
+              if len(data.get("assets",[]))>=2 and all(a.get("status")=="ready" for a in data["assets"]):break
+              time.sleep(1)
+          else: raise SystemExit("asset analysis timeout")
+          PY
+      - name: Prepare and QC
+        run: |
+          curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data '{"name":"project.prepare","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}' > "$RUNNER_TEMP/prepare.json"
+          python - <<'PY'
+          import json,time,urllib.request,os
+          pid=os.environ["PROJECT_ID"]
+          for _ in range(180):
+              req=urllib.request.Request("http://127.0.0.1:8080/api/tools/call",data=json.dumps({"name":"project.status","arguments":{"project_id":pid}}).encode(),headers={"Content-Type":"application/json"})
+              with urllib.request.urlopen(req) as r:data=json.load(r)["result"]
+              if data.get("active_jobs")==0 and data.get("qc_fail")==0 and data.get("qc_pass",0)>=2:break
+              time.sleep(1)
+          else: raise SystemExit("QC timeout")
+          PY
+      - name: Initialize and ingest canonical production
+        run: |
+          for spec in             '{"name":"production.initialize","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'             '{"name":"harness.context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'             '{"name":"production.sync_assets","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'             '{"name":"harness.context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'             '{"name":"production.advance","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test","target_stage":"SOURCE_INGESTED"}}'             '{"name":"harness.context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'
+          do
+            curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data "$spec" | tee -a "$RUNNER_TEMP/transitions.jsonl"
+          done
+      - name: Analyze references and music
+        run: |
+          curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data '{"name":"production.set_music_context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test","lyrics_status":"absent","genre":"psychedelic tribal electronic / tribal house","directing_use":"music structure, energy, rhythm and transitions drive pacing; supplied visual reference governs picture language"}}' > "$RUNNER_TEMP/music-context.json"
+          curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data '{"name":"production.analyze","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}' > "$RUNNER_TEMP/analyze.json"
+          python - <<'PY'
+          import json,time,urllib.request,os
+          pid=os.environ["PROJECT_ID"]
+          for _ in range(300):
+              req=urllib.request.Request("http://127.0.0.1:8080/api/tools/call",data=json.dumps({"name":"project.status","arguments":{"project_id":pid}}).encode(),headers={"Content-Type":"application/json"})
+              with urllib.request.urlopen(req) as r:data=json.load(r)["result"]
+              if data.get("active_jobs")==0:break
+              time.sleep(1)
+          else: raise SystemExit("production analysis timeout")
+          PY
+          for spec in             '{"name":"harness.context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'             '{"name":"production.advance","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test","target_stage":"REFERENCES_ANALYZED"}}'             '{"name":"harness.context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'
+          do
+            curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data "$spec" | tee -a "$RUNNER_TEMP/transitions.jsonl"
+          done
+      - name: Establish and lock direction
+        run: |
+          curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data '{"name":"approach.set_capabilities","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test","capabilities":["source_video","extracted_frames","generated_stills","generated_support_imagery","living_painting","living_still_fx","layered_composite","depth_25d","atmospheric_plate","reactive_plate","loop_media","transition_media","conventional_video","analysis_qc_media"],"approach_summary":"Reference-led hybrid production. Preserve the supplied nocturnal desert-oracle picture language: ornate organic figure, sacred circular geometry, cactus/rock foreground, lunar/cosmic sky, warm gold and earth against deep indigo. Extend it with source-derived and generated coherent stills, living-scene internal motion, restrained 2.5D depth, atmospheric particles, and measured music-reactive illumination. Camera movement remains secondary; section changes may use deliberate cinematic transitions without breaking the visual world."}}' > "$RUNNER_TEMP/approach.json"
+          curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data '{"name":"operating.configure_v2","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test","direction_authority":"reference_led","production_mode":"hybrid","mission":"Expand the supplied desert-cosmos living scene into one coherent nocturnal ritual world across the entire track, with visual intensity rising and releasing with the music.","current_user_direction":"Use only this run supplied song and reference media as creative authority; do not import imagery, characters, storyboards or assumptions from previous productions.","exact_next_action":"Lock the supplied reference as picture-language baseline, then author a full-song storyboard mapped to analyzed musical sections."}}' > "$RUNNER_TEMP/operating.json"
+          python - <<'PY'
+          import json,urllib.request,os
+          pid=os.environ["PROJECT_ID"]
+          def call(body):
+              req=urllib.request.Request("http://127.0.0.1:8080/api/tools/call",data=json.dumps(body).encode(),headers={"Content-Type":"application/json"})
+              with urllib.request.urlopen(req) as r:return json.load(r)
+          assets=call({"name":"media.list","arguments":{"project_id":pid}})["result"]["assets"]
+          vid=next(a for a in assets if a.get("filename")=="mescalito_living_scene.mp4")
+          result=call({"name":"operating.lock_canon","arguments":{"project_id":pid,"picture_language":"Psychedelic nocturnal desert oracle: intricate organic and sacred-geometry illustration, cactus and rock terrain, celestial moon and star field, warm amber-gold bioluminescence against indigo-violet night, contemplative mystical scale, stable composition with living internal motion.","items":["Preserve warm gold/earth versus deep indigo-violet palette.","Preserve sacred circular halo geometry and luminous orb motifs without cloning one static composition.","Desert botanical and rocky foreground remains tactile and richly detailed.","Motion is primarily internal: glow, particles, celestial drift, botanical breathing, ornament micro-motion and parallax; avoid aggressive camera drift.","Visual evolution follows musical energy while retaining one coherent world.","Do not introduce unrelated characters, urban imagery, photoreal live-action aesthetics or previous-project canon."],"baseline_asset_id":vid["id"],"acceptance_statement":"The supplied mescalito_living_scene.mp4 is the current-run visual reference and accepted baseline for picture language and motion behavior."}})
+          print(json.dumps(result,indent=2))
+          PY
+          for spec in             '{"name":"harness.context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'             '{"name":"production.advance","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test","target_stage":"APPROACH_ESTABLISHED"}}'             '{"name":"harness.context","arguments":{"project_id":"midnight-tribal-pulse-deepseek-harness-test"}}'
+          do
+            curl -fsS -X POST http://127.0.0.1:8080/api/tools/call -H 'Content-Type: application/json' --data "$spec" | tee -a "$RUNNER_TEMP/transitions.jsonl"
+          done
+      - name: Package evidence
+        run: |
+          PDIR="$AIVE_RUNTIME/projects/$PROJECT_ID/engine/projects/$PROJECT_ID"
+          mkdir -p "$RUNNER_TEMP/evidence"
+          cp "$RUNNER_TEMP"/*.json "$RUNNER_TEMP/evidence/" 2>/dev/null || true
+          cp "$RUNNER_TEMP"/*.jsonl "$RUNNER_TEMP/evidence/" 2>/dev/null || true
+          cp "$RUNNER_TEMP/aive-stack.log" "$RUNNER_TEMP/evidence/" || true
+          for f in PROJECT_STATE.json REFERENCE_MANIFEST.json MUSIC_ANALYSIS.json MEDIA_PLAN.json OPERATING_ORDER.json; do cp "$PDIR/$f" "$RUNNER_TEMP/evidence/$f"; done
+          cp -R "$AIVE_RUNTIME/projects/$PROJECT_ID/analysis" "$RUNNER_TEMP/evidence/analysis"
+          tar -czf "$RUNNER_TEMP/deepseek-harness-direction-evidence.tgz" -C "$RUNNER_TEMP/evidence" .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deepseek-harness-direction-evidence
+          path: ${{ runner.temp }}/deepseek-harness-direction-evidence.tgz
+          retention-days: 3
