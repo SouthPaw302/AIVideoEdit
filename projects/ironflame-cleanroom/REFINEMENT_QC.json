@@ -1,0 +1,28 @@
+{
+  "schema":"aivideoedit.refinement-qc.v1",
+  "status":"PASS",
+  "source":{
+    "locator":"Google Drive file 1ELAkh_6RHD6uGkuNAMnvIfDOTbne0dps",
+    "sha256":"ddedf3632ebf3837518090dfa85bc437de7c07de2ad4c21af1b82b80f47b23d3",
+    "duration_seconds":244.68
+  },
+  "post":{
+    "sha256":"7ae715b7fbe254e802b51a00c0f1ea5641bec3e51b54a17136df4111c982eddc",
+    "duration_seconds":244.68,
+    "video":{"width":1280,"height":720,"fps":24,"frames":5872},
+    "audio":{"codec":"aac","sample_rate_hz":48000,"channels":2,"source_stream_sha256":"f63e0ce4dc38ae08b02e0f3ab281aef359ea27d5e861cc13dc76e176675f8837","post_stream_sha256":"f63e0ce4dc38ae08b02e0f3ab281aef359ea27d5e861cc13dc76e176675f8837","identical":true}
+  },
+  "evidence":{
+    "source_output_correlation_min":0.958410,
+    "source_output_mean_abs_delta_min":7.080970,
+    "source_output_mean_abs_delta_max":9.878888,
+    "black_frames":{"source_detected":0,"post_detected":0},
+    "freeze_detection":{"source_events":30,"source_total_seconds":63.125,"post_events":13,"post_total_seconds":30.167,"new_macro_freeze_defect":false},
+    "framing_aspect":"PASS - unchanged 1280x720",
+    "audio_sync":"PASS - original AAC elementary stream copied bit-for-bit",
+    "continuity_warnings":[],
+    "mode_aware_qc":"PASS - source identity/environment/timing preserved while additive internal/atmospheric motion remains visible",
+    "source_canon_integrity":"PASS"
+  },
+  "creative_acceptance":"PENDING_USER_REVIEW"
+}
