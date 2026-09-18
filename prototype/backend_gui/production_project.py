@@ -178,7 +178,15 @@ def _scaffold(project_id: str, name: str, engine: Path) -> Path:
         "explicit_user_authorizations": [],
     })
     _write_json(project_dir / "REFERENCE_MANIFEST.json", {"schema": "aivideoedit.reference-manifest.v1", "videos": [], "images": [], "audio": []})
-    _write_json(project_dir / "MEDIA_PLAN.json", {"selected_capabilities": [], "user_approach_established": False})
+    _write_json(project_dir / "MEDIA_PLAN.json", {
+        "schema": "aivideoedit.media-plan.v1",
+        "selected_capabilities": [],
+        "user_approach_established": False,
+        "production_mode": "hybrid",
+        "production_mode_authority": "bootstrap_compatibility_only",
+        "production_mode_locked": False,
+        "bootstrap_note": "Provisional resolver input only; no creative direction is implied. Replace through Director Brain after current-production analysis.",
+    })
     _write_json(project_dir / "ASSET_MANIFEST.json", {"schema": "aivideoedit.asset-manifest.v1", "assets": []})
     _write_json(project_dir / "MUSIC_ANALYSIS.json", {})
     _write_json(project_dir / "SCRIPT.json", {"entries": []})
