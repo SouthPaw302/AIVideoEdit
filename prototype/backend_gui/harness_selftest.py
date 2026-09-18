@@ -17,7 +17,7 @@ def main() -> int:
             "id": 1,
             "method": "initialize",
             "params": {
-                "protocolVersion": "2026-07-28",
+                "protocolVersion": "2025-11-25",
                 "capabilities": {},
                 "clientInfo": {"name": "aivideoedit-selftest", "version": "1"},
             },
@@ -47,6 +47,8 @@ def main() -> int:
     failures = []
     if init.get("serverInfo", {}).get("name") != "aivideoedit":
         failures.append("initialize did not identify the AIVideoEdit MCP server")
+    if init.get("protocolVersion") != "2025-11-25":
+        failures.append("legacy MCP protocol negotiation did not settle on 2025-11-25")
     for required in {"harness__status", "harness__context", "production__status", "production__guard"}:
         if required not in names:
             failures.append(f"missing MCP tool: {required}")
