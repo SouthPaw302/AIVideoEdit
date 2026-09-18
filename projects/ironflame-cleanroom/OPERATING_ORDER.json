@@ -1,8 +1,49 @@
 {
-  "schema":"aivideoedit.operating-order.v1","mission":"Create a completely new visual music video for the canonical IronFlame song without reusing any historical IronFlame visual work.","direction_authority":"music_led","production_mode":"living_scene",
-  "canon_lock":{"locked":true,"picture_language":"Molten Cartography: abstract reactive topographic strata, contour pressure, liquid-metal sheets and moire interference on an obsidian field.","items":["no historical IronFlame visual reuse","no literal people, houses, wolves, armor, forge, rain-scene or flame iconography","internal material motion is primary and camera motion is restrained","all timing derives from analysis/audiomap.json","same timestamp must produce the same frame"]},
-  "accepted_baseline":{"status":"none","file_or_locator":null,"sha256":null,"user_acceptance_statement":null},"accepted_source_library":{"status":"none","role":null,"file_or_locator":null,"sha256":null,"user_acceptance_statement":null,"content_reuse_authorized":false,"timeline_locked":false},
-  "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},"recut_scope":{"active":false,"named_defects":[],"allowed_changes":[],"forbidden_changes":[],"source_replacement_authorized":false},
-  "current_user_direction":"Choose a failed song attempt and create a new production video that is not visually related to what was produced before. Please Don't stop.",
-  "exact_next_action":"Run timeline/runtime QC and render representative Molten Cartography proofs from the canonical audio-control map; inspect proof frames before accepting shots or locking experimental transitions."
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Complete the latest reference-driven IronFlame production from the user-supplied reference video and Drive-backed movement media without restarting obsolete earlier visual routes.",
+  "direction_authority": "reference_led",
+  "production_mode": "living_scene",
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Reference-driven rain-dark fantasy sequence from the supplied IronFlame reference: one coherent female warrior/environment language carried through twelve source-derived movement sections with bounded pan/zoom and short reference-timed crossfades.",
+    "items": [
+      "user-supplied reference video is the active visual authority",
+      "twelve verified source-derived movement variants are the active picture source",
+      "preserve character and environment continuity across the full 244.68-second sequence",
+      "bounded pan/zoom and short crossfades only unless the user explicitly requests a new edit",
+      "Molten Cartography is historical proof only and is not active final authority",
+      "do not relaunch the failed GitHub Action merely because it exists"
+    ]
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "accepted_source_library": {
+    "status": "none",
+    "role": "active reference authority documented in REFERENCE_MANIFEST.json",
+    "file_or_locator": "Google Drive backup / 01_reference + 04_generated_stills",
+    "sha256": null,
+    "user_acceptance_statement": null,
+    "content_reuse_authorized": true,
+    "timeline_locked": false
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "source_replacement_authorized": false
+  },
+  "current_user_direction": "Resume the latest project from the media on Drive and continue it. Finish the reference-driven production rather than restarting an older route.",
+  "exact_next_action": "Present the technically QC-passed Drive final candidate for user review. Do not rerender or restart production unless the user requests a change."
 }

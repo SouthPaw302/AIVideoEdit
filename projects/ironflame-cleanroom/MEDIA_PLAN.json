@@ -2,66 +2,28 @@
   "schema": "aivideoedit.media-plan.v1",
   "user_approach_established": true,
   "selected_capabilities": [
-    "reactive_plate",
-    "atmospheric_plate",
-    "layered_composite",
-    "transition_media",
+    "source_video",
     "conventional_video",
+    "source_derived_coverage",
     "analysis_qc_media"
   ],
+  "active_visual_authority": {
+    "status": "reference_driven",
+    "reference_manifest": "REFERENCE_MANIFEST.json",
+    "source_video": "Google Drive backup / 01_reference/reference_video.mp4",
+    "movement_pack": "Google Drive backup / 04_generated_stills/IronFlame_unique_movement_variants.zip",
+    "movement_sections": 12,
+    "duration_seconds": 244.68,
+    "note": "This later reference-driven route supersedes the earlier clean-room Molten Cartography route."
+  },
   "visual_direction_gate": {
-    "required": true,
-    "presented_in_chat": true,
-    "options": [
-      {
-        "number": 1,
-        "name": "Molten Cartography",
-        "story_approach": "The song becomes an evolving abstract map whose strata, fault lines and contour pressure expose hidden depth without literal lyric illustration.",
-        "rendering_route": "Deterministic HTML/WebGL/canvas-style reactive contour fields, liquid-metal sheets, moire interference, bounded parallax and music-anchored transitions.",
-        "production_mode": "living_scene",
-        "storyboard": [
-          {"number":1,"description":"A nearly black plane reveals a few pearl contour lines as the song wakes."},
-          {"number":2,"description":"Measured surges force new strata upward; fault lines split and rejoin without becoming recognizable objects."},
-          {"number":3,"description":"The middle plateau becomes a deep layered map with slow orthographic drift and audio-reactive interference."},
-          {"number":4,"description":"Late surges compress the field into a central seam, then reopen it into broad coherent plates."},
-          {"number":5,"description":"At the terminal drop the map sheds layers until one residual line dissolves into black."}
-        ]
-      },
-      {
-        "number": 2,
-        "name": "Signal Cathedral",
-        "story_approach": "The music constructs and deconstructs a vast nonliteral architecture of light, negative space and impossible scale.",
-        "rendering_route": "Deterministic geometric volumes, volumetric light bands, restrained camera pushes and shader transitions synchronized to measured audio anchors.",
-        "production_mode": "cinematic",
-        "storyboard": [
-          {"number":1,"description":"Thin luminous planes establish an impossible empty chamber."},
-          {"number":2,"description":"Rhythmic events assemble columns and spans from pure geometry rather than real-world architecture."},
-          {"number":3,"description":"The main plateau reveals huge nested voids while the camera moves only on explicit axes."},
-          {"number":4,"description":"Late drops remove structural layers and expose a final suspended plane."},
-          {"number":5,"description":"The last plane extinguishes into featureless black."}
-        ]
-      },
-      {
-        "number": 3,
-        "name": "Ash Astronomy",
-        "story_approach": "The song unfolds as an invented celestial system made of dust, orbital traces and gravitational interference, with no literal starscape narrative.",
-        "rendering_route": "Procedural particle fields, orbital linework, lens-like warps, depth layers and measured energy-driven density changes.",
-        "production_mode": "hybrid",
-        "storyboard": [
-          {"number":1,"description":"Sparse particles and one orbital trace emerge from black."},
-          {"number":2,"description":"Transient clusters form temporary constellations that immediately dissolve."},
-          {"number":3,"description":"The sustained middle section develops nested orbital shells and gravitational lensing."},
-          {"number":4,"description":"Late surges collapse several shells into one dense rotating field."},
-          {"number":5,"description":"The terminal drop releases the particles outward and leaves a dark empty frame."}
-        ]
-      }
-    ],
-    "user_selection": {
-      "status": "selected",
-      "selected_option_numbers": [1],
-      "recorded_user_instruction": "Please Don't stop",
-      "selection_interpretation": "Current user explicitly instructed uninterrupted continuation; the director selected option 1 rather than pausing production for another invitation."
-    },
-    "locked": true
+    "required": false,
+    "status": "superseded_by_user_supplied_reference",
+    "note": "A no-reference concept gate is no longer authoritative because a user-supplied visual reference became the active production authority."
+  },
+  "historical_route": {
+    "name": "Molten Cartography",
+    "status": "historical_proof_only",
+    "reusable_as_active_final": false
   }
 }
