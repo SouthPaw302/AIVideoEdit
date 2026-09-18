@@ -52,7 +52,8 @@ def status() -> dict:
         "ok": True,
         "bridge": "mcp-stdio",
         "bridge_ready": True,
-        "deepseek_harness_detected": bool(dsh or npx),
+        "dsh_installed": bool(dsh),
+        "npx_available": bool(npx),
         "launcher": dsh or npx,
         "canonical_core": CORE.status(),
         "policy": {
