@@ -1,0 +1,52 @@
+name: IronFlame Song FX Gate
+
+on:
+  push:
+    branches: ["song/ironflame-cleanroom-20260917"]
+    paths:
+      - "projects/ironflame-cleanroom/FX_REQUIREMENTS.fx.json"
+      - "projects/ironflame-cleanroom/production/FX_PLAN.json"
+      - "projects/ironflame-cleanroom/production/render_fx_pass.py"
+      - ".github/workflows/ironflame-fx-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  song-fx-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install FX gate dependencies
+        run: python -m pip install --upgrade pip numpy opencv-python-headless
+      - name: Compile project renderer
+        run: python -m py_compile projects/ironflame-cleanroom/production/render_fx_pass.py
+      - name: Build song FX lock
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py             --manifest projects/ironflame-cleanroom/FX_REQUIREMENTS.fx.json             --lock-out projects/ironflame-cleanroom/fx.lock.json
+      - name: Re-verify immutable FX evidence
+        run: |
+          python general/reusable/fx_v2/precompile_gate.py             --manifest projects/ironflame-cleanroom/FX_REQUIREMENTS.fx.json             --verify-lock projects/ironflame-cleanroom/fx.lock.json
+      - name: Mark FX lock verified only after gate passes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("projects/ironflame-cleanroom/PROJECT_STATE.json")
+          d=json.loads(p.read_text())
+          d["fx_lock_verified"]=True
+          p.write_text(json.dumps(d,indent=2)+"\n")
+          PY
+      - name: Persist verified lock and state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projects/ironflame-cleanroom/fx.lock.json projects/ironflame-cleanroom/PROJECT_STATE.json
+          git commit -m "chore(ironflame): record verified song FX lock" || exit 0
+          git push origin HEAD:song/ironflame-cleanroom-20260917
