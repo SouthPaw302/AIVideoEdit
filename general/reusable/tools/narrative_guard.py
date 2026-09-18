@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Fail-closed narrative/music/media evidence validator for AIVideoEdit."""
+"""Fail-closed directing/music/media evidence validator for AIVideoEdit."""
 from __future__ import annotations
 
 import argparse
 import json
 import os
 from pathlib import Path
+
+from branch_policy import resolve_production_project
 
 SCRIPT_ROOT = Path(__file__).resolve().parents[3]
 if os.environ.get("AIVIDEOEDIT_REPO_ROOT"):
@@ -33,17 +35,13 @@ def fail(msg, errors):
     errors.append(msg)
 
 
-def discover_project():
-    env = os.environ.get("AIVIDEOEDIT_PROJECT_DIR")
-    if env:
-        p = Path(env)
-        return p if p.is_absolute() else ROOT / p
-    candidates = [p.parent for p in ROOT.glob("projects/*/PROJECT_STATE.json")]
-    if len(candidates) == 1:
-        return candidates[0]
-    if not candidates:
-        raise SystemExit("FAIL: no projects/*/PROJECT_STATE.json found")
-    raise SystemExit("FAIL: multiple project states found; set AIVIDEOEDIT_PROJECT_DIR")
+def discover_project(branch: str):
+    project, error = resolve_production_project(ROOT, branch)
+    if error:
+        raise SystemExit(f"FAIL: {error}")
+    if project is None:
+        raise SystemExit("FAIL: production project could not be resolved")
+    return project
 
 
 def validate_music_analysis(project: Path, state: dict, errors: list[str]):
@@ -142,8 +140,15 @@ def validate_music_analysis(project: Path, state: dict, errors: list[str]):
                 fail(f"music section {i} requires non-empty musical_cues", errors)
             if not isinstance(section.get("energy"), str) or not section.get("energy", "").strip():
                 fail(f"music section {i} requires energy description", errors)
-            if not isinstance(section.get("narrative_function"), str) or not section.get("narrative_function", "").strip():
-                fail(f"music section {i} requires narrative_function", errors)
+
+            directing_function = section.get("visual_function")
+            if not isinstance(directing_function, str) or not directing_function.strip():
+                directing_function = section.get("narrative_function")
+            if not isinstance(directing_function, str) or not directing_function.strip():
+                fail(
+                    f"music section {i} requires visual_function or narrative_function",
+                    errors,
+                )
 
     for key in ("music_analysis_complete", "lyrics_status_resolved", "genre_authority_resolved"):
         if not truthy(state.get(key)):
@@ -215,9 +220,17 @@ def validate_script(project: Path, state: dict, music: dict | None, errors: list
             if end < start:
                 fail(f"script entry {i} has end_frame before start_frame", errors)
             expected_start = end + 1
-        for key in ("shot_id", "story_action", "visual_media", "animation_behavior", "transition"):
+
+        for key in ("shot_id", "visual_media", "animation_behavior", "transition"):
             if not isinstance(entry.get(key), str) or not entry.get(key, "").strip():
                 fail(f"script entry {i} requires {key}", errors)
+
+        action = entry.get("visual_action")
+        if not isinstance(action, str) or not action.strip():
+            action = entry.get("story_action")
+        if not isinstance(action, str) or not action.strip():
+            fail(f"script entry {i} requires visual_action or story_action", errors)
+
         cues = entry.get("music_cues")
         if not isinstance(cues, list) or not cues or not all(isinstance(x, str) and x.strip() for x in cues):
             fail(f"script entry {i} requires music_cues", errors)
@@ -299,13 +312,15 @@ def validate(branch: str):
         ]
         for rel in required:
             if not (ROOT / rel).is_file():
-                fail(f"missing narrative system file: {rel}", errors)
+                fail(f"missing directing system file: {rel}", errors)
         return errors
 
-    if not branch.startswith("song/"):
-        return [f"production work must use song/<slug>; got {branch}"]
+    project, branch_error = resolve_production_project(ROOT, branch)
+    if branch_error:
+        return [branch_error]
+    if project is None:
+        return [f"production project could not be resolved for {branch}"]
 
-    project = discover_project()
     state = load_json(project / "PROJECT_STATE.json")
     plan = load_json(project / "MEDIA_PLAN.json")
     stage = state.get("stage")
@@ -353,11 +368,11 @@ def main():
         raise SystemExit("FAIL: branch required (--branch or GITHUB_REF_NAME)")
     errors = validate(args.branch)
     if errors:
-        print("AIVideoEdit narrative contract: FAIL")
+        print("AIVideoEdit directing contract: FAIL")
         for e in errors:
             print("- " + e)
         raise SystemExit(1)
-    print("AIVideoEdit narrative contract: PASS")
+    print("AIVideoEdit directing contract: PASS")
 
 
 if __name__ == "__main__":
