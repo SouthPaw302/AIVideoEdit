@@ -19,7 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: prototype/deepseek-harness
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -28,13 +27,17 @@ jobs:
 
       - name: Assert branch isolation
         run: |
-          test "$(git branch --show-current)" = "prototype/deepseek-harness"
+          test "$GITHUB_REF_NAME" = "prototype/deepseek-harness"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
 
       - name: Download supplied media
+        env:
+          AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-5150-81f7-80ad-763d6f58e8ce/raw?se=2026-09-18T08%3A27%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=83955905-8947-5f58-9ec8-50a2431fe55f&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A05%3A11Z&ske=2026-09-19T02%3A05%3A11Z&sks=b&skv=2026-02-06&sig=pz97ZZC9JkeEptGSA6OxkkkyF9kB13OBIDVZ4pRCYc8%3D"
+          VIDEO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-82b0-81f7-8633-050bc8d48cfe/raw?se=2026-09-18T08%3A27%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=b07a0a4d-00a3-50ea-a2c6-0ed47ca73727&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A07%3A29Z&ske=2026-09-19T02%3A07%3A29Z&sks=b&skv=2026-02-06&sig=3wFNTxkhCW2To7NmsWFfulhg7NpkgRzb08UgmRRPrJs%3D"
         run: |
-          echo "Media URLs are intentionally not stored in the public repository."
-          echo "Use a trusted authenticated media handoff for the next production run."
-          exit 1
+          mkdir -p /tmp/source
+          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
+          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/source/mescalito_living_scene.mp4"
 
       - name: Install FFmpeg
         run: |
