@@ -26,7 +26,7 @@ def _modes():
     if not status.get("bootstrapped"):raise RuntimeError("canonical core is not loaded")
     path=Path(status.get("os_root") or "")/"general/reusable/PRODUCTION_MODES.json"
     data=_read(path,{})
-    if data.get("schema")!="aivideoedit.production-modes.v1":raise RuntimeError("canonical production modes are unavailable")
+    if data.get("schema") not in {"aivideoedit.production-modes.v1","aivideoedit.production-modes.v2"}:raise RuntimeError("canonical production modes are unavailable")
     return data
 def configure(pid,*,direction_authority:str,production_mode:str,mission:str,current_user_direction:str,exact_next_action:str):
     current,engine,project_dir=_project(pid)
