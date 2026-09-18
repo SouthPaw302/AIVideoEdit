@@ -16,7 +16,7 @@ jobs:
   production-probe:
     runs-on: ubuntu-latest
     env:
-      AIVE_RUNTIME: ${{ runner.temp }}/aive-runtime
+      AIVE_RUNTIME: /tmp/aive-runtime
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,22 +45,22 @@ jobs:
           AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-40d8-81f7-b286-5115a458d4e2/raw?se=2026-09-18T08%3A04%3A51Z&sp=r&sv=2026-02-06&sr=b&scid=110bba33-8203-58f4-a66a-1e0393bba5e5&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A05%3A11Z&ske=2026-09-19T02%3A05%3A11Z&sks=b&skv=2026-02-06&sig=v5ZmE/FvWvC0gNP46cuDD5jBIO8emvqd9qSeAj9Z/QU%3D"
           VIDEO_URL: "https://sdmntprcentralus.oaiusercontent.com/files/00000000-1b9c-81f5-a931-224192549054/raw?se=2026-09-18T08%3A04%3A52Z&sp=r&sv=2026-02-06&sr=b&scid=86f9aad7-c9a1-505e-aac7-9df749cf2d5c&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A18%3A09Z&ske=2026-09-19T02%3A18%3A09Z&sks=b&skv=2026-02-06&sig=809FlZ7eXaNqhb4zuzsNTWbOMXFJDOVu8247wCf8aTo%3D"
         run: |
-          mkdir -p "$RUNNER_TEMP/source"
-          curl -fL --retry 3 "$AUDIO_URL" -o "$RUNNER_TEMP/source/Midnight Tribal Pulse (Remastered).mp3"
-          curl -fL --retry 3 "$VIDEO_URL" -o "$RUNNER_TEMP/source/mescalito_living_scene.mp4"
+          mkdir -p "/tmp/source"
+          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
+          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/source/mescalito_living_scene.mp4"
 
       - name: Run production-direction probe through Tool API
         shell: bash
         run: |
-          python prototype/backend_gui/deepseek_harness/production_probe.py             --audio "$RUNNER_TEMP/source/Midnight Tribal Pulse (Remastered).mp3"             --video "$RUNNER_TEMP/source/mescalito_living_scene.mp4"             --evidence-dir "$RUNNER_TEMP/evidence"
+          python prototype/backend_gui/deepseek_harness/production_probe.py             --audio "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"             --video "/tmp/source/mescalito_living_scene.mp4"             --evidence-dir "/tmp/evidence"
 
       - name: Package evidence
         shell: bash
         run: |
-          tar -czf "$RUNNER_TEMP/deepseek-harness-direction-evidence.tgz" -C "$RUNNER_TEMP/evidence" .
+          tar -czf "/tmp/deepseek-harness-direction-evidence.tgz" -C "/tmp/evidence" .
 
       - uses: actions/upload-artifact@v4
         with:
           name: deepseek-harness-direction-evidence
-          path: ${{ runner.temp }}/deepseek-harness-direction-evidence.tgz
+          path: /tmp/deepseek-harness-direction-evidence.tgz
           retention-days: 3
