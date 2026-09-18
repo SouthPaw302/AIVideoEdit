@@ -1,0 +1,22 @@
+{
+  "schema": "aivideoedit.depth-loop-source.v1",
+  "source_video": {"drive_file_id":"1ELAkh_6RHD6uGkuNAMnvIfDOTbne0dps","sha256":"ddedf3632ebf3837518090dfa85bc437de7c07de2ad4c21af1b82b80f47b23d3","duration_seconds":244.68},
+  "original_stills_zip": {"drive_file_id":"1znblYVY8ab1XWi9X9-6QsTCY3XR1oqnz","role":"source-derived original still coverage"},
+  "movement_variants_zip": {"drive_file_id":"1_hyEF9Cz7WtHMNjZFsZHi4dH68sQZFEM","sha256":"2c506f112fed7d69fdd8e16e9aa4e6ff0cdc8d1c72b1f1302f056bbe9d7f8e56","role":"source-derived movement duplicates"},
+  "derivation": {"method":"dense optical flow original->movement duplicate","flow_cap_px":8.0,"production_amplitude":0.14,"loop_period_seconds":2.0,"loop_curve":"sinusoidal ping-pong","source_replacement":false},
+  "derived_support_zip_sha256":"1d5a818b464140459c1806561c4c0b0feba0dea6daaa686809075f593cc35a48",
+  "items":[
+    {"id":"DL-01","source_range_seconds":[0,18],"flow_sha256":"582eafc66e00a40d64e805899efe53194da38d8bb4de9d1fe81f569cec3a1e4a"},
+    {"id":"DL-02","source_range_seconds":[18,42],"flow_sha256":"b90a5ae9474056d8e25f19b4cb07477241b79fd85378d6cdbd8d439d33509741"},
+    {"id":"DL-03","source_range_seconds":[42,77],"flow_sha256":"32b72458ab45c78ba3e89f611b11bcdb7888a228053b5356b0ff4d30b85f1067"},
+    {"id":"DL-04","source_range_seconds":[77,95],"flow_sha256":"3455276cba14240d058189f108ce8d1101763b2296a007f930d65cee827de02d"},
+    {"id":"DL-05","source_range_seconds":[95,110],"flow_sha256":"6d11ec10bee239c93701d2c74f6d2510715f5e46cb542d96ed9814878db9772e"},
+    {"id":"DL-06","source_range_seconds":[110,122],"flow_sha256":"1cd193ae43c0d2f218232bfe5f3741ed6e0ff34950827d6a63d282bca7fcb814"},
+    {"id":"DL-07","source_range_seconds":[122,137],"flow_sha256":"d39808d512e58d61f4466affc8e81d2ce1a2eb5eaadee265d487b93f640b1d4d"},
+    {"id":"DL-08","source_range_seconds":[137,167],"flow_sha256":"d9b705b70b27f7310f0ea7138d564979f4ba8afe2f617a3db17a591a55cec659"},
+    {"id":"DL-09","source_range_seconds":[167,187],"flow_sha256":"d7dd26dc41b025f987b1bb98ac89b8773cbe7b44b6f8b3ad10db34b58f6b17bc"},
+    {"id":"DL-10","source_range_seconds":[187,210],"flow_sha256":"3a89685323381f372b0d627a23f435a07679b01bfa14b8435618303a244b147a"},
+    {"id":"DL-11","source_range_seconds":[210,233],"flow_sha256":"94eba5e3934606868520db863ce2ae5887d21ff2a46864486adbf37c1483bc86"},
+    {"id":"DL-12","source_range_seconds":[233,244.68],"flow_sha256":"b33f0ce6b48618cd14650740ef2b341ed61bcc8cbd56459b305c5ba2a5d5a858"}
+  ]
+}
