@@ -3,17 +3,21 @@
   "gate": "aivideoedit-fx-precompile-v2",
   "project": "ironflame-cleanroom",
   "runtime": "aivideoedit-fx-v2",
-  "manifest_sha256": "ac64b350057bcf30c14ad9a081f90e9904e1678b7518c7fe4f3f27f8bf3bf8cb",
+  "manifest_sha256": "5e9c1497317a2ce702554990d1c07b688cf418f34e36e8d6ef200fd311f4e118",
   "registry_sha256": "9221119f49099b08ddbf85fdbf7f93f4e9eb62c0fe558f5c677fd7e1c510e46f",
   "runtime_sha256": "6cfdf3ba68c1f79015c1f1b26174d4e3ca4de7b75b06b5ad9811580f5bc2cfa4",
   "render_inputs": [
     {
       "path": "projects/ironflame-cleanroom/production/render_fx_pass.py",
-      "sha256": "46a579ead70d72768b976ef43027cba428f997b15ed56bdfdefe09b1c07c6363"
+      "sha256": "6001a5a27c1120302ec6548b95ac82181a291d411e19925817f4e2c3d5e0756a"
     },
     {
       "path": "projects/ironflame-cleanroom/production/FX_PLAN.json",
       "sha256": "69e34c37573e242626eb5f9420443d5d1c492a24b3a3191f2b359e8030f0af46"
+    },
+    {
+      "path": "projects/ironflame-cleanroom/production/DEPTH_LOOP_SOURCE.json",
+      "sha256": "ae68b5dfe7314a9b6502e0d002cf227d27c012b4609297863cd787e9319f5741"
     },
     {
       "path": "projects/ironflame-cleanroom/analysis/audiomap.json",
@@ -313,5 +317,5 @@
     }
   ],
   "result": "PASS",
-  "evidence_fingerprint_sha256": "e735893179508316521dfda108d85698691803e8cdd4df5e749aacc74edd3920"
+  "evidence_fingerprint_sha256": "8d7871a2e44437eb56b9e6b5074fb17572e59e529d03957cba6ef4f93120a9e4"
 }
