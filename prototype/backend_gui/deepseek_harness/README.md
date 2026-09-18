@@ -41,7 +41,9 @@ for example `mcp__aivideo__production__status`.
 ## DeepSeek Harness configuration
 
 DeepSeek Harness is developer-preview software. Current releases include an MCP
-client plugin and support stdio MCP servers. Copy the adjacent
+client plugin and support stdio MCP servers. This dependency-free prototype bridge
+intentionally serves the stable 2025-era MCP handshake over stdio; current Harness
+clients can probe the 2026 era and fall back to supported legacy negotiation. Copy the adjacent
 `cordis.patch.yml.example` into an experimental Harness profile and replace
 `/absolute/path/to/AIVideoEdit` with the checkout path.
 
