@@ -6,6 +6,7 @@ on:
       - prototype/deepseek-harness
     paths:
       - ".github/workflows/deepseek-harness-production.yml"
+      - "prototype/backend_gui/deepseek_harness/production_probe.py"
   workflow_dispatch:
 
 jobs:
