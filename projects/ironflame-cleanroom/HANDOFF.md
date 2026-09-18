@@ -1,27 +1,27 @@
-# Handoff — IronFlame reference-driven production
+# Handoff — IronFlame assembled FX/depth candidate
 
 Active branch: `song/ironflame-cleanroom-20260917`.
 
-The later reference-driven production supersedes the earlier Molten Cartography route. Do not restart Molten Cartography and do not treat its browser proof as final authority.
+The uploaded IronFlame video is now the accepted source library and continuity backbone. Do not replace its character, environment, sequence, timing, or audio.
 
-Active visual authority:
-- `REFERENCE_MANIFEST.json`
-- Drive reference video: `01_reference/reference_video.mp4`
-- Drive movement pack: `04_generated_stills/IronFlame_unique_movement_variants.zip`
-- 12 source-derived movement sections covering 244.68 seconds.
+Current production state:
+- stage: `ASSEMBLED`
+- shot proofs accepted: true
+- mode-aware proofs accepted: true
+- FX lock verified: true
+- assembly complete: true
+- final QC/creative acceptance: pending
 
-Recovery facts:
-- The repository movement ZIP was discovered to be a broken ~15 KB placeholder while the verified Drive pack is ~3.8 MB.
-- A local recovery render proved the Drive media, section timing, and synchronized audio are usable.
-- That render contains bounded movement/crossfades and passed technical container QC only.
-- It did **not** pass the FX gate and is not the finished production.
+What was added:
+- canonical song-level FX requirements + verified `fx.lock.json`;
+- 12 duplicate-derived depth/GIF support loops from original/moved still pairs;
+- section-specific atmospheric/light/reflection/spark/heat support;
+- FFmpeg production backend recorded in `RENDER_RECIPE.json`;
+- before/after source integrity evidence in `REFINEMENT_QC.json`.
 
-Authoritative project state remains:
-- stage: `SHOT_PACKAGES_BUILT`
-- `shot_proofs_accepted=false`
-- `mode_aware_proofs_accepted=false`
-- `fx_lock_verified=false`
-- `assembly_complete=false`
-- `final_qc_passed=false`
+Assembled export identity:
+- 244.680 s, 1280x720, 24 fps;
+- original AAC audio copied bit-for-bit;
+- SHA-256 `7ae715b7fbe254e802b51a00c0f1ea5641bec3e51b54a17136df4111c982eddc`.
 
-Exact next action: remain in **Step 4 — Shots**. Build and wire the project FX manifest, create proof media showing visible temporal/pixel changes, run the FX v2 precompile gate, generate and re-verify `fx.lock.json`, then proceed to Assemble only after the gate passes.
+Do not mark final acceptance automatically. Present the complete export to the user; if accepted, advance to `FINAL_QC_PASSED`, then archive.
