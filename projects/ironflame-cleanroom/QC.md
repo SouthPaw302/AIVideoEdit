@@ -1,26 +1,30 @@
-# QC — FX/depth assembled candidate
+# QC — revised finishing assembly
 
 ## Current result
-Assembly technical + mode-aware QC: **PASS**
+Revised assembly technical QC: **PASS**
 
 Final artistic acceptance: **PENDING USER REVIEW**
 
 ## Export
-- Duration: **244.680 s** (exact target)
-- Frames: **5872**
+- Runtime: **252.680 s**
 - Video: H.264, 1280x720, 24 fps
 - Audio: AAC, 48 kHz stereo
-- Assembled SHA-256: `7ae715b7fbe254e802b51a00c0f1ea5641bec3e51b54a17136df4111c982eddc`
+- Revised assembled SHA-256: `0939689b8e3ea6575b5267630f5cc9a39566dd7dc80f8544fce0a73f2164c12c`
 
-## Source integrity
-- Accepted source SHA-256: `ddedf3632ebf3837518090dfa85bc437de7c07de2ad4c21af1b82b80f47b23d3`
-- Audio stream is bit-for-bit identical before/after: **PASS**
-- Minimum sampled source/output frame correlation: **0.958410**
-- Sampled FX pixel delta range: **7.080970–9.878888**
-- Black-frame scan: **0 source / 0 output**
-- Freeze/low-motion detector: source **30 events / 63.125 s**; output **13 events / 30.167 s**. No new macro-freeze defect.
+## Finishing edit verification
+- Title pre-roll: **3.000 s**
+- Replacement opening: **10.000 s**
+- Replacement source duration: **10.005 s**
+- Replacement source geometry/rate: **1280x720 / 24 fps**
+- Replacement source SHA-256: `546752c4ed4fe3b687a926eb704798c519dfc7787e1c5c36266320486a4f5426`
+- Original assembled body resumes at original picture time **10.000 s**
+- Ending card: **5.000 s**
+- Replacement clip audio: intentionally excluded
+- IronFlame program audio: preserved and delayed by 3.000 s to begin after the title card
+- Black-gap scan: **PASS**
+- Sampled title/opening/body/outro inspection: **PASS**
 
-## Production evidence
+## Prior production evidence retained
 - Song FX gate: **PASS**
 - `fx.lock.json`: verified
 - Shot proof direction: user approved
@@ -28,4 +32,4 @@ Final artistic acceptance: **PENDING USER REVIEW**
 - Production backend mapping: `RENDER_RECIPE.json`
 - Before/after evidence: `REFINEMENT_QC.json`
 
-Do not set `final_qc_passed=true` until the user reviews and accepts the complete assembled export.
+Do not set `final_qc_passed=true` until the user reviews and accepts the complete revised export.
