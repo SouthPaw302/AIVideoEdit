@@ -1,20 +1,20 @@
 # IronFlame status
 
-Reference-driven final candidate is complete and archived to Drive.
+Current stage: **Step 4 — Shots / proof + FX-lock gate**.
 
 - Branch: `song/ironflame-cleanroom-20260917`
 - Active authority: user-supplied IronFlame reference video and 12 source-derived movement variants.
 - Earlier Molten Cartography work: historical proof only; not active final authority.
-- Root failure recovered: repository movement pack was a broken ~15 KB placeholder; verified Drive pack is ~3.8 MB.
-- Recovery render: completed locally without relaunching the failed GitHub Action.
-- Delivery: H.264/AAC MP4, 1280x720, 24 fps, 48 kHz stereo.
-- Drive delivery duration: 244.693 s versus 244.680 s target (13 ms delta).
-- Technical QC: PASS.
-- Creative/user acceptance: PENDING.
-- Drive final folder: https://drive.google.com/drive/folders/1Zae3B4yXS0H2OwiDpTuPmLZPgi9VxkQE
-- Drive final video: https://drive.google.com/file/d/17Kha6vCee9xfBBAXm2i0wqmo7GmcxVNv/view
-- Drive QC: https://drive.google.com/file/d/1gsEXZ39GjXVGUIAiKeSXJv2mgVgc3uVn/view
-- Drive contact sheet: https://drive.google.com/file/d/1bOBftpFBsKcROCrqhEKFqkms57uiQRZL/view
-- Drive checksums: https://drive.google.com/file/d/1kN9az--dlguNLwXLsdHan0gY0F_j6Rfb/view
+- The repository movement ZIP was a broken ~15 KB placeholder; the verified Drive pack is ~3.8 MB.
+- A local recovery MP4 was rendered only to verify media continuity, timing, audio, and assembly mechanics.
+- Technical container QC on that recovery render: PASS.
+- **Shot proofs accepted: NO.**
+- **Mode-aware proofs accepted: NO.**
+- **FX lock verified: NO.**
+- **Assembly complete: NO.**
+- **Final QC passed: NO.**
+- Therefore the recovery MP4 is **not a final candidate** and must not be promoted or archived as final.
+- Drive recovery proof: https://drive.google.com/file/d/17Kha6vCee9xfBBAXm2i0wqmo7GmcxVNv/view
+- Drive recovery folder: https://drive.google.com/drive/folders/1Zae3B4yXS0H2OwiDpTuPmLZPgi9VxkQE
 
-Next action: user reviews the finished candidate. Do not automatically rerender.
+Exact next action: build project FX requirements against approved AIVideoEdit FX IDs, wire those effects into the real render path, render representative proof frames/clips, pass the FX v2 precompile gate and generate a valid `fx.lock.json`. Only then may the project advance to Assemble.
