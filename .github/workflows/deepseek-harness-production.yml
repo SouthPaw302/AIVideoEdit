@@ -7,6 +7,7 @@ on:
     paths:
       - ".github/workflows/deepseek-harness-production.yml"
       - "prototype/backend_gui/deepseek_harness/production_probe.py"
+      - "prototype/backend_gui/production_project.py"
   workflow_dispatch:
 
 jobs:
@@ -30,8 +31,8 @@ jobs:
 
       - name: Download supplied media
         env:
-          AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-ed8c-81f7-ad5e-76eb76824b56/raw?se=2026-09-18T08%3A13%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=df0f83d4-5f4f-51c0-960f-4e2c04548d64&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A18%3A12Z&ske=2026-09-19T02%3A18%3A12Z&sks=b&skv=2026-02-06&sig=mG3iv1zQKCL2AjNv9UCIb73YYJ6NmFQFfe7fAACxKOk%3D"
-          VIDEO_URL: "https://sdmntpreastus2.oaiusercontent.com/files/00000000-dddc-81f6-a222-f3bd65181d20/raw?se=2026-09-18T08%3A13%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=9c0f303b-e318-547b-945f-cfa6212f7423&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A24%3A40Z&ske=2026-09-19T02%3A24%3A40Z&sks=b&skv=2026-02-06&sig=B/aBqK8g9MGYtN7FsueFNVGYd0xJeHLVkQAHrYqbBvA%3D"
+          AUDIO_URL: "https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-97fc-822f-bd7e-bc7ec2e04eef/raw?se=2026-09-18T08%3A15%3A24Z&sp=r&sv=2026-02-06&sr=b&scid=7b3f2a43-b98b-5494-95b1-baa096ef2c0b&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A24%3A18Z&ske=2026-09-19T02%3A24%3A18Z&sks=b&skv=2026-02-06&sig=HWs1qdvga7VzVmg%2BMd0ltNNfhkK%2BVwtidPjCShv3imk%3D"
+          VIDEO_URL: "https://sdmntprcentralus.oaiusercontent.com/files/00000000-cf30-81f5-baa2-c9913b78be20/raw?se=2026-09-18T08%3A15%3A24Z&sp=r&sv=2026-02-06&sr=b&scid=af08aa60-8a65-5338-9d12-258d77fb3dea&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A13%3A42Z&ske=2026-09-19T02%3A13%3A42Z&sks=b&skv=2026-02-06&sig=9tKzybtDE4XKaEDHva7w/lxflrADzAPN1bD5PQO33Nc%3D"
         run: |
           mkdir -p /tmp/source
           curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
