@@ -31,8 +31,8 @@ jobs:
 
       - name: Download supplied media
         env:
-          AUDIO_URL: "https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-97fc-822f-bd7e-bc7ec2e04eef/raw?se=2026-09-18T08%3A15%3A24Z&sp=r&sv=2026-02-06&sr=b&scid=7b3f2a43-b98b-5494-95b1-baa096ef2c0b&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A24%3A18Z&ske=2026-09-19T02%3A24%3A18Z&sks=b&skv=2026-02-06&sig=HWs1qdvga7VzVmg%2BMd0ltNNfhkK%2BVwtidPjCShv3imk%3D"
-          VIDEO_URL: "https://sdmntprcentralus.oaiusercontent.com/files/00000000-cf30-81f5-baa2-c9913b78be20/raw?se=2026-09-18T08%3A15%3A24Z&sp=r&sv=2026-02-06&sr=b&scid=af08aa60-8a65-5338-9d12-258d77fb3dea&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A13%3A42Z&ske=2026-09-19T02%3A13%3A42Z&sks=b&skv=2026-02-06&sig=9tKzybtDE4XKaEDHva7w/lxflrADzAPN1bD5PQO33Nc%3D"
+          AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-4348-81f7-9166-183f30c767d3/raw?se=2026-09-18T08%3A18%3A47Z&sp=r&sv=2026-02-06&sr=b&scid=9122ab3b-cb9c-5af5-a728-20e016b8a955&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A09%3A27Z&ske=2026-09-19T02%3A09%3A27Z&sks=b&skv=2026-02-06&sig=weVBZMcNgqXZ/aMwmawWEWQv1N1A6eRdEenMY7aIdaw%3D"
+          VIDEO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-73e0-81f7-8678-79c3c2450ac8/raw?se=2026-09-18T08%3A18%3A46Z&sp=r&sv=2026-02-06&sr=b&scid=c9cbec7b-a278-522c-a120-195b432da898&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A22%3A18Z&ske=2026-09-19T02%3A22%3A18Z&sks=b&skv=2026-02-06&sig=uvyj5uaaliRGrsTmkdsNsZie%2B0u1wKIUTNAnunJaOq0%3D"
         run: |
           mkdir -p /tmp/source
           curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
