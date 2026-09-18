@@ -28,19 +28,19 @@ jobs:
         run: |
           test "$(git branch --show-current)" = "prototype/deepseek-harness"
 
-      - name: Install FFmpeg
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y ffmpeg
-
       - name: Download supplied media
         env:
-          AUDIO_URL: "https://sdmntprwestus.oaiusercontent.com/files/00000000-98fc-8230-89b3-1a6f07340d1f/raw?se=2026-09-18T08%3A09%3A00Z&sp=r&sv=2026-02-06&sr=b&scid=bec32b86-8c34-5a46-b3d2-8725918d140d&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A15%3A49Z&ske=2026-09-19T02%3A15%3A49Z&sks=b&skv=2026-02-06&sig=Px133WhYSM0kScFxIuoNHB89yzCbPeSLpP49MkX99TQ%3D"
-          VIDEO_URL: "https://sdmntprcentralus.oaiusercontent.com/files/00000000-cfd0-81f5-8dcf-7b90f7279133/raw?se=2026-09-18T08%3A09%3A00Z&sp=r&sv=2026-02-06&sr=b&scid=bbaa5fed-4f4e-5cd3-95fa-bf8933c203e6&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A17%3A58Z&ske=2026-09-19T02%3A17%3A58Z&sks=b&skv=2026-02-06&sig=KtjFYsD2b1%2BBn3KSvU0YFJiS/Yr12ggY9U0nZSS9PDA%3D"
+          AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-ed8c-81f7-ad5e-76eb76824b56/raw?se=2026-09-18T08%3A13%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=df0f83d4-5f4f-51c0-960f-4e2c04548d64&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A18%3A12Z&ske=2026-09-19T02%3A18%3A12Z&sks=b&skv=2026-02-06&sig=mG3iv1zQKCL2AjNv9UCIb73YYJ6NmFQFfe7fAACxKOk%3D"
+          VIDEO_URL: "https://sdmntpreastus2.oaiusercontent.com/files/00000000-dddc-81f6-a222-f3bd65181d20/raw?se=2026-09-18T08%3A13%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=9c0f303b-e318-547b-945f-cfa6212f7423&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A24%3A40Z&ske=2026-09-19T02%3A24%3A40Z&sks=b&skv=2026-02-06&sig=B/aBqK8g9MGYtN7FsueFNVGYd0xJeHLVkQAHrYqbBvA%3D"
         run: |
           mkdir -p /tmp/source
           curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
           curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/source/mescalito_living_scene.mp4"
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
 
       - name: Run production-direction probe
         run: |
