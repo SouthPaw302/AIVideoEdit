@@ -1,49 +1,39 @@
 {
-  "schema": "aivideoedit.operating-order.v1",
-  "mission": "Complete the latest reference-driven IronFlame production from the user-supplied reference video and Drive-backed movement media without restarting obsolete earlier visual routes.",
-  "direction_authority": "reference_led",
-  "production_mode": "living_scene",
-  "canon_lock": {
-    "locked": true,
-    "picture_language": "Reference-driven rain-dark fantasy sequence from the supplied IronFlame reference: one coherent female warrior/environment language carried through twelve source-derived movement sections with bounded pan/zoom and short reference-timed crossfades.",
-    "items": [
-      "user-supplied reference video is the active visual authority",
-      "twelve verified source-derived movement variants are the active picture source",
-      "preserve character and environment continuity across the full 244.68-second sequence",
-      "bounded pan/zoom and short crossfades only unless the user explicitly requests a new edit",
-      "Molten Cartography is historical proof only and is not active final authority",
-      "do not relaunch the failed GitHub Action merely because it exists"
+  "schema":"aivideoedit.operating-order.v1",
+  "mission":"Finish the user-approved IronFlame continuity video by preserving the uploaded source picture and adding gated FX plus duplicate-derived depth/GIF support without replacing the character, environment, or edit.",
+  "direction_authority":"reference_led",
+  "production_mode":"living_scene",
+  "canon_lock":{
+    "locked":true,
+    "picture_language":"User-approved rain-dark fantasy IronFlame sequence with one coherent female warrior/world; source video is the continuity backbone and additive FX/depth are the only current changes.",
+    "items":[
+      "Drive reference video is accepted source-picture canon",
+      "character identity and environment topology are immutable",
+      "source sequence, 244.68-second timing and audio are preserved",
+      "12 original/moved duplicate pairs are authorized source-derived depth/GIF support",
+      "FX proof direction was explicitly approved by the current user",
+      "current fx.lock.json is required before assembly",
+      "Molten Cartography remains historical only"
     ]
   },
-  "accepted_baseline": {
-    "status": "none",
-    "file_or_locator": null,
-    "sha256": null,
-    "user_acceptance_statement": null
+  "accepted_baseline":{"status":"none","file_or_locator":null,"sha256":null,"user_acceptance_statement":null},
+  "accepted_source_library":{
+    "status":"accepted",
+    "role":"reference_content",
+    "file_or_locator":"Google Drive file 1ELAkh_6RHD6uGkuNAMnvIfDOTbne0dps",
+    "sha256":"ddedf3632ebf3837518090dfa85bc437de7c07de2ad4c21af1b82b80f47b23d3",
+    "user_acceptance_statement":"The continuity is great which is why I uploaded it; keep it and pass the FX gates on it.",
+    "content_reuse_authorized":true,
+    "timeline_locked":false
   },
-  "accepted_source_library": {
-    "status": "none",
-    "role": "active reference authority documented in REFERENCE_MANIFEST.json",
-    "file_or_locator": "Google Drive backup / 01_reference + 04_generated_stills",
-    "sha256": null,
-    "user_acceptance_statement": null,
-    "content_reuse_authorized": true,
-    "timeline_locked": false
+  "refinement_scope":{"active":false,"goal":null,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":false},
+  "recut_scope":{
+    "active":true,
+    "named_defects":["missing gated FX treatment","duplicate/source-derived media not used for depth and loop support"],
+    "allowed_changes":["additive approved FX","source-derived depth/GIF loops","localized atmosphere/light/reflection support","restrained grade and sharpening"],
+    "forbidden_changes":["replace source character identity","replace source environment/world","change source sequence or 244.68-second timing","replace source audio","reuse rejected source-replay render as final"],
+    "source_replacement_authorized":false
   },
-  "refinement_scope": {
-    "active": false,
-    "goal": null,
-    "allowed_changes": [],
-    "forbidden_changes": [],
-    "restart_authorized": false
-  },
-  "recut_scope": {
-    "active": false,
-    "named_defects": [],
-    "allowed_changes": [],
-    "forbidden_changes": [],
-    "source_replacement_authorized": false
-  },
-  "current_user_direction": "Resume the latest project from the media on Drive and continue it. Finish the reference-driven production rather than restarting an older route.",
-  "exact_next_action": "Present the technically QC-passed Drive final candidate for user review. Do not rerender or restart production unless the user requests a change."
+  "current_user_direction":"Keep the uploaded video's continuity, pass the FX gates on it, and use the media duplicates to create depth, GIF loops and related support.",
+  "exact_next_action":"Present the assembled FX/depth candidate for full creative review. Do not mark FINAL_QC_PASSED or archive until the user accepts the complete export."
 }
