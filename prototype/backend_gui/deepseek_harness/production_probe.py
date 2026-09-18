@@ -126,6 +126,12 @@ def main() -> int:
 
         snapshots = []
         init = _tool("production.initialize", {"project_id": pid})
+        (evidence / "production-initialize.json").write_text(json.dumps(init, indent=2, sort_keys=True), encoding="utf-8")
+        if not init.get("guard_pass"):
+            raise RuntimeError(
+                "isolated production bootstrap did not attest: "
+                + str(init.get("stderr") or init.get("stdout") or init)
+            )
         snapshots.append({"label": "initialized", "production": init, "context": _tool("harness.context", {"project_id": pid})})
 
         _tool("production.sync_assets", {"project_id": pid})
