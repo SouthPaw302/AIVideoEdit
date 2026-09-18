@@ -9,6 +9,7 @@ import server as base
 import storage
 import tool_api
 import operating_tools
+import harness_tools
 import production_analysis
 import production_assembly
 import production_project
@@ -16,7 +17,7 @@ from core_adapter import CORE
 
 WORKER_COUNT=max(1,int(os.environ.get("AIVE_WORKERS","2")))
 JOB_QUEUE:queue.Queue[dict]=queue.Queue()
-def all_tool_schemas():return tool_api.schemas()+operating_tools.schemas()
+def all_tool_schemas():return tool_api.schemas()+operating_tools.schemas()+harness_tools.schemas()
 
 def sync_project_job(job):
     pid=job["project"];base.update_job(job["id"],status="running",started_at=base.now(),progress=5)
@@ -86,7 +87,7 @@ def system_snapshot():
     usage=shutil.disk_usage(base.RUNTIME)
     with base.LOCK:
         running=sum(1 for j in base.STATE["jobs"] if j.get("status")=="running");queued=sum(1 for j in base.STATE["jobs"] if j.get("status")=="queued");stored=sum(int(a.get("size_bytes") or 0)+int(a.get("proxy_size_bytes") or 0) for a in base.STATE["assets"]);projects=len(base.STATE["projects"]);assets=len(base.STATE["assets"])
-    return {"workers":WORKER_COUNT,"queue_depth":JOB_QUEUE.qsize(),"running_jobs":running,"queued_jobs":queued,"projects":projects,"assets":assets,"stored_bytes":stored,"disk":{"total":usage.total,"used":usage.used,"free":usage.free},"storage":storage.status(),"core":CORE.status(),"tool_count":len(all_tool_schemas())}
+    return {"workers":WORKER_COUNT,"queue_depth":JOB_QUEUE.qsize(),"running_jobs":running,"queued_jobs":queued,"projects":projects,"assets":assets,"stored_bytes":stored,"disk":{"total":usage.total,"used":usage.used,"free":usage.free},"storage":storage.status(),"core":CORE.status(),"tool_count":len(all_tool_schemas()),"harness":harness_tools.status()}
 def prepare_project(pid):
     created=[]
     with base.LOCK:assets=[dict(a) for a in base.STATE["assets"] if a.get("project")==pid and a.get("status")=="ready"]
@@ -123,7 +124,12 @@ class StackHandler(base.Handler):
             try:
                 data=_json_body(self);name=str(data.get("name") or "");args=data.get("arguments") if isinstance(data.get("arguments"),dict) else {}
                 if not name:return self.send_json({"error":"tool name is required"},400)
-                result=operating_tools.call(name,args) if name.startswith("operating.") else tool_api.call_tool(name,args,dispatch_job=dispatch_job,prepare_project=prepare_project)
+                if name.startswith("harness."):
+                    result=harness_tools.call(name,args)
+                elif name.startswith("operating."):
+                    result=operating_tools.call(name,args)
+                else:
+                    result=tool_api.call_tool(name,args,dispatch_job=dispatch_job,prepare_project=prepare_project)
                 return self.send_json({"ok":True,"tool":name,"result":result})
             except ValueError as exc:return self.send_json({"ok":False,"error":str(exc)},400)
             except Exception as exc:return self.send_json({"ok":False,"error":str(exc)},500)
