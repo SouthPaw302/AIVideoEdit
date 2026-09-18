@@ -287,6 +287,15 @@ def _manifest_records(project_id: str) -> tuple[list[dict], dict]:
         }
         if content_type.startswith("image/"):
             refs["images"].append({**common, "width": meta.get("width"), "height": meta.get("height")})
+        # MIME authority wins over incidental embedded streams. An MP3 may carry
+        # album art that FFprobe reports as a video stream; it is still source
+        # audio and must not become a visual reference.
+        elif content_type.startswith("audio/"):
+            refs["audio"].append({
+                **common,
+                "duration_seconds": float(meta.get("duration_seconds") or 0),
+                "audio_codec": meta.get("audio_codec"),
+            })
         elif content_type.startswith("video/") or meta.get("video_codec"):
             fps = _parse_fps(meta.get("fps"))
             duration = float(meta.get("duration_seconds") or 0)
@@ -300,7 +309,7 @@ def _manifest_records(project_id: str) -> tuple[list[dict], dict]:
                 "sampling_description": "Preview-only review snapshots; canonical reference analysis not yet complete.",
                 "coverage": [],
             })
-        elif content_type.startswith("audio/") or meta.get("audio_codec"):
+        elif meta.get("audio_codec"):
             refs["audio"].append({
                 **common,
                 "duration_seconds": float(meta.get("duration_seconds") or 0),
