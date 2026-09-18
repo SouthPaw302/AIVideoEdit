@@ -1,0 +1,32 @@
+{
+  "schema":"aivideoedit.render-recipe.v1",
+  "recipe_id":"ironflame-reference-fx-depth-v2",
+  "proof_backend":{
+    "type":"canonical_python_fx",
+    "renderer":"projects/ironflame-cleanroom/production/render_fx_pass.py",
+    "fx_lock":"projects/ironflame-cleanroom/fx.lock.json"
+  },
+  "production_backend":{
+    "type":"ffmpeg_section_assembly",
+    "renderer":"projects/ironflame-cleanroom/production/render_ffmpeg_assembly_v2.py",
+    "renderer_sha256":"0cd9940b0daf983101dc0cb77fa8fea143c2809788e1f930409a657127d3030f"
+  },
+  "parameter_mapping":{
+    "source_picture":"accepted Drive reference video remains the full picture/continuity backbone",
+    "duplicate_depth_support":"12 original/moved still pairs become 2-second ping-pong optical-flow/GIF support loops; production alpha 0.04",
+    "section_fx_support":"12 keyed low-resolution effect loops carry fog, rain/reflection glints, sparks/firelight, light shafts, heat shimmer and glow; keyed alpha 0.28",
+    "grade":"restrained per-section contrast/saturation/color-balance mapping",
+    "output":"1280x720, 24 fps, H.264 CRF 18; original AAC stream copied unchanged"
+  },
+  "equivalence_proof":{
+    "status":"PASS",
+    "proof_contact_sheet_sha256":"528bb2a1c528318afbc3cbdecf1057b88910e7359fdc3a487d85e688c9de2851",
+    "assembled_contact_sheet_sha256":"40f711beed6ee0e67cc1fccf28187484abc1f9a40e781941ca47590202c02bee",
+    "user_approval":"Good pass, I like it.",
+    "behavior_preserved":true,
+    "effects_visible":true,
+    "traceable":true,
+    "continuity_min_source_output_correlation":0.958410,
+    "minimum_sampled_mean_abs_pixel_delta":7.080970
+  }
+}
