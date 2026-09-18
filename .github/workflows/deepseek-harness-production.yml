@@ -11,11 +11,54 @@ on:
 jobs:
   production-probe:
     runs-on: ubuntu-latest
+    env:
+      AIVE_RUNTIME: /tmp/aive-runtime
     steps:
       - uses: actions/checkout@v4
         with:
           ref: prototype/deepseek-harness
-      - name: Validate workflow shell
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Assert branch isolation
         run: |
-          echo "production probe workflow accepted"
           test "$(git branch --show-current)" = "prototype/deepseek-harness"
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+
+      - name: Download supplied media
+        env:
+          AUDIO_URL: "https://sdmntprwestus.oaiusercontent.com/files/00000000-98fc-8230-89b3-1a6f07340d1f/raw?se=2026-09-18T08%3A09%3A00Z&sp=r&sv=2026-02-06&sr=b&scid=bec32b86-8c34-5a46-b3d2-8725918d140d&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A15%3A49Z&ske=2026-09-19T02%3A15%3A49Z&sks=b&skv=2026-02-06&sig=Px133WhYSM0kScFxIuoNHB89yzCbPeSLpP49MkX99TQ%3D"
+          VIDEO_URL: "https://sdmntprcentralus.oaiusercontent.com/files/00000000-cfd0-81f5-8dcf-7b90f7279133/raw?se=2026-09-18T08%3A09%3A00Z&sp=r&sv=2026-02-06&sr=b&scid=bbaa5fed-4f4e-5cd3-95fa-bf8933c203e6&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A17%3A58Z&ske=2026-09-19T02%3A17%3A58Z&sks=b&skv=2026-02-06&sig=KtjFYsD2b1%2BBn3KSvU0YFJiS/Yr12ggY9U0nZSS9PDA%3D"
+        run: |
+          mkdir -p /tmp/source
+          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
+          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/source/mescalito_living_scene.mp4"
+
+      - name: Run production-direction probe
+        run: |
+          python prototype/backend_gui/deepseek_harness/production_probe.py \
+            --audio "/tmp/source/Midnight Tribal Pulse (Remastered).mp3" \
+            --video "/tmp/source/mescalito_living_scene.mp4" \
+            --evidence-dir "/tmp/evidence"
+
+      - name: Package evidence
+        if: always()
+        run: |
+          if [ -d /tmp/evidence ]; then
+            tar -czf /tmp/deepseek-harness-direction-evidence.tgz -C /tmp/evidence .
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: deepseek-harness-direction-evidence
+          path: /tmp/deepseek-harness-direction-evidence.tgz
+          if-no-files-found: ignore
+          retention-days: 3
