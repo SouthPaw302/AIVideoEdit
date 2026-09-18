@@ -15,6 +15,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+import urllib.error
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
