@@ -1,0 +1,22 @@
+{
+  "schema":"aivideoedit.song-fx-proof-manifest.v1",
+  "project":"ironflame-cleanroom",
+  "source_picture_authority":"Drive reference_video.mp4",
+  "source_replacement_frames":false,
+  "fx_lock_verified":true,
+  "fx_lock_path":"projects/ironflame-cleanroom/fx.lock.json",
+  "proof_windows":[14.0,52.0,101.0,146.0,194.0,222.0],
+  "drive":{
+    "folder":"https://drive.google.com/drive/folders/1Cu56sFvLC9Mw8KkYKtMdhNQISJIzUYGR",
+    "montage":"https://drive.google.com/file/d/1jwBX9mY85nBAvzW3nDxLS_64itYwnN7g/view",
+    "contact_sheet":"https://drive.google.com/file/d/1f1py4u4UkTB6HuI_WO7EuhprMWwJE_BK/view",
+    "metrics":"https://drive.google.com/file/d/1Fj2X9yS7P5VKJGnkVT2WLEEeRkhgFqxu/view"
+  },
+  "sha256":{
+    "montage":"7531b25dd95e389206d9a41f7e9fd7decb615953741e84eb7e0fb58c152d0c6e",
+    "contact_sheet":"528bb2a1c528318afbc3cbdecf1057b88910e7359fdc3a487d85e688c9de2851",
+    "metrics":"ae0be3cca40a2e0a830ef914d61e55075754e971a8271695b854227c52b50e59"
+  },
+  "machine_result":"PASS",
+  "human_shot_proof_acceptance":"PENDING"
+}
