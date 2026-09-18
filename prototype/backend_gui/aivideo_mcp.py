@@ -19,7 +19,7 @@ import harness_tools
 
 SERVER_NAME = "aivideoedit"
 SERVER_VERSION = "0.1.0-prototype"
-DEFAULT_PROTOCOL = "2026-07-28"
+SUPPORTED_LEGACY_PROTOCOLS = ("2025-11-25", "2025-06-18", "2025-03-26")\nDEFAULT_PROTOCOL = SUPPORTED_LEGACY_PROTOCOLS[0]
 
 
 def _schemas():
@@ -87,9 +87,16 @@ def _handle(message: dict):
     request_id = message.get("id")
     params = message.get("params") if isinstance(message.get("params"), dict) else {}
 
+    if method == "server/discover":
+        return _error(
+            request_id,
+            -32601,
+            "Method not found: server/discover (legacy stdio bridge; client may fall back to initialize)",
+        )
+
     if method == "initialize":
         requested = params.get("protocolVersion")
-        protocol = requested if isinstance(requested, str) and requested else DEFAULT_PROTOCOL
+        protocol = requested if requested in SUPPORTED_LEGACY_PROTOCOLS else DEFAULT_PROTOCOL
         return _result(
             request_id,
             {
