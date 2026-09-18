@@ -24,4 +24,11 @@ Assembled export identity:
 - original AAC audio copied bit-for-bit;
 - SHA-256 `7ae715b7fbe254e802b51a00c0f1ea5641bec3e51b54a17136df4111c982eddc`.
 
+Drive delivery:
+- folder: https://drive.google.com/drive/folders/1Ris4ef1qctbsxAkNd6TFZHmlfNg3UuaK
+- full-length review proxy: https://drive.google.com/file/d/1YNy3_yInEFiAX1Pqwbp3tzTAQK9IdjW4/view
+- contact sheet: https://drive.google.com/file/d/1T5AtunGXY6EXQ6vUjw-DX6jMebKxyc5T/view
+- QC JSON: https://drive.google.com/file/d/195h4wFEhzIvCMVUlMyovrAp0DtKSyaGL/view
+- compact depth/FX support: https://drive.google.com/file/d/1GqnURGkdNqLRKwz0cadFLKN6NrKQuPbV/view
+
 Do not mark final acceptance automatically. Present the complete export to the user; if accepted, advance to `FINAL_QC_PASSED`, then archive.
