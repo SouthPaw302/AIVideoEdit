@@ -31,13 +31,10 @@ jobs:
           test "$(git branch --show-current)" = "prototype/deepseek-harness"
 
       - name: Download supplied media
-        env:
-          AUDIO_URL: "https://sdmntprcentralus.oaiusercontent.com/files/00000000-cc9c-81f5-914c-a5be69d73ad9/raw?se=2026-09-18T08%3A20%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=dc01b74c-5732-5abe-8a05-086363ba2311&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A17%3A56Z&ske=2026-09-19T02%3A17%3A56Z&sks=b&skv=2026-02-06&sig=CNf4qDnStvr6iUiEkjrodn7sFKMa68wv53vepYKrHzk%3D"
-          VIDEO_URL: "https://sdmntpreastus2.oaiusercontent.com/files/00000000-6690-81f6-8c9b-5b7d72a3027d/raw?se=2026-09-18T08%3A20%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=58b89612-5c7d-567d-95e7-ba37a7ec66fd&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A15%3A57Z&ske=2026-09-19T02%3A15%3A57Z&sks=b&skv=2026-02-06&sig=n94VbAQAtaKvSur8kCxpDkFfuz5/ljjbpun%2BjmiXaLw%3D"
         run: |
-          mkdir -p /tmp/source
-          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
-          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/source/mescalito_living_scene.mp4"
+          echo "Media URLs are intentionally not stored in the public repository."
+          echo "Use a trusted authenticated media handoff for the next production run."
+          exit 1
 
       - name: Install FFmpeg
         run: |
