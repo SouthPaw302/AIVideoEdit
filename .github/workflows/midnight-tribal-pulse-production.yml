@@ -1,0 +1,83 @@
+name: Midnight Tribal Pulse Repo Production
+
+on:
+  push:
+    branches:
+      - song/midnight-tribal-pulse
+    paths:
+      - ".github/workflows/midnight-tribal-pulse-production.yml"
+      - "projects/midnight-tribal-pulse/run_repo_production.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-e9d4-81f7-ad55-4bba6579937a/raw?se=2026-09-19T03%3A37%3A38Z&sp=r&sv=2026-02-06&sr=b&scid=b76b11c3-af89-5471-aad3-37783578fda7&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T19%3A01%3A18Z&ske=2026-09-19T19%3A01%3A18Z&sks=b&skv=2026-02-06&sig=p87WRoB0dQElCY6OTJ8/SJZnim4UsVZZ9UoKBzmaMg4%3D"
+      VIDEO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-63a0-81f7-ab01-624281912376/raw?se=2026-09-19T03%3A37%3A39Z&sp=r&sv=2026-02-06&sr=b&scid=90c1f701-5649-59f2-9a6e-71fb3814c07f&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T18%3A59%3A10Z&ske=2026-09-19T18%3A59%3A10Z&sks=b&skv=2026-02-06&sig=CelsOgswjRE6JZpFzFFVkO2%2BnBfOiDnz%2BcTJ8/B/Uq8%3D"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: song/midnight-tribal-pulse
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Assert production branch
+        run: |
+          test "$(git branch --show-current)" = "song/midnight-tribal-pulse"
+
+      - name: Install production runtime
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python-headless librosa scipy
+
+      - name: Download current authorized sources
+        run: |
+          mkdir -p /tmp/midnight-source
+          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/midnight-source/Midnight Tribal Pulse (Remastered).mp3"
+          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/midnight-source/mescalito_living_scene.mp4"
+
+      - name: Bootstrap exact current-main AIVideoEdit OS
+        run: |
+          python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE"
+
+      - name: Run repo-controlled production
+        run: |
+          python projects/midnight-tribal-pulse/run_repo_production.py             --repo "$GITHUB_WORKSPACE"             --audio "/tmp/midnight-source/Midnight Tribal Pulse (Remastered).mp3"             --video "/tmp/midnight-source/mescalito_living_scene.mp4"             | tee /tmp/midnight-production-report.txt
+
+      - name: Persist production brain to song branch
+        run: |
+          git config user.name "AIVideoEdit Production Bot"
+          git config user.email "actions@users.noreply.github.com"
+          find projects/midnight-tribal-pulse -type f \( -name '*.json' -o -name '*.md' \) -print0 | xargs -0 git add
+          if ! git diff --cached --quiet; then
+            git commit -m "prod: complete repo-controlled Midnight Tribal Pulse production"
+            git push origin HEAD:song/midnight-tribal-pulse
+          fi
+
+      - name: Package heavy production media
+        if: always()
+        run: |
+          mkdir -p /tmp/package
+          cp /tmp/midnight-production-report.txt /tmp/package/ 2>/dev/null || true
+          cp -a projects/midnight-tribal-pulse/production_media /tmp/package/ 2>/dev/null || true
+          cp projects/midnight-tribal-pulse/ARCHIVE_MANIFEST.json /tmp/package/ 2>/dev/null || true
+          cp projects/midnight-tribal-pulse/HERO_LIBRARY.json /tmp/package/ 2>/dev/null || true
+          tar -czf /tmp/Midnight_Tribal_Pulse_REPO_CONTROLLED_PRODUCTION.tgz -C /tmp/package .
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: midnight-tribal-pulse-repo-controlled-production
+          path: /tmp/Midnight_Tribal_Pulse_REPO_CONTROLLED_PRODUCTION.tgz
+          retention-days: 3
+          if-no-files-found: error
