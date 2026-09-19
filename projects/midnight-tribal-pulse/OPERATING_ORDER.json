@@ -1,0 +1,51 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Build a new full-song animated visual world from the supplied Mescalito living-scene reference instead of enlarging/repeating the source clip.",
+  "direction_authority": "reference_led",
+  "production_mode": "hybrid",
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Psychedelic nocturnal desert oracle world with ornate organic detail, sacred circular geometry, cactus/rock terrain, lunar/cosmic sky, amber-gold bioluminescence against indigo-violet night; internal scene motion first.",
+    "items": [
+      "The supplied 8-second Mescalito clip defines visual and motion language.",
+      "Extract every frame from the short reference.",
+      "Preserve source subject/world identity while deriving new coverage and animated layers.",
+      "Internal light, celestial, atmospheric, ornament and material motion precede camera motion.",
+      "Do not use the rejected blown-up master as source, proof, baseline or picture authority."
+    ]
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "accepted_source_library": {
+    "status": "accepted",
+    "role": "visual_world",
+    "file_or_locator": "drive:10cjCocD5JRSdINr05a44ViSRq1NRvReN",
+    "sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+    "user_acceptance_statement": "Use the original animated Mescalito still/video as the visual source: extract its frames/effects/loops, create media from it, storyboard that media, and follow the repo workflow.",
+    "content_reuse_authorized": true,
+    "timeline_locked": false
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [
+      "Do not promote or reuse the rejected prior master"
+    ],
+    "source_replacement_authorized": false
+  },
+  "current_user_direction": "Extract all frames from the original animated reference, identify its effects/GIF-loop behavior, create media based on that reference, build storyboards, and follow those storyboards through the repository workflow.",
+  "exact_next_action": "Ingest source audio/reference and fully extract all 192 frames from the 8-second reference.",
+  "updated_at_utc": "2026-09-19T03:32:00Z"
+}
