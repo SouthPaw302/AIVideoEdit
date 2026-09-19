@@ -1,0 +1,23 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "visual_direction_gate": {
+    "required": false,
+    "reason": "usable current-user supplied visual reference"
+  },
+  "selected_capabilities": [
+    "source_video",
+    "extracted_frames",
+    "canonical_hero_library",
+    "source_derived_coverage",
+    "living_scene",
+    "living_still_fx",
+    "layered_composite",
+    "atmospheric_plate",
+    "reactive_plate",
+    "loop_media",
+    "transition_media",
+    "analysis_qc_media"
+  ],
+  "approach_summary": "Derive a diverse hero library and motion grammar from the fully extracted reference, create new source-derived coverage and living-scene animated composites, then edit to the song structure. Avoid whole-frame zoom as the primary animation method."
+}
