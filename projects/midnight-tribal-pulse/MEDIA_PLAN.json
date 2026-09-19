@@ -8,7 +8,6 @@
   "selected_capabilities": [
     "source_video",
     "extracted_frames",
-    "canonical_hero_library",
     "source_derived_coverage",
     "living_scene",
     "living_still_fx",
