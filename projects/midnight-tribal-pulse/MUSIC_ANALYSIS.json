@@ -1,0 +1,22 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": false,
+  "lyrics": {
+    "status": "none_confirmed",
+    "source": "current_user_material",
+    "text_file": null
+  },
+  "genre": {
+    "status": "pending",
+    "label": null,
+    "source": null,
+    "confidence": 0
+  },
+  "rhythm": {
+    "tempo_status": "pending",
+    "tempo_bpm": null,
+    "pulse_description": null,
+    "meter_or_groove": null
+  },
+  "sections": []
+}
