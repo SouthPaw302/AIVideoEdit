@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-e9d4-81f7-ad55-4bba6579937a/raw?se=2026-09-19T03%3A37%3A38Z&sp=r&sv=2026-02-06&sr=b&scid=b76b11c3-af89-5471-aad3-37783578fda7&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T19%3A01%3A18Z&ske=2026-09-19T19%3A01%3A18Z&sks=b&skv=2026-02-06&sig=p87WRoB0dQElCY6OTJ8/SJZnim4UsVZZ9UoKBzmaMg4%3D"
-      VIDEO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-63a0-81f7-ab01-624281912376/raw?se=2026-09-19T03%3A37%3A39Z&sp=r&sv=2026-02-06&sr=b&scid=90c1f701-5649-59f2-9a6e-71fb3814c07f&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T18%3A59%3A10Z&ske=2026-09-19T18%3A59%3A10Z&sks=b&skv=2026-02-06&sig=CelsOgswjRE6JZpFzFFVkO2%2BnBfOiDnz%2BcTJ8/B/Uq8%3D"
+      AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-9dfc-81f7-bed6-491c53c149e3/raw?se=2026-09-19T03%3A50%3A04Z&sp=r&sv=2026-02-06&sr=b&scid=9d64412e-1616-5547-8dd6-b242f354793a&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T18%3A52%3A43Z&ske=2026-09-19T18%3A52%3A43Z&sks=b&skv=2026-02-06&sig=XKGgMVR0Qs7fjpzxl/bVb1Re0jhL1p9t16iFnNfE7m4%3D"
+      VIDEO_URL: "https://sdmntprwestus.oaiusercontent.com/files/00000000-734c-8230-9246-da4d6b112121/raw?se=2026-09-19T03%3A50%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=797772a4-1a33-52cf-bb3d-cf8da7978259&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T18%3A52%3A43Z&ske=2026-09-19T18%3A52%3A43Z&sks=b&skv=2026-02-06&sig=dZPzkfNOONdnR2oA7pDvRd7JXw43lLhaLL4HJ0%2BRlD8%3D"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,18 +33,18 @@ jobs:
         run: |
           test "$(git branch --show-current)" = "song/midnight-tribal-pulse"
 
+      - name: Download current authorized sources
+        run: |
+          mkdir -p /tmp/midnight-source
+          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/midnight-source/Midnight Tribal Pulse (Remastered).mp3"
+          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/midnight-source/mescalito_living_scene.mp4"
+
       - name: Install production runtime
         run: |
           sudo apt-get update -y
           sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
           python -m pip install numpy opencv-python-headless librosa scipy
-
-      - name: Download current authorized sources
-        run: |
-          mkdir -p /tmp/midnight-source
-          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/midnight-source/Midnight Tribal Pulse (Remastered).mp3"
-          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/midnight-source/mescalito_living_scene.mp4"
 
       - name: Bootstrap exact current-main AIVideoEdit OS
         run: |
