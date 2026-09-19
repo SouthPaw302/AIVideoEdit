@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# phase1 retry after capability schema correction
 from __future__ import annotations
 import argparse, hashlib, importlib.util, json, math, os, shutil, subprocess, sys
 from pathlib import Path
