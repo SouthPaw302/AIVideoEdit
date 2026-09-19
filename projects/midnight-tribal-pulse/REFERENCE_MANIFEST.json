@@ -1,0 +1,22 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [
+    {
+      "id": "mescalito_reference",
+      "filename": "mescalito_living_scene.mp4",
+      "role": "visual_world_and_motion_reference",
+      "content_reuse_authorized": true,
+      "duration_seconds": 8,
+      "fps": 24,
+      "total_frames": 192,
+      "extracted_frames": 0,
+      "extraction_policy": "extract_all_frames",
+      "sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+      "recovery_locator": "drive:10cjCocD5JRSdINr05a44ViSRq1NRvReN"
+    }
+  ],
+  "images": [],
+  "analysis": {
+    "complete": false
+  }
+}
