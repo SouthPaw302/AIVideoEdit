@@ -186,9 +186,9 @@ def main():
 
     # REFERENCES_ANALYZED: copy real repo probe signal analysis + full-frame motion evidence
     music=json.loads((evidence/"MUSIC_ANALYSIS.json").read_text())
-    music["genre"]={"status":"user_confirmed","label":"psychedelic tribal electronic / tribal house","source":"current production direction","confidence":1.0,
+    music["genre"]={"status":"user_confirmed","label":"psychedelic tribal electronic / tribal house","source":"current_user_instruction","confidence":1.0,
                     "user_declaration":"Use the supplied track as the musical pacing authority while the Mescalito reference controls picture language."}
-    music["lyrics"]={"status":"absent","source":"current production direction","directing_use":"music structure, energy and transitions drive pacing"}
+    music["lyrics"]={"status":"none_confirmed","source":"current production direction","directing_use":"music structure, energy and transitions drive pacing"}
     music["meter_or_groove"]={"status":"resolved","description":"steady tribal electronic / house pulse"}
     music["sections"]=music.pop("section_map",[])
     for s in music["sections"]:
@@ -205,7 +205,7 @@ def main():
          "-c:v","libx264","-preset","veryfast","-crf","16","-pix_fmt","yuv420p",str(refvid)])
     hero_dir=work/"hero_library"
     hero_tool=repo/".aivideoedit/os/general/reusable/tools/hero_library_extract.py"
-    run([sys.executable,str(hero_tool),str(refvid),"--output-dir",str(hero_dir),"--target-count","16","--candidate-interval","0.25"])
+    run([sys.executable,str(hero_tool),str(refvid),"--output-dir",str(hero_dir),"--target-count","16","--candidate-interval","0.125","--duplicate-similarity","0.99999"])
     hero=json.loads((hero_dir/"HERO_LIBRARY.json").read_text())
     hero["source"]["identity"]="mescalito_living_scene.mp4"
     hero["source"]["file_or_locator"]="drive:10cjCocD5JRSdINr05a44ViSRq1NRvReN"
@@ -218,7 +218,7 @@ def main():
     plan["reference_motion_findings"]=ma["motion_language"]
     plan["hero_library_selected_count"]=len(hero["entries"])
     dump(project/"MEDIA_PLAN.json",plan)
-    set_stage(project,"REFERENCES_ANALYZED",reference_analysis_complete=True,lyrics_status_resolved=True,genre_authority_resolved=True)
+    set_stage(project,"REFERENCES_ANALYZED",reference_analysis_complete=True,music_analysis_complete=True,lyrics_status_resolved=True,genre_authority_resolved=True)
     guard(repo)
 
     # APPROACH_ESTABLISHED
