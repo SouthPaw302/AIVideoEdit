@@ -1,0 +1,87 @@
+name: Midnight Tribal Pulse Phase 1
+
+on:
+  push:
+    branches:
+      - song/midnight-tribal-pulse
+    paths:
+      - ".github/workflows/midnight-tribal-pulse-phase1.yml"
+      - "projects/midnight-tribal-pulse/repo_production_phase1.py"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  phase1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-f418-81f7-85e6-df2b1b53aa2c/raw?se=2026-09-19T03%3A49%3A47Z&sp=r&sv=2026-02-06&sr=b&scid=2fab0896-7a4e-5b43-9417-de1c6bce5a1e&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T19%3A03%3A41Z&ske=2026-09-19T19%3A03%3A41Z&sks=b&skv=2026-02-06&sig=2rFWJuZCf4/X9/YwJACaxloSDY8ddWA7loU5Y8qvidw%3D"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: song/midnight-tribal-pulse
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install production dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install numpy opencv-python-headless
+
+      - name: Recover verified 192-frame extraction evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: deepseek-harness-direction-evidence
+          run-id: 35323472127
+          github-token: ${{ github.token }}
+          path: /tmp/probe
+
+      - name: Expand extraction evidence
+        run: |
+          mkdir -p /tmp/evidence
+          tar -xzf /tmp/probe/deepseek-harness-direction-evidence.tgz -C /tmp/evidence
+          test "$(find /tmp/evidence/analysis -name 'frame_*.jpg' | wc -l)" -eq 192
+
+      - name: Fetch clean audio master
+        run: |
+          curl -fL --retry 4 "$AUDIO_URL" -o "/tmp/Midnight Tribal Pulse (Remastered).mp3"
+          echo "a6085dbcf4c5673407dbc715492f2f8c79a36ad519bc31d74572456c1182c44f  /tmp/Midnight Tribal Pulse (Remastered).mp3" | sha256sum -c -
+
+      - name: Bootstrap current-main AIVideoEdit OS
+        run: |
+          python bootstrap.py boot --repo-root .
+
+      - name: Run repo-controlled production through shot packages
+        run: |
+          rm -rf /tmp/phase1
+          mkdir -p /tmp/phase1
+          python projects/midnight-tribal-pulse/repo_production_phase1.py \
+            --repo . \
+            --audio "/tmp/Midnight Tribal Pulse (Remastered).mp3" \
+            --evidence /tmp/evidence \
+            --work /tmp/phase1
+
+      - name: Commit production state and storyboard evidence
+        run: |
+          git config user.name "AIVideoEdit Production"
+          git config user.email "actions@users.noreply.github.com"
+          git add projects/midnight-tribal-pulse
+          if ! git diff --cached --quiet; then
+            git commit -m "prod: build Midnight Tribal Pulse shot packages"
+            git push origin HEAD:song/midnight-tribal-pulse
+          fi
+
+      - name: Upload real media proofs
+        uses: actions/upload-artifact@v4
+        with:
+          name: midnight-tribal-pulse-phase1
+          path: /tmp/phase1
+          if-no-files-found: error
+          retention-days: 14
