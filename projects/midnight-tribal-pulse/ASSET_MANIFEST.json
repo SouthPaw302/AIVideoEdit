@@ -1,4 +1,413 @@
 {
   "schema": "aivideoedit.asset-manifest.v1",
-  "assets": []
+  "assets": [
+    {
+      "id": "S01_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S01_plate.png",
+      "sha256": "5fe959073cea5db0f5c8e05732ca134210d45ec8a7906be41f69f17a09f60a88",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 0 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S02_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S02_plate.png",
+      "sha256": "45334f2c6ec7bae8f637ea9c00b2d1f76113c1fca8a339cb867b8eb4efab2a2c",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 1 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S03_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S03_plate.png",
+      "sha256": "b79c8df7e1d8c9f753e497ea3b1345b8be10694530baec3503efac34f0f0ba98",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 2 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S04_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S04_plate.png",
+      "sha256": "831ec6277fbc7cfad2941893117e7dd8b867a9c1ec533d6c060f5cced2a864a1",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 3 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S05_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S05_plate.png",
+      "sha256": "87d276d53548d9123fd26bc8ea0e1f2f89c38dca911b62f25fcde2a95ab56ac4",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 0 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S06_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S06_plate.png",
+      "sha256": "230b3cc5047dacd847edb5fea287156b378b144d37f70485edc6e9e2a03007b2",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 1 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S07_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S07_plate.png",
+      "sha256": "cef218cdba61d6b8cf5244049cd9a420758b7969f5f77e13d56f1d97f73b1bf8",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 2 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S08_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S08_plate.png",
+      "sha256": "9595e42ef518fbcc5078d2115c11061210ad1b892eea566052c2a94d39fa4beb",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 3 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S09_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S09_plate.png",
+      "sha256": "8453f322242637084da79a92ed652cd75936bf6d2a239f041bb5b0326aeeae07",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 0 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S10_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S10_plate.png",
+      "sha256": "ae03170fd7fb1ad88b84bdfe9bd719fbf6fcd20eecdabf02e371881674e6d2d2",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 1 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S11_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S11_plate.png",
+      "sha256": "33139fa15b2400feb51d06bed4f02b74ea30827a0d675a7e86b33bcfdcbb239e",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 2 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S12_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S12_plate.png",
+      "sha256": "036cb674b7232d989ca4cbd5b819b36ff7fcfe40bb60304d71ed564487eccefd",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 3 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S13_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S13_plate.png",
+      "sha256": "5fe959073cea5db0f5c8e05732ca134210d45ec8a7906be41f69f17a09f60a88",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 0 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S14_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S14_plate.png",
+      "sha256": "45334f2c6ec7bae8f637ea9c00b2d1f76113c1fca8a339cb867b8eb4efab2a2c",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 1 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S15_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S15_plate.png",
+      "sha256": "b79c8df7e1d8c9f753e497ea3b1345b8be10694530baec3503efac34f0f0ba98",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 2 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S16_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S16_plate.png",
+      "sha256": "831ec6277fbc7cfad2941893117e7dd8b867a9c1ec533d6c060f5cced2a864a1",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 3 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S17_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S17_plate.png",
+      "sha256": "87d276d53548d9123fd26bc8ea0e1f2f89c38dca911b62f25fcde2a95ab56ac4",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 0 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S18_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S18_plate.png",
+      "sha256": "230b3cc5047dacd847edb5fea287156b378b144d37f70485edc6e9e2a03007b2",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 1 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S19_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S19_plate.png",
+      "sha256": "cef218cdba61d6b8cf5244049cd9a420758b7969f5f77e13d56f1d97f73b1bf8",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 2 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S20_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S20_plate.png",
+      "sha256": "9595e42ef518fbcc5078d2115c11061210ad1b892eea566052c2a94d39fa4beb",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 3 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S21_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S21_plate.png",
+      "sha256": "8453f322242637084da79a92ed652cd75936bf6d2a239f041bb5b0326aeeae07",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 0 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S22_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S22_plate.png",
+      "sha256": "ae03170fd7fb1ad88b84bdfe9bd719fbf6fcd20eecdabf02e371881674e6d2d2",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          0,
+          0.75
+        ],
+        "derivation": "source-frame composition variant 1 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S23_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S23_plate.png",
+      "sha256": "33139fa15b2400feb51d06bed4f02b74ea30827a0d675a7e86b33bcfdcbb239e",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          1.583,
+          3.583
+        ],
+        "derivation": "source-frame composition variant 2 from accepted 192-frame library"
+      }
+    },
+    {
+      "id": "S24_plate",
+      "kind": "source_derived_image",
+      "origin": "source_derived",
+      "lifecycle_status": "derived",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S24_plate.png",
+      "sha256": "036cb674b7232d989ca4cbd5b819b36ff7fcfe40bb60304d71ed564487eccefd",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+        "source_range_seconds": [
+          4.833,
+          7.333
+        ],
+        "derivation": "source-frame composition variant 3 from accepted 192-frame library"
+      }
+    }
+  ]
 }

@@ -1,0 +1,150 @@
+{
+  "schema": "aivideoedit.proof-index.v1",
+  "creative_status": "needs_review",
+  "proofs": [
+    {
+      "shot_id": "S01",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S01_proof.mp4",
+      "sha256": "bb9824a0920e69a47b10cc921d99b55a9d7adad1677a47b8fecbdc2259da6d97",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S02",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S02_proof.mp4",
+      "sha256": "fcecad608ba54e02a7546fa29dce959fa06cfac212732c9eb00f59e9a025e282",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S03",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S03_proof.mp4",
+      "sha256": "de857b576d95c65517fc7e91754a7370dbb2230d52fae1404261ad1653240b70",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S04",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S04_proof.mp4",
+      "sha256": "479fa326231ee0b5ddb619059d905f98bc3db400c5970d20bca7e644b7bfcb4b",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S05",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S05_proof.mp4",
+      "sha256": "abdff2c2f47c283ed5bddbd78c31ff5c79908ec809eb622782f6bf2f95131d76",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S06",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S06_proof.mp4",
+      "sha256": "4724bb92d1467eb7abe1b35bf59f07823f90312d33dcec93ea187f29ce0398e7",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S07",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S07_proof.mp4",
+      "sha256": "bf62a9dbe10c82f3653456a87cfc53ef8e43c28b9b1f543075c9f10d3a6a028a",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S08",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S08_proof.mp4",
+      "sha256": "d04eaf4b27e6be04dd29bfa509bca3348143a0adf8ac7f830aae2d44f572cf0c",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S09",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S09_proof.mp4",
+      "sha256": "89d516605dce354c0b41649d667cbcd66247aaa929f330c6a3a3bbaa64b4dd5c",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S10",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S10_proof.mp4",
+      "sha256": "8fead275d51cc6f0497049dcab0f74e213e5992e50dbed2f5faf404c4ae8a762",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S11",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S11_proof.mp4",
+      "sha256": "f58ae4ba399d539dd7e28124f49156d3202f0d04c7407effa18bcd02fc7e7f32",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S12",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S12_proof.mp4",
+      "sha256": "bcff9e9f147acdece01526cb605735f331963960056e2ffb97636e316becc2f1",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S13",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S13_proof.mp4",
+      "sha256": "5450af3b42520e471b96ab8f6587b659641b5e2350b36304ab6f79992f1a7bcb",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S14",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S14_proof.mp4",
+      "sha256": "4b328a686b5417d037853f8beb072ff1865a55194f82aa8dd79052f605f986a2",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S15",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S15_proof.mp4",
+      "sha256": "2af2644d3cf40cb97a7b0acadb8bce5e6a65c2753ad3c164f0680f171302bcc2",
+      "production_mode": "cinematic"
+    },
+    {
+      "shot_id": "S16",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S16_proof.mp4",
+      "sha256": "08f9a7b3d33e737f927d9f0e371fc338ae5ea46250751c3c90255d4050310ef9",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S17",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S17_proof.mp4",
+      "sha256": "12fbcdbd879eace6c15b1c4dbc234cb677e4e526daad11f4b455d35da25de82f",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S18",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S18_proof.mp4",
+      "sha256": "37fef832a6408e5b29d5427bae28e8308bb4c66891db125f43b1a4071c2c3159",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S19",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S19_proof.mp4",
+      "sha256": "e83e82fe332cd78bfa7304a8b94c9d5cba17e05805ad84419f94262e44212a1a",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S20",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S20_proof.mp4",
+      "sha256": "a785113dd00395ff009966ca943d7b655f3fea4c22eed99005f2ac41047989ce",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S21",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S21_proof.mp4",
+      "sha256": "f9d5fa5d96426cf877f85163361a7dd69bf7fdee9647df5141b0fd33949925f4",
+      "production_mode": "cinematic"
+    },
+    {
+      "shot_id": "S22",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S22_proof.mp4",
+      "sha256": "950e8b658606e1d471e42343f1feed466f1d93efcbd5f80b033ecc5ba29f71be",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S23",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S23_proof.mp4",
+      "sha256": "acf47a1c47fde3347121ecb8df7edecd2cbac3535feddb177e8d6858ed1977ae",
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S24",
+      "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S24_proof.mp4",
+      "sha256": "44f010d17fb29b25005f911b82b346e1225c041c3315c951084a91f3c86bf91d",
+      "production_mode": "cinematic"
+    }
+  ]
+}

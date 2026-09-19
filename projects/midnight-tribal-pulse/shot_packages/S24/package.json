@@ -1,0 +1,18 @@
+{
+  "shot": "S24",
+  "production_mode": "cinematic",
+  "storyboard_description": "Midnight Convergence \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+  "media_evidence": [
+    {
+      "kind": "source_derived_image",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S24_plate.png",
+      "sha256": "036cb674b7232d989ca4cbd5b819b36ff7fcfe40bb60304d71ed564487eccefd",
+      "status": "derived"
+    }
+  ],
+  "proof": {
+    "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S24_proof.mp4",
+    "sha256": "44f010d17fb29b25005f911b82b346e1225c041c3315c951084a91f3c86bf91d",
+    "creative_status": "needs_review"
+  }
+}

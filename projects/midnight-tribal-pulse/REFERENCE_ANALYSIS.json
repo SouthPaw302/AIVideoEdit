@@ -1,0 +1,63 @@
+{
+  "schema": "aivideoedit.reference-motion-analysis.v1",
+  "frames": 192,
+  "fps": 24,
+  "mean_frame_delta": 0.6882,
+  "p90_frame_delta": 0.8151,
+  "peak_changes": [
+    {
+      "frame": 13,
+      "mean_abs_delta": 2.4618
+    },
+    {
+      "frame": 2,
+      "mean_abs_delta": 2.3265
+    },
+    {
+      "frame": 109,
+      "mean_abs_delta": 1.2651
+    },
+    {
+      "frame": 97,
+      "mean_abs_delta": 1.2488
+    },
+    {
+      "frame": 25,
+      "mean_abs_delta": 1.2008
+    },
+    {
+      "frame": 85,
+      "mean_abs_delta": 1.1986
+    },
+    {
+      "frame": 49,
+      "mean_abs_delta": 1.1932
+    },
+    {
+      "frame": 121,
+      "mean_abs_delta": 1.1875
+    },
+    {
+      "frame": 133,
+      "mean_abs_delta": 1.1786
+    },
+    {
+      "frame": 37,
+      "mean_abs_delta": 1.15
+    },
+    {
+      "frame": 61,
+      "mean_abs_delta": 1.1473
+    },
+    {
+      "frame": 145,
+      "mean_abs_delta": 1.1446
+    }
+  ],
+  "motion_language": [
+    "source-authored internal celestial/light/orb motion",
+    "stable central identity and environment topology",
+    "loopable micro-motion from contiguous source ranges",
+    "no whole-frame zoom required to create life"
+  ]
+}

@@ -1,0 +1,26 @@
+# Storyboard
+
+- S01 000-011s — Invocation — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S02 011-022s — Invocation — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S03 022-033s — Invocation — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S04 033-044s — Orb Breath — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S05 044-055s — Orb Breath — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S06 055-066s — Orb Breath — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S07 066-077s — Celestial Answer — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S08 077-088s — Celestial Answer — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S09 088-099s — Celestial Answer — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S10 099-110s — Desert Memory — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S11 110-121s — Desert Memory — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S12 121-132s — Desert Memory — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S13 132-143s — Geometry Wakes — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S14 143-154s — Geometry Wakes — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S15 154-165s — Geometry Wakes — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S16 165-176s — Ritual Current — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S17 176-187s — Ritual Current — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S18 187-198s — Ritual Current — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S19 198-209s — Threshold Opens — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S20 209-220s — Threshold Opens — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S21 220-231s — Threshold Opens — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S22 231-242s — Midnight Convergence — beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S23 242-253s — Midnight Convergence — beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.
+- S24 253-264s — Midnight Convergence — beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.

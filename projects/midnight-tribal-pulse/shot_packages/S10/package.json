@@ -1,0 +1,18 @@
+{
+  "shot": "S10",
+  "production_mode": "living_scene",
+  "storyboard_description": "Desert Memory \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+  "media_evidence": [
+    {
+      "kind": "source_derived_image",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S10_plate.png",
+      "sha256": "ae03170fd7fb1ad88b84bdfe9bd719fbf6fcd20eecdabf02e371881674e6d2d2",
+      "status": "derived"
+    }
+  ],
+  "proof": {
+    "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S10_proof.mp4",
+    "sha256": "8fead275d51cc6f0497049dcab0f74e213e5992e50dbed2f5faf404c4ae8a762",
+    "creative_status": "needs_review"
+  }
+}

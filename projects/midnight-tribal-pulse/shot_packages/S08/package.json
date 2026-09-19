@@ -1,0 +1,18 @@
+{
+  "shot": "S08",
+  "production_mode": "living_scene",
+  "storyboard_description": "Celestial Answer \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+  "media_evidence": [
+    {
+      "kind": "source_derived_image",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S08_plate.png",
+      "sha256": "9595e42ef518fbcc5078d2115c11061210ad1b892eea566052c2a94d39fa4beb",
+      "status": "derived"
+    }
+  ],
+  "proof": {
+    "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S08_proof.mp4",
+    "sha256": "d04eaf4b27e6be04dd29bfa509bca3348143a0adf8ac7f830aae2d44f572cf0c",
+    "creative_status": "needs_review"
+  }
+}

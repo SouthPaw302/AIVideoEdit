@@ -1,22 +1,48 @@
 {
-  "schema": "aivideoedit.reference-manifest.v1",
-  "videos": [
+  "analysis_completed_at": 1789719415.1167226,
+  "audio": [
     {
-      "id": "mescalito_reference",
-      "filename": "mescalito_living_scene.mp4",
-      "role": "visual_world_and_motion_reference",
+      "analysis_complete": false,
+      "asset_id": "f50df787f204",
+      "audio_codec": "mp3",
+      "authorized_role": "current_project_source_media",
       "content_reuse_authorized": true,
-      "duration_seconds": 8,
-      "fps": 24,
-      "total_frames": 192,
-      "extracted_frames": 0,
-      "extraction_policy": "extract_all_frames",
-      "sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
-      "recovery_locator": "drive:10cjCocD5JRSdINr05a44ViSRq1NRvReN"
+      "duration_seconds": 264.024,
+      "name": "Midnight Tribal Pulse _Remastered_.mp3",
+      "sha256": "a6085dbcf4c5673407dbc715492f2f8c79a36ad519bc31d74572456c1182c44f",
+      "uri": "aive://asset/f50df787f204",
+      "recovery_locator": "drive:1Oo1p3JqHpYuVt5sSfz9qWXrAqaDyEB5n"
     }
   ],
   "images": [],
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [
+    {
+      "analysis_complete": true,
+      "analysis_evidence_uri": "aive://analysis/6dda85683326/frames",
+      "asset_id": "6dda85683326",
+      "authorized_role": "accepted_source_library_visual_world",
+      "content_reuse_authorized": true,
+      "coverage": [
+        {
+          "end_seconds": 8.0,
+          "frames": 192,
+          "start_seconds": 0.0
+        }
+      ],
+      "duration_seconds": 8.0,
+      "extracted_frames": 192,
+      "extraction_policy": "all_frames",
+      "name": "mescalito_living_scene.mp4",
+      "sampling_description": "Every decodable frame extracted for canonical short-reference analysis.",
+      "sha256": "e2b251b866a6a9f2ac4b329ade2ee4c30998d875a0791400d4328c51a69b1dbb",
+      "total_frames": 192,
+      "uri": "aive://asset/6dda85683326",
+      "recovery_locator": "drive:10cjCocD5JRSdINr05a44ViSRq1NRvReN"
+    }
+  ],
   "analysis": {
-    "complete": false
+    "complete": true,
+    "motion_analysis_file": "REFERENCE_ANALYSIS.json"
   }
 }

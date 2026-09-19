@@ -1,0 +1,18 @@
+{
+  "shot": "S15",
+  "production_mode": "cinematic",
+  "storyboard_description": "Geometry Wakes \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+  "media_evidence": [
+    {
+      "kind": "source_derived_image",
+      "uri": "artifact://midnight-tribal-pulse-phase1/derived/S15_plate.png",
+      "sha256": "b79c8df7e1d8c9f753e497ea3b1345b8be10694530baec3503efac34f0f0ba98",
+      "status": "derived"
+    }
+  ],
+  "proof": {
+    "uri": "artifact://midnight-tribal-pulse-phase1/proofs/S15_proof.mp4",
+    "sha256": "2af2644d3cf40cb97a7b0acadb8bce5e6a65c2753ad3c164f0680f171302bcc2",
+    "creative_status": "needs_review"
+  }
+}

@@ -46,6 +46,6 @@
     "source_replacement_authorized": false
   },
   "current_user_direction": "Extract all frames from the original animated reference, identify its effects/GIF-loop behavior, create media based on that reference, build storyboards, and follow those storyboards through the repository workflow.",
-  "exact_next_action": "Ingest source audio/reference and fully extract all 192 frames from the 8-second reference.",
+  "exact_next_action": "Review the 24 real proof clips/contact sheet. Accept or reject proofs before FX lock.",
   "updated_at_utc": "2026-09-19T03:32:00Z"
 }

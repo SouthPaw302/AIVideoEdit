@@ -16,7 +16,15 @@
     "reactive_plate",
     "loop_media",
     "transition_media",
-    "analysis_qc_media"
+    "analysis_qc_media",
+    "canonical_hero_library"
   ],
-  "approach_summary": "Derive a diverse hero library and motion grammar from the fully extracted reference, create new source-derived coverage and living-scene animated composites, then edit to the song structure. Avoid whole-frame zoom as the primary animation method."
+  "approach_summary": "Derive a diverse hero library and motion grammar from the fully extracted reference, create new source-derived coverage and living-scene animated composites, then edit to the song structure. Avoid whole-frame zoom as the primary animation method.",
+  "reference_motion_findings": [
+    "source-authored internal celestial/light/orb motion",
+    "stable central identity and environment topology",
+    "loopable micro-motion from contiguous source ranges",
+    "no whole-frame zoom required to create life"
+  ],
+  "hero_library_selected_count": 16
 }

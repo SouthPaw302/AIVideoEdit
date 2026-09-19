@@ -1,22 +1,346 @@
 {
-  "schema": "aivideoedit.music-analysis.v1",
-  "analysis_complete": false,
+  "analysis_complete": true,
+  "analysis_method": "ffmpeg PCM decode + 100ms RMS/onset autocorrelation",
+  "duration_seconds": 264.024,
+  "energy_curve": [
+    {
+      "relative_energy": 0.003,
+      "seconds": 0.0
+    },
+    {
+      "relative_energy": 0.232,
+      "seconds": 6.6
+    },
+    {
+      "relative_energy": 0.187,
+      "seconds": 13.2
+    },
+    {
+      "relative_energy": 0.192,
+      "seconds": 19.8
+    },
+    {
+      "relative_energy": 0.193,
+      "seconds": 26.4
+    },
+    {
+      "relative_energy": 0.217,
+      "seconds": 33.0
+    },
+    {
+      "relative_energy": 0.215,
+      "seconds": 39.6
+    },
+    {
+      "relative_energy": 0.113,
+      "seconds": 46.2
+    },
+    {
+      "relative_energy": 0.507,
+      "seconds": 52.8
+    },
+    {
+      "relative_energy": 0.553,
+      "seconds": 59.4
+    },
+    {
+      "relative_energy": 0.275,
+      "seconds": 66.0
+    },
+    {
+      "relative_energy": 0.234,
+      "seconds": 72.6
+    },
+    {
+      "relative_energy": 0.393,
+      "seconds": 79.2
+    },
+    {
+      "relative_energy": 0.643,
+      "seconds": 85.8
+    },
+    {
+      "relative_energy": 0.397,
+      "seconds": 92.4
+    },
+    {
+      "relative_energy": 0.389,
+      "seconds": 99.0
+    },
+    {
+      "relative_energy": 0.358,
+      "seconds": 105.6
+    },
+    {
+      "relative_energy": 0.322,
+      "seconds": 112.2
+    },
+    {
+      "relative_energy": 0.363,
+      "seconds": 118.8
+    },
+    {
+      "relative_energy": 0.336,
+      "seconds": 125.4
+    },
+    {
+      "relative_energy": 0.298,
+      "seconds": 132.0
+    },
+    {
+      "relative_energy": 0.712,
+      "seconds": 138.6
+    },
+    {
+      "relative_energy": 0.591,
+      "seconds": 145.2
+    },
+    {
+      "relative_energy": 0.536,
+      "seconds": 151.8
+    },
+    {
+      "relative_energy": 0.436,
+      "seconds": 158.4
+    },
+    {
+      "relative_energy": 0.792,
+      "seconds": 165.0
+    },
+    {
+      "relative_energy": 0.348,
+      "seconds": 171.6
+    },
+    {
+      "relative_energy": 0.314,
+      "seconds": 178.2
+    },
+    {
+      "relative_energy": 0.697,
+      "seconds": 184.8
+    },
+    {
+      "relative_energy": 0.282,
+      "seconds": 191.4
+    },
+    {
+      "relative_energy": 0.394,
+      "seconds": 198.0
+    },
+    {
+      "relative_energy": 0.563,
+      "seconds": 204.6
+    },
+    {
+      "relative_energy": 0.389,
+      "seconds": 211.2
+    },
+    {
+      "relative_energy": 0.787,
+      "seconds": 217.8
+    },
+    {
+      "relative_energy": 0.654,
+      "seconds": 224.4
+    },
+    {
+      "relative_energy": 0.46,
+      "seconds": 231.0
+    },
+    {
+      "relative_energy": 0.461,
+      "seconds": 237.6
+    },
+    {
+      "relative_energy": 0.319,
+      "seconds": 244.2
+    },
+    {
+      "relative_energy": 0.637,
+      "seconds": 250.8
+    },
+    {
+      "relative_energy": 0.766,
+      "seconds": 257.4
+    }
+  ],
+  "genre": {
+    "status": "user_confirmed",
+    "label": "psychedelic tribal electronic / tribal house",
+    "source": "current_user_instruction",
+    "confidence": 1.0,
+    "user_declaration": "Use the supplied track as the musical pacing authority while the Mescalito reference controls picture language."
+  },
   "lyrics": {
     "status": "none_confirmed",
-    "source": "current_user_material",
-    "text_file": null
+    "source": "current production direction",
+    "directing_use": "music structure, energy and transitions drive pacing"
   },
-  "genre": {
-    "status": "pending",
-    "label": null,
-    "source": null,
-    "confidence": 0
+  "meter_or_groove": {
+    "status": "resolved",
+    "description": "steady tribal electronic / house pulse"
   },
+  "musical_cues": [
+    {
+      "relative_energy": 0.984,
+      "seconds": 253.3,
+      "type": "energy_peak"
+    },
+    {
+      "relative_energy": 0.994,
+      "seconds": 253.8,
+      "type": "energy_peak"
+    },
+    {
+      "relative_energy": 0.986,
+      "seconds": 254.3,
+      "type": "energy_peak"
+    },
+    {
+      "relative_energy": 1.0,
+      "seconds": 255.2,
+      "type": "energy_peak"
+    },
+    {
+      "relative_energy": 0.985,
+      "seconds": 255.7,
+      "type": "energy_peak"
+    },
+    {
+      "relative_energy": 0.988,
+      "seconds": 256.2,
+      "type": "energy_peak"
+    },
+    {
+      "relative_energy": 0.963,
+      "seconds": 256.7,
+      "type": "energy_peak"
+    },
+    {
+      "relative_energy": 0.954,
+      "seconds": 257.6,
+      "type": "energy_peak"
+    }
+  ],
+  "narrative_function": {
+    "note": "Signal analysis supplies timing/energy evidence but does not invent narrative intent.",
+    "status": "pending_interpretation"
+  },
+  "rhythm_or_pulse": {
+    "confidence": 0.549,
+    "estimated_bpm": 120.0,
+    "status": "pulse_detected"
+  },
+  "schema": "aivideoedit.music-analysis.v1",
+  "source_asset_id": "f50df787f204",
+  "source_uri": "aive://asset/f50df787f204",
+  "tempo_or_non_metric_status": {
+    "confidence": 0.549,
+    "estimated_bpm": 120.0,
+    "status": "estimated_metric"
+  },
+  "sections": [
+    {
+      "end_seconds": 33.0,
+      "energy": "low",
+      "index": 1,
+      "mean_rms": 0.05582,
+      "start_seconds": 0.0,
+      "id": "SEC01",
+      "musical_cues": [
+        "low energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    },
+    {
+      "end_seconds": 66.01,
+      "energy": "low",
+      "index": 2,
+      "mean_rms": 0.09373,
+      "start_seconds": 33.0,
+      "id": "SEC02",
+      "musical_cues": [
+        "low energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    },
+    {
+      "end_seconds": 99.01,
+      "energy": "medium",
+      "index": 3,
+      "mean_rms": 0.12352,
+      "start_seconds": 66.01,
+      "id": "SEC03",
+      "musical_cues": [
+        "medium energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    },
+    {
+      "end_seconds": 132.01,
+      "energy": "medium",
+      "index": 4,
+      "mean_rms": 0.10921,
+      "start_seconds": 99.01,
+      "id": "SEC04",
+      "musical_cues": [
+        "medium energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    },
+    {
+      "end_seconds": 165.01,
+      "energy": "high",
+      "index": 5,
+      "mean_rms": 0.16105,
+      "start_seconds": 132.01,
+      "id": "SEC05",
+      "musical_cues": [
+        "high energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    },
+    {
+      "end_seconds": 198.02,
+      "energy": "medium",
+      "index": 6,
+      "mean_rms": 0.11325,
+      "start_seconds": 165.01,
+      "id": "SEC06",
+      "musical_cues": [
+        "medium energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    },
+    {
+      "end_seconds": 231.02,
+      "energy": "high",
+      "index": 7,
+      "mean_rms": 0.179,
+      "start_seconds": 198.02,
+      "id": "SEC07",
+      "musical_cues": [
+        "high energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    },
+    {
+      "end_seconds": 264.02,
+      "energy": "high",
+      "index": 8,
+      "mean_rms": 0.17466,
+      "start_seconds": 231.02,
+      "id": "SEC08",
+      "musical_cues": [
+        "high energy pulse"
+      ],
+      "narrative_function": "evolve the same ritual world without breaking visual canon"
+    }
+  ],
   "rhythm": {
-    "tempo_status": "pending",
-    "tempo_bpm": null,
-    "pulse_description": null,
-    "meter_or_groove": null
-  },
-  "sections": []
+    "tempo_status": "measured",
+    "tempo_bpm": 120.0,
+    "pulse_description": "steady tribal electronic pulse",
+    "meter_or_groove": "4/4 house-derived tribal groove"
+  }
 }

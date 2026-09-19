@@ -1,0 +1,247 @@
+{
+  "schema": "aivideoedit.storyboard.v1",
+  "locked": true,
+  "duration_seconds": 264,
+  "shots": [
+    {
+      "shot_id": "S01",
+      "start_seconds": 0,
+      "end_seconds": 11,
+      "section": 1,
+      "beat": 1,
+      "description": "Invocation \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S02",
+      "start_seconds": 11,
+      "end_seconds": 22,
+      "section": 1,
+      "beat": 2,
+      "description": "Invocation \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S03",
+      "start_seconds": 22,
+      "end_seconds": 33,
+      "section": 1,
+      "beat": 3,
+      "description": "Invocation \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S04",
+      "start_seconds": 33,
+      "end_seconds": 44,
+      "section": 2,
+      "beat": 1,
+      "description": "Orb Breath \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S05",
+      "start_seconds": 44,
+      "end_seconds": 55,
+      "section": 2,
+      "beat": 2,
+      "description": "Orb Breath \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S06",
+      "start_seconds": 55,
+      "end_seconds": 66,
+      "section": 2,
+      "beat": 3,
+      "description": "Orb Breath \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S07",
+      "start_seconds": 66,
+      "end_seconds": 77,
+      "section": 3,
+      "beat": 1,
+      "description": "Celestial Answer \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S08",
+      "start_seconds": 77,
+      "end_seconds": 88,
+      "section": 3,
+      "beat": 2,
+      "description": "Celestial Answer \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S09",
+      "start_seconds": 88,
+      "end_seconds": 99,
+      "section": 3,
+      "beat": 3,
+      "description": "Celestial Answer \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S10",
+      "start_seconds": 99,
+      "end_seconds": 110,
+      "section": 4,
+      "beat": 1,
+      "description": "Desert Memory \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S11",
+      "start_seconds": 110,
+      "end_seconds": 121,
+      "section": 4,
+      "beat": 2,
+      "description": "Desert Memory \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S12",
+      "start_seconds": 121,
+      "end_seconds": 132,
+      "section": 4,
+      "beat": 3,
+      "description": "Desert Memory \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S13",
+      "start_seconds": 132,
+      "end_seconds": 143,
+      "section": 5,
+      "beat": 1,
+      "description": "Geometry Wakes \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S14",
+      "start_seconds": 143,
+      "end_seconds": 154,
+      "section": 5,
+      "beat": 2,
+      "description": "Geometry Wakes \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S15",
+      "start_seconds": 154,
+      "end_seconds": 165,
+      "section": 5,
+      "beat": 3,
+      "description": "Geometry Wakes \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "cinematic"
+    },
+    {
+      "shot_id": "S16",
+      "start_seconds": 165,
+      "end_seconds": 176,
+      "section": 6,
+      "beat": 1,
+      "description": "Ritual Current \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S17",
+      "start_seconds": 176,
+      "end_seconds": 187,
+      "section": 6,
+      "beat": 2,
+      "description": "Ritual Current \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S18",
+      "start_seconds": 187,
+      "end_seconds": 198,
+      "section": 6,
+      "beat": 3,
+      "description": "Ritual Current \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S19",
+      "start_seconds": 198,
+      "end_seconds": 209,
+      "section": 7,
+      "beat": 1,
+      "description": "Threshold Opens \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S20",
+      "start_seconds": 209,
+      "end_seconds": 220,
+      "section": 7,
+      "beat": 2,
+      "description": "Threshold Opens \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S21",
+      "start_seconds": 220,
+      "end_seconds": 231,
+      "section": 7,
+      "beat": 3,
+      "description": "Threshold Opens \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "cinematic"
+    },
+    {
+      "shot_id": "S22",
+      "start_seconds": 231,
+      "end_seconds": 242,
+      "section": 8,
+      "beat": 1,
+      "description": "Midnight Convergence \u2014 beat 1: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 0,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S23",
+      "start_seconds": 242,
+      "end_seconds": 253,
+      "section": 8,
+      "beat": 2,
+      "description": "Midnight Convergence \u2014 beat 2: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 63,
+      "production_mode": "living_scene"
+    },
+    {
+      "shot_id": "S24",
+      "start_seconds": 253,
+      "end_seconds": 264,
+      "section": 8,
+      "beat": 3,
+      "description": "Midnight Convergence \u2014 beat 3: evolve the same Mescalito world using source-derived motion, a new composition, and music-scaled internal light.",
+      "hero_frame_index": 147,
+      "production_mode": "cinematic"
+    }
+  ]
+}
