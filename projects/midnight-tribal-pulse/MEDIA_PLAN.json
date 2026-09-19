@@ -8,8 +8,8 @@
   "selected_capabilities": [
     "source_video",
     "extracted_frames",
+    "accepted_source_library",
     "source_derived_coverage",
-    "living_scene",
     "living_still_fx",
     "layered_composite",
     "atmospheric_plate",
