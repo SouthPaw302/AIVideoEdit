@@ -1,0 +1,37 @@
+{
+  "schema": "aivideoedit.source-ingest.v1",
+  "verified_utc": "2026-09-20",
+  "source_drive_folder": "1ROTZHvmBb71snAsBXXU6YImyXWT0ikEV",
+  "alternate_output_drive_folder": "1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz",
+  "canonical_audio": {
+    "filename": "Silver Coin (Remastered).wav",
+    "drive_file_id": "1vWdSSL_kXHh4iR6OXYaLBmlD86LGeM2y",
+    "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+    "bytes": 39828652,
+    "duration_seconds": 207.44,
+    "sample_rate_hz": 48000,
+    "channels": 2
+  },
+  "references": [
+    {
+      "filename": "imagine-d04b484c.mp4",
+      "drive_file_id": "1NONNE0Ch8de7IILwr6KaI-RWwp-wvCtL",
+      "sha256": "8f14739f3eb4f7e7dcc639dfe9fab398623f4a7b5c31ce8b2c0131fab89e6c9c",
+      "frames": 145,
+      "full_extraction_verified": true
+    },
+    {
+      "filename": "imagine-5558fc80.mp4",
+      "drive_file_id": "1SOTVtVYxu5I9ZHMcMoW_wSKEpuzm2dCU",
+      "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+      "frames": 145,
+      "full_extraction_verified": true
+    }
+  ],
+  "source_library_manifest": {
+    "filename": "ALL_MEDIA_SHA256.json",
+    "drive_file_id": "1UBx45HlO_TPf_qK-Ezx2Lk7LDyg-dYUL",
+    "sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+    "entry_count": 181
+  }
+}
