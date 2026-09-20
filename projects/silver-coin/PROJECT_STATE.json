@@ -2,7 +2,7 @@
   "schema": "aivideoedit.project-state.v2",
   "director_brain_version": 2,
   "branch": "song/silver-coin-alternate",
-  "stage": "FINAL_QC_PASSED",
+  "stage": "ARCHIVED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
   "music_analysis_complete": true,
@@ -19,5 +19,5 @@
   "assembly_complete": true,
   "final_qc_passed": true,
   "mode_aware_qc_passed": true,
-  "archive_complete": false
+  "archive_complete": true
 }
