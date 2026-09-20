@@ -1,0 +1,67 @@
+name: DeepSeek Harness Production Probe
+
+on:
+  push:
+    branches:
+      - prototype/deepseek-harness
+    paths:
+      - ".github/workflows/deepseek-harness-production.yml"
+      - "prototype/backend_gui/deepseek_harness/production_probe.py"
+      - "prototype/backend_gui/production_project.py"
+      - "prototype/backend_gui/production_operating_order.py"
+  workflow_dispatch:
+
+jobs:
+  production-probe:
+    runs-on: ubuntu-latest
+    env:
+      AIVE_RUNTIME: /tmp/aive-runtime
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Assert branch isolation
+        run: |
+          test "$GITHUB_REF_NAME" = "prototype/deepseek-harness"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+
+      - name: Download supplied media
+        env:
+          AUDIO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-5150-81f7-80ad-763d6f58e8ce/raw?se=2026-09-18T08%3A27%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=83955905-8947-5f58-9ec8-50a2431fe55f&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A05%3A11Z&ske=2026-09-19T02%3A05%3A11Z&sks=b&skv=2026-02-06&sig=pz97ZZC9JkeEptGSA6OxkkkyF9kB13OBIDVZ4pRCYc8%3D"
+          VIDEO_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-82b0-81f7-8633-050bc8d48cfe/raw?se=2026-09-18T08%3A27%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=b07a0a4d-00a3-50ea-a2c6-0ed47ca73727&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T02%3A07%3A29Z&ske=2026-09-19T02%3A07%3A29Z&sks=b&skv=2026-02-06&sig=3wFNTxkhCW2To7NmsWFfulhg7NpkgRzb08UgmRRPrJs%3D"
+        run: |
+          mkdir -p /tmp/source
+          curl -fL --retry 3 "$AUDIO_URL" -o "/tmp/source/Midnight Tribal Pulse (Remastered).mp3"
+          curl -fL --retry 3 "$VIDEO_URL" -o "/tmp/source/mescalito_living_scene.mp4"
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+
+      - name: Run production-direction probe
+        run: |
+          python prototype/backend_gui/deepseek_harness/production_probe.py \
+            --audio "/tmp/source/Midnight Tribal Pulse (Remastered).mp3" \
+            --video "/tmp/source/mescalito_living_scene.mp4" \
+            --evidence-dir "/tmp/evidence"
+
+      - name: Package evidence
+        if: always()
+        run: |
+          if [ -d /tmp/evidence ]; then
+            tar -czf /tmp/deepseek-harness-direction-evidence.tgz -C /tmp/evidence .
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: deepseek-harness-direction-evidence
+          path: /tmp/deepseek-harness-direction-evidence.tgz
+          if-no-files-found: ignore
+          retention-days: 3
