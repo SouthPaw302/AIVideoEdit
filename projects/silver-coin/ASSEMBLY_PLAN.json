@@ -1,0 +1,196 @@
+{
+  "schema": "aivideoedit.assembly-plan.v1",
+  "project": "silver-coin",
+  "branch": "song/silver-coin-alternate",
+  "target": {
+    "duration_seconds": 207.44,
+    "fps": 24,
+    "width": 1280,
+    "height": 720,
+    "audio": "Silver Coin (Remastered).wav"
+  },
+  "authority": {
+    "script": "projects/silver-coin/SCRIPT.json",
+    "fx_lock": "projects/silver-coin/fx.lock.json",
+    "production_mode": "living_scene"
+  },
+  "workflow": [
+    "WF-RENDER-DELIVERY",
+    "WF-LIVING-SCENE-ASSEMBLY",
+    "WF-LYRIC-LIVING-SCENE",
+    "WF-SOURCE-DERIVED-LOOPS",
+    "WF-IDENTITY-SAFE-LOOP-25D-QC"
+  ],
+  "rules": {
+    "verify_input_hashes": true,
+    "render_per_shot": true,
+    "resumable": true,
+    "max_single_loop_chunk_seconds": 4,
+    "avoid_identical_adjacent_clip": true,
+    "alternate_reverse_on_reuse": true,
+    "no_new_visual_content": true,
+    "untouched_master_audio": true
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "start": 0,
+      "end": 15.9985,
+      "clips": [
+        "V8_FX01_forest_breath_hair_garland.mp4",
+        "V8_FX09_depth_parallax_scenegraph.mp4",
+        "V8_FX07_gaussian_light_shafts.mp4",
+        "V8_FX08_fog_pigment_travel.mp4"
+      ]
+    },
+    {
+      "id": "S02",
+      "start": 15.9985,
+      "end": 31.5791,
+      "clips": [
+        "V8_FX13_workers_sunset_procession.mp4",
+        "V8_FX09_depth_parallax_scenegraph.mp4",
+        "V8_FX07_gaussian_light_shafts.mp4",
+        "V8_FX11_temporal_dusk_to_night.mp4"
+      ]
+    },
+    {
+      "id": "S03",
+      "start": 31.5791,
+      "end": 39.265,
+      "clips": [
+        "V8_FX11_temporal_dusk_to_night.mp4",
+        "V8_FX06_lightning_wet_reflection.mp4",
+        "V8_FX15_shadow_wipe.mp4",
+        "V8_FX03_tavern_firelight_smoke.mp4"
+      ]
+    },
+    {
+      "id": "S04",
+      "start": 39.265,
+      "end": 61.3471,
+      "clips": [
+        "V8_FX03_tavern_firelight_smoke.mp4",
+        "V8_FX14_clap_rhythm_response.mp4",
+        "V8_FX05_communal_crowd_sway.mp4",
+        "V8_FX16_candle_heat_haze.mp4"
+      ]
+    },
+    {
+      "id": "S05",
+      "start": 61.3471,
+      "end": 82.733,
+      "clips": [
+        "V8_FX04_fiddler_impact.mp4",
+        "V8_FX05_communal_crowd_sway.mp4",
+        "V8_FX14_clap_rhythm_response.mp4",
+        "V8_FX09_depth_parallax_scenegraph.mp4"
+      ]
+    },
+    {
+      "id": "S06",
+      "start": 82.733,
+      "end": 93.53,
+      "clips": [
+        "V8_FX02_coin_glint.mp4",
+        "V8_FX03_tavern_firelight_smoke.mp4",
+        "V8_FX15_shadow_wipe.mp4",
+        "V8_FX16_candle_heat_haze.mp4"
+      ]
+    },
+    {
+      "id": "S07",
+      "start": 93.53,
+      "end": 103.747,
+      "clips": [
+        "V8_FX10_recursive_coin_portal.mp4",
+        "V8_FX02_coin_glint.mp4",
+        "V8_FX11_temporal_dusk_to_night.mp4",
+        "V8_FX03_tavern_firelight_smoke.mp4"
+      ]
+    },
+    {
+      "id": "S08",
+      "start": 103.747,
+      "end": 120.8599,
+      "clips": [
+        "V8_FX14_clap_rhythm_response.mp4",
+        "V8_FX03_tavern_firelight_smoke.mp4",
+        "V8_FX05_communal_crowd_sway.mp4",
+        "V8_FX16_candle_heat_haze.mp4"
+      ]
+    },
+    {
+      "id": "S09",
+      "start": 120.8599,
+      "end": 138.159,
+      "clips": [
+        "V8_FX04_fiddler_impact.mp4",
+        "V8_FX05_communal_crowd_sway.mp4",
+        "V8_FX14_clap_rhythm_response.mp4",
+        "V8_FX09_depth_parallax_scenegraph.mp4"
+      ]
+    },
+    {
+      "id": "S10",
+      "start": 138.159,
+      "end": 157.1991,
+      "clips": [
+        "V8_FX13_workers_sunset_procession.mp4",
+        "V8_FX08_fog_pigment_travel.mp4",
+        "V8_FX07_gaussian_light_shafts.mp4",
+        "V8_FX11_temporal_dusk_to_night.mp4"
+      ]
+    },
+    {
+      "id": "S11",
+      "start": 157.1991,
+      "end": 176.5413,
+      "clips": [
+        "V8_FX03_tavern_firelight_smoke.mp4",
+        "V8_FX16_candle_heat_haze.mp4",
+        "V8_FX15_shadow_wipe.mp4",
+        "V8_FX05_communal_crowd_sway.mp4"
+      ]
+    },
+    {
+      "id": "S12",
+      "start": 176.5413,
+      "end": 183.322,
+      "clips": [
+        "V8_FX11_temporal_dusk_to_night.mp4",
+        "V8_FX06_lightning_wet_reflection.mp4",
+        "V8_FX08_fog_pigment_travel.mp4",
+        "V8_FX15_shadow_wipe.mp4"
+      ]
+    },
+    {
+      "id": "S13",
+      "start": 183.322,
+      "end": 197.8572,
+      "clips": [
+        "V8_FX03_tavern_firelight_smoke.mp4",
+        "V8_FX14_clap_rhythm_response.mp4",
+        "V8_FX04_fiddler_impact.mp4",
+        "V8_FX05_communal_crowd_sway.mp4",
+        "V8_FX02_coin_glint.mp4"
+      ]
+    },
+    {
+      "id": "S14",
+      "start": 197.8572,
+      "end": 207.44,
+      "clips": [
+        "V8_FX01_forest_breath_hair_garland.mp4",
+        "V8_FX02_coin_glint.mp4",
+        "V8_FX10_recursive_coin_portal.mp4",
+        "V8_FX08_fog_pigment_travel.mp4"
+      ]
+    }
+  ],
+  "output": {
+    "assembly_filename": "Silver_Coin_Alternate_Assembly01_720p24.mp4",
+    "report_filename": "ASSEMBLY_REPORT.json",
+    "drive_folder_id": "1cIVFKDuIoz3ZGix5tdnLU_qcbBtq3p9I"
+  }
+}
