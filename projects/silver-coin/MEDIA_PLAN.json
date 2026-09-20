@@ -1,11 +1,36 @@
 {
   "schema": "aivideoedit.media-plan.v1",
   "production_mode": "living_scene",
-  "selected_capabilities": [],
-  "user_approach_established": false,
+  "selected_capabilities": [
+    "source_video",
+    "extracted_frames",
+    "source_images",
+    "accepted_source_library",
+    "recovered_generated_stills",
+    "accepted_motion_benchmark_video",
+    "living_still_fx",
+    "layered_composite",
+    "depth_25d",
+    "atmospheric_plate",
+    "reactive_plate",
+    "loop_media",
+    "transition_media",
+    "analysis_qc_media"
+  ],
+  "user_approach_established": true,
   "visual_direction_gate": {
     "required": false,
-    "reason": "Existing visual references are present, so the no-reference artistic-direction gate does not apply."
+    "reason": "Two canonical visual references plus an accepted Silver Coin visual source library already establish the direction."
   },
-  "status": "pending_post_bootstrap_inventory"
+  "approach": {
+    "name": "Living Pre-Raphaelite Source-Canon Rebuild",
+    "story_form": "A continuous cold-road-to-warm-tavern folk world centered on the recurring blonde flower-crowned woman, silver coin motif, working people, musicians, and communal release.",
+    "source_strategy": "Use the eight accepted V8 hero paintings as primary visual anchors; reuse source/reference pixels only with provenance; create additional alternate coverage only when the locked storyboard requires it.",
+    "motion_strategy": "Internal scene motion first. Verse/intimate shots stay near the restrained reference-B envelope; chorus/fiddle/dance passages may rise toward reference-A activity while protecting faces, hands, instruments, clothing, and topology.",
+    "spatial_strategy": "Bounded 2.5D depth/parallax and layered compositing. Do not claim NeRF unless an actual trained field and proof are produced.",
+    "fx_strategy": "Motivated firelight, smoke, rain, coin glints, cloth/hair movement, crowd micro-motion, reflections, fog/pigment travel, light shafts, and audio-reactive accents using current canonical FX/workflows.",
+    "transition_strategy": "Silver coin/reflection, smoke, rain, candle bloom, door/threshold and pigment-temperature transitions; avoid random morph demonstrations.",
+    "output_destination": "drive:1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz"
+  },
+  "status": "established"
 }
