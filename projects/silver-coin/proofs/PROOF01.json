@@ -1,0 +1,25 @@
+{
+  "schema": "aivideoedit.mode-aware-proof.v1",
+  "proof_id": "silver-coin-alternate-proof01",
+  "production_mode": "living_scene",
+  "status": "PASS_TECHNICAL_PENDING_ARTISTIC_ACCEPTANCE",
+  "drive_video_id": "15nNDAJVIeiXjQROewmnrxzgAmskVlQF7",
+  "drive_zip_id": "1OYYtw9IaYv-yLni059fvetmCLAeP_MtQ",
+  "video_sha256": "cd3f926c46fce9c0b04571a30e7b237d0da5442b039b79523e0ed8f37e704bf7",
+  "package_sha256": "64ecb4cd38f0992d0276e4e251423b0ca8b80de0953ed9a94a3bfe4fefed7f57",
+  "duration_seconds": 12,
+  "fps": 24,
+  "resolution": [
+    1280,
+    720
+  ],
+  "frames": 288,
+  "black_frames": 0,
+  "mean_frame_delta": 0.8510709597609369,
+  "p90_frame_delta": 1.056519748263889,
+  "contact_sha256": "f2f212d8ec8ba555a09c0b4167bca51f2d666c02645a26af4e23f0812cd41288",
+  "notes": [
+    "Technical proof only; user artistic acceptance is still required before SHOT_PROOFS_ACCEPTED.",
+    "Proof demonstrates living-scene motion on accepted Silver Coin canon imagery."
+  ]
+}
