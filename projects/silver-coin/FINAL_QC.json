@@ -1,8 +1,8 @@
 {
   "schema": "aivideoedit.final-qc.v1",
-  "candidate": "Silver_Coin_Alternate_Assembly05_ContinuityRecut_720p24.mp4",
-  "sha256": "9a6a838e53379ca7414a5744818a2a059e955ec6cb8968ad529a80890ff2d1b4",
-  "status": "PASS_PENDING_USER_ARTISTIC_ACCEPTANCE",
+  "candidate": "Silver_Coin_Alternate_FINAL_720p24.mp4",
+  "sha256": "b33d8eb59cd48cb481e7c5450fafb327817d91b240e5d72d6f5575121b8aaf3e",
+  "status": "PASS",
   "machine_qc": {
     "decode": "PASS",
     "runtime": "PASS",
@@ -20,5 +20,21 @@
     "source_canon_integrity": "PASS"
   },
   "comparison": "projects/silver-coin/REFINEMENT_QC.json",
-  "note": "Technical and mode-aware QC pass does not create an accepted baseline. User artistic acceptance is still required to lock the complete edit."
+  "note": "Technical and mode-aware QC pass does not create an accepted baseline. User artistic acceptance is still required to lock the complete edit.",
+  "delivery_encode": {
+    "duration_seconds": 207.44,
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 24,
+    "codec": "h264",
+    "audio_codec": "aac",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "decode": "PASS",
+    "black_frames": "PASS",
+    "freeze_scan": "PASS"
+  },
+  "artistic_acceptance": "not_implied_by_qc"
 }
