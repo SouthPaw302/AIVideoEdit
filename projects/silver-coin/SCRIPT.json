@@ -1,8 +1,403 @@
 {
   "schema": "aivideoedit.video-script.v1",
-  "locked": false,
-  "based_on_storyboard": false,
-  "basis": [],
-  "entries": [],
-  "status": "pending_inventory_and_storyboard_lock"
+  "locked": true,
+  "based_on_storyboard": true,
+  "target_fps": 24,
+  "duration_seconds": 207.44,
+  "total_frames": 4979,
+  "basis": [
+    "storyboard",
+    "music_analysis",
+    "lyrics"
+  ],
+  "entries": [
+    {
+      "shot_id": "S01",
+      "start_frame": 0,
+      "end_frame": 383,
+      "production_mode": "living_scene",
+      "story_action": "Cold morning: the recurring woman and silver coin introduce the world; woodland opens toward village/workday.",
+      "visual_media": "01_enchanted_woodland_coin_portrait.png + 02_golden_path_to_the_village.png",
+      "animation_behavior": "restrained forest/hair/flower motion; mist and dappled light; slow bounded depth reveal",
+      "motion_regions": [
+        "hair",
+        "flower crown",
+        "forest leaves",
+        "mist",
+        "dappled light"
+      ],
+      "protected_regions": [
+        "protagonist face",
+        "hands",
+        "coin shape",
+        "costume silhouette"
+      ],
+      "music_cues": [
+        "opening 86 BPM large pulse",
+        "cold introductory energy"
+      ],
+      "lyric_cue": "The morning steals the warmth away / miller counts his gold",
+      "transition": "coin/portrait match into path"
+    },
+    {
+      "shot_id": "S02",
+      "start_frame": 384,
+      "end_frame": 757,
+      "production_mode": "living_scene",
+      "story_action": "Workday weight: sacks, wagon, road and workers pass around her without turning the film into literal illustration.",
+      "visual_media": "03_golden_haired_maiden_at_sunset.png + workers source-derived coverage",
+      "animation_behavior": "selective worker/wagon motion, cloth, wheel, dust; cool-to-warm sunlight shift",
+      "motion_regions": [
+        "workers/wagon",
+        "cloth",
+        "wheel",
+        "dust",
+        "sunlight"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "wagon geometry",
+        "body anatomy"
+      ],
+      "music_cues": [
+        "verse workday pulse",
+        "rising warmth toward 30.21/33.67/36.43 transients"
+      ],
+      "lyric_cue": "We carry sacks and wood and grain / final wagon rests",
+      "transition": "wagon/wood foreground wipe"
+    },
+    {
+      "shot_id": "S03",
+      "start_frame": 758,
+      "end_frame": 941,
+      "production_mode": "living_scene",
+      "story_action": "Threshold: cold road gives way to the inn; warmth begins leaking into the frame.",
+      "visual_media": "04_twilight_inn_beneath_the_flower_crown.png",
+      "animation_behavior": "rain/reflections outside, window/fire breathing inside, door-layer parallax",
+      "motion_regions": [
+        "rain",
+        "window reflections",
+        "hearth glow",
+        "smoke",
+        "door layers"
+      ],
+      "protected_regions": [
+        "protagonist face",
+        "door/inn geometry",
+        "hands"
+      ],
+      "music_cues": [
+        "39.22 chorus threshold"
+      ],
+      "lyric_cue": "fire fills the room / laugh away the gloom",
+      "transition": "doorway cut on chorus entrance"
+    },
+    {
+      "shot_id": "S04",
+      "start_frame": 942,
+      "end_frame": 1471,
+      "production_mode": "living_scene",
+      "story_action": "First chorus opens the tavern into communal life: mugs, hands, laughter and rhythm.",
+      "visual_media": "05_first_toast.png + 08_clap_rhythm.png",
+      "animation_behavior": "firelight/smoke, clap response, sleeves/hair, crowd micro-motion, mug accents",
+      "motion_regions": [
+        "fire",
+        "smoke",
+        "crowd sleeves",
+        "clapping hands",
+        "mugs"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands/fingers",
+        "mug geometry",
+        "room topology"
+      ],
+      "music_cues": [
+        "first chorus lift",
+        "44.05/49.25/53.73 accents"
+      ],
+      "lyric_cue": "Raise your mugs and stamp the beat / what the master takes by day",
+      "transition": "mug/hand rhythmic cut"
+    },
+    {
+      "shot_id": "S05",
+      "start_frame": 1472,
+      "end_frame": 1985,
+      "production_mode": "living_scene",
+      "story_action": "Fiddle and floorboards take over; the room becomes a living painting rather than a montage.",
+      "visual_media": "07_fiddler.png + 06_communal_dance.png",
+      "animation_behavior": "bow/hand-safe fiddler motion, crowd sway, dance fabric, localized camera energy",
+      "motion_regions": [
+        "fiddle bow",
+        "playing arm",
+        "dance fabric",
+        "crowd silhouettes",
+        "hearth light"
+      ],
+      "protected_regions": [
+        "fiddler face",
+        "bow/instrument geometry",
+        "hands",
+        "dancer anatomy"
+      ],
+      "music_cues": [
+        "62.04/64.81/72.42/75.19 fiddle and floor accents"
+      ],
+      "lyric_cue": "Play, my fiddler, fast and loud / poor in coin, but rich in song",
+      "transition": "bow sweep into silver highlight"
+    },
+    {
+      "shot_id": "S06",
+      "start_frame": 1986,
+      "end_frame": 2244,
+      "production_mode": "living_scene",
+      "story_action": "Verse 2 becomes a playful merchant encounter centered on the woman, not a new protagonist.",
+      "visual_media": "new support coverage derived from locked woman/coin/tavern canon",
+      "animation_behavior": "subtle expression/gesture, cup/coin/hat movement, stable face/hands, restrained room motion",
+      "motion_regions": [
+        "expression micro-motion",
+        "cup",
+        "coin",
+        "hat",
+        "background fire/smoke"
+      ],
+      "protected_regions": [
+        "protagonist face",
+        "hands",
+        "coin",
+        "cup/hat geometry"
+      ],
+      "music_cues": [
+        "verse-2 reset",
+        "merchant episode phrasing"
+      ],
+      "lyric_cue": "A merchant spoke of finest silk / little cup ran dry",
+      "transition": "coin glint / cup reflection"
+    },
+    {
+      "shot_id": "S07",
+      "start_frame": 2245,
+      "end_frame": 2489,
+      "production_mode": "living_scene",
+      "story_action": "The joke resolves: silver coin changes hands and the cold outside briefly echoes behind the warm room.",
+      "visual_media": "01_enchanted_woodland_coin_portrait.png + 04_twilight_inn_beneath_the_flower_crown.png source-derived reframes",
+      "animation_behavior": "coin handoff detail, shadow wipe, exterior cold reflection, warm fire continuity",
+      "motion_regions": [
+        "coin",
+        "handoff hands",
+        "shadow",
+        "exterior reflection",
+        "firelight"
+      ],
+      "protected_regions": [
+        "hands/fingers",
+        "coin geometry",
+        "protagonist identity",
+        "inn topology"
+      ],
+      "music_cues": [
+        "93.53 coin/hat turn",
+        "approach to 103.747 chorus return"
+      ],
+      "lyric_cue": "I took his hat and silver coin / left the man alone",
+      "transition": "coin portal back into chorus"
+    },
+    {
+      "shot_id": "S08",
+      "start_frame": 2490,
+      "end_frame": 2900,
+      "production_mode": "living_scene",
+      "story_action": "Second chorus returns with a denser room and stronger group rhythm.",
+      "visual_media": "05_first_toast.png + 08_clap_rhythm.png alternate crops",
+      "animation_behavior": "stronger clap/mug response, fire/smoke, layered crowd parallax, transient light accents",
+      "motion_regions": [
+        "clapping hands",
+        "mugs",
+        "fire",
+        "smoke",
+        "crowd layers"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "mugs",
+        "room topology"
+      ],
+      "music_cues": [
+        "second chorus return",
+        "112.57/119.82 accents"
+      ],
+      "lyric_cue": "Raise your mugs and stamp the beat / take back before dawn",
+      "transition": "clap impact into fiddle"
+    },
+    {
+      "shot_id": "S09",
+      "start_frame": 2901,
+      "end_frame": 3315,
+      "production_mode": "living_scene",
+      "story_action": "Fiddler and dancers answer the chorus; motion approaches reference-A intensity without topology drift.",
+      "visual_media": "07_fiddler.png + 06_communal_dance.png alternate crops",
+      "animation_behavior": "bow waveform/light, dance sway, skirt/sleeve motion, bounded push",
+      "motion_regions": [
+        "fiddle bow",
+        "dance fabric",
+        "crowd sway",
+        "reactive light"
+      ],
+      "protected_regions": [
+        "fiddler face",
+        "hands",
+        "instrument/bow",
+        "dancer anatomy"
+      ],
+      "music_cues": [
+        "120.86 fiddle phrase",
+        "121.53/127.78/137.81 accents"
+      ],
+      "lyric_cue": "Play, my fiddler, fast and loud / living hearts still wake",
+      "transition": "spinning fabric / smoke bridge"
+    },
+    {
+      "shot_id": "S10",
+      "start_frame": 3316,
+      "end_frame": 3772,
+      "production_mode": "living_scene",
+      "story_action": "Bridge widens to the whole working community—farmer, smith, carter—seen as one social world.",
+      "visual_media": "03_golden_haired_maiden_at_sunset.png + workers source-derived coverage",
+      "animation_behavior": "localized character micro-actions, ember/forge hints, cloth, shadow, table activity",
+      "motion_regions": [
+        "workers/community gestures",
+        "cloth",
+        "ember hints",
+        "table shadows",
+        "smoke"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "working props"
+      ],
+      "music_cues": [
+        "bridge character vignettes",
+        "138.159-157.199"
+      ],
+      "lyric_cue": "The farmer curses / smith turns red / carter sings too loud",
+      "transition": "smoke/pigment travel"
+    },
+    {
+      "shot_id": "S11",
+      "start_frame": 3773,
+      "end_frame": 4236,
+      "production_mode": "living_scene",
+      "story_action": "Private human moments inside the crowd: barmaid mischief, hidden bread, affection, then the reminder of tomorrow.",
+      "visual_media": "new support coverage inside locked tavern world",
+      "animation_behavior": "small gestures, eye-lines, hands protected, candle heat haze, background crowd breathing",
+      "motion_regions": [
+        "small gestures",
+        "candle flame",
+        "heat haze",
+        "background crowd",
+        "fabric"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "bread/props",
+        "tavern topology"
+      ],
+      "music_cues": [
+        "bridge intimate/social vignettes",
+        "157.199-176.541"
+      ],
+      "lyric_cue": "maid has hidden the landlord's bread / farmhand kisses his love / tomorrow work will call",
+      "transition": "candle bloom into cooler threshold"
+    },
+    {
+      "shot_id": "S12",
+      "start_frame": 4237,
+      "end_frame": 4399,
+      "production_mode": "living_scene",
+      "story_action": "A brief breath at the threshold: tomorrow waits outside, but tonight still belongs to the room.",
+      "visual_media": "04_twilight_inn_beneath_the_flower_crown.png + 02_golden_path_to_the_village.png",
+      "animation_behavior": "twilight-to-night pigment shift, fog/rain, window glow, restrained lightning/reflection",
+      "motion_regions": [
+        "rain",
+        "fog",
+        "window glow",
+        "cloud/lightning reflection",
+        "foliage"
+      ],
+      "protected_regions": [
+        "protagonist face",
+        "inn/road topology",
+        "hands"
+      ],
+      "music_cues": [
+        "late bridge breath",
+        "183.3 transition / lightning opportunity"
+      ],
+      "lyric_cue": "wine and songs belong tonight / those with little coin",
+      "transition": "lightning/door return on final chorus"
+    },
+    {
+      "shot_id": "S13",
+      "start_frame": 4400,
+      "end_frame": 4748,
+      "production_mode": "living_scene",
+      "story_action": "Final chorus: the accepted hero set finally interlocks—toast, clap, fiddle and dance—at peak communal energy.",
+      "visual_media": "05_first_toast.png + 08_clap_rhythm.png + 07_fiddler.png + 06_communal_dance.png",
+      "animation_behavior": "fast but readable source-canon intercut, reactive accents, crowd/fire motion, no face drift",
+      "motion_regions": [
+        "mugs",
+        "claps",
+        "fiddle bow",
+        "dance fabric",
+        "crowd",
+        "fire/smoke"
+      ],
+      "protected_regions": [
+        "all hero faces",
+        "hands",
+        "instrument geometry",
+        "room topology"
+      ],
+      "music_cues": [
+        "final chorus dense run",
+        "184.02/186.78/188.17/189.54/193.70/197.51"
+      ],
+      "lyric_cue": "Raise your mugs and stamp the beat / everything that makes life bitter / fiddler fast and loud",
+      "transition": "coin/bow/glass match cuts"
+    },
+    {
+      "shot_id": "S14",
+      "start_frame": 4749,
+      "end_frame": 4978,
+      "production_mode": "living_scene",
+      "story_action": "Resolution: the coin returns to the woman, but the room and human connection remain the real wealth.",
+      "visual_media": "01_enchanted_woodland_coin_portrait.png + 06_communal_dance.png",
+      "animation_behavior": "activity gently falls, coin glint resolves, warm afterglow, breath/hair/flower motion, minimal camera",
+      "motion_regions": [
+        "coin glint",
+        "hair",
+        "flower crown",
+        "breathing",
+        "room afterglow"
+      ],
+      "protected_regions": [
+        "protagonist face",
+        "hands",
+        "coin geometry",
+        "costume silhouette"
+      ],
+      "music_cues": [
+        "199.23/204.78 final accents",
+        "audio resolution"
+      ],
+      "lyric_cue": "Poor in coin, but rich in song / while living hearts still wake",
+      "transition": "hold warm portrait/room afterglow into audio end"
+    }
+  ]
 }
