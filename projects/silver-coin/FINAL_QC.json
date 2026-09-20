@@ -1,0 +1,24 @@
+{
+  "schema": "aivideoedit.final-qc.v1",
+  "candidate": "Silver_Coin_Alternate_Assembly05_ContinuityRecut_720p24.mp4",
+  "sha256": "9a6a838e53379ca7414a5744818a2a059e955ec6cb8968ad529a80890ff2d1b4",
+  "status": "PASS_PENDING_USER_ARTISTIC_ACCEPTANCE",
+  "machine_qc": {
+    "decode": "PASS",
+    "runtime": "PASS",
+    "audio_coverage": "PASS",
+    "black_frames": "PASS",
+    "freeze_scan": "PASS",
+    "framing": "PASS"
+  },
+  "mode_aware_qc": {
+    "result": "PASS",
+    "production_mode": "living_scene",
+    "internal_motion_visible": true,
+    "identity_stable": true,
+    "camera_restrained": true,
+    "source_canon_integrity": "PASS"
+  },
+  "comparison": "projects/silver-coin/REFINEMENT_QC.json",
+  "note": "Technical and mode-aware QC pass does not create an accepted baseline. User artistic acceptance is still required to lock the complete edit."
+}
