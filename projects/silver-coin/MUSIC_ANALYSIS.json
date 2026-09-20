@@ -1,0 +1,24 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": false,
+  "lyrics": {
+    "status": "present",
+    "source": "legacy_silver_coin_pending_verification",
+    "text_file": "LYRICS.md",
+    "directing_use": "required"
+  },
+  "genre": {
+    "status": "pending_verification",
+    "label": null,
+    "source": "legacy_silver_coin_pending_verification",
+    "confidence": null
+  },
+  "rhythm": {
+    "tempo_status": "pending_verification",
+    "tempo_bpm": null,
+    "pulse_description": "Pending verification.",
+    "meter_or_groove": "Pending verification."
+  },
+  "sections": [],
+  "note": "Migration scaffold only; does not claim REFERENCES_ANALYZED."
+}

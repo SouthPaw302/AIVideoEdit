@@ -1,0 +1,36 @@
+name: Silver Coin Alternate Bootstrap
+
+on:
+  push:
+    branches: ["song/silver-coin-alternate"]
+  workflow_dispatch:
+
+jobs:
+  boot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: FIRST ACTION - bootstrap exact current AIVideoEdit OS
+        shell: bash
+        run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE"
+      - name: Read authority chain in required order
+        shell: bash
+        run: |
+          echo "===== 1 PRIME_DIRECTIVE ====="
+          cat .aivideoedit/os/PRIME_DIRECTIVE.md
+          echo "===== 2 SECOND_BRAIN ====="
+          cat .aivideoedit/SECOND_BRAIN.md
+          echo "===== 3 SOUL ====="
+          cat .aivideoedit/os/SOUL.md
+      - name: Verify current guards
+        shell: bash
+        run: |
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "song/silver-coin-alternate"
+          python .aivideoedit/os/general/reusable/tools/narrative_guard.py --branch "song/silver-coin-alternate"
+          python .aivideoedit/os/general/reusable/tools/recut_guard.py --branch "song/silver-coin-alternate"
+          python .aivideoedit/os/general/reusable/tools/workflow_guard.py --branch "song/silver-coin-alternate"

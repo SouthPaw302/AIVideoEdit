@@ -1,0 +1,7 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "status": "pending_post_bootstrap_inventory",
+  "videos": [],
+  "images": [],
+  "note": "Existing Silver Coin visual references are known and authorized. Exact entries, hashes, frame counts, extraction coverage and roles will be recorded after bootstrap and inventory."
+}

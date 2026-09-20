@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Reconstruct and improve the existing Silver Coin production through the current AIVideoEdit Director Brain v2 workflow without losing its successful established visual identity.",
+  "direction_authority": "reference_led",
+  "production_mode": "living_scene",
+  "canon_lock": {
+    "locked": false,
+    "picture_language": "Candidate foundation is Living Pre-Raphaelite Folk Romanticism from the supplied Silver Coin references and successful Silver Coin-specific production material; final canon classification is pending inventory.",
+    "items": []
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "accepted_source_library": {
+    "status": "none",
+    "role": null,
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null,
+    "content_reuse_authorized": false,
+    "timeline_locked": false
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "source_replacement_authorized": false
+  },
+  "optional_runtimes": [],
+  "standard_workflow_overrides": {
+    "include": [],
+    "exclude": []
+  },
+  "current_user_direction": "Use the Google Drive Silver Coin folders and preserved Silver Coin branch as recovery/source material for song/silver-coin-alternate. Preserve and reuse successful origin material; do not create a visually unrelated production; do not modify main or song/silver-coin.",
+  "exact_next_action": "Run bootstrap, read PRIME_DIRECTIVE then SECOND_BRAIN then SOUL, then inventory projects/silver-coin and the authorized Drive recovery library before any production-state advance.",
+  "updated_at_utc": "2026-09-20T07:40:00Z"
+}

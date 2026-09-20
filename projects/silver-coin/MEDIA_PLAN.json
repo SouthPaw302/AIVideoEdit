@@ -1,0 +1,11 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "production_mode": "living_scene",
+  "selected_capabilities": [],
+  "user_approach_established": false,
+  "visual_direction_gate": {
+    "required": false,
+    "reason": "Existing visual references are present, so the no-reference artistic-direction gate does not apply."
+  },
+  "status": "pending_post_bootstrap_inventory"
+}
