@@ -1,0 +1,32 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot": "S03",
+  "production_mode": "living_scene",
+  "intent": "cold-to-warm threshold",
+  "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+  "media_evidence": [
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/10qzBVI0B2CJZq_aHlFUPnS7Gk9nIQTyf/view",
+      "drive_file_id": "10qzBVI0B2CJZq_aHlFUPnS7Gk9nIQTyf",
+      "filename": "04_twilight_inn_beneath_the_flower_crown.png",
+      "sha256": "81cfa4e39aa944782978ec921bac45078dfe4ad8adb4372f9ba132168cc3a723",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    }
+  ],
+  "render_plan": {
+    "internal_motion_first": true,
+    "source_strategy": "use accepted alternate-Drive hero media as the visible picture foundation; crops/layers/composites must preserve identity",
+    "protected_regions": [
+      "faces",
+      "hands",
+      "instruments/props",
+      "costume silhouette",
+      "environment topology"
+    ],
+    "proof_required": true,
+    "output_root": "drive:1jAzrW5OhUUMqEZNJDsYTE9UOyvXjMMOo"
+  }
+}
