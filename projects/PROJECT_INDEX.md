@@ -23,7 +23,8 @@ Canonical Drive root: AIVideoEdit (`1DZa50G2MVy9ER3b-ff4tpCQpzSqpHr1E`)
 - project: `projects/silver-coin/`
 - Drive production folder: `10 Productions/Silver Coin`
 - Drive folder ID: `1ROTZHvmBb71snAsBXXU6YImyXWT0ikEV`
-- preserved original assets are inside that folder:
+- Drive folder structure exists, but original Silver Coin media binaries are not yet populated there. Do not assume these folders contain assets until upload/hash verification.
+- intended original-asset locations:
   - `01 Source Audio`
   - `02 Canonical References`
   - `03 Hero Paintings`
