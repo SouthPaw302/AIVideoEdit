@@ -1,0 +1,42 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot": "S07",
+  "production_mode": "living_scene",
+  "intent": "coin handoff and joke resolution",
+  "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+  "media_evidence": [
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/1YJINRRn1SGSAev3FnIzYi2fRDmyw85Pp/view",
+      "drive_file_id": "1YJINRRn1SGSAev3FnIzYi2fRDmyw85Pp",
+      "filename": "01_enchanted_woodland_coin_portrait.png",
+      "sha256": "0783a34aaf19bedc5d98a74beb6a86c4f5a1d881b3c0acd4e9d71240ce119475",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    },
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/10qzBVI0B2CJZq_aHlFUPnS7Gk9nIQTyf/view",
+      "drive_file_id": "10qzBVI0B2CJZq_aHlFUPnS7Gk9nIQTyf",
+      "filename": "04_twilight_inn_beneath_the_flower_crown.png",
+      "sha256": "81cfa4e39aa944782978ec921bac45078dfe4ad8adb4372f9ba132168cc3a723",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    }
+  ],
+  "render_plan": {
+    "internal_motion_first": true,
+    "source_strategy": "use accepted alternate-Drive hero media as the visible picture foundation; crops/layers/composites must preserve identity",
+    "protected_regions": [
+      "faces",
+      "hands",
+      "instruments/props",
+      "costume silhouette",
+      "environment topology"
+    ],
+    "proof_required": true,
+    "output_root": "drive:1jAzrW5OhUUMqEZNJDsYTE9UOyvXjMMOo"
+  }
+}
