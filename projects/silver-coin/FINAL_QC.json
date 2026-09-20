@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.final-qc.v1",
   "candidate": "Silver_Coin_Alternate_FINAL_720p24.mp4",
-  "sha256": "b33d8eb59cd48cb481e7c5450fafb327817d91b240e5d72d6f5575121b8aaf3e",
+  "sha256": "9508b8068adf83a551a814b54fb5472f80499438ffcc075e0b5048e1bbcf129e",
   "status": "PASS",
   "machine_qc": {
     "decode": "PASS",
@@ -34,7 +34,10 @@
     "channels": 2,
     "decode": "PASS",
     "black_frames": "PASS",
-    "freeze_scan": "PASS"
+    "freeze_scan": "PASS",
+    "bytes": 99898008
   },
-  "artistic_acceptance": "not_implied_by_qc"
+  "artistic_acceptance": "not_implied_by_qc",
+  "drive_file_id": "1Mc-LmnBuQNjPxOv8W04EGDaCkKYWhzri",
+  "drive_url": "https://drive.google.com/file/d/1Mc-LmnBuQNjPxOv8W04EGDaCkKYWhzri/view"
 }
