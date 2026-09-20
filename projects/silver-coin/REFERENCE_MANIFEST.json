@@ -14,9 +14,13 @@
       "fps": 24,
       "video_frames": 145,
       "role": "canonical visual/motion/style reference; protagonist identity anchor",
-      "extraction_policy": "full",
+      "extraction_policy": "all_frames",
       "full_extraction_complete": true,
-      "extracted_frames_verified": 145
+      "extracted_frames_verified": 145,
+      "name": "imagine-d04b484c.mp4",
+      "total_frames": 145,
+      "extracted_frames": 145,
+      "analysis_complete": true
     },
     {
       "id": "silver-coin-reference-b",
@@ -30,51 +34,71 @@
       "fps": 24,
       "video_frames": 145,
       "role": "canonical supporting visual/motion/style reference",
-      "extraction_policy": "full",
+      "extraction_policy": "all_frames",
       "full_extraction_complete": true,
-      "extracted_frames_verified": 145
+      "extracted_frames_verified": 145,
+      "name": "imagine-5558fc80.mp4",
+      "total_frames": 145,
+      "extracted_frames": 145,
+      "analysis_complete": true
     }
   ],
   "images": [
     {
       "filename": "01_enchanted_woodland_coin_portrait.png",
       "drive_file_id": "12_U_eNJYfEetrZuIb0SULFpU1gV6ppjC",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "01_enchanted_woodland_coin_portrait.png",
+      "analysis_complete": true
     },
     {
       "filename": "02_golden_path_to_the_village.png",
       "drive_file_id": "1fWsU30HQjpHU__C74v6d955v-DVzPmla",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "02_golden_path_to_the_village.png",
+      "analysis_complete": true
     },
     {
       "filename": "03_golden_haired_maiden_at_sunset.png",
       "drive_file_id": "1DoJEJt-8FzN1oPZ-fz3OFAG_TzB2GwGg",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "03_golden_haired_maiden_at_sunset.png",
+      "analysis_complete": true
     },
     {
       "filename": "04_twilight_inn_beneath_the_flower_crown.png",
       "drive_file_id": "1CfqY5wEUraIHrGxmcadGv8nKpMgAJsr2",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "04_twilight_inn_beneath_the_flower_crown.png",
+      "analysis_complete": true
     },
     {
       "filename": "05_first_toast.png",
       "drive_file_id": "1TSIzgwJWA4eOdahLVvsZx9fgoPeaRlnT",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "05_first_toast.png",
+      "analysis_complete": true
     },
     {
       "filename": "06_communal_dance.png",
       "drive_file_id": "1pPFRUcvF11PnFsUoSKFkpTGszKDmgzsM",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "06_communal_dance.png",
+      "analysis_complete": true
     },
     {
       "filename": "07_fiddler.png",
       "drive_file_id": "1Uz-HeX0VRAjX0ypfH97hcsV9_EIhAE0k",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "07_fiddler.png",
+      "analysis_complete": true
     },
     {
       "filename": "08_clap_rhythm.png",
       "drive_file_id": "16OqOqC2YXgQiQuFUWRzuPVszuwl-7OJ_",
-      "role": "accepted V8 hero painting"
+      "role": "accepted V8 hero painting",
+      "name": "08_clap_rhythm.png",
+      "analysis_complete": true
     }
   ],
   "source_audio": {
