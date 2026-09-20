@@ -65,6 +65,6 @@
     "exclude": []
   },
   "current_user_direction": "Use the Google Drive Silver Coin folders and preserved Silver Coin branch as recovery/source material for song/silver-coin-alternate. Preserve and reuse successful origin material; do not create a visually unrelated production; do not modify main or song/silver-coin.",
-  "exact_next_action": "Upload the verified final delivery master to the Silver Coin Alternate Masters Drive folder, then archive the completed production with hashes/manifests. Do not alter picture, canon, source library, or audio during archive.",
-  "updated_at_utc": "2026-09-20T10:18:00Z"
+  "exact_next_action": "Production is technically complete and archived. Await user artistic review. If accepted, record accepted_baseline using the uploaded final master hash; otherwise name defects and refine only those defects.",
+  "updated_at_utc": "2026-09-20T10:24:00Z"
 }
