@@ -1,0 +1,42 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot": "S10",
+  "production_mode": "living_scene",
+  "intent": "working-community bridge",
+  "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+  "media_evidence": [
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/1rPN3k6SE2QpZaKICK3M3CR8Q84LhGE4f/view",
+      "drive_file_id": "1rPN3k6SE2QpZaKICK3M3CR8Q84LhGE4f",
+      "filename": "03_golden_haired_maiden_at_sunset.png",
+      "sha256": "8972f4cf7398d58ffb01c2e1ac2ff9bc2e21aeb5bdce9d43f061d1a2b8a0697a",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    },
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/1f9EglP3T2Quwwf4JhRy6NRgubk61wHuw/view",
+      "drive_file_id": "1f9EglP3T2Quwwf4JhRy6NRgubk61wHuw",
+      "filename": "02_golden_path_to_the_village.png",
+      "sha256": "668112089ca2d0f5436526c95d40b9b383c1216e3156b0a18441cdbd1ff26d84",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    }
+  ],
+  "render_plan": {
+    "internal_motion_first": true,
+    "source_strategy": "use accepted alternate-Drive hero media as the visible picture foundation; crops/layers/composites must preserve identity",
+    "protected_regions": [
+      "faces",
+      "hands",
+      "instruments/props",
+      "costume silhouette",
+      "environment topology"
+    ],
+    "proof_required": true,
+    "output_root": "drive:1jAzrW5OhUUMqEZNJDsYTE9UOyvXjMMOo"
+  }
+}
