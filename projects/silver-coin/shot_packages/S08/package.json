@@ -1,0 +1,42 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot": "S08",
+  "production_mode": "living_scene",
+  "intent": "denser second chorus",
+  "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+  "media_evidence": [
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/1IfGtrN1sJF9-7ENfpQ0--jfqMoZA6VGt/view",
+      "drive_file_id": "1IfGtrN1sJF9-7ENfpQ0--jfqMoZA6VGt",
+      "filename": "05_first_toast.png",
+      "sha256": "dd5bb3721e7ff72f4f39aea7f62914ca8a1270bc813f5ca80805914bc27ad5dd",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    },
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/1FX7PQkTIbfMH-rXjVpB0nSKqY_w-rvRY/view",
+      "drive_file_id": "1FX7PQkTIbfMH-rXjVpB0nSKqY_w-rvRY",
+      "filename": "08_clap_rhythm.png",
+      "sha256": "63a0e83a5061d35bb182996fd3324a9a7f4770e301fe7931a49a94ecb6e7ecdb",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    }
+  ],
+  "render_plan": {
+    "internal_motion_first": true,
+    "source_strategy": "use accepted alternate-Drive hero media as the visible picture foundation; crops/layers/composites must preserve identity",
+    "protected_regions": [
+      "faces",
+      "hands",
+      "instruments/props",
+      "costume silhouette",
+      "environment topology"
+    ],
+    "proof_required": true,
+    "output_root": "drive:1jAzrW5OhUUMqEZNJDsYTE9UOyvXjMMOo"
+  }
+}
