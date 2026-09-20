@@ -1,0 +1,177 @@
+{
+  "schema": "aivideoedit.source-recut-plan.v1",
+  "project": "silver-coin",
+  "branch": "song/silver-coin-alternate",
+  "purpose": "Repair Assembly01 named defects without replacing accepted Silver Coin source canon.",
+  "accepted_source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+  "source_backbone": [
+    {
+      "filename": "V8_Section01_00-39.3.mp4",
+      "sha256": "a7cd2d1a2f52662adb87d7134b89fbb2ddeae98eb80e1c624bf13eaa50433cd4"
+    },
+    {
+      "filename": "V8_Section02_39.3-82.7.mp4",
+      "sha256": "897eee440fd26262b7e1399503ab9ed033203334158c7ea3bf5fcd27d17f1436"
+    },
+    {
+      "filename": "V8_Section03_82.7-103.7.mp4",
+      "sha256": "a7fe59ea402f086979e9194a193d4cf5564e3432fd23152bb4f111ef08445bf4"
+    },
+    {
+      "filename": "V8_Section04_103.7-138.2.mp4",
+      "sha256": "de63c06ff40b755b2825783afd7a8f037cbf6a7742b14979244282fc5a964fbb"
+    },
+    {
+      "filename": "V8_Section05_138.2-188.0.mp4",
+      "sha256": "8cb2430e3b33a596fc0793adcd9c8102b63eefa8c3fe239116413d20eefc52a0"
+    },
+    {
+      "filename": "V8_Section06_188.0-207.44.mp4",
+      "sha256": "adcfa4e50d4a9d04b9aec63ff2ff9efbe5b8149eec692e13db8848f6cd543762"
+    }
+  ],
+  "method": "continuous accepted-source timeline with varied per-shot retiming; each shot starts where previous source span ended, preserving geography/continuity while breaking global loop phase",
+  "shots": [
+    {
+      "id": "S01",
+      "source_range_seconds": [
+        0,
+        15.518545
+      ],
+      "rate": 0.97,
+      "output_duration": 15.9985
+    },
+    {
+      "id": "S02",
+      "source_range_seconds": [
+        15.518545,
+        31.722369
+      ],
+      "rate": 1.04,
+      "output_duration": 15.5806
+    },
+    {
+      "id": "S03",
+      "source_range_seconds": [
+        31.722369,
+        39.33141
+      ],
+      "rate": 0.99,
+      "output_duration": 7.6859
+    },
+    {
+      "id": "S04",
+      "source_range_seconds": [
+        39.33141,
+        62.075973
+      ],
+      "rate": 1.03,
+      "output_duration": 22.0821
+    },
+    {
+      "id": "S05",
+      "source_range_seconds": [
+        62.075973,
+        82.606437
+      ],
+      "rate": 0.96,
+      "output_duration": 21.3859
+    },
+    {
+      "id": "S06",
+      "source_range_seconds": [
+        82.606437,
+        93.943287
+      ],
+      "rate": 1.05,
+      "output_duration": 10.797
+    },
+    {
+      "id": "S07",
+      "source_range_seconds": [
+        93.943287,
+        103.955947
+      ],
+      "rate": 0.98,
+      "output_duration": 10.217
+    },
+    {
+      "id": "S08",
+      "source_range_seconds": [
+        103.955947,
+        121.411105
+      ],
+      "rate": 1.02,
+      "output_duration": 17.1129
+    },
+    {
+      "id": "S09",
+      "source_range_seconds": [
+        121.411105,
+        137.84525
+      ],
+      "rate": 0.95,
+      "output_duration": 17.2991
+    },
+    {
+      "id": "S10",
+      "source_range_seconds": [
+        137.84525,
+        157.646954
+      ],
+      "rate": 1.04,
+      "output_duration": 19.0401
+    },
+    {
+      "id": "S11",
+      "source_range_seconds": [
+        157.646954,
+        176.408888
+      ],
+      "rate": 0.97,
+      "output_duration": 19.3422
+    },
+    {
+      "id": "S12",
+      "source_range_seconds": [
+        176.408888,
+        183.393009
+      ],
+      "rate": 1.03,
+      "output_duration": 6.7807
+    },
+    {
+      "id": "S13",
+      "source_range_seconds": [
+        183.393009,
+        197.346801
+      ],
+      "rate": 0.96,
+      "output_duration": 14.5352
+    },
+    {
+      "id": "S14",
+      "source_range_seconds": [
+        197.346801,
+        207.121257
+      ],
+      "rate": 1.02,
+      "output_duration": 9.5828
+    }
+  ],
+  "audio": {
+    "filename": "Silver Coin (Remastered).wav",
+    "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+    "policy": "untouched master audio"
+  },
+  "output": {
+    "filename": "Silver_Coin_Alternate_Assembly05_ContinuityRecut_720p24.mp4",
+    "sha256": "9a6a838e53379ca7414a5744818a2a059e955ec6cb8968ad529a80890ff2d1b4",
+    "duration_seconds": 207.44,
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 24
+  }
+}
