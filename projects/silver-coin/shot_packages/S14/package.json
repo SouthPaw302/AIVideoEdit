@@ -1,0 +1,42 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot": "S14",
+  "production_mode": "living_scene",
+  "intent": "coin/protagonist afterglow resolution",
+  "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+  "media_evidence": [
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/1YJINRRn1SGSAev3FnIzYi2fRDmyw85Pp/view",
+      "drive_file_id": "1YJINRRn1SGSAev3FnIzYi2fRDmyw85Pp",
+      "filename": "01_enchanted_woodland_coin_portrait.png",
+      "sha256": "0783a34aaf19bedc5d98a74beb6a86c4f5a1d881b3c0acd4e9d71240ce119475",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    },
+    {
+      "kind": "accepted_image",
+      "uri": "https://drive.google.com/file/d/1ifKY7-MtPKQ86QDDWyPjQW6Ol2lIaMkh/view",
+      "drive_file_id": "1ifKY7-MtPKQ86QDDWyPjQW6Ol2lIaMkh",
+      "filename": "06_communal_dance.png",
+      "sha256": "d7304546ee33aa09ce551569c1181a8cb1e2e4b875e505f444b44515d34ba2ca",
+      "status": "accepted",
+      "lifecycle_status": "canonical",
+      "role": "alternate-drive canon input"
+    }
+  ],
+  "render_plan": {
+    "internal_motion_first": true,
+    "source_strategy": "use accepted alternate-Drive hero media as the visible picture foundation; crops/layers/composites must preserve identity",
+    "protected_regions": [
+      "faces",
+      "hands",
+      "instruments/props",
+      "costume silhouette",
+      "environment topology"
+    ],
+    "proof_required": true,
+    "output_root": "drive:1jAzrW5OhUUMqEZNJDsYTE9UOyvXjMMOo"
+  }
+}
