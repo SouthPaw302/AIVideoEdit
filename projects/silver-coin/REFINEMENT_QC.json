@@ -91,7 +91,15 @@
     },
     "continuity_warnings": [
       "A strong visual cut remains near the final S13→S14 boundary; frame review shows an intentional source-canon scene change. Artistic review remains required."
-    ]
+    ],
+    "delivery_master": {
+      "filename": "Silver_Coin_Alternate_FINAL_720p24.mp4",
+      "sha256": "b33d8eb59cd48cb481e7c5450fafb327817d91b240e5d72d6f5575121b8aaf3e",
+      "duration_seconds": 207.44,
+      "decode_pass": true,
+      "black_events": 0,
+      "freeze_events": 0
+    }
   },
   "comparison": {
     "similar_runs_delta": -14,
