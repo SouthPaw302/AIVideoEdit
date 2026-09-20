@@ -156,6 +156,19 @@
       "sha256": "2f18d506d293789bacdc96b899cf12cbd543c3c9b6154655ddcd96d5228566c7",
       "report_drive_file_id": "18Rrc3n3Xx2VBIvBcgJPOmf7_T8CfQ3SZ",
       "status": "PENDING_FINAL_QC"
+    },
+    "final_delivery": {
+      "filename": "Silver_Coin_Alternate_FINAL_720p24.mp4",
+      "sha256": "b33d8eb59cd48cb481e7c5450fafb327817d91b240e5d72d6f5575121b8aaf3e",
+      "bytes": 199778226,
+      "duration_seconds": 207.44,
+      "resolution": [
+        1280,
+        720
+      ],
+      "fps": 24,
+      "status": "VERIFIED_UPLOAD_PENDING_CONNECTOR_HANDOFF",
+      "intended_drive_folder_id": "1bQoHWhiXwZEQMQQvLZtxeE5vj6f8uii1"
     }
   }
 }
