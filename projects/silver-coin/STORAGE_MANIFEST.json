@@ -127,7 +127,7 @@
     "role": "silver_coin_alternate_new_production_output",
     "id": "1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz",
     "url": "https://drive.google.com/drive/folders/1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz",
-    "status": "IN_PRODUCTION",
+    "status": "TECHNICALLY_COMPLETE_ARCHIVED_CANDIDATE",
     "folders": {
       "source_audio": "1v13-4ijJz88t_hk8JFrWaFa2p1Mijtif",
       "canonical_references": "1PIqsxsH2V4-NDsCwR_hDyCox82Z44B2o",
@@ -137,7 +137,8 @@
       "fx": "1FmZ6HrQMegdNOEdcJpshEPzpWVOF8hMz",
       "assembly": "1cIVFKDuIoz3ZGix5tdnLU_qcbBtq3p9I",
       "qc": "135GEcW3w59X_S3IeKoBvVPMrrY2dc-qQ",
-      "masters": "1bQoHWhiXwZEQMQQvLZtxeE5vj6f8uii1"
+      "masters": "1bQoHWhiXwZEQMQQvLZtxeE5vj6f8uii1",
+      "archive": "1f91VVQGvrT0qekAgF754_5YvMAlzoz_d"
     },
     "proofs": {
       "proof01_video": "15nNDAJVIeiXjQROewmnrxzgAmskVlQF7",
@@ -159,16 +160,21 @@
     },
     "final_delivery": {
       "filename": "Silver_Coin_Alternate_FINAL_720p24.mp4",
-      "sha256": "b33d8eb59cd48cb481e7c5450fafb327817d91b240e5d72d6f5575121b8aaf3e",
-      "bytes": 199778226,
+      "sha256": "9508b8068adf83a551a814b54fb5472f80499438ffcc075e0b5048e1bbcf129e",
+      "bytes": 99898008,
       "duration_seconds": 207.44,
       "resolution": [
         1280,
         720
       ],
       "fps": 24,
-      "status": "VERIFIED_UPLOAD_PENDING_CONNECTOR_HANDOFF",
-      "intended_drive_folder_id": "1bQoHWhiXwZEQMQQvLZtxeE5vj6f8uii1"
+      "drive_file_id": "1Mc-LmnBuQNjPxOv8W04EGDaCkKYWhzri",
+      "url": "https://drive.google.com/file/d/1Mc-LmnBuQNjPxOv8W04EGDaCkKYWhzri/view",
+      "status": "UPLOADED_VERIFIED"
+    },
+    "archive": {
+      "folder_id": "1f91VVQGvrT0qekAgF754_5YvMAlzoz_d",
+      "status": "manifest_pending_upload"
     }
   }
 }
