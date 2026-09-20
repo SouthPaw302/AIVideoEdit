@@ -1,0 +1,38 @@
+{
+  "schema": "aivideoedit.archive-manifest.v1",
+  "project": "Silver Coin Alternate",
+  "branch": "song/silver-coin-alternate",
+  "archived_utc": "2026-09-20T10:24:00Z",
+  "status": "TECHNICALLY_COMPLETE_CANDIDATE",
+  "artistic_baseline_status": "NOT_ACCEPTED",
+  "source_library": {
+    "sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+    "drive_folder_id": "1ROTZHvmBb71snAsBXXU6YImyXWT0ikEV"
+  },
+  "final_master": {
+    "filename": "Silver_Coin_Alternate_FINAL_720p24.mp4",
+    "sha256": "9508b8068adf83a551a814b54fb5472f80499438ffcc075e0b5048e1bbcf129e",
+    "bytes": 99898008,
+    "duration_seconds": 207.44,
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 24,
+    "drive_file_id": "1Mc-LmnBuQNjPxOv8W04EGDaCkKYWhzri",
+    "drive_url": "https://drive.google.com/file/d/1Mc-LmnBuQNjPxOv8W04EGDaCkKYWhzri/view"
+  },
+  "qc": {
+    "final_qc": "projects/silver-coin/FINAL_QC.json",
+    "refinement_qc": "projects/silver-coin/REFINEMENT_QC.json",
+    "post_edit_qc_drive_file_id": "1f_rEePeyoEeeH7PKJbPz2NgQUHUg4Maw"
+  },
+  "recut": {
+    "plan": "projects/silver-coin/RECUT05_PLAN.json",
+    "named_defects_repaired": [
+      "mechanical repetition from repeated short-loop coverage",
+      "accidental source-timeline discontinuity at shot joins"
+    ]
+  },
+  "note": "Archive preserves a technically completed QC-passed candidate. No accepted_baseline is implied; user artistic acceptance remains separate."
+}
