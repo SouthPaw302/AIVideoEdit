@@ -127,11 +127,23 @@
     "role": "silver_coin_alternate_new_production_output",
     "id": "1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz",
     "url": "https://drive.google.com/drive/folders/1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz",
-    "status": "READY",
+    "status": "IN_PRODUCTION",
     "folders": {
       "source_audio": "1v13-4ijJz88t_hk8JFrWaFa2p1Mijtif",
       "canonical_references": "1PIqsxsH2V4-NDsCwR_hDyCox82Z44B2o",
-      "hero_paintings": "1QF-5pVsdY9TYhe4xjWv39kjS44dqNdZR"
+      "hero_paintings": "1QF-5pVsdY9TYhe4xjWv39kjS44dqNdZR",
+      "shot_packages": "1jAzrW5OhUUMqEZNJDsYTE9UOyvXjMMOo",
+      "proofs": "1msBwHwUeOaj81HQJL_MzR51GUowdTZtW",
+      "fx": "1FmZ6HrQMegdNOEdcJpshEPzpWVOF8hMz",
+      "assembly": "1cIVFKDuIoz3ZGix5tdnLU_qcbBtq3p9I",
+      "qc": "135GEcW3w59X_S3IeKoBvVPMrrY2dc-qQ",
+      "masters": "1bQoHWhiXwZEQMQQvLZtxeE5vj6f8uii1"
+    },
+    "proofs": {
+      "proof01_video": "15nNDAJVIeiXjQROewmnrxzgAmskVlQF7",
+      "proof01_zip": "1OYYtw9IaYv-yLni059fvetmCLAeP_MtQ",
+      "proof02_zip": "1-IxvG-HglT6D_UBENsXFm48HnBUjYjAg",
+      "proof02_contact": "1CZ4sPiTBpV7EystNZKFqjgJC0Q_tMhe1"
     }
   }
 }
