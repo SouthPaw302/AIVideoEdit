@@ -2,7 +2,10 @@
 
 This is the non-destructive catalog for music/video production families. Branch-local project state remains authoritative.
 
-## Drive structure
+## Drive
+
+Google Drive is available to every AIVideoEdit production for source media, generated assets, proofs, backups, and final renders.
+
 Canonical Drive root: AIVideoEdit (`1DZa50G2MVy9ER3b-ff4tpCQpzSqpHr1E`)
 
 - `00 System`
@@ -18,7 +21,18 @@ Canonical Drive root: AIVideoEdit (`1DZa50G2MVy9ER3b-ff4tpCQpzSqpHr1E`)
 - original: `song/silver-coin`
 - alternate/current rework: `song/silver-coin-alternate`
 - project: `projects/silver-coin/`
-- Drive: `10 Productions/Silver Coin`
+- Drive production folder: `10 Productions/Silver Coin`
+- Drive folder ID: `1ROTZHvmBb71snAsBXXU6YImyXWT0ikEV`
+- preserved original assets are inside that folder:
+  - `01 Source Audio`
+  - `02 Canonical References`
+  - `03 Hero Paintings`
+  - `04 V8 Effect Assets`
+  - `05 Section Renders`
+  - `06 QC & Contact Sheets`
+  - `07 Final Masters`
+  - `08 Manifests & Repo Records`
+  - `09 Archive Snapshots`
 
 ### Midnight Tribal Pulse
 - `song/midnight-tribal-pulse`
@@ -73,7 +87,7 @@ Branches under `system/`, `integration/`, `feat/`, `fx/`, `promote/`, `prototype
 1. One production family gets one folder under Drive `10 Productions`.
 2. Branch-local `STORAGE_MANIFEST.json` points to that folder.
 3. Finished delivery masters may additionally live in `30 Delivery Masters`.
-4. Cross-project reusable media belongs in `20 Shared Assets`; never silently promote it into another project's canon.
-5. Superseded snapshots and abandoned packages go to `90 Archive`; cleanup does not delete them.
+4. Cross-project reusable media belongs in `20 Shared Assets`.
+5. Superseded snapshots and abandoned packages go to `90 Archive`.
 6. Unsorted incoming media goes to `99 Inbox`.
-7. Duplicate/legacy Git branches remain intact until explicitly reviewed; catalog first, archive/delete later.
+7. Duplicate/legacy Git branches remain intact until explicitly reviewed.
