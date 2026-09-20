@@ -144,6 +144,11 @@
       "proof01_zip": "1OYYtw9IaYv-yLni059fvetmCLAeP_MtQ",
       "proof02_zip": "1-IxvG-HglT6D_UBENsXFm48HnBUjYjAg",
       "proof02_contact": "1CZ4sPiTBpV7EystNZKFqjgJC0Q_tMhe1"
+    },
+    "fx_lock": {
+      "repo_path": "projects/silver-coin/fx.lock.json",
+      "drive_folder_id": "1FmZ6HrQMegdNOEdcJpshEPzpWVOF8hMz",
+      "reusable_media_count": 15
     }
   }
 }
