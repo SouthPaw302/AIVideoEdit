@@ -1,0 +1,280 @@
+{
+  "schema": "aivideoedit.hero-library.v1",
+  "source": {
+    "identity": "Silver Coin accepted V8 source library — six section renders",
+    "file_or_locator": "drive:1ROTZHvmBb71snAsBXXU6YImyXWT0ikEV/05 Section Renders",
+    "sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+    "fps": 24,
+    "frame_count": 4978,
+    "duration_seconds": 207.423334,
+    "component_sections": [
+      {
+        "filename": "V8_Section01_00-39.3.mp4",
+        "sha256": "a7cd2d1a2f52662adb87d7134b89fbb2ddeae98eb80e1c624bf13eaa50433cd4",
+        "duration_seconds": 39.291667
+      },
+      {
+        "filename": "V8_Section02_39.3-82.7.mp4",
+        "sha256": "897eee440fd26262b7e1399503ab9ed033203334158c7ea3bf5fcd27d17f1436",
+        "duration_seconds": 43.4
+      },
+      {
+        "filename": "V8_Section03_82.7-103.7.mp4",
+        "sha256": "a7fe59ea402f086979e9194a193d4cf5564e3432fd23152bb4f111ef08445bf4",
+        "duration_seconds": 21
+      },
+      {
+        "filename": "V8_Section04_103.7-138.2.mp4",
+        "sha256": "de63c06ff40b755b2825783afd7a8f037cbf6a7742b14979244282fc5a964fbb",
+        "duration_seconds": 34.5
+      },
+      {
+        "filename": "V8_Section05_138.2-188.0.mp4",
+        "sha256": "8cb2430e3b33a596fc0793adcd9c8102b63eefa8c3fe239116413d20eefc52a0",
+        "duration_seconds": 49.791667
+      },
+      {
+        "filename": "V8_Section06_188.0-207.44.mp4",
+        "sha256": "adcfa4e50d4a9d04b9aec63ff2ff9efbe5b8149eec692e13db8848f6cd543762",
+        "duration_seconds": 19.44
+      }
+    ]
+  },
+  "selection": {
+    "method": "dense_candidates_then_quality_transition_perceptual_diversity_greedy_selection",
+    "candidate_interval_seconds": 0.5,
+    "candidate_count": 416,
+    "target_count": 9,
+    "selected_count": 9,
+    "duplicate_similarity_threshold": 0.985,
+    "near_duplicate_rejections": 314,
+    "musical_landmarks_supplied": 0
+  },
+  "entries": [
+    {
+      "id": "hero_001",
+      "frame_index": 0,
+      "time_seconds": 0,
+      "file": "source-derived/hero_001.png",
+      "frame_sha256": "f6b2256a531fd33e3c4e7e1788c51bf4198b5c437a8d3d802f705d5aac99e32d",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        0,
+        0.75
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          4.7684355,
+          -0.9373158,
+          -0.6336003
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.0636166
+      },
+      "source_section": "V8_Section01_00-39.3.mp4"
+    },
+    {
+      "id": "hero_002",
+      "frame_index": 720,
+      "time_seconds": 30,
+      "file": "source-derived/hero_002.png",
+      "frame_sha256": "1b35f1a605e7e84e09a64ce379746c69fbff13cf2e6a2280bdeb85d7c89d5a6e",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        29.75,
+        30.25
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          2.9436889,
+          -0.0767106,
+          -0.8772221
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.5690444
+      },
+      "source_section": "V8_Section01_00-39.3.mp4"
+    },
+    {
+      "id": "hero_003",
+      "frame_index": 1183,
+      "time_seconds": 49.291667,
+      "file": "source-derived/hero_003.png",
+      "frame_sha256": "c7e379e54ca8ac74ccceb032d69e26c07eec63703662d12410f2cfa0d1ee2edd",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        49.041667,
+        49.541667
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          5.3011847,
+          -0.0467554,
+          -0.6875485
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.0143452
+      },
+      "source_section": "V8_Section02_39.3-82.7.mp4"
+    },
+    {
+      "id": "hero_004",
+      "frame_index": 1471,
+      "time_seconds": 61.291667,
+      "file": "source-derived/hero_004.png",
+      "frame_sha256": "07a30d0a1561dae450b7328da723a61b903a6c30d8fc75a160a773a2b7cf2956",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        61.041667,
+        61.541667
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          6.3738031,
+          0.1902257,
+          -0.4947356
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.2162901
+      },
+      "source_section": "V8_Section02_39.3-82.7.mp4"
+    },
+    {
+      "id": "hero_005",
+      "frame_index": 2933,
+      "time_seconds": 122.191667,
+      "file": "source-derived/hero_005.png",
+      "frame_sha256": "a7998445f98409bc70822b9a8b0e47348231a14a12d146a7679c9f00ae7dec7f",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        121.941667,
+        122.441667
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          6.1697793,
+          0.2390236,
+          -0.4471996
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.0036979
+      },
+      "source_section": "V8_Section04_103.7-138.2.mp4"
+    },
+    {
+      "id": "hero_006",
+      "frame_index": 3485,
+      "time_seconds": 145.191667,
+      "file": "source-derived/hero_006.png",
+      "frame_sha256": "3c538782db2427c52e61401af7d3b28a30c5a5d13fe6a22ae15b4b031b45109e",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        144.941667,
+        145.441667
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          5.6069775,
+          -0.6538699,
+          -0.7836232
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.0756791
+      },
+      "source_section": "V8_Section05_138.2-188.0.mp4"
+    },
+    {
+      "id": "hero_007",
+      "frame_index": 4169,
+      "time_seconds": 173.691667,
+      "file": "source-derived/hero_007.png",
+      "frame_sha256": "debc0adce962ce71ba2eb1fe1a8979646a92250ea3686afbbfa76e935851fe41",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        173.441667,
+        173.941667
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          5.0475492,
+          -0.110508,
+          -0.8976188
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.030316
+      },
+      "source_section": "V8_Section05_138.2-188.0.mp4"
+    },
+    {
+      "id": "hero_008",
+      "frame_index": 4596,
+      "time_seconds": 191.483334,
+      "file": "source-derived/hero_008.png",
+      "frame_sha256": "5d2346959d25d2e46ccb0cf6020be9c2c5820ec620aaa611b09677b17a8de7b6",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        191.233334,
+        191.733334
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          5.0644197,
+          0.0184223,
+          -0.6932126
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 1
+      },
+      "source_section": "V8_Section06_188.0-207.44.mp4"
+    },
+    {
+      "id": "hero_009",
+      "frame_index": 4920,
+      "time_seconds": 204.983334,
+      "file": "source-derived/hero_009.png",
+      "frame_sha256": "8a82368004505bea262537dc70280aed9f890453a0d84565c04379c707d467f1",
+      "lifecycle_status": "canonical",
+      "source_range_seconds": [
+        204.733334,
+        205.233334
+      ],
+      "visual_signature": {
+        "method": "measured_dct_color_edge_signature",
+        "vector": [
+          4.4958129,
+          -0.5129527,
+          -0.3923897
+        ]
+      },
+      "diversity_evidence": {
+        "min_distance_to_selected": 0.0630347
+      },
+      "source_section": "V8_Section06_188.0-207.44.mp4"
+    }
+  ],
+  "unmeasured_dimensions": [
+    "semantic subject identity",
+    "semantic shot scale (wide/medium/close)",
+    "semantic subject position",
+    "narrative meaning"
+  ],
+  "warnings": [
+    "Candidate pool is duplicate-heavy; use long-form section coverage to reduce repeated compositions in the recut."
+  ]
+}
