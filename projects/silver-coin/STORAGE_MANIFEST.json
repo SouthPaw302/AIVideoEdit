@@ -79,7 +79,7 @@
     "count": 181,
     "source": "ChatGPT File Library ALL_MEDIA_SHA256.json"
   },
-  "note": "Drive folder structure exists, but original Silver Coin media binaries are NOT yet physically present there. Do not treat Drive placeholders as populated assets. Historical binaries remain recoverable only from user/File Library sources until explicitly uploaded and hash-verified.",
+  "note": "Silver Coin original media is available in the user's ChatGPT File Library. Google Drive is the organized production mirror/destination. Recover by exact filename/hash from File Library, then populate Drive and verify hashes.",
   "drive_population_status": {
     "verified_at": "2026-09-20",
     "source_audio": "EMPTY",
@@ -90,6 +90,15 @@
     "qc_contact_sheets": "EMPTY",
     "final_masters": "EMPTY",
     "manifests_repo_records": "contains recovery index only",
-    "archive_snapshots": "contains repo snapshot ZIP only"
+    "archive_snapshots": "contains repo snapshot ZIP only",
+    "source_of_truth": "Do not interpret empty Drive folders as missing media. Original Silver Coin assets are available in ChatGPT File Library and should be recovered from there, then uploaded/verified into Drive."
+  },
+  "recovery_source": {
+    "provider": "chatgpt_file_library",
+    "role": "primary_recovery_archive",
+    "status": "available",
+    "inventory": "ALL_MEDIA_SHA256.json",
+    "inventory_count": 181,
+    "instruction": "Search the user's ChatGPT File Library for Silver Coin assets by exact filename and hash. Treat File Library as the recovery/source archive and Google Drive as the organized destination mirror."
   }
 }
