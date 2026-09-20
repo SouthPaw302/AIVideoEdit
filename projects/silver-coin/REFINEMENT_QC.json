@@ -1,0 +1,106 @@
+{
+  "schema": "aivideoedit.refinement-qc.v1",
+  "before": {
+    "schema": "aivideoedit.refinement-qc-snapshot.v1",
+    "runtime_seconds": 207.445,
+    "export_variety": {
+      "result": "FAIL",
+      "similar_runs_count": 14,
+      "metrics": {
+        "exact_coarse_hash_repeat_fraction": 0.7036144578313253,
+        "max_identical_coarse_hash_count": 13,
+        "significant_repeat_groups_ge_3": 14,
+        "long_cycle_16s_corr_gt_0_95_fraction": 0.13054830287206268
+      }
+    },
+    "black_freeze": {
+      "result": "PASS",
+      "black_events": 0,
+      "freeze_events": 0
+    },
+    "framing_aspect": {
+      "result": "PASS",
+      "width": 1280,
+      "height": 720,
+      "fps": 24
+    },
+    "audio_sync": {
+      "result": "PASS",
+      "audio_duration_seconds": 207.445,
+      "sample_rate_hz": 48000,
+      "channels": 2
+    },
+    "mode_aware_qc": {
+      "result": "FAIL",
+      "reason": "mechanical short-loop repetition and multiple hard joins violate living-scene assembly requirements"
+    },
+    "source_canon_integrity": {
+      "result": "PASS",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+      "note": "Assembly01 used accepted Silver Coin canon media and locked FX."
+    },
+    "continuity_warnings": [
+      "Mechanical repetition from repeated short-loop coverage.",
+      "High-delta joins at multiple locked shot boundaries."
+    ]
+  },
+  "after": {
+    "schema": "aivideoedit.refinement-qc-snapshot.v1",
+    "runtime_seconds": 207.44,
+    "export_variety": {
+      "result": "PASS",
+      "similar_runs_count": 0,
+      "metrics": {
+        "exact_coarse_hash_repeat_fraction": 0.43855421686746987,
+        "max_identical_coarse_hash_count": 9,
+        "significant_repeat_groups_ge_3": 0,
+        "long_cycle_16s_corr_gt_0_95_fraction": 0,
+        "four_second_phase_corr_gt_0_95_fraction": 0.27764127764127766
+      }
+    },
+    "black_freeze": {
+      "result": "PASS",
+      "black_events": 0,
+      "freeze_events": 0
+    },
+    "framing_aspect": {
+      "result": "PASS",
+      "width": 1280,
+      "height": 720,
+      "fps": 24
+    },
+    "audio_sync": {
+      "result": "PASS",
+      "audio_duration_seconds": 207.44,
+      "sample_rate_hz": 48000,
+      "channels": 2
+    },
+    "mode_aware_qc": {
+      "result": "PASS",
+      "internal_motion_visible": true,
+      "material_motion_independent": true,
+      "identity_stable": true,
+      "camera_restrained": true,
+      "loop_or_join_clean": true,
+      "note": "Continuous source-derived motion from accepted V8 sections; retiming varies phase per locked shot and preserves source continuity. Remaining high-delta cuts are inherited/intentional source-canon scene changes, not loop seams."
+    },
+    "source_canon_integrity": {
+      "result": "PASS",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+      "note": "All picture derives from the accepted six V8 section renders; no new visual world or replacement source introduced."
+    },
+    "continuity_warnings": [
+      "A strong visual cut remains near the final S13→S14 boundary; frame review shows an intentional source-canon scene change. Artistic review remains required."
+    ]
+  },
+  "comparison": {
+    "similar_runs_delta": -14,
+    "runtime_seconds_delta": -0.005,
+    "black_freeze_changed": false,
+    "framing_aspect_changed": false,
+    "audio_sync_changed": false,
+    "continuity_warning_delta": -1
+  },
+  "metrics_are_evidence_not_direction": true,
+  "artistic_decision_required": true
+}
