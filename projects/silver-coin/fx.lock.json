@@ -1,0 +1,236 @@
+{
+  "schema": "aivideoedit.fx-lock.v1",
+  "project": "silver-coin",
+  "branch": "song/silver-coin-alternate",
+  "production_mode": "living_scene",
+  "locked": true,
+  "locked_utc": "2026-09-20",
+  "authority": {
+    "prime_directive": "current-main",
+    "zero_drift_directive": "general/reusable/ZERO_DRIFT_DIRECTOR_DIRECTIVE.md",
+    "canonical_effect_index": "general/reusable/CANONICAL_EFFECT_REGISTRY.json",
+    "canonical_fx_registry": "general/reusable/fx_v2/registry.json"
+  },
+  "standard_workflows": [
+    "source_derived_motion_loop",
+    "identity_safe_loop_25d_qc",
+    "pre_rendered_reusable_scene_loop_assembly",
+    "lyric_timed_multi_image_living_scene_construction",
+    "scene_graph_25d",
+    "layered_nondestructive_compositing",
+    "temporal_qc_scan"
+  ],
+  "canonical_runtime_fx": [
+    {
+      "id": "FX2-MOTION-022",
+      "name": "forest_breath"
+    },
+    {
+      "id": "FX2-ATM-001",
+      "name": "advected_smoke"
+    },
+    {
+      "id": "FX2-FIRE-001",
+      "name": "living_flame"
+    },
+    {
+      "id": "FX2-LIGHT-023",
+      "name": "firelight_breath"
+    },
+    {
+      "id": "FX2-MOTION-021",
+      "name": "crowd_sway"
+    },
+    {
+      "id": "FX2-MOTION-023",
+      "name": "impact_pulse"
+    },
+    {
+      "id": "FX2-ATM-025",
+      "name": "wet_road_rain_reflection"
+    },
+    {
+      "id": "FX2-LIGHT-027",
+      "name": "volumetric_light_shafts"
+    },
+    {
+      "id": "FX2-ATM-021",
+      "name": "atmospheric_fog"
+    },
+    {
+      "id": "FX2-LIGHT-021",
+      "name": "candlelight_micro_loop"
+    },
+    {
+      "id": "FX2-DISTORT-021",
+      "name": "heat_haze"
+    },
+    {
+      "id": "FX2-TRANS-023",
+      "name": "fire_to_lightning"
+    },
+    {
+      "id": "FX2-TRANS-024",
+      "name": "fog_pigment_travel"
+    },
+    {
+      "id": "FX2-TRANS-026",
+      "name": "glint_to_orb"
+    },
+    {
+      "id": "FX2-TRANS-027",
+      "name": "object_portal"
+    }
+  ],
+  "reusable_pre_rendered_media": [
+    {
+      "filename": "V8_FX01_forest_breath_hair_garland.mp4",
+      "drive_file_id": "1iRXP3rrEOaUoV1pMpc5bThpA37EKHhy2",
+      "sha256": "99ea7fcb651485a6c58c72deebb762ca51b6b9a75e5b4b7321784842422f3f0c",
+      "behavior": "forest/hair/garland breathing",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX02_coin_glint.mp4",
+      "drive_file_id": "1WCrF1qcK7Ib03AYBwpehjyay4p35ncTY",
+      "sha256": "35cfd8e1af3bf690c70fa1baab0a3d511aefd8153eeab932991a1ed8dee947f8",
+      "behavior": "coin glint",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX03_tavern_firelight_smoke.mp4",
+      "drive_file_id": "19Nc-7qmENt6cZbBWbvMKGXcRDWwXdnsW",
+      "sha256": "fd06f0a65bf2a59d3331b8511d7f3c309676f5ede6ead9e038510c2fb1d4303a",
+      "behavior": "tavern firelight/smoke",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX04_fiddler_impact.mp4",
+      "drive_file_id": "1vw2oe0-yUirKJv2m5XgLPYcbauaoZrra",
+      "sha256": "a80a20c303952fdae80880cc8ae5b2622dbe535a06ff0cb6665992131089008b",
+      "behavior": "fiddler impact motion",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX05_communal_crowd_sway.mp4",
+      "drive_file_id": "1xvzpcAMDIlzg9M-v-wGyDpmnhehjeld7",
+      "sha256": "c7f1c296673ba9e927f6ba49cb51654b534727bbe8622c77639389d36eed9845",
+      "behavior": "communal crowd sway",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX06_lightning_wet_reflection.mp4",
+      "drive_file_id": "1J-wIZZBMODAM-JgvSJ8FfNj3KPBG1PX_",
+      "sha256": "5acb928a337c499fdf240e94371dd37ad6b128cf5749e5bc010e83fe07f06ef4",
+      "behavior": "lightning/wet reflection",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX07_gaussian_light_shafts.mp4",
+      "drive_file_id": "1WxqjjNo3OIrchVz81N6VxqRgMgfBcyZT",
+      "sha256": "bf71a7bdeb1c1e172ae5a5676d888fa95153bc01db05e79646cea31c3edba90a",
+      "behavior": "light shafts",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX08_fog_pigment_travel.mp4",
+      "drive_file_id": "12WrfHzHwoUIBmddYFGQqHr6G2d43cgRM",
+      "sha256": "88a24b139f14ced56d97f118ae68d07a9a8427f5eb5c60ce8da60e77000c4588",
+      "behavior": "fog/pigment travel",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX09_depth_parallax_scenegraph.mp4",
+      "drive_file_id": "1aULghe4kwBwEPpX-E3LlYaH4QLIGk7dO",
+      "sha256": "3c89782e20127d77eb5015ce8dd5d3b4773ca8350e26cfa12046e0fda6f4e51b",
+      "behavior": "pre-rendered depth/parallax scene",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX10_recursive_coin_portal.mp4",
+      "drive_file_id": "1nU7-tfhX-HkBIPnSw-9m4AzofNFRSn7e",
+      "sha256": "5dda3d17930a8fd9e6d4f5d1b3954ce904fee28a645be3d2cd0a79e6cafb4e82",
+      "behavior": "coin/object portal",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX11_temporal_dusk_to_night.mp4",
+      "drive_file_id": "1ixXQCQMVPcXfvEF0cOYqcCoQ7Umwy010",
+      "sha256": "5136caa8722a8c4db8caeadc41f11c7cbaea0ca943ba6117dfc3b7fe5ad92d7d",
+      "behavior": "dusk-to-night temporal change",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX13_workers_sunset_procession.mp4",
+      "drive_file_id": "1JPxw2ZBsHIY89sZjIPDoMi6VOnptbUhe",
+      "sha256": "2c7873ae5576a83f7467cc2ce231d26b2a5f99d263bea01822916e31f9ee19ed",
+      "behavior": "workers/procession motion",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX14_clap_rhythm_response.mp4",
+      "drive_file_id": "1FBs-kmxWoHePAZoqGztdOTi4H_IaYPZ1",
+      "sha256": "5f685c4b5aae58a65ec0b3dfbdeca5372359d79b290d975bee015af2d05a09de",
+      "behavior": "clap/rhythm response",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX15_shadow_wipe.mp4",
+      "drive_file_id": "1QPoV3SSl-eN7kAby3Ze47abzb2DbGi3Q",
+      "sha256": "4d12adb4097143c7834e159d2356b37ec0484e5e29b72545512ee0c6a1d021c6",
+      "behavior": "shadow wipe",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    },
+    {
+      "filename": "V8_FX16_candle_heat_haze.mp4",
+      "drive_file_id": "1qvNke8UJHidnDQEFnxSKUQ8oUzTdFZI4",
+      "sha256": "96fb489f5147bb71a50fc148dd5aa9d3dfdc347645ddfe908326517a3a69f88b",
+      "behavior": "candle heat haze",
+      "role": "pre_rendered_reusable_scene_media",
+      "lifecycle_status": "canonical",
+      "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189"
+    }
+  ],
+  "proof_basis": [
+    "projects/silver-coin/proofs/PROOF01.json",
+    "projects/silver-coin/proofs/PROOF02.json",
+    "projects/silver-coin/proofs/ACCEPTANCE.json"
+  ],
+  "restrictions": [
+    "Internal scene motion precedes camera motion.",
+    "No whole-frame wobble or endless zoom as substitute for animation.",
+    "Faces, hands, instruments, costume silhouette, and environment topology remain protected.",
+    "Pre-rendered V8 media is reused as media under provenance; it is not relabeled as a canonical runtime implementation.",
+    "No unregistered reusable FX.",
+    "No NeRF or 3DGS claim unless separately proven under the current repo contract."
+  ],
+  "output_folder": "drive:1FmZ6HrQMegdNOEdcJpshEPzpWVOF8hMz"
+}
