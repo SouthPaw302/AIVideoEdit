@@ -79,5 +79,17 @@
     "count": 181,
     "source": "ChatGPT File Library ALL_MEDIA_SHA256.json"
   },
-  "note": "Repo-resident assets are archived in Drive. Large historical binaries that exist only in ChatGPT File Library remain indexed by hash until a direct binary handoff or user re-supply is available."
+  "note": "Drive folder structure exists, but original Silver Coin media binaries are NOT yet physically present there. Do not treat Drive placeholders as populated assets. Historical binaries remain recoverable only from user/File Library sources until explicitly uploaded and hash-verified.",
+  "drive_population_status": {
+    "verified_at": "2026-09-20",
+    "source_audio": "EMPTY",
+    "canonical_references": "EMPTY",
+    "hero_paintings": "EMPTY",
+    "v8_effect_assets": "EMPTY",
+    "section_renders": "EMPTY",
+    "qc_contact_sheets": "EMPTY",
+    "final_masters": "EMPTY",
+    "manifests_repo_records": "contains recovery index only",
+    "archive_snapshots": "contains repo snapshot ZIP only"
+  }
 }
