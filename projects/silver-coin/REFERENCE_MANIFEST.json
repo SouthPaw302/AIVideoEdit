@@ -1,7 +1,96 @@
 {
   "schema": "aivideoedit.reference-manifest.v1",
-  "status": "pending_post_bootstrap_inventory",
-  "videos": [],
-  "images": [],
-  "note": "Existing Silver Coin visual references are known and authorized. Exact entries, hashes, frame counts, extraction coverage and roles will be recorded after bootstrap and inventory."
+  "status": "verified",
+  "videos": [
+    {
+      "id": "silver-coin-reference-a",
+      "filename": "imagine-d04b484c.mp4",
+      "drive_file_id": "1NONNE0Ch8de7IILwr6KaI-RWwp-wvCtL",
+      "sha256": "8f14739f3eb4f7e7dcc639dfe9fab398623f4a7b5c31ce8b2c0131fab89e6c9c",
+      "bytes": 2579198,
+      "duration_seconds": 6.041667,
+      "width": 560,
+      "height": 560,
+      "fps": 24,
+      "video_frames": 145,
+      "role": "canonical visual/motion/style reference; protagonist identity anchor",
+      "extraction_policy": "full",
+      "full_extraction_complete": true,
+      "extracted_frames_verified": 145
+    },
+    {
+      "id": "silver-coin-reference-b",
+      "filename": "imagine-5558fc80.mp4",
+      "drive_file_id": "1SOTVtVYxu5I9ZHMcMoW_wSKEpuzm2dCU",
+      "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+      "bytes": 1725042,
+      "duration_seconds": 6.041667,
+      "width": 560,
+      "height": 560,
+      "fps": 24,
+      "video_frames": 145,
+      "role": "canonical supporting visual/motion/style reference",
+      "extraction_policy": "full",
+      "full_extraction_complete": true,
+      "extracted_frames_verified": 145
+    }
+  ],
+  "images": [
+    {
+      "filename": "01_enchanted_woodland_coin_portrait.png",
+      "drive_file_id": "12_U_eNJYfEetrZuIb0SULFpU1gV6ppjC",
+      "role": "accepted V8 hero painting"
+    },
+    {
+      "filename": "02_golden_path_to_the_village.png",
+      "drive_file_id": "1fWsU30HQjpHU__C74v6d955v-DVzPmla",
+      "role": "accepted V8 hero painting"
+    },
+    {
+      "filename": "03_golden_haired_maiden_at_sunset.png",
+      "drive_file_id": "1DoJEJt-8FzN1oPZ-fz3OFAG_TzB2GwGg",
+      "role": "accepted V8 hero painting"
+    },
+    {
+      "filename": "04_twilight_inn_beneath_the_flower_crown.png",
+      "drive_file_id": "1CfqY5wEUraIHrGxmcadGv8nKpMgAJsr2",
+      "role": "accepted V8 hero painting"
+    },
+    {
+      "filename": "05_first_toast.png",
+      "drive_file_id": "1TSIzgwJWA4eOdahLVvsZx9fgoPeaRlnT",
+      "role": "accepted V8 hero painting"
+    },
+    {
+      "filename": "06_communal_dance.png",
+      "drive_file_id": "1pPFRUcvF11PnFsUoSKFkpTGszKDmgzsM",
+      "role": "accepted V8 hero painting"
+    },
+    {
+      "filename": "07_fiddler.png",
+      "drive_file_id": "1Uz-HeX0VRAjX0ypfH97hcsV9_EIhAE0k",
+      "role": "accepted V8 hero painting"
+    },
+    {
+      "filename": "08_clap_rhythm.png",
+      "drive_file_id": "16OqOqC2YXgQiQuFUWRzuPVszuwl-7OJ_",
+      "role": "accepted V8 hero painting"
+    }
+  ],
+  "source_audio": {
+    "filename": "Silver Coin (Remastered).wav",
+    "drive_file_id": "1vWdSSL_kXHh4iR6OXYaLBmlD86LGeM2y",
+    "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+    "bytes": 39828652,
+    "duration_seconds": 207.44,
+    "sample_rate_hz": 48000,
+    "channels": 2
+  },
+  "full_reference_extraction": {
+    "reference_a_frames": 145,
+    "reference_b_frames": 145,
+    "verified_utc": "2026-09-20",
+    "policy": "Both short references fully extracted; no interval-only sampling."
+  },
+  "note": "Original production media is read from AIVideoEdit / 10 Productions / Silver Coin. New alternate outputs belong in AIVideoEdit / 10 Productions / Silver Coin Alternate."
 }
