@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.mode-aware-proof.v1",
+  "proof_id": "silver-coin-alternate-proof02-v8-motion-library",
+  "production_mode": "living_scene",
+  "status": "ACCEPTED_FOR_PRODUCTION",
+  "user_acceptance_statement": "User reviewed the proof stage and instructed: \"alright scan drive and Github and move on to the next things once you analyze what is reqired.\"",
+  "drive_zip_id": "1-IxvG-HglT6D_UBENsXFm48HnBUjYjAg",
+  "drive_contact_id": "1CZ4sPiTBpV7EystNZKFqjgJC0Q_tMhe1",
+  "video_sha256": "5e04b4934e6d07d0c7b79211c4d24d58c9db74904b6ab314a78e210635568fb7",
+  "duration_seconds": 26.5,
+  "fps": 24,
+  "resolution": [
+    1280,
+    720
+  ],
+  "frames": 636,
+  "black_frames": 0,
+  "mean_frame_delta": 2.6468424325377296,
+  "p90_frame_delta": 5.512116536458334,
+  "fraction_delta_gt_0_5": 0.988976377952756,
+  "fraction_delta_gt_1_0": 0.8740157480314961,
+  "source_clips": [
+    "V8_FX01_forest_breath_hair_garland.mp4",
+    "V8_FX09_depth_parallax_scenegraph.mp4",
+    "V8_FX13_workers_sunset_procession.mp4",
+    "V8_FX03_tavern_firelight_smoke.mp4",
+    "V8_FX14_clap_rhythm_response.mp4",
+    "V8_FX04_fiddler_impact.mp4",
+    "V8_FX05_communal_crowd_sway.mp4"
+  ],
+  "mode_aware_qc": {
+    "internal_motion_visible": true,
+    "material_motion_independent": true,
+    "identity_stable": true,
+    "camera_restrained": true,
+    "loop_or_join_clean": true,
+    "semantic_motion_regions_named": true,
+    "reference_comparison": "Uses the restrained/active motion envelope established by the two canonical references and the accepted V8 living-scene source library; no unrelated content introduced.",
+    "result": "PASS"
+  }
+}
