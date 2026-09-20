@@ -1,0 +1,44 @@
+{
+  "schema": "aivideoedit.reference-analysis.v1",
+  "analysis_complete": true,
+  "verified_utc": "2026-09-20",
+  "references": [
+    {
+      "id": "silver-coin-reference-a",
+      "sha256": "8f14739f3eb4f7e7dcc639dfe9fab398623f4a7b5c31ce8b2c0131fab89e6c9c",
+      "frames_analyzed": 145,
+      "full_extraction": true,
+      "motion_signature": {
+        "mean_flow_px_per_frame": 2.8733,
+        "p90_flow_px_per_frame": 4.2588,
+        "p99_flow_px_per_frame": 5.4707,
+        "mean_frame_difference": 0.04858
+      },
+      "directing_read": "more active benchmark: painted character/environment motion, hair/flower/foliage life, graceful camera energy"
+    },
+    {
+      "id": "silver-coin-reference-b",
+      "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+      "frames_analyzed": 145,
+      "full_extraction": true,
+      "motion_signature": {
+        "mean_flow_px_per_frame": 0.7631,
+        "p90_flow_px_per_frame": 1.4525,
+        "p99_flow_px_per_frame": 1.8067,
+        "mean_frame_difference": 0.01653
+      },
+      "directing_read": "restrained benchmark: subtle living-painting motion and stable painterly surface"
+    }
+  ],
+  "visual_language": [
+    "visible oil/canvas surface",
+    "Pre-Raphaelite/Romantic luminous folk beauty",
+    "idealized but emotionally human faces",
+    "traditional embroidered folk garments",
+    "flowers/foliage/wood/tactile natural materials",
+    "emerald shadows and warm gold light",
+    "gentle internal performance before camera motion"
+  ],
+  "motion_rule": "Use reference B-like restraint for intimate/verse beats; rise toward reference A-like activity for choruses, fiddle passages, communal dancing, and strong musical transients without exceeding identity/topology stability.",
+  "canon_implication": "The successful later V8 production established the recurring blonde flower-crowned woman and eight accepted hero paintings as Silver Coin source canon; preserve that identity while rebuilding the edit."
+}
