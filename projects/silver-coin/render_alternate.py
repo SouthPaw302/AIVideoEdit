@@ -31,6 +31,14 @@ def sha256(p: Path):
 def run(cmd):
     subprocess.run(cmd,check=True)
 
+def duration_matches(p: Path, target: float, tolerance: float = 0.06) -> bool:
+    if not p.is_file():
+        return False
+    try:
+        return abs(probe_duration(p) - target) <= tolerance
+    except Exception:
+        return False
+
 def probe_duration(p: Path):
     x=subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","default=nw=1:nk=1",str(p)],text=True)
     return float(x.strip())
@@ -66,21 +74,25 @@ def main():
             vf=["fps=24","scale=1280:720:flags=lanczos","setsar=1"]
             if idx>=len(shot["clips"]) and idx%2==1:
                 vf.insert(0,"reverse")
-            run(["ffmpeg","-y","-v","error","-i",str(src),"-t",f"{dur:.6f}","-an","-vf",",".join(vf),"-c:v","libx264","-preset","medium","-crf","16","-pix_fmt","yuv420p",str(part)])
+            if not duration_matches(part, dur):
+                run(["ffmpeg","-y","-v","error","-i",str(src),"-t",f"{dur:.6f}","-an","-vf",",".join(vf),"-c:v","libx264","-preset","medium","-crf","16","-pix_fmt","yuv420p",str(part)])
             parts.append(part)
             remain-=dur
             idx+=1
         concat=work/f'{shot["id"]}_concat.txt'
         concat.write_text("".join(f"file '{p.as_posix()}'\n" for p in parts))
         shot_out=work/f'{shot["id"]}.mp4'
-        run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(concat),"-t",f"{target:.6f}","-an","-c","copy",str(shot_out)])
+        if not duration_matches(shot_out, target):
+            run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(concat),"-t",f"{target:.6f}","-an","-c","copy",str(shot_out)])
         shot_outputs.append(shot_out)
     master_list=work/"shots_concat.txt"
     master_list.write_text("".join(f"file '{p.as_posix()}'\n" for p in shot_outputs))
     picture=out/"picture.mp4"
-    run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(master_list),"-t","207.44","-an","-c","copy",str(picture)])
+    if not duration_matches(picture, 207.44):
+        run(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",str(master_list),"-t","207.44","-an","-c","copy",str(picture)])
     final=out/plan["output"]["assembly_filename"]
-    run(["ffmpeg","-y","-v","error","-i",str(picture),"-i",str(media/"Silver Coin (Remastered).wav"),"-map","0:v:0","-map","1:a:0","-c:v","copy","-c:a","aac","-b:a","320k","-ar","48000","-t","207.44","-movflags","+faststart",str(final)])
+    if not duration_matches(final, 207.44):
+        run(["ffmpeg","-y","-v","error","-i",str(picture),"-i",str(media/"Silver Coin (Remastered).wav"),"-map","0:v:0","-map","1:a:0","-c:v","copy","-c:a","aac","-b:a","320k","-ar","48000","-t","207.44","-movflags","+faststart",str(final)])
     report={
       "schema":"aivideoedit.assembly-report.v1",
       "output":final.name,
