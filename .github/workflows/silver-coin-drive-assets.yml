@@ -1,0 +1,48 @@
+name: Silver Coin Drive Asset Package
+
+on:
+  push:
+    branches:
+      - song/silver-coin-alternate
+    paths:
+      - ".github/workflows/silver-coin-drive-assets.yml"
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: song/silver-coin-alternate
+          fetch-depth: 0
+          lfs: true
+
+      - name: Build Silver Coin asset package
+        run: |
+          mkdir -p /tmp/silver-coin-asset-package
+          if [ -d projects/silver-coin ]; then
+            cp -a projects/silver-coin /tmp/silver-coin-asset-package/
+          fi
+          if [ -d assets/references/silver-coin ]; then
+            mkdir -p /tmp/silver-coin-asset-package/assets/references
+            cp -a assets/references/silver-coin /tmp/silver-coin-asset-package/assets/references/
+          fi
+          find /tmp/silver-coin-asset-package -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/silver-coin-asset-package/REPO_PACKAGE_SHA256.txt
+          {
+            echo "# Silver Coin alternate repo asset package"
+            echo
+            echo "Branch: song/silver-coin-alternate"
+            echo "Generated from GitHub checkout."
+            echo "This package contains every Silver Coin asset currently resident in the branch under projects/silver-coin and assets/references/silver-coin."
+            echo
+            echo "Large binaries that only exist in ChatGPT Library are indexed separately by the production manifests and are not falsely claimed to be in this package."
+          } > /tmp/silver-coin-asset-package/README_ARCHIVE.md
+          tar -czf /tmp/Silver_Coin_REPO_ASSETS.tgz -C /tmp/silver-coin-asset-package .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: silver-coin-repo-assets
+          path: /tmp/Silver_Coin_REPO_ASSETS.tgz
+          retention-days: 3
+          if-no-files-found: error
