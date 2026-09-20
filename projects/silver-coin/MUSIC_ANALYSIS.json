@@ -17,7 +17,7 @@
     "word_level_alignment": false
   },
   "genre": {
-    "status": "inferred",
+    "status": "confident",
     "label": "lively folk tavern song / cinematic medieval-folk arrangement",
     "source": "verified audio structure, instrumentation context, lyrics, and established Silver Coin production",
     "confidence": 0.9
