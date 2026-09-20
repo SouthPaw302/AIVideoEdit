@@ -1,24 +1,139 @@
 {
   "schema": "aivideoedit.music-analysis.v1",
-  "analysis_complete": false,
+  "analysis_complete": true,
+  "source": {
+    "filename": "Silver Coin (Remastered).wav",
+    "drive_file_id": "1vWdSSL_kXHh4iR6OXYaLBmlD86LGeM2y",
+    "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+    "duration_seconds": 207.44,
+    "sample_rate_hz": 48000,
+    "channels": 2
+  },
   "lyrics": {
     "status": "present",
-    "source": "legacy_silver_coin_pending_verification",
+    "source": "verified project lyrics recovered from canonical Silver Coin storyboard and matched to the exact canonical WAV identity",
     "text_file": "LYRICS.md",
-    "directing_use": "required"
+    "directing_use": "required",
+    "word_level_alignment": false
   },
   "genre": {
-    "status": "pending_verification",
-    "label": null,
-    "source": "legacy_silver_coin_pending_verification",
-    "confidence": null
+    "status": "inferred",
+    "label": "lively folk tavern song / cinematic medieval-folk arrangement",
+    "source": "verified audio structure, instrumentation context, lyrics, and established Silver Coin production",
+    "confidence": 0.9
   },
   "rhythm": {
-    "tempo_status": "pending_verification",
-    "tempo_bpm": null,
-    "pulse_description": "Pending verification.",
-    "meter_or_groove": "Pending verification."
+    "tempo_status": "measured",
+    "tempo_bpm": 86.13,
+    "verification_tempo_bpm_2026_09_20": 86.54,
+    "double_time_bpm": 172.27,
+    "pulse_description": "strong large folk pulse with faster transient subdivision for bow accents, foot stamps, mugs, and cuts",
+    "meter_or_groove": "compound/6-8-like folk groove; treat 86 BPM as the large pulse"
   },
-  "sections": [],
-  "note": "Migration scaffold only; does not claim REFERENCES_ANALYZED."
+  "sections": [
+    {
+      "id": "verse_1",
+      "start_seconds": 0,
+      "end_seconds": 39.265,
+      "energy": "low-to-building",
+      "musical_cues": [
+        "opening folk pulse",
+        "workday narrative",
+        "transition toward tavern warmth"
+      ],
+      "narrative_function": "establish labor, scarcity, protagonist/world, and the promise of evening release"
+    },
+    {
+      "id": "chorus_1",
+      "start_seconds": 39.265,
+      "end_seconds": 82.733,
+      "energy": "high/communal",
+      "musical_cues": [
+        "mug-stamp chorus",
+        "fiddle drive",
+        "strong transient opportunities"
+      ],
+      "narrative_function": "open the tavern into collective celebration and establish the song's communal thesis"
+    },
+    {
+      "id": "verse_2",
+      "start_seconds": 82.733,
+      "end_seconds": 103.747,
+      "energy": "moderate/playful",
+      "musical_cues": [
+        "merchant episode",
+        "short narrative phrases"
+      ],
+      "narrative_function": "center the recurring woman, silver coin, wit, agency, and playful reversal"
+    },
+    {
+      "id": "chorus_2",
+      "start_seconds": 103.747,
+      "end_seconds": 138.159,
+      "energy": "high/returning",
+      "musical_cues": [
+        "chorus reprise",
+        "fiddle/floorboard accents"
+      ],
+      "narrative_function": "return to communal release with more confidence and denser room life"
+    },
+    {
+      "id": "bridge",
+      "start_seconds": 138.159,
+      "end_seconds": 183.322,
+      "energy": "varied/character-rich",
+      "musical_cues": [
+        "farmer/smith/carter/maid/farmhand vignettes",
+        "room-scale breathing space"
+      ],
+      "narrative_function": "expand the tavern into a living social world and show temporary freedom before tomorrow's obligations"
+    },
+    {
+      "id": "final_chorus",
+      "start_seconds": 183.322,
+      "end_seconds": 207.44,
+      "energy": "peak/accelerating-resolution",
+      "musical_cues": [
+        "dense strong transients from ~184-205s",
+        "final fiddle/rafters drive",
+        "closing release"
+      ],
+      "narrative_function": "climax the living room into shared motion, then resolve on human warmth rather than wealth"
+    }
+  ],
+  "energy_curve": [
+    "restrained exterior/workday",
+    "first communal lift",
+    "brief playful narrative reset",
+    "second lift",
+    "character-vignette bridge",
+    "dense final communal peak"
+  ],
+  "musical_cues": [
+    "30.21",
+    "33.67",
+    "36.43",
+    "39.22",
+    "44.05",
+    "49.25",
+    "53.73",
+    "62.04",
+    "64.81",
+    "72.42",
+    "75.19",
+    "82.80",
+    "119.82",
+    "121.53",
+    "127.78",
+    "137.81",
+    "184.02",
+    "186.78",
+    "188.17",
+    "189.54",
+    "193.70",
+    "197.51",
+    "199.23",
+    "204.78"
+  ],
+  "narrative_function": "Move from cold labor/scarcity into a warm communal folk world where the silver coin is less valuable than shared song, wit, movement, and living human connection."
 }
