@@ -149,6 +149,13 @@
       "repo_path": "projects/silver-coin/fx.lock.json",
       "drive_folder_id": "1FmZ6HrQMegdNOEdcJpshEPzpWVOF8hMz",
       "reusable_media_count": 15
+    },
+    "assembly": {
+      "drive_file_id": "1I_EK6WWdj5JUIUONIyDiR8jHxwSKTcG5",
+      "filename": "Silver_Coin_Alternate_Assembly01_720p24.mp4",
+      "sha256": "2f18d506d293789bacdc96b899cf12cbd543c3c9b6154655ddcd96d5228566c7",
+      "report_drive_file_id": "18Rrc3n3Xx2VBIvBcgJPOmf7_T8CfQ3SZ",
+      "status": "PENDING_FINAL_QC"
     }
   }
 }
