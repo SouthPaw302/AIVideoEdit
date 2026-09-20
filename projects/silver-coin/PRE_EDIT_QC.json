@@ -1,0 +1,42 @@
+{
+  "schema": "aivideoedit.refinement-qc-snapshot.v1",
+  "kind": "PRE_EDIT",
+  "file": "Silver_Coin_Alternate_Assembly01_720p24.mp4",
+  "drive_file_id": "1I_EK6WWdj5JUIUONIyDiR8jHxwSKTcG5",
+  "sha256": "2f18d506d293789bacdc96b899cf12cbd543c3c9b6154655ddcd96d5228566c7",
+  "runtime_seconds": 207.445,
+  "decode_pass": true,
+  "black_frames_detected": false,
+  "freeze_events_detected": false,
+  "audio_coverage_seconds": 207.445,
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 24,
+  "source_library_sha256": "8299fc63d13b54a2d014404d18b8e664cfbc4f27ce9a2c1dc79db3051c8b7189",
+  "repetition": {
+    "exact_coarse_hash_repeat_fraction": 0.7036144578313253,
+    "max_identical_coarse_hash_count": 13,
+    "near_static_fraction_lt_0_5": 0,
+    "low_motion_fraction_lt_1_5": 0.09178743961352658,
+    "periodicity_16s_fraction_corr_gt_0_95": 0.13054830287206268
+  },
+  "joins": {
+    "max_boundary_delta": 39.33243179321289,
+    "p90_boundary_delta": 37.63472213745117
+  },
+  "mode_aware_result": "FAIL_REPAIR_REQUIRED",
+  "named_defects": [
+    "mechanical repetition from repeated short-loop coverage",
+    "hard/high-delta joins at multiple shot boundaries"
+  ],
+  "retained_passes": [
+    "decode",
+    "runtime",
+    "audio coverage",
+    "black/freeze",
+    "basic motion presence",
+    "source hash integrity"
+  ]
+}
