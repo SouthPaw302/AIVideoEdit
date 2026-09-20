@@ -79,26 +79,59 @@
     "count": 181,
     "source": "ChatGPT File Library ALL_MEDIA_SHA256.json"
   },
-  "note": "Silver Coin original media is available in the user's ChatGPT File Library. Google Drive is the organized production mirror/destination. Recover by exact filename/hash from File Library, then populate Drive and verify hashes.",
+  "note": "Original Silver Coin media is now populated on Google Drive. Use AIVideoEdit/10 Productions/Silver Coin as source/recovery. Use AIVideoEdit/10 Productions/Silver Coin Alternate for newly produced alternate assets and renders.",
   "drive_population_status": {
     "verified_at": "2026-09-20",
-    "source_audio": "EMPTY",
-    "canonical_references": "EMPTY",
-    "hero_paintings": "EMPTY",
-    "v8_effect_assets": "EMPTY",
-    "section_renders": "EMPTY",
-    "qc_contact_sheets": "EMPTY",
-    "final_masters": "EMPTY",
-    "manifests_repo_records": "contains recovery index only",
-    "archive_snapshots": "contains repo snapshot ZIP only",
-    "source_of_truth": "Do not interpret empty Drive folders as missing media. Original Silver Coin assets are available in ChatGPT File Library and should be recovered from there, then uploaded/verified into Drive."
+    "original_silver_coin": "POPULATED",
+    "silver_coin_alternate": "READY_FOR_NEW_OUTPUTS",
+    "source_audio": "PRESENT",
+    "canonical_references": "PRESENT",
+    "hero_paintings": "PRESENT",
+    "v8_effect_assets": "PRESENT",
+    "section_renders": "PRESENT",
+    "qc_contact_sheets": "PRESENT",
+    "final_master_support_folders": "PRESENT",
+    "manifests_repo_records": "PRESENT",
+    "archive_snapshots": "PRESENT"
   },
   "recovery_source": {
-    "provider": "chatgpt_file_library",
+    "provider": "google_drive",
     "role": "primary_recovery_archive",
-    "status": "available",
-    "inventory": "ALL_MEDIA_SHA256.json",
-    "inventory_count": 181,
-    "instruction": "Search the user's ChatGPT File Library for Silver Coin assets by exact filename and hash. Treat File Library as the recovery/source archive and Google Drive as the organized destination mirror."
+    "status": "available_and_populated",
+    "instruction": "Use the preserved original Silver Coin Drive folder as the recovery/source library. Write new production outputs to the separate Silver Coin Alternate Drive folder."
+  },
+  "source_archive": {
+    "provider": "google_drive",
+    "role": "preserved_original_silver_coin_production",
+    "id": "1ROTZHvmBb71snAsBXXU6YImyXWT0ikEV",
+    "url": "https://drive.google.com/drive/folders/1ROTZHvmBb71snAsBXXU6YImyXWT0ikEV",
+    "status": "POPULATED",
+    "verified_contents": {
+      "source_audio": [
+        "Silver Coin (Remastered).wav"
+      ],
+      "canonical_references": [
+        "imagine-d04b484c.mp4",
+        "imagine-5558fc80.mp4",
+        "Silver_Coin_Painterly_FX_V3_preview.mp4",
+        "Silver_Coin_V3_keyframes_pack.zip"
+      ],
+      "hero_paintings_count": 8,
+      "section_renders_count": 6,
+      "archive_video_parts_count": 5,
+      "includes_media_ledger": "ALL_MEDIA_SHA256.json"
+    }
+  },
+  "active_output_archive": {
+    "provider": "google_drive",
+    "role": "silver_coin_alternate_new_production_output",
+    "id": "1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz",
+    "url": "https://drive.google.com/drive/folders/1yKbnbk95wo1WwxQUykqjsVj6YqlPQ6Fz",
+    "status": "READY",
+    "folders": {
+      "source_audio": "1v13-4ijJz88t_hk8JFrWaFa2p1Mijtif",
+      "canonical_references": "1PIqsxsH2V4-NDsCwR_hDyCox82Z44B2o",
+      "hero_paintings": "1QF-5pVsdY9TYhe4xjWv39kjS44dqNdZR"
+    }
   }
 }
