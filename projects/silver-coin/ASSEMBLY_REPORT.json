@@ -1,0 +1,46 @@
+{
+  "schema": "aivideoedit.assembly-report.v1",
+  "branch": "song/silver-coin-alternate",
+  "assembled_utc": "2026-09-20",
+  "canonical_picture_working_file": {
+    "filename": "Silver_Coin_Alternate_Assembly01_720p24.mp4",
+    "sha256": "7a0439546b743729e5bffeafb1945efc85da78e51b2030b43908c483500b2492",
+    "bytes": 146769213,
+    "duration_seconds": 207.44,
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 24
+  },
+  "drive_delivery": {
+    "filename": "Silver_Coin_Alternate_Assembly01_720p24.mp4",
+    "drive_file_id": "1I_EK6WWdj5JUIUONIyDiR8jHxwSKTcG5",
+    "sha256": "2f18d506d293789bacdc96b899cf12cbd543c3c9b6154655ddcd96d5228566c7",
+    "bytes": 40184242,
+    "duration_seconds": 207.445,
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 24,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "channels": 2,
+    "note": "Deterministic Drive delivery encode of the same assembled picture/timeline; compression only."
+  },
+  "input_hash_verification": "PASS",
+  "shot_count": 14,
+  "workflow": [
+    "WF-RENDER-DELIVERY",
+    "WF-LIVING-SCENE-ASSEMBLY",
+    "WF-LYRIC-LIVING-SCENE",
+    "WF-SOURCE-DERIVED-LOOPS",
+    "WF-IDENTITY-SAFE-LOOP-25D-QC"
+  ],
+  "renderer": "projects/silver-coin/render_alternate.py",
+  "assembly_plan": "projects/silver-coin/ASSEMBLY_PLAN.json",
+  "fx_lock": "projects/silver-coin/fx.lock.json",
+  "status": "ASSEMBLED_PENDING_FINAL_QC"
+}
