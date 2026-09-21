@@ -1,0 +1,12 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "selected_capabilities": ["source_video", "source_derived_motion_loop", "reframing", "color_chapters", "editorial_transitions", "deterministic_resumable_render_delivery", "temporal_qc_scan"],
+  "visual_direction_gate": {
+    "required": false,
+    "presented_in_chat": false,
+    "locked": true,
+    "user_selection": {"status": "selected", "selected_option_numbers": [], "recorded_user_instruction": "Create a totally new Test 2 from the uploaded video and same WAV; do not use old references."}
+  },
+  "source_policy": "Only the uploaded video and canonical WAV may enter the render."
+}

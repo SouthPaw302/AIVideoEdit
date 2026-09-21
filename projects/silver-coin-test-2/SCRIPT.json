@@ -1,0 +1,10 @@
+{
+  "schema": "aivideoedit.video-script.v1",
+  "locked": false,
+  "based_on_storyboard": false,
+  "target_fps": 24,
+  "duration_seconds": 207.44,
+  "total_frames": 4979,
+  "basis": ["current_user_instruction", "uploaded_source_media", "canonical_audio_duration"],
+  "entries": []
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": false,
+  "lyrics": {"status": "unknown", "source": "not supplied", "text_file": null, "directing_use": "required"},
+  "genre": {"status": "unknown", "label": "unresolved", "source": "not supplied", "confidence": 0.0},
+  "rhythm": {"tempo_status": "not_analyzed", "tempo_bpm": null, "pulse_description": "not analyzed", "meter_or_groove": "not analyzed"},
+  "sections": [],
+  "note": "Test 2 render uses the untouched canonical WAV for timing/duration; musical analysis remains pending and is not used to claim artistic lock."
+}

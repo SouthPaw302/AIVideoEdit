@@ -1,0 +1,9 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "branch": "song/silver-coin-test-2",
+  "assets": [
+    {"filename": "imagine-5558fc80.mp4", "role": "sole_visual_source", "origin": "uploaded", "lifecycle_status": "approved", "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803", "duration_seconds": 6.041667, "resolution": [560, 560], "fps": 24},
+    {"filename": "Silver Coin (Remastered).wav", "role": "canonical_audio", "origin": "resupplied", "lifecycle_status": "approved", "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92", "duration_seconds": 207.44, "sample_rate_hz": 48000, "channels": 2}
+  ],
+  "excluded": "All prior Silver Coin references, effects, hero media, shot plans, and renders."
+}

@@ -1,0 +1,6 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "allowed_sources": ["current_user_instruction", "uploaded_test2_media", "canonical_audio_resupplied_by_current_user"],
+  "denied_sources": ["prior_project_references", "prior_project_media", "prior_project_storyboards", "historical_chats", "unrelated_song_branches"],
+  "notes": "This Test 2 branch is intentionally independent of prior Silver Coin visual material."
+}

@@ -1,0 +1,6 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "status": "none",
+  "references": [],
+  "exclusion_reason": "The current user explicitly prohibited use of old-video references for Test 2."
+}
