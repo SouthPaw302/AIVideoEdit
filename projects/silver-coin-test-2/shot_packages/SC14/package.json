@@ -33,9 +33,8 @@
     "micro",
     "atmosphere",
     "particles",
-    "shafts",
-    "canvas"
+    "canvas",
+    "shafts"
   ],
   "transition": "hard cut at measured phrase boundary"
 }
-

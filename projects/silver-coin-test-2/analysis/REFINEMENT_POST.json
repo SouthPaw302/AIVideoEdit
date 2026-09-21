@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.refinement-qc-snapshot.v1",
+  "runtime_seconds": 207.458333,
+  "export_variety": {
+    "result": "REVIEW",
+    "similar_runs_count": 20,
+    "metrics": {
+      "sample_interval_seconds": 2,
+      "mean_adjacent_similarity": 0.9690611912,
+      "delta_mean_adjacent_similarity": -0.0048562786,
+      "report": "analysis/variety_v2c.json"
+    }
+  },
+  "black_freeze": {
+    "result": "PASS",
+    "black_spans": 0,
+    "freeze_spans_at_minus_60db_over_one_second": 0
+  },
+  "framing_aspect": {
+    "result": "PASS",
+    "size": [1280, 720],
+    "fps": 24,
+    "frames": 4979
+  },
+  "audio_sync": {
+    "result": "PASS",
+    "audio_source_sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+    "picture_tail_ms": 18.3
+  },
+  "mode_aware_qc": {
+    "result": "PASS",
+    "scope": "internal export review only; user artistic acceptance remains pending",
+    "evidence": "Six new opening scenes, 11 scene-specific effect types, clean musical cuts, full-film contact review, full decode, and zero unexplained temporal risks."
+  },
+  "source_canon_integrity": {
+    "result": "PASS",
+    "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803"
+  },
+  "continuity_warnings": [
+    "The two-second variety scan still marks 20 highly similar runs; static-painting stretches remain despite stronger scene-specific motion and a new opening.",
+    "Internal visual review cannot substitute for the user's artistic acceptance."
+  ]
+}

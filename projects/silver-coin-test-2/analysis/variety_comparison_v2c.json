@@ -1,0 +1,32 @@
+{
+  "schema": "aivideoedit.export-variety-comparison.v1",
+  "before": {
+    "result": "REVIEW",
+    "similar_runs_count": 20,
+    "metrics": {
+      "mean_adjacent_similarity": 0.9739174698163005,
+      "max_adjacent_similarity": 0.9999932050704956,
+      "samples": 104,
+      "sample_interval_seconds": 2.0,
+      "similarity_threshold": 0.992,
+      "max_similar_run_samples": 3
+    }
+  },
+  "after": {
+    "result": "REVIEW",
+    "similar_runs_count": 20,
+    "metrics": {
+      "mean_adjacent_similarity": 0.9690611912208853,
+      "max_adjacent_similarity": 0.9999930262565613,
+      "samples": 104,
+      "sample_interval_seconds": 2.0,
+      "similarity_threshold": 0.992,
+      "max_similar_run_samples": 3
+    }
+  },
+  "delta": {
+    "similar_runs": 0,
+    "mean_adjacent_similarity": -0.004856278595415153
+  },
+  "interpretation": "Metrics are evidence for comparison, not an automatic artistic decision."
+}

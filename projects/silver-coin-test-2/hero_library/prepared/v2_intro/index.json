@@ -1,0 +1,11 @@
+{
+  "method": "living-paint-transfer-v1",
+  "records": [
+    {"source": "../generated/v2_intro/coin.png", "output": "coin_paint.jpg", "family": "tavern", "seed": 302},
+    {"source": "../generated/v2_intro/fiddler.png", "output": "fiddler_paint.jpg", "family": "tavern", "seed": 403},
+    {"source": "../generated/v2_intro/mill.png", "output": "mill_paint.jpg", "family": "tavern", "seed": 504},
+    {"source": "../generated/v2_intro/threshold.png", "output": "threshold_paint.jpg", "family": "tavern", "seed": 605},
+    {"source": "../generated/v2_intro_add/mugs.png", "output": "mugs_paint.jpg", "family": "tavern", "seed": 302},
+    {"source": "../generated/v2_intro_add/wagon.png", "output": "wagon_paint.jpg", "family": "tavern", "seed": 403}
+  ]
+}

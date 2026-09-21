@@ -1,0 +1,145 @@
+{
+  "schema": "aivideoedit.export-variety-qc.v2",
+  "video": "outputs\\silver-coin-test-2\\Silver_Coin_Test2_v2c_1280x720_24fps.mp4",
+  "video_sha256": "eda825f7d87aa9a6596d28c22d14cb6168650bff90cef58be03b49b5b4a527f3",
+  "duration_seconds": 207.45833333333334,
+  "sample_interval_seconds": 2.0,
+  "samples": 104,
+  "similarity_threshold": 0.992,
+  "max_similar_run_samples": 3,
+  "mean_adjacent_similarity": 0.9690611912208853,
+  "max_adjacent_similarity": 0.9999930262565613,
+  "similar_runs": [
+    {
+      "sample_start": 6,
+      "sample_end": 11,
+      "seconds_start": 12.0,
+      "seconds_end": 22.0
+    },
+    {
+      "sample_start": 12,
+      "sample_end": 16,
+      "seconds_start": 24.0,
+      "seconds_end": 32.0
+    },
+    {
+      "sample_start": 17,
+      "sample_end": 22,
+      "seconds_start": 34.0,
+      "seconds_end": 44.0
+    },
+    {
+      "sample_start": 23,
+      "sample_end": 25,
+      "seconds_start": 46.0,
+      "seconds_end": 50.0
+    },
+    {
+      "sample_start": 26,
+      "sample_end": 30,
+      "seconds_start": 52.0,
+      "seconds_end": 60.0
+    },
+    {
+      "sample_start": 31,
+      "sample_end": 35,
+      "seconds_start": 62.0,
+      "seconds_end": 70.0
+    },
+    {
+      "sample_start": 36,
+      "sample_end": 40,
+      "seconds_start": 72.0,
+      "seconds_end": 80.0
+    },
+    {
+      "sample_start": 41,
+      "sample_end": 44,
+      "seconds_start": 82.0,
+      "seconds_end": 88.0
+    },
+    {
+      "sample_start": 45,
+      "sample_end": 49,
+      "seconds_start": 90.0,
+      "seconds_end": 98.0
+    },
+    {
+      "sample_start": 53,
+      "sample_end": 58,
+      "seconds_start": 106.0,
+      "seconds_end": 116.0
+    },
+    {
+      "sample_start": 59,
+      "sample_end": 63,
+      "seconds_start": 118.0,
+      "seconds_end": 126.0
+    },
+    {
+      "sample_start": 64,
+      "sample_end": 69,
+      "seconds_start": 128.0,
+      "seconds_end": 138.0
+    },
+    {
+      "sample_start": 70,
+      "sample_end": 72,
+      "seconds_start": 140.0,
+      "seconds_end": 144.0
+    },
+    {
+      "sample_start": 75,
+      "sample_end": 77,
+      "seconds_start": 150.0,
+      "seconds_end": 154.0
+    },
+    {
+      "sample_start": 78,
+      "sample_end": 80,
+      "seconds_start": 156.0,
+      "seconds_end": 160.0
+    },
+    {
+      "sample_start": 81,
+      "sample_end": 83,
+      "seconds_start": 162.0,
+      "seconds_end": 166.0
+    },
+    {
+      "sample_start": 86,
+      "sample_end": 91,
+      "seconds_start": 172.0,
+      "seconds_end": 182.0
+    },
+    {
+      "sample_start": 92,
+      "sample_end": 94,
+      "seconds_start": 184.0,
+      "seconds_end": 188.0
+    },
+    {
+      "sample_start": 95,
+      "sample_end": 99,
+      "seconds_start": 190.0,
+      "seconds_end": 198.0
+    },
+    {
+      "sample_start": 100,
+      "sample_end": 103,
+      "seconds_start": 200.0,
+      "seconds_end": 206.0
+    }
+  ],
+  "similar_runs_count": 20,
+  "result": "REVIEW",
+  "interpretation": "REVIEW means consecutive sampled compositions remained highly similar; inspect the contact sheet. Motion metrics alone do not establish visual progression.",
+  "metrics": {
+    "mean_adjacent_similarity": 0.9690611912208853,
+    "max_adjacent_similarity": 0.9999930262565613,
+    "samples": 104,
+    "sample_interval_seconds": 2.0,
+    "similarity_threshold": 0.992,
+    "max_similar_run_samples": 3
+  }
+}

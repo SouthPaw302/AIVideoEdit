@@ -1,0 +1,37 @@
+{
+  "schema": "aivideoedit.render-recipe.v1",
+  "recipe_identity": "silver-coin-test-2-living-painting-v2",
+  "proof_backend": "aivideoedit-living-painting-v1",
+  "production_backend": "aivideoedit-living-painting-v1",
+  "render_implementation": {
+    "file_or_locator": ".aivideoedit/os/general/reusable/painterly-motion/render_living_painting.py",
+    "sha256": "e47749fa142dcfede0400ec197ef420dcb0cf08cc5bbed0e190ae8b990bafff9"
+  },
+  "effects_implementation": {
+    "file_or_locator": ".aivideoedit/os/general/reusable/painterly-motion/hybrid_painterly_fx.py",
+    "sha256": "a01937274384f8d8e5aaca6d58cf30bf0930852d924347de2c8f5d837f6b4ea1"
+  },
+  "creative_recipe": {
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "resolution": [1280, 720],
+    "seed": 302,
+    "intro_media": "six newly generated and painterly-prepared story plates",
+    "transitions": "mostly measured cuts; two coin portal matches; wet-pigment bridges rejected after visual review",
+    "scene_effects": [
+      "bounded depth parallax",
+      "mesh breath",
+      "advected atmosphere",
+      "motivated particles",
+      "firelight",
+      "heat haze",
+      "light shafts",
+      "wet reflection ripple",
+      "localized silver glint",
+      "localized bow transient",
+      "temporal canvas lock"
+    ],
+    "manifest": "RENDER_MANIFEST_v2.json"
+  },
+  "backend_equivalence": "The intro proof and five production batches invoke the identical bootstrapped current-main renderer and effects implementation."
+}

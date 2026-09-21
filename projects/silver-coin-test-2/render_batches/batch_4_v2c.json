@@ -1,0 +1,184 @@
+{
+  "schema": "aivideoedit.living-painting-render.v1",
+  "project": "silver-coin-test-2-v2c-batch-4",
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "seed": 302,
+  "preset": "medium",
+  "crf": 18,
+  "transition_fraction": 0,
+  "scenes": [
+    {
+      "id": "SC19",
+      "image": "../hero_library/prepared/hero_012.png",
+      "duration": 10.2206,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC20",
+      "image": "../hero_library/prepared/hero_018.png",
+      "duration": 6.0566,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC21",
+      "image": "../hero_library/prepared/hero_019.png",
+      "duration": 5.5031,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC22",
+      "image": "../hero_library/prepared/hero_020.png",
+      "duration": 5.5496,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC23",
+      "image": "../hero_library/prepared/hero_021.png",
+      "duration": 5.5263,
+      "family": "threshold",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts",
+        "reflection"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC24",
+      "image": "../hero_library/prepared/hero_022.png",
+      "duration": 5.5264,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    }
+  ]
+}

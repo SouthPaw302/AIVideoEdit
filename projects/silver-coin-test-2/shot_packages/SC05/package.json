@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.shot-package.v1",
   "shot_id": "SC05",
-  "title": "Forest overture V",
+  "title": "Fiddler prepares",
   "production_mode": "living_scene",
   "frame_range": [
     189,
@@ -13,9 +13,9 @@
   ],
   "media_evidence": [
     {
-      "path": "../../hero_library/prepared/hero_005.png",
-      "sha256": "ccd85290cfa82ada455dc30ed8c447305afdc0a3f94a99d8517e8f21ea453db5",
-      "status": "derived"
+      "path": "../../hero_library/prepared/v2_intro/fiddler_paint.jpg",
+      "sha256": "540d8ab6c07f46461ada55c2a9073378d58b533a7f4e4712e7d9cef9011da2b6",
+      "status": "generated"
     }
   ],
   "motion_regions": [
@@ -32,10 +32,16 @@
   "effects": [
     "micro",
     "atmosphere",
-    "particles",
+    "firelight",
+    "haze",
     "shafts",
+    "bow",
     "canvas"
   ],
-  "transition": "hard cut at measured phrase boundary"
+  "transition": "hard cut at measured phrase boundary",
+  "proof_preview": {
+    "path": "../../../../outputs/silver-coin-test-2/Silver_Coin_Test2_v2c_intro_proof.mp4",
+    "sha256": "eed8a8ff3ddf34a486ff977ee0a2943e2b8c023f8108568e3bb7ac3388347b7f",
+    "status": "QC candidate"
+  }
 }
-

@@ -36,14 +36,23 @@
     "restart_authorized": true
   },
   "recut_scope": {
-    "active": false,
-    "named_defects": [],
-    "allowed_changes": [],
+    "active": true,
+    "named_defects": [
+      "The 12-second overture repeats nearly identical heroine views and fails as an opening.",
+      "The beta's subtle FX proof passed technical checks but failed the current user's visual-effects review."
+    ],
+    "allowed_changes": [
+      "Replace intro timeline plates with newly generated story-specific support media while preserving the accepted uploaded source video and its identity.",
+      "Rebalance and expand scene-specific effects and motivated transitions across the complete edit.",
+      "Re-render, compare with the beta, and run actual-export visual and technical QC."
+    ],
     "forbidden_changes": [
-      "use prior Silver Coin visual references or renders"
+      "use prior Silver Coin visual references or renders",
+      "replace or alter the accepted uploaded source video",
+      "replace the canonical WAV or user-supplied lyrics"
     ],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Boot from GitHub main, scan the new clip frame by frame, create about 25 hero stills, use the same WAV and supplied lyrics, add effects/transitions, and render a totally new Test 2 without old references.",
-  "exact_next_action": "Run FX gate, representative proof, full render, and QC."
+  "current_user_direction": "The beta is usable but its visual-effects pass failed and the intro is poor. Rescan current GitHub main for the available effects, use new original media for the opening, and deliver a visibly stronger revised cut without prior Silver Coin references.",
+  "exact_next_action": "Deliver revision 2 for user review. Preserve the beta as rejected history, keep source media and WAV unchanged, and do not mark a baseline accepted without user approval."
 }

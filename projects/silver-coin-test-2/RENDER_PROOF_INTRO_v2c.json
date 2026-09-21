@@ -1,0 +1,194 @@
+{
+  "schema": "aivideoedit.living-painting-render.v1",
+  "project": "silver-coin-test-2-v2c-intro-proof",
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "seed": 302,
+  "preset": "veryfast",
+  "crf": 18,
+  "transition_fraction": 0,
+  "scenes": [
+    {
+      "id": "SC01",
+      "image": "hero_library/prepared/v2_intro/coin_paint.jpg",
+      "duration": 1.9737,
+      "family": "coin",
+      "effects": [
+        "micro",
+        "firelight",
+        "glint",
+        "canvas"
+      ],
+      "transition": "coin",
+      "transition_fraction": 0.23,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13,
+      "glint_center": [
+        0.475,
+        0.72
+      ],
+      "glint_radius": 0.09,
+      "glint_strength": 31,
+      "portal_center": [
+        0.475,
+        0.72
+      ]
+    },
+    {
+      "id": "SC02",
+      "image": "hero_library/prepared/v2_intro/mill_paint.jpg",
+      "duration": 1.9737,
+      "family": "village",
+      "effects": [
+        "parallax",
+        "micro",
+        "reflection",
+        "atmosphere",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.15,
+      "reflection_strength": 0.14
+    },
+    {
+      "id": "SC03",
+      "image": "hero_library/prepared/v2_intro/wagon_paint.jpg",
+      "duration": 1.9737,
+      "family": "village",
+      "effects": [
+        "parallax",
+        "micro",
+        "reflection",
+        "atmosphere",
+        "particles",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.55,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.1,
+      "reflection_strength": 0.11
+    },
+    {
+      "id": "SC04",
+      "image": "hero_library/prepared/v2_intro/threshold_paint.jpg",
+      "duration": 1.9737,
+      "family": "threshold",
+      "effects": [
+        "parallax",
+        "micro",
+        "reflection",
+        "atmosphere",
+        "firelight",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.1,
+      "reflection_strength": 0.16
+    },
+    {
+      "id": "SC05",
+      "image": "hero_library/prepared/v2_intro/fiddler_paint.jpg",
+      "duration": 1.9737,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "firelight",
+        "haze",
+        "shafts",
+        "bow",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.5,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13,
+      "bow_roi": [
+        0.16,
+        0.05,
+        0.28,
+        0.85
+      ],
+      "bow_pixels": 1.35
+    },
+    {
+      "id": "SC06",
+      "image": "hero_library/prepared/v2_intro/mugs_paint.jpg",
+      "duration": 1.9737,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "firelight",
+        "haze",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.5,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.shot-package.v1",
   "shot_id": "SC02",
-  "title": "Forest overture II",
+  "title": "The watermill",
   "production_mode": "living_scene",
   "frame_range": [
     47,
@@ -13,9 +13,9 @@
   ],
   "media_evidence": [
     {
-      "path": "../../hero_library/prepared/hero_002.png",
-      "sha256": "03db33c6572d89d20724e531906a7abb648ef28d00e4b5859df9adc299ddb7a3",
-      "status": "derived"
+      "path": "../../hero_library/prepared/v2_intro/mill_paint.jpg",
+      "sha256": "109fedf9d87069a07dbd5c13c4d66c9b1b5668b342e96488bcff7c7246497d53",
+      "status": "generated"
     }
   ],
   "motion_regions": [
@@ -30,12 +30,17 @@
     "architectural straight lines"
   ],
   "effects": [
+    "parallax",
     "micro",
+    "reflection",
     "atmosphere",
-    "particles",
     "shafts",
     "canvas"
   ],
-  "transition": "hard cut at measured phrase boundary"
+  "transition": "hard cut at measured phrase boundary",
+  "proof_preview": {
+    "path": "../../../../outputs/silver-coin-test-2/Silver_Coin_Test2_v2c_intro_proof.mp4",
+    "sha256": "eed8a8ff3ddf34a486ff977ee0a2943e2b8c023f8108568e3bb7ac3388347b7f",
+    "status": "QC candidate"
+  }
 }
-

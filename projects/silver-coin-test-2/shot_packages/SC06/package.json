@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.shot-package.v1",
   "shot_id": "SC06",
-  "title": "Forest overture VI",
+  "title": "Mugs together",
   "production_mode": "living_scene",
   "frame_range": [
     237,
@@ -13,9 +13,9 @@
   ],
   "media_evidence": [
     {
-      "path": "../../hero_library/prepared/hero_006.png",
-      "sha256": "12f9d5c888aad64dca410f2312209f62ddeaadcd4aecaae98a936382e5224ee4",
-      "status": "derived"
+      "path": "../../hero_library/prepared/v2_intro/mugs_paint.jpg",
+      "sha256": "6f76db253ef793aba8a1ddf2fbe12e6d2203c1dbc56bb919d8497a0fe37762f8",
+      "status": "generated"
     }
   ],
   "motion_regions": [
@@ -33,9 +33,15 @@
     "micro",
     "atmosphere",
     "particles",
+    "firelight",
+    "haze",
     "shafts",
     "canvas"
   ],
-  "transition": "hard cut at measured phrase boundary"
+  "transition": "hard cut at measured phrase boundary",
+  "proof_preview": {
+    "path": "../../../../outputs/silver-coin-test-2/Silver_Coin_Test2_v2c_intro_proof.mp4",
+    "sha256": "eed8a8ff3ddf34a486ff977ee0a2943e2b8c023f8108568e3bb7ac3388347b7f",
+    "status": "QC candidate"
+  }
 }
-

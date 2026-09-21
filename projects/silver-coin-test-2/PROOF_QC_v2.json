@@ -1,0 +1,30 @@
+{
+  "schema": "aivideoedit.mode-aware-proof.v1",
+  "revision": "v2",
+  "status": "PASS_FOR_FULL_RENDER",
+  "production_mode": "living_scene",
+  "artifact": "../../outputs/silver-coin-test-2/Silver_Coin_Test2_v2c_intro_proof.mp4",
+  "sha256": "eed8a8ff3ddf34a486ff977ee0a2943e2b8c023f8108568e3bb7ac3388347b7f",
+  "duration_seconds": 11.833333,
+  "resolution": [960, 540],
+  "fps": 24,
+  "frames": 284,
+  "visual_review": {
+    "new_intro_media": "PASS: six distinct new coin, mill, wagon, threshold, fiddler, and mugs plates replace the six near-duplicate forest views",
+    "intro_continuity": "PASS: labor imagery leads into the tavern; the accepted-source heroine first appears with the verse",
+    "coin_transition": "PASS: actual frames 35, 38, 41, 44, and 47 show a visible coin-origin circular transition preserving the two endpoints",
+    "threshold_transition": "PASS: the source and fiddler retain their structure across a clean measured cut; the earlier wet-pigment bridge was rejected",
+    "identity_and_anatomy": "PASS at proof scale: faces, hands, mugs, fiddle, and architecture remain legible",
+    "old_reference_contamination": "PASS: none"
+  },
+  "technical_review": {
+    "full_decode": "PASS",
+    "canonical_fx_lock": "PASS",
+    "temporal_samples_at_6fps": 71,
+    "temporal_risks": 6,
+    "unexplained_temporal_risks": 0,
+    "median_frame_difference": 0.0056386166,
+    "beta_proof_median_frame_difference_at_6fps": 0.0027462214
+  },
+  "limitation": "This proof establishes the rebuilt opening and coin transition, not final acceptance of the complete export."
+}

@@ -33,11 +33,10 @@
     "micro",
     "atmosphere",
     "particles",
+    "canvas",
     "firelight",
     "haze",
-    "shafts",
-    "canvas"
+    "shafts"
   ],
   "transition": "hard cut at measured phrase boundary"
 }
-

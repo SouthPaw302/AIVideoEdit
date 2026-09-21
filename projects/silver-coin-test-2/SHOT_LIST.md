@@ -1,11 +1,11 @@
 # Shot list
 
-- SC01 — Forest overture I — frames 0–46 — hero_001 — intro
-- SC02 — Forest overture II — frames 47–94 — hero_002 — intro
-- SC03 — Forest overture III — frames 95–141 — hero_003 — intro
-- SC04 — Forest overture IV — frames 142–188 — hero_004 — intro
-- SC05 — Forest overture V — frames 189–236 — hero_005 — intro
-- SC06 — Forest overture VI — frames 237–283 — hero_006 — intro
+- SC01 — The silver coin — frames 0–46 — v2_intro/coin — intro
+- SC02 — The watermill — frames 47–94 — v2_intro/mill — intro
+- SC03 — The final wagon — frames 95–141 — v2_intro/wagon — intro
+- SC04 — Tavern threshold — frames 142–188 — v2_intro/threshold — intro
+- SC05 — Fiddler prepares — frames 189–236 — v2_intro/fiddler — intro
+- SC06 — Mugs together — frames 237–283 — v2_intro/mugs — intro
 - SC07 — Morning at the mill — frames 284–550 — hero_007 — verse_1
 - SC08 — Final wagon at dusk — frames 551–807 — hero_009 — verse_1
 - SC09 — Fire fills the room — frames 808–1073 — hero_010 — verse_1
@@ -30,4 +30,3 @@
 - SC28 — Dance into morning — frames 4516–4775 — hero_024 — final_chorus
 - SC29 — Dawn departure — frames 4776–4943 — hero_025 — final_chorus
 - SC30 — Flower-crown coda — frames 4944–4978 — hero_006 — outro
-

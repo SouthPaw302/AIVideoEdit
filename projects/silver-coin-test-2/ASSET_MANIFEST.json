@@ -399,6 +399,108 @@
         "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
         "old_reference_reuse": false
       }
+    },
+    {
+      "id": "v2_intro_coin",
+      "kind": "prepared generated hero still",
+      "role": "revision 2 opening living-scene plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/v2_intro/coin_paint.jpg",
+      "sha256": "028aee4fa9ea0d18cd0746d080e74bd815d1dc22774c1c58db1b1f90af7637bd",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "new_generated_support",
+        "generator": "built-in image generation",
+        "raw_file_or_locator": "hero_library/generated/v2_intro/coin.png",
+        "raw_sha256": "8dc7204d3e06333efde88f001ea2a75d0569b4f88378753b0138587bbac6b81a",
+        "derivation": "16:9 painterly preparation by current-main living_paint_transfer.py",
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "v2_intro_mill",
+      "kind": "prepared generated hero still",
+      "role": "revision 2 opening living-scene plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/v2_intro/mill_paint.jpg",
+      "sha256": "109fedf9d87069a07dbd5c13c4d66c9b1b5668b342e96488bcff7c7246497d53",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "new_generated_support",
+        "generator": "built-in image generation",
+        "raw_file_or_locator": "hero_library/generated/v2_intro/mill.png",
+        "raw_sha256": "b2b5a035442ddf3fbcf934b9a5a5a953a0f6f203161fa4ee2fda0f06c4d3f38e",
+        "derivation": "16:9 painterly preparation by current-main living_paint_transfer.py",
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "v2_intro_wagon",
+      "kind": "prepared generated hero still",
+      "role": "revision 2 opening living-scene plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/v2_intro/wagon_paint.jpg",
+      "sha256": "dbea63e2284e45dd7c1f04f3bcd0779b0234ee4b009905e721073a7eb8687868",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "new_generated_support",
+        "generator": "built-in image generation",
+        "raw_file_or_locator": "hero_library/generated/v2_intro_add/wagon.png",
+        "raw_sha256": "3b1a9c55b3e1a77da1572b0f9966c0506c5bbf46e1fb14eb7d9c3d5f1d8a999e",
+        "derivation": "16:9 painterly preparation by current-main living_paint_transfer.py",
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "v2_intro_threshold",
+      "kind": "prepared generated hero still",
+      "role": "revision 2 opening living-scene plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/v2_intro/threshold_paint.jpg",
+      "sha256": "b69c6b7607740ec114862e1a7b0dd9eb36f620e62e77779d408fc3d559d44d35",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "new_generated_support",
+        "generator": "built-in image generation",
+        "raw_file_or_locator": "hero_library/generated/v2_intro/threshold.png",
+        "raw_sha256": "37df9b84874050c3ca8223bf0894f1820fe78c1fc37b6935b3ee645a65243799",
+        "derivation": "16:9 painterly preparation by current-main living_paint_transfer.py",
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "v2_intro_fiddler",
+      "kind": "prepared generated hero still",
+      "role": "revision 2 opening living-scene plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/v2_intro/fiddler_paint.jpg",
+      "sha256": "540d8ab6c07f46461ada55c2a9073378d58b533a7f4e4712e7d9cef9011da2b6",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "new_generated_support",
+        "generator": "built-in image generation",
+        "raw_file_or_locator": "hero_library/generated/v2_intro/fiddler.png",
+        "raw_sha256": "072d5f3f17405270a4639c70f4ab4436022595409e9cd4f9934acdce7f1b1c10",
+        "derivation": "16:9 painterly preparation by current-main living_paint_transfer.py",
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "v2_intro_mugs",
+      "kind": "prepared generated hero still",
+      "role": "revision 2 opening living-scene plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/v2_intro/mugs_paint.jpg",
+      "sha256": "6f76db253ef793aba8a1ddf2fbe12e6d2203c1dbc56bb919d8497a0fe37762f8",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "new_generated_support",
+        "generator": "built-in image generation",
+        "raw_file_or_locator": "hero_library/generated/v2_intro_add/mugs.png",
+        "raw_sha256": "483844a05e815b2da719e57bb57ee3888b3aec8df2ff56a6fb018af57ce5eff4",
+        "derivation": "16:9 painterly preparation by current-main living_paint_transfer.py",
+        "replaces_source_library": false
+      }
     }
   ]
 }

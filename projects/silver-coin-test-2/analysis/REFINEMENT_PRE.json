@@ -1,0 +1,27 @@
+{
+  "schema": "aivideoedit.refinement-qc-snapshot.v1",
+  "runtime_seconds": 207.458333,
+  "export_variety": {
+    "result": "REVIEW",
+    "similar_runs_count": 20,
+    "metrics": {
+      "sample_interval_seconds": 2,
+      "mean_adjacent_similarity": 0.9739174698,
+      "report": "analysis/variety_beta.json"
+    }
+  },
+  "black_freeze": {
+    "result": "REVIEW",
+    "black_spans": 0,
+    "near_static_hold": "about one second at 99.125-100.125 seconds"
+  },
+  "framing_aspect": {"result": "PASS", "size": [1280, 720], "fps": 24, "frames": 4979},
+  "audio_sync": {"result": "PASS", "audio_source_sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92", "picture_tail_ms": 18.3},
+  "mode_aware_qc": {"result": "FAIL", "reason": "The current user rejected the beta visual-effects pass and opening."},
+  "source_canon_integrity": {"result": "PASS", "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803"},
+  "continuity_warnings": [
+    "Six near-duplicate source-derived forest views occupy the full instrumental opening.",
+    "The beta effect treatment is too restrained and uniform for the current visual brief.",
+    "A roughly one-second near-static merchant hold remains."
+  ]
+}

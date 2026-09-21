@@ -33,9 +33,9 @@
     "micro",
     "atmosphere",
     "particles",
+    "canvas",
     "shafts",
-    "canvas"
+    "glint"
   ],
-  "transition": "hard cut at measured phrase boundary"
+  "transition": "coin over final 0.08 of shot"
 }
-

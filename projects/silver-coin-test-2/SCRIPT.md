@@ -1,15 +1,15 @@
 # Silver Coin Test 2 — frame-followable script
 
-Locked at 24 fps. Every cut sits on a measured phrase boundary; no old-video visual is used.
+Revision 2 at 24 fps. Intro shot timing remains on measured phrase boundaries; the coin uses one short optical match, while the tavern threshold cuts cleanly. No old-video visual is used.
 
 | Shot | Frames | Time | Hero | Story action | Lyric cue |
 |---|---:|---:|---|---|---|
-| SC01 | 0–46 | 0.000–1.974s | 001 | Open on the uploaded forest heroine; drifting pollen and canvas grain establish the new visual world. | Instrumental opening: luminous forest breath. |
-| SC02 | 47–94 | 1.974–3.947s | 002 | Ease attention toward her alert profile while leaves breathe independently. | Instrumental opening: character reveal. |
-| SC03 | 95–141 | 3.947–5.921s | 003 | Let crown flowers and background haze move without facial warping. | Instrumental opening: profile and flower crown. |
-| SC04 | 142–188 | 5.921–7.895s | 004 | Her hand enters the gesture; preserve eyes, mouth, and hand anatomy. | Instrumental opening: hand begins to rise. |
-| SC05 | 189–236 | 7.895–9.868s | 005 | Hold the tactile flower moment as the music gathers. | Instrumental opening: tactile flower gesture. |
-| SC06 | 237–283 | 9.868–11.842s | 006 | Resolve the source-derived overture on a calm close portrait. | Instrumental opening: resolve into lyric world. |
+| SC01 | 0–46 | 0.000–1.974s | v2 coin | One silver coin against a worker's hand and grain establishes the stakes; localized glint. | Instrumental opening: poor-in-coin motif. |
+| SC02 | 47–94 | 1.974–3.947s | v2 mill | Show labor, sacks, waterwheel and mist; bounded water and atmosphere. | Instrumental opening: the labor behind the coin. |
+| SC03 | 95–141 | 3.947–5.921s | v2 wagon | Last wagon of sacks and wood closes the day; wet-rut reflection and dusk air. | Instrumental opening: wagon comes to rest. |
+| SC04 | 142–188 | 5.921–7.895s | v2 threshold | Rain-dark tavern threshold promises warmth; reflection and practical light. | Instrumental opening: refuge appears. |
+| SC05 | 189–236 | 7.895–9.868s | v2 fiddler | Fiddler's hands and bow introduce the communal song; localized transient. | Instrumental opening: fiddler prepares the release. |
+| SC06 | 237–283 | 9.868–11.842s | v2 mugs | Workers lift mugs together, promising the chorus before the verse returns to dawn. | Instrumental opening: communal promise. |
 | SC07 | 284–550 | 11.842–22.941s | 007 | Cut to cold dawn labor at the mill; sacks, grain, and pale air carry the lyric. | The morning steals the warmth away; the miller counts his gold. |
 | SC08 | 551–807 | 22.941–33.669s | 009 | Move through the last wagon under cooling dusk light. | We carry sacks and wood and grain until the night turns cold. |
 | SC09 | 808–1073 | 33.669–44.745s | 010 | Enter warm communal firelight as the heroine claims a scrap of joy. | But when the final wagon rests and fire fills the room, I drink to every scrap of joy and laugh away the gloom. |
@@ -34,4 +34,3 @@ Locked at 24 fps. Every cut sits on a measured phrase boundary; no old-video vis
 | SC28 | 4516–4775 | 188.174–199.000s | 024 | Let predawn blue enter while the dance continues. | Poor in coin, but rich in song, |
 | SC29 | 4776–4943 | 199.000–206.000s | 025 | Open the tavern door to gold morning and shared departure. | while living hearts still wake! |
 | SC30 | 4944–4978 | 206.000–207.440s | 006 | Close on the original heroine touching a flower; the new night survives in her expression. | Instrumental coda: the flower-crowned heroine holds the final note. |
-

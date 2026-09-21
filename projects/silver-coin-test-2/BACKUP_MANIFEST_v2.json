@@ -1,0 +1,32 @@
+{
+  "schema": "aivideoedit.media-backup.v1",
+  "project": "silver-coin-test-2",
+  "branch": "song/silver-coin-test-2",
+  "provider": "Google Drive",
+  "folder_id": "1kE4tMLlaVExi6uLdwQMQnBfGxQpbdiXw",
+  "folder_url": "https://drive.google.com/drive/folders/1kE4tMLlaVExi6uLdwQMQnBfGxQpbdiXw",
+  "base_archive": "BACKUP_MANIFEST.json",
+  "verification": {
+    "method": "Drive metadata readback after upload",
+    "remote_file_sizes_match_local": true,
+    "remote_content_sha256_verified": false,
+    "notes": "Source clip, WAV, and beta archive remain in the base backup. New revision assets and master have distinct names."
+  },
+  "files": [
+    {
+      "name": "Silver_Coin_Test2_v2_intro_media.zip",
+      "drive_file_id": "15sExsxFx0OZxXCx8wKCtgIdfasGTyl1U",
+      "url": "https://drive.google.com/file/d/15sExsxFx0OZxXCx8wKCtgIdfasGTyl1U/view?usp=drivesdk",
+      "bytes": 18005365,
+      "local_path": "hero_library/generated/v2_intro*, hero_library/prepared/v2_intro"
+    },
+    {
+      "name": "Silver_Coin_Test2_v2c_1280x720_24fps.mp4",
+      "drive_file_id": "1zpCgk-9IBYC6sUnTqcLer2d9gDf6OOdt",
+      "url": "https://drive.google.com/file/d/1zpCgk-9IBYC6sUnTqcLer2d9gDf6OOdt/view?usp=drivesdk",
+      "bytes": 66376536,
+      "local_sha256": "eda825f7d87aa9a6596d28c22d14cb6168650bff90cef58be03b49b5b4a527f3",
+      "local_path": "../../outputs/silver-coin-test-2/Silver_Coin_Test2_v2c_1280x720_24fps.mp4"
+    }
+  ]
+}

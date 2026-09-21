@@ -18,9 +18,9 @@
       "start_seconds": 0,
       "end_seconds": 1.9737,
       "section": "intro",
-      "visual_action": "Open on the uploaded forest heroine; drifting pollen and canvas grain establish the new visual world.",
-      "visual_media": "hero_library/prepared/hero_001.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "visual_action": "Open on one silver coin against a worker's hand and spilled grain: the whole song's stakes in one image.",
+      "visual_media": "hero_library/prepared/v2_intro/coin_paint.jpg",
+      "animation_behavior": "Localized coin glint and candle breath; the coin becomes a brief circular match transition to the mill.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -36,8 +36,8 @@
         "Measured intro phrase boundary",
         "Motion and cut energy follow the 86 BPM phrase."
       ],
-      "lyric_cue": "Instrumental opening: luminous forest breath.",
-      "transition": "Hard cut on the next measured phrase boundary."
+      "lyric_cue": "Instrumental opening: poor in coin, rich in song motif.",
+      "transition": "Coin-centered optical match to the mill over the final half-second."
     },
     {
       "shot_id": "SC02",
@@ -46,9 +46,9 @@
       "start_seconds": 1.9737,
       "end_seconds": 3.9474,
       "section": "intro",
-      "visual_action": "Ease attention toward her alert profile while leaves breathe independently.",
-      "visual_media": "hero_library/prepared/hero_002.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "visual_action": "Show the workers, sacks, waterwheel, and mist before the vocal establishes their labor.",
+      "visual_media": "hero_library/prepared/v2_intro/mill_paint.jpg",
+      "animation_behavior": "Bounded depth movement, water-region ripple and drifting atmosphere; workers' faces and hands protected.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -64,7 +64,7 @@
         "Measured intro phrase boundary",
         "Motion and cut energy follow the 86 BPM phrase."
       ],
-      "lyric_cue": "Instrumental opening: character reveal.",
+      "lyric_cue": "Instrumental opening: the labor behind the coin.",
       "transition": "Hard cut on the next measured phrase boundary."
     },
     {
@@ -74,9 +74,9 @@
       "start_seconds": 3.9474,
       "end_seconds": 5.9211,
       "section": "intro",
-      "visual_action": "Let crown flowers and background haze move without facial warping.",
-      "visual_media": "hero_library/prepared/hero_003.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "visual_action": "The last wagon of sacks and firewood closes the day's labor before the workers head toward the tavern.",
+      "visual_media": "hero_library/prepared/v2_intro/wagon_paint.jpg",
+      "animation_behavior": "Bounded depth, wet-rut reflection, and dusk atmosphere; protect the worker silhouette and wagon geometry.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -92,7 +92,7 @@
         "Measured intro phrase boundary",
         "Motion and cut energy follow the 86 BPM phrase."
       ],
-      "lyric_cue": "Instrumental opening: profile and flower crown.",
+      "lyric_cue": "Instrumental opening: the wagon comes to rest.",
       "transition": "Hard cut on the next measured phrase boundary."
     },
     {
@@ -102,9 +102,9 @@
       "start_seconds": 5.9211,
       "end_seconds": 7.8948,
       "section": "intro",
-      "visual_action": "Her hand enters the gesture; preserve eyes, mouth, and hand anatomy.",
-      "visual_media": "hero_library/prepared/hero_004.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "visual_action": "The rain-dark tavern threshold promises warmth and community after labor.",
+      "visual_media": "hero_library/prepared/v2_intro/threshold_paint.jpg",
+      "animation_behavior": "Wet-cobble reflection, lamp breathing, bounded atmosphere and canvas lock.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -120,8 +120,8 @@
         "Measured intro phrase boundary",
         "Motion and cut energy follow the 86 BPM phrase."
       ],
-      "lyric_cue": "Instrumental opening: hand begins to rise.",
-      "transition": "Hard cut on the next measured phrase boundary."
+      "lyric_cue": "Instrumental opening: refuge appears.",
+      "transition": "Clean measured cut into the interior fiddler on the phrase lift."
     },
     {
       "shot_id": "SC05",
@@ -130,9 +130,9 @@
       "start_seconds": 7.8948,
       "end_seconds": 9.8685,
       "section": "intro",
-      "visual_action": "Hold the tactile flower moment as the music gathers.",
-      "visual_media": "hero_library/prepared/hero_005.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "visual_action": "A fiddler's bow and fingers announce the communal song inside the tavern.",
+      "visual_media": "hero_library/prepared/v2_intro/fiddler_paint.jpg",
+      "animation_behavior": "Localized bow transient and hearth firelight with protected fingers and instrument geometry.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -148,7 +148,7 @@
         "Measured intro phrase boundary",
         "Motion and cut energy follow the 86 BPM phrase."
       ],
-      "lyric_cue": "Instrumental opening: tactile flower gesture.",
+      "lyric_cue": "Instrumental opening: fiddler prepares the release.",
       "transition": "Hard cut on the next measured phrase boundary."
     },
     {
@@ -158,9 +158,9 @@
       "start_seconds": 9.8685,
       "end_seconds": 11.8422,
       "section": "intro",
-      "visual_action": "Resolve the source-derived overture on a calm close portrait.",
-      "visual_media": "hero_library/prepared/hero_006.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "visual_action": "Workers lift their mugs together as the instrumental opening reaches its communal promise.",
+      "visual_media": "hero_library/prepared/v2_intro/mugs_paint.jpg",
+      "animation_behavior": "Bounded firelight and candle shafts with protected fingers and mug geometry.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -176,7 +176,7 @@
         "Measured intro phrase boundary",
         "Motion and cut energy follow the 86 BPM phrase."
       ],
-      "lyric_cue": "Instrumental opening: resolve into lyric world.",
+      "lyric_cue": "Instrumental opening: the promise of the chorus before the verse returns to dawn.",
       "transition": "Hard cut on the next measured phrase boundary."
     },
     {
@@ -188,7 +188,7 @@
       "section": "verse_1",
       "visual_action": "Cut to cold dawn labor at the mill; sacks, grain, and pale air carry the lyric.",
       "visual_media": "hero_library/prepared/hero_007.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -216,7 +216,7 @@
       "section": "verse_1",
       "visual_action": "Move through the last wagon under cooling dusk light.",
       "visual_media": "hero_library/prepared/hero_009.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -244,7 +244,7 @@
       "section": "verse_1",
       "visual_action": "Enter warm communal firelight as the heroine claims a scrap of joy.",
       "visual_media": "hero_library/prepared/hero_010.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -272,7 +272,7 @@
       "section": "chorus_1",
       "visual_action": "Explode into the first mug-raise with ember accents and lantern shafts.",
       "visual_media": "hero_library/prepared/hero_008.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts, firelight, haze; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -300,7 +300,7 @@
       "section": "chorus_1",
       "visual_action": "Answer the downbeat with boots, skirts, and vibrating floorboards.",
       "visual_media": "hero_library/prepared/hero_011.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -328,7 +328,7 @@
       "section": "chorus_1",
       "visual_action": "Widen to the whole poor-but-rich tavern community.",
       "visual_media": "hero_library/prepared/hero_012.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts, firelight, haze; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -356,7 +356,7 @@
       "section": "verse_2",
       "visual_action": "Introduce the overdressed merchant leaning in with silk and boastful confidence.",
       "visual_media": "hero_library/prepared/hero_013.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -384,7 +384,7 @@
       "section": "verse_2",
       "visual_action": "Isolate the dry cup and his vanished promise.",
       "visual_media": "hero_library/prepared/hero_014.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -412,7 +412,7 @@
       "section": "verse_2",
       "visual_action": "Make the hat-and-coin theft playful and unmistakable.",
       "visual_media": "hero_library/prepared/hero_015.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, shafts, glint; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -429,7 +429,7 @@
         "Motion and cut energy follow the 86 BPM phrase."
       ],
       "lyric_cue": "So I took his hat and silver coin and left the man alone.",
-      "transition": "Hard cut on the next measured phrase boundary."
+      "transition": "Brief coin optical match into the next shot."
     },
     {
       "shot_id": "SC16",
@@ -440,7 +440,7 @@
       "section": "verse_2",
       "visual_action": "Leave the merchant alone outside in blue cold.",
       "visual_media": "hero_library/prepared/hero_016.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts, reflection; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -468,7 +468,7 @@
       "section": "chorus_2",
       "visual_action": "Return inside on a larger, freer second chorus.",
       "visual_media": "hero_library/prepared/hero_017.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts, firelight, haze; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -496,7 +496,7 @@
       "section": "chorus_2",
       "visual_action": "Hit the stamp-beat through low-angle legs and skirts.",
       "visual_media": "hero_library/prepared/hero_011.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -524,7 +524,7 @@
       "section": "chorus_2",
       "visual_action": "Release to a wide communal chorus tableau.",
       "visual_media": "hero_library/prepared/hero_012.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts, firelight, haze; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -552,7 +552,7 @@
       "section": "bridge",
       "visual_action": "Bring farmer, smith, and carter forward in comic argument and song.",
       "visual_media": "hero_library/prepared/hero_018.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -580,7 +580,7 @@
       "section": "bridge",
       "visual_action": "Reveal the maid hiding the landlord’s bread as a sly punchline.",
       "visual_media": "hero_library/prepared/hero_019.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -608,7 +608,7 @@
       "section": "bridge",
       "visual_action": "Give the lovers a brief intimate pocket inside the crowd.",
       "visual_media": "hero_library/prepared/hero_020.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -636,7 +636,7 @@
       "section": "bridge",
       "visual_action": "Cool and quiet the room around tomorrow’s work and debts.",
       "visual_media": "hero_library/prepared/hero_021.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts, reflection; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -664,7 +664,7 @@
       "section": "bridge",
       "visual_action": "Rewarm the table into a defiant communal feast.",
       "visual_media": "hero_library/prepared/hero_022.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts, firelight, haze; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -692,7 +692,7 @@
       "section": "final_chorus",
       "visual_action": "Launch the final chorus with the heroine and fiddler commanding the room.",
       "visual_media": "hero_library/prepared/hero_023.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, firelight, haze, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -720,7 +720,7 @@
       "section": "final_chorus",
       "visual_action": "Drive bitterness out through circular dance and rising embers.",
       "visual_media": "hero_library/prepared/hero_017.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts, firelight, haze; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -748,7 +748,7 @@
       "section": "final_chorus",
       "visual_action": "Return to the rafters-shaking hero composition at maximum energy.",
       "visual_media": "hero_library/prepared/hero_023.png",
-      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts, firelight, haze; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -776,7 +776,7 @@
       "section": "final_chorus",
       "visual_action": "Let predawn blue enter while the dance continues.",
       "visual_media": "hero_library/prepared/hero_024.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -804,7 +804,7 @@
       "section": "final_chorus",
       "visual_action": "Open the tavern door to gold morning and shared departure.",
       "visual_media": "hero_library/prepared/hero_025.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -832,7 +832,7 @@
       "section": "outro",
       "visual_action": "Close on the original heroine touching a flower; the new night survives in her expression.",
       "visual_media": "hero_library/prepared/hero_006.png",
-      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "animation_behavior": "Current-main living-painting renderer: micro, atmosphere, particles, canvas, parallax, shafts; bounded motion with protected face, hand, silhouette, and architecture regions.",
       "motion_regions": [
         "motivated atmosphere and light",
         "hair and garment edges",
@@ -853,4 +853,3 @@
     }
   ]
 }
-
