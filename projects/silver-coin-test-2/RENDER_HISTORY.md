@@ -7,5 +7,4 @@
 - Canonical FX v2 precompile and lock verification PASS. Current-main promoted proof binary mismatch prevented claiming the promoted IDs.
 - Full render split into five contiguous same-recipe batches; all exit 0 and add to 4,979 frames. Stream-copy picture join plus AAC encoding from the canonical WAV.
 - Rejected first mux because `-shortest` removed one frame. Corrected 1280×720 candidate has all 4,979 frames and passes final QC.
-- Candidate master SHA-256: `7d91825f59470c0997dcb144b219f2bd35c64f691c6f9a9a29354e20deb6b03eb`.
-
+- Candidate master SHA-256: `7d91825f59470c0997dcb144b219f2bd35c64f691c6f9a9a29354e20de6b03eb`.

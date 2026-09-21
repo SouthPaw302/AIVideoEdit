@@ -1,0 +1,113 @@
+{
+  "schema": "aivideoedit.media-backup.v1",
+  "project": "silver-coin-test-2",
+  "branch": "song/silver-coin-test-2",
+  "provider": "Google Drive",
+  "folder_url": "https://drive.google.com/drive/folders/1kE4tMLlaVExi6uLdwQMQnBfGxQpbdiXw",
+  "folder_id": "1kE4tMLlaVExi6uLdwQMQnBfGxQpbdiXw",
+  "verification": {
+    "method": "Drive folder readback after upload",
+    "file_count": 12,
+    "remote_file_sizes_match_local": true,
+    "remote_content_sha256_verified": false,
+    "notes": "SHA-256 values are measured locally; the Drive connector did not return remote content hashes."
+  },
+  "files": [
+    {
+      "name": "imagine-5558fc80.mp4",
+      "drive_file_id": "1x38rW8FdogtwJs_dzwcPywjjWSnF3gBp",
+      "url": "https://drive.google.com/file/d/1x38rW8FdogtwJs_dzwcPywjjWSnF3gBp/view?usp=drivesdk",
+      "bytes": 1725042,
+      "local_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+      "local_path": "media/imagine-5558fc80.mp4"
+    },
+    {
+      "name": "Silver Coin (Remastered).wav",
+      "drive_file_id": "1SCnot3L67BHEyQGbA2JPB2z07mWwBTqB",
+      "url": "https://drive.google.com/file/d/1SCnot3L67BHEyQGbA2JPB2z07mWwBTqB/view?usp=drivesdk",
+      "bytes": 39828652,
+      "local_sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+      "local_path": "media/Silver Coin (Remastered).wav"
+    },
+    {
+      "name": "Silver_Coin_Test2_RepoCompliant_1280x720_24fps.mp4",
+      "drive_file_id": "1QeptyAMQKChA6Wx71OBOnq-ASr-Ardsq",
+      "url": "https://drive.google.com/file/d/1QeptyAMQKChA6Wx71OBOnq-ASr-Ardsq/view?usp=drivesdk",
+      "bytes": 57260567,
+      "local_sha256": "7d91825f59470c0997dcb144b219f2bd35c64f691c6f9a9a29354e20de6b03eb",
+      "local_path": "../../outputs/silver-coin-test-2/Silver_Coin_Test2_RepoCompliant_1280x720_24fps_fullframes.mp4"
+    },
+    {
+      "name": "Silver_Coin_Test2_analysis_frames.zip",
+      "drive_file_id": "1OeLpiwVwp-oSiPXya4Ib_sRxTydwT3vM",
+      "url": "https://drive.google.com/file/d/1OeLpiwVwp-oSiPXya4Ib_sRxTydwT3vM/view?usp=drivesdk",
+      "bytes": 66203560,
+      "local_sha256": "a396c7ed46261516c082d33c1b0c4507b214961c5fefb846ad86dd36ac1ec14a",
+      "local_path": "analysis/"
+    },
+    {
+      "name": "Silver_Coin_Test2_render_batches.zip",
+      "drive_file_id": "1cqX7tY7iJcsC4f44UBPFsGGT73wPUU19",
+      "url": "https://drive.google.com/file/d/1cqX7tY7iJcsC4f44UBPFsGGT73wPUU19/view?usp=drivesdk",
+      "bytes": 54912461,
+      "local_sha256": "aa04935a6e3f33c3f4d45f5494b1a227d86b3811c77e78dd5be1b9cccb80b7cc",
+      "local_path": "render_batches/"
+    },
+    {
+      "name": "Silver_Coin_Test2_hero_generated.zip",
+      "drive_file_id": "1EXsaiMdWcVfMHfgaWYTPizVuY45HucYn",
+      "url": "https://drive.google.com/file/d/1EXsaiMdWcVfMHfgaWYTPizVuY45HucYn/view?usp=drivesdk",
+      "bytes": 51285352,
+      "local_sha256": "ff873c2d620b53e3800651482d15a48bf96449fdbf3eafc0726a7e1bc4455d33",
+      "local_path": "hero_library/generated/"
+    },
+    {
+      "name": "Silver_Coin_Test2_hero_prepared.zip",
+      "drive_file_id": "1w3FixKxwBy4qE_udURMnnOQxywpRMaw2",
+      "url": "https://drive.google.com/file/d/1w3FixKxwBy4qE_udURMnnOQxywpRMaw2/view?usp=drivesdk",
+      "bytes": 34915906,
+      "local_sha256": "fe5cee1528b570281447e624c51d2f162dddd8dfde20a10d8f526d8ac26fd142",
+      "local_path": "hero_library/prepared/"
+    },
+    {
+      "name": "Silver_Coin_Test2_hero_selected.zip",
+      "drive_file_id": "1ceUXqGB4ngvNbZ1t713ifuyW9Os7nMun",
+      "url": "https://drive.google.com/file/d/1ceUXqGB4ngvNbZ1t713ifuyW9Os7nMun/view?usp=drivesdk",
+      "bytes": 54566690,
+      "local_sha256": "6254d00a66da865628258c148debcb0d96294c6c38d5ec851b513f0ac98a3526",
+      "local_path": "hero_library/selected/"
+    },
+    {
+      "name": "Silver_Coin_Test2_hero_source.zip",
+      "drive_file_id": "16kfr-L37q1NggQ5lNRvg1In-SYxAbcci",
+      "url": "https://drive.google.com/file/d/16kfr-L37q1NggQ5lNRvg1In-SYxAbcci/view?usp=drivesdk",
+      "bytes": 3414731,
+      "local_sha256": "0db3a97c3bc84e61e3f3a6b2ab5c9111fb297ce44c6d1d93cb9ffafd2647f56e",
+      "local_path": "hero_library/source/"
+    },
+    {
+      "name": "Silver_Coin_Test2_FX_Proof.mp4",
+      "drive_file_id": "1VOebiVnMKQIDmGl-nNj5UMhEcmZ7QBFS",
+      "url": "https://drive.google.com/file/d/1VOebiVnMKQIDmGl-nNj5UMhEcmZ7QBFS/view?usp=drivesdk",
+      "bytes": 1641601,
+      "local_sha256": "e410855ead4cd657bb49fc04371f22b104500371f2be5a05d031afbaf1bf4dde",
+      "local_path": "../../outputs/silver-coin-test-2/Silver_Coin_Test2_FX_Proof.mp4"
+    },
+    {
+      "name": "HERO_LIBRARY_25_CONTACT_SHEET.jpg",
+      "drive_file_id": "15j1Sp78xS82a8fxz62Ki_yuXzJH6UeUb",
+      "url": "https://drive.google.com/file/d/15j1Sp78xS82a8fxz62Ki_yuXzJH6UeUb/view?usp=drivesdk",
+      "bytes": 401559,
+      "local_sha256": "70252820c6d870d0fb86d9a21117588ac606c6494d92748681e3c2c9e872412a",
+      "local_path": "hero_library/HERO_LIBRARY_25_CONTACT_SHEET.jpg"
+    },
+    {
+      "name": "Silver_Coin_Test2_master_contact.jpg",
+      "drive_file_id": "1ZPtBhPVOPNpyzGm_QTDhtsu3TQVUucmg",
+      "url": "https://drive.google.com/file/d/1ZPtBhPVOPNpyzGm_QTDhtsu3TQVUucmg/view?usp=drivesdk",
+      "bytes": 415907,
+      "local_sha256": "1a692302e372877f5d9d77c42b45cdffad84b66098ccdd7c69adcfd7492b9d39",
+      "local_path": "../../outputs/silver-coin-test-2/Silver_Coin_Test2_master_contact.jpg"
+    }
+  ]
+}
