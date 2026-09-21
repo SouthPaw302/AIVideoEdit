@@ -1,0 +1,87 @@
+{
+  "source": "Silver_Coin_Test2_FX_Proof.mp4",
+  "duration_seconds": 9.0,
+  "source_fps": 24.0,
+  "sample_fps": 12.0,
+  "samples": 108,
+  "summary": {
+    "sharpness": {
+      "median": 1682.299072265625,
+      "p95": 2389.8012817382814
+    },
+    "frame_difference": {
+      "median": 0.002037173202614379,
+      "p95": 0.0032416019880174268
+    },
+    "flow": {
+      "median": 0.03639417700469494,
+      "p95": 0.06561336256563663
+    }
+  },
+  "risk_count": 2,
+  "unexplained_risk_count": 2,
+  "top_risks": [
+    {
+      "t": 6.0,
+      "score": 315.074,
+      "reasons": [
+        "frame-difference-spike",
+        "motion-spike"
+      ],
+      "expected_transition": false,
+      "metrics": {
+        "t": 6.0,
+        "sharpness": 2373.10107421875,
+        "frame_difference": 0.19793504901960784,
+        "flow": 5.9692254066467285
+      }
+    },
+    {
+      "t": 3.0,
+      "score": 296.293,
+      "reasons": [
+        "frame-difference-spike",
+        "motion-spike"
+      ],
+      "expected_transition": false,
+      "metrics": {
+        "t": 3.0,
+        "sharpness": 1643.7724609375,
+        "frame_difference": 0.1862581699346405,
+        "flow": 5.623264312744141
+      }
+    }
+  ],
+  "top_unexplained_risks": [
+    {
+      "t": 6.0,
+      "score": 315.074,
+      "reasons": [
+        "frame-difference-spike",
+        "motion-spike"
+      ],
+      "expected_transition": false,
+      "metrics": {
+        "t": 6.0,
+        "sharpness": 2373.10107421875,
+        "frame_difference": 0.19793504901960784,
+        "flow": 5.9692254066467285
+      }
+    },
+    {
+      "t": 3.0,
+      "score": 296.293,
+      "reasons": [
+        "frame-difference-spike",
+        "motion-spike"
+      ],
+      "expected_transition": false,
+      "metrics": {
+        "t": 3.0,
+        "sharpness": 1643.7724609375,
+        "frame_difference": 0.1862581699346405,
+        "flow": 5.623264312744141
+      }
+    }
+  ]
+}

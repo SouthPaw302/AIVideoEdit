@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC14",
+  "title": "The empty cup",
+  "production_mode": "living_scene",
+  "frame_range": [
+    1937,
+    2127
+  ],
+  "time_range_seconds": [
+    80.7126,
+    88.677
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_014.png",
+      "sha256": "b1536098d8ecc281952e5d977f63ddb669df07d493ffbe858faf40bb04e795fe",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

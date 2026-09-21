@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC07",
+  "title": "Morning at the mill",
+  "production_mode": "living_scene",
+  "frame_range": [
+    284,
+    550
+  ],
+  "time_range_seconds": [
+    11.8422,
+    22.9413
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_007.png",
+      "sha256": "4ed867d8917c4c97f55563b2e9e6a04599c8d368910027717a5909d51310b634",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

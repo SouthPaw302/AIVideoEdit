@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC13",
+  "title": "Merchant in finest silk",
+  "production_mode": "living_scene",
+  "frame_range": [
+    1704,
+    1936
+  ],
+  "time_range_seconds": [
+    71,
+    80.7126
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_013.png",
+      "sha256": "536f72397ec9ab76f673fb2c4889a7368a8b2edc6f00b134ea1e008a447bb62b",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

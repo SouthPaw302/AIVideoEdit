@@ -1,0 +1,41 @@
+{
+  "project": "silver-coin-test-2",
+  "runtime": "aivideoedit-fx-v2",
+  "seed": 302,
+  "render_inputs": [
+    "general/reusable/painterly-motion/render_living_painting.py",
+    "general/reusable/painterly-motion/hybrid_painterly_fx.py"
+  ],
+  "effects": [
+    {
+      "id": "FX2-MOTION-002",
+      "strength": 0.62
+    },
+    {
+      "id": "FX2-ATM-001",
+      "strength": 0.58
+    },
+    {
+      "id": "FX2-FIRE-001",
+      "strength": 0.46
+    },
+    {
+      "id": "FX2-FIRE-002",
+      "strength": 0.62
+    },
+    {
+      "id": "FX2-LIGHT-001",
+      "strength": 0.55
+    },
+    {
+      "id": "FX2-LIGHT-002",
+      "strength": 0.48
+    },
+    {
+      "id": "FX2-SURFACE-001",
+      "strength": 0.48
+    }
+  ],
+  "transitions": []
+}
+

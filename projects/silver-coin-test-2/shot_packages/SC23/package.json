@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC23",
+  "title": "Debts due tomorrow",
+  "production_mode": "living_scene",
+  "frame_range": [
+    3723,
+    3854
+  ],
+  "time_range_seconds": [
+    155.1093,
+    160.6356
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_021.png",
+      "sha256": "4777e0ce3abbfdc0bc25a7b7ea2c532aa1035a5e74abe677ba61ad5ae7b75e32",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

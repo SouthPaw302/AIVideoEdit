@@ -1,12 +1,33 @@
-# Test 2 Shot List
+# Shot list
 
-Eight source-derived chapters, all built exclusively from `imagine-5558fc80.mp4`:
+- SC01 — Forest overture I — frames 0–46 — hero_001 — intro
+- SC02 — Forest overture II — frames 47–94 — hero_002 — intro
+- SC03 — Forest overture III — frames 95–141 — hero_003 — intro
+- SC04 — Forest overture IV — frames 142–188 — hero_004 — intro
+- SC05 — Forest overture V — frames 189–236 — hero_005 — intro
+- SC06 — Forest overture VI — frames 237–283 — hero_006 — intro
+- SC07 — Morning at the mill — frames 284–550 — hero_007 — verse_1
+- SC08 — Final wagon at dusk — frames 551–807 — hero_009 — verse_1
+- SC09 — Fire fills the room — frames 808–1073 — hero_010 — verse_1
+- SC10 — Raise your mugs — frames 1074–1206 — hero_008 — chorus_1
+- SC11 — Stamp the floorboards — frames 1207–1471 — hero_011 — chorus_1
+- SC12 — Poor in coin, rich in song — frames 1472–1703 — hero_012 — chorus_1
+- SC13 — Merchant in finest silk — frames 1704–1936 — hero_013 — verse_2
+- SC14 — The empty cup — frames 1937–2127 — hero_014 — verse_2
+- SC15 — Hat and silver coin — frames 2128–2401 — hero_015 — verse_2
+- SC16 — The braggart outside — frames 2402–2543 — hero_016 — verse_2
+- SC17 — Second chorus dance — frames 2544–2800 — hero_017 — chorus_2
+- SC18 — Floorboards answer — frames 2801–3066 — hero_011 — chorus_2
+- SC19 — Tavern chorus wide — frames 3067–3311 — hero_012 — chorus_2
+- SC20 — Workers erupt — frames 3312–3456 — hero_018 — bridge
+- SC21 — Hidden bread — frames 3457–3588 — hero_019 — bridge
+- SC22 — Farmhand and love — frames 3589–3722 — hero_020 — bridge
+- SC23 — Debts due tomorrow — frames 3723–3854 — hero_021 — bridge
+- SC24 — Wine belongs tonight — frames 3855–3987 — hero_022 — bridge
+- SC25 — Final chorus begins — frames 3988–4120 — hero_023 — final_chorus
+- SC26 — Living hearts wake — frames 4121–4382 — hero_017 — final_chorus
+- SC27 — Rafters shake — frames 4383–4515 — hero_023 — final_chorus
+- SC28 — Dance into morning — frames 4516–4775 — hero_024 — final_chorus
+- SC29 — Dawn departure — frames 4776–4943 — hero_025 — final_chorus
+- SC30 — Flower-crown coda — frames 4944–4978 — hero_006 — outro
 
-1. Warm opening reframe
-2. Mirrored amber movement
-3. High-contrast monochrome passage
-4. Cool blue-green passage
-5. Soft temporal smear
-6. Saturated gold chapter
-7. Darkened violet transition chapter
-8. Return to natural color with final dissolve

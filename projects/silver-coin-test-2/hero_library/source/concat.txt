@@ -1,0 +1,6 @@
+file 'C:\Users\User\Documents\Codex\2026-09-20\vercel-plugin-vercel-openai-curated-remote\work\AIVideoEdit-github-action-run\projects\silver-coin-test-2\hero_library\source\frames\hero_001_00000000.png'
+file 'C:\Users\User\Documents\Codex\2026-09-20\vercel-plugin-vercel-openai-curated-remote\work\AIVideoEdit-github-action-run\projects\silver-coin-test-2\hero_library\source\frames\hero_002_00000014.png'
+file 'C:\Users\User\Documents\Codex\2026-09-20\vercel-plugin-vercel-openai-curated-remote\work\AIVideoEdit-github-action-run\projects\silver-coin-test-2\hero_library\source\frames\hero_003_00000031.png'
+file 'C:\Users\User\Documents\Codex\2026-09-20\vercel-plugin-vercel-openai-curated-remote\work\AIVideoEdit-github-action-run\projects\silver-coin-test-2\hero_library\source\frames\hero_004_00000055.png'
+file 'C:\Users\User\Documents\Codex\2026-09-20\vercel-plugin-vercel-openai-curated-remote\work\AIVideoEdit-github-action-run\projects\silver-coin-test-2\hero_library\source\frames\hero_005_00000079.png'
+file 'C:\Users\User\Documents\Codex\2026-09-20\vercel-plugin-vercel-openai-curated-remote\work\AIVideoEdit-github-action-run\projects\silver-coin-test-2\hero_library\source\frames\hero_006_00000120.png'

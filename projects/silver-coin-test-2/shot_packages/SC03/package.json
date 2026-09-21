@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC03",
+  "title": "Forest overture III",
+  "production_mode": "living_scene",
+  "frame_range": [
+    95,
+    141
+  ],
+  "time_range_seconds": [
+    3.9474,
+    5.9211
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_003.png",
+      "sha256": "60c2eb2e0d4c233d19b284723dc6708f757bb9a686960b87a333222ad64a23fb",
+      "status": "derived"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

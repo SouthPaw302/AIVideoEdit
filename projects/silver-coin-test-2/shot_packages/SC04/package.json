@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC04",
+  "title": "Forest overture IV",
+  "production_mode": "living_scene",
+  "frame_range": [
+    142,
+    188
+  ],
+  "time_range_seconds": [
+    5.9211,
+    7.8948
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_004.png",
+      "sha256": "ca4ed21435abda0b2ad54ffad4b545be6f140ffd1042bb3e50779f26b720300a",
+      "status": "derived"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

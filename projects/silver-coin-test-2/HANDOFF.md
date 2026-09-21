@@ -1,10 +1,8 @@
-# Silver Coin Test 2 — Handoff
+# Handoff
 
-This branch is intentionally isolated from all previous Silver Coin production branches.
+Branch: `song/silver-coin-test-2`. Current-main runtime commit: `a4ba15ebb77cebc05752f0403c8fe0d5f62b393f`.
 
-Boot order:
+Candidate master: `outputs/silver-coin-test-2/Silver_Coin_Test2_RepoCompliant_1280x720_24fps_fullframes.mp4`. Hash and limitations are in `QC.md`. The user has not artistically accepted this picture; do not promote it to an accepted baseline without explicit approval.
 
-1. Run `python bootstrap.py boot --repo-root <repo>`.
-2. Read the bootstrapped current-main authority files.
-3. Use only the two assets recorded in `ASSET_MANIFEST.json`.
-4. Run `render_test2.py` and verify `TEST2_RENDER_REPORT.json`.
+Keep all old Silver Coin visual references, renders, and storyboards excluded. The retired custom `render_test2.py` was removed. Revisions should preserve the current authorized source identities and lyric-led structure unless the user directs otherwise.
+

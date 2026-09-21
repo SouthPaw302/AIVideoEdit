@@ -1,0 +1,12 @@
+{
+  "renderer": "aivideoedit-living-painting-v1",
+  "source_manifest": "projects\\silver-coin-test-2\\PROOF_MANIFEST.json",
+  "seconds": 9.0,
+  "fps": 24,
+  "size": [
+    960,
+    540
+  ],
+  "seed": 302,
+  "scene_count": 3
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "aivideoedit.render-recipe.v1",
+  "recipe_identity": "silver-coin-test-2-living-painting-v1",
+  "proof_backend": "aivideoedit-living-painting-v1",
+  "production_backend": "aivideoedit-living-painting-v1",
+  "render_implementation": {
+    "file_or_locator": ".aivideoedit/os/general/reusable/painterly-motion/render_living_painting.py",
+    "sha256": "15124e6476c40b39bc589d92f43349fb7b9c95d19b8df6aa71420789d4ffaca5"
+  },
+  "creative_recipe": {
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "resolution": [
+      1280,
+      720
+    ],
+    "seed": 302,
+    "transitions": "hard measured cuts",
+    "effects": [
+      "mesh breath",
+      "advected atmosphere",
+      "embers",
+      "firelight",
+      "heat haze",
+      "light shafts",
+      "canvas lock"
+    ]
+  }
+}
+

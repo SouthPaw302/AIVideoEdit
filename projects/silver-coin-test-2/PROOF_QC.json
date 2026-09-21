@@ -1,0 +1,28 @@
+{
+  "schema": "aivideoedit.mode-aware-proof.v1",
+  "status": "PASS",
+  "production_mode": "living_scene",
+  "artifact": "../../outputs/silver-coin-test-2/Silver_Coin_Test2_FX_Proof.mp4",
+  "duration_seconds": 9,
+  "resolution": [
+    960,
+    540
+  ],
+  "fps": 24,
+  "inspection": {
+    "decode": "PASS",
+    "identity_protection": "PASS",
+    "regional_motion_visible": "PASS",
+    "temporal_canvas_stable": "PASS",
+    "transitions": "PASS; hard cuts at 3.0 and 6.0 seconds",
+    "old_reference_contamination": "PASS; none"
+  },
+  "temporal_metrics": {
+    "median_frame_difference": 0.0020371732,
+    "p95_frame_difference": 0.003241602,
+    "median_flow": 0.036394177,
+    "p95_flow": 0.065613363
+  },
+  "notes": "The temporal scanner's two spikes are the two intentional hard scene cuts."
+}
+

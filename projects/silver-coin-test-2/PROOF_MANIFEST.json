@@ -1,0 +1,88 @@
+{
+  "schema": "aivideoedit.living-painting-render.v1",
+  "project": "silver-coin-test-2-proof",
+  "fps": 24,
+  "width": 960,
+  "height": 540,
+  "seed": 302,
+  "preset": "veryfast",
+  "crf": 18,
+  "transition_fraction": 0,
+  "scenes": [
+    {
+      "id": "PROOF_MILL",
+      "image": "hero_library/prepared/hero_007.png",
+      "duration": 3,
+      "family": "village",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.48,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "id": "PROOF_TAVERN",
+      "image": "hero_library/prepared/hero_012.png",
+      "duration": 3,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "firelight",
+        "haze",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.72,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "id": "PROOF_DAWN",
+      "image": "hero_library/prepared/hero_024.png",
+      "duration": 3,
+      "family": "dawn",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.48,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.22,
+        0.16
+      ]
+    }
+  ]
+}
+

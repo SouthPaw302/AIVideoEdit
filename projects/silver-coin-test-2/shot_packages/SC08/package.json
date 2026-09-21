@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC08",
+  "title": "Final wagon at dusk",
+  "production_mode": "living_scene",
+  "frame_range": [
+    551,
+    807
+  ],
+  "time_range_seconds": [
+    22.9413,
+    33.6689
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_009.png",
+      "sha256": "97c80340ac3ff38dd2cbde1674689f11c26a98aa5a0cd9bd76db80c02927a082",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

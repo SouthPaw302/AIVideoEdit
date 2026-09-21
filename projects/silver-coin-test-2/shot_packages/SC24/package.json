@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC24",
+  "title": "Wine belongs tonight",
+  "production_mode": "living_scene",
+  "frame_range": [
+    3855,
+    3987
+  ],
+  "time_range_seconds": [
+    160.6356,
+    166.162
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_022.png",
+      "sha256": "1dce7ee787eb7bf9f360089e5a4d2a33f75164da1130b187883a995354b5793d",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

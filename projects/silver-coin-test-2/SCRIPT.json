@@ -1,10 +1,856 @@
 {
   "schema": "aivideoedit.video-script.v1",
-  "locked": false,
-  "based_on_storyboard": false,
+  "locked": true,
+  "based_on_storyboard": true,
   "target_fps": 24,
-  "duration_seconds": 207.44,
   "total_frames": 4979,
-  "basis": ["current_user_instruction", "uploaded_source_media", "canonical_audio_duration"],
-  "entries": []
+  "duration_seconds": 207.44,
+  "basis": [
+    "storyboard",
+    "music_analysis",
+    "lyrics"
+  ],
+  "entries": [
+    {
+      "shot_id": "SC01",
+      "start_frame": 0,
+      "end_frame": 46,
+      "start_seconds": 0,
+      "end_seconds": 1.9737,
+      "section": "intro",
+      "visual_action": "Open on the uploaded forest heroine; drifting pollen and canvas grain establish the new visual world.",
+      "visual_media": "hero_library/prepared/hero_001.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured intro phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Instrumental opening: luminous forest breath.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC02",
+      "start_frame": 47,
+      "end_frame": 94,
+      "start_seconds": 1.9737,
+      "end_seconds": 3.9474,
+      "section": "intro",
+      "visual_action": "Ease attention toward her alert profile while leaves breathe independently.",
+      "visual_media": "hero_library/prepared/hero_002.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured intro phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Instrumental opening: character reveal.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC03",
+      "start_frame": 95,
+      "end_frame": 141,
+      "start_seconds": 3.9474,
+      "end_seconds": 5.9211,
+      "section": "intro",
+      "visual_action": "Let crown flowers and background haze move without facial warping.",
+      "visual_media": "hero_library/prepared/hero_003.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured intro phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Instrumental opening: profile and flower crown.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC04",
+      "start_frame": 142,
+      "end_frame": 188,
+      "start_seconds": 5.9211,
+      "end_seconds": 7.8948,
+      "section": "intro",
+      "visual_action": "Her hand enters the gesture; preserve eyes, mouth, and hand anatomy.",
+      "visual_media": "hero_library/prepared/hero_004.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured intro phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Instrumental opening: hand begins to rise.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC05",
+      "start_frame": 189,
+      "end_frame": 236,
+      "start_seconds": 7.8948,
+      "end_seconds": 9.8685,
+      "section": "intro",
+      "visual_action": "Hold the tactile flower moment as the music gathers.",
+      "visual_media": "hero_library/prepared/hero_005.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured intro phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Instrumental opening: tactile flower gesture.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC06",
+      "start_frame": 237,
+      "end_frame": 283,
+      "start_seconds": 9.8685,
+      "end_seconds": 11.8422,
+      "section": "intro",
+      "visual_action": "Resolve the source-derived overture on a calm close portrait.",
+      "visual_media": "hero_library/prepared/hero_006.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured intro phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Instrumental opening: resolve into lyric world.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC07",
+      "start_frame": 284,
+      "end_frame": 550,
+      "start_seconds": 11.8422,
+      "end_seconds": 22.9413,
+      "section": "verse_1",
+      "visual_action": "Cut to cold dawn labor at the mill; sacks, grain, and pale air carry the lyric.",
+      "visual_media": "hero_library/prepared/hero_007.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured verse_1 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "The morning steals the warmth away; the miller counts his gold.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC08",
+      "start_frame": 551,
+      "end_frame": 807,
+      "start_seconds": 22.9413,
+      "end_seconds": 33.6689,
+      "section": "verse_1",
+      "visual_action": "Move through the last wagon under cooling dusk light.",
+      "visual_media": "hero_library/prepared/hero_009.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured verse_1 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "We carry sacks and wood and grain until the night turns cold.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC09",
+      "start_frame": 808,
+      "end_frame": 1073,
+      "start_seconds": 33.6689,
+      "end_seconds": 44.7449,
+      "section": "verse_1",
+      "visual_action": "Enter warm communal firelight as the heroine claims a scrap of joy.",
+      "visual_media": "hero_library/prepared/hero_010.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured verse_1 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "But when the final wagon rests and fire fills the room, I drink to every scrap of joy and laugh away the gloom.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC10",
+      "start_frame": 1074,
+      "end_frame": 1206,
+      "start_seconds": 44.7449,
+      "end_seconds": 50.2712,
+      "section": "chorus_1",
+      "visual_action": "Explode into the first mug-raise with ember accents and lantern shafts.",
+      "visual_media": "hero_library/prepared/hero_008.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured chorus_1 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Raise your mugs and stamp the beat, tonight we will not mourn!",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC11",
+      "start_frame": 1207,
+      "end_frame": 1471,
+      "start_seconds": 50.2712,
+      "end_seconds": 61.3471,
+      "section": "chorus_1",
+      "visual_action": "Answer the downbeat with boots, skirts, and vibrating floorboards.",
+      "visual_media": "hero_library/prepared/hero_011.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured chorus_1 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "What the master takes by day we take back before dawn. Play, my fiddler, fast and loud, until the floorboards shake.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC12",
+      "start_frame": 1472,
+      "end_frame": 1703,
+      "start_seconds": 61.3471,
+      "end_seconds": 71,
+      "section": "chorus_1",
+      "visual_action": "Widen to the whole poor-but-rich tavern community.",
+      "visual_media": "hero_library/prepared/hero_012.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured chorus_1 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Poor in coin, but rich in song, while living hearts still wake!",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC13",
+      "start_frame": 1704,
+      "end_frame": 1936,
+      "start_seconds": 71,
+      "end_seconds": 80.7126,
+      "section": "verse_2",
+      "visual_action": "Introduce the overdressed merchant leaning in with silk and boastful confidence.",
+      "visual_media": "hero_library/prepared/hero_013.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured verse_2 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "A merchant spoke of finest silk and swore his love was true.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC14",
+      "start_frame": 1937,
+      "end_frame": 2127,
+      "start_seconds": 80.7126,
+      "end_seconds": 88.677,
+      "section": "verse_2",
+      "visual_action": "Isolate the dry cup and his vanished promise.",
+      "visual_media": "hero_library/prepared/hero_014.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured verse_2 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "But when his little cup ran dry, his promise vanished too.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC15",
+      "start_frame": 2128,
+      "end_frame": 2401,
+      "start_seconds": 88.677,
+      "end_seconds": 100.1012,
+      "section": "verse_2",
+      "visual_action": "Make the hat-and-coin theft playful and unmistakable.",
+      "visual_media": "hero_library/prepared/hero_015.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured verse_2 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "So I took his hat and silver coin and left the man alone.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC16",
+      "start_frame": 2402,
+      "end_frame": 2543,
+      "start_seconds": 100.1012,
+      "end_seconds": 106,
+      "section": "verse_2",
+      "visual_action": "Leave the merchant alone outside in blue cold.",
+      "visual_media": "hero_library/prepared/hero_016.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured verse_2 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Who brings a barmaid lies and boasts may thirst out in the cold!",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC17",
+      "start_frame": 2544,
+      "end_frame": 2800,
+      "start_seconds": 106,
+      "end_seconds": 116.7035,
+      "section": "chorus_2",
+      "visual_action": "Return inside on a larger, freer second chorus.",
+      "visual_media": "hero_library/prepared/hero_017.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured chorus_2 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Raise your mugs and stamp the beat, tonight we will not mourn!",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC18",
+      "start_frame": 2801,
+      "end_frame": 3066,
+      "start_seconds": 116.7035,
+      "end_seconds": 127.7794,
+      "section": "chorus_2",
+      "visual_action": "Hit the stamp-beat through low-angle legs and skirts.",
+      "visual_media": "hero_library/prepared/hero_011.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured chorus_2 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "What the master takes by day we take back before dawn. Play, my fiddler, fast and loud, until the floorboards shake.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC19",
+      "start_frame": 3067,
+      "end_frame": 3311,
+      "start_seconds": 127.7794,
+      "end_seconds": 138,
+      "section": "chorus_2",
+      "visual_action": "Release to a wide communal chorus tableau.",
+      "visual_media": "hero_library/prepared/hero_012.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured chorus_2 phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Poor in coin, but rich in song, while living hearts still wake!",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC20",
+      "start_frame": 3312,
+      "end_frame": 3456,
+      "start_seconds": 138,
+      "end_seconds": 144.0566,
+      "section": "bridge",
+      "visual_action": "Bring farmer, smith, and carter forward in comic argument and song.",
+      "visual_media": "hero_library/prepared/hero_018.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured bridge phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "The farmer curses, smith turns red, the carter sings too loud.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC21",
+      "start_frame": 3457,
+      "end_frame": 3588,
+      "start_seconds": 144.0566,
+      "end_seconds": 149.5597,
+      "section": "bridge",
+      "visual_action": "Reveal the maid hiding the landlord’s bread as a sly punchline.",
+      "visual_media": "hero_library/prepared/hero_019.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured bridge phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "The maid has hidden the landlord’s bread,",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC22",
+      "start_frame": 3589,
+      "end_frame": 3722,
+      "start_seconds": 149.5597,
+      "end_seconds": 155.1093,
+      "section": "bridge",
+      "visual_action": "Give the lovers a brief intimate pocket inside the crowd.",
+      "visual_media": "hero_library/prepared/hero_020.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured bridge phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "the farmhand kisses his love.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC23",
+      "start_frame": 3723,
+      "end_frame": 3854,
+      "start_seconds": 155.1093,
+      "end_seconds": 160.6356,
+      "section": "bridge",
+      "visual_action": "Cool and quiet the room around tomorrow’s work and debts.",
+      "visual_media": "hero_library/prepared/hero_021.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured bridge phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Tomorrow work will call again, tomorrow debts are due.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC24",
+      "start_frame": 3855,
+      "end_frame": 3987,
+      "start_seconds": 160.6356,
+      "end_seconds": 166.162,
+      "section": "bridge",
+      "visual_action": "Rewarm the table into a defiant communal feast.",
+      "visual_media": "hero_library/prepared/hero_022.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured bridge phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "But wine and songs belong tonight to those with little coin.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC25",
+      "start_frame": 3988,
+      "end_frame": 4120,
+      "start_seconds": 166.162,
+      "end_seconds": 171.6883,
+      "section": "final_chorus",
+      "visual_action": "Launch the final chorus with the heroine and fiddler commanding the room.",
+      "visual_media": "hero_library/prepared/hero_023.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured final_chorus phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Raise your mugs and stamp the beat, until the morning breaks!",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC26",
+      "start_frame": 4121,
+      "end_frame": 4382,
+      "start_seconds": 171.6883,
+      "end_seconds": 182.6249,
+      "section": "final_chorus",
+      "visual_action": "Drive bitterness out through circular dance and rising embers.",
+      "visual_media": "hero_library/prepared/hero_017.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured final_chorus phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Everything that makes life bitter tonight we drive away.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC27",
+      "start_frame": 4383,
+      "end_frame": 4515,
+      "start_seconds": 182.6249,
+      "end_seconds": 188.1745,
+      "section": "final_chorus",
+      "visual_action": "Return to the rafters-shaking hero composition at maximum energy.",
+      "visual_media": "hero_library/prepared/hero_023.png",
+      "animation_behavior": "Regional mesh-breath, smoke, embers, firelight, heat haze, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured final_chorus phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Play, my fiddler, fast and loud, until the rafters shake.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC28",
+      "start_frame": 4516,
+      "end_frame": 4775,
+      "start_seconds": 188.1745,
+      "end_seconds": 199,
+      "section": "final_chorus",
+      "visual_action": "Let predawn blue enter while the dance continues.",
+      "visual_media": "hero_library/prepared/hero_024.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured final_chorus phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Poor in coin, but rich in song,",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC29",
+      "start_frame": 4776,
+      "end_frame": 4943,
+      "start_seconds": 199,
+      "end_seconds": 206,
+      "section": "final_chorus",
+      "visual_action": "Open the tavern door to gold morning and shared departure.",
+      "visual_media": "hero_library/prepared/hero_025.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured final_chorus phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "while living hearts still wake!",
+      "transition": "Hard cut on the next measured phrase boundary."
+    },
+    {
+      "shot_id": "SC30",
+      "start_frame": 4944,
+      "end_frame": 4978,
+      "start_seconds": 206,
+      "end_seconds": 207.44,
+      "section": "outro",
+      "visual_action": "Close on the original heroine touching a flower; the new night survives in her expression.",
+      "visual_media": "hero_library/prepared/hero_006.png",
+      "animation_behavior": "Regional mesh-breath, atmospheric drift, sparse particles, light shafts, and canvas lock.",
+      "motion_regions": [
+        "motivated atmosphere and light",
+        "hair and garment edges",
+        "foliage or crowd silhouettes"
+      ],
+      "protected_regions": [
+        "faces and eyes",
+        "hands and fingers",
+        "primary silhouette",
+        "architectural straight lines"
+      ],
+      "music_cues": [
+        "Measured outro phrase boundary",
+        "Motion and cut energy follow the 86 BPM phrase."
+      ],
+      "lyric_cue": "Instrumental coda: the flower-crowned heroine holds the final note.",
+      "transition": "Hard cut on the next measured phrase boundary."
+    }
+  ]
 }
+

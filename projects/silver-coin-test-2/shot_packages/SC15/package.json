@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC15",
+  "title": "Hat and silver coin",
+  "production_mode": "living_scene",
+  "frame_range": [
+    2128,
+    2401
+  ],
+  "time_range_seconds": [
+    88.677,
+    100.1012
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_015.png",
+      "sha256": "7d94a409b4ffef8680ba9ccd40e9f5b66b0aa08a65b2343c3ff77f667477dc02",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

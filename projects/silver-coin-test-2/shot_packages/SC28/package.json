@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC28",
+  "title": "Dance into morning",
+  "production_mode": "living_scene",
+  "frame_range": [
+    4516,
+    4775
+  ],
+  "time_range_seconds": [
+    188.1745,
+    199
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_024.png",
+      "sha256": "32c19ed7ebcc6a4987813e7f3295fb8c7711de002013db5a332b759fbf799dd7",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

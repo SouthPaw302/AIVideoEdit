@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC21",
+  "title": "Hidden bread",
+  "production_mode": "living_scene",
+  "frame_range": [
+    3457,
+    3588
+  ],
+  "time_range_seconds": [
+    144.0566,
+    149.5597
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_019.png",
+      "sha256": "3329f1a1f5d63de0e39e84de64700e778dec445039c7684394ad1420ab6b8a5f",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

@@ -1,13 +1,6 @@
 # Silver Coin — Test 2
 
-This is a fresh Silver Coin render test created from `main`.
+A totally new 207.44-second, 16:9 lyric-led living-painting video built from the new six-second source clip, remastered WAV, and current-user lyrics. It follows the repo scan → analysis → storyboard → script → shot packages → FX lock → assembly → QC order.
 
-## Scope
+The picture plan contains 25 hero stills: six source-derived anchors and nineteen new lyric scenes. Thirty timed shots cover all 4,979 frames at 24 fps.
 
-- Use only the newly supplied `imagine-5558fc80.mp4` and the canonical Silver Coin WAV.
-- Do not use prior Silver Coin references, hero frames, FX clips, shot plans, renders, or branch media.
-- Build a new 16:9 source-derived visual treatment with reframing, bounded color/motion variation, and editorial transitions.
-
-## Delivery target
-
-`Silver_Coin_Test2_1280x720_24fps.mp4`, using the full canonical WAV at its source duration.

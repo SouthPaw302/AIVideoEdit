@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC05",
+  "title": "Forest overture V",
+  "production_mode": "living_scene",
+  "frame_range": [
+    189,
+    236
+  ],
+  "time_range_seconds": [
+    7.8948,
+    9.8685
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_005.png",
+      "sha256": "ccd85290cfa82ada455dc30ed8c447305afdc0a3f94a99d8517e8f21ea453db5",
+      "status": "derived"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

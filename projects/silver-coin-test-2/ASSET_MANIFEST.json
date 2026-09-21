@@ -1,9 +1,404 @@
 {
-  "schema": "aivideoedit.asset-manifest.v1",
-  "branch": "song/silver-coin-test-2",
+  "schema": "aivideoedit.asset-manifest.v2",
   "assets": [
-    {"filename": "imagine-5558fc80.mp4", "role": "sole_visual_source", "origin": "uploaded", "lifecycle_status": "approved", "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803", "duration_seconds": 6.041667, "resolution": [560, 560], "fps": 24},
-    {"filename": "Silver Coin (Remastered).wav", "role": "canonical_audio", "origin": "resupplied", "lifecycle_status": "approved", "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92", "duration_seconds": 207.44, "sample_rate_hz": 48000, "channels": 2}
-  ],
-  "excluded": "All prior Silver Coin references, effects, hero media, shot plans, and renders."
+    {
+      "id": "source_video",
+      "kind": "video",
+      "role": "accepted visual-world source",
+      "origin": "source",
+      "file_or_locator": "media/imagine-5558fc80.mp4",
+      "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+      "lifecycle_status": "canonical"
+    },
+    {
+      "id": "canonical_audio",
+      "kind": "audio",
+      "role": "master soundtrack",
+      "origin": "source",
+      "file_or_locator": "media/Silver Coin (Remastered).wav",
+      "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+      "lifecycle_status": "canonical"
+    },
+    {
+      "id": "hero_001",
+      "kind": "prepared source-derived hero still",
+      "role": "living-scene picture plate",
+      "origin": "source_derived",
+      "file_or_locator": "hero_library/prepared/hero_001.png",
+      "sha256": "a291f88a0286a2ffb80c136bdacc383f740839e85cf4352c3979255893d63cd0",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "derivation": "all-frame scan, diversity selection, and 16:9 prepared-plate reframing",
+        "source_time_seconds": 0,
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "hero_002",
+      "kind": "prepared source-derived hero still",
+      "role": "living-scene picture plate",
+      "origin": "source_derived",
+      "file_or_locator": "hero_library/prepared/hero_002.png",
+      "sha256": "03db33c6572d89d20724e531906a7abb648ef28d00e4b5859df9adc299ddb7a3",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "derivation": "all-frame scan, diversity selection, and 16:9 prepared-plate reframing",
+        "source_time_seconds": 0.6,
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "hero_003",
+      "kind": "prepared source-derived hero still",
+      "role": "living-scene picture plate",
+      "origin": "source_derived",
+      "file_or_locator": "hero_library/prepared/hero_003.png",
+      "sha256": "60c2eb2e0d4c233d19b284723dc6708f757bb9a686960b87a333222ad64a23fb",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "derivation": "all-frame scan, diversity selection, and 16:9 prepared-plate reframing",
+        "source_time_seconds": 1.3,
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "hero_004",
+      "kind": "prepared source-derived hero still",
+      "role": "living-scene picture plate",
+      "origin": "source_derived",
+      "file_or_locator": "hero_library/prepared/hero_004.png",
+      "sha256": "ca4ed21435abda0b2ad54ffad4b545be6f140ffd1042bb3e50779f26b720300a",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "derivation": "all-frame scan, diversity selection, and 16:9 prepared-plate reframing",
+        "source_time_seconds": 2.3,
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "hero_005",
+      "kind": "prepared source-derived hero still",
+      "role": "living-scene picture plate",
+      "origin": "source_derived",
+      "file_or_locator": "hero_library/prepared/hero_005.png",
+      "sha256": "ccd85290cfa82ada455dc30ed8c447305afdc0a3f94a99d8517e8f21ea453db5",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "derivation": "all-frame scan, diversity selection, and 16:9 prepared-plate reframing",
+        "source_time_seconds": 3.3,
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "hero_006",
+      "kind": "prepared source-derived hero still",
+      "role": "living-scene picture plate",
+      "origin": "source_derived",
+      "file_or_locator": "hero_library/prepared/hero_006.png",
+      "sha256": "12f9d5c888aad64dca410f2312209f62ddeaadcd4aecaae98a936382e5224ee4",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "derivation": "all-frame scan, diversity selection, and 16:9 prepared-plate reframing",
+        "source_time_seconds": 5,
+        "replaces_source_library": false
+      }
+    },
+    {
+      "id": "hero_007",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_007.png",
+      "sha256": "4ed867d8917c4c97f55563b2e9e6a04599c8d368910027717a5909d51310b634",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_008",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_008.png",
+      "sha256": "51e6d6f6d35b8bc1f6be640a4f4e4f872b67a80ef1d58dcfe67426981d48ba1e",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_009",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_009.png",
+      "sha256": "97c80340ac3ff38dd2cbde1674689f11c26a98aa5a0cd9bd76db80c02927a082",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_010",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_010.png",
+      "sha256": "d21798c445975538fc0c96a03a8402ab41c6e2a8f75d1ff7046bef81c7270f47",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_011",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_011.png",
+      "sha256": "13b2ca27db506aa0bc921b26e6a44edcfc1f99dff772fc358f250d3b4c7f14ee",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_012",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_012.png",
+      "sha256": "62c45c0d05b9a5bbf5b9fe75f9fbc385ddaa4a740d59b714663b73286d86b6b4",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_013",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_013.png",
+      "sha256": "536f72397ec9ab76f673fb2c4889a7368a8b2edc6f00b134ea1e008a447bb62b",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_014",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_014.png",
+      "sha256": "b1536098d8ecc281952e5d977f63ddb669df07d493ffbe858faf40bb04e795fe",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_015",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_015.png",
+      "sha256": "7d94a409b4ffef8680ba9ccd40e9f5b66b0aa08a65b2343c3ff77f667477dc02",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_016",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_016.png",
+      "sha256": "e40c8689e626cc29bbbf87b16d738af7eace6bcd31be1ba2edb8612404e2fbb4",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_017",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_017.png",
+      "sha256": "2987b9c6d87ed3b5dc6c30ae05ac2862d7b309e2dd61fb4e75d1ab66b647d7f7",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_018",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_018.png",
+      "sha256": "3aa5860f20e41dc3046f79c875af8410ee97e135828b9b26b14e61d5416d39fd",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_019",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_019.png",
+      "sha256": "3329f1a1f5d63de0e39e84de64700e778dec445039c7684394ad1420ab6b8a5f",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_020",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_020.png",
+      "sha256": "f205d80dea25f5dfc1954687283a8af282d22219f216384857615f188e90ba9e",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_021",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_021.png",
+      "sha256": "4777e0ce3abbfdc0bc25a7b7ea2c532aa1035a5e74abe677ba61ad5ae7b75e32",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_022",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_022.png",
+      "sha256": "1dce7ee787eb7bf9f360089e5a4d2a33f75164da1130b187883a995354b5793d",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_023",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_023.png",
+      "sha256": "19f664be151367dc42375717476d1f9f2712adecb28889c08ef46229168d58fc",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_024",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_024.png",
+      "sha256": "32c19ed7ebcc6a4987813e7f3295fb8c7711de002013db5a332b759fbf799dd7",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    },
+    {
+      "id": "hero_025",
+      "kind": "generated hero still",
+      "role": "living-scene picture plate",
+      "origin": "generated",
+      "file_or_locator": "hero_library/prepared/hero_025.png",
+      "sha256": "2b19022f2d7cc1d12e1a40f9dbb3fe10da39ddfc139720b15ee155420c24eb0c",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "generated",
+        "method": "OpenAI image generation from current uploaded-source identity and current-user lyrics only",
+        "source_identity_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+        "old_reference_reuse": false
+      }
+    }
+  ]
 }

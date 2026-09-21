@@ -1,9 +1,131 @@
 {
   "schema": "aivideoedit.music-analysis.v1",
-  "analysis_complete": false,
-  "lyrics": {"status": "unknown", "source": "not supplied", "text_file": null, "directing_use": "required"},
-  "genre": {"status": "unknown", "label": "unresolved", "source": "not supplied", "confidence": 0.0},
-  "rhythm": {"tempo_status": "not_analyzed", "tempo_bpm": null, "pulse_description": "not analyzed", "meter_or_groove": "not analyzed"},
-  "sections": [],
-  "note": "Test 2 render uses the untouched canonical WAV for timing/duration; musical analysis remains pending and is not used to claim artistic lock."
+  "analysis_complete": true,
+  "source_audio": {
+    "file_or_locator": "media/Silver Coin (Remastered).wav",
+    "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+    "duration_seconds": 207.44,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "audiomap": "analysis/audiomap.json"
+  },
+  "lyrics": {
+    "status": "present",
+    "text_file": "LYRICS.md",
+    "source": "current_user_instruction",
+    "directing_use": "required"
+  },
+  "genre": {
+    "status": "confident",
+    "label": "medieval tavern folk drinking song",
+    "confidence": 0.91,
+    "source": "lyrics, instrumentation, pulse, and form"
+  },
+  "rhythm": {
+    "tempo_status": "measured",
+    "tempo_bpm": 86.1328,
+    "pulse_description": "Steady stomping folk pulse with communal chorus accents.",
+    "meter_or_groove": "Strong four-beat tavern-folk groove with broad half-time feel."
+  },
+  "sections": [
+    {
+      "label": "intro",
+      "start_seconds": 0,
+      "end_seconds": 11.8422,
+      "energy": "low to gathering",
+      "musical_cues": [
+        "six short instrumental phrases",
+        "soft 86 BPM pulse"
+      ],
+      "visual_function": "Introduce the heroine and source world."
+    },
+    {
+      "label": "verse_1",
+      "start_seconds": 11.8422,
+      "end_seconds": 44.7449,
+      "energy": "restrained labor rising to warmth",
+      "musical_cues": [
+        "vocal entrance",
+        "lift near 28 seconds",
+        "release near 43 seconds"
+      ],
+      "visual_function": "Move from labor to tavern refuge."
+    },
+    {
+      "label": "chorus_1",
+      "start_seconds": 44.7449,
+      "end_seconds": 71,
+      "energy": "high communal release",
+      "musical_cues": [
+        "mug-raise attack",
+        "stamping pulse",
+        "cadence at 71 seconds"
+      ],
+      "visual_function": "Collective defiance and dance."
+    },
+    {
+      "label": "verse_2",
+      "start_seconds": 71,
+      "end_seconds": 106,
+      "energy": "comic narrative with pointed accents",
+      "musical_cues": [
+        "merchant entrance",
+        "empty-cup break",
+        "coin action"
+      ],
+      "visual_function": "Stage boast, dry cup, theft, and exile."
+    },
+    {
+      "label": "chorus_2",
+      "start_seconds": 106,
+      "end_seconds": 138,
+      "energy": "renewed and broader",
+      "musical_cues": [
+        "chorus re-entry",
+        "stamp near 119 seconds",
+        "wide release near 128 seconds"
+      ],
+      "visual_function": "Escalate communal celebration."
+    },
+    {
+      "label": "bridge",
+      "start_seconds": 138,
+      "end_seconds": 171.6883,
+      "energy": "vignettes then reflective warmth",
+      "musical_cues": [
+        "ensemble calls",
+        "brief tenderness",
+        "dip before final chorus"
+      ],
+      "visual_function": "Workers, bread, lovers, debt, and feast."
+    },
+    {
+      "label": "final_chorus",
+      "start_seconds": 171.6883,
+      "end_seconds": 206,
+      "energy": "maximum release opening into dawn",
+      "musical_cues": [
+        "final refrain",
+        "surges near 190–202 seconds",
+        "morning cadence"
+      ],
+      "visual_function": "Peak and predawn release."
+    },
+    {
+      "label": "outro",
+      "start_seconds": 206,
+      "end_seconds": 207.44,
+      "energy": "resolved",
+      "musical_cues": [
+        "final held cadence"
+      ],
+      "visual_function": "Flower-touching coda."
+    }
+  ],
+  "energy_curve": "Quiet intro; labor verse; warm chorus; comic verse; broad chorus; vignette bridge; maximal final chorus into dawn; brief coda.",
+  "musical_cues": [
+    "section boundaries at 11.84, 44.74, 71, 106, 138, 171.69, and 206 seconds",
+    "surges near 28, 43, 71, 84, 94, 104–106, 119, 128, 138, and 190–202 seconds"
+  ],
+  "narrative_function": "Transform deprivation into shared agency, wit, love, and song."
 }

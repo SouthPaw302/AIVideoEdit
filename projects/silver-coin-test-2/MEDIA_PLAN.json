@@ -1,12 +1,37 @@
 {
-  "schema": "aivideoedit.media-plan.v1",
+  "schema": "aivideoedit.media-plan.v2",
+  "direction_authority": "user_directed",
+  "production_mode": "living_scene",
   "user_approach_established": true,
-  "selected_capabilities": ["source_video", "source_derived_motion_loop", "reframing", "color_chapters", "editorial_transitions", "deterministic_resumable_render_delivery", "temporal_qc_scan"],
+  "selected_capabilities": [
+    "source_video",
+    "extracted_frames",
+    "accepted_source_library",
+    "canonical_hero_library",
+    "source_derived_coverage",
+    "generated_stills",
+    "living_painting",
+    "living_still_fx",
+    "atmospheric_plate",
+    "transition_media",
+    "analysis_qc_media"
+  ],
   "visual_direction_gate": {
     "required": false,
     "presented_in_chat": false,
     "locked": true,
-    "user_selection": {"status": "selected", "selected_option_numbers": [], "recorded_user_instruction": "Create a totally new Test 2 from the uploaded video and same WAV; do not use old references."}
+    "reason": "The user supplied and authorized a visual-world clip and directly specified a new lyric-led 25-hero treatment."
   },
-  "source_policy": "Only the uploaded video and canonical WAV may enter the render."
+  "approach": "Six diverse source frames plus nineteen new lyric-specific painterly scenes, animated by the repo living-scene renderer with approved bounded FX and musical hard cuts.",
+  "hero_target": 25,
+  "hero_count": 25,
+  "source_derived_heroes": 6,
+  "generated_heroes": 19,
+  "exclusions": [
+    "old Silver Coin render",
+    "old references",
+    "historical storyboards",
+    "unrelated repos"
+  ]
 }
+

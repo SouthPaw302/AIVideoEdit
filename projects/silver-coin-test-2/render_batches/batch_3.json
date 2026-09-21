@@ -1,0 +1,140 @@
+{
+  "schema": "aivideoedit.living-painting-render.v1",
+  "project": "silver-coin-test-2-batch-3",
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "seed": 302,
+  "preset": "medium",
+  "crf": 18,
+  "transition_fraction": 0,
+  "scenes": [
+    {
+      "id": "SC14",
+      "image": "../hero_library/prepared/hero_014.png",
+      "duration": 7.9644,
+      "family": "coin",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.48,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "id": "SC15",
+      "image": "../hero_library/prepared/hero_015.png",
+      "duration": 11.4242,
+      "family": "coin",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.48,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "id": "SC16",
+      "image": "../hero_library/prepared/hero_016.png",
+      "duration": 5.8988,
+      "family": "threshold",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "firelight",
+        "haze",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.48,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "id": "SC17",
+      "image": "../hero_library/prepared/hero_017.png",
+      "duration": 10.7035,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "firelight",
+        "haze",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.72,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "id": "SC18",
+      "image": "../hero_library/prepared/hero_011.png",
+      "duration": 11.0759,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "firelight",
+        "haze",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.72,
+      "firelight_strength": 0.032,
+      "haze_strength": 0.65,
+      "shaft_strength": 0.028,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ]
+    }
+  ]
+}
+

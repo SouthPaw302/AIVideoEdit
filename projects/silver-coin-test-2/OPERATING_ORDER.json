@@ -1,25 +1,49 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Create a materially new Silver Coin Test 2 video from the newly supplied source clip and the canonical WAV.",
+  "mission": "Create a totally new Silver Coin Test 2 video from the new source clip, new lyric-led hero paintings, and the canonical WAV.",
   "direction_authority": "user_directed",
-  "production_mode": "hybrid",
+  "production_mode": "living_scene",
   "canon_lock": {
     "locked": true,
-    "picture_language": "A fresh source-derived 16:9 treatment built from the uploaded clip, with deliberate reframing, bounded motion, color chapters, and restrained editorial transitions.",
-    "items": ["uploaded imagine-5558fc80.mp4", "canonical Silver Coin WAV"]
+    "picture_language": "Luminous painterly medieval folk world: uploaded flower-crowned heroine anchors a mill-to-tavern lyric narrative with bounded living-scene motion and musical hard cuts.",
+    "items": [
+      "uploaded imagine-5558fc80.mp4 visual identity",
+      "canonical Silver Coin WAV",
+      "current-user lyrics",
+      "25-hero target"
+    ]
   },
-  "accepted_baseline": {"status": "none", "file_or_locator": null, "sha256": null, "user_acceptance_statement": null},
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
   "accepted_source_library": {
     "status": "accepted",
     "role": "visual_world",
-    "file_or_locator": "workspace://silver-coin-test-2-media/imagine-5558fc80.mp4",
+    "file_or_locator": "media/imagine-5558fc80.mp4",
     "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
     "user_acceptance_statement": "Use the newly uploaded video for Test 2; exclude all prior Silver Coin references and media.",
     "content_reuse_authorized": true,
     "timeline_locked": false
   },
-  "refinement_scope": {"active": false, "goal": null, "allowed_changes": [], "forbidden_changes": [], "restart_authorized": true},
-  "recut_scope": {"active": false, "named_defects": [], "allowed_changes": [], "forbidden_changes": ["use prior Silver Coin visual references or renders"], "source_replacement_authorized": false},
-  "current_user_direction": "Create Test 2 from the new uploaded video and the same WAV, booting from main and excluding the old video's references.",
-  "exact_next_action": "Render the new source-derived Test 2 and run technical and visual QC."
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": true
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [
+      "use prior Silver Coin visual references or renders"
+    ],
+    "source_replacement_authorized": false
+  },
+  "current_user_direction": "Boot from GitHub main, scan the new clip frame by frame, create about 25 hero stills, use the same WAV and supplied lyrics, add effects/transitions, and render a totally new Test 2 without old references.",
+  "exact_next_action": "Run FX gate, representative proof, full render, and QC."
 }

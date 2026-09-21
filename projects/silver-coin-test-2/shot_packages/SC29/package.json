@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC29",
+  "title": "Dawn departure",
+  "production_mode": "living_scene",
+  "frame_range": [
+    4776,
+    4943
+  ],
+  "time_range_seconds": [
+    199,
+    206
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_025.png",
+      "sha256": "2b19022f2d7cc1d12e1a40f9dbb3fe10da39ddfc139720b15ee155420c24eb0c",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

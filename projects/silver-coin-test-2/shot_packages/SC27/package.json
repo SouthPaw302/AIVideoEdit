@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC27",
+  "title": "Rafters shake",
+  "production_mode": "living_scene",
+  "frame_range": [
+    4383,
+    4515
+  ],
+  "time_range_seconds": [
+    182.6249,
+    188.1745
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_023.png",
+      "sha256": "19f664be151367dc42375717476d1f9f2712adecb28889c08ef46229168d58fc",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

@@ -1,6 +1,31 @@
 {
   "schema": "aivideoedit.reference-manifest.v1",
-  "status": "none",
-  "references": [],
-  "exclusion_reason": "The current user explicitly prohibited use of old-video references for Test 2."
+  "status": "analyzed",
+  "videos": [
+    {
+      "name": "imagine-5558fc80.mp4",
+      "role": "accepted visual-world source",
+      "file_or_locator": "media/imagine-5558fc80.mp4",
+      "sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+      "duration_seconds": 6.041667,
+      "fps": 24,
+      "total_frames": 145,
+      "extracted_frames": 145,
+      "extraction_policy": "all_frames",
+      "analysis_complete": true,
+      "analysis_artifacts": [
+        "analysis/frames_all",
+        "analysis/contact_sheets"
+      ],
+      "observations": [
+        "Luminous painterly forest shot.",
+        "Adult blonde flower-crowned woman in cream medieval dress.",
+        "Gesture progresses to touching a flower."
+      ]
+    }
+  ],
+  "images": [],
+  "excluded_sources": [
+    "all old Silver Coin visual material"
+  ]
 }

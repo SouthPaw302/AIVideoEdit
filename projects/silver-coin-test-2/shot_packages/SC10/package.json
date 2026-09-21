@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC10",
+  "title": "Raise your mugs",
+  "production_mode": "living_scene",
+  "frame_range": [
+    1074,
+    1206
+  ],
+  "time_range_seconds": [
+    44.7449,
+    50.2712
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_008.png",
+      "sha256": "51e6d6f6d35b8bc1f6be640a4f4e4f872b67a80ef1d58dcfe67426981d48ba1e",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

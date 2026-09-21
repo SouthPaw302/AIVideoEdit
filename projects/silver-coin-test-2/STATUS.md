@@ -1,9 +1,10 @@
-# Silver Coin Test 2 — Status
+# Status
 
-- Branch: `song/silver-coin-test-2`
-- State: Test 2 rendered; technical QC passed; artistic review pending
-- Visual source: newly supplied `imagine-5558fc80.mp4` only
-- Audio source: canonical `Silver Coin (Remastered).wav`
-- Prior Silver Coin media: explicitly excluded
-- Output: `Silver_Coin_Test2_1280x720_24fps.mp4`
-- Next action: artistic review of the new Test 2 cut
+Stage: FINAL_QC_PASSED (candidate master; user artistic acceptance pending)
+
+- Current-main runtime booted; production, directing, recut, workflow, and canonical FX guards pass.
+- All 145 uploaded source frames scanned; current-user lyrics and 207.44-second WAV analyzed.
+- 25 heroes (six source-derived, nineteen new), 30 real-media shot packages, and 4,979 scripted frames.
+- Proof and full master rendered with the repo living-painting backend; technical and mode-aware QC documented in `QC.md`.
+- Full-resolution master copied to Downloads and projectless deliverables; no old-video visual used.
+

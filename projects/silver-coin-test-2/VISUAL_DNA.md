@@ -1,3 +1,8 @@
-# Test 2 Visual Direction
+# Visual DNA — Silver Coin Test 2
 
-This is not a continuation of the old video. The uploaded clip is the sole visual source. The new treatment uses cinematic 16:9 reframing, slow bounded crop drift, alternating mirrored chapters, distinct warm/cool/monochrome color passages, and short editorial transitions. The source audio is replaced entirely by the canonical WAV.
+The uploaded clip is the only source-world identity: luminous hand-painted realism, an adult blonde woman with a purple flower crown, cream embroidered medieval dress, dense green foliage, warm skin, and visible pigment texture.
+
+New imagery expands that identity into a mill, wagon road, candlelit tavern, comic merchant episode, worker ensemble, intimate bridge vignettes, and predawn release. The heroine remains recognizable through crown, hair, dress silhouette, face shape, and color continuity.
+
+Motion is regional: smoke, embers, light shafts, garment edges, foliage, and crowd silhouettes may breathe. Faces, eyes, hands, principal silhouettes, and architecture stay protected. Transitions are hard musical cuts. The palette travels forest green → labor blue/gold → tavern amber → merchant blue/amber → ember gold → predawn blue and sunlit gold.
+

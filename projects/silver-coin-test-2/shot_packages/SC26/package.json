@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC26",
+  "title": "Living hearts wake",
+  "production_mode": "living_scene",
+  "frame_range": [
+    4121,
+    4382
+  ],
+  "time_range_seconds": [
+    171.6883,
+    182.6249
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_017.png",
+      "sha256": "2987b9c6d87ed3b5dc6c30ae05ac2862d7b309e2dd61fb4e75d1ab66b647d7f7",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+

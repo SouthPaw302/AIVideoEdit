@@ -1,16 +1,11 @@
-# Test 2 Render History
+# Render history
 
-## Test 2 — 2026-09-20
+- Earlier branch attempt rejected; not production authority.
+- Booted current GitHub main runtime at `a4ba15ebb77cebc05752f0403c8fe0d5f62b393f`.
+- Scanned all 145 frames of the new uploaded source; generated 19 lyrical heroes in addition to six source selections.
+- Representative 9-second proof at 960×540, 24 fps: full decode PASS, visual review PASS; same repo backend as production.
+- Canonical FX v2 precompile and lock verification PASS. Current-main promoted proof binary mismatch prevented claiming the promoted IDs.
+- Full render split into five contiguous same-recipe batches; all exit 0 and add to 4,979 frames. Stream-copy picture join plus AAC encoding from the canonical WAV.
+- Rejected first mux because `-shortest` removed one frame. Corrected 1280×720 candidate has all 4,979 frames and passes final QC.
+- Candidate master SHA-256: `7d91825f59470c0997dcb144b219f2bd35c64f691c6f9a9a29354e20deb6b03eb`.
 
-- Boot source: `main` at `a4ba15ebb77cebc05752f0403c8fe0d5f62b393f`
-- Branch: `song/silver-coin-test-2`
-- Visual source: `imagine-5558fc80.mp4`
-- Visual source SHA-256: `162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803`
-- Audio source: `Silver Coin (Remastered).wav`
-- Audio source SHA-256: `6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92`
-- Prior Silver Coin media used: **none**
-- Render: `Silver_Coin_Test2_1280x720_24fps.mp4`
-- Output SHA-256: `d918943732c77654e0fa26382bab9bfbc90c17a7eeefeeb9dd7177c692cb8869`
-- Video: H.264 High, 1280×720, 24 fps
-- Audio: AAC LC, stereo, 48 kHz; source duration 207.44 s
-- Treatment: eight source-only chapters, bounded crop drift, mirror variations, new color chapters, and xfade transitions

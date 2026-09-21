@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "SC16",
+  "title": "The braggart outside",
+  "production_mode": "living_scene",
+  "frame_range": [
+    2402,
+    2543
+  ],
+  "time_range_seconds": [
+    100.1012,
+    106
+  ],
+  "media_evidence": [
+    {
+      "path": "../../hero_library/prepared/hero_016.png",
+      "sha256": "e40c8689e626cc29bbbf87b16d738af7eace6bcd31be1ba2edb8612404e2fbb4",
+      "status": "generated"
+    }
+  ],
+  "motion_regions": [
+    "motivated atmosphere and light",
+    "hair and garment edges",
+    "foliage or crowd silhouettes"
+  ],
+  "protected_regions": [
+    "faces and eyes",
+    "hands and fingers",
+    "primary silhouette",
+    "architectural straight lines"
+  ],
+  "effects": [
+    "micro",
+    "atmosphere",
+    "particles",
+    "firelight",
+    "haze",
+    "shafts",
+    "canvas"
+  ],
+  "transition": "hard cut at measured phrase boundary"
+}
+
