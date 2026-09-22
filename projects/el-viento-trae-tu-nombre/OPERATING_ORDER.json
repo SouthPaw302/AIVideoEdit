@@ -44,7 +44,7 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Use the supplied Island Memory Tapestry storyboard as visual canon; use the current-user lyric sheet and music analysis to time and interpret it; execute through GitHub Actions/DeepSeek harness.",
-  "exact_next_action": "User reviews the complete 1080p export at normal speed. If accepted, record full-export creative acceptance for S01-S11 and advance FINAL_QC_PASSED; otherwise record defects and return to ASSEMBLED refinement.",
-  "updated_at_utc": "2026-09-22T06:50:00Z"
+  "current_user_direction": "Refine the assembled cut toward the selected Island Memory Tapestry Option 3: reduce generic abstraction, make map/embroidery/sea/village/fort/homeland/silhouette/tapestry/thread anchors more legible, and make stronger purposeful use of the effect stack while preserving the song, locked 11-shot timing, and overall visual canon.",
+  "exact_next_action": "Review Option 3 v2 full render candidate MASTER-1080P-OPTION3-V2. Preserve MASTER-1080P-001 as rollback. If v2 is accepted, promote it as the assembly candidate and run final creative/mode-aware QC; otherwise record specific defects for another ASSEMBLED refinement pass.",
+  "updated_at_utc": "2026-09-22T07:58:00Z"
 }

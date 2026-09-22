@@ -691,7 +691,71 @@
         "drive_folder_id": "1i0Ny_IyWzKoMCVgM-V5TRucvtCRNddfQ",
         "drive_master_upload_status": "pending_connector_file_reference"
       }
+    },
+    {
+      "id": "MASTER-1080P-OPTION3-V2",
+      "origin": "rendered",
+      "kind": "refinement_master_candidate",
+      "role": "active_review_candidate",
+      "name": "El_Viento_Trae_Tu_Nombre_option3_v2_1080p.mp4",
+      "sha256": "4ac3f137d9bba34d05665acd9a344883f958bc04415b7b787e2bde2d020b96ab",
+      "size_bytes": 148870496,
+      "lifecycle_status": "candidate",
+      "creative_status": "needs_review",
+      "technical_status": "pass_candidate",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "frames": 2704,
+        "duration_seconds": 112.666667,
+        "codec": "h264"
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "source_sha256": "bb26a35eaf2910531fc9ae057dd04c9315a6ad62425bd8267b9eb826a19c01e5"
+      },
+      "locator": {
+        "current_session": "/mnt/data/el_viento_option3_v2/El_Viento_Trae_Tu_Nombre_option3_v2_1080p.mp4",
+        "drive_upload_status": "blocked_connector_100mb_limit"
+      },
+      "supersedes_for_review": "MASTER-1080P-001",
+      "preserves_previous_candidate": true
+    },
+    {
+      "id": "REVIEW-1080P-OPTION3-V2",
+      "origin": "derived",
+      "kind": "review_encode",
+      "role": "transport_review_derivative",
+      "name": "El_Viento_Trae_Tu_Nombre_option3_v2_1080p_review.mp4",
+      "sha256": "65418a8484229421026c25762edabc7bdde4ad2916c8d83af35d1ae561f1db55",
+      "size_bytes": 63333085,
+      "lifecycle_status": "candidate",
+      "creative_status": "needs_review",
+      "technical_status": "derived_from_master",
+      "provenance": {
+        "master_asset_id": "MASTER-1080P-OPTION3-V2",
+        "master_sha256": "4ac3f137d9bba34d05665acd9a344883f958bc04415b7b787e2bde2d020b96ab"
+      },
+      "locator": {
+        "current_session": "/mnt/data/El_Viento_Trae_Tu_Nombre_option3_v2_1080p_review.mp4",
+        "drive_upload_status": "pending_file_reference"
+      }
+    },
+    {
+      "id": "QC-OPTION3-V2",
+      "origin": "derived",
+      "kind": "analysis_qc_media",
+      "role": "refinement_contact_sheet",
+      "name": "option3_v2_qc_contact.jpg",
+      "sha256": "3f166fa49619479f15c78e8f121f7558f245caa2de5e2575c5fde3102aecd05e",
+      "lifecycle_status": "candidate",
+      "creative_status": "needs_review",
+      "uri": "gdrive://file/1dmBQKAo4uA_AxT-m-fIdsrMAaP2EebNC",
+      "drive_id": "1dmBQKAo4uA_AxT-m-fIdsrMAaP2EebNC"
     }
   ],
-  "note": "Generated production media, accepted proof candidates, and the technically verified full 1080p assembly master are recorded here. Final creative acceptance of the full export is still pending."
+  "note": "Generated production media, accepted proof candidates, preserved v1 assembly, and active Option 3 v2 refinement candidate are recorded here. The v2 full master is technically verified locally but awaits current-user creative review."
 }
