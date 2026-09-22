@@ -6,7 +6,8 @@
     "root_folder_id": "100EDoKDKfGusiYCGs-xGUtpjQuCjLFwH",
     "hero_folder_id": "1h6TJrzB470GXnHwncXzQutpIED4ctNyM",
     "batch_01_fx_folder_id": "1lN0q8MYXZv5nUDkRHPVB4-M2awMECLHo",
-    "batch_02_fx_folder_id": "1if9Ctee4F2HhvHanzLMPz3As4Eqbyl1t"
+    "batch_02_fx_folder_id": "1if9Ctee4F2HhvHanzLMPz3As4Eqbyl1t",
+    "batch_03_fx_folder_id": "1v5sgPErmQHdHBwSrhoYPAt-bucz4rQrz"
   },
   "batch_01": {
     "status": "uploaded",
@@ -146,6 +147,22 @@
         "name": "shot_11_fx_motion_variant_b2.png",
         "drive_id": "1Tco4ERP956V9YrNenCNBF0hYSxoqCmNT",
         "sha256": "f55f05cede15a65c750d65c23bfa6fddb88ee79e33827949d3560fda91f8afcb",
+        "lifecycle_status": "candidate"
+      }
+    ]
+  },
+  "batch_03": {
+    "status": "uploaded",
+    "method": "Storyboard/contact-sheet motion-development variants for FX planning and visual continuity reference.",
+    "assets": [
+      {
+        "name": "batch03_fx_motion_variant_contact_sheet_01.png",
+        "drive_id": "1FIRw9Vwda1gDM31MmcfvzP-1co4eNtDv",
+        "lifecycle_status": "candidate"
+      },
+      {
+        "name": "batch03_fx_motion_variant_contact_sheet_02.png",
+        "drive_id": "1dh823IJfnZGcEC2X62ltwxqrxC6UJXao",
         "lifecycle_status": "candidate"
       }
     ]
