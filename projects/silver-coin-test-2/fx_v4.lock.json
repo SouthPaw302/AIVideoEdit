@@ -1,0 +1,284 @@
+{
+  "schema_version": 2,
+  "gate": "aivideoedit-fx-precompile-v2",
+  "project": "silver-coin-test-2",
+  "runtime": "aivideoedit-fx-v2",
+  "manifest_sha256": "9d2006a0b52ce6dd4b02f06969b6a9d307fa078192361544057c3a91aef3a220",
+  "registry_sha256": "6ffe98b7ad01732e5e3ee5f193ab4014409efe276f4850a1e495c0685cb5f865",
+  "runtime_sha256": "5ab66237f9f0326ee99c24e90c4c4e4962ad96a38e9ebe3f83176e4fe9055d69",
+  "render_inputs": [
+    {
+      "path": "general/reusable/painterly-motion/render_living_painting.py",
+      "sha256": "15124e6476c40b39bc589d92f43349fb7b9c95d19b8df6aa71420789d4ffaca5"
+    },
+    {
+      "path": "general/reusable/painterly-motion/hybrid_painterly_fx.py",
+      "sha256": "f6cb520ed4a8b1f3a140f8ab8e8b81d228849551d93b0b350c6d916815bb74c9"
+    },
+    {
+      "path": "general/reusable/fx_v2/runtime.py",
+      "sha256": "5ab66237f9f0326ee99c24e90c4c4e4962ad96a38e9ebe3f83176e4fe9055d69"
+    },
+    {
+      "path": "general/reusable/fx_v2/promoted_effects.py",
+      "sha256": "0c5edf0b7d8d835e424e6557f75bc61acdac34d5bd7e0538be9794baae744036"
+    }
+  ],
+  "effects": [
+    {
+      "id": "FX2-MOTION-002",
+      "name": "localized_living_flow",
+      "family": "motion",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "2513861e83edf6eef1778bf3c0f53d7615dfc645ac6329f21c7eaaf70f201757",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 0.979954,
+        "temporal_delta_max": 1.798953,
+        "global_shift_px_max": 0.524525,
+        "sample_output_sha256": "92401adc909cfbe7af12bb058d64d8d4da219ed1632c28bcff1c68bfc6181f35"
+      }
+    },
+    {
+      "id": "FX2-MOTION-003",
+      "name": "water_flow",
+      "family": "motion",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "3317b3cda9b602dad8a90dfe498aa379e4751ea8c1e2de531e5ff1e7b410241d",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 1.019873,
+        "temporal_delta_max": 1.869884,
+        "global_shift_px_max": 0.155148,
+        "sample_output_sha256": "b8d3d24d7a2f4d074bcb5893ce8fd8390a0b2208a86a7fac93513f9666c4832c"
+      }
+    },
+    {
+      "id": "FX2-ATM-001",
+      "name": "advected_smoke",
+      "family": "environment",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "a53ce4e7a2d47488097ebc238b4f763a972e1333d3c1752cca4f467073a9e93e",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 1.060174,
+        "temporal_delta_max": 1.4661,
+        "global_shift_px_max": 0.007249,
+        "sample_output_sha256": "769692455a13dd6d9e494bd3cf402e4928cebb0fe88aadcd2760bb07cf4847d8"
+      }
+    },
+    {
+      "id": "FX2-ATM-002",
+      "name": "rain_plane",
+      "family": "environment",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "44b3015c737163c626e2335a65ce1591ae56ba319d5c6689db5e4a60f269734c",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 0.625318,
+        "temporal_delta_max": 1.204277,
+        "global_shift_px_max": 0.036929,
+        "sample_output_sha256": "5a561c7fcf31f3d0d79087c8064c951e69a02f1519f933fbbc3a53d891b0a200"
+      }
+    },
+    {
+      "id": "FX2-FIRE-001",
+      "name": "living_flame",
+      "family": "environment",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "187013ac375267def829ffc8c3e4961c1bc598a7867cdff52c56f97d944d4874",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 11.909537,
+        "temporal_delta_max": 4.196348,
+        "global_shift_px_max": 0.025634,
+        "sample_output_sha256": "2f36e83f6cdfe1ae46d94ac34ec7fd757cbaad0944a93c293c33608db270ef41"
+      }
+    },
+    {
+      "id": "FX2-FIRE-002",
+      "name": "embers",
+      "family": "environment",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "ad5094b1905682c1157482622bf03d3642dd190d4fed53f507935879e6321df1",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 0.22048,
+        "temporal_delta_max": 0.416603,
+        "global_shift_px_max": 0.039719,
+        "sample_output_sha256": "aa7f17587843041cda82104cb2de2b423aa171f2f0f8683a894c34fb5a5080b4"
+      }
+    },
+    {
+      "id": "FX2-LIGHT-001",
+      "name": "practical_light_breath",
+      "family": "light",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "2f5208f853a4553c656bc7a96ba23cacc17498ded2c4fa792a3b4034e968af43",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 1.333333,
+        "temporal_delta_max": 1.666667,
+        "global_shift_px_max": 0.021671,
+        "sample_output_sha256": "dd4a576006b05021154d2069d5a43a3dfc643b6ad327d93b07910049ff6a103d"
+      }
+    },
+    {
+      "id": "FX2-LIGHT-002",
+      "name": "moving_light_field",
+      "family": "light",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "ba82513929f15dba38090967d573b90400afb0e21ef71bc1c35d14f701621a03",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 0.683258,
+        "temporal_delta_max": 0.221522,
+        "global_shift_px_max": 0.021297,
+        "sample_output_sha256": "b79153e30eaf214471f7dcb5ae3159bb5e143a83303ab5fa17128fa5234ceaa3"
+      }
+    },
+    {
+      "id": "FX2-SURFACE-001",
+      "name": "temporal_canvas_lock",
+      "family": "surface",
+      "gate_status": "approved",
+      "implementation": {
+        "kind": "runtime_apply",
+        "method": "apply_canvas"
+      },
+      "implementation_path": null,
+      "implementation_sha256": "93df6d0c8c045b394dc128e9b786ee70940071f0fcb6014ed0d9cb2997b8fc71",
+      "proofs": [
+        {
+          "id": "FX2_PROOF02_LIVING_SCENE_CANONICAL",
+          "record_sha256": "f9f607b1e866bda90070666a757d7cc4c6d0c6e73c21a9ae2f4519f64951b843",
+          "declared_binary_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114",
+          "artifact_path": "general/reusable/fx_v2/proofs/FX2_PROOF02_LIVING_SCENE_CANONICAL.mp4",
+          "artifact_verified": true,
+          "artifact_sha256": "95119228f958e7a5905daf2de812833b6b9197d2e5b9650134a618f43f203114"
+        }
+      ],
+      "conditional_preflight": null,
+      "smoke": {
+        "source_delta_max": 0.525972,
+        "temporal_delta_max": 0.0,
+        "global_shift_px_max": 0.007786,
+        "sample_output_sha256": "49805355044e472aa17042eedd9725388c3513dc69dc27a821318f7cf0039629"
+      }
+    }
+  ],
+  "result": "PASS",
+  "evidence_fingerprint_sha256": "c34954ee705855883a8b96d8e47036bfb39e877087d45d5f8732063c6bffec0d"
+}
