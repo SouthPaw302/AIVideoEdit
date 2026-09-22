@@ -1,9 +1,7 @@
 # Status
 
-Machine stage: **SOURCE_INGESTED**.
+Machine stage: **REFERENCES_ANALYZED**.
 
-GitHub Actions boot is verified. Current-main OS bootstrap and production/directing/recut/workflow guards PASS.
+GitHub Actions boot is verified. Current-user lyrics are canonical narrative input, music analysis is resolved, and the no-reference visual-direction decision is already recorded.
 
-Current-user lyric authority has been resolved and preserved in `LYRICS.md`. Music analysis is complete enough to advance to the reference-analysis gate. Generated hero plates and FX motion variants are now recorded as real hashed Drive media evidence.
-
-Next canonical transition: **REFERENCES_ANALYZED**.
+Next canonical transition: **APPROACH_ESTABLISHED** using the selected Island Memory Tapestry hybrid production plan.

@@ -3,7 +3,7 @@
   "project_id": "el-viento-trae-tu-nombre",
   "branch": "song/el-viento-trae-tu-nombre",
   "director_brain_version": 2,
-  "stage": "SOURCE_INGESTED",
+  "stage": "REFERENCES_ANALYZED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
   "music_analysis_complete": true,
