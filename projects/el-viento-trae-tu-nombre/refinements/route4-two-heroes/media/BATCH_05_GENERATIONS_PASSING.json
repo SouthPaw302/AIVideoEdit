@@ -1,73 +1,73 @@
 {
   "schema": "aivideoedit.media-batch.v1",
   "batch_id": "BATCH-05-GENERATIONS-PASSING",
-  "status": "drive_verified",
-  "role": "production_stills",
+  "status": "drive_verified_canon_replacement",
+  "supersedes_commit": "ef80f7a75f651b4fd36366c8a51a6571f8ff3939",
+  "note": "Earlier drifted tribal/coastal batch rejected by current user and deleted from Drive. This manifest is the canonical script-faithful replacement.",
   "drive_folder": {
-    "id": "18gX-ayroaMiypSRESWoqHY68h99MCO1Y",
-    "url": "https://drive.google.com/drive/folders/18gX-ayroaMiypSRESWoqHY68h99MCO1Y"
+    "id": "1lATLpUCdrVGo0X5fAPE4RvJjp1So7T7j",
+    "url": "https://drive.google.com/drive/folders/1lATLpUCdrVGo0X5fAPE4RvJjp1So7T7j"
   },
   "assets": [
     {
       "index": 1,
-      "name": "01_three_generations_horizon.png",
-      "drive_id": "1hdBcsdrgwvH7YRlRul4XsjbSMJuI9r-z",
-      "drive_url": "https://drive.google.com/file/d/1hdBcsdrgwvH7YRlRul4XsjbSMJuI9r-z/view"
+      "name": "01_threads_of_legacy_at_sunset.png",
+      "drive_id": "1mLFNtK8DDJ9603nEuMK-FWV2YoFp0Tle",
+      "drive_url": "https://drive.google.com/file/d/1mLFNtK8DDJ9603nEuMK-FWV2YoFp0Tle/view"
     },
     {
       "index": 2,
-      "name": "02_elder_amulet_child.png",
-      "drive_id": "1TQWilP_ZFxWzPNl2O9zvqcjc7WXdchNz",
-      "drive_url": "https://drive.google.com/file/d/1TQWilP_ZFxWzPNl2O9zvqcjc7WXdchNz/view"
+      "name": "02_red_gold_thread_of_destiny.png",
+      "drive_id": "1ql2LbtOOSaSii9Cxsl1fOPo-f-x_pdr8",
+      "drive_url": "https://drive.google.com/file/d/1ql2LbtOOSaSii9Cxsl1fOPo-f-x_pdr8/view"
     },
     {
       "index": 3,
-      "name": "03_weaving_generations.png",
-      "drive_id": "15j9t-r3ST0mF9YxtUl60nmxLtusZm46a",
-      "drive_url": "https://drive.google.com/file/d/15j9t-r3ST0mF9YxtUl60nmxLtusZm46a/view"
+      "name": "03_threads_of_memory_at_sunset.png",
+      "drive_id": "1MXPcuJgKV_h1gG-wnCwMSgVNdgvL6dvX",
+      "drive_url": "https://drive.google.com/file/d/1MXPcuJgKV_h1gG-wnCwMSgVNdgvL6dvX/view"
     },
     {
       "index": 4,
-      "name": "04_coastal_craft_heritage.png",
-      "drive_id": "1uL_UGWOqO-t1du-_LtC5pVi2nUR_yvgp",
-      "drive_url": "https://drive.google.com/file/d/1uL_UGWOqO-t1du-_LtC5pVi2nUR_yvgp/view"
+      "name": "04_threads_of_destiny_at_sunset.png",
+      "drive_id": "1u9dvB3DOEBzY5rFukgo9ZgGJzePgi1ls",
+      "drive_url": "https://drive.google.com/file/d/1u9dvB3DOEBzY5rFukgo9ZgGJzePgi1ls/view"
     },
     {
       "index": 5,
-      "name": "05_spiral_stone_lesson.png",
-      "drive_id": "1cPJE-ytsBbYZeRpBtqzNqjdcLi26y5xu",
-      "drive_url": "https://drive.google.com/file/d/1cPJE-ytsBbYZeRpBtqzNqjdcLi26y5xu/view"
+      "name": "05_sunset_chapel_ancestral_love.png",
+      "drive_id": "11zIvRDyxR7615UW300r2ABAVE5dcUZmh",
+      "drive_url": "https://drive.google.com/file/d/11zIvRDyxR7615UW300r2ABAVE5dcUZmh/view"
     },
     {
       "index": 6,
-      "name": "06_net_weaving_shore.png",
-      "drive_id": "1uigOLZ5eM-MrvddYwe_kAnGZkFvStnT9",
-      "drive_url": "https://drive.google.com/file/d/1uigOLZ5eM-MrvddYwe_kAnGZkFvStnT9/view"
+      "name": "06_glowing_thread_of_generations.png",
+      "drive_id": "176YcLIn2d37zY0YM8vrY66Js19GCGzFC",
+      "drive_url": "https://drive.google.com/file/d/176YcLIn2d37zY0YM8vrY66Js19GCGzFC/view"
     },
     {
       "index": 7,
-      "name": "07_basket_weaving_village.png",
-      "drive_id": "1ekSYR9SeN7xrlTgFiLAXhyokqGrpyg-c",
-      "drive_url": "https://drive.google.com/file/d/1ekSYR9SeN7xrlTgFiLAXhyokqGrpyg-c/view"
+      "name": "07_golden_thread_through_generations.png",
+      "drive_id": "1pd0W2aHBiipOAqIxdyphu2q84v5QEDnD",
+      "drive_url": "https://drive.google.com/file/d/1pd0W2aHBiipOAqIxdyphu2q84v5QEDnD/view"
     },
     {
       "index": 8,
-      "name": "08_braiding_by_the_sea.png",
-      "drive_id": "1_J-Hb0c7JuCslOX1X3e5PDaXo7vx8uT9",
-      "drive_url": "https://drive.google.com/file/d/1_J-Hb0c7JuCslOX1X3e5PDaXo7vx8uT9/view"
+      "name": "08_threads_of_fate_at_sunset.png",
+      "drive_id": "1Q1kUIdHToqKyIssjn-HdHmqwLz86I5D0",
+      "drive_url": "https://drive.google.com/file/d/1Q1kUIdHToqKyIssjn-HdHmqwLz86I5D0/view"
     },
     {
       "index": 9,
-      "name": "09_heritage_pendant.png",
-      "drive_id": "1XVSDoDOzz8G7_G3qjLQrpGBD8B99xt7F",
-      "drive_url": "https://drive.google.com/file/d/1XVSDoDOzz8G7_G3qjLQrpGBD8B99xt7F/view"
+      "name": "09_cinematic_sunset_thread.png",
+      "drive_id": "1eUIhZ3E53ciJp_VGOi8iGKZpC1Jj0D48",
+      "drive_url": "https://drive.google.com/file/d/1eUIhZ3E53ciJp_VGOi8iGKZpC1Jj0D48/view"
     },
     {
       "index": 10,
-      "name": "10_family_horizon.png",
-      "drive_id": "1AUHXdyIVu0NE63Eq9K7dEB3rj34MYsRo",
-      "drive_url": "https://drive.google.com/file/d/1AUHXdyIVu0NE63Eq9K7dEB3rj34MYsRo/view"
+      "name": "10_harbor_of_golden_threads.png",
+      "drive_id": "1MxPrqlJazU-88ItyJbEfzsJ5xTFLFVf-",
+      "drive_url": "https://drive.google.com/file/d/1MxPrqlJazU-88ItyJbEfzsJ5xTFLFVf-/view"
     }
-  ],
-  "next_batch": "BATCH-05-FX-VARIATIONS"
+  ]
 }
