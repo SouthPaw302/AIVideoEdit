@@ -42,5 +42,25 @@
     "technical_status": "pass_candidate",
     "contact_sheet_drive_id": "1dmBQKAo4uA_AxT-m-fIdsrMAaP2EebNC"
   },
-  "created_at": "2026-09-22T07:58:00Z"
+  "created_at": "2026-09-22T07:58:00Z",
+  "transfer_artifacts": {
+    "drive_zip": {
+      "id": "18K5NloDVGofrMlJUpjLO9HyNWzkFWIg_",
+      "url": "https://drive.google.com/file/d/18K5NloDVGofrMlJUpjLO9HyNWzkFWIg_/view?usp=drivesdk",
+      "name": "El_Viento_Trae_Tu_Nombre_option3_v2_1080p_review.zip",
+      "size_bytes": 63333265,
+      "sha256": "6f2029f139f3af3e58e23951a4909eb8a33282ec6618627b1c3446687459e399",
+      "note": "Transfer-safe ZIP containing the 1080p Option 3 v2 review encode."
+    }
+  },
+  "review_encode": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "frames": 2704,
+    "duration_seconds": 112.666667,
+    "size_bytes": 63333085,
+    "sha256": "65418a8484229421026c25762edabc7bdde4ad2916c8d83af35d1ae561f1db55",
+    "relation_to_master": "same edit and frame timeline; lower-bitrate transfer encode"
+  }
 }
