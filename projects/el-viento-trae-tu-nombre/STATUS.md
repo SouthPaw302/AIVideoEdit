@@ -1,7 +1,7 @@
 # Status
 
-Machine stage: **STORYBOARD_LOCKED**.
+Machine stage: **SHOT_PACKAGES_BUILT**.
 
-The 11-shot Island Memory Tapestry storyboard and full frame-followable script are locked. Every script span is tied to a real hashed Drive hero plate and carries music + lyric cues. Hybrid living-scene/cinematic behavior is explicitly declared per shot.
+All 11 scripted shots have real Drive-backed packages with hashed primary hero plates and matching bounded motion variants where available. Every package contains the canonical source/alpha/layers/depth/generated/fx_assets/transition/loop/preview/notes structure.
 
-Next canonical transition: build the 11 real-media shot packages and verify media evidence.
+Next canonical transition: render and inspect short moving proofs for mode-aware living-scene/cinematic behavior before FX lock.
