@@ -1,7 +1,9 @@
 # Status
 
-Machine stage: **REFERENCES_ANALYZED**.
+Machine stage: **APPROACH_ESTABLISHED**.
 
-GitHub Actions boot is verified. Current-user lyrics are canonical narrative input, music analysis is resolved, and the no-reference visual-direction decision is already recorded.
+The selected production route is locked: **Island Memory Tapestry**, production mode **hybrid**. Current-user storyboard remains visual canon; canonical lyrics and music analysis control timing/interpretation.
 
-Next canonical transition: **APPROACH_ESTABLISHED** using the selected Island Memory Tapestry hybrid production plan.
+Real generated hero plates and FX-motion support variants are hashed and registered on Drive.
+
+Next canonical transition: lock the full frame-followable script and advance to **STORYBOARD_LOCKED**.
