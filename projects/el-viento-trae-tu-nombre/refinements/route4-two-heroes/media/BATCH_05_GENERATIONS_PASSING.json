@@ -1,0 +1,73 @@
+{
+  "schema": "aivideoedit.media-batch.v1",
+  "batch_id": "BATCH-05-GENERATIONS-PASSING",
+  "status": "drive_verified",
+  "role": "production_stills",
+  "drive_folder": {
+    "id": "18gX-ayroaMiypSRESWoqHY68h99MCO1Y",
+    "url": "https://drive.google.com/drive/folders/18gX-ayroaMiypSRESWoqHY68h99MCO1Y"
+  },
+  "assets": [
+    {
+      "index": 1,
+      "name": "01_three_generations_horizon.png",
+      "drive_id": "1hdBcsdrgwvH7YRlRul4XsjbSMJuI9r-z",
+      "drive_url": "https://drive.google.com/file/d/1hdBcsdrgwvH7YRlRul4XsjbSMJuI9r-z/view"
+    },
+    {
+      "index": 2,
+      "name": "02_elder_amulet_child.png",
+      "drive_id": "1TQWilP_ZFxWzPNl2O9zvqcjc7WXdchNz",
+      "drive_url": "https://drive.google.com/file/d/1TQWilP_ZFxWzPNl2O9zvqcjc7WXdchNz/view"
+    },
+    {
+      "index": 3,
+      "name": "03_weaving_generations.png",
+      "drive_id": "15j9t-r3ST0mF9YxtUl60nmxLtusZm46a",
+      "drive_url": "https://drive.google.com/file/d/15j9t-r3ST0mF9YxtUl60nmxLtusZm46a/view"
+    },
+    {
+      "index": 4,
+      "name": "04_coastal_craft_heritage.png",
+      "drive_id": "1uL_UGWOqO-t1du-_LtC5pVi2nUR_yvgp",
+      "drive_url": "https://drive.google.com/file/d/1uL_UGWOqO-t1du-_LtC5pVi2nUR_yvgp/view"
+    },
+    {
+      "index": 5,
+      "name": "05_spiral_stone_lesson.png",
+      "drive_id": "1cPJE-ytsBbYZeRpBtqzNqjdcLi26y5xu",
+      "drive_url": "https://drive.google.com/file/d/1cPJE-ytsBbYZeRpBtqzNqjdcLi26y5xu/view"
+    },
+    {
+      "index": 6,
+      "name": "06_net_weaving_shore.png",
+      "drive_id": "1uigOLZ5eM-MrvddYwe_kAnGZkFvStnT9",
+      "drive_url": "https://drive.google.com/file/d/1uigOLZ5eM-MrvddYwe_kAnGZkFvStnT9/view"
+    },
+    {
+      "index": 7,
+      "name": "07_basket_weaving_village.png",
+      "drive_id": "1ekSYR9SeN7xrlTgFiLAXhyokqGrpyg-c",
+      "drive_url": "https://drive.google.com/file/d/1ekSYR9SeN7xrlTgFiLAXhyokqGrpyg-c/view"
+    },
+    {
+      "index": 8,
+      "name": "08_braiding_by_the_sea.png",
+      "drive_id": "1_J-Hb0c7JuCslOX1X3e5PDaXo7vx8uT9",
+      "drive_url": "https://drive.google.com/file/d/1_J-Hb0c7JuCslOX1X3e5PDaXo7vx8uT9/view"
+    },
+    {
+      "index": 9,
+      "name": "09_heritage_pendant.png",
+      "drive_id": "1XVSDoDOzz8G7_G3qjLQrpGBD8B99xt7F",
+      "drive_url": "https://drive.google.com/file/d/1XVSDoDOzz8G7_G3qjLQrpGBD8B99xt7F/view"
+    },
+    {
+      "index": 10,
+      "name": "10_family_horizon.png",
+      "drive_id": "1AUHXdyIVu0NE63Eq9K7dEB3rj34MYsRo",
+      "drive_url": "https://drive.google.com/file/d/1AUHXdyIVu0NE63Eq9K7dEB3rj34MYsRo/view"
+    }
+  ],
+  "next_batch": "BATCH-05-FX-VARIATIONS"
+}
