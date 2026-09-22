@@ -3,7 +3,7 @@
   "project_id": "el-viento-trae-tu-nombre",
   "branch": "song/el-viento-trae-tu-nombre",
   "director_brain_version": 2,
-  "stage": "SHOT_PACKAGES_BUILT",
+  "stage": "SHOT_PROOFS_ACCEPTED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
   "music_analysis_complete": true,
@@ -16,11 +16,14 @@
   "media_evidence_verified": true,
   "shot_package_count": 11,
   "shot_package_asset_count": 31,
-  "shot_proofs_accepted": false,
-  "mode_aware_proofs_accepted": false,
+  "shot_proofs_accepted": true,
+  "mode_aware_proofs_accepted": true,
   "fx_lock_verified": false,
   "assembly_complete": false,
   "final_qc_passed": false,
   "mode_aware_qc_passed": false,
-  "archive_complete": false
+  "archive_complete": false,
+  "shot_proof_count": 11,
+  "shot_proof_acceptance_instruction": "Yeah they are good",
+  "shot_proofs_accepted_at": "2026-09-22T06:15:00Z"
 }

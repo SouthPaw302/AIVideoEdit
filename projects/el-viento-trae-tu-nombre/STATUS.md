@@ -1,11 +1,9 @@
 # Status
 
-Machine stage: **SHOT_PACKAGES_BUILT**.
+Machine stage: **SHOT_PROOFS_ACCEPTED**.
 
-All 11 shot packages passed GitHub Actions. Eleven real temporal moving-proof candidates have now been rendered, technically inspected, uploaded to Google Drive, hashed, and registered.
+The current user explicitly accepted all 11 moving proof recipes: "Yeah they are good".
 
-Drive: `04 Moving Proofs` (`1wcGDqY0EpCQ-__io-iKulzThBP0rJtXP`).
+The short proof clips validate motion/composition behavior but are not long enough to serve directly as the full 112.68-second assembly sources. Each production shot must now be expanded to its locked SCRIPT.json duration while preserving the accepted recipe.
 
-The proof candidates remain **needs_review**. The branch is intentionally not advanced to SHOT_PROOFS_ACCEPTED until explicit current-user creative acceptance is recorded.
-
-Next canonical action: review/accept or reject the moving proofs; accepted proofs then unlock the canonical FX-lock stage.
+Next canonical action: select and precompile-lock production-approved FX, render full-duration shot media, then assemble against the canonical audio.
