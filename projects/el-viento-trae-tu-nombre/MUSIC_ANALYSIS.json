@@ -1,0 +1,36 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": false,
+  "source_audio": {
+    "name": "El Viento trae tu nombre (Remastered).wav",
+    "sha256": "bb26a35eaf2910531fc9ae057dd04c9315a6ad62425bd8267b9eb826a19c01e5",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "bit_depth": 16,
+    "duration_seconds": 112.68
+  },
+  "lyrics": {
+    "status": "present",
+    "source": "uploaded_audio",
+    "directing_use": "required",
+    "text_file": null,
+    "verification_status": "pending_current_authoritative_lyric_text"
+  },
+  "genre": {
+    "status": "pending",
+    "label": "pending current-authority resolution",
+    "confidence": null
+  },
+  "rhythm": {
+    "tempo_status": "measured",
+    "tempo_bpm": 89.285714,
+    "pulse_description": "Moderate measured pulse; preliminary phrase grid uses roughly four 4/4 bars per primary storyboard shot.",
+    "meter_or_groove": "Draft 4/4 phrase grouping pending authoritative full music/lyric map."
+  },
+  "tonal_center": {
+    "estimate": "D minor / relative F-major family",
+    "status": "preliminary signal analysis"
+  },
+  "sections": [],
+  "note": "Technical audio ingest is complete; narrative music analysis remains unlocked until the current-authority lyric sheet/status is resolved."
+}

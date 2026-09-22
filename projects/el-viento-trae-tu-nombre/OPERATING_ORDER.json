@@ -1,0 +1,49 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Create a hybrid living-painting music film in which maps, embroidery, sea, architecture, ancestral presence and memory continuously transform into one another and ultimately collapse into a single thread carried away by the wind.",
+  "direction_authority": "user_directed",
+  "production_mode": "hybrid",
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Island Memory Tapestry: handcrafted tactile living painting with continuous material transformation, fluid dreamlike transitions, stable authored compositions and internal material motion before camera motion.",
+    "items": [
+      "Current-user 11-shot Island Memory Tapestry storyboard",
+      "Living breathing painting aesthetic",
+      "Fluid pigment/thread/mist transformations",
+      "Anonymous featureless ancestral silhouettes",
+      "Tapestry-to-thread-to-black resolution"
+    ]
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "accepted_source_library": {
+    "status": "none",
+    "role": null,
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null,
+    "content_reuse_authorized": false,
+    "timeline_locked": false
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "source_replacement_authorized": false
+  },
+  "current_user_direction": "Read current main, act as Director, use the supplied Island Memory Tapestry storyboard, preserve a living breathing handcrafted painting aesthetic with fluid dreamlike transitions, and render in large batches.",
+  "exact_next_action": "Resolve the current-authority lyric/music gate and bootstrap attestation, then generate Hero Render Batch 01 as 11 real image plates and build shot packages from those plates.",
+  "updated_at_utc": "2026-09-22T04:23:00Z"
+}

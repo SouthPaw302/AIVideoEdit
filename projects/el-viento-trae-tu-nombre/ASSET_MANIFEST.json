@@ -1,0 +1,16 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "assets": [
+    {
+      "id": "SRC-AUDIO-001",
+      "origin": "user_supplied",
+      "kind": "audio_master",
+      "role": "canonical_score_source",
+      "name": "El Viento trae tu nombre (Remastered).wav",
+      "sha256": "bb26a35eaf2910531fc9ae057dd04c9315a6ad62425bd8267b9eb826a19c01e5",
+      "lifecycle_status": "canonical",
+      "locator": "current conversation upload / sandbox ingest source"
+    }
+  ],
+  "note": "No production visual asset is recorded until real generated/derived media exists."
+}

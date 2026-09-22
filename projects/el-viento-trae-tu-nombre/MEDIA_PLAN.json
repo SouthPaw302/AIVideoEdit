@@ -1,0 +1,99 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "selected_capabilities": [
+    "generated_stills",
+    "generated_support_imagery",
+    "living_painting",
+    "living_still_fx",
+    "layered_composite",
+    "depth_25d",
+    "atmospheric_plate",
+    "reactive_plate",
+    "transition_media",
+    "analysis_qc_media"
+  ],
+  "visual_direction_gate": {
+    "required": true,
+    "presented_in_chat": true,
+    "options": [
+      {
+        "number": 1,
+        "name": "The Wind Remembers",
+        "story_approach": "A coastal fort retains fragments of a distant relationship through environmental memory.",
+        "rendering_route": "Living scene with restrained atmospheric/internal motion.",
+        "production_mode": "living_scene",
+        "storyboard": [
+          {
+            "number": 1,
+            "description": "Coastal fort and wind."
+          },
+          {
+            "number": 2,
+            "description": "Presence through shadow/reflection."
+          },
+          {
+            "number": 3,
+            "description": "Name carried into sea mist."
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "name": "Letters Across the Water",
+        "story_approach": "Two separated people remain connected through letters carried symbolically across water.",
+        "rendering_route": "Painterly cinematic coverage and match cuts.",
+        "production_mode": "cinematic",
+        "storyboard": [
+          {
+            "number": 1,
+            "description": "Letter written by coast."
+          },
+          {
+            "number": 2,
+            "description": "Paper crosses sea and memory."
+          },
+          {
+            "number": 3,
+            "description": "Letter reaches empty shore."
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "name": "Island Memory Tapestry",
+        "story_approach": "Maps, textile memory, sea travel, place and ancestry transform into one living artwork and distill into a single thread.",
+        "rendering_route": "Hybrid painterly living-scene construction with selective cinematic transformations and bounded camera travel.",
+        "production_mode": "hybrid",
+        "storyboard": [
+          {
+            "number": 1,
+            "description": "Map, embroidery and ocean merge."
+          },
+          {
+            "number": 2,
+            "description": "Village, fort and homeland transform."
+          },
+          {
+            "number": 3,
+            "description": "Ancestral silhouettes, whole tapestry, glowing thread and black."
+          }
+        ]
+      }
+    ],
+    "user_selection": {
+      "status": "selected",
+      "selected_option_numbers": [
+        3
+      ],
+      "recorded_user_instruction": "Route 3 selected and expanded by the current user into the supplied 11-shot Island Memory Tapestry storyboard."
+    },
+    "locked": true
+  },
+  "large_batch_strategy": {
+    "hero_batch_01": "Generate all 11 primary hero plates in one batch while enforcing shared Visual DNA.",
+    "support_batch_02": "Generate only continuity/support plates proven necessary for morphs and layered composites.",
+    "motion_batch_03": "Create semantic masks/depth/layers and living-scene motion by sequence.",
+    "proof_policy": "Render short representative moving proofs before full-song scaling."
+  }
+}
