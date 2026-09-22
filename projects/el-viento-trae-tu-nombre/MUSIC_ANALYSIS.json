@@ -1,6 +1,6 @@
 {
   "schema": "aivideoedit.music-analysis.v1",
-  "analysis_complete": false,
+  "analysis_complete": true,
   "source_audio": {
     "name": "El Viento trae tu nombre (Remastered).wav",
     "sha256": "bb26a35eaf2910531fc9ae057dd04c9315a6ad62425bd8267b9eb826a19c01e5",
@@ -11,26 +11,100 @@
   },
   "lyrics": {
     "status": "present",
-    "source": "uploaded_audio",
+    "source": "current_user_instruction",
     "directing_use": "required",
-    "text_file": null,
-    "verification_status": "pending_current_authoritative_lyric_text"
+    "text_file": "LYRICS.md",
+    "verification_status": "verified_exact_current_user_text"
   },
   "genre": {
-    "status": "pending",
-    "label": "pending current-authority resolution",
-    "confidence": null
+    "status": "confident",
+    "label": "Spanish-language acoustic island folk ballad",
+    "confidence": 0.78,
+    "source": "director_analysis_of_current_audio_and_song_structure"
   },
   "rhythm": {
     "tempo_status": "measured",
     "tempo_bpm": 89.285714,
-    "pulse_description": "Moderate measured pulse; preliminary phrase grid uses roughly four 4/4 bars per primary storyboard shot.",
-    "meter_or_groove": "Draft 4/4 phrase grouping pending authoritative full music/lyric map."
+    "pulse_description": "Moderate, steady pulse supporting long lyrical phrases and gradual painterly transformations.",
+    "meter_or_groove": "Measured 4/4 folk-ballad pulse with restrained forward motion."
   },
   "tonal_center": {
     "estimate": "D minor / relative F-major family",
-    "status": "preliminary signal analysis"
+    "status": "preliminary_signal_analysis"
   },
-  "sections": [],
-  "note": "Technical audio ingest is complete; narrative music analysis remains unlocked until the current-authority lyric sheet/status is resolved."
+  "sections": [
+    {
+      "id": "M01",
+      "name": "Opening remembrance",
+      "start_seconds": 0,
+      "end_seconds": 21.504,
+      "energy": "low-to-medium",
+      "musical_cues": [
+        "Measured pulse establishes the opening",
+        "First vocal phrases introduce fort, sea and remembered name"
+      ],
+      "visual_function": "Awaken the tactile map and let embroidery spread through the remembered geography."
+    },
+    {
+      "id": "M02",
+      "name": "Distance and origin",
+      "start_seconds": 21.504,
+      "end_seconds": 43.008,
+      "energy": "medium",
+      "musical_cues": [
+        "Vocal phrasing continues over a stable pulse",
+        "The lyric shifts from immediate remembrance toward distance and origin"
+      ],
+      "visual_function": "Liquefy the map into sea and raise the island village from the painted current."
+    },
+    {
+      "id": "M03",
+      "name": "Verse 3 expansion",
+      "start_seconds": 43.008,
+      "end_seconds": 64.512,
+      "energy": "medium-rising",
+      "musical_cues": [
+        "The expanded verse increases narrative density",
+        "Place imagery broadens from island life toward memory and return"
+      ],
+      "visual_function": "Transform village into fort and then soften the fort into the imagined homeland."
+    },
+    {
+      "id": "M04",
+      "name": "Remembered presence",
+      "start_seconds": 64.512,
+      "end_seconds": 86.016,
+      "energy": "medium-high",
+      "musical_cues": [
+        "Personal memory becomes more intimate",
+        "The pulse remains stable while the lyric turns toward face, voice and return"
+      ],
+      "visual_function": "Let atmosphere overtake the homeland and reveal anonymous ancestral/personal presence in mist."
+    },
+    {
+      "id": "M05",
+      "name": "Chorus crest",
+      "start_seconds": 86.016,
+      "end_seconds": 106.176,
+      "energy": "high",
+      "musical_cues": [
+        "Chorus broadens the emotional scale",
+        "Mareas, caminos, piedras, mar and separation converge into the emotional crest"
+      ],
+      "visual_function": "Reveal the complete tapestry, collapse its accumulated imagery inward and compress it into one luminous thread."
+    },
+    {
+      "id": "M06",
+      "name": "Release to black",
+      "start_seconds": 106.176,
+      "end_seconds": 112.68,
+      "energy": "falling",
+      "musical_cues": [
+        "Final phrase resolves the separation motif",
+        "Energy releases into the ending"
+      ],
+      "visual_function": "Allow the single thread to be caught by the unseen wind, carried away and vanish into pure black."
+    }
+  ],
+  "note": "Lyrics are authoritative narrative input from the current user. The current-user Island Memory Tapestry storyboard remains locked visual canon; music and lyrics time and interpret that canon rather than replace it."
 }
