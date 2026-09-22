@@ -20,5 +20,5 @@
   "assembly_complete": true,
   "final_qc_passed": true,
   "mode_aware_qc_passed": true,
-  "archive_complete": false
+  "archive_complete": true
 }
