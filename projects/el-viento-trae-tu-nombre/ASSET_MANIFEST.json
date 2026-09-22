@@ -660,7 +660,38 @@
       "creative_status": "needs_review",
       "uri": "gdrive://file/1w4mFl9FvinhAWYnLtUhEpcKbbk0Q23YC",
       "drive_id": "1w4mFl9FvinhAWYnLtUhEpcKbbk0Q23YC"
+    },
+    {
+      "id": "MASTER-1080P-001",
+      "origin": "rendered",
+      "kind": "assembly_master_candidate",
+      "role": "production_assembly",
+      "name": "El_Viento_Trae_Tu_Nombre_master_1080p.mp4",
+      "sha256": "7ba526fbfc32c82e6045a46488314d83095152aa81da97f876afa2bdf57adffe",
+      "size_bytes": 385578466,
+      "lifecycle_status": "candidate",
+      "creative_status": "needs_review",
+      "technical_status": "pass",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "frames": 2704,
+        "duration_seconds": 112.666667,
+        "codec": "h264"
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "source_sha256": "bb26a35eaf2910531fc9ae057dd04c9315a6ad62425bd8267b9eb826a19c01e5"
+      },
+      "locator": {
+        "current_session": "/mnt/data/El_Viento_Trae_Tu_Nombre_master_1080p.mp4",
+        "drive_folder_id": "1i0Ny_IyWzKoMCVgM-V5TRucvtCRNddfQ",
+        "drive_master_upload_status": "pending_connector_file_reference"
+      }
     }
   ],
-  "note": "Generated hero/media assets plus 11 real temporal moving-proof candidates are stored on Google Drive and content-hashed. Proof candidates remain needs_review until explicit current-user creative acceptance."
+  "note": "Generated production media, accepted proof candidates, and the technically verified full 1080p assembly master are recorded here. Final creative acceptance of the full export is still pending."
 }

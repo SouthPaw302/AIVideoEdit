@@ -45,6 +45,6 @@
     "source_replacement_authorized": false
   },
   "current_user_direction": "Use the supplied Island Memory Tapestry storyboard as visual canon; use the current-user lyric sheet and music analysis to time and interpret it; execute through GitHub Actions/DeepSeek harness.",
-  "exact_next_action": "Run the canonical FX v2 precompile gate for FX_REQUIREMENTS.json, verify fx.lock.json, then either promote the existing full-length master candidate if it matches the locked recipe or rerender from the verified lock before ASSEMBLED.",
-  "updated_at_utc": "2026-09-22T06:43:00Z"
+  "exact_next_action": "User reviews the complete 1080p export at normal speed. If accepted, record full-export creative acceptance for S01-S11 and advance FINAL_QC_PASSED; otherwise record defects and return to ASSEMBLED refinement.",
+  "updated_at_utc": "2026-09-22T06:50:00Z"
 }

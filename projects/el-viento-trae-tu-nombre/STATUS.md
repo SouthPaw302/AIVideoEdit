@@ -1,7 +1,11 @@
 # Status
 
-Machine stage: **FX_LOCKED**.
+Machine stage: **ASSEMBLED**.
 
-The canonical FX v2 precompile gate generated and verified `fx.lock.json` against current-main runtime, registry, proof media, and all declared render inputs.
+Canonical FX v2 lock: **PASS / verified**.
+Full 1920x1080 assembly: **rendered**.
+Technical final QC: **PASS**.
+Frame count: **2704 / 2704**.
+Master SHA-256: `7ba526fbfc32c82e6045a46488314d83095152aa81da97f876afa2bdf57adffe`.
 
-A full-length 1920x1080 master candidate already exists and passed technical QC. Next: verify/promote a post-lock assembly and run final mode-aware QC.
+Final creative review of the complete export is pending. The project is intentionally not marked FINAL_QC_PASSED until the current user reviews and accepts the full master.
