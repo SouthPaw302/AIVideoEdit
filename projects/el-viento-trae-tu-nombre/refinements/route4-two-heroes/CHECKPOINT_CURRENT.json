@@ -2,14 +2,14 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Batch 01 shot lock complete",
+  "current_stage": "Batch 01 motion library complete",
   "active_scope": "Batch 01 only",
   "locked_segment": "00:00.000-00:21.504 / M01 Opening remembrance",
-  "exact_next_action": "Render and QC one contiguous Batch 01 moving proof from the four locked shots in refinements/route4-two-heroes/shot_locks/BATCH_01_OPENING_REMEMBRANCE.json using canonical source audio and approved FX only. Do not advance Batch 02 until Batch 01 proof is accepted.",
-  "do_not_change": [
-    "main",
-    "canonical source audio",
-    "preserved v1/Option3v2 masters",
-    "Batch 01 primary media selection unless QC fails or user reopens"
-  ]
+  "completed": [
+    "Batch 01 four-shot opening lock",
+    "Four 1080p seamless motion loops",
+    "Four GIF previews",
+    "Drive archive backup"
+  ],
+  "exact_next_action": "Create movement-effect variants for the four Batch 01 loops, preserving hero identity and geometry. Compare clean-loop vs movement-effect versions before the canonical FX proof. Do not advance Batch 02."
 }
