@@ -1,0 +1,47 @@
+{
+  "schema": "aivideoedit.render-recipe.v1",
+  "recipe_identity": "silver-coin-test-2-fx-director-v3",
+  "branch": "song/silver-coin-test-2",
+  "current_main_runtime_commit": "a4ba15ebb77cebc05752f0403c8fe0d5f62b393f",
+  "picture_manifest": "RENDER_MANIFEST_v3.json",
+  "picture_manifest_sha256": "30f52c859fea54dd5352e546b6a08892f31618b3eefcbd8db3d373887fcbc07b",
+  "picture_assembly": "render_batches/concat_v3.txt",
+  "fx_manifest": "FX_PASS_v3.json",
+  "fx_manifest_sha256": "155ee74ab1a4561af68d5809e8ac6ee50b2e861602e4ce11765c049b73539c79",
+  "fx_driver": "fx_pass_v3.py",
+  "fx_driver_sha256": "79c4aaef75d81305c9d99eba39f37b71cd7139bc3f092b1a4ddf33dcacc8983c",
+  "fx_precompile_lock": "fx_v3.lock.json",
+  "fx_precompile_lock_sha256": "69173bd8140e35310c177fa3f38a64c3ad4a456b9fae57fb022cfba2ea43d1e7",
+  "title_overlay": "INTRO_OUTRO_v3.ass",
+  "title_overlay_sha256": "3ace5aaad56dd575f36b3072c26b4739b0f8094d68acf8076742cd198fc19726",
+  "final_export": "../../outputs/silver-coin-test-2/Silver_Coin_Test2_v3b_FX_1280x720_24fps.mp4",
+  "final_export_sha256": "4f9f05384f8a7400cf1602b208403568948d43522f74c35fc05051bef85ab520",
+  "final_picture_fade": {"start_seconds": 206.7, "duration_seconds": 0.72},
+  "canonical_source_video_sha256": "162b3c5cf6c41cc1b85800a1e6111a94df3e3dd829935521aa8c90de15e51803",
+  "canonical_audio_sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+  "corrected_coin_still": "hero_library/prepared/hero_015_handfix_v3.png",
+  "corrected_coin_still_sha256": "00d348a0dd5af7ee59704d526ad5a989685567ac7b458ba1f8b51bb4b494ac50",
+  "original_fx_references": [
+    {
+      "role": "effect behavior reference only; no video frames reused",
+      "name": "IRONFLAME_V7_HUMAN_CORRECTED_720p24.mp4",
+      "sha256": "4336959e923cb52274dd4c832c824d90a7c59110829231fb95d73e48e8d25868",
+      "inspection_time_seconds": 135
+    },
+    {
+      "role": "Silver Coin V8 effect comparison only; no video frames reused",
+      "name": "Silver_Coin_V8_FINAL_YouTube_720p24.mp4",
+      "sha256": "b996cc251a73e93540abdcc7b8e1077959b5d82dcfb3396aa49c990302216d70"
+    }
+  ],
+  "creative_recipe": {
+    "preserved_edit": "revision 2, 4979 frames at 24 fps; only SC15 picture plate corrected",
+    "canonical_fx_runtime_ids": ["FX2-MOTION-002", "FX2-MOTION-003", "FX2-ATM-001", "FX2-ATM-002", "FX2-FIRE-001", "FX2-FIRE-002", "FX2-LIGHT-001", "FX2-LIGHT-002", "FX2-SURFACE-001"],
+    "promoted_effect_names_used": ["rotating_architecture_debris", "warm_halation_bloom"],
+    "special_facing_scene": "SC21: 2.5D architectural orbit with protected faces; inspired by local IronFlame reference at 2:15",
+    "perceptual_gates": 5,
+    "coin_origin_gates_retained": 2,
+    "intro_outro": "Georgia title overlays on the existing instrumental opening and final picture tail"
+  },
+  "no_claim": "The current-main promoted-effects functional verifier passes, but this project does not claim binary proof parity for every promoted adapter or that the historical IronFlame image is reused."
+}

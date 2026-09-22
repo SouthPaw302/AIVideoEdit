@@ -5,7 +5,7 @@
   "production_mode": "living_scene",
   "canon_lock": {
     "locked": true,
-    "picture_language": "Luminous painterly medieval folk world: uploaded flower-crowned heroine anchors a mill-to-tavern lyric narrative with bounded living-scene motion and musical hard cuts.",
+    "picture_language": "Luminous painterly medieval folk world: uploaded flower-crowned heroine anchors a mill-to-tavern lyric narrative with protected character identity, visible environment motion, and motivated perceptual transitions.",
     "items": [
       "uploaded imagine-5558fc80.mp4 visual identity",
       "canonical Silver Coin WAV",
@@ -38,21 +38,22 @@
   "recut_scope": {
     "active": true,
     "named_defects": [
-      "The 12-second overture repeats nearly identical heroine views and fails as an opening.",
-      "The beta's subtle FX proof passed technical checks but failed the current user's visual-effects review."
+      "Revision 2 edit and continuity are approved, but its effects and transitions remain too weak compared with the original production.",
+      "The silver-coin holding hand is anatomically backwards.",
+      "The facing tavern scene needs the IronFlame 2:15 architectural-motion treatment; fire and background must visibly animate; title intro and outro are missing."
     ],
     "allowed_changes": [
-      "Replace intro timeline plates with newly generated story-specific support media while preserving the accepted uploaded source video and its identity.",
-      "Rebalance and expand scene-specific effects and motivated transitions across the complete edit.",
-      "Re-render, compare with the beta, and run actual-export visual and technical QC."
+      "Preserve the approved revision-2 edit timing and continuity while repairing the coin hand and adding a title intro/outro.",
+      "Use current-main verified FX V2 runtime layers and promoted IronFlame-style architecture movement with protected subject masks and motivated transitions.",
+      "Consult and, where cinematically justified, reuse stills or effects from the user's older Silver Coin project; the earlier exclusion of references is superseded by the current user direction.",
+      "Re-render, compare with revision 2, and run actual-export visual and technical QC."
     ],
     "forbidden_changes": [
-      "use prior Silver Coin visual references or renders",
       "replace or alter the accepted uploaded source video",
       "replace the canonical WAV or user-supplied lyrics"
     ],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "The beta is usable but its visual-effects pass failed and the intro is poor. Rescan current GitHub main for the available effects, use new original media for the opening, and deliver a visibly stronger revised cut without prior Silver Coin references.",
-  "exact_next_action": "Deliver revision 2 for user review. Preserve the beta as rejected history, keep source media and WAV unchanged, and do not mark a baseline accepted without user approval."
+  "current_user_direction": "Keep revision-2 edit and continuity. Correct the backward silver-coin hand. Make fire, background, loops, and perceptual transitions visibly cinematic using repo effects and the IronFlame 2:15 reference; add intro and outro. Older project stills and effects may now be consulted or spliced where justified.",
+  "exact_next_action": "Deliver the revision-3b FX review master from the project branch and Downloads; wait for user artistic review. Composition variety remains REVIEW, and no user acceptance is claimed."
 }

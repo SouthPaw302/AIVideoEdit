@@ -1,0 +1,19 @@
+[Script Info]
+Title: Silver Coin Test 2 cinematic titles
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Title,Georgia,58,&H00E8E9F4,&H00E8E9F4,&H9A1E1721,&H58000000,-1,0,0,0,100,100,3,0,1,1.2,2,2,80,80,82,1
+Style: Credit,Georgia,24,&H00D9DCE9,&H00D9DCE9,&H9A1E1721,&H58000000,0,0,0,0,100,100,4,0,1,1,1,2,80,80,47,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.60,0:00:03.70,Title,,0,0,0,,{\fad(450,480)}SILVER COIN
+Dialogue: 0,0:00:00.95,0:00:03.70,Credit,,0,0,0,,{\fad(400,450)}MOUNTAIN NOIR
+Dialogue: 0,0:03:23.00,0:03:27.42,Title,,0,0,0,,{\fad(750,500)}SILVER COIN
+Dialogue: 0,0:03:23.30,0:03:27.42,Credit,,0,0,0,,{\fad(700,500)}MOUNTAIN NOIR

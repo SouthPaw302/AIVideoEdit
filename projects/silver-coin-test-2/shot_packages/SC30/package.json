@@ -37,5 +37,27 @@
     "parallax",
     "shafts"
   ],
-  "transition": "hard cut at measured phrase boundary"
+  "transition": "hard cut at measured phrase boundary",
+  "fx_v3_layers": [
+    {
+      "id": "FX2-MOTION-002",
+      "roi": [
+        0,
+        0,
+        1,
+        0.78
+      ],
+      "strength": 1.2
+    },
+    {
+      "id": "FX2-LIGHT-002",
+      "origin": [
+        0.22,
+        0.16
+      ],
+      "strength": 1.0
+    }
+  ],
+  "fx_v3_promoted": [],
+  "fx_v3_transition": []
 }

@@ -13,8 +13,8 @@
   ],
   "media_evidence": [
     {
-      "path": "../../hero_library/prepared/hero_015.png",
-      "sha256": "7d94a409b4ffef8680ba9ccd40e9f5b66b0aa08a65b2343c3ff77f667477dc02",
+      "path": "../../hero_library/prepared/hero_015_handfix_v3.png",
+      "sha256": "00d348a0dd5af7ee59704d526ad5a989685567ac7b458ba1f8b51bb4b494ac50",
       "status": "generated"
     }
   ],
@@ -37,5 +37,51 @@
     "shafts",
     "glint"
   ],
-  "transition": "coin over final 0.08 of shot"
+  "transition": "coin over final 0.08 of shot",
+  "fx_v3_layers": [
+    {
+      "id": "FX2-MOTION-002",
+      "roi": [
+        0,
+        0,
+        1,
+        0.83
+      ],
+      "strength": 1.15
+    },
+    {
+      "id": "FX2-ATM-001",
+      "roi": [
+        0.52,
+        0.02,
+        1,
+        0.72
+      ],
+      "strength": 0.7
+    },
+    {
+      "id": "FX2-LIGHT-001",
+      "roi": [
+        0.65,
+        0.07,
+        1,
+        0.83
+      ],
+      "strength": 0.9
+    },
+    {
+      "id": "FX2-FIRE-001",
+      "roi": [
+        0.83,
+        0.31,
+        0.99,
+        0.61
+      ],
+      "strength": 0.7
+    }
+  ],
+  "fx_v3_promoted": [
+    "warm_halation_bloom"
+  ],
+  "fx_v3_transition": []
 }

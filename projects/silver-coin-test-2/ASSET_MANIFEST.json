@@ -501,6 +501,22 @@
         "derivation": "16:9 painterly preparation by current-main living_paint_transfer.py",
         "replaces_source_library": false
       }
+    },
+    {
+      "id": "hero_015_handfix_v3",
+      "kind": "generated corrective hero still",
+      "role": "SC15 anatomically corrected coin-hand plate",
+      "origin": "generated_edit",
+      "file_or_locator": "hero_library/prepared/hero_015_handfix_v3.png",
+      "sha256": "00d348a0dd5af7ee59704d526ad5a989685567ac7b458ba1f8b51bb4b494ac50",
+      "lifecycle_status": "candidate",
+      "provenance": {
+        "kind": "precise_object_edit",
+        "source_plate": "hero_library/prepared/hero_015.png",
+        "generator": "built-in image generation",
+        "edit": "correct the raised hand's silver-coin grip; keep scene composition and identity",
+        "replaces_source_library": false
+      }
     }
   ]
 }

@@ -4,7 +4,9 @@
   "seed": 302,
   "render_inputs": [
     "general/reusable/painterly-motion/render_living_painting.py",
-    "general/reusable/painterly-motion/hybrid_painterly_fx.py"
+    "general/reusable/painterly-motion/hybrid_painterly_fx.py",
+    "general/reusable/fx_v2/runtime.py",
+    "general/reusable/fx_v2/promoted_effects.py"
   ],
   "effects": [
     {
@@ -12,8 +14,16 @@
       "strength": 0.62
     },
     {
+      "id": "FX2-MOTION-003",
+      "strength": 0.75
+    },
+    {
       "id": "FX2-ATM-001",
       "strength": 0.58
+    },
+    {
+      "id": "FX2-ATM-002",
+      "strength": 0.22
     },
     {
       "id": "FX2-FIRE-001",
@@ -38,4 +48,3 @@
   ],
   "transitions": []
 }
-

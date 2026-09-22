@@ -15,3 +15,10 @@
 - Tested a wet-pigment transition variant in the full export; rejected three transitions after frame review because they disrupted faces and architecture. Re-rendered the affected sections with clean musical cuts.
 - Final v2c master: `outputs/silver-coin-test-2/Silver_Coin_Test2_v2c_1280x720_24fps.mp4`, SHA-256 `eda825f7d87aa9a6596d28c22d14cb6168650bff90cef58be03b49b5b4a527f3`.
 - All five picture batches completed; full decode, audio, black/freeze, temporal, and internal visual QC are documented in `QC_v2.md`. Export variety remains REVIEW; user acceptance is pending.
+
+## Revision 3b — shot-aware FX pass
+
+- Kept revision-2 edit timing and all 4,979 frames. Re-rendered SC15 with the corrected coin hand plate; assembled the unchanged surrounding sections.
+- Applied current-main FX V2 runtime effects by shot family and scene, with explicit protected-person masks and audio-reactive energy. The promoted architecture and halation adapters were used in the project-specific driver; the current-main functional verifier passed, but historical binary proof parity is not claimed.
+- Rejected a ghosted SC21 first pass and repaired the moving-room composite. Visually reviewed the fire pass, SC19/SC21, transition contact strips, opening/closing titles, and final fade.
+- Rejected the first v3 export because its title faded away over an abrupt source-clip ending. Revision 3b ends with a 0.72-second picture fade. Final SHA-256 `4f9f05384f8a7400cf1602b208403568948d43522f74c35fc05051bef85ab520`; see `QC_v3b.md` for checks and remaining variety limitation.

@@ -1,0 +1,64 @@
+{
+  "schema": "aivideoedit.shot-fx-pass.v1",
+  "picture_manifest": "RENDER_MANIFEST_v3.json",
+  "audio": "media/Silver Coin (Remastered).wav",
+  "seed": 302,
+  "loop_seconds": 3.2,
+  "protect_default": [[0.52, 0.51, 0.23, 0.43]],
+  "protect": {
+    "SC01": [], "SC02": [], "SC03": [], "SC04": [], "SC05": [[0.49, 0.53, 0.20, 0.38]],
+    "SC06": [], "SC07": [[0.62, 0.49, 0.24, 0.48]], "SC08": [[0.62, 0.49, 0.24, 0.48]],
+    "SC15": [[0.64, 0.51, 0.25, 0.48]], "SC19": [[0.53, 0.51, 0.18, 0.37]],
+    "SC21": [[0.30, 0.50, 0.22, 0.48], [0.59, 0.50, 0.22, 0.48]],
+    "SC28": [[0.54, 0.50, 0.23, 0.47]], "SC29": [[0.54, 0.50, 0.23, 0.47]], "SC30": [[0.54, 0.50, 0.23, 0.47]]
+  },
+  "family_layers": {
+    "village": [
+      {"id": "FX2-MOTION-002", "roi": [0, 0, 1, 0.78], "strength": 1.15},
+      {"id": "FX2-ATM-002", "roi": [0, 0, 1, 1], "strength": 0.22},
+      {"id": "FX2-MOTION-003", "roi": [0, 0.70, 1, 1], "strength": 0.75},
+      {"id": "FX2-LIGHT-002", "origin": [0.78, 0.15], "strength": 0.95}
+    ],
+    "threshold": [
+      {"id": "FX2-MOTION-002", "roi": [0, 0, 1, 0.80], "strength": 1.25},
+      {"id": "FX2-ATM-001", "roi": [0, 0, 1, 0.78], "strength": 0.90},
+      {"id": "FX2-LIGHT-001", "roi": [0.55, 0.08, 1, 0.85], "strength": 0.95}
+    ],
+    "tavern": [
+      {"id": "FX2-MOTION-002", "roi": [0, 0, 1, 0.86], "strength": 1.45},
+      {"id": "FX2-ATM-001", "roi": [0.30, 0.02, 1, 0.77], "strength": 0.90},
+      {"id": "FX2-FIRE-002", "roi": [0.60, 0.18, 1, 0.82], "strength": 0.75},
+      {"id": "FX2-LIGHT-001", "roi": [0.53, 0.06, 1, 0.85], "strength": 1.00}
+    ],
+    "coin": [
+      {"id": "FX2-MOTION-002", "roi": [0, 0, 1, 0.83], "strength": 1.15},
+      {"id": "FX2-ATM-001", "roi": [0.52, 0.02, 1, 0.72], "strength": 0.70},
+      {"id": "FX2-LIGHT-001", "roi": [0.65, 0.07, 1, 0.83], "strength": 0.90}
+    ],
+    "dawn": [
+      {"id": "FX2-MOTION-002", "roi": [0, 0, 1, 0.78], "strength": 1.20},
+      {"id": "FX2-LIGHT-002", "origin": [0.22, 0.16], "strength": 1.0}
+    ]
+  },
+  "scene_layers": {
+    "SC01": [{"id": "FX2-FIRE-002", "roi": [0.10, 0.35, 0.95, 0.88], "strength": 0.35}],
+    "SC04": [{"id": "FX2-FIRE-002", "roi": [0.55, 0.24, 0.98, 0.85], "strength": 0.68}],
+    "SC05": [{"id": "FX2-FIRE-002", "roi": [0.55, 0.25, 0.98, 0.78], "strength": 0.68}],
+    "SC09": [{"id": "FX2-FIRE-001", "roi": [0.75, 0.28, 0.98, 0.55], "strength": 0.62}],
+    "SC11": [{"id": "FX2-FIRE-001", "roi": [0.78, 0.28, 0.98, 0.53], "strength": 0.62}],
+    "SC15": [{"id": "FX2-FIRE-001", "roi": [0.83, 0.31, 0.99, 0.61], "strength": 0.70}],
+    "SC18": [{"id": "FX2-FIRE-001", "roi": [0.77, 0.20, 0.98, 0.49], "strength": 0.64}],
+    "SC19": [{"id": "FX2-FIRE-001", "roi": [0.78, 0.20, 0.98, 0.48], "strength": 0.90}, {"id": "FX2-LIGHT-002", "origin": [0.86, 0.32], "strength": 1.25}],
+    "SC20": [{"id": "FX2-FIRE-001", "roi": [0.00, 0.15, 0.16, 0.40], "strength": 0.68}],
+    "SC21": [{"id": "FX2-FIRE-001", "roi": [0.76, 0.24, 0.98, 0.52], "strength": 0.68}],
+    "SC25": [{"id": "FX2-FIRE-001", "roi": [0.76, 0.24, 0.98, 0.52], "strength": 0.68}]
+  },
+  "halation_scenes": ["SC04", "SC05", "SC09", "SC11", "SC13", "SC15", "SC18", "SC20", "SC21", "SC23", "SC25"],
+  "transitions": [
+    {"after": "SC03", "kind": "doorway", "duration": 0.42},
+    {"after": "SC08", "kind": "light", "duration": 0.35},
+    {"after": "SC18", "kind": "ember", "duration": 0.32},
+    {"after": "SC25", "kind": "light", "duration": 0.30},
+    {"after": "SC29", "kind": "light", "duration": 0.32}
+  ]
+}

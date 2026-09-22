@@ -38,5 +38,51 @@
     "haze",
     "shafts"
   ],
-  "transition": "hard cut at measured phrase boundary"
+  "transition": "hard cut at measured phrase boundary",
+  "fx_v3_layers": [
+    {
+      "id": "FX2-MOTION-002",
+      "roi": [
+        0,
+        0,
+        1,
+        0.8
+      ],
+      "strength": 1.25
+    },
+    {
+      "id": "FX2-ATM-001",
+      "roi": [
+        0,
+        0,
+        1,
+        0.78
+      ],
+      "strength": 0.9
+    },
+    {
+      "id": "FX2-LIGHT-001",
+      "roi": [
+        0.55,
+        0.08,
+        1,
+        0.85
+      ],
+      "strength": 0.95
+    },
+    {
+      "id": "FX2-FIRE-001",
+      "roi": [
+        0.75,
+        0.28,
+        0.98,
+        0.55
+      ],
+      "strength": 0.62
+    }
+  ],
+  "fx_v3_promoted": [
+    "warm_halation_bloom"
+  ],
+  "fx_v3_transition": []
 }

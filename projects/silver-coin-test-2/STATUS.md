@@ -1,6 +1,10 @@
 # Status
 
-Stage: FINAL_QC_PASSED for revision 2 (internal review only); user artistic acceptance remains pending. The previous beta remains available but the user's visual-effects review rejected its final-QC status.
+Stage: FINAL_QC_PASSED for revision 3b (internal review only); user artistic acceptance remains pending. Revision 2's edit and continuity were approved, but its FX treatment was rejected.
+
+- Revision 3b watch master: `outputs/silver-coin-test-2/Silver_Coin_Test2_v3b_FX_1280x720_24fps.mp4` (SHA-256 `4f9f05384f8a7400cf1602b208403568948d43522f74c35fc05051bef85ab520`). Same 4,979-frame cut and original WAV.
+- Corrected silver-coin hand, nine canonical FX V2 IDs, two promoted treatments, five motivated perceptual transitions, brighter living fire and environment motion, IronFlame-inspired facing-shot architecture, opening/closing titles, and a short final fade. See `QC_v3b.md`.
+- Full decode and framing/audio checks pass. Motion rises over v2c; composition-variety remains REVIEW (20 similar runs). User acceptance is not claimed.
 
 - Current-main runtime booted; production, directing, recut, workflow, and canonical FX guards pass.
 - All 145 uploaded source frames scanned; current-user lyrics and 207.44-second WAV analyzed.

@@ -36,5 +36,39 @@
     "canvas",
     "shafts"
   ],
-  "transition": "hard cut at measured phrase boundary"
+  "transition": "hard cut at measured phrase boundary",
+  "fx_v3_layers": [
+    {
+      "id": "FX2-MOTION-002",
+      "roi": [
+        0,
+        0,
+        1,
+        0.83
+      ],
+      "strength": 1.15
+    },
+    {
+      "id": "FX2-ATM-001",
+      "roi": [
+        0.52,
+        0.02,
+        1,
+        0.72
+      ],
+      "strength": 0.7
+    },
+    {
+      "id": "FX2-LIGHT-001",
+      "roi": [
+        0.65,
+        0.07,
+        1,
+        0.83
+      ],
+      "strength": 0.9
+    }
+  ],
+  "fx_v3_promoted": [],
+  "fx_v3_transition": []
 }
