@@ -1,9 +1,7 @@
 # Status
 
-Machine stage: **APPROACH_ESTABLISHED**.
+Machine stage: **STORYBOARD_LOCKED**.
 
-The selected production route is locked: **Island Memory Tapestry**, production mode **hybrid**. Current-user storyboard remains visual canon; canonical lyrics and music analysis control timing/interpretation.
+The 11-shot Island Memory Tapestry storyboard and full frame-followable script are locked. Every script span is tied to a real hashed Drive hero plate and carries music + lyric cues. Hybrid living-scene/cinematic behavior is explicitly declared per shot.
 
-Real generated hero plates and FX-motion support variants are hashed and registered on Drive.
-
-Next canonical transition: lock the full frame-followable script and advance to **STORYBOARD_LOCKED**.
+Next canonical transition: build the 11 real-media shot packages and verify media evidence.
