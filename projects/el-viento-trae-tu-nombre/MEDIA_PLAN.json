@@ -11,7 +11,8 @@
     "atmospheric_plate",
     "reactive_plate",
     "transition_media",
-    "analysis_qc_media"
+    "analysis_qc_media",
+    "canonical_hero_library"
   ],
   "visual_direction_gate": {
     "required": true,
