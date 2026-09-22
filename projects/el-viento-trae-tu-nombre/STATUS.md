@@ -2,8 +2,10 @@
 
 Machine stage: **SHOT_PROOFS_ACCEPTED**.
 
-The current user explicitly accepted all 11 moving proof recipes: "Yeah they are good".
+All 11 proof recipes are explicitly accepted. A complete 1920x1080 full-length master candidate has now been rendered and technically QC'd at the locked 2704-frame timeline.
 
-The short proof clips validate motion/composition behavior but are not long enough to serve directly as the full 112.68-second assembly sources. Each production shot must now be expanded to its locked SCRIPT.json duration while preserving the accepted recipe.
+Master candidate SHA-256: `2ea60fb7c1f99d528527be106a3c95df966ff45678c4a6f6962556fa4a9096eb`.
 
-Next canonical action: select and precompile-lock production-approved FX, render full-duration shot media, then assemble against the canonical audio.
+The production-approved runtime-native FX requirements are now recorded in `FX_REQUIREMENTS.json`. The machine stage intentionally remains SHOT_PROOFS_ACCEPTED until the canonical FX v2 precompile gate produces and verifies `fx.lock.json`.
+
+Next: canonical FX lock, then promotion/rerender to ASSEMBLED.

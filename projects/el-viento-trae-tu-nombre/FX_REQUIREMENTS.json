@@ -1,0 +1,52 @@
+{
+  "schema": "aivideoedit.fx-requirements.v1",
+  "project": "el-viento-trae-tu-nombre",
+  "runtime": "aivideoedit-fx-v2",
+  "seed": 302,
+  "effects": [
+    {
+      "id": "FX2-SURFACE-001",
+      "role": "stable temporal canvas identity"
+    },
+    {
+      "id": "FX2-MOTION-002",
+      "role": "bounded localized living flow"
+    },
+    {
+      "id": "FX2-MOTION-003",
+      "role": "ocean/water material motion"
+    },
+    {
+      "id": "FX2-ATM-001",
+      "role": "advected atmosphere/memory mist"
+    },
+    {
+      "id": "FX2-LIGHT-001",
+      "role": "restrained practical light breathing"
+    },
+    {
+      "id": "FX2-LIGHT-002",
+      "role": "restrained moving light field"
+    }
+  ],
+  "transitions": [],
+  "render_inputs": [
+    "projects/el-viento-trae-tu-nombre/SCRIPT.json",
+    "projects/el-viento-trae-tu-nombre/ASSET_MANIFEST.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S01/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S02/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S03/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S04/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S05/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S06/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S07/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S08/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S09/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S10/package.json",
+    "projects/el-viento-trae-tu-nombre/shot_packages/S11/package.json"
+  ],
+  "allow_conditional": [],
+  "conditional_preflight": {},
+  "created_at": "2026-09-22T06:42:00Z",
+  "note": "Only current-main production-approved runtime-native FX are requested. Canonical precompile lock remains pending; the full-length master candidate below is therefore recorded as a workprint/master candidate, not as FX_LOCKED canonical assembly."
+}

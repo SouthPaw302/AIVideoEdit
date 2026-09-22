@@ -25,5 +25,9 @@
   "archive_complete": false,
   "shot_proof_count": 11,
   "shot_proof_acceptance_instruction": "Yeah they are good",
-  "shot_proofs_accepted_at": "2026-09-22T06:15:00Z"
+  "shot_proofs_accepted_at": "2026-09-22T06:15:00Z",
+  "full_render_candidate_ready": true,
+  "full_render_candidate_sha256": "2ea60fb7c1f99d528527be106a3c95df966ff45678c4a6f6962556fa4a9096eb",
+  "full_render_candidate_frames": 2704,
+  "full_render_candidate_qc_passed": true
 }
