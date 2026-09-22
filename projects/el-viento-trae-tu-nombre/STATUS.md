@@ -2,6 +2,10 @@
 
 Machine stage: **SHOT_PACKAGES_BUILT**.
 
-All 11 scripted shots have real Drive-backed packages with hashed primary hero plates and matching bounded motion variants where available. Every package contains the canonical source/alpha/layers/depth/generated/fx_assets/transition/loop/preview/notes structure.
+All 11 shot packages passed GitHub Actions. Eleven real temporal moving-proof candidates have now been rendered, technically inspected, uploaded to Google Drive, hashed, and registered.
 
-Next canonical transition: render and inspect short moving proofs for mode-aware living-scene/cinematic behavior before FX lock.
+Drive: `04 Moving Proofs` (`1wcGDqY0EpCQ-__io-iKulzThBP0rJtXP`).
+
+The proof candidates remain **needs_review**. The branch is intentionally not advanced to SHOT_PROOFS_ACCEPTED until explicit current-user creative acceptance is recorded.
+
+Next canonical action: review/accept or reject the moving proofs; accepted proofs then unlock the canonical FX-lock stage.
