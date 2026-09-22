@@ -1,0 +1,46 @@
+{
+  "schema": "aivideoedit.media-batch.v1",
+  "batch_id": "BATCH-01-HERO-CHARACTER-LOCK",
+  "refinement_id": "route4-two-heroes",
+  "status": "generation_required",
+  "depends_on": [
+    "current-user Route 4 selection",
+    "two-hero direction lock"
+  ],
+  "purpose": "Lock stable male/female hero identity before any new story/environment media.",
+  "required_media": [
+    {
+      "id": "R4-HERO-MALE-SHEET",
+      "kind": "generated_still",
+      "role": "male_character_lock",
+      "status": "pending"
+    },
+    {
+      "id": "R4-HERO-FEMALE-SHEET",
+      "kind": "generated_still",
+      "role": "female_character_lock",
+      "status": "pending"
+    },
+    {
+      "id": "R4-HERO-DUO-ANCHOR",
+      "kind": "generated_still",
+      "role": "two_character_anchor",
+      "status": "pending"
+    },
+    {
+      "id": "R4-HERO-CONTINUITY-PALETTE",
+      "kind": "generated_still",
+      "role": "continuity_palette_reference",
+      "status": "pending"
+    }
+  ],
+  "qc_requirements": [
+    "same male identity across all male appearances",
+    "same female identity across all female appearances",
+    "distinct silhouettes and palettes",
+    "shared gold-red thread motif present but not dominant",
+    "painterly tactile realism compatible with Island Dream / Ancestral Memory",
+    "no text, logos or modern branding"
+  ],
+  "downstream_gate": "No Route 4 environment/story batch until Batch 01 media is registered and visually reviewed."
+}

@@ -22,78 +22,44 @@
         "name": "The Wind Remembers",
         "story_approach": "A coastal fort retains fragments of a distant relationship through environmental memory.",
         "rendering_route": "Living scene with restrained atmospheric/internal motion.",
-        "production_mode": "living_scene",
-        "storyboard": [
-          {
-            "number": 1,
-            "description": "Coastal fort and wind."
-          },
-          {
-            "number": 2,
-            "description": "Presence through shadow/reflection."
-          },
-          {
-            "number": 3,
-            "description": "Name carried into sea mist."
-          }
-        ]
+        "production_mode": "living_scene"
       },
       {
         "number": 2,
         "name": "Letters Across the Water",
         "story_approach": "Two separated people remain connected through letters carried symbolically across water.",
         "rendering_route": "Painterly cinematic coverage and match cuts.",
-        "production_mode": "cinematic",
-        "storyboard": [
-          {
-            "number": 1,
-            "description": "Letter written by coast."
-          },
-          {
-            "number": 2,
-            "description": "Paper crosses sea and memory."
-          },
-          {
-            "number": 3,
-            "description": "Letter reaches empty shore."
-          }
-        ]
+        "production_mode": "cinematic"
       },
       {
         "number": 3,
         "name": "Island Memory Tapestry",
         "story_approach": "Maps, textile memory, sea travel, place and ancestry transform into one living artwork and distill into a single thread.",
         "rendering_route": "Hybrid painterly living-scene construction with selective cinematic transformations and bounded camera travel.",
-        "production_mode": "hybrid",
-        "storyboard": [
-          {
-            "number": 1,
-            "description": "Map, embroidery and ocean merge."
-          },
-          {
-            "number": 2,
-            "description": "Village, fort and homeland transform."
-          },
-          {
-            "number": 3,
-            "description": "Ancestral silhouettes, whole tapestry, glowing thread and black."
-          }
-        ]
+        "production_mode": "hybrid"
+      },
+      {
+        "number": 4,
+        "name": "Island Dream / Ancestral Memory — Two Heroes",
+        "story_approach": "A recurring male and female lead move through inherited island memory, separation and ancestral convergence until the world resolves into a living tapestry and inheritance thread.",
+        "rendering_route": "Hybrid cinematic living-painting with stable hero continuity, readable island environments, structural memory morphs, layered ancestry and stronger approved FX usage.",
+        "production_mode": "hybrid"
       }
     ],
     "user_selection": {
       "status": "selected",
       "selected_option_numbers": [
-        3
+        4
       ],
-      "recorded_user_instruction": "Route 3 selected and expanded by the current user into the supplied 11-shot Island Memory Tapestry storyboard."
+      "recorded_user_instruction": "Route 4 selected. Add two recurring hero characters, one male and one female. Follow the repo and create media in batches only as needed."
     },
     "locked": true
   },
   "large_batch_strategy": {
-    "hero_batch_01": "Generate all 11 primary hero plates in one batch while enforcing shared Visual DNA.",
-    "support_batch_02": "Generate only continuity/support plates proven necessary for morphs and layered composites.",
-    "motion_batch_03": "Create semantic masks/depth/layers and living-scene motion by sequence.",
-    "proof_policy": "Render short representative moving proofs before full-song scaling."
+    "policy": "dependency_gated_batches",
+    "current_batch": "BATCH-01-HERO-CHARACTER-LOCK",
+    "current_batch_goal": "Establish immutable visual continuity for the recurring male and female heroes before any new environment/story plates are generated.",
+    "next_batch_rule": "Do not create the next media batch until the current batch is generated, QC-reviewed, hashed/registered and its downstream dependency is known.",
+    "proof_policy": "After storyboard/shot media exists, render short representative moving proofs before any full-song assembly."
   }
 }

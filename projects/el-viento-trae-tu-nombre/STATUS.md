@@ -1,18 +1,21 @@
 # Status
 
-Machine stage: **ASSEMBLED**.
+Machine stage: **ASSEMBLED** (preserved prior assemblies).
 
-The original full assembly is preserved as `MASTER-1080P-001` (SHA-256 `7ba526fb...`).
+Active creative refinement: **Route 4 — Island Dream / Ancestral Memory — Two Heroes**.
 
-A new **Option 3 v2** assembled refinement is now the active review candidate:
-- asset: `MASTER-1080P-OPTION3-V2`
-- SHA-256: `4ac3f137d9bba34d05665acd9a344883f958bc04415b7b787e2bde2d020b96ab`
-- 1920x1080 / 24 fps / 2704 frames / 112.666667 seconds
-- technical status: PASS candidate
-- creative status: needs_review
+Preserved research/rollback:
+- `MASTER-1080P-001` — original assembled master
+- `MASTER-1080P-OPTION3-V2` — Option 3 refinement / visual research master
 
-The v2 cut directly addresses the current-user defects: too abstract, insufficient Option 3 identity, and underuse of the effects vocabulary.
+Current-user direction now supersedes the previous review path:
+- recurring adult **male hero**
+- recurring adult **female hero**
+- stronger narrative causality and human emotional spine
+- readable fort / village / harbor / sea / rain / ancestral world
+- approved effects used as story mechanisms
+- media created only in dependency-gated batches
 
-The full v2 master is 148.9 MB and exceeds the connected Drive action's 100 MB transfer ceiling. A 63.3 MB 1080p review derivative exists locally. The v2 QC contact sheet is stored on Drive as `1dmBQKAo4uA_AxT-m-fIdsrMAaP2EebNC`.
+Current production gate: **BATCH-01-HERO-CHARACTER-LOCK**.
 
-The project remains at ASSEMBLED until current-user review of v2.
+Next action: generate, QC, hash and register male hero sheet, female hero sheet, shared duo anchor and continuity/palette reference. No later Route 4 media batch is authorized yet.

@@ -1,50 +1,82 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Create a hybrid living-painting music film in which maps, embroidery, sea, architecture, ancestral presence and memory continuously transform into one another and ultimately collapse into a single thread carried away by the wind.",
+  "mission": "Create a two-hero Island Dream / Ancestral Memory music film in which a recurring male and female lead move through a living island memoryscape of fort, village, sea, rain, maps, embroidery and ancestral generations, ultimately revealing the entire world as inherited memory carried forward in a single luminous thread.",
   "direction_authority": "user_directed",
   "production_mode": "hybrid",
   "canon_lock": {
     "locked": true,
-    "picture_language": "Island Memory Tapestry: handcrafted tactile living painting with continuous material transformation, fluid dreamlike transitions, stable authored compositions and internal material motion before camera motion.",
+    "picture_language": "Route 4 — Island Dream / Ancestral Memory. Painterly but legible cinematic world; two stable recurring hero characters; tactile island environments; ancestral memory revealed through controlled structural morphing, fog/pigment travel, water motion, textile/thread transformation and layered depth.",
     "items": [
-      "Current-user 11-shot Island Memory Tapestry storyboard",
-      "Living breathing painting aesthetic",
-      "Fluid pigment/thread/mist transformations",
-      "Anonymous featureless ancestral silhouettes",
-      "Tapestry-to-thread-to-black resolution",
-      "Locked frame-followable script mapped to canonical lyrics and hashed Drive hero plates"
+      "Current-user selection of Route 4 — Island Dream / Ancestral Memory",
+      "Two recurring hero characters: one adult male and one adult female",
+      "Heroes remain recognizable across scenes through stable face/silhouette/hair/wardrobe/color anchors",
+      "Male visual anchor: darker coastal/stone/navy language",
+      "Female visual anchor: warmer lantern/sea-light/gold-rust-cream language",
+      "Shared motif: luminous embroidered thread linking heroes, places, generations and final inheritance image",
+      "Readable fort, village, harbor, sea, rain, mountain/island and ancestral imagery before abstraction",
+      "Effects must advance story and memory transitions rather than act as decoration",
+      "Existing v1 and Option 3 v2 assemblies remain preserved as research and rollback artifacts"
     ]
   },
   "accepted_baseline": {
-    "status": "none",
-    "file_or_locator": null,
-    "sha256": null,
-    "user_acceptance_statement": null
+    "status": "research_reference",
+    "file_or_locator": "MASTER-1080P-OPTION3-V2",
+    "sha256": "4ac3f137d9bba34d05665acd9a344883f958bc04415b7b787e2bde2d020b96ab",
+    "user_acceptance_statement": "That is really good but so abstract. I would like to see more of Option 3 in it. And I think you can make more use of our effects."
   },
   "accepted_source_library": {
-    "status": "none",
-    "role": null,
-    "file_or_locator": null,
+    "status": "approved_for_reuse",
+    "role": "visual_research_and_material_library",
+    "file_or_locator": "existing hero plates, FX motion variants, v1/v2 assemblies and QC media on this song branch/Drive",
     "sha256": null,
-    "user_acceptance_statement": null,
-    "content_reuse_authorized": false,
+    "user_acceptance_statement": "follow the repo create things as they are needed.",
+    "content_reuse_authorized": true,
     "timeline_locked": false
   },
   "refinement_scope": {
-    "active": false,
-    "goal": null,
-    "allowed_changes": [],
-    "forbidden_changes": [],
-    "restart_authorized": false
+    "active": true,
+    "goal": "Rebuild the film from the planning table around Route 4 with two recurring hero characters, stronger narrative causality, more legible island/ancestral imagery and deeper purposeful use of the approved effect stack.",
+    "allowed_changes": [
+      "replace the current creative storyboard for the new refinement",
+      "change shot count and shot timing while preserving the canonical song duration",
+      "generate new hero-character media and later environment/story media only when required by the repo sequence",
+      "reuse, crop, composite or texture-source existing approved media",
+      "create new motion/FX variants when a locked shot requires them",
+      "use production-approved repo FX and transitions where narratively motivated",
+      "build new proofs and a new full assembly candidate"
+    ],
+    "forbidden_changes": [
+      "modify main for song-production assets",
+      "delete or overwrite preserved v1 or Option 3 v2 masters",
+      "change the canonical source audio",
+      "change the current-user lyric sheet without a new user instruction",
+      "generate later media batches before their dependency gates are satisfied"
+    ],
+    "restart_authorized": true
   },
   "recut_scope": {
-    "active": false,
-    "named_defects": [],
-    "allowed_changes": [],
-    "forbidden_changes": [],
-    "source_replacement_authorized": false
+    "active": true,
+    "named_defects": [
+      "current film remains too abstract",
+      "insufficient human emotional spine",
+      "no stable recurring male and female hero characters",
+      "island, fort, village, harbor and ancestral imagery need more readable screen time",
+      "approved effects vocabulary is underused as a storytelling mechanism"
+    ],
+    "allowed_changes": [
+      "new two-hero storyboard",
+      "new visual media",
+      "new shot timing",
+      "new FX plan",
+      "new assembly"
+    ],
+    "forbidden_changes": [
+      "replacement of canonical audio",
+      "destructive overwrite of prior assemblies"
+    ],
+    "source_replacement_authorized": true
   },
-  "current_user_direction": "Refine the assembled cut toward the selected Island Memory Tapestry Option 3: reduce generic abstraction, make map/embroidery/sea/village/fort/homeland/silhouette/tapestry/thread anchors more legible, and make stronger purposeful use of the effect stack while preserving the song, locked 11-shot timing, and overall visual canon.",
-  "exact_next_action": "Review Option 3 v2 full render candidate MASTER-1080P-OPTION3-V2. Preserve MASTER-1080P-001 as rollback. If v2 is accepted, promote it as the assembly candidate and run final creative/mode-aware QC; otherwise record specific defects for another ASSEMBLED refinement pass.",
-  "updated_at_utc": "2026-09-22T07:58:00Z"
+  "current_user_direction": "Route 4 — Island Dream / Ancestral Memory with two recurring hero characters, one male and one female. Follow the repository workflow and create media in batches only as each dependency requires it. Do not stop between ordinary production steps.",
+  "exact_next_action": "Create and QC Batch 01 HERO CHARACTER LOCK only: canonical male hero references, canonical female hero references and at least one shared two-character anchor composition. Register accepted/candidate media before creating environment or later-story batches.",
+  "updated_at_utc": "2026-09-22T07:55:00Z"
 }
