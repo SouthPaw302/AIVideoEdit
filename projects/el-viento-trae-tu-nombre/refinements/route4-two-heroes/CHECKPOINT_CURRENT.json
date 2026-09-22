@@ -1,0 +1,21 @@
+{
+  "schema": "aivideoedit.production-checkpoint.v1",
+  "project": "El Viento trae tu nombre",
+  "branch": "song/el-viento-trae-tu-nombre",
+  "saved_at_utc": "2026-09-22T23:00:00Z",
+  "current_stage": "Batch 06 FX Variations partial",
+  "latest_completed": {
+    "batch05_canon_stills": "drive+github",
+    "batch05_fx": "drive+github",
+    "batch06_stills": "drive+github",
+    "batch06_fx": "8/10 drive-backed, github checkpointed"
+  },
+  "current_blocker": "Image generation plan limit reached.",
+  "exact_next_action": "Finish Batch 06 FX assets 09-10, back up to existing Drive folder 1TKfTizo5NmpBlcGexx4JJsBR4Bhn7BHd, register completed manifest, then proceed to Batch 07 Ancestral Presence.",
+  "do_not_change": [
+    "main",
+    "preserved v1 and Option 3 v2 masters",
+    "canonical source audio",
+    "locked Route 4 two-hero direction"
+  ]
+}
