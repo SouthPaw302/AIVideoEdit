@@ -2,14 +2,14 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Batch 04 pre-FX motion complete",
-  "active_scope": "Batch 04 only",
-  "locked_segment": "01:04.512-01:26.016 / M04 Remembered presence",
+  "current_stage": "Batch 05 pre-FX motion complete",
+  "active_scope": "Batch 05 only",
+  "locked_segment": "01:26.016-01:46.176 / M05 Chorus crest",
   "completed": [
-    "Batch 04 four-shot lock",
+    "Batch 05 four-shot lock",
     "four clean loops + GIF previews",
     "four restrained pre-FX movement variants",
     "Drive archive backups"
   ],
-  "exact_next_action": "Stop motion expansion. Batch 04 is ready for FX gate/review. Do not advance its effect stack until explicitly directed."
+  "exact_next_action": "Stop motion expansion. Batch 05 is ready for FX gate/review. Do not advance its effect stack until explicitly directed."
 }
