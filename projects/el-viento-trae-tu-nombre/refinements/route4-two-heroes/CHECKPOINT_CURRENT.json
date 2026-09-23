@@ -2,14 +2,14 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Batch 01 motion library complete",
+  "current_stage": "Batch 01 pre-FX motion variants complete",
   "active_scope": "Batch 01 only",
   "locked_segment": "00:00.000-00:21.504 / M01 Opening remembrance",
   "completed": [
     "Batch 01 four-shot opening lock",
-    "Four 1080p seamless motion loops",
-    "Four GIF previews",
-    "Drive archive backup"
+    "four clean seamless loops + GIF previews",
+    "four restrained pre-FX movement variants",
+    "Drive backup and motion manifests"
   ],
-  "exact_next_action": "Create movement-effect variants for the four Batch 01 loops, preserving hero identity and geometry. Compare clean-loop vs movement-effect versions before the canonical FX proof. Do not advance Batch 02."
+  "exact_next_action": "Stop motion expansion. Compare clean loops to pre-FX movement variants, then enter the FX gate/assignment stage for Batch 01 only."
 }
