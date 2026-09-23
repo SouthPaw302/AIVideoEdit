@@ -1,0 +1,62 @@
+{
+  "schema": "aivideoedit.media-batch.v1",
+  "batch_id": "BATCH-07-ANCESTRAL-PRESENCE",
+  "status": "archive_drive_verified",
+  "role": "supplemental_story_fx_media",
+  "timeline_assignment": "not_yet_locked",
+  "note": "Created after user explicitly directed continuation beyond Batch 06. This is a supplemental ancestral-presence media pool until shot/timeline assignment is approved.",
+  "drive_folder": {
+    "id": "184eIrrhlL2Ie4ZaxDAduBmNgPyK56nmW",
+    "url": "https://drive.google.com/drive/folders/184eIrrhlL2Ie4ZaxDAduBmNgPyK56nmW"
+  },
+  "archive": {
+    "name": "El_Viento_Batch07_Ancestral_Presence.zip",
+    "drive_id": "1UuFIB5suX0baHFnn02a-ixoYhAGya75w",
+    "sha256": "e1f499933e6e4e3dc328c3d4d72f10b11631b5d0d88ceb00b5169edc8fc93e50",
+    "contains": 10
+  },
+  "assets": [
+    {
+      "index": 1,
+      "name": "moonlit_harbor_of_ancestors.png"
+    },
+    {
+      "index": 2,
+      "name": "ancestral_threads_across_the_sea.png"
+    },
+    {
+      "index": 3,
+      "name": "lanterns_of_the_forgotten_shore.png"
+    },
+    {
+      "index": 4,
+      "name": "harbor_of_echoes_at_twilight.png"
+    },
+    {
+      "index": 5,
+      "name": "golden_threads_of_ancestral_harbor.png"
+    },
+    {
+      "index": 6,
+      "name": "candlelit_map_of_lost_memories.png"
+    },
+    {
+      "index": 7,
+      "name": "celestial_harbor_of_ancestral_stars.png"
+    },
+    {
+      "index": 8,
+      "name": "twilight_lovers_above_the_enchanted_sea.png"
+    },
+    {
+      "index": 9,
+      "name": "ancestral_light_over_the_harbor.png"
+    },
+    {
+      "index": 10,
+      "name": "golden_threads_of_destiny.png"
+    }
+  ],
+  "canon_note": "Same two-hero Island Dream / Ancestral Memory world: fort, harbor, sea, map, lanterns, luminous gold-red thread. No unrelated cultures or modern elements.",
+  "next_step": "QC the 10 stills and choose which are worthy of timeline use before generating loops or assigning FX."
+}
