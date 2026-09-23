@@ -2,13 +2,16 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Batch 07 ancestral-presence media created and archived",
+  "current_stage": "Batch 07 pre-FX motion complete",
   "active_scope": "Batch 07 supplemental media",
   "completed": [
     "Batches 01-06 locked through pre-FX motion",
-    "Batch 07 ten-image ancestral-presence set created",
-    "Batch 07 archive backed up to Drive",
-    "Batch 07 manifest registered"
+    "Batch 07 ten-image still pool created and archived",
+    "Batch 07 QC completed",
+    "four Batch 07 stills selected",
+    "four clean loops + GIF previews created",
+    "four restrained pre-FX motion variants created",
+    "Batch 07 loop and motion archives backed up to Drive"
   ],
-  "exact_next_action": "QC Batch 07 stills first. Keep only strong canon-consistent images, then decide which become loop/motion assets. Do not alter the existing 00:00-112.680 locked timeline until placement is explicitly decided."
+  "exact_next_action": "Batch 07 is ready for FX gate/review. Do not alter the locked 00:00-112.680 timeline unless placement is explicitly approved."
 }
