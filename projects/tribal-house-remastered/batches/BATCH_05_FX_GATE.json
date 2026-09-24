@@ -1,0 +1,34 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 5,
+  "label": "Intensity",
+  "status": "technical_pass",
+  "anchor": "B05-STILL-01",
+  "canonical_fx": [
+    "FIRE-001",
+    "FIRE-002",
+    "LIGHT-023",
+    "ATM-001",
+    "DISTORT-021",
+    "SPATIAL-021"
+  ],
+  "protected_regions": [
+    "hero identity",
+    "face",
+    "anatomy",
+    "architecture",
+    "ritual geometry",
+    "horizon"
+  ],
+  "preferred": [
+    "B05-MOTION-01",
+    "B05-MOTION-02",
+    "B05-MOTION-08",
+    "B05-MOTION-10"
+  ],
+  "notes": [
+    "High-density particle/firelight treatments passed.",
+    "Heat remains localized and restrained.",
+    "No global warp; camera/depth remains last."
+  ]
+}

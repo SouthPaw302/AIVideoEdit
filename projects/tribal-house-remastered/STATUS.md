@@ -1,11 +1,11 @@
 # Status
 
-Stage: BATCH_04_FX_GATE_PASS / BATCH_05_NEXT
+Stage: BATCH_05_FX_GATE_PASS / BATCH_06_NEXT
 
-Batch 04 Spatial Expansion:
-- 10 standalone stills archived
-- 10 moving spatial/reflection proofs archived
-- FX gate technical PASS
-- Preferred: reflection shimmer, bounded depth, floor reflection, passage full stack
+Batch 05 Intensity:
+- 10 stills archived
+- 10 moving FX proofs archived
+- technical FX gate PASS
+- preferred: firelight surge, ember storm, dense atmosphere, full-stack intensity
 
-Next: Batch 05 Intensity. Increase rhythmic density and elemental energy while preserving identity and geometry.
+Next: Batch 06 Transformation. Shift state/palette and use mist/reflection/light changes while retaining visual continuity.
