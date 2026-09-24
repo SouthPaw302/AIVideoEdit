@@ -1,0 +1,19 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "allow": {
+    "current_user_instruction": true,
+    "current_song_audio": true,
+    "current_branch_state": true,
+    "historical_chats": false,
+    "unrelated_song_branches": false,
+    "prior_generated_media": false,
+    "previous_final_master_as_picture_source": false
+  },
+  "explicit_user_authorizations": [
+    "Use the current track as music-led narrative authority.",
+    "Lock the beat-derived fire-spirit storyline and proceed with production."
+  ],
+  "notes": [
+    "The discovered Tribal_House_Remastered_Mythic_Phoenix_FINAL.mp4 may be used only for technical/song inspection at this stage; its picture content is not authorized source canon."
+  ]
+}
