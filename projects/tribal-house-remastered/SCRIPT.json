@@ -1,0 +1,411 @@
+{
+  "schema": "aivideoedit.video-script.v1",
+  "locked": true,
+  "based_on_storyboard": true,
+  "target_fps": 24,
+  "duration_seconds": 305,
+  "total_frames": 7320,
+  "basis": [
+    "storyboard",
+    "music_analysis",
+    "current_user_direction"
+  ],
+  "entries": [
+    {
+      "shot_id": "S01",
+      "start_frame": 0,
+      "end_frame": 239,
+      "production_mode": "living_scene",
+      "story_action": "Invocation I: Near-black volcanic ritual chamber; one low ember circle begins to breathe.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Invocation I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "embers",
+        "smoke",
+        "firelight",
+        "dust"
+      ],
+      "protected_regions": [
+        "central spirit seed",
+        "sacred geometry",
+        "architecture"
+      ]
+    },
+    {
+      "shot_id": "S02",
+      "start_frame": 240,
+      "end_frame": 479,
+      "production_mode": "living_scene",
+      "story_action": "Invocation II: Sacred floor geometry and vertical stone forms emerge as percussion gains body; the hidden force remains incomplete.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Invocation II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "embers",
+        "smoke",
+        "light seams",
+        "ash"
+      ],
+      "protected_regions": [
+        "future hero silhouette",
+        "stone topology",
+        "horizon"
+      ]
+    },
+    {
+      "shot_id": "S03",
+      "start_frame": 480,
+      "end_frame": 719,
+      "production_mode": "living_scene",
+      "story_action": "Invocation III: The first coherent fire-spirit silhouette appears inside the ritual circle without fully revealing anatomy.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Invocation III"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "flame",
+        "embers",
+        "smoke",
+        "reflected glow"
+      ],
+      "protected_regions": [
+        "hero silhouette",
+        "anatomy",
+        "ritual circle"
+      ]
+    },
+    {
+      "shot_id": "S04",
+      "start_frame": 720,
+      "end_frame": 1055,
+      "production_mode": "cinematic",
+      "story_action": "Gathering I: Distant ritual figures and torch forms answer the awakened presence from the perimeter.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+      "music_cues": [
+        "Gathering I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff"
+    },
+    {
+      "shot_id": "S05",
+      "start_frame": 1056,
+      "end_frame": 1391,
+      "production_mode": "living_scene",
+      "story_action": "Gathering II: Circular motion and dust pull inward toward the same central sacred space.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Gathering II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "dust",
+        "cloth",
+        "embers",
+        "smoke"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body silhouettes",
+        "architecture"
+      ]
+    },
+    {
+      "shot_id": "S06",
+      "start_frame": 1392,
+      "end_frame": 1967,
+      "production_mode": "living_scene",
+      "story_action": "Manifestation I: The spirit gains an identifiable head, torso and mantle of flame/feather-like energy while staying one coherent entity.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Manifestation I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "fire",
+        "embers",
+        "smoke",
+        "light"
+      ],
+      "protected_regions": [
+        "face",
+        "anatomy",
+        "hero identity"
+      ]
+    },
+    {
+      "shot_id": "S07",
+      "start_frame": 1968,
+      "end_frame": 2543,
+      "production_mode": "cinematic",
+      "story_action": "Manifestation II: Wider reveal: the spirit stands inside monumental ruins as the environment begins responding to it.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+      "music_cues": [
+        "Manifestation II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff"
+    },
+    {
+      "shot_id": "S08",
+      "start_frame": 2544,
+      "end_frame": 2879,
+      "production_mode": "cinematic",
+      "story_action": "Passage I: The spirit advances through a stone threshold aligned with the percussion.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+      "music_cues": [
+        "Passage I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff"
+    },
+    {
+      "shot_id": "S09",
+      "start_frame": 2880,
+      "end_frame": 3215,
+      "production_mode": "living_scene",
+      "story_action": "Passage II: Volcanic shoreline or dark reflective basin carries the same spirit toward the next gate.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Passage II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "water/reflection",
+        "embers",
+        "smoke"
+      ],
+      "protected_regions": [
+        "hero identity",
+        "shoreline topology",
+        "horizon"
+      ]
+    },
+    {
+      "shot_id": "S10",
+      "start_frame": 3216,
+      "end_frame": 3719,
+      "production_mode": "living_scene",
+      "story_action": "Peak Build I: Fire, dust, cloth and reflected light become independently active around the spirit.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Peak Build I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "fire",
+        "dust",
+        "cloth",
+        "reflections",
+        "smoke"
+      ],
+      "protected_regions": [
+        "face",
+        "hands",
+        "anatomy",
+        "hero silhouette"
+      ]
+    },
+    {
+      "shot_id": "S11",
+      "start_frame": 3720,
+      "end_frame": 4223,
+      "production_mode": "cinematic",
+      "story_action": "Peak Build II: Ritual participants/environmental forms converge without obscuring the hero; impact rises.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+      "music_cues": [
+        "Peak Build II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff"
+    },
+    {
+      "shot_id": "S12",
+      "start_frame": 4224,
+      "end_frame": 4751,
+      "production_mode": "living_scene",
+      "story_action": "Peak Build III: Ceremonial overload: architecture glows along seams and atmosphere thickens while topology remains stable.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Peak Build III"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "light seams",
+        "embers",
+        "smoke",
+        "heat"
+      ],
+      "protected_regions": [
+        "hero identity",
+        "architecture",
+        "sacred geometry"
+      ]
+    },
+    {
+      "shot_id": "S13",
+      "start_frame": 4752,
+      "end_frame": 5111,
+      "production_mode": "living_scene",
+      "story_action": "Threshold Crossing I: The spirit enters a fire-and-water threshold; palette begins shifting from earthbound orange to luminous gold/indigo.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Threshold Crossing I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "reflection",
+        "fog",
+        "firelight"
+      ],
+      "protected_regions": [
+        "hero identity",
+        "gate geometry"
+      ]
+    },
+    {
+      "shot_id": "S14",
+      "start_frame": 5112,
+      "end_frame": 5471,
+      "production_mode": "cinematic",
+      "story_action": "Threshold Crossing II: The environment opens into a more mythic spatial plane; movement becomes less terrestrial.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+      "music_cues": [
+        "Threshold Crossing II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff"
+    },
+    {
+      "shot_id": "S15",
+      "start_frame": 5472,
+      "end_frame": 5807,
+      "production_mode": "living_scene",
+      "story_action": "Apotheosis I: Monumental symmetrical reveal of the fully manifested spirit.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Apotheosis I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "firelight",
+        "embers",
+        "atmosphere"
+      ],
+      "protected_regions": [
+        "face",
+        "anatomy",
+        "hero silhouette",
+        "symmetry"
+      ]
+    },
+    {
+      "shot_id": "S16",
+      "start_frame": 5808,
+      "end_frame": 6143,
+      "production_mode": "cinematic",
+      "story_action": "Apotheosis II: The spirit rises or expands in presence while camera remains restrained and the world moves around it.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+      "music_cues": [
+        "Apotheosis II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff"
+    },
+    {
+      "shot_id": "S17",
+      "start_frame": 6144,
+      "end_frame": 6551,
+      "production_mode": "living_scene",
+      "story_action": "Release I: Percussive aggression softens; fire and smoke movements become smoother and more fluid.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Release I"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "smoke",
+        "soft flame",
+        "ash"
+      ],
+      "protected_regions": [
+        "hero identity",
+        "environment topology"
+      ]
+    },
+    {
+      "shot_id": "S18",
+      "start_frame": 6552,
+      "end_frame": 6959,
+      "production_mode": "cinematic",
+      "story_action": "Release II: The spirit recedes into a wide sacred landscape, power stabilized rather than extinguished.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+      "music_cues": [
+        "Release II"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff"
+    },
+    {
+      "shot_id": "S19",
+      "start_frame": 6960,
+      "end_frame": 7319,
+      "production_mode": "living_scene",
+      "story_action": "Afterglow: Ash, horizon glow and remaining embers settle into transformed stillness.",
+      "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+      "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+      "music_cues": [
+        "Afterglow"
+      ],
+      "lyric_cue": null,
+      "transition": "motivated light/atmosphere/geometry handoff",
+      "motion_regions": [
+        "ash",
+        "fog",
+        "low embers",
+        "horizon light"
+      ],
+      "protected_regions": [
+        "final silhouette",
+        "horizon",
+        "architecture"
+      ]
+    }
+  ]
+}
