@@ -74,3 +74,32 @@ Adapter/external effects promoted to ordinary `approved` status additionally req
 ## Historical lineage
 
 FX V2 consolidates reusable implementation lineage from Silver Coin, Irish Eyes, IronFlame, Leave It by the Door, the shared Generative Engine, and genuine SuperSplat/3DGS workflows when real splat geometry exists. Historical integration branches remain provenance only; `main` is the current source of truth.
+
+
+## Deterministic FX resolver
+
+`fx_resolver.py` and `recipes.json` are the canonical selection layer for batch-, scene-, and still-level FX planning.
+
+The resolver consumes explicit semantic facts from the accepted media or shot package (environment, visible materials/objects, narrative needs, constraints and protection requirements). It then:
+
+1. loads the current canonical `registry.json` and reusable recipe catalog;
+2. matches project-neutral recipes deterministically;
+3. excludes physically or compositionally incompatible effects;
+4. prefers approved canonical FX before proof-required/project-local/new work;
+5. returns a bounded effect stack, protected regions, composition steps and rejected candidates with reasons.
+
+Default resolution never selects `proof_required` effects. They can only be surfaced explicitly for proof work.
+
+The resolver does not infer invisible scene facts and does not replace directorial judgment. Agents must describe the accepted scene truthfully before asking for a resolution.
+
+Selection order:
+
+`approved canonical FX -> approved reusable recipe -> proof-required existing FX -> project-local candidate -> new FX only if necessary`
+
+Use the read-only harness tool `harness.fx_resolve` when working through the Studio/MCP harness. Production agents should resolve FX before authoring scene FX requirements and again when a still/scene materially changes.
+
+## Reusable composition recipes
+
+Not every successful production technique deserves a new FX ID. `recipes.json` preserves composition-level methods such as ghosted narrative object overlays, transparent scene handoffs, protected-subject environmental motion, artifact salvage, long-hold scene evolution, multiplane alpha compositing, instrument-axis audio visualization, temporal painting and pigment travel.
+
+Recipes may combine existing primitives, protection rules and editorial steps. Prefer a recipe over duplicating the underlying FX implementations.
