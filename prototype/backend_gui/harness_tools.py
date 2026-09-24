@@ -7,6 +7,7 @@ Tool API and its canonical AIVideoEdit guards.
 """
 from __future__ import annotations
 
+import importlib.util
 import json
 import shutil
 from pathlib import Path
@@ -28,6 +29,27 @@ SCHEMAS = [
             "type": "object",
             "required": ["project_id"],
             "properties": {"project_id": {"type": "string"}},
+        },
+    },
+    {
+        "name": "harness.fx_resolve",
+        "description": "Deterministically resolve approved reusable FX and composition recipes for a batch, scene, or still from explicit semantic facts.",
+        "input_schema": {
+            "type": "object",
+            "required": ["project_id"],
+            "properties": {
+                "project_id": {"type": "string"},
+                "level": {"type": "string", "enum": ["batch", "scene", "still"], "default": "scene"},
+                "environment": {"type": "array", "items": {"type": "string"}},
+                "materials": {"type": "array", "items": {"type": "string"}},
+                "objects": {"type": "array", "items": {"type": "string"}},
+                "needs": {"type": "array", "items": {"type": "string"}},
+                "motifs": {"type": "array", "items": {"type": "string"}},
+                "tags": {"type": "array", "items": {"type": "string"}},
+                "constraints": {"type": "array", "items": {"type": "string"}},
+                "allow_proof_required": {"type": "boolean", "default": false},
+                "max_effects": {"type": "integer", "minimum": 1, "maximum": 12}
+            },
         },
     },
 ]
@@ -140,7 +162,57 @@ def context(project_id: str) -> dict:
             "Run through existing AIVideoEdit tools; do not bypass canonical production guards.",
             "Do not mutate main from the harness experiment.",
             "Refresh harness.context after a stage-changing operation before choosing the next action.",
+            "Resolve FX through harness.fx_resolve before authoring batch/scene/still FX requirements and after material scene changes.",
         ],
+    }
+
+
+
+def fx_resolve(project_id: str, request: dict) -> dict:
+    pid = str(project_id or "").strip()
+    project = base.find_project(pid)
+    if not project:
+        raise ValueError("project not found")
+    production = production_project.status(pid)
+    if not production.get("initialized"):
+        raise RuntimeError("production workspace is not initialized")
+    engine = Path(str(production.get("engine_root") or ""))
+    session = _read_json(engine / ".aivideoedit" / "session.json", {})
+    os_root = Path(str(session.get("os_root") or ""))
+    fx_root = os_root / "general" / "reusable" / "fx_v2"
+    resolver_path = fx_root / "fx_resolver.py"
+    registry_path = fx_root / "registry.json"
+    recipes_path = fx_root / "recipes.json"
+    for required in (resolver_path, registry_path, recipes_path):
+        if not required.is_file():
+            raise RuntimeError(f"canonical FX resolver dependency missing: {required.name}")
+    spec = importlib.util.spec_from_file_location("aivideoedit_fx_resolver", resolver_path)
+    if not spec or not spec.loader:
+        raise RuntimeError("cannot load canonical FX resolver")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    context_data = {
+        key: request.get(key, [])
+        for key in ("environment", "materials", "objects", "needs", "motifs", "tags", "constraints")
+    }
+    context_data["level"] = str(request.get("level") or "scene")
+    resolution = module.resolve(
+        context_data,
+        registry_path=registry_path,
+        recipes_path=recipes_path,
+        allow_proof_required=bool(request.get("allow_proof_required", False)),
+        max_effects=request.get("max_effects"),
+    )
+    return {
+        "schema": "aivideoedit.harness-fx-resolution.v1",
+        "project": {"id": project.get("id"), "name": project.get("name")},
+        "production": {
+            "branch": production.get("branch"),
+            "stage": production.get("stage"),
+            "main_commit": (production.get("core") or {}).get("main_commit") or CORE.status().get("main_commit"),
+        },
+        "resolution": resolution,
+        "agent_rule": "Use this resolution before authoring FX requirements; directorial judgment may remove an effect but must not silently substitute unregistered project-local behavior.",
     }
 
 
@@ -150,4 +222,6 @@ def call(name: str, args: dict | None = None):
         return status()
     if name == "harness.context":
         return context(str(args.get("project_id") or ""))
+    if name == "harness.fx_resolve":
+        return fx_resolve(str(args.get("project_id") or ""), args)
     raise ValueError(f"unknown harness tool: {name}")

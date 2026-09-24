@@ -320,6 +320,18 @@
       },
       "status": "standard"
     },
+    "FX2-CAMERA-025": {
+      "family": "spatial",
+      "gate_status": "proof_required",
+      "implementation": {
+        "kind": "adapter",
+        "path": "general/reusable/fx_v2/matched_angle_viewpoint.py",
+        "symbol": "matched_angle_viewpoint"
+      },
+      "name": "matched_angle_viewpoint",
+      "notes": "Source-locked bounded planar viewpoint change with overscan and reflected borders. Generates/inpaints no pixels. Candidate requires neutral proof/QC before production approval.",
+      "status": "candidate"
+    },
     "FX2-COMP-021": {
       "family": "compositing",
       "gate_status": "approved",
@@ -1398,6 +1410,18 @@
         "temporal_delta_min": 0.01
       },
       "status": "standard"
+    },
+    "FX2-TRANS-033": {
+      "family": "transition",
+      "gate_status": "proof_required",
+      "implementation": {
+        "kind": "adapter",
+        "path": "general/reusable/fx_v2/threshold_prism_bleed.py",
+        "symbol": "apply_threshold_prism_bleed"
+      },
+      "name": "threshold_prism_bleed",
+      "notes": "Localized spectral threshold-edge compositor with restrained channel separation, rays/scatter and optional ghost plate. Stylized 2D/2.5D, not physical diffraction. Candidate requires neutral proof/QC before production approval.",
+      "status": "candidate"
     },
     "FX2-VIS-001": {
       "family": "visualizer",
