@@ -1,0 +1,878 @@
+{
+  "schema": "aivideoedit.living-painting-render.v1",
+  "project": "silver-coin-test-2-v5-new-stills",
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "seed": 302,
+  "preset": "medium",
+  "crf": 18,
+  "transition_fraction": 0,
+  "audio": "media/Silver Coin (Remastered).wav",
+  "scenes": [
+    {
+      "id": "SC01",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC01_silver_coin.png",
+      "duration": 1.9737,
+      "family": "coin",
+      "effects": [
+        "micro",
+        "firelight",
+        "glint",
+        "canvas"
+      ],
+      "transition": "coin",
+      "transition_fraction": 0.23,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13,
+      "glint_center": [
+        0.475,
+        0.72
+      ],
+      "glint_radius": 0.09,
+      "glint_strength": 31,
+      "portal_center": [
+        0.475,
+        0.72
+      ]
+    },
+    {
+      "id": "SC02",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC02_watermill.png",
+      "duration": 1.9737,
+      "family": "village",
+      "effects": [
+        "parallax",
+        "micro",
+        "reflection",
+        "atmosphere",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.15,
+      "reflection_strength": 0.14
+    },
+    {
+      "id": "SC03",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC03_final_wagon.png",
+      "duration": 1.9737,
+      "family": "village",
+      "effects": [
+        "parallax",
+        "micro",
+        "reflection",
+        "atmosphere",
+        "particles",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.55,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.1,
+      "reflection_strength": 0.11
+    },
+    {
+      "id": "SC04",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC04_tavern_threshold.png",
+      "duration": 1.9737,
+      "family": "threshold",
+      "effects": [
+        "parallax",
+        "micro",
+        "reflection",
+        "atmosphere",
+        "firelight",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.1,
+      "reflection_strength": 0.16
+    },
+    {
+      "id": "SC05",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC05_fiddler_prepares.png",
+      "duration": 1.9737,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "firelight",
+        "haze",
+        "shafts",
+        "bow",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.5,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13,
+      "bow_roi": [
+        0.16,
+        0.05,
+        0.28,
+        0.85
+      ],
+      "bow_pixels": 1.35
+    },
+    {
+      "id": "SC06",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC06_mugs_together.png",
+      "duration": 1.9737,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "firelight",
+        "haze",
+        "shafts",
+        "canvas"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.5,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC07",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC07_morning_at_mill.png",
+      "duration": 11.0991,
+      "family": "village",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC08",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC08_final_wagon_dusk.png",
+      "duration": 10.7276,
+      "family": "village",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC09",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC09_fire_fills_room.png",
+      "duration": 11.076,
+      "family": "threshold",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC10",
+      "image": "hero_library/generated/batch_01_SC01-SC10/SC10_raise_your_mugs.png",
+      "duration": 5.5263,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC11",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC11_stamp_floorboards.png",
+      "duration": 11.0759,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC12",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC12_rich_in_song.png",
+      "duration": 9.6529,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC13",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC13_merchant_in_silk.png",
+      "duration": 9.7126,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC14",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC14_empty_cup.png",
+      "duration": 7.9644,
+      "family": "coin",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC15",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC15_hat_and_coin.png",
+      "duration": 11.4242,
+      "family": "coin",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "shafts",
+        "glint"
+      ],
+      "transition": "coin",
+      "transition_fraction": 0.08,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13,
+      "glint_center": [
+        0.812,
+        0.305
+      ],
+      "glint_radius": 0.09,
+      "glint_strength": 35,
+      "portal_center": [
+        0.812,
+        0.305
+      ]
+    },
+    {
+      "id": "SC16",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC16_braggart_outside.png",
+      "duration": 5.8988,
+      "family": "threshold",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts",
+        "reflection"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC17",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC17_second_chorus_dance.png",
+      "duration": 10.7035,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC18",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC18_floorboards_answer.png",
+      "duration": 11.0759,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC19",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC19_tavern_chorus_wide.png",
+      "duration": 10.2206,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC20",
+      "image": "hero_library/generated/batch_02_SC11-SC20/SC20_workers_erupt.png",
+      "duration": 6.0566,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC21",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC21_hidden_bread.png",
+      "duration": 5.5031,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC22",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC22_farmhand_and_love.png",
+      "duration": 5.5496,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC23",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC23_debts_due_tomorrow.png",
+      "duration": 5.5263,
+      "family": "threshold",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts",
+        "reflection"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC24",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC24_wine_belongs_tonight.png",
+      "duration": 5.5264,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC25",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC25_final_chorus_begins.png",
+      "duration": 5.5263,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "firelight",
+        "haze",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC26",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC26_living_hearts_wake.png",
+      "duration": 10.9366,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC27",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC27_rafters_shake.png",
+      "duration": 5.5496,
+      "family": "tavern",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts",
+        "firelight",
+        "haze"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.85,
+      "firelight_strength": 0.052,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.05,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.78,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC28",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC28_dance_into_morning.png",
+      "duration": 10.8255,
+      "family": "dawn",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.22,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC29",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC29_dawn_departure.png",
+      "duration": 7,
+      "family": "dawn",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.22,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    },
+    {
+      "id": "SC30",
+      "image": "hero_library/generated/batch_03_SC21-SC30/SC30_flower_crown_coda.png",
+      "duration": 1.44,
+      "family": "dawn",
+      "effects": [
+        "micro",
+        "atmosphere",
+        "particles",
+        "canvas",
+        "parallax",
+        "shafts"
+      ],
+      "transition": "cut",
+      "transition_fraction": 0,
+      "micro_strength": 0.58,
+      "firelight_strength": 0.043,
+      "haze_strength": 0.72,
+      "shaft_strength": 0.044,
+      "canvas_amount": 0.48,
+      "light_origin": [
+        0.22,
+        0.16
+      ],
+      "parallax": 1.35,
+      "reflection_strength": 0.13
+    }
+  ]
+}
