@@ -1,0 +1,52 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S12",
+  "script_entry": {
+    "shot_id": "S12",
+    "start_frame": 4224,
+    "end_frame": 4751,
+    "production_mode": "living_scene",
+    "story_action": "Peak Build III: Ceremonial overload: architecture glows along seams and atmosphere thickens while topology remains stable.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Peak Build III"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "light seams",
+      "embers",
+      "smoke",
+      "heat"
+    ],
+    "protected_regions": [
+      "hero identity",
+      "architecture",
+      "sacred geometry"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B05-PROOF",
+      "uri": "https://drive.google.com/file/d/1IgGtxTDs5_Pww-eHTetajoWLl9PyRcsw/view",
+      "name": "B05_FX_SECTION_PROOF.mp4",
+      "sha256": "38908828361b1c3b81479db3a8886af5960111c28b938dd11c7288126b2ba857",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B05",
+      "source_duration_seconds": 64,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S12; covered by B05 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

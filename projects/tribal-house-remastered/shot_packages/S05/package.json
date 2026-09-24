@@ -1,0 +1,53 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S05",
+  "script_entry": {
+    "shot_id": "S05",
+    "start_frame": 1056,
+    "end_frame": 1391,
+    "production_mode": "living_scene",
+    "story_action": "Gathering II: Circular motion and dust pull inward toward the same central sacred space.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Gathering II"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "dust",
+      "cloth",
+      "embers",
+      "smoke"
+    ],
+    "protected_regions": [
+      "faces",
+      "hands",
+      "body silhouettes",
+      "architecture"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B02-PROOF",
+      "uri": "https://drive.google.com/file/d/1sKKtvJOPe5N4vcy2s-rBLlPgqkrRoLEI/view",
+      "name": "B02_FX_SECTION_PROOF.mp4",
+      "sha256": "7ee4328826df8d25c9d3da624fed65f20a9dff0acb60aaa264b237451955c7d9",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B02",
+      "source_duration_seconds": 28,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S05; covered by B02 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

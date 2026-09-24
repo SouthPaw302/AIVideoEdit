@@ -1,0 +1,52 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S15",
+  "script_entry": {
+    "shot_id": "S15",
+    "start_frame": 5472,
+    "end_frame": 5807,
+    "production_mode": "living_scene",
+    "story_action": "Apotheosis I: Monumental symmetrical reveal of the fully manifested spirit.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Apotheosis I"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "firelight",
+      "embers",
+      "atmosphere"
+    ],
+    "protected_regions": [
+      "face",
+      "anatomy",
+      "hero silhouette",
+      "symmetry"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B07-PROOF",
+      "uri": "https://drive.google.com/file/d/1nH2_W2ErOQ_4CKqcpkcj9uCMx1pADpPD/view",
+      "name": "B07_FX_SECTION_PROOF.mp4",
+      "sha256": "59871f710f5e3f64b3fd8219f5e013507e5a7f8ab8bf5961fd2df86c2ec7d0b7",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B07",
+      "source_duration_seconds": 28,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S15; covered by B07 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

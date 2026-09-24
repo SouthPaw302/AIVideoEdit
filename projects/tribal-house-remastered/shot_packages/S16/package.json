@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S16",
+  "script_entry": {
+    "shot_id": "S16",
+    "start_frame": 5808,
+    "end_frame": 6143,
+    "production_mode": "cinematic",
+    "story_action": "Apotheosis II: The spirit rises or expands in presence while camera remains restrained and the world moves around it.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+    "music_cues": [
+      "Apotheosis II"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff"
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B07-PROOF",
+      "uri": "https://drive.google.com/file/d/1nH2_W2ErOQ_4CKqcpkcj9uCMx1pADpPD/view",
+      "name": "B07_FX_SECTION_PROOF.mp4",
+      "sha256": "59871f710f5e3f64b3fd8219f5e013507e5a7f8ab8bf5961fd2df86c2ec7d0b7",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B07",
+      "source_duration_seconds": 28,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S16; covered by B07 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

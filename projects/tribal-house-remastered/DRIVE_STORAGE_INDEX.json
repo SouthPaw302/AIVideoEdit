@@ -1,0 +1,71 @@
+{
+  "schema": "aivideoedit.google-drive-storage-index.v1",
+  "project": "Tribal House Remastered",
+  "branch": "song/tribal-house-remastered",
+  "provider": "google_drive",
+  "root_folder": {
+    "id": "1zjSYLhWEanmpUS17OmHTJCganZNxaoRE",
+    "name": "Tribal House Remastered Mythic Phoenix"
+  },
+  "folders": {
+    "final_masters": "1jx6kPMWjtc2uODDqiUCsaKlZ3PHIiDNH",
+    "production_batches": "1Y2Yw6eR9uOICATLyRkXgi3wGiXDa6tca",
+    "full_fx_pass": "1vxX94B7ysnKrp-TFjCZbPFikK6Mj0mTI",
+    "qc_and_assembly": "1f_SeQVPDd1fLyAiJ5BHx07Hvkjj65Jq0",
+    "section_proofs": "1V9irERrqQAs6IbXrn5C8ldOorkbMksqe"
+  },
+  "durable_section_assets": {
+    "B01": {
+      "file_id": "14LdZeZJspNL0FFpPEDMAB7Vg79ashVZI",
+      "sha256": "f38079aff754d66250c7267f274d33f539168ad2e908893f084d1f360ef9834f",
+      "file_name": "B01_FX_SECTION_PROOF.mp4"
+    },
+    "B02": {
+      "file_id": "1sKKtvJOPe5N4vcy2s-rBLlPgqkrRoLEI",
+      "sha256": "7ee4328826df8d25c9d3da624fed65f20a9dff0acb60aaa264b237451955c7d9",
+      "file_name": "B02_FX_SECTION_PROOF.mp4"
+    },
+    "B03": {
+      "file_id": "1F4J7MnXXSBtDzW7uphoh-9hLcpzg2yv4",
+      "sha256": "ad3cd28c5c22b3cf2a65c358435fbab8af16f5cdebb01d71ba3588863f7ab0f0",
+      "file_name": "B03_FX_SECTION_PROOF.mp4"
+    },
+    "B04": {
+      "file_id": "1q0tzv47NrgQc5n3Rs6KGn2DX20h04Z-r",
+      "sha256": "7188b2d91ca6654d6e563abf563efc443fa1c1bb8f37cb4c74764672ad9c6783",
+      "file_name": "B04_FX_SECTION_PROOF.mp4"
+    },
+    "B05": {
+      "file_id": "1IgGtxTDs5_Pww-eHTetajoWLl9PyRcsw",
+      "sha256": "38908828361b1c3b81479db3a8886af5960111c28b938dd11c7288126b2ba857",
+      "file_name": "B05_FX_SECTION_PROOF.mp4"
+    },
+    "B06": {
+      "file_id": "1Vs-WJ4DotN136bS_5jMt3-3CuEUvwJDK",
+      "sha256": "9b189e5c57b02bd3bdd332876d33258bfe78cebd20e8151572d925672155714b",
+      "file_name": "B06_FX_SECTION_PROOF.mp4"
+    },
+    "B07": {
+      "file_id": "1nH2_W2ErOQ_4CKqcpkcj9uCMx1pADpPD",
+      "sha256": "59871f710f5e3f64b3fd8219f5e013507e5a7f8ab8bf5961fd2df86c2ec7d0b7",
+      "file_name": "B07_FX_SECTION_PROOF.mp4"
+    },
+    "B08": {
+      "file_id": "1XYSl_sZJQk0DAyjdnZDBj23M1aKbvbxY",
+      "sha256": "33641cf7b6076e46c6f9cd96c4f1a6e9d112f4f2aa6227e00317ab7796caca6f",
+      "file_name": "B08_FX_SECTION_PROOF.mp4"
+    },
+    "B09": {
+      "file_id": "1A1NNGIt5sgABGdsKpOGDZenXX4fff_6h",
+      "sha256": "84fad4b3550ec47a5e38490a5226878d45440fd6e6b657fe6c0e4f08f1066fef",
+      "file_name": "B09_FX_SECTION_PROOF.mp4"
+    }
+  },
+  "final_candidate": {
+    "file_name": "TRIBAL_HOUSE_LOCKED_FX_MASTER_720P_FINAL4.mp4",
+    "sha256": "957251dcbdb9b3dc7a01e36fee106a2ce96fbea1cc8b2a4fd095c702f97b80ac",
+    "drive_status": "pending_handoff",
+    "contact_sheet_file_id": "1YyOc1PQ9CorX9uHwVEJQCF0K3qbACeYj"
+  },
+  "note": "The canonical STORAGE_MANIFEST schema currently targets GitHub Releases only. This provider-specific index records the production's actual Google Drive storage rather than mislabeling Drive as github_releases."
+}

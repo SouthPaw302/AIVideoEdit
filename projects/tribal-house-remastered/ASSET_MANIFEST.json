@@ -285,7 +285,205 @@
         "url": "https://drive.google.com/file/d/1wYsN1bDEj2fIGQnWDvZIy50mNAHMHIPd/view"
       },
       "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "SECTION-B01-PROOF",
+      "file_name": "B01_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "f38079aff754d66250c7267f274d33f539168ad2e908893f084d1f360ef9834f",
+      "duration_seconds": 30,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "14LdZeZJspNL0FFpPEDMAB7Vg79ashVZI",
+        "url": "https://drive.google.com/file/d/14LdZeZJspNL0FFpPEDMAB7Vg79ashVZI/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B02-PROOF",
+      "file_name": "B02_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "7ee4328826df8d25c9d3da624fed65f20a9dff0acb60aaa264b237451955c7d9",
+      "duration_seconds": 28,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1sKKtvJOPe5N4vcy2s-rBLlPgqkrRoLEI",
+        "url": "https://drive.google.com/file/d/1sKKtvJOPe5N4vcy2s-rBLlPgqkrRoLEI/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B03-PROOF",
+      "file_name": "B03_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "ad3cd28c5c22b3cf2a65c358435fbab8af16f5cdebb01d71ba3588863f7ab0f0",
+      "duration_seconds": 48,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1F4J7MnXXSBtDzW7uphoh-9hLcpzg2yv4",
+        "url": "https://drive.google.com/file/d/1F4J7MnXXSBtDzW7uphoh-9hLcpzg2yv4/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B04-PROOF",
+      "file_name": "B04_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "7188b2d91ca6654d6e563abf563efc443fa1c1bb8f37cb4c74764672ad9c6783",
+      "duration_seconds": 28,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1q0tzv47NrgQc5n3Rs6KGn2DX20h04Z-r",
+        "url": "https://drive.google.com/file/d/1q0tzv47NrgQc5n3Rs6KGn2DX20h04Z-r/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B05-PROOF",
+      "file_name": "B05_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "38908828361b1c3b81479db3a8886af5960111c28b938dd11c7288126b2ba857",
+      "duration_seconds": 64,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1IgGtxTDs5_Pww-eHTetajoWLl9PyRcsw",
+        "url": "https://drive.google.com/file/d/1IgGtxTDs5_Pww-eHTetajoWLl9PyRcsw/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B06-PROOF",
+      "file_name": "B06_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "9b189e5c57b02bd3bdd332876d33258bfe78cebd20e8151572d925672155714b",
+      "duration_seconds": 30,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1Vs-WJ4DotN136bS_5jMt3-3CuEUvwJDK",
+        "url": "https://drive.google.com/file/d/1Vs-WJ4DotN136bS_5jMt3-3CuEUvwJDK/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B07-PROOF",
+      "file_name": "B07_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "59871f710f5e3f64b3fd8219f5e013507e5a7f8ab8bf5961fd2df86c2ec7d0b7",
+      "duration_seconds": 28,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1nH2_W2ErOQ_4CKqcpkcj9uCMx1pADpPD",
+        "url": "https://drive.google.com/file/d/1nH2_W2ErOQ_4CKqcpkcj9uCMx1pADpPD/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B08-PROOF",
+      "file_name": "B08_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "33641cf7b6076e46c6f9cd96c4f1a6e9d112f4f2aa6227e00317ab7796caca6f",
+      "duration_seconds": 34,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1XYSl_sZJQk0DAyjdnZDBj23M1aKbvbxY",
+        "url": "https://drive.google.com/file/d/1XYSl_sZJQk0DAyjdnZDBj23M1aKbvbxY/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
+    },
+    {
+      "id": "SECTION-B09-PROOF",
+      "file_name": "B09_FX_SECTION_PROOF.mp4",
+      "kind": "living_still_fx",
+      "role": "section_proof",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "sha256": "84fad4b3550ec47a5e38490a5226878d45440fd6e6b657fe6c0e4f08f1066fef",
+      "duration_seconds": 15,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ],
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1A1NNGIt5sgABGdsKpOGDZenXX4fff_6h",
+        "url": "https://drive.google.com/file/d/1A1NNGIt5sgABGdsKpOGDZenXX4fff_6h/view"
+      },
+      "qc_status": "PASS",
+      "note": "Music-synced section proof built from preserved batch imagery plus approved current-main FX, loops and reactive media."
     }
   ],
-  "note": "All generated Invocation media to date belongs to Batch 01. MAIN and FX_SECONDARY are preserved separately; creative lock occurs after moving proof gate."
+  "note": "Preserved source assets plus nine actual moving section-proof assets used as shot-package production evidence. Final master is indexed in FINAL_EXPORT_QC.json until Drive handoff completes."
 }

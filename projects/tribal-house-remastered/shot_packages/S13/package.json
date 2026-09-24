@@ -1,0 +1,50 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S13",
+  "script_entry": {
+    "shot_id": "S13",
+    "start_frame": 4752,
+    "end_frame": 5111,
+    "production_mode": "living_scene",
+    "story_action": "Threshold Crossing I: The spirit enters a fire-and-water threshold; palette begins shifting from earthbound orange to luminous gold/indigo.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Threshold Crossing I"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "reflection",
+      "fog",
+      "firelight"
+    ],
+    "protected_regions": [
+      "hero identity",
+      "gate geometry"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B06-PROOF",
+      "uri": "https://drive.google.com/file/d/1Vs-WJ4DotN136bS_5jMt3-3CuEUvwJDK/view",
+      "name": "B06_FX_SECTION_PROOF.mp4",
+      "sha256": "9b189e5c57b02bd3bdd332876d33258bfe78cebd20e8151572d925672155714b",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B06",
+      "source_duration_seconds": 30,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S13; covered by B06 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

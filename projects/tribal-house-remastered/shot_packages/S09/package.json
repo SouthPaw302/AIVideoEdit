@@ -1,0 +1,51 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S09",
+  "script_entry": {
+    "shot_id": "S09",
+    "start_frame": 2880,
+    "end_frame": 3215,
+    "production_mode": "living_scene",
+    "story_action": "Passage II: Volcanic shoreline or dark reflective basin carries the same spirit toward the next gate.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Passage II"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "water/reflection",
+      "embers",
+      "smoke"
+    ],
+    "protected_regions": [
+      "hero identity",
+      "shoreline topology",
+      "horizon"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B04-PROOF",
+      "uri": "https://drive.google.com/file/d/1q0tzv47NrgQc5n3Rs6KGn2DX20h04Z-r/view",
+      "name": "B04_FX_SECTION_PROOF.mp4",
+      "sha256": "7188b2d91ca6654d6e563abf563efc443fa1c1bb8f37cb4c74764672ad9c6783",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B04",
+      "source_duration_seconds": 28,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S09; covered by B04 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S03",
+  "script_entry": {
+    "shot_id": "S03",
+    "start_frame": 480,
+    "end_frame": 719,
+    "production_mode": "living_scene",
+    "story_action": "Invocation III: The first coherent fire-spirit silhouette appears inside the ritual circle without fully revealing anatomy.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Invocation III"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "flame",
+      "embers",
+      "smoke",
+      "reflected glow"
+    ],
+    "protected_regions": [
+      "hero silhouette",
+      "anatomy",
+      "ritual circle"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B01-PROOF",
+      "uri": "https://drive.google.com/file/d/14LdZeZJspNL0FFpPEDMAB7Vg79ashVZI/view",
+      "name": "B01_FX_SECTION_PROOF.mp4",
+      "sha256": "f38079aff754d66250c7267f274d33f539168ad2e908893f084d1f360ef9834f",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B01",
+      "source_duration_seconds": 30,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S03; covered by B01 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

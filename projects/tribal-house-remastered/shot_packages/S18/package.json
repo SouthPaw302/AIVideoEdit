@@ -1,0 +1,41 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S18",
+  "script_entry": {
+    "shot_id": "S18",
+    "start_frame": 6552,
+    "end_frame": 6959,
+    "production_mode": "cinematic",
+    "story_action": "Release II: The spirit recedes into a wide sacred landscape, power stabilized rather than extinguished.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Bounded cinematic action/coverage inside the locked world with zero-drift anchors.",
+    "music_cues": [
+      "Release II"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff"
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B08-PROOF",
+      "uri": "https://drive.google.com/file/d/1XYSl_sZJQk0DAyjdnZDBj23M1aKbvbxY/view",
+      "name": "B08_FX_SECTION_PROOF.mp4",
+      "sha256": "33641cf7b6076e46c6f9cd96c4f1a6e9d112f4f2aa6227e00317ab7796caca6f",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B08",
+      "source_duration_seconds": 34,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S18; covered by B08 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

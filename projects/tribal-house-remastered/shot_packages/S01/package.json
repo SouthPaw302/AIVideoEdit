@@ -1,0 +1,52 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S01",
+  "script_entry": {
+    "shot_id": "S01",
+    "start_frame": 0,
+    "end_frame": 239,
+    "production_mode": "living_scene",
+    "story_action": "Invocation I: Near-black volcanic ritual chamber; one low ember circle begins to breathe.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Invocation I"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "embers",
+      "smoke",
+      "firelight",
+      "dust"
+    ],
+    "protected_regions": [
+      "central spirit seed",
+      "sacred geometry",
+      "architecture"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B01-PROOF",
+      "uri": "https://drive.google.com/file/d/14LdZeZJspNL0FFpPEDMAB7Vg79ashVZI/view",
+      "name": "B01_FX_SECTION_PROOF.mp4",
+      "sha256": "f38079aff754d66250c7267f274d33f539168ad2e908893f084d1f360ef9834f",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B01",
+      "source_duration_seconds": 30,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S01; covered by B01 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}

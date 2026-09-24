@@ -1,0 +1,52 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S19",
+  "script_entry": {
+    "shot_id": "S19",
+    "start_frame": 6960,
+    "end_frame": 7319,
+    "production_mode": "living_scene",
+    "story_action": "Afterglow: Ash, horizon glow and remaining embers settle into transformed stillness.",
+    "visual_media": "Generated canonical media in the locked fire-spirit ritual world; exact asset locator assigned after generation.",
+    "animation_behavior": "Internal material/environment motion first; restrained depth/camera only after local motion is established.",
+    "music_cues": [
+      "Afterglow"
+    ],
+    "lyric_cue": null,
+    "transition": "motivated light/atmosphere/geometry handoff",
+    "motion_regions": [
+      "ash",
+      "fog",
+      "low embers",
+      "horizon light"
+    ],
+    "protected_regions": [
+      "final silhouette",
+      "horizon",
+      "architecture"
+    ]
+  },
+  "media_evidence": [
+    {
+      "asset_id": "SECTION-B09-PROOF",
+      "uri": "https://drive.google.com/file/d/1A1NNGIt5sgABGdsKpOGDZenXX4fff_6h/view",
+      "name": "B09_FX_SECTION_PROOF.mp4",
+      "sha256": "84fad4b3550ec47a5e38490a5226878d45440fd6e6b657fe6c0e4f08f1066fef",
+      "status": "generated",
+      "role": "scripted_visual_media",
+      "content_type": "video/mp4",
+      "origin": "generated",
+      "lifecycle_status": "derived",
+      "creative_status": "available",
+      "production_section": "B09",
+      "source_duration_seconds": 15,
+      "fps": 24,
+      "resolution": [
+        960,
+        540
+      ]
+    }
+  ],
+  "build_notes": "Actual moving production evidence for S19; covered by B09 music-synced section proof. No new media generated for package.",
+  "built_at": "2026-09-24T19:48:00Z"
+}
