@@ -1,0 +1,111 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "project": "El Viento trae tu nombre",
+  "refinement_id": "route4-two-heroes",
+  "batch": 2,
+  "segment": "00:21.504-00:43.008",
+  "source_policy": "preserve locked pre-FX motion variants; no regeneration",
+  "selected_motion_sources": [
+    {
+      "name": "01_male_map_motion_variant.mp4",
+      "sha256": "7026fd4c2f87e3d0dd93e645670c7989ec304d7e03c198241cf47207d3212730"
+    },
+    {
+      "name": "02_female_parapet_motion_variant.mp4",
+      "sha256": "9a14a5d80384774590f12348c8a2c86a38e57716077d8b6d10c28d61bd0b3819"
+    },
+    {
+      "name": "03_duo_harbor_motion_variant.mp4",
+      "sha256": "1ee745e48489050980b76e0a7f8cc288129e724a8285f7e9d717d1aae3c453eb"
+    },
+    {
+      "name": "04_duo_fortress_motion_variant.mp4",
+      "sha256": "8e121a8a0f4a120706ba4f07bc137b00ca85ff9070c0cc02df66bcc8573a3ff6"
+    }
+  ],
+  "gate_rule": "No storm or ancestral FX in Batch 02; preserve physical island geography and hero identities.",
+  "fx_decisions": [
+    {
+      "shot": 1,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "male origin/map anchor; restrained water and sunset light travel"
+    },
+    {
+      "shot": 2,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-001"
+      ],
+      "intent": "female parapet; localized material flow, water motion, practical light breathing"
+    },
+    {
+      "shot": 3,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-001"
+      ],
+      "intent": "shared harbor geography; restrained material/water/practical-light motion"
+    },
+    {
+      "shot": 4,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-001",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "shared fortress/harbor anchor; stable geography into Batch 03"
+    }
+  ],
+  "runtime_authority": {
+    "runtime": "aivideoedit-fx-v2",
+    "seed": 302,
+    "implementation": "general/reusable/fx_v2/runtime.py",
+    "gate_finish": [
+      "authored-highlight bloom",
+      "very light temporal grain",
+      "restrained vignette"
+    ]
+  },
+  "prohibited_fx_confirmed_absent": [
+    "storm escalation",
+    "ancestral figures",
+    "face morphing",
+    "subject replacement",
+    "architecture drift",
+    "horizon/geography drift",
+    "structural deformation",
+    "whole-frame wobble"
+  ],
+  "moving_proof": {
+    "file": "El_Viento_Batch02_FX_Moving_Proof_v1.mp4",
+    "sha256": "bdf3516f7961e69d4b019c5f6fe6e86dd76f152e58873b9e1e33734a1245d9e3",
+    "duration_seconds": 21.504,
+    "video_duration_seconds": 21.5,
+    "resolution": "1920x1080",
+    "fps": 24,
+    "audio": "canonical El Viento trae tu nombre.wav segment 00:21.504-00:43.008, stereo AAC 48 kHz",
+    "technical_qc": "pass",
+    "black_detect": "none",
+    "freeze_detect": "none",
+    "visual_continuity_qc": "pass",
+    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "lock_status": "locked",
+    "drive_file_id": "1Zxu5ajoAf7nNb041J9zPDnVpvaHSOhgV",
+    "drive_folder_id": "1c5DBueZ5zbVwQG4Of1hJHmHJtg9qMpWE",
+    "qc_contact_sheet_drive_id": "1SDjz4hdgZt7Jy_DHPKsLJYesqzkX01-f"
+  },
+  "note": "Batch 02 passed autonomous technical/visual review and is locked. Continue to Batch 03 without regenerating accepted Batch 01-02 media."
+}
