@@ -15,7 +15,8 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "pending"
+      "fx_gate": "locked",
+      "fx_proof": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4"
     },
     {
       "batch": 2,
@@ -80,18 +81,25 @@
     "main branch untouched"
   ],
   "pending": [
-    "FX gate/review for each batch",
-    "moving proofs after FX decisions",
-    "full assembly after batch proofs pass"
+    "FX gate/review for Batches 02-06",
+    "moving proofs after each remaining FX decision",
+    "full 1080p FX assembly after batch proofs pass"
   ],
   "optional_pending": [
     "Batch 06 FX still alternatives 09-10 only if explicitly requested"
   ],
-  "exact_resume_action": "Resume at the FX gate stage. Start with Batch 01, compare clean loop versus pre-FX motion variant, assign only approved gated FX, render one Batch 01 proof, QC it, then proceed batch-by-batch.",
+  "exact_resume_action": "Resume at Batch 02 FX gate (00:21.504-00:43.008). Preserve its four locked shots and pre-FX motion sources, apply only approved repo FX, render/QC/lock one moving proof, then continue batch-by-batch.",
   "do_not_do": [
     "do not invent Batch 07",
     "do not regenerate locked media without QC failure or explicit user direction",
     "do not modify main",
     "do not overwrite preserved masters"
-  ]
+  ],
+  "fx_completion_pass": {
+    "status": "in_progress",
+    "batch_01": "locked",
+    "current_batch": 2,
+    "reference_4k_policy": "rollback/reference only; do not upscale again during FX completion",
+    "final_rule": "user approval required on the completed 1080p FX master before any new upscale"
+  }
 }
