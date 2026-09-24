@@ -1,12 +1,12 @@
 # Status
 
-Stage: BATCH_02_FX_GATE_PASS / BATCH_03_NEXT
+Stage: BATCH_03_FX_GATE_PASS / BATCH_04_NEXT
 
-Batch 02 Pulse is durably backed up:
-- 10 standalone 16:9 stills in Drive
-- 10 moving FX proofs in Drive
+Batch 03 Emergence:
+- 10 standalone manifestation/identity stills archived to Drive
+- 10 protected-identity moving FX proofs archived to Drive
 - FX gate technical PASS
-- Preferred treatments: sigil sweep + full stack
-- No storyboard/contact-sheet assets promoted
+- Hero identity/anatomy protected from warp
+- Preferred: aura pulse, smoke mantle, ember crown, protected full stack
 
-Next: Batch 03 Emergence. Use a stronger existing manifestation still as an anchor and derive a cohesive set of standalone production stills plus moving proofs without presentation artifacts.
+Next: Batch 04 spatial expansion / passage using the same visual identity with stronger environment/depth/reflection work.

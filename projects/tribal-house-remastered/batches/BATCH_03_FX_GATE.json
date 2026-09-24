@@ -1,0 +1,27 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 3,
+  "label": "Emergence",
+  "status": "technical_pass",
+  "anchor": "B03-STILL-01",
+  "protected_regions": [
+    "hero identity",
+    "face/head region",
+    "torso/anatomy",
+    "central silhouette",
+    "architecture",
+    "horizon"
+  ],
+  "rules": [
+    "No warp across hero",
+    "Atmosphere may move around hero",
+    "Camera/depth composited behind protected hero",
+    "Localized glow only"
+  ],
+  "preferred": [
+    "B03-MOTION-01",
+    "B03-MOTION-02",
+    "B03-MOTION-09",
+    "B03-MOTION-10"
+  ]
+}
