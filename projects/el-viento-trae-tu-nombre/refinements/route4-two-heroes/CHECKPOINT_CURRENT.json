@@ -2,7 +2,7 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Route 4 extended 2:34 corrected-order workprint v2 rendered; 1080p creative refinement continues",
+  "current_stage": "Route 4 extended 2:34 refined FX v3 rendered; corrected hero order preserved; technical QC passed",
   "active_scope": "Extended-song Director's Cut refinement using long hero holds, internal loop motion and reduced scene-change density",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
@@ -46,9 +46,13 @@
     "Canonical Route 4 hero/story order restored in extended workprint",
     "Corrected-order 154.480 s 1080p review rendered",
     "MontañaNegra intro/outro bookends added in review form",
-    "Corrected-order review backed up to Drive Full Renders"
+    "Corrected-order review backed up to Drive Full Renders",
+    "Selective internal FX refinement rendered over corrected-order v2",
+    "Four high-value FX variation layers integrated without adding scene changes",
+    "Refined FX v3 technical QC passed with no detected black/freeze events",
+    "68 MB refined FX v3 review uploaded to Drive Full Renders"
   ],
-  "exact_next_action": "Continue 1080p creative refinement from corrected-order v2: deepen internal transparent/variation FX movement, preserve canonical hero/story order and reduced scene-change density, then review/QC before any final-master step.",
+  "exact_next_action": "Creative review refined FX v3. Continue only with selective internal motion/FX improvements while preserving canonical hero order, MontañaNegra bookends, and reduced scene-change density.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -123,5 +127,27 @@
     "hero_order": "canonical Route 4 order restored",
     "channel_bookends": "MontañaNegra intro/outro included in 1080p review form",
     "role": "current creative refinement candidate; not final master"
+  },
+  "refined_fx_v3": {
+    "file": "El_Viento_Route4_234_Refined_FX_v3.mp4",
+    "review_file": "El_Viento_Route4_234_Refined_FX_v3_drive.mp4",
+    "drive_file_id": "1lEHmDrvCGm9ZoKFswH9yQ6-Lzg1Ex2dt",
+    "duration_seconds": 154.5,
+    "resolution": "1920x1080",
+    "fps": 24,
+    "hero_order": "canonical Route 4 order preserved",
+    "fx_layers": [
+      "coastal double-exposure memory",
+      "golden thread sunset",
+      "fated threads twilight",
+      "ancestral thread horizon"
+    ],
+    "fx_strategy": "moving low-opacity internal layers at selected memory/chorus/finale intervals; no added scene replacements",
+    "technical_qc": {
+      "black_detect": "none",
+      "freeze_detect": "none",
+      "status": "pass"
+    },
+    "role": "current 1080p creative refinement candidate; not final master"
   }
 }
