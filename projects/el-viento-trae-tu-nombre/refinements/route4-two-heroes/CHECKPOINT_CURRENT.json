@@ -2,39 +2,43 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Route 4 timeline FX proofs reviewed through Batch 06; full assembly candidate v2 rendered and technical QC passed",
-  "active_scope": "full refinement assembly / final creative QC / durable backup",
+  "current_stage": "Route 4 Director's Cut refinement v3 rendered; supplemental Batches 07-09 integrated; technical QC passed",
+  "active_scope": "Director's Cut creative polish / full-repo FX and media refinement",
   "completed": [
-    "Batches 01-09 complete through pre-FX motion",
-    "Autonomous reviewer authority recorded; routine proof acceptance no longer waits on user",
-    "Batch 01 FX proof reviewed and accepted",
-    "Batch 02 FX proof rendered/reviewed and accepted",
-    "Batch 03 FX proof rendered/reviewed and accepted",
-    "Batch 04 FX proof repaired for timing defect, rerendered/reviewed and accepted",
-    "Batch 05 FX proof rendered/reviewed and accepted",
-    "Batch 06 FX proof rendered/reviewed and accepted",
-    "Full locked-song Route 4 assembly rendered from Batches 01-06",
-    "Full technical QC passed: 1920x1080, 24 fps, stereo 48 kHz AAC, 112.661 s, no detected black/freeze events"
+    "Batches 01-06 rough FX backbone assembled and technically accepted",
+    "Autonomous reviewer remains active; routine review gates do not stop production",
+    "Repo manifests used as authority for supplemental media and Drive pointers",
+    "Batch 07 selected ancestral-presence motion integrated into timeline",
+    "Batch 08 selected ancestral-harbor motion integrated into timeline",
+    "Batch 09 selected final-supplemental motion integrated into timeline",
+    "Director's Cut v3 rendered at 1920x1080, 24 fps, stereo 48 kHz",
+    "Director's Cut v3 duration 112.666667 s against locked 112.680 s target",
+    "Director's Cut v3 technical QC passed: no detected black/freeze events",
+    "Full rough backbone preserved for rollback"
   ],
-  "full_assembly_candidate": {
-    "file": "El_Viento_Route4_FX_Full_Assembly_v2.mp4",
-    "sha256": "a7fee5819eb99ec4f75eb607c2f27d29c5e7f9e34b0cd596cfcc179956195fcb",
-    "duration_seconds": 112.661,
+  "directors_cut_candidate": {
+    "file": "El_Viento_Route4_Directors_Cut_v3.mp4",
+    "sha256": "18de897562ca97ce4060e277d898db7cc5349f6c6d2f68ce7fa74cbb9d00860c",
+    "duration_seconds": 112.666667,
     "locked_target_seconds": 112.68,
-    "duration_delta_seconds": -0.019,
     "resolution": "1920x1080",
     "fps": 24,
     "audio": "stereo 48 kHz AAC",
+    "supplemental_batches_used": [
+      7,
+      8,
+      9
+    ],
     "black_detect": "none",
     "freeze_detect": "none",
     "technical_qc": "pass",
-    "creative_qc": "agent-review pass pending durable promotion record"
+    "role": "current creative refinement candidate; not final master"
   },
-  "exact_next_action": "Persist the accepted Route 4 full assembly and QC evidence to durable storage, record final creative QC, then move to final export/archive. Do not return to per-batch waiting.",
+  "exact_next_action": "Continue Director's Cut polish using repo-declared FX stills, promoted FX and alternate media selectively; preserve the v3 backbone and locked song timing. Then render/review the next refinement candidate.",
   "do_not_do": [
     "do not create Batch 10 without explicit user instruction",
-    "do not alter locked song timing",
-    "do not overwrite preserved clean loops, pre-FX variants, or old masters",
-    "do not modify main"
+    "do not modify main",
+    "do not overwrite preserved rough workprint or source libraries",
+    "do not alter hero identity, geography, architecture or locked song timing"
   ]
 }
