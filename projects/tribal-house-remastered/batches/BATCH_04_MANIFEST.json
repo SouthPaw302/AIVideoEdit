@@ -1,0 +1,145 @@
+{
+  "schema": "aivideoedit.batch-manifest.v1",
+  "batch": 4,
+  "label": "Spatial Expansion",
+  "time_range": "01:46-02:14",
+  "drive": {
+    "batch_folder_id": "1Uu_aaL3B94qT_pwl6Z3rz3drxVnmcD4x",
+    "main_folder_id": "105O1joJD8aLfidSDjgnKst3jxJZZ4agc",
+    "motion_folder_id": "15Erxd2VG5mFmEGRTc_Qkh6_nCLr76oSE"
+  },
+  "stills": [
+    {
+      "id": "B04-STILL-01",
+      "file_name": "B04_STILL_01_WIDE_PASSAGE.png",
+      "sha256": "af9c9016e7356224a6af41fe5e23bf500a5447a44edaf342b2cd8c5b43624492",
+      "drive_file_id": "1B1FpkJ0l-ldeZv8ul1nQQIl0wLdc7dDd"
+    },
+    {
+      "id": "B04-STILL-02",
+      "file_name": "B04_STILL_02_LEFT_AXIS.png",
+      "sha256": "3ec8496479a7c1ec323786c653e06d721625138af0d182efb7224f87396b80e4",
+      "drive_file_id": "1_4WZTyiH-gy7wbGnR0d25LTM2cPnTpHF"
+    },
+    {
+      "id": "B04-STILL-03",
+      "file_name": "B04_STILL_03_RIGHT_AXIS.png",
+      "sha256": "141c6025fd70ae1c74b282a7c65370d758817474705a9d357bcb53c64b5bbfc6",
+      "drive_file_id": "1xVTU7tt6J_yIHKwOpnrX9Xbq3f5Lijiw"
+    },
+    {
+      "id": "B04-STILL-04",
+      "file_name": "B04_STILL_04_REFLECTIVE_FLOOR.png",
+      "sha256": "398a15c794fbb98fccce4069e2a0cc770ccab998034b5d290cee6a10ccfd155b",
+      "drive_file_id": "1qNcDL6baUKIJrLD1CCA9HvVdmdlqdZ3Y"
+    },
+    {
+      "id": "B04-STILL-05",
+      "file_name": "B04_STILL_05_MONOLITH_DEPTH.png",
+      "sha256": "9afc1ca551908f1b5efdae1f4f198b464ab069f69a2a086cca422ceb8d3044f7",
+      "drive_file_id": "12KifAkwLEw69twQOU1gGO2EsR-W5pXNR"
+    },
+    {
+      "id": "B04-STILL-06",
+      "file_name": "B04_STILL_06_LOW_CORRIDOR.png",
+      "sha256": "be9ae3dc5e0e3842e4750b69159021d43e3053f4a0f34e7b85cb43c22683817b",
+      "drive_file_id": "19hhLBi8Q_INVEAGpOGkkmJFn1vSaBFEk"
+    },
+    {
+      "id": "B04-STILL-07",
+      "file_name": "B04_STILL_07_BACKLIGHT_PATH.png",
+      "sha256": "a3cab5802289f4f34b4e35622dec4d809426c242efc90f6ecbff49526ea02496",
+      "drive_file_id": "1rVX5KB-jNKYKBk-5x4R-Hywvu-5ZSLw2"
+    },
+    {
+      "id": "B04-STILL-08",
+      "file_name": "B04_STILL_08_HERO_SMALL_WORLD_LARGE.png",
+      "sha256": "96acdfe06872ee81f4e316767dfba761bc3751bfc82264cb4a60200e1eea1f5e",
+      "drive_file_id": "1Sp29Tn8Ind5KLGhTTwq3R4e0OOFeYlEn"
+    },
+    {
+      "id": "B04-STILL-09",
+      "file_name": "B04_STILL_09_OFFSET_REFLECTION.png",
+      "sha256": "4d9baf1a91c9da63733765c929d49dd8af2abd892cd7371f7652df93c0073ef9",
+      "drive_file_id": "1Sl5JDNG5XxWKKQ6Y5c_jjaLjjJ84CUpB"
+    },
+    {
+      "id": "B04-STILL-10",
+      "file_name": "B04_STILL_10_PASSAGE_FULL_STACK.png",
+      "sha256": "710145a2f145b56d94912ca3949ba9b9a657b59349500bb6f3c9f0fec5c5efed",
+      "drive_file_id": "1k8yjW91DW_W60fcJqsqJDLqRYAOI7a5Y"
+    }
+  ],
+  "motions": [
+    {
+      "id": "B04-MOTION-01",
+      "file_name": "B04_MOTION_01_REFLECTION_SHIMMER.mp4",
+      "sha256": "980f3ef383229187212e050973b18d7ca272ea883cc9f8b353aa09f6408c3af7",
+      "drive_file_id": "11ulh8dgzwfghuybLj7QtcRQ0Vnzy9Hjq",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-02",
+      "file_name": "B04_MOTION_02_SMOKE_DRIFT.mp4",
+      "sha256": "f1c58a6b633da04867bb446fa5e4e5c8cd9ede1dd32b1e84f18bed0d782d1ea2",
+      "drive_file_id": "1SrOcgatsv5BK4d2D6ZfiE9jx9LOxTC-Y",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-03",
+      "file_name": "B04_MOTION_03_LIGHT_PATH_PULSE.mp4",
+      "sha256": "0e818854db5683df0ac2ef3e365fdbf24a29131ecf877ba093b818ef44ef4c7f",
+      "drive_file_id": "15PmaETOtFu3jIAE-cZT_jI5SsGNc1GJs",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-04",
+      "file_name": "B04_MOTION_04_BACKLIGHT_GATE.mp4",
+      "sha256": "f8531dfe0817f23acaae8f54c1a0ef0752c835d35cd3336061953a8f2dbda4bf",
+      "drive_file_id": "1Ka3bik0vm23Keii7uy2rVF8OQTLYRPOI",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-05",
+      "file_name": "B04_MOTION_05_BOUNDED_DEPTH.mp4",
+      "sha256": "fbc3261aad75470c561db17181955c65d6d815caf9a64caf2d30497e780e077a",
+      "drive_file_id": "1hgN1aXtQtVlgAo5rvMW-oHu8rCXb0W7i",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-06",
+      "file_name": "B04_MOTION_06_SPATIAL_DRIFT.mp4",
+      "sha256": "a9b1f25245ab11135d771a19ac2d22bd43bbd56d8c2642c694d22d91ca13a6f3",
+      "drive_file_id": "1s0njGZ0DxESBPUhNWIgGWTfh3t65YJwy",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-07",
+      "file_name": "B04_MOTION_07_FLOOR_REFLECTION.mp4",
+      "sha256": "65978a60d8336c54c67e12195d0f6ffdf87d2dce8ebf7ee2487723460d3812ce",
+      "drive_file_id": "1_uOpWuzGvh_7s58lvbIW0Wk-qjqZVdxK",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-08",
+      "file_name": "B04_MOTION_08_AXIS_GLOW.mp4",
+      "sha256": "bad6a1a358924b94e88ae10ec5654c8663edb5b3a078421d2c8d5e8e86bcd405",
+      "drive_file_id": "1-JHrJT7GDUwfsZHwEkGMkRfEWLb_PdIL",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-09",
+      "file_name": "B04_MOTION_09_PASSAGE_PULSE.mp4",
+      "sha256": "fc85a87793ceea48840dc5e7736ee0c96b155f9f49e0e14581d4a71af54540d3",
+      "drive_file_id": "1dAso-yfG9yN9mZccCgvT3evOuaofZzZa",
+      "qc": "pass"
+    },
+    {
+      "id": "B04-MOTION-10",
+      "file_name": "B04_MOTION_10_FULL_STACK_PASSAGE.mp4",
+      "sha256": "5365c8576f9a882205421a5a582255b5e0744192cfeecef85cebdd439133746c",
+      "drive_file_id": "1fSJakXua-bLy4cxiHQ_6ESMD_6lmZapl",
+      "qc": "pass"
+    }
+  ]
+}

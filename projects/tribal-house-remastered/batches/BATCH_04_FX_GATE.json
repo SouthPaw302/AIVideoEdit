@@ -1,0 +1,33 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 4,
+  "label": "Spatial Expansion",
+  "status": "technical_pass",
+  "anchor": "B04-STILL-01",
+  "canonical_fx": [
+    "SPATIAL-021",
+    "COMP-021",
+    "CAMERA-023",
+    "ATM-001",
+    "SURFACE-023",
+    "LIGHT-026"
+  ],
+  "protected_regions": [
+    "hero identity",
+    "hero anatomy",
+    "central axis",
+    "architecture",
+    "horizon"
+  ],
+  "preferred": [
+    "B04-MOTION-01",
+    "B04-MOTION-05",
+    "B04-MOTION-07",
+    "B04-MOTION-10"
+  ],
+  "notes": [
+    "Reflection/depth treatments passed.",
+    "Camera remains secondary to internal motion.",
+    "Hero composited back over bounded background motion."
+  ]
+}

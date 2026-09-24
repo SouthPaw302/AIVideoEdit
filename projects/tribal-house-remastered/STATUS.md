@@ -1,12 +1,11 @@
 # Status
 
-Stage: BATCH_03_FX_GATE_PASS / BATCH_04_NEXT
+Stage: BATCH_04_FX_GATE_PASS / BATCH_05_NEXT
 
-Batch 03 Emergence:
-- 10 standalone manifestation/identity stills archived to Drive
-- 10 protected-identity moving FX proofs archived to Drive
+Batch 04 Spatial Expansion:
+- 10 standalone stills archived
+- 10 moving spatial/reflection proofs archived
 - FX gate technical PASS
-- Hero identity/anatomy protected from warp
-- Preferred: aura pulse, smoke mantle, ember crown, protected full stack
+- Preferred: reflection shimmer, bounded depth, floor reflection, passage full stack
 
-Next: Batch 04 spatial expansion / passage using the same visual identity with stronger environment/depth/reflection work.
+Next: Batch 05 Intensity. Increase rhythmic density and elemental energy while preserving identity and geometry.
