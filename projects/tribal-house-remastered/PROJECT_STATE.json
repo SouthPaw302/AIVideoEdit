@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.project-state.v1",
   "branch": "song/tribal-house-remastered",
-  "stage": "FX_LOCKED",
+  "stage": "FINAL_QC_PASSED",
   "director_brain_version": 2,
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
@@ -17,12 +17,29 @@
   "shot_proofs_accepted": true,
   "mode_aware_proofs_accepted": true,
   "fx_lock_verified": true,
-  "assembly_complete": false,
-  "final_qc_passed": false,
-  "mode_aware_qc_passed": false,
+  "assembly_complete": true,
+  "final_qc_passed": true,
+  "mode_aware_qc_passed": true,
   "archive_complete": false,
   "production_model": "instrumental_batch_first_fx_heavy",
-  "note": "Formal current-main schema-v2 FX precompile gate PASS. User accepted continuity/picture quality of the early assembly as a base; final heavy-FX locked assembly and exported-film QC remain.",
+  "note": "Formal FX lock PASS. Locked 305-second 720p candidate master passes full decode/timing/black/freeze QC. Artistic acceptance remains pending. Archive remains incomplete until the exact final master and QC record are durably uploaded to Drive.",
   "fx_lock_evidence_fingerprint_sha256": "3d5dc69ca4a9018a6aeb54b1c5a9db03dbdc48e11a671108770d283fe380822e",
-  "fx_lock_verified_at": "2026-09-24T18:45:58Z"
+  "fx_lock_verified_at": "2026-09-24T18:45:58Z",
+  "final_candidate": {
+    "file_name": "TRIBAL_HOUSE_LOCKED_FX_MASTER_720P_FINAL4.mp4",
+    "sha256": "957251dcbdb9b3dc7a01e36fee106a2ce96fbea1cc8b2a4fd095c702f97b80ac",
+    "size_bytes": 261357308,
+    "duration_seconds": 305,
+    "frames": 7320,
+    "fps": 24,
+    "resolution": [
+      1280,
+      720
+    ],
+    "black_events": 0,
+    "freeze_events_0_75s_or_longer": 0,
+    "artistic_acceptance": "pending_user_review",
+    "drive_master_status": "pending_handoff",
+    "drive_contact_sheet_file_id": "1YyOc1PQ9CorX9uHwVEJQCF0K3qbACeYj"
+  }
 }

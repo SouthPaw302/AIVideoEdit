@@ -1,32 +1,27 @@
 # Status
 
-Stage: FX_LOCKED
+Stage: FINAL_QC_PASSED
 
-Formal current-main FX lock: PASS.
+Formal FX lock: PASS.
+Locked final technical candidate: PASS.
 
-- workflow: Tribal House Project FX Lock
-- run: 36043449083
-- lock: `projects/tribal-house-remastered/fx.lock.json`
-- schema: aivideoedit-fx-precompile-v2
-- evidence fingerprint: `3d5dc69ca4a9018a6aeb54b1c5a9db03dbdc48e11a671108770d283fe380822e`
+- file: `TRIBAL_HOUSE_LOCKED_FX_MASTER_720P_FINAL4.mp4`
+- SHA-256: `957251dcbdb9b3dc7a01e36fee106a2ce96fbea1cc8b2a4fd095c702f97b80ac`
+- 305.000 seconds / 7,320 frames / 24fps
+- 1280x720 H.264
+- AAC 48k stereo
+- black events: 0
+- freeze events >=0.75s: 0
+- eight authored transitions preserved
+- nine section packages preserved
 
-The separate Production Contract failure was caused only by two missing required project docs:
-- `RENDER_HISTORY.md`
-- `QC.md`
+Drive:
+- final contact sheet uploaded: `1YyOc1PQ9CorX9uHwVEJQCF0K3qbACeYj`
+- 250 MB master + QC JSON handoff still pending because the local-to-Drive bridge lost its container session.
 
-Those are now added.
-
-Accepted/preserved:
-- base continuity
-- picture quality
-- Batches 01-09
-- full FX package inputs
-
-Not yet final:
-- locked full-resolution assembly
-- actual-export final mode-aware QC
-- final artistic acceptance
-- archive completion
-
-Exact next action:
-Verify the schema-v2 lock immediately before compile, rebuild the 305-second full-resolution heavy-FX assembly from the locked packages using global song time, run actual-export mode-aware QC, then archive the candidate master for review.
+State remains truthful:
+- assembly_complete = true
+- final_qc_passed = true
+- mode_aware_qc_passed = true
+- artistic acceptance = pending user review
+- archive_complete = false until the exact final master/QC bytes are durable on Drive

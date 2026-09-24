@@ -33,3 +33,13 @@
 
 ## Next render
 Rebuild the full 305-second assembly from the formally locked FX package, preserving global song time and accepted base continuity. Then run actual-export mode-aware QC before any final-master/archive claim.
+
+
+### Locked final candidate build
+- Rebuilt from the formally locked section/transition packages.
+- Delivery upscale performed after locked 960x540 FX composition to 1280x720 using Lanczos.
+- B03/B05/B07 low-motion pockets were repaired with already-approved reactive clips.
+- B02/B05 received a final bounded camera layer after internal FX to eliminate remaining high-energy freezes.
+- Final SHA-256: `957251dcbdb9b3dc7a01e36fee106a2ce96fbea1cc8b2a4fd095c702f97b80ac`
+- Final technical QC: PASS, 0 black events, 0 freeze events >=0.75s.
+- User artistic acceptance remains pending.

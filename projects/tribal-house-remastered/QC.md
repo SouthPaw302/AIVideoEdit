@@ -44,3 +44,21 @@ After the locked full-resolution assembly is rebuilt:
 6. run hybrid mode-aware QC;
 7. record final SHA-256 and storage locator;
 8. obtain/record final artistic acceptance before marking archive complete.
+
+
+## Locked final candidate — technical export QC
+- file: `TRIBAL_HOUSE_LOCKED_FX_MASTER_720P_FINAL4.mp4`
+- SHA-256: `957251dcbdb9b3dc7a01e36fee106a2ce96fbea1cc8b2a4fd095c702f97b80ac`
+- size: 261,357,308 bytes
+- duration: 305.000 seconds
+- frames: 7,320 @ 24fps
+- resolution: 1280x720
+- audio: AAC 48k stereo
+- full decode: PASS
+- black events: 0
+- freezes >=0.75s at QC threshold: 0
+- formal FX lock: PASS
+- technical result: PASS
+- artistic acceptance: pending user review
+- Drive contact sheet: `1YyOc1PQ9CorX9uHwVEJQCF0K3qbACeYj`
+- Drive master/QC upload: pending connector handoff; archive_complete remains false.

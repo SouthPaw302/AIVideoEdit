@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.final-export-qc.v1",
+  "project": "Tribal House Remastered",
+  "branch": "song/tribal-house-remastered",
+  "file": "TRIBAL_HOUSE_LOCKED_FX_MASTER_720P_FINAL4.mp4",
+  "sha256": "957251dcbdb9b3dc7a01e36fee106a2ce96fbea1cc8b2a4fd095c702f97b80ac",
+  "size_bytes": 261357308,
+  "duration_seconds": 305,
+  "frames": 7320,
+  "fps": 24,
+  "resolution": [
+    1280,
+    720
+  ],
+  "video_codec": "h264",
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2
+  },
+  "formal_fx_lock": {
+    "gate": "aivideoedit-fx-precompile-v2",
+    "result": "PASS",
+    "evidence_fingerprint_sha256": "3d5dc69ca4a9018a6aeb54b1c5a9db03dbdc48e11a671108770d283fe380822e"
+  },
+  "decode_qc": "PASS",
+  "timing_qc": "PASS",
+  "black_events": 0,
+  "freeze_events_0_75s_or_longer": 0,
+  "transition_count": 8,
+  "section_count": 9,
+  "repair_history": [
+    "B03/B05/B07 low-motion pockets repaired using approved locked reactive clips.",
+    "B02/B05 residual low-motion pockets repaired with approved section-reactive clips.",
+    "B02/B05 received bounded sub-1% camera travel only after internal motion was established."
+  ],
+  "technical_result": "PASS",
+  "artistic_acceptance": "pending_user_review",
+  "drive": {
+    "master_status": "pending_handoff",
+    "contact_sheet_file_id": "1YyOc1PQ9CorX9uHwVEJQCF0K3qbACeYj"
+  }
+}
