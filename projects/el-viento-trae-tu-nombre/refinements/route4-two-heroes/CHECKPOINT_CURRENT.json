@@ -2,7 +2,7 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Route 4 corrected-order 1080p refined FX v3 rendered; technical QC passed",
+  "current_stage": "Route 4 1080p refined FX v4 rendered; selective main-library lighting polish applied; technical QC passed",
   "active_scope": "1080p creative refinement only",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
@@ -54,9 +54,15 @@
     "Canonical Route 4 hero/story order restored in 2:34 edit",
     "MontañaNegra intro/outro added at 1080p refinement stage",
     "Corrected-order refined FX v3 rendered at 1920x1080/24fps",
-    "65 MB review copy archived to Drive Full Renders"
+    "65 MB review copy archived to Drive Full Renders",
+    "Main reusable FX v2 registry reviewed for lighting/fire effects",
+    "Selective firelight/warm-halation polish added without changing edit timing",
+    "Map-contact hand defect visually softened using localized supernatural glow rather than replacing the shot",
+    "Refined FX v4 rendered at exact 154.480 s mux authority",
+    "v4 technical QC passed with no detected black/freeze events",
+    "54 MB v4 review copy archived to Drive Full Renders"
   ],
-  "exact_next_action": "Review corrected-order 1080p refined FX v3; continue internal transparent/variation FX polish only where needed while preserving canonical hero order and reduced scene-change density. Do not upscale yet.",
+  "exact_next_action": "Creative review v4 at 1080p. If accepted, continue only minimal remaining polish/QC needed for 1080p creative lock. Do not upscale yet.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -173,5 +179,33 @@
     },
     "drive_review_id": "1LRjGExaf2uTazUyKW1hfjdoUILDT9StG",
     "role": "current 1080p creative refinement candidate; not final master"
+  },
+  "refined_fx_v4": {
+    "file": "El_Viento_Route4_234_Refined_FX_v4.mp4",
+    "review_file": "El_Viento_Route4_234_Refined_FX_v4_review.mp4",
+    "master_sha256": "cac31fb2bd171fa877ee2b1f20f9c53b5ee4d4736848e2ea227cee18febaabb6",
+    "review_sha256": "7caef827d270419d3cf465796cb2df409e280c25fe61becec83fad562de3a59f",
+    "duration_seconds": 154.48,
+    "resolution": "1920x1080",
+    "fps": 24,
+    "audio": "original current mux authority retained",
+    "drive_review_id": "1RFOlU342DZSBxl7P_j4piUDdWiV9mNOC",
+    "technical_qc": {
+      "black_detect": "none",
+      "freeze_detect": "none",
+      "status": "pass"
+    },
+    "creative_changes": [
+      "preserved v3 edit timing, hero order and scene structure",
+      "added restrained firelight-breath style warmth in lantern-heavy passages",
+      "added subtle warm light breathing in later ancestral passage",
+      "softened/brightened the map-contact hand region so awkward fingers read as supernatural map glow rather than requiring shot replacement"
+    ],
+    "main_effect_library_authority": [
+      "FX2-LIGHT-023 firelight_breath",
+      "FX2-LIGHT-028 warm_halation_bloom",
+      "FX2-LIGHT-002 moving_light_field"
+    ],
+    "note": "Selective treatment follows approved main FX library language; no scene replacement and no 4K work."
   }
 }
