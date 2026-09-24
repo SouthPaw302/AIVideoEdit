@@ -2,18 +2,19 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Batch 09 pre-FX motion complete; Drive archive transport pending",
-  "active_scope": "Batch 09 final supplemental media",
+  "current_stage": "Batch 09 pre-FX motion complete",
+  "active_scope": "final supplemental batch",
   "completed": [
-    "Batches 01-08 complete through pre-FX motion",
-    "Batch 09 ten-image source set recovered",
-    "Batch 09 QC complete",
-    "four Batch 09 stills selected",
+    "Batches 01-09 complete through pre-FX motion",
+    "Batch 09 ten-image still set archived",
+    "four Batch 09 stills selected after QC",
     "four clean loops + GIF previews created",
     "four restrained pre-FX motion variants created",
-    "Batch 09 archive hashes recorded",
-    "Batch 09 Drive destination folders created"
+    "Batch 09 archives backed up to Drive"
   ],
-  "blocker": "Container-to-Drive file bridge expired during final archive upload.",
-  "exact_next_action": "Retry only the three Batch 09 archive uploads. Do not regenerate Batch 09 media. After that, all supplemental media batches are complete through pre-FX motion."
+  "exact_next_action": "All planned batches are now complete through pre-FX motion. Next phase is FX gate/review and proof assembly, beginning with Batch 01 unless the user directs otherwise.",
+  "do_not_do": [
+    "do not create Batch 10 without explicit user instruction",
+    "do not alter locked song timing before FX gate review"
+  ]
 }
