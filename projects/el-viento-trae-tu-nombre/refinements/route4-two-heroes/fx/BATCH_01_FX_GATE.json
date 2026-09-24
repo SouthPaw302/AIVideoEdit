@@ -14,43 +14,64 @@
   "fx_decisions": [
     {
       "shot": 1,
-      "decision": "approved_for_proof",
+      "decision": "locked_after_autonomous_qc",
       "fx": [
         "subtle authored-highlight bloom",
         "very light temporal grain",
         "restrained vignette"
       ],
-      "intent": "fort-at-dusk atmosphere; preserve male hero and harbor geometry"
+      "intent": "fort-at-dusk atmosphere; preserve male hero and harbor geometry",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-002"
+      ]
     },
     {
       "shot": 2,
-      "decision": "approved_for_proof",
+      "decision": "locked_after_autonomous_qc",
       "fx": [
         "subtle authored-highlight bloom",
         "very light temporal grain",
         "restrained vignette"
       ],
-      "intent": "lamp/rain atmosphere; preserve female hero identity and harbor geography"
+      "intent": "lamp/rain atmosphere; preserve female hero identity and harbor geography",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-LIGHT-001"
+      ]
     },
     {
       "shot": 3,
-      "decision": "approved_for_proof",
+      "decision": "locked_after_autonomous_qc",
       "fx": [
         "slightly stronger authored-highlight bloom",
         "very light temporal grain",
         "restrained vignette"
       ],
-      "intent": "memory-thread awakening; preserve both heroes and architecture"
+      "intent": "memory-thread awakening; preserve both heroes and architecture",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-ATM-001",
+        "FX2-LIGHT-002"
+      ]
     },
     {
       "shot": 4,
-      "decision": "approved_for_proof",
+      "decision": "locked_after_autonomous_qc",
       "fx": [
         "subtle authored-highlight bloom",
         "very light temporal grain",
         "restrained vignette"
       ],
-      "intent": "convergence energy without structural drift"
+      "intent": "convergence energy without structural drift",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-001"
+      ]
     }
   ],
   "prohibited_fx_confirmed_absent": [
@@ -63,17 +84,37 @@
     "whole-frame wobble"
   ],
   "moving_proof": {
-    "file": "El_Viento_Batch01_FX_Moving_Proof_v1.mp4",
-    "sha256": "49b7042343b9460943a2a2fa978d4116426f64fd9e928bf86ccb42b2a47fc675",
+    "file": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4",
+    "sha256": "8a507ce08b1da649c721a8f9ebc199f15d9b4ec42af90baed61f0ac4f2636e81",
     "duration_seconds": 21.504,
+    "video_duration_seconds": 21.5,
     "resolution": "1920x1080",
     "fps": 24,
-    "audio": "stereo 48 kHz AAC proof audio from preserved prior review master",
+    "audio": "canonical El Viento trae tu nombre.wav, stereo AAC 48 kHz",
     "technical_qc": "pass",
     "black_detect": "none",
     "freeze_detect": "none",
-    "artistic_acceptance": "pending_user_review",
-    "drive_backup": "pending_acceptance"
+    "visual_continuity_qc": "pass",
+    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "lock_status": "locked",
+    "drive_file_id": "1Ou6VY_1hshnPzxd7L44a8QnlL7Jy6WRM",
+    "drive_folder_id": "1c5DBueZ5zbVwQG4Of1hJHmHJtg9qMpWE",
+    "qc_contact_sheet_drive_id": "1xUlH03Hq2OuUoETIw1ufq0JTDg22HqUH"
   },
-  "note": "Technical pass does not create artistic canon. User approval is required before Batch 01 FX is locked and before moving to Batch 02."
+  "note": "Batch 01 canonical runtime proof passed autonomous technical/visual review and is locked. Continue to Batch 02 without regenerating accepted Batch 01 media.",
+  "runtime_authority": {
+    "runtime": "aivideoedit-fx-v2",
+    "seed": 302,
+    "implementation": "general/reusable/fx_v2/runtime.py",
+    "gate_finish": [
+      "authored-highlight bloom",
+      "very light temporal grain",
+      "restrained vignette"
+    ]
+  },
+  "source_validation": {
+    "canonical_motion_sources": "verified against registered Drive IDs/hashes and Route 4 shot lock",
+    "rejected_foreign_drive_folder": "Batch 01 - Invocation",
+    "reason": "contained unrelated ember/obsidian temple imagery and was not Route 4 canon"
+  }
 }
