@@ -23,3 +23,8 @@ def test_proof_required_is_rejected_by_default():
     out=mod.resolve({"level":"still","objects":["glass"]})
     assert "FX2-SURFACE-003" not in {x["id"] for x in out["effects"]}
     assert any(x["id"]=="FX2-SURFACE-003" for x in out["rejected"])
+
+
+def test_effect_limit_is_bounded():
+    out=mod.resolve({"level":"scene","environment":["tavern"],"objects":["fire","instrument"],"needs":["audio_reactive","long_hold"]},max_effects=3)
+    assert len(out["effects"]) <= 3
