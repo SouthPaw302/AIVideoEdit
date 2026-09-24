@@ -1,23 +1,44 @@
 {
-  "schema": "aivideoedit.section-proof-index.v1",
-  "status": "partial_pass",
+  "schema": "aivideoedit.section-proof-index.v2",
+  "status": "PASS",
   "workflow": "WF-LIVING-SCENE-ASSEMBLY",
   "drive_folder_id": "1V9irERrqQAs6IbXrn5C8ldOorkbMksqe",
   "proofs": [
+    {
+      "section": "B01",
+      "range": [
+        0,
+        30
+      ],
+      "drive_file_id": "14LdZeZJspNL0FFpPEDMAB7Vg79ashVZI",
+      "qc": "PASS"
+    },
     {
       "section": "B02",
       "range": [
         30,
         58
       ],
-      "sha256": "7ee4328826df8d25c9d3da624fed65f20a9dff0acb60aaa264b237451955c7d9",
       "drive_file_id": "1sKKtvJOPe5N4vcy2s-rBLlPgqkrRoLEI",
-      "qc": "PASS",
-      "cuts": [
-        36.667,
-        43.333,
-        50
-      ]
+      "qc": "PASS"
+    },
+    {
+      "section": "B03",
+      "range": [
+        58,
+        106
+      ],
+      "drive_file_id": "1F4J7MnXXSBtDzW7uphoh-9hLcpzg2yv4",
+      "qc": "PASS"
+    },
+    {
+      "section": "B04",
+      "range": [
+        106,
+        134
+      ],
+      "drive_file_id": "1q0tzv47NrgQc5n3Rs6KGn2DX20h04Z-r",
+      "qc": "PASS"
     },
     {
       "section": "B05",
@@ -25,15 +46,17 @@
         134,
         198
       ],
-      "sha256": "38908828361b1c3b81479db3a8886af5960111c28b938dd11c7288126b2ba857",
       "drive_file_id": "1IgGtxTDs5_Pww-eHTetajoWLl9PyRcsw",
-      "qc": "PASS",
-      "cuts": [
-        148.083,
-        158.583,
-        171.917,
-        185.625
-      ]
+      "qc": "PASS"
+    },
+    {
+      "section": "B06",
+      "range": [
+        198,
+        228
+      ],
+      "drive_file_id": "1Vs-WJ4DotN136bS_5jMt3-3CuEUvwJDK",
+      "qc": "PASS"
     },
     {
       "section": "B07",
@@ -41,28 +64,31 @@
         228,
         256
       ],
-      "sha256": "59871f710f5e3f64b3fd8219f5e013507e5a7f8ab8bf5961fd2df86c2ec7d0b7",
       "drive_file_id": "1nH2_W2ErOQ_4CKqcpkcj9uCMx1pADpPD",
-      "qc": "PASS",
-      "cuts": [
-        233.708,
-        243.208,
-        250
-      ]
+      "qc": "PASS"
+    },
+    {
+      "section": "B08",
+      "range": [
+        256,
+        290
+      ],
+      "drive_file_id": "1XYSl_sZJQk0DAyjdnZDBj23M1aKbvbxY",
+      "qc": "PASS"
+    },
+    {
+      "section": "B09",
+      "range": [
+        290,
+        305
+      ],
+      "drive_file_id": "1A1NNGIt5sgABGdsKpOGDZenXX4fff_6h",
+      "qc": "PASS"
     }
   ],
   "qc": {
-    "file": "SECTION_PROOFS_QC.json",
-    "sha256": "fe6e0f6f32ce0f51ccb1b4c291b92c8f49238de1111590743be52d68830f5629",
-    "drive_file_id": "1b_L77zGNuC-uG6ef-8dxHW8SISDhA8yp",
-    "contact_sheet_drive_file_id": "1LH7BieLZQu_FiDwqNOVF3P1WqOtfaXr3"
-  },
-  "remaining": [
-    "B01",
-    "B03",
-    "B04",
-    "B06",
-    "B08",
-    "B09"
-  ]
+    "file": "ALL_SECTION_PROOFS_QC.json",
+    "drive_file_id": "1n4v_TMndA6VaTMnIGHnnoLHoKfGNohYD",
+    "contact_sheet_drive_file_id": "1q5QSJgPlpaickmujIN56_jKRasDi8GC4"
+  }
 }

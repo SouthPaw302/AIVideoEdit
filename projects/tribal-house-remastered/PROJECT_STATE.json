@@ -22,5 +22,5 @@
   "mode_aware_qc_passed": false,
   "archive_complete": false,
   "production_model": "instrumental_batch_first_fx_heavy",
-  "note": "User accepted continuity and image quality of the early assembly proof as a base for further work. FX treatment remains explicitly early/provisional. Formal current-main FX_REQUIREMENTS + schema-v2 fx.lock have not yet been produced; current assembly is diagnostic and must be rebuilt after the full FX expansion/lock."
+  "note": "All three full FX packs and all nine section proofs pass. 305-second heavy-FX prelock assembly also passes exported-film QC. Formal current-main precompile lock remains pending."
 }

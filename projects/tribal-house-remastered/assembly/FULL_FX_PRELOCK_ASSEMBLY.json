@@ -1,0 +1,26 @@
+{
+  "schema": "aivideoedit.full-fx-prelock-assembly.v1",
+  "project": "Tribal House Remastered",
+  "branch": "song/tribal-house-remastered",
+  "status": "PASS_PRELOCK",
+  "timeline": {
+    "duration_seconds": 305,
+    "fps": 24,
+    "total_frames": 7320
+  },
+  "transitions": {
+    "count": 8,
+    "placement": "inside existing section-boundary time; no song extension"
+  },
+  "proof": {
+    "file_name": "TRIBAL_HOUSE_FULL_FX_PRELOCK_PROOF_540P.mp4",
+    "drive_file_id": "1DH403sMPNrgam6zENes73X0kg1Gyg5Kx"
+  },
+  "metadata_drive_file_id": "1RcANBbKPt-qXNXfDA-P9tUn3fCepwH9k",
+  "qc": {
+    "result": "PASS",
+    "drive_file_id": "18OXbyCst4SU7fw-s4L6WVKg0RL_qrwy_",
+    "contact_sheet_drive_file_id": "1If59qhA1kFuwJvqMqNqwspSVQzQfxq11"
+  },
+  "note": "This is pre-lock proof media. It must not be treated as final FX-locked master until current-main precompile gate generates and verifies fx.lock.json."
+}

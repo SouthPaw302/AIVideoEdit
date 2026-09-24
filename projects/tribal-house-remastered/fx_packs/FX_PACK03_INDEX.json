@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.effect-package-index.v1",
+  "pack": "TRIBAL_HOUSE_FULL_FX_PACK03",
+  "status": "proof_pass",
+  "focus": "fill variants for invocation, transformation, release and afterglow",
+  "drive": {
+    "pack_folder_id": "1bbJ3Qx2K2iUrk9RC0Nri0sF0Af36mjgS",
+    "clips_folder_id": "1PfhAwRL7iLFcqhGT4y--nJBHflssxuR2",
+    "gifs_folder_id": "1FkLTAs_VjSqqS3HaT0qa3LUuZRNC6Vy9",
+    "qc_folder_id": "10LWtKrvpZkz5upR663iVq-iZuZ_0ykrx"
+  },
+  "assets": [
+    {
+      "file": "P03_B01_EMBER_CRACK_REVEAL.mp4",
+      "drive_file_id": "1_9cOVjzz2yUBllrQ4VO8JGJmpEsxFrFl",
+      "gif_drive_file_id": "1ZlHIZcyhqVZYoblKoGFRjabjPKSZwvia",
+      "qc": "PASS"
+    },
+    {
+      "file": "P03_B06_TRANSFORM_REFLECTION.mp4",
+      "drive_file_id": "1imjoEGc42AmujvCPJaeuv6OyH2ZRrLZr",
+      "gif_drive_file_id": "14Xrb_OX6Q9Lp4aKMoP1KEbXvZ8lbnac6",
+      "qc": "PASS"
+    },
+    {
+      "file": "P03_B08_RELEASE_MIST_REFLECTION.mp4",
+      "drive_file_id": "19U39aNlP9kBXJe2EJDkbq2bwAhK_ENFP",
+      "gif_drive_file_id": "1vSs-rVzUWSuwuaTvzvoFWdHu5_7zf4Pw",
+      "qc": "PASS"
+    },
+    {
+      "file": "P03_B09_DORMANT_SIGIL_ASH.mp4",
+      "drive_file_id": "1UFaNOFyjZ4SDjl1mUPDNb_uckFRdE0-v",
+      "gif_drive_file_id": "13Ml3VCgddqS0VXUgv2j5dgbMN-36A7gS",
+      "qc": "PASS"
+    }
+  ],
+  "qc": {
+    "manifest_drive_file_id": "1gwDUoB5ifDM5ZT7gYI0vvFGcoLWGCvMl",
+    "qc_drive_file_id": "1l0FDdjtLEZwadtZQxna2SYZoctAey513",
+    "contact_sheet_drive_file_id": "1_AQEHNoFXmwDV8LMaOfqVLtq3Ed8dNtn"
+  }
+}

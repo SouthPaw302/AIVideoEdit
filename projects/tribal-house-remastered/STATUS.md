@@ -1,21 +1,26 @@
 # Status
 
-Stage: SHOT_PROOFS_ACCEPTED -> FULL FX EXPANSION
+Stage: SHOT_PROOFS_ACCEPTED -> FORMAL FX LOCK NEXT
 
-Preserve accepted continuity/picture quality. FX remains under expansion.
+Completed and archived:
+- canonical AUDIO_MAP + 24fps REACTIVE_CONTROLS
+- FX Pack 01: PASS
+- FX Pack 02: PASS
+- FX Pack 03: PASS
+- all 9 music-synced section proofs: PASS
+- 8 authored transitions integrated
+- heavy-FX prelock assembly: PASS
+  - 305.000 seconds
+  - 7,320 frames
+  - 24fps
+  - audio intact
+  - no black frames
+  - temporal activity survives assembly
 
-Completed:
-- music control bus: archived
-- FX Pack 01: PASS / archived
-- FX Pack 02: PASS / archived
-- section proofs B02, B05, B07: PASS / archived
-  - real section audio
-  - beat-snapped section cuts
-  - pre-rendered reusable scene loop assembly
-  - duration/decode/black/temporal QC PASS
+Important:
+- prelock proof is not final master
+- formal current-main FX precompile lock is still required
+- fx_lock_verified remains FALSE until schema-v2 fx.lock.json exists and verifies
 
-Remaining before formal FX lock:
-- section proofs B01, B03, B04, B06, B08, B09
-- transition proof integration between section proofs
-- formal current-main precompile lock (schema-v2 fx.lock.json)
-- full 305-second reassembly and exported-film QC
+Exact next action:
+Run current-main FX_REQUIREMENTS through precompile_gate.py with current-main registry/runtime/proofs; generate and verify projects/tribal-house-remastered/fx.lock.json; then rebuild the final full-resolution assembly from the locked package.
