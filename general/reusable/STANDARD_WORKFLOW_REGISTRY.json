@@ -4,6 +4,36 @@
   "selection_policy": "Resolve from the active production mode and MEDIA_PLAN selected capabilities. Names and IDs are project-neutral; no production provenance participates in selection.",
   "workflows": [
     {
+      "category": "fx",
+      "id": "WF-FX-RESOLUTION",
+      "implementation": {
+        "backend_options": [
+          "python"
+        ],
+        "kind": "standard_recipe",
+        "steps": [
+          "describe accepted batch/scene/still semantics factually",
+          "resolve current canonical registry plus reusable recipes",
+          "exclude implausible/incompatible effects",
+          "record bounded stack and protected regions before FX authoring"
+        ]
+      },
+      "name": "deterministic_fx_recipe_resolution",
+      "select_if": {
+        "default": true
+      },
+      "status": "approved",
+      "verification": {
+        "checks": [
+          "neutral_identity",
+          "selection_rule_validated",
+          "requirements_declared",
+          "qc_contract_declared"
+        ],
+        "status": "PASS"
+      }
+    },
+    {
       "category": "project_state",
       "id": "WF-PROJECT-STATE",
       "implementation": {
