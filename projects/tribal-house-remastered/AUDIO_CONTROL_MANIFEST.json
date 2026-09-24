@@ -1,0 +1,31 @@
+{
+  "schema": "aivideoedit.audio-control-manifest.v1",
+  "source_audio": {
+    "file_name": "tribal_house_audio.wav",
+    "duration_seconds": 305.003,
+    "sample_rate": 48000,
+    "channels": 2
+  },
+  "audio_map": {
+    "sha256": "c8e1d3de7540c49fa19080d232cf54a22448b5c5f62db9ba539da43edfe838b6",
+    "size_bytes": 7296,
+    "drive_file_id": "12k4HG-W6glBlI5Bn78vFzf8mds3FzeGv"
+  },
+  "reactive_controls": {
+    "schema": "aivideoedit.reactive-controls.v1",
+    "fps": 24,
+    "frame_records": 7320,
+    "controls": [
+      "rms_n",
+      "onset_n",
+      "low_n",
+      "mid_n",
+      "high_n"
+    ],
+    "sha256": "5d8d35727b115e607fa6d333b2ddb49cbbc5f49458174861c76a50ba59e2ee83",
+    "size_bytes": 1198020,
+    "drive_file_id": "1OOoIWnFVfMgPH2uUV5-cgxsg61JBscOy"
+  },
+  "strong_onset_anchors": 35,
+  "global_time_rule": "All reactive FX and loops bind to absolute song time; section/chunk renders must preserve phase continuity."
+}
