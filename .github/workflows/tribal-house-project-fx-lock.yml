@@ -1,0 +1,97 @@
+name: Tribal House Project FX Lock
+
+on:
+  push:
+    branches:
+      - song/tribal-house-remastered
+    paths:
+      - ".github/workflows/tribal-house-project-fx-lock.yml"
+      - "projects/tribal-house-remastered/FX_REQUIREMENTS.json"
+      - "projects/tribal-house-remastered/SCRIPT.json"
+      - "projects/tribal-house-remastered/ASSET_MANIFEST.json"
+      - "projects/tribal-house-remastered/FX_EXPANSION_PLAN.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tribal-house-project-fx-lock
+  cancel-in-progress: false
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout song branch
+        uses: actions/checkout@v4
+        with:
+          ref: song/tribal-house-remastered
+          fetch-depth: 0
+
+      - name: Checkout current main OS
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: .current-main
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install gate runtime dependencies
+        run: python -m pip install --upgrade pip numpy opencv-python-headless
+
+      - name: Overlay Tribal House project onto current-main OS
+        run: |
+          rm -rf .current-main/projects/tribal-house-remastered
+          mkdir -p .current-main/projects
+          cp -R projects/tribal-house-remastered .current-main/projects/tribal-house-remastered
+
+      - name: Run exact current-main project FX precompile gate
+        run: |
+          python .current-main/general/reusable/fx_v2/precompile_gate.py \
+            --manifest .current-main/projects/tribal-house-remastered/FX_REQUIREMENTS.json \
+            --registry .current-main/general/reusable/fx_v2/registry.json \
+            --proof-dir .current-main/general/reusable/fx_v2/proofs \
+            --runtime .current-main/general/reusable/fx_v2/runtime.py \
+            --lock-out /tmp/tribal-house.fx.lock.json
+
+      - name: Re-run live verification against immutable lock
+        run: |
+          python .current-main/general/reusable/fx_v2/precompile_gate.py \
+            --manifest .current-main/projects/tribal-house-remastered/FX_REQUIREMENTS.json \
+            --registry .current-main/general/reusable/fx_v2/registry.json \
+            --proof-dir .current-main/general/reusable/fx_v2/proofs \
+            --runtime .current-main/general/reusable/fx_v2/runtime.py \
+            --verify-lock /tmp/tribal-house.fx.lock.json
+
+      - name: Record lock and exact core evidence
+        run: |
+          cp /tmp/tribal-house.fx.lock.json projects/tribal-house-remastered/fx.lock.json
+          MAIN_SHA="$(git -C .current-main rev-parse HEAD)"
+          LOCK_SHA="$(sha256sum projects/tribal-house-remastered/fx.lock.json | awk '{print $1}')"
+          MANIFEST_SHA="$(sha256sum projects/tribal-house-remastered/FX_REQUIREMENTS.json | awk '{print $1}')"
+          cat > projects/tribal-house-remastered/FX_LOCK_EVIDENCE.json <<EOF
+          {
+            "schema": "aivideoedit.fx-lock-evidence.v1",
+            "result": "PASS",
+            "core_branch": "main",
+            "core_commit": "$MAIN_SHA",
+            "project_branch": "song/tribal-house-remastered",
+            "lock_sha256": "$LOCK_SHA",
+            "manifest_sha256": "$MANIFEST_SHA",
+            "gate": "aivideoedit-fx-precompile-v2"
+          }
+          EOF
+
+      - name: Commit verified lock to song branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projects/tribal-house-remastered/fx.lock.json projects/tribal-house-remastered/FX_LOCK_EVIDENCE.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Lock Tribal House FX against current main"
+          git push origin HEAD:song/tribal-house-remastered
