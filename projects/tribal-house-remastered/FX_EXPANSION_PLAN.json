@@ -1,0 +1,323 @@
+{
+  "schema": "aivideoedit.full-fx-expansion-plan.v1",
+  "project": "Tribal House Remastered",
+  "branch": "song/tribal-house-remastered",
+  "authority": {
+    "main_commit": "9fc16c16eae69514bf959170f96d6eb5ad4d9e56",
+    "registry": "general/reusable/fx_v2/registry.json",
+    "recipes": "general/reusable/fx_v2/recipes.json",
+    "workflows": "general/reusable/STANDARD_WORKFLOW_REGISTRY.json"
+  },
+  "user_acceptance_scope": {
+    "accepted": [
+      "continuity of early assembly proof",
+      "picture quality of early assembly proof"
+    ],
+    "not_accepted": [
+      "early FX treatment",
+      "final transitions",
+      "final loop language",
+      "final assembly/master"
+    ],
+    "preserve_base_batches": true
+  },
+  "required_workflows": [
+    "WF-FX-RESOLUTION",
+    "WF-AUDIO-EDIT-MAP",
+    "WF-AUDIO-REACTIVITY",
+    "WF-TEMPORAL-QC",
+    "WF-LIVING-SCENE-ASSEMBLY",
+    "WF-IDENTITY-SAFE-LOOP-25D-QC",
+    "WF-LAYERED-COMPOSITING",
+    "WF-PROCEDURAL-PARTICLES",
+    "WF-DEPTH-LIGHT-OPS",
+    "WF-SCENE-GRAPH-25D",
+    "WF-RENDER-DELIVERY",
+    "WF-MACHINE-QC"
+  ],
+  "audio_first": {
+    "artifacts": [
+      "AUDIO_MAP.json",
+      "REACTIVE_CONTROLS.json"
+    ],
+    "controls": [
+      "rms_n",
+      "onset_n",
+      "low_n",
+      "mid_n",
+      "high_n"
+    ],
+    "rule": "Analyze once and preserve one canonical control bus. Bind section/beat/transient decisions to global song time so loops and effects remain phase-consistent across chunk renders."
+  },
+  "approved_effect_pool": [
+    "FX2-ATM-001",
+    "FX2-ATM-021",
+    "FX2-ATM-022",
+    "FX2-AUDIO-021",
+    "FX2-FIRE-001",
+    "FX2-FIRE-002",
+    "FX2-LIGHT-001",
+    "FX2-LIGHT-002",
+    "FX2-LIGHT-022",
+    "FX2-LIGHT-023",
+    "FX2-LIGHT-024",
+    "FX2-LIGHT-025",
+    "FX2-LIGHT-027",
+    "FX2-LIGHT-028",
+    "FX2-MOTION-002",
+    "FX2-MOTION-003",
+    "FX2-MOTION-023",
+    "FX2-MOTION-024",
+    "FX2-MOTION-025",
+    "FX2-MOTION-027",
+    "FX2-SURFACE-001",
+    "FX2-SURFACE-021",
+    "FX2-SURFACE-022",
+    "FX2-SURFACE-023",
+    "FX2-SPATIAL-021",
+    "FX2-COMP-021",
+    "FX2-CAMERA-021",
+    "FX2-CAMERA-022",
+    "FX2-CAMERA-023",
+    "FX2-CAMERA-024",
+    "FX2-TRANS-021",
+    "FX2-TRANS-022",
+    "FX2-TRANS-024",
+    "FX2-TRANS-025",
+    "FX2-TRANS-030",
+    "FX2-TRANS-032",
+    "FX2-VIS-022",
+    "FX2-VIS-023",
+    "FX2-VIS-024",
+    "FX2-VIS-026",
+    "FX2-VIS-027"
+  ],
+  "section_strategy": [
+    {
+      "batch": 1,
+      "role": "invocation",
+      "fx": [
+        "FX2-FIRE-001",
+        "FX2-LIGHT-023",
+        "FX2-FIRE-002",
+        "FX2-ATM-001",
+        "FX2-LIGHT-022",
+        "FX2-SURFACE-001"
+      ],
+      "loops": [
+        "ember_microloop",
+        "smoke_advect",
+        "firelight_breath"
+      ],
+      "transition_out": [
+        "FX2-TRANS-022"
+      ],
+      "reactivity": "low/onset restrained"
+    },
+    {
+      "batch": 2,
+      "role": "pulse",
+      "fx": [
+        "FX2-LIGHT-002",
+        "FX2-MOTION-023",
+        "FX2-VIS-023",
+        "FX2-VIS-024",
+        "FX2-AUDIO-021",
+        "FX2-SPATIAL-021"
+      ],
+      "loops": [
+        "radial_ring",
+        "ember_burst",
+        "geometry_pulse"
+      ],
+      "transition_out": [
+        "FX2-TRANS-021"
+      ],
+      "reactivity": "low band -> ring scale; onset -> ember burst"
+    },
+    {
+      "batch": 3,
+      "role": "emergence",
+      "fx": [
+        "FX2-MOTION-002",
+        "FX2-LIGHT-024",
+        "FX2-LIGHT-028",
+        "FX2-ATM-001",
+        "FX2-COMP-021",
+        "FX2-SPATIAL-021"
+      ],
+      "loops": [
+        "protected_aura",
+        "smoke_mantle",
+        "halo_loop"
+      ],
+      "transition_out": [
+        "FX2-TRANS-024"
+      ],
+      "reactivity": "mid/high -> aura/light only; identity protected"
+    },
+    {
+      "batch": 4,
+      "role": "passage",
+      "fx": [
+        "FX2-MOTION-003",
+        "FX2-SURFACE-023",
+        "FX2-CAMERA-021",
+        "FX2-CAMERA-023",
+        "FX2-SPATIAL-021",
+        "FX2-ATM-021"
+      ],
+      "loops": [
+        "reflection_shimmer",
+        "corridor_travel",
+        "fog_depth"
+      ],
+      "transition_out": [
+        "FX2-TRANS-030"
+      ],
+      "reactivity": "energy -> travel amplitude; onset -> reflected light accent"
+    },
+    {
+      "batch": 5,
+      "role": "peak_build",
+      "fx": [
+        "FX2-FIRE-001",
+        "FX2-FIRE-002",
+        "FX2-ATM-022",
+        "FX2-MOTION-023",
+        "FX2-MOTION-027",
+        "FX2-DISTORT-021",
+        "FX2-VIS-026",
+        "FX2-VIS-027"
+      ],
+      "loops": [
+        "spark_storm",
+        "firelight_surge",
+        "waveform_smoke",
+        "energy_flame"
+      ],
+      "transition_out": [
+        "FX2-TRANS-032"
+      ],
+      "reactivity": "strongest mapped section; controls smoothed/bounded"
+    },
+    {
+      "batch": 6,
+      "role": "transformation",
+      "fx": [
+        "FX2-ATM-021",
+        "FX2-LIGHT-025",
+        "FX2-SURFACE-022",
+        "FX2-SURFACE-023",
+        "FX2-SPATIAL-021",
+        "FX2-COMP-021"
+      ],
+      "loops": [
+        "mist_layers",
+        "water_displacement",
+        "palette_migration"
+      ],
+      "transition_out": [
+        "FX2-TRANS-024",
+        "FX2-TRANS-030"
+      ],
+      "reactivity": "energy eases; high band lifts gold/indigo"
+    },
+    {
+      "batch": 7,
+      "role": "apotheosis",
+      "fx": [
+        "FX2-LIGHT-024",
+        "FX2-LIGHT-027",
+        "FX2-LIGHT-028",
+        "FX2-MOTION-023",
+        "FX2-FIRE-002",
+        "FX2-CAMERA-022",
+        "FX2-SPATIAL-021"
+      ],
+      "loops": [
+        "halo_apex",
+        "light_shafts",
+        "loopable_orbit"
+      ],
+      "transition_out": [
+        "FX2-TRANS-021"
+      ],
+      "reactivity": "high energy with restrained protected hero"
+    },
+    {
+      "batch": 8,
+      "role": "release",
+      "fx": [
+        "FX2-ATM-021",
+        "FX2-MOTION-002",
+        "FX2-LIGHT-001",
+        "FX2-SURFACE-021",
+        "FX2-CAMERA-023"
+      ],
+      "loops": [
+        "long_hold_fog",
+        "soft_light_breath",
+        "reflection_rest"
+      ],
+      "transition_out": [
+        "FX2-TRANS-024"
+      ],
+      "reactivity": "reduced amplitude / longer periods"
+    },
+    {
+      "batch": 9,
+      "role": "afterglow",
+      "fx": [
+        "FX2-ATM-021",
+        "FX2-LIGHT-001",
+        "FX2-FIRE-002",
+        "FX2-SURFACE-001"
+      ],
+      "loops": [
+        "final_ember",
+        "thin_smoke",
+        "near_still_hold"
+      ],
+      "transition_out": [],
+      "reactivity": "minimal; resolve to calm"
+    }
+  ],
+  "package_requirements": {
+    "per_loop": [
+      "source hash/frame range",
+      "fps/dimensions",
+      "duration",
+      "motion origin",
+      "entry/exit seam method",
+      "seam QC",
+      "freeze/ghosting QC",
+      "musical use"
+    ],
+    "per_transition": [
+      "outgoing/incoming source",
+      "duration",
+      "midpoint behavior",
+      "exposure/color continuity",
+      "identity protection",
+      "destination endpoint completion"
+    ],
+    "per_reactive_effect": [
+      "control signal file/hash",
+      "mapping",
+      "smoothing/bounds",
+      "global-time phase"
+    ],
+    "proof_ladder": [
+      "single-shot proof",
+      "transition proof",
+      "section proof",
+      "full assembly"
+    ]
+  },
+  "formal_lock": {
+    "requirements_file": "projects/tribal-house-remastered/FX_REQUIREMENTS.json",
+    "lock_file": "projects/tribal-house-remastered/fx.lock.json",
+    "rule": "No claim of FX_LOCKED until current-main precompile_gate schema-v2 lock exists and verifies immediately before compile."
+  }
+}

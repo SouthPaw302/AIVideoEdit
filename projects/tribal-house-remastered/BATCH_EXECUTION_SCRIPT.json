@@ -14,10 +14,19 @@
     "advance_to_next_batch"
   ],
   "current_position": {
-    "batch": 1,
-    "label": "Invocation",
-    "status": "generated_media_pending_persistence_and_small_fx_gate",
-    "interpretation": "All Invocation images generated so far, including main and FX-secondary/emergence variants, belong to Batch 01. No Batch 02 media exists yet."
+    "status": "batches_complete_picture_proof_accepted_fx_expansion_required",
+    "completed_batches": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "interpretation": "The 9 source batches and early moving proofs are preserved. They are inputs to the full repo FX pass, not the final effect treatment. No new base-image batch is required unless QC identifies a specific missing composition."
   },
   "batches": [
     {

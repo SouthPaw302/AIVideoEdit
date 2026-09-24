@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.project-state.v1",
   "branch": "song/tribal-house-remastered",
-  "stage": "ASSEMBLY_PROOF_BUILT",
+  "stage": "SHOT_PROOFS_ACCEPTED",
   "director_brain_version": 2,
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
@@ -14,13 +14,13 @@
   "frame_followable_script": true,
   "shot_packages_built": true,
   "media_evidence_verified": true,
-  "shot_proofs_accepted": false,
-  "mode_aware_proofs_accepted": false,
-  "fx_lock_verified": true,
-  "assembly_complete": true,
+  "shot_proofs_accepted": true,
+  "mode_aware_proofs_accepted": true,
+  "fx_lock_verified": false,
+  "assembly_complete": false,
   "final_qc_passed": false,
   "mode_aware_qc_passed": false,
   "archive_complete": false,
   "production_model": "instrumental_batch_first_fx_heavy",
-  "note": "No storyboard/contact-sheet artifacts are production media. Batches 01-09 are standalone still + moving FX packages. Current assembly is a technical/creative review proof, not a user-accepted final master."
+  "note": "User accepted continuity and image quality of the early assembly proof as a base for further work. FX treatment remains explicitly early/provisional. Formal current-main FX_REQUIREMENTS + schema-v2 fx.lock have not yet been produced; current assembly is diagnostic and must be rebuilt after the full FX expansion/lock."
 }

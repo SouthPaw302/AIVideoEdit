@@ -44,7 +44,7 @@
     ],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Follow the repository batch workflow exactly. Treat all images generated so far as Batch 01: main source plus FX-secondary media. Persist to GitHub + Drive, pass the small FX gate, then move to the next 10-image batch.",
-  "exact_next_action": "Normalize and persist all existing Invocation main + secondary media as Batch 01 to GitHub manifests and Drive, run the Batch 01 small FX gate through the current-main resolver, record QC/locks, then generate Batch 02's 10 main source images.",
-  "updated_at_utc": "2026-09-24T11:45:00Z"
+  "current_user_direction": "Preserve the accepted continuity and picture quality. Do not restart or regenerate the base batches. Run the real repo FX pass from current main: music/beat mapping, audio-reactive controls, reusable loop/GIF packages, approved FX V2 stacks, transition media, visualizer/reactive plates, 2.5D/layered composites where justified, temporal/seam QC, formal FX_REQUIREMENTS + precompile lock, then reassemble.",
+  "exact_next_action": "Build AUDIO_MAP.json + REACTIVE_CONTROLS.json from the preserved master; resolve per-section current-main FX recipes; render and archive loop/GIF/transition/reactive effect packages with seam/temporal QC; author formal FX_REQUIREMENTS.json; pass current-main precompile gate to generate schema-v2 fx.lock.json; only then rebuild the 305-second assembly.",
+  "updated_at_utc": "2026-09-24T17:10:00Z"
 }
