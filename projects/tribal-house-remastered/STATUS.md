@@ -1,14 +1,17 @@
 # Status
 
-Stage: BATCH_01_FX_GATE
+Stage: BATCH_01_SECONDARY_MOTION_EXPANSION
 
-Batch 01 Invocation is durably backed up.
+Batch 01 is backed up:
+- 10 MAIN stills in Drive
+- 13 preserved FX-secondary still candidates in Drive
+- hashes + Drive IDs in GitHub
+- short moving FX proofs completed
+- FX QC contact sheet in Drive
+- Batch 01 moving proof gate: AGENT_QC_PASS (no claim of user creative acceptance)
 
-- 10 MAIN source stills -> Google Drive
-- 13 FX_SECONDARY generated candidates -> Google Drive
-- SHA-256 hashes + Drive IDs -> ASSET_MANIFEST.json
-- Small moving FX proof gate now active
-- Anchor: B01-MAIN-01
-- Resolver path: canonical effects first; internal motion before camera
+Locked Batch 01 FX order:
+FIRE-001 -> LIGHT-023 -> FIRE-002 -> ATM-001 -> SPATIAL-021
+Internal motion first; camera last.
 
-Next: render short moving proofs with FIRE-001, LIGHT-023, FIRE-002, ATM-001 and bounded SPATIAL-021; record proof QC; lock the usable FX recipe; proceed to Batch 02 only after Batch 01 gate is recorded.
+Current action: render 10 secondary moving variants from the Batch 01 anchor/source set using canonical effects and preserve their hashes/QC. Then proceed to Batch 02 main-source generation.

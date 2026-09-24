@@ -1,60 +1,89 @@
 {
   "schema": "aivideoedit.fx-gate.v1",
   "batch": 1,
-  "status": "moving_proof_in_progress",
+  "label": "Invocation",
+  "status": "AGENT_QC_PASS_MOVING_PROOFS",
+  "user_acceptance": "not_claimed",
   "anchor_asset_id": "B01-MAIN-01",
-  "resolver_basis": "current-main deterministic FX resolver",
-  "scene_semantics": [
-    "fire",
-    "smoke",
-    "threshold",
-    "parallax"
-  ],
-  "selected_fx": [
+  "proof_outputs": [
     {
-      "id": "FIRE-001",
-      "purpose": "living flame/ember behavior",
-      "scope": "central ember only"
+      "name": "B01_PROOF_FIRELIGHT.mp4",
+      "sha256": "d6b38493e8b6d0a3fa5b430af012eb0287a4989c3ab592a8d2c4a2d03cef084d",
+      "duration_seconds": 6,
+      "fx": [
+        "FIRE-001",
+        "LIGHT-023",
+        "FIRE-002"
+      ],
+      "qc": "pass"
     },
     {
-      "id": "LIGHT-023",
-      "purpose": "firelight breath",
-      "scope": "localized floor/nearby stone"
+      "name": "B01_PROOF_SMOKE.mp4",
+      "sha256": "f35f71c841a6f1d3fccd985ee901ee3caaf12106d16720dcbb9416e9926f0945",
+      "duration_seconds": 6,
+      "fx": [
+        "ATM-001"
+      ],
+      "qc": "pass"
     },
     {
-      "id": "FIRE-002",
-      "purpose": "secondary ember/spark activity",
-      "scope": "central-to-midfield particles"
+      "name": "B01_PROOF_COMBINED.mp4",
+      "sha256": "1cb6436a7aef2327e7bc4d8f63c3fdcaa258023f36050695f0becb8d681f373c",
+      "duration_seconds": 6,
+      "fx": [
+        "FIRE-001",
+        "LIGHT-023",
+        "FIRE-002",
+        "ATM-001",
+        "SPATIAL-021"
+      ],
+      "qc": "pass"
     },
     {
-      "id": "ATM-001",
-      "purpose": "smoke drift",
-      "scope": "environment only"
-    },
-    {
-      "id": "SPATIAL-021",
-      "purpose": "bounded multiplane depth",
-      "scope": "architecture after internal motion proof"
+      "name": "B01_PROOF_COMBINED_LOOP.gif",
+      "sha256": "ead290810ad098dc0da9e705986d6d2b766fd928805d53d2c7c464e538ae7ae8",
+      "duration_seconds": 4,
+      "fx": [
+        "FIRE-001",
+        "LIGHT-023",
+        "FIRE-002",
+        "ATM-001"
+      ],
+      "qc": "pass"
     }
   ],
-  "recipe_candidates": [
-    "RCP-FIRELIT-INTERIOR",
-    "RCP-MULTIPLANE"
-  ],
+  "qc_evidence": {
+    "drive_folder_id": "1fEVP7bqulHybc9sWuW3w1x249JCUF-gH",
+    "contact_sheet_drive_id": "1WrnYKaQizlWO5NOpvWHzYCYS8I7ngXm5",
+    "contact_sheet_url": "https://drive.google.com/file/d/1WrnYKaQizlWO5NOpvWHzYCYS8I7ngXm5/view"
+  },
   "protected_regions": [
     "ritual circle topology",
-    "monolith geometry",
     "central axis",
+    "monolith geometry",
     "horizon",
     "future hero zone"
   ],
-  "order": [
-    "internal_fire",
-    "firelight",
-    "smoke",
-    "embers",
-    "bounded_depth",
-    "camera_last"
+  "findings": [
+    "localized firelight preserves architecture",
+    "smoke remains atmospheric and does not replace geometry",
+    "ember motion is localized and loopable",
+    "combined proof uses camera/depth only after internal motion and remains bounded",
+    "no global warp or topology drift observed in sampled proof frames"
   ],
-  "proof_policy": "short moving proofs before full section render; no global warp; no identity/topology drift"
+  "locked_recipe": {
+    "order": [
+      "FIRE-001",
+      "LIGHT-023",
+      "FIRE-002",
+      "ATM-001",
+      "SPATIAL-021"
+    ],
+    "recipe_ids": [
+      "RCP-FIRELIT-INTERIOR",
+      "RCP-MULTIPLANE"
+    ],
+    "camera_policy": "camera last; <= subtle breathing move",
+    "expansion_target": "10 secondary moving variants, not 10 more FX stills"
+  }
 }
