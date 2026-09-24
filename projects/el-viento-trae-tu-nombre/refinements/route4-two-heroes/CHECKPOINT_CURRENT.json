@@ -2,8 +2,8 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Route 4 extended 2:34 refined FX v3 rendered; corrected hero order preserved; technical QC passed",
-  "active_scope": "Extended-song Director's Cut refinement using long hero holds, internal loop motion and reduced scene-change density",
+  "current_stage": "Route 4 corrected-order 1080p refined FX v3 rendered; technical QC passed",
+  "active_scope": "1080p creative refinement only",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
     "drive_file_id": "1M6uRTeYejXxn2rSDkTJu5H0_LiWrdwN4",
@@ -50,9 +50,13 @@
     "Selective internal FX refinement rendered over corrected-order v2",
     "Four high-value FX variation layers integrated without adding scene changes",
     "Refined FX v3 technical QC passed with no detected black/freeze events",
-    "68 MB refined FX v3 review uploaded to Drive Full Renders"
+    "68 MB refined FX v3 review uploaded to Drive Full Renders",
+    "Canonical Route 4 hero/story order restored in 2:34 edit",
+    "MontañaNegra intro/outro added at 1080p refinement stage",
+    "Corrected-order refined FX v3 rendered at 1920x1080/24fps",
+    "65 MB review copy archived to Drive Full Renders"
   ],
-  "exact_next_action": "Creative review refined FX v3. Continue only with selective internal motion/FX improvements while preserving canonical hero order, MontañaNegra bookends, and reduced scene-change density.",
+  "exact_next_action": "Review corrected-order 1080p refined FX v3; continue internal transparent/variation FX polish only where needed while preserving canonical hero order and reduced scene-change density. Do not upscale yet.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -100,7 +104,8 @@
   },
   "delivery_target": {
     "review_workflow": "1080p workprints until creative lock",
-    "final_master": "4K upscale after final creative/QC lock",
+    "current_step": "creative refinement / FX / hero-order / channel-bookend review",
+    "later_step": "4K upscale only after 1080p creative lock and final QC",
     "preserve_native_1080p_master": true,
     "archive_to": [
       "Google Drive",
@@ -148,6 +153,25 @@
       "freeze_detect": "none",
       "status": "pass"
     },
+    "role": "current 1080p creative refinement candidate; not final master"
+  },
+  "corrected_order_candidate": {
+    "file": "El_Viento_Route4_234_Refined_FX_v3.mp4",
+    "review_file": "El_Viento_Route4_234_Refined_FX_v3_review.mp4",
+    "sha256": "cb3485303d5f5661363803cc4f90fbe893bc2e61a7f7c6a19b9b214d523acd29",
+    "review_sha256": "82c2818fe799ea0cbaf0141a25f5f2e6141ecc1b38763593f9e3337ced9b20f1",
+    "duration_seconds": 154.5,
+    "resolution": "1920x1080",
+    "fps": 24,
+    "audio": "stereo 48 kHz AAC",
+    "hero_order": "canonical Route 4 order restored",
+    "channel_finish": "MontañaNegra intro/outro included in current 1080p refinement",
+    "technical_qc": {
+      "black_detect": "none",
+      "freeze_detect": "none",
+      "status": "pass"
+    },
+    "drive_review_id": "1LRjGExaf2uTazUyKW1hfjdoUILDT9StG",
     "role": "current 1080p creative refinement candidate; not final master"
   }
 }
