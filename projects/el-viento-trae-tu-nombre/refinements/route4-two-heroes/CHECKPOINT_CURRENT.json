@@ -2,19 +2,30 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Batch 09 pre-FX motion complete",
-  "active_scope": "final supplemental batch",
+  "current_stage": "Batch 01 FX moving proof rendered; technical QC passed; artistic acceptance pending",
+  "active_scope": "Batch 01 FX gate / moving proof review",
   "completed": [
     "Batches 01-09 complete through pre-FX motion",
-    "Batch 09 ten-image still set archived",
-    "four Batch 09 stills selected after QC",
-    "four clean loops + GIF previews created",
-    "four restrained pre-FX motion variants created",
-    "Batch 09 archives backed up to Drive"
+    "Batch 01 clean loops compared against pre-FX motion variants",
+    "Batch 01 restrained FX gate rendered from preserved motion variants",
+    "Batch 01 moving proof assembled for 00:00.000-00:21.504",
+    "Batch 01 technical QC passed: 1920x1080, 24 fps, 21.504 s, stereo 48 kHz audio, no detected black/freeze events",
+    "Batch 01 proof contact sheet generated"
   ],
-  "exact_next_action": "All planned batches are now complete through pre-FX motion. Next phase is FX gate/review and proof assembly, beginning with Batch 01 unless the user directs otherwise.",
+  "batch_01_proof": {
+    "file": "El_Viento_Batch01_FX_Moving_Proof_v1.mp4",
+    "sha256": "49b7042343b9460943a2a2fa978d4116426f64fd9e928bf86ccb42b2a47fc675",
+    "qc_contact": "Batch01_FX_Proof_QC_Contact.jpg",
+    "qc_contact_sha256": "d75803e41288b698f1deef80b8d73794cf2f954081f7c9a71d7671a320b94fff",
+    "technical_qc": "pass",
+    "artistic_acceptance": "pending_user_review",
+    "durable_media_backup": "pending_acceptance"
+  },
+  "exact_next_action": "Review the Batch 01 moving proof. If accepted, persist the proof to Google Drive, lock the Batch 01 FX decision in the song branch, then proceed to Batch 02. If rejected, repair only the named defect.",
   "do_not_do": [
+    "do not proceed to Batch 02 before Batch 01 proof acceptance or explicit user direction",
     "do not create Batch 10 without explicit user instruction",
-    "do not alter locked song timing before FX gate review"
+    "do not alter locked song timing",
+    "do not overwrite preserved clean loops, pre-FX variants, or old masters"
   ]
 }
