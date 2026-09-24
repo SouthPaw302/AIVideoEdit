@@ -2,7 +2,7 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "1080p FX completion pass in progress; Batch 01 FX locked",
+  "current_stage": "1080p FX completion pass in progress; Batches 01-02 FX locked",
   "active_scope": "creative_refinement/fx_completion",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
@@ -76,9 +76,10 @@
     "final 4K sampled visual QC passed including 1:21 repaired region",
     "4K final handoff ZIP created and split into 21 Drive-safe parts",
     "all 21 ZIP parts plus rebuild script and hashes verified present on Drive",
-    "Batch 01 canonical FX runtime proof rendered, QC passed, Drive-backed and locked"
+    "Batch 01 canonical FX runtime proof rendered, QC passed, Drive-backed and locked",
+    "Batch 02 canonical FX runtime proof rendered, QC passed, Drive-backed and locked"
   ],
-  "exact_next_action": "Resume Batch 02 FX gate at 00:21.504 using the locked pre-FX motion sources; render, QC and lock the Batch 02 moving proof, then continue batch-by-batch. Do not upscale again until the full 1080p FX master is approved by the user.",
+  "exact_next_action": "Resume Batch 03 FX gate at 00:43.008 using locked pre-FX motion sources. Preserve map/touch/portal/thread continuity; render, QC and lock the Batch 03 moving proof.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -356,9 +357,10 @@
     "authority": "current user directive 2026-09-24",
     "status": "in_progress",
     "completed_batches": [
-      1
+      1,
+      2
     ],
-    "current_batch": 2,
+    "current_batch": 3,
     "batch_01_proof": {
       "file": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4",
       "sha256": "8a507ce08b1da649c721a8f9ebc199f15d9b4ec42af90baed61f0ac4f2636e81",
@@ -367,6 +369,13 @@
       "status": "locked"
     },
     "prior_4k_master_role": "rollback/reference only",
-    "upscale_gate": "blocked until user approves completed 1080p FX master"
+    "upscale_gate": "blocked until user approves completed 1080p FX master",
+    "batch_02_proof": {
+      "file": "El_Viento_Batch02_FX_Moving_Proof_v1.mp4",
+      "sha256": "bdf3516f7961e69d4b019c5f6fe6e86dd76f152e58873b9e1e33734a1245d9e3",
+      "drive_file_id": "1Zxu5ajoAf7nNb041J9zPDnVpvaHSOhgV",
+      "qc_contact_sheet_drive_id": "1SDjz4hdgZt7Jy_DHPKsLJYesqzkX01-f",
+      "status": "locked"
+    }
   }
 }
