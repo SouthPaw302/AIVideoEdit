@@ -1,11 +1,11 @@
 # Status
 
-Stage: BATCH_06_FX_GATE_PASS / BATCH_07_NEXT
+Stage: BATCH_07_FX_GATE_PASS / BATCH_08_NEXT
 
-Batch 06 Transformation:
+Batch 07 Peak:
 - 10 stills archived
-- 10 moving transformation proofs archived
+- 10 apex moving FX proofs archived
 - FX gate technical PASS
-- preferred: mist drift, reflection ripple, gold/indigo pulse, full-stack transform
+- preferred: halo pulse, ember apex, fire crown, full-stack apex
 
-Next: Batch 07 Peak. Use the established identity/world and push to the strongest iconic compositions and controlled apex FX.
+Next: Batch 08 Release. Reduce density and aggression; use slower atmospheric motion, open framing and softer light.

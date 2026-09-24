@@ -1,0 +1,26 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 7,
+  "label": "Peak",
+  "status": "technical_pass",
+  "anchor": "B07-STILL-01",
+  "protected_regions": [
+    "hero identity",
+    "face",
+    "anatomy",
+    "architecture",
+    "symmetry",
+    "horizon"
+  ],
+  "preferred": [
+    "B07-MOTION-01",
+    "B07-MOTION-04",
+    "B07-MOTION-07",
+    "B07-MOTION-10"
+  ],
+  "notes": [
+    "Apex treatments passed without identity drift.",
+    "Hero remains protected from camera/depth motion.",
+    "Peak contrast remains controlled."
+  ]
+}
