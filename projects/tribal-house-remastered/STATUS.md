@@ -1,11 +1,13 @@
 # Status
 
-Stage: BATCH_08_FX_GATE_PASS / BATCH_09_NEXT
+Stage: ALL_BATCHES_FX_GATE_PASS / ASSEMBLY_NEXT
 
-Batch 08 Release:
+Batches 01-09 have standalone still media, moving FX proofs, durable Drive storage, hashes/manifests, and technical FX-gate records.
+
+Batch 09 Afterglow:
 - 10 stills archived
-- 10 slower moving FX proofs archived
-- FX gate technical PASS
-- preferred: soft mist, long hold, exit drift, full-stack release
+- 10 minimal moving FX proofs archived
+- technical FX gate PASS
+- preferred: ember breath, smoke fade, near-dark hold, final ember hold
 
-Next: Batch 09 Afterglow / Exit. Return toward the empty chamber and remaining ember; minimal motion and calm final state.
+Next: assemble a full 305-second proof from the preferred moving variants, sync to the real track, run actual-export QC, then archive the proof/master.
