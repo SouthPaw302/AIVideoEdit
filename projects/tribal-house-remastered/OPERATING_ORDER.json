@@ -44,7 +44,7 @@
     ],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Lock the beat-derived ritual/fire-spirit storyline, follow the repository workflow, create visual media/batches as required, save state, and continue production.",
-  "exact_next_action": "Lock the full storyboard and frame-followable script from MUSIC_ANALYSIS, then generate Batch 01 Invocation media and record actual media evidence.",
-  "updated_at_utc": "2026-09-24T09:50:00Z"
+  "current_user_direction": "Follow the repository batch workflow exactly. Treat all images generated so far as Batch 01: main source plus FX-secondary media. Persist to GitHub + Drive, pass the small FX gate, then move to the next 10-image batch.",
+  "exact_next_action": "Normalize and persist all existing Invocation main + secondary media as Batch 01 to GitHub manifests and Drive, run the Batch 01 small FX gate through the current-main resolver, record QC/locks, then generate Batch 02's 10 main source images.",
+  "updated_at_utc": "2026-09-24T11:45:00Z"
 }

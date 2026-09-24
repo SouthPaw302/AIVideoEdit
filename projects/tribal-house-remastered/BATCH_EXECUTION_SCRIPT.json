@@ -1,0 +1,162 @@
+{
+  "schema": "aivideoedit.batch-execution-script.v1",
+  "project": "Tribal House Remastered",
+  "branch": "song/tribal-house-remastered",
+  "batch_cycle": [
+    "generate_10_main_source_images",
+    "save_and_hash_main_media",
+    "sync_main_media_to_drive_and_record_github_manifest",
+    "run_small_fx_gate_using_current_main_resolver",
+    "produce_10_secondary_fx_loop_gif_motion_variants_from_approved_batch_media",
+    "save_and_hash_secondary_media",
+    "sync_secondary_media_to_drive_and_record_github_manifest",
+    "qc_and_lock_batch",
+    "advance_to_next_batch"
+  ],
+  "current_position": {
+    "batch": 1,
+    "label": "Invocation",
+    "status": "generated_media_pending_persistence_and_small_fx_gate",
+    "interpretation": "All Invocation images generated so far, including main and FX-secondary/emergence variants, belong to Batch 01. No Batch 02 media exists yet."
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "time_range": "00:00-00:30",
+      "label": "Invocation",
+      "story_function": "The ritual chamber wakes from near-black. Ember, geometry, smoke and ash gather into the first restrained silhouette of the fire-spirit.",
+      "main_media": "10 source images: ember seed -> geometry wakes -> smoke gathers -> incomplete silhouette.",
+      "secondary_media": "Secondary FX/motion candidates derived from the same Batch 01 world: fire, embers, smoke, glow, localized atmosphere; no new world/identity.",
+      "protected_regions": [
+        "chamber topology",
+        "ritual circle",
+        "hero silhouette once visible",
+        "anatomy",
+        "lighting direction"
+      ],
+      "exit_action": "Persist all Batch 01 main + secondary media, run small FX gate, record PASS/REJECT per asset and effect, then lock Batch 01."
+    },
+    {
+      "batch": 2,
+      "time_range": "00:30-00:58",
+      "label": "Gathering",
+      "story_function": "The awakened world answers. Distant ritual presences, circular movement, dust, cloth and torchlight assemble around the same sacred center.",
+      "main_media": "10 source images expanding the same world with perimeter figures, circles, dust, torchlight and ritual response.",
+      "secondary_media": "10 loop/GIF/motion or FX derivatives from approved Batch 02 source media.",
+      "protected_regions": [
+        "hero continuity",
+        "faces/hands if visible",
+        "architecture",
+        "circle geometry"
+      ],
+      "exit_action": "FX gate Batch 02, then lock and continue."
+    },
+    {
+      "batch": 3,
+      "time_range": "00:58-01:46",
+      "label": "First Manifestation",
+      "story_function": "The central spirit gains recognizable identity while remaining one coherent entity; close, mid and wide coverage establish the hero.",
+      "main_media": "10 source images establishing the hero identity library across compatible compositions.",
+      "secondary_media": "10 motion/loop/FX derivatives preserving exact hero identity.",
+      "protected_regions": [
+        "face",
+        "anatomy",
+        "hero silhouette",
+        "world identity"
+      ],
+      "exit_action": "FX gate Batch 03, then lock identity canon."
+    },
+    {
+      "batch": 4,
+      "time_range": "01:46-02:14",
+      "label": "Procession / Passage",
+      "story_function": "The spirit moves through thresholds, corridors, temple paths and reflective volcanic spaces.",
+      "main_media": "10 source images showing forward passage through the same mythic world.",
+      "secondary_media": "10 motion/loop/transition derivatives; bounded parallax/camera only after internal motion.",
+      "protected_regions": [
+        "hero identity",
+        "axis",
+        "architecture",
+        "horizon",
+        "lighting direction"
+      ],
+      "exit_action": "FX gate Batch 04, then lock passage coverage."
+    },
+    {
+      "batch": 5,
+      "time_range": "02:14-03:18",
+      "label": "Possession / Peak Build",
+      "story_function": "The environment becomes fully alive: fire, dust, cloth, smoke, reflected light and ritual energy escalate around the hero.",
+      "main_media": "10 source images with the densest ceremonial escalation and strongest controlled visual energy.",
+      "secondary_media": "10 FX/motion derivatives emphasizing independent materials and impact without global warping.",
+      "protected_regions": [
+        "face",
+        "hands",
+        "anatomy",
+        "hero silhouette",
+        "critical props",
+        "architecture"
+      ],
+      "exit_action": "FX gate Batch 05, then lock peak-build media."
+    },
+    {
+      "batch": 6,
+      "time_range": "03:18-03:48",
+      "label": "Threshold Crossing",
+      "story_function": "The spirit crosses from the earthbound ritual world into a more mythic plane through fire/water/reflection/gate imagery.",
+      "main_media": "10 source images for the crossing and palette/spatial state change.",
+      "secondary_media": "10 transition/loop/FX derivatives using reflection, fog, light and bounded depth.",
+      "protected_regions": [
+        "hero identity",
+        "gate geometry",
+        "waterline/reflection geometry"
+      ],
+      "exit_action": "FX gate Batch 06, then lock crossing."
+    },
+    {
+      "batch": 7,
+      "time_range": "03:48-04:16",
+      "label": "Apotheosis",
+      "story_function": "The spirit reaches full mythic manifestation in monumental, iconic compositions.",
+      "main_media": "10 apex hero images with wide, mid and iconic silhouette coverage.",
+      "secondary_media": "10 FX/motion derivatives with controlled lift, firelight, atmosphere and restrained camera.",
+      "protected_regions": [
+        "face",
+        "anatomy",
+        "hero identity",
+        "symmetry",
+        "architecture"
+      ],
+      "exit_action": "FX gate Batch 07, then lock apex canon."
+    },
+    {
+      "batch": 8,
+      "time_range": "04:16-04:50",
+      "label": "Release",
+      "story_function": "Power stabilizes. Motion becomes smoother, less aggressive and more fluid while the same world remains intact.",
+      "main_media": "10 source images easing from peak intensity into elevated calm.",
+      "secondary_media": "10 subtle living-scene loop/FX derivatives with reduced pulse intensity.",
+      "protected_regions": [
+        "hero identity",
+        "world topology",
+        "lighting continuity"
+      ],
+      "exit_action": "FX gate Batch 08, then lock release."
+    },
+    {
+      "batch": 9,
+      "time_range": "04:50-05:05",
+      "label": "Afterglow / Exit",
+      "story_function": "Ash, horizon glow, smoke and remaining embers settle into transformed stillness.",
+      "main_media": "10 closing-source options or fewer only if the repo/user explicitly authorizes a reduced closing batch; default remains 10.",
+      "secondary_media": "10 subtle loop/FX derivatives or long-hold variants from approved closing media.",
+      "protected_regions": [
+        "final silhouette",
+        "horizon",
+        "architecture",
+        "end-state calm"
+      ],
+      "exit_action": "FX gate Batch 09, then assembly/proof path."
+    }
+  ]
+}

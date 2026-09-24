@@ -1,7 +1,11 @@
 # Status
 
-Stage: STORYBOARD_LOCKED
+Stage: STORYBOARD_LOCKED / batch execution active
 
-Locked: 19-shot, 305-second music-led fire-spirit ritual script at 24 fps.
+Operational script: `BATCH_EXECUTION_SCRIPT.md` + `BATCH_EXECUTION_SCRIPT.json`
 
-Current action: generate Batch 01 Invocation candidate media (S01-S03), select continuity-safe assets, then build real shot packages and proofs.
+Current position: **Batch 01 — Invocation**
+
+All Invocation images generated so far are one Batch 01 package: main source images plus secondary FX/emergence variants.
+
+Next: persist Batch 01 media/hashes to Drive + GitHub manifests, run the small FX gate, QC/lock Batch 01, then generate Batch 02's 10 main images.
