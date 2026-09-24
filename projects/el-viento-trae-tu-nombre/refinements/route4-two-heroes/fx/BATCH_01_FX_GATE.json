@@ -1,0 +1,79 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "project": "El Viento trae tu nombre",
+  "refinement_id": "route4-two-heroes",
+  "batch": 1,
+  "segment": "00:00.000-00:21.504",
+  "source_policy": "preserve clean loops and pre-FX motion variants; no regeneration",
+  "selected_motion_sources": [
+    "01_motion_variant.mp4",
+    "02_motion_variant.mp4",
+    "03_motion_variant.mp4",
+    "04_motion_variant.mp4"
+  ],
+  "fx_decisions": [
+    {
+      "shot": 1,
+      "decision": "approved_for_proof",
+      "fx": [
+        "subtle authored-highlight bloom",
+        "very light temporal grain",
+        "restrained vignette"
+      ],
+      "intent": "fort-at-dusk atmosphere; preserve male hero and harbor geometry"
+    },
+    {
+      "shot": 2,
+      "decision": "approved_for_proof",
+      "fx": [
+        "subtle authored-highlight bloom",
+        "very light temporal grain",
+        "restrained vignette"
+      ],
+      "intent": "lamp/rain atmosphere; preserve female hero identity and harbor geography"
+    },
+    {
+      "shot": 3,
+      "decision": "approved_for_proof",
+      "fx": [
+        "slightly stronger authored-highlight bloom",
+        "very light temporal grain",
+        "restrained vignette"
+      ],
+      "intent": "memory-thread awakening; preserve both heroes and architecture"
+    },
+    {
+      "shot": 4,
+      "decision": "approved_for_proof",
+      "fx": [
+        "subtle authored-highlight bloom",
+        "very light temporal grain",
+        "restrained vignette"
+      ],
+      "intent": "convergence energy without structural drift"
+    }
+  ],
+  "prohibited_fx_confirmed_absent": [
+    "face morphing",
+    "subject replacement",
+    "architecture drift",
+    "horizon/geography drift",
+    "hallucinated figures",
+    "structural deformation",
+    "whole-frame wobble"
+  ],
+  "moving_proof": {
+    "file": "El_Viento_Batch01_FX_Moving_Proof_v1.mp4",
+    "sha256": "49b7042343b9460943a2a2fa978d4116426f64fd9e928bf86ccb42b2a47fc675",
+    "duration_seconds": 21.504,
+    "resolution": "1920x1080",
+    "fps": 24,
+    "audio": "stereo 48 kHz AAC proof audio from preserved prior review master",
+    "technical_qc": "pass",
+    "black_detect": "none",
+    "freeze_detect": "none",
+    "artistic_acceptance": "pending_user_review",
+    "drive_backup": "pending_acceptance"
+  },
+  "note": "Technical pass does not create artistic canon. User approval is required before Batch 01 FX is locked and before moving to Batch 02."
+}
