@@ -90,3 +90,21 @@ Every discovered technique must be labeled as exactly one of:
 - Reuse current FX2 primitives whenever they already provide the underlying behavior.
 - New FX IDs require neutral naming, implementation provenance, proof render, visual QC, encoded-output verification, and registry consistency.
 - Preserve project-specific source media and narrative context on their branches; only the generalized capability may move to `main`.
+
+
+## Implementation checkpoint — 2026-09-24
+
+Status: IMPLEMENTED TO MAIN
+
+Merged PR: #53
+Main commit: `9fc16c16eae69514bf959170f96d6eb5ad4d9e56`
+
+Implemented:
+- deterministic batch/scene/still FX resolver that reads the canonical registry plus reusable recipe catalog;
+- read-only `harness.fx_resolve` integration for agent workflows;
+- reusable recipe catalog covering ghosted narrative overlays, transparent handoffs, protected-subject environmental motion, long-hold evolution, artifact salvage, multiplane alpha composition, temporal painting, pigment travel, instrument-axis visualization, and pre-FX jitter suppression;
+- deterministic FX resolution added as a standard workflow and reusable-effects policy requirement;
+- repo-harvest candidates `threshold_prism_bleed` and `matched_angle_viewpoint` generalized into neutral code and registered as `proof_required`, not production-approved;
+- resolver tests and existing repository verification gates passed before merge.
+
+All five PR verification workflows passed, including `production-contract`.
