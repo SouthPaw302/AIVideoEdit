@@ -1,0 +1,18 @@
+{
+  "schema": "aivideoedit.batch-review.v1",
+  "batch": 1,
+  "label": "Invocation",
+  "time_range": "00:00-00:30",
+  "rejected_artifact": "first generated Batch 1 storyboard board from current session",
+  "status": "rejected",
+  "reason": "Visual execution revealed a fully formed winged phoenix-warrior far too early, collapsing the intended gradual awakening and changing the story from ritual emergence into immediate phoenix reveal.",
+  "preserve_storyline": true,
+  "required_corrections": [
+    "00:00-00:10 must remain near-black with only ember core and barely visible ritual geometry",
+    "00:10-00:20 may reveal smoke/ash/stone/light seams and only an ambiguous not-yet-human presence",
+    "00:20-00:30 may reveal the first coherent silhouette but not full anatomy, wings, armor, or apotheosis",
+    "maintain one continuous location/world and one emerging entity",
+    "calm ceremonial mystery, not combat/horror spectacle"
+  ],
+  "decision": "regenerate Batch 01 candidate media only; do not alter locked story arc"
+}
