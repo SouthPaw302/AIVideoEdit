@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.export-qc.v1",
+  "target": "TRIBAL_HOUSE_REMASTERED_PRODUCTION_PROOF_720P.mp4",
+  "sha256": "0de260cff7396afa5fe6e4f8b7cf8e6fece87cc8cb92b6a96f695ac855fd69d8",
+  "technical": {
+    "decode_errors": 0,
+    "duration_seconds": 305,
+    "video_codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "audio_codec": "aac",
+    "audio_present": true,
+    "status": "PASS"
+  },
+  "visual_sampling": {
+    "sampled_seconds": [
+      0,
+      15,
+      30,
+      58,
+      82,
+      106,
+      134,
+      166,
+      198,
+      228,
+      256,
+      290,
+      304
+    ],
+    "contact_sheet_drive_file_id": "1U1rkDBUeauxQ0oHvqXAxuJvaTiQEOwW2",
+    "observations": [
+      "opening remains ember/chamber led",
+      "middle uses sustained manifestation identity with effect/palette changes",
+      "transformation introduces cooler state",
+      "release reduces energy",
+      "ending returns to empty chamber / final ember"
+    ]
+  },
+  "creative_acceptance": "PENDING_USER_REVIEW",
+  "final_master_status": "NOT_FINAL"
+}

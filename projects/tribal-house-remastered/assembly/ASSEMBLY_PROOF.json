@@ -1,0 +1,107 @@
+{
+  "schema": "aivideoedit.assembly-proof.v1",
+  "project": "Tribal House Remastered",
+  "branch": "song/tribal-house-remastered",
+  "duration_seconds": 305,
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "codec": "h264"
+  },
+  "audio": {
+    "source": "preserved Tribal House master audio",
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2
+  },
+  "sections": [
+    {
+      "batch": 1,
+      "start": 0,
+      "end": 30,
+      "duration": 30,
+      "mode": "invocation",
+      "source_family": "B01 rebuilt moving proofs"
+    },
+    {
+      "batch": 2,
+      "start": 30,
+      "end": 58,
+      "duration": 28,
+      "mode": "pulse",
+      "source_family": "B02 preferred moving proofs"
+    },
+    {
+      "batch": 3,
+      "start": 58,
+      "end": 106,
+      "duration": 48,
+      "mode": "emergence",
+      "source_family": "B03 protected-identity moving proofs"
+    },
+    {
+      "batch": 4,
+      "start": 106,
+      "end": 134,
+      "duration": 28,
+      "mode": "spatial expansion",
+      "source_family": "B04 reflection/depth moving proofs"
+    },
+    {
+      "batch": 5,
+      "start": 134,
+      "end": 198,
+      "duration": 64,
+      "mode": "intensity",
+      "source_family": "B05 peak-build moving proofs"
+    },
+    {
+      "batch": 6,
+      "start": 198,
+      "end": 228,
+      "duration": 30,
+      "mode": "transformation",
+      "source_family": "B06 mist/reflection moving proofs"
+    },
+    {
+      "batch": 7,
+      "start": 228,
+      "end": 256,
+      "duration": 28,
+      "mode": "peak",
+      "source_family": "B07 apex moving proofs"
+    },
+    {
+      "batch": 8,
+      "start": 256,
+      "end": 290,
+      "duration": 34,
+      "mode": "release",
+      "source_family": "B08 low-density moving proofs"
+    },
+    {
+      "batch": 9,
+      "start": 290,
+      "end": 305,
+      "duration": 15,
+      "mode": "afterglow",
+      "source_family": "B09 minimal moving proofs"
+    }
+  ],
+  "full_local_proof": {
+    "file_name": "TRIBAL_HOUSE_REMASTERED_PRODUCTION_PROOF_720P.mp4",
+    "sha256": "0de260cff7396afa5fe6e4f8b7cf8e6fece87cc8cb92b6a96f695ac855fd69d8",
+    "size_bytes": 117893086,
+    "durability": "ephemeral_local_only"
+  },
+  "drive_review_copy": {
+    "file_name": "TRIBAL_HOUSE_REMASTERED_REVIEW_720P.mp4",
+    "sha256": "99929399995301519572c8e9abb5d6648ecde43400acad074fa5d1e9edb1087e",
+    "drive_file_id": "1_kaqIH3p5tH_X9U8BoxeY0ebprp85aV2",
+    "drive_folder_id": "1jx6kPMWjtc2uODDqiUCsaKlZ3PHIiDNH",
+    "duration_seconds": 305
+  },
+  "qc_contact_sheet_drive_file_id": "1U1rkDBUeauxQ0oHvqXAxuJvaTiQEOwW2",
+  "status": "candidate_review_proof"
+}
