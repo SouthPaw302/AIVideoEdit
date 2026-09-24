@@ -2,8 +2,8 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "Route 4 1080p refined FX v4 rendered; selective main-library lighting polish applied; technical QC passed",
-  "active_scope": "1080p creative refinement only",
+  "current_stage": "1080p creative lock v5 complete; final QC passed; 4K chunked upscale prep archived",
+  "active_scope": "4K upscale preparation complete; do not alter locked 1080p edit without explicit defect correction",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
     "drive_file_id": "1M6uRTeYejXxn2rSDkTJu5H0_LiWrdwN4",
@@ -60,9 +60,18 @@
     "Map-contact hand defect visually softened using localized supernatural glow rather than replacing the shot",
     "Refined FX v4 rendered at exact 154.480 s mux authority",
     "v4 technical QC passed with no detected black/freeze events",
-    "54 MB v4 review copy archived to Drive Full Renders"
+    "54 MB v4 review copy archived to Drive Full Renders",
+    "1:21 hand artifact repaired without replacing scene",
+    "1080p creative lock v5 rendered",
+    "final black/freeze QC passed",
+    "final contact-sheet visual pass completed",
+    "locked review copy uploaded to Drive",
+    "4K upscale source divided into three frame-stable video-only chunks",
+    "untouched audio master separated for final mux",
+    "split reconstruction ZIP created and validated byte-identical",
+    "all five ZIP parts, rebuild script and hashes uploaded to Drive"
   ],
-  "exact_next_action": "Creative review v4 at 1080p. If accepted, continue only minimal remaining polish/QC needed for 1080p creative lock. Do not upscale yet.",
+  "exact_next_action": "Begin 4K upscale on the three locked video-only chunks. Preserve 24 fps and exact frame counts; do not re-edit scenes. Reconstruct final 4K video from the three upscaled chunks, then mux the untouched audio master and run final 4K QC.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -207,5 +216,77 @@
       "FX2-LIGHT-002 moving_light_field"
     ],
     "note": "Selective treatment follows approved main FX library language; no scene replacement and no 4K work."
+  },
+  "creative_lock_v5": {
+    "file": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5.mp4",
+    "review_file": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4",
+    "master_sha256": "5bc1876733196673872daaef6bd44a500e4384d92422be1a88807c1167b46019",
+    "review_sha256": "2c1641ad8289fe62714d0bee28d50eb7d00a9192e143f96c3982156df01fb60c",
+    "resolution": "1920x1080",
+    "fps": 24,
+    "audio": "AAC stereo 48 kHz",
+    "mux_duration_seconds": 154.375,
+    "audio_authority_seconds": 154.48,
+    "artifact_repair": {
+      "location": "~00:01:21",
+      "method": "localized warm supernatural map glow over malformed hand/finger region",
+      "scene_replaced": false,
+      "timing_changed": false
+    },
+    "technical_qc": {
+      "black_detect": "none",
+      "freeze_detect": "none",
+      "visual_contact_sheet_review": "pass",
+      "status": "pass"
+    },
+    "drive_review_id": "1epCHhbFUtkLx1ysVl0cYUfuDi64ozz4c",
+    "role": "locked 1080p source for 4K upscale"
+  },
+  "upscale_prep": {
+    "target": "3840x2160 at 24 fps",
+    "drive_folder_id": "1KmABtLstpEKHN_0nzPP_KEKDYyPFtKjn",
+    "drive_folder_url": "https://drive.google.com/drive/folders/1KmABtLstpEKHN_0nzPP_KEKDYyPFtKjn",
+    "package_format": "regular ZIP raw-split into five reconstruction parts",
+    "parts": [
+      {
+        "file": "El_Viento_4K_Upscale_Prep.zip.part000",
+        "drive_id": "1X5xNUwSqG26cdgK_E9E7lMdP7Yc284vp"
+      },
+      {
+        "file": "El_Viento_4K_Upscale_Prep.zip.part001",
+        "drive_id": "1fL7tEd8GtaUw5xlfOXsXLdCMnFSbTF8s"
+      },
+      {
+        "file": "El_Viento_4K_Upscale_Prep.zip.part002",
+        "drive_id": "1gzw-3r9OgzUE5gXZt3s-91iJp4X2b5g8"
+      },
+      {
+        "file": "El_Viento_4K_Upscale_Prep.zip.part003",
+        "drive_id": "1PMPWz9iq2iXZ5UzFqt-q8N0Ul4avX6HZ"
+      },
+      {
+        "file": "El_Viento_4K_Upscale_Prep.zip.part004",
+        "drive_id": "1KQ25gHH5o0zzZI3TwpxUnoKAq3VllTAs"
+      }
+    ],
+    "rebuild_script": {
+      "file": "REBUILD_4K_PREP_ZIP.bat",
+      "drive_id": "1wDlr7wsLfUl6az4wfBgxAULY5w7xfL-s"
+    },
+    "hash_file": {
+      "file": "4K_RAW_SPLIT_SHA256.txt",
+      "drive_id": "1xm1zdJ0lNLBl9o8SzcopqraNtbfzA9pJ"
+    },
+    "internal_contents": [
+      "three frame-stable video-only source chunks",
+      "untouched AAC audio master",
+      "source SHA256 hashes",
+      "1080 reconstruction script",
+      "4K-after-upscale reconstruction script",
+      "upscale manifest",
+      "PC instructions"
+    ],
+    "validation": "raw split reconstruction tested byte-identical; reconstructed ZIP test passed",
+    "next_rule": "upscale chunks independently with exact frame-count preservation; concatenate 4K video chunks and mux untouched audio only after upscale"
   }
 }
