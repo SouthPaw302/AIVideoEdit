@@ -13,7 +13,7 @@
     },
     {
       "path": "projects/tribal-house-remastered/ASSET_MANIFEST.json",
-      "sha256": "d1d4e410ebe5127e03fe6149a651a9ec2e7baff19b193f5dc738e8f73eb13ce8"
+      "sha256": "073873a1c4b6fea5f4db7799d350f6122f5138e436ffadf3ec27180ec06e1b42"
     },
     {
       "path": "projects/tribal-house-remastered/FX_EXPANSION_PLAN.json",
@@ -216,7 +216,7 @@
       "smoke": {
         "source_delta_max": 2.0,
         "temporal_delta_max": 3.333333,
-        "global_shift_px_max": 0.019229,
+        "global_shift_px_max": 0.019228,
         "sample_output_sha256": "970f1205990c536438456966eb68687b4c2b9be1cbff9da750eeae18a23a90c4"
       }
     },
@@ -242,10 +242,10 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 0.820926,
-        "temporal_delta_max": 0.453623,
-        "global_shift_px_max": 0.019495,
-        "sample_output_sha256": "47784aa300f572cf15bf35af9f63d8e4c1ffca3e0ec4166bc6f903fc90be8fc7"
+        "source_delta_max": 0.820943,
+        "temporal_delta_max": 0.453669,
+        "global_shift_px_max": 0.01962,
+        "sample_output_sha256": "4dc33e48b6e02b19eff3c19427091dd6f5687022b6ebe900ffbcc41345e1ec72"
       }
     },
     {
@@ -446,7 +446,7 @@
       "smoke": {
         "source_delta_max": 1.53684,
         "temporal_delta_max": 2.859722,
-        "global_shift_px_max": 0.879459,
+        "global_shift_px_max": 0.87946,
         "sample_output_sha256": "76881a239b97651e3a524cdea6611f47cb4efeaa1f9b06eb7f7703119887a88b"
       }
     },
@@ -1205,5 +1205,5 @@
     }
   ],
   "result": "PASS",
-  "evidence_fingerprint_sha256": "3d5dc69ca4a9018a6aeb54b1c5a9db03dbdc48e11a671108770d283fe380822e"
+  "evidence_fingerprint_sha256": "4de3c64bc9eefc80d1cc4d367ed04c92a8881e2a357fda8e4f3efc891221bfc6"
 }

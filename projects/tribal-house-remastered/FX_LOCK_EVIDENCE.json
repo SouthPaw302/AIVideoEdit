@@ -4,7 +4,7 @@
   "core_branch": "main",
   "core_commit": "9fc16c16eae69514bf959170f96d6eb5ad4d9e56",
   "project_branch": "song/tribal-house-remastered",
-  "lock_sha256": "fddebc706dd3620747a1a48e9c088fc2344de45346200adb71cfb89d292ae861",
+  "lock_sha256": "a30bcce072aa1fbf011bee21d2328b096b5f1c5b3b7f11a386bd2bfaff942d64",
   "manifest_sha256": "7323f6e98d0d8302036469d4bd2078374429d80cd0095407eb2808941e05c4c0",
   "gate": "aivideoedit-fx-precompile-v2"
 }
