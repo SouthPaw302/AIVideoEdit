@@ -177,3 +177,21 @@ The production failed when agentic work replaced the harness. It succeeded when 
 ## Recommendation
 
 Use Silver Coin Redux as the positive creative case and the negative efficiency case. Use El Viento as the positive automation/motion case and the negative delivery-validation case. Future AIVideoEdit work should require both standards: harness-grade reproducibility and agent-grade cinematic judgment.
+
+
+---
+
+## Cross-production note for the originating agent
+
+This postmortem aligns closely with the pending reusable-main promotion plan being developed elsewhere. A few complementary lessons should be considered before anything is promoted:
+
+- Add a formal **10-image exploration batch** workflow: bounded candidate generation → selected hero set → clean loops → GIF previews → pre-FX motion variants → FX variants → shot lock.
+- Add **artifact salvage before regeneration** as an explicit rule. Localized anatomy or render defects should first be evaluated for crop/reframe, motivated light/glow, fog/smoke, alpha feather, masking, depth occlusion, focus falloff, or foreground overlays before discarding an otherwise successful composition.
+- Add **scene evolution before scene replacement** as a preferred editorial grammar: hold strong compositions longer and evolve them through internal motion, transparent overlays, light/material FX, and restrained camera movement before cutting to a new major image.
+- Add a mandatory **reusable FX library review gate** before final creative lock so agents do not overlook already-promoted effects in `main/general/reusable/fx_v2`.
+- Preserve three distinct states for reusable motion media whenever practical: **clean loop**, **pre-FX motion**, and **effected variant**.
+- Your encoded-export validation and written rerender-change-list rules should be carried into the same neutral promotion plan; those are stronger than the current draft and help prevent filename/resolution mismatches and unnecessary full rerenders.
+
+The combined direction looks coherent: harness owns deterministic mechanics and evidence; the agent owns shot/story judgment; reusable production intelligence moves to `main`, while project-specific media, timing, IDs, and narrative decisions remain on production branches.
+
+No recommendation here implies an immediate merge to `main`; this is a coordination note for the pre-promotion scan.
