@@ -1,11 +1,11 @@
 # Status
 
-Stage: BATCH_05_FX_GATE_PASS / BATCH_06_NEXT
+Stage: BATCH_06_FX_GATE_PASS / BATCH_07_NEXT
 
-Batch 05 Intensity:
+Batch 06 Transformation:
 - 10 stills archived
-- 10 moving FX proofs archived
-- technical FX gate PASS
-- preferred: firelight surge, ember storm, dense atmosphere, full-stack intensity
+- 10 moving transformation proofs archived
+- FX gate technical PASS
+- preferred: mist drift, reflection ripple, gold/indigo pulse, full-stack transform
 
-Next: Batch 06 Transformation. Shift state/palette and use mist/reflection/light changes while retaining visual continuity.
+Next: Batch 07 Peak. Use the established identity/world and push to the strongest iconic compositions and controlled apex FX.

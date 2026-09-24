@@ -1,0 +1,31 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 6,
+  "label": "Transformation",
+  "status": "technical_pass",
+  "anchor": "B06-STILL-01",
+  "canonical_fx": [
+    "SURFACE-023",
+    "ATM-021",
+    "LIGHT-026",
+    "SPATIAL-021",
+    "CAMERA-023"
+  ],
+  "protected_regions": [
+    "hero identity",
+    "architecture",
+    "reflection geometry",
+    "horizon"
+  ],
+  "preferred": [
+    "B06-MOTION-01",
+    "B06-MOTION-02",
+    "B06-MOTION-03",
+    "B06-MOTION-10"
+  ],
+  "notes": [
+    "Cool-state transformation and reflection effects passed.",
+    "No topology drift.",
+    "Palette change remains continuous with prior batches."
+  ]
+}

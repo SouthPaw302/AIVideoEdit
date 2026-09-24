@@ -1,0 +1,145 @@
+{
+  "schema": "aivideoedit.batch-manifest.v1",
+  "batch": 6,
+  "label": "Transformation",
+  "time_range": "03:18-03:48",
+  "drive": {
+    "batch_folder_id": "1brA1nP4joD5Dsk8tJpGglN_aq5pnVdu7",
+    "main_folder_id": "1P1U7gysGdjAtg4AayAbme42Hbl4dGXzZ",
+    "motion_folder_id": "1qYgMVO2hxjTAiJZVmM7yxHsu9Yj8fhyK"
+  },
+  "stills": [
+    {
+      "id": "B06-STILL-01",
+      "file_name": "B06_STILL_01_TRANSFORMATION_ANCHOR.png",
+      "sha256": "3ab55fa29dee9f0f59f67e8dfeda5751eab6abb4f3b943f0f99db10bcd8f974a",
+      "drive_file_id": "1rObzRlHEgubyYo4oEPdfNgsePKJwLaXV"
+    },
+    {
+      "id": "B06-STILL-02",
+      "file_name": "B06_STILL_02_COOL_SHADOWS.png",
+      "sha256": "8c8914ce1af06cc6ac74cb786c293e98883c60cb08178e5105ec89d5407d1362",
+      "drive_file_id": "1iyxE6kXQUUrAJLBs67VRf1IMNm241Ueg"
+    },
+    {
+      "id": "B06-STILL-03",
+      "file_name": "B06_STILL_03_GOLD_INDIGO.png",
+      "sha256": "9bc561f34414f46b0886f2cfaf3b4fe4f08291d617b5d3386c2d57f0581c706c",
+      "drive_file_id": "1976f3yqC4uy7ZYUkyfM-S8YZhjYHGlDn"
+    },
+    {
+      "id": "B06-STILL-04",
+      "file_name": "B06_STILL_04_MIST_GATE.png",
+      "sha256": "434e9bdf11d66826670b270a11c572ec1972791159bd87a0926c3ff0143b3937",
+      "drive_file_id": "1hzjnmvkKqrWpBeDxTv9fEqo1dmzzDdA-"
+    },
+    {
+      "id": "B06-STILL-05",
+      "file_name": "B06_STILL_05_REFLECTION_SHIFT.png",
+      "sha256": "dde7ee9697a86fd4bfca18ac4bcbff0b13ac07116b0f2eb590993ad8711b1ddb",
+      "drive_file_id": "1DqN79i0B1VKgGwoKQzYT3wimtqtKzlUq"
+    },
+    {
+      "id": "B06-STILL-06",
+      "file_name": "B06_STILL_06_HORIZON_GLOW.png",
+      "sha256": "ac9f66f35c8d360fe1b5e565ff11e3b974b4ccf9749bcb7dfa81bd80a530f8a9",
+      "drive_file_id": "1Sb8gQqJzHeNz7QCWan8rlg9qvQNn1TUT"
+    },
+    {
+      "id": "B06-STILL-07",
+      "file_name": "B06_STILL_07_FOG_PASSAGE.png",
+      "sha256": "9aaddd5ace94346722cd3acbf33f53c5e8ed88a3772e19f39443a1f3f5451c56",
+      "drive_file_id": "1V-xTBaSkFz_W569kR2aWA2trk4ETzEFr"
+    },
+    {
+      "id": "B06-STILL-08",
+      "file_name": "B06_STILL_08_LOW_REFLECTION.png",
+      "sha256": "f19a8f418a000a64fea23b42347f519d0c06ce455eb7d8e79f31327524157d09",
+      "drive_file_id": "1Rk_kCv0x9Yndb1jHGleguy-ENdNhp4WQ"
+    },
+    {
+      "id": "B06-STILL-09",
+      "file_name": "B06_STILL_09_WIDE_COOL_STATE.png",
+      "sha256": "01091ef0c7fed3e6f4113e9ad15bc601585c3e22d2e8441fe727b561fc7c3b13",
+      "drive_file_id": "1iGn9xxucWfXSK0AKIsoK6Qoe26ZWJk5B"
+    },
+    {
+      "id": "B06-STILL-10",
+      "file_name": "B06_STILL_10_FULL_STACK_TRANSFORM.png",
+      "sha256": "b4f7646935fc12cb4ae68e7a69e9e7358338cd87393c4febcd6bf9ef68113fc1",
+      "drive_file_id": "1IVWLZgGR5omAtDM6kw5zoWGEg520zijf"
+    }
+  ],
+  "motions": [
+    {
+      "id": "B06-MOTION-01",
+      "file_name": "B06_MOTION_01_MIST_DRIFT.mp4",
+      "sha256": "d57fc30aa8a30c6e4e91db80abe5c7654678aa7dacfcf1d576084d539103208e",
+      "drive_file_id": "1VcwYDcXk_7_utDAG5Kixp5xafd6NkQQt",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-02",
+      "file_name": "B06_MOTION_02_REFLECTION_RIPPLE.mp4",
+      "sha256": "8b26fb2019ce4a3d3cd769d71a58d8e787a22455673892c9544428ef2372b7d5",
+      "drive_file_id": "1wrhZ1HBrkhxcdzm5APbpuk-IHGh77gwM",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-03",
+      "file_name": "B06_MOTION_03_GOLD_INDIGO_PULSE.mp4",
+      "sha256": "470431824c890c25070a61e13dc7b1349696129dc7de597bc8faf8140ed4287c",
+      "drive_file_id": "1dPdkKhkZrvlUQyrukKeLu5xSRFgZGjsM",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-04",
+      "file_name": "B06_MOTION_04_HORIZON_GLOW.mp4",
+      "sha256": "a510ab80278d0fed95e2dc16fc926b6795bad4ed8e424cd2a385d8812a6b7365",
+      "drive_file_id": "16rxRUTZwmvG9EgZ2Sy_AVk0GSF1DxqFC",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-05",
+      "file_name": "B06_MOTION_05_FOG_PASSAGE.mp4",
+      "sha256": "a574e3b1b5ee35e510aa4a999cfaedcf408c6b7f98ad6ea2ee2213f4fd5972ef",
+      "drive_file_id": "1jXzUvYvwo4QvlS1-uWietq7-N-N5Qbav",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-06",
+      "file_name": "B06_MOTION_06_FLOOR_SHIMMER.mp4",
+      "sha256": "3253d888de220bc90531f4a62d514367ee894232627b0a68b0e287a848cc41a8",
+      "drive_file_id": "1qQYJ_eRtqh52A8w-ozoWyFXmO7EElltG",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-07",
+      "file_name": "B06_MOTION_07_THRESHOLD_BREATHE.mp4",
+      "sha256": "d82e5c1bfec03acf2167644ca4fbc2540d444930c989028e1cfcdcc84a4b8557",
+      "drive_file_id": "1BMSjM8PscRgt9W-xo4fxmvPmSjYX049p",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-08",
+      "file_name": "B06_MOTION_08_BOUNDED_DEPTH.mp4",
+      "sha256": "8c36569283d81a1577e9d53ae6c1f0a300337fe8bbc5782248635031baddf04d",
+      "drive_file_id": "1ZboMt3BjVlUyD9i-kUFKdvN0Dkzq_U84",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-09",
+      "file_name": "B06_MOTION_09_COOL_STATE_BREATHE.mp4",
+      "sha256": "085a46cef848f612ee688600e474050250e3580d4b317f90524321075f21262f",
+      "drive_file_id": "1NfxxoNiyyBcFi-_wfmnRFb2pR1nLRHs1",
+      "qc": "pass"
+    },
+    {
+      "id": "B06-MOTION-10",
+      "file_name": "B06_MOTION_10_FULL_STACK_TRANSFORM.mp4",
+      "sha256": "b755d54e5e9e7ea2549e9ad5b42a9c93d29e20d41bd65b7748cb538c5eb72492",
+      "drive_file_id": "1u0QnIGHaJCaIlGuCdzb7ODvGbgcf1XWD",
+      "qc": "pass"
+    }
+  ]
+}
