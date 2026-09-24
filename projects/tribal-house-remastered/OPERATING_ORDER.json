@@ -1,0 +1,50 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Create a music-led mythic ritual film in which an ancient fire-spirit awakens, gathers form, crosses sacred thresholds, reaches apotheosis, and resolves into transformed calm.",
+  "direction_authority": "music_led",
+  "production_mode": "hybrid",
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Nocturnal ceremonial world of earth, fire, ash, smoke, dust, reflected light, sacred ruins/thresholds and a coherent mythic fire-spirit identity; internal world motion precedes camera motion.",
+    "items": [
+      "Locked story: ancient fire-spirit awakened by ritual percussion and transformed through a nine-part arc.",
+      "No lyric literalism; musical structure, pulse, energy, tension and release drive visual development.",
+      "Central spirit identity remains coherent across forms and batches.",
+      "Ending resolves into transformation and elevated calm rather than destruction or horror."
+    ]
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "accepted_source_library": {
+    "status": "none",
+    "role": null,
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null,
+    "content_reuse_authorized": false,
+    "timeline_locked": false
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [
+      "Do not treat the previously discovered Mythic Phoenix final master as source-picture canon without explicit current-user authorization."
+    ],
+    "source_replacement_authorized": false
+  },
+  "current_user_direction": "Lock the beat-derived ritual/fire-spirit storyline, follow the repository workflow, create visual media/batches as required, save state, and continue production.",
+  "exact_next_action": "Lock the full storyboard and frame-followable script from MUSIC_ANALYSIS, then generate Batch 01 Invocation media and record actual media evidence.",
+  "updated_at_utc": "2026-09-24T09:50:00Z"
+}
