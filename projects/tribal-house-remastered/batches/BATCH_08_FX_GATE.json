@@ -1,0 +1,29 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 8,
+  "label": "Release",
+  "status": "technical_pass",
+  "anchor": "B08-STILL-01",
+  "canonical_fx": [
+    "ATM-021",
+    "LIGHT-002",
+    "CAMERA-023",
+    "SURFACE-023"
+  ],
+  "protected_regions": [
+    "architecture",
+    "horizon",
+    "remaining hero identity if visible"
+  ],
+  "preferred": [
+    "B08-MOTION-01",
+    "B08-MOTION-05",
+    "B08-MOTION-09",
+    "B08-MOTION-10"
+  ],
+  "notes": [
+    "Motion density reduced intentionally.",
+    "Long holds and subtle atmosphere passed.",
+    "Release phase preserves continuity without peak intensity."
+  ]
+}
