@@ -2,21 +2,20 @@
 
 Stage: SHOT_PROOFS_ACCEPTED -> FULL FX EXPANSION
 
-Preserve:
-- continuity accepted for refinement
-- current picture quality accepted for refinement
-- base batches remain locked inputs
+Preserve accepted continuity/picture quality. FX remains under expansion.
 
-Full FX progress:
-- canonical music control bus: built and archived
+Completed:
+- music control bus: archived
 - FX Pack 01: PASS / archived
-  - 9 section loops
-  - 9 GIF previews
-  - 8 authored transitions
 - FX Pack 02: PASS / archived
-  - 9 additional music-reactive/depth/particle/visualizer variants
-  - 9 GIF previews
-  - seam + temporal + global-shift QC all PASS
-- formal schema-v2 fx.lock: pending
+- section proofs B02, B05, B07: PASS / archived
+  - real section audio
+  - beat-snapped section cuts
+  - pre-rendered reusable scene loop assembly
+  - duration/decode/black/temporal QC PASS
 
-Next: render music-synced section proofs over real global song timestamps using the expanded packs; review transition density/repetition; then run formal current-main precompile lock before full reassembly.
+Remaining before formal FX lock:
+- section proofs B01, B03, B04, B06, B08, B09
+- transition proof integration between section proofs
+- formal current-main precompile lock (schema-v2 fx.lock.json)
+- full 305-second reassembly and exported-film QC
