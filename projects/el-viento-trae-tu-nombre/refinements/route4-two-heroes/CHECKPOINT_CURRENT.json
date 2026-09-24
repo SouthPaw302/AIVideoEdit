@@ -44,7 +44,7 @@
     "Technical QC passed with no detected black/freeze events",
     "71 MB review copy uploaded to Drive Full Renders"
   ],
-  "exact_next_action": "Creative review the 2:34 workprint, then deepen internal hero movement and transparent/variation FX layering without increasing scene-change density. Preserve this workprint as rollback.",
+  "exact_next_action": "Restore canonical Route 4 hero/story order while preserving the successful cinematic camera/FX language; add MontañaNegra intro/outro; render a corrected 2:34 1080p review; then refine internal transparent/variation FX before final 4K upscale.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -75,5 +75,39 @@
     },
     "drive_review_id": "10bffcRpVmKyHKlTq9cFGRy0LnK3u0YH0",
     "role": "rough extended workprint; not final master"
+  },
+  "editorial_lock": {
+    "hero_order": "restore and preserve canonical Route 4 hero/story order",
+    "scene_change_density": "reduced; favor long hero holds and internal movement",
+    "fx_strategy": "use existing loops, image variations, transparent/overlay assets and promoted FX inside scenes",
+    "cinematic_camera_language": "preserve from 2:34 workprint v1"
+  },
+  "channel_finish": {
+    "channel": "@MontañaNegra",
+    "intro_required": true,
+    "outro_required": true,
+    "existing_canonical_intro_outro_found": false,
+    "direction": "derive intro/outro from this production visual language; do not introduce unrelated branding language",
+    "reusable_asset_rule": "once accepted, archive intro/outro as reusable channel assets for future productions"
+  },
+  "delivery_target": {
+    "review_workflow": "1080p workprints until creative lock",
+    "final_master": "4K upscale after final creative/QC lock",
+    "preserve_native_1080p_master": true,
+    "archive_to": [
+      "Google Drive",
+      "GitHub manifests/checkpoints"
+    ]
+  },
+  "sandbox_policy": {
+    "keep_only": [
+      "active mux source",
+      "current render inputs",
+      "current review/master candidate",
+      "QC evidence"
+    ],
+    "archive_then_remove": true,
+    "durable_media": "Google Drive",
+    "durable_state": "GitHub"
   }
 }
