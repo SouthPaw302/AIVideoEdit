@@ -2,88 +2,107 @@
   "schema": "aivideoedit.fx-gate.v1",
   "batch": 1,
   "label": "Invocation",
-  "status": "AGENT_QC_PASS_MOVING_PROOFS",
-  "user_acceptance": "not_claimed",
+  "status": "technical_pass",
+  "motion_proof_folder_id": "17is8WuqDxXvCUhAW36gyOdOQ8iri34Nc",
   "anchor_asset_id": "B01-MAIN-01",
-  "proof_outputs": [
-    {
-      "name": "B01_PROOF_FIRELIGHT.mp4",
-      "sha256": "d6b38493e8b6d0a3fa5b430af012eb0287a4989c3ab592a8d2c4a2d03cef084d",
-      "duration_seconds": 6,
-      "fx": [
-        "FIRE-001",
-        "LIGHT-023",
-        "FIRE-002"
-      ],
-      "qc": "pass"
-    },
-    {
-      "name": "B01_PROOF_SMOKE.mp4",
-      "sha256": "f35f71c841a6f1d3fccd985ee901ee3caaf12106d16720dcbb9416e9926f0945",
-      "duration_seconds": 6,
-      "fx": [
-        "ATM-001"
-      ],
-      "qc": "pass"
-    },
-    {
-      "name": "B01_PROOF_COMBINED.mp4",
-      "sha256": "1cb6436a7aef2327e7bc4d8f63c3fdcaa258023f36050695f0becb8d681f373c",
-      "duration_seconds": 6,
-      "fx": [
-        "FIRE-001",
-        "LIGHT-023",
-        "FIRE-002",
-        "ATM-001",
-        "SPATIAL-021"
-      ],
-      "qc": "pass"
-    },
-    {
-      "name": "B01_PROOF_COMBINED_LOOP.gif",
-      "sha256": "ead290810ad098dc0da9e705986d6d2b766fd928805d53d2c7c464e538ae7ae8",
-      "duration_seconds": 4,
-      "fx": [
-        "FIRE-001",
-        "LIGHT-023",
-        "FIRE-002",
-        "ATM-001"
-      ],
-      "qc": "pass"
-    }
+  "canonical_fx": [
+    "FIRE-001",
+    "LIGHT-023",
+    "FIRE-002",
+    "ATM-001",
+    "SPATIAL-021"
   ],
-  "qc_evidence": {
-    "drive_folder_id": "1fEVP7bqulHybc9sWuW3w1x249JCUF-gH",
-    "contact_sheet_drive_id": "1WrnYKaQizlWO5NOpvWHzYCYS8I7ngXm5",
-    "contact_sheet_url": "https://drive.google.com/file/d/1WrnYKaQizlWO5NOpvWHzYCYS8I7ngXm5/view"
-  },
   "protected_regions": [
     "ritual circle topology",
-    "central axis",
     "monolith geometry",
+    "central axis",
     "horizon",
     "future hero zone"
   ],
-  "findings": [
-    "localized firelight preserves architecture",
-    "smoke remains atmospheric and does not replace geometry",
-    "ember motion is localized and loopable",
-    "combined proof uses camera/depth only after internal motion and remains bounded",
-    "no global warp or topology drift observed in sampled proof frames"
+  "proofs": [
+    {
+      "id": "B01-MOTION-01",
+      "file_name": "B01_MOTION_01_EMBER_PULSE.mp4",
+      "sha256": "033d6092fe6df6b460fd5fa3ff4b4861c63193eac9f45ed2c85ada9bd1c8325a",
+      "drive_file_id": "1Jwweg8MXJMQl53gIDINS4tZOGaPCBZFu",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-02",
+      "file_name": "B01_MOTION_02_SMOKE_DRIFT.mp4",
+      "sha256": "1ba816e8a718097a747c4272260a14e88f8b84f443090d39f21223711918f49d",
+      "drive_file_id": "1dw2JOmwPgx8GVuFIVO8pqHIZXVnxh5yt",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-03",
+      "file_name": "B01_MOTION_03_FIRELIGHT_BREATH.mp4",
+      "sha256": "f6e43e49e7721adfad218d452fa229298527d8b90f0cf784549c5c0eddc9f865",
+      "drive_file_id": "1ORmaatibe6SzzDOdBiez61O1138BEgSV",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-04",
+      "file_name": "B01_MOTION_04_SIGIL_ACTIVATION.mp4",
+      "sha256": "74067cb95cc6c6bfe4165b47b1c4a14ba574746bf440c496794f837eacfc5a0d",
+      "drive_file_id": "19KucHcbbtk6AVQy1SYaQxLQJFUSKmuoN",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-05",
+      "file_name": "B01_MOTION_05_EMBER_LIFT.mp4",
+      "sha256": "7cc82d4f39efdb6d395e23fcf6e10b26ed62392572532591d90f375563aa24fe",
+      "drive_file_id": "1z9VmkniQ1cpMtnCWl0xC7DD_7YTqu6yZ",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-06",
+      "file_name": "B01_MOTION_06_HEAT_SHIMMER.mp4",
+      "sha256": "b8d7779535c054ac81d5055693080b3ce61026cac9960f32fa0568428311801e",
+      "drive_file_id": "1D57GnAIKVUhox6Caq8gW_K5zMFdOwouy",
+      "qc": "pass_with_restraint"
+    },
+    {
+      "id": "B01-MOTION-07",
+      "file_name": "B01_MOTION_07_THRESHOLD_GLOW.mp4",
+      "sha256": "b7fe94da8f06364a09d01e32a7df9f6af5d35d4c84e83375a1f1bf88e681afba",
+      "drive_file_id": "1eOkvi5X2Zj7iVsaL2yEw_5QsKFQZ1gwZ",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-08",
+      "file_name": "B01_MOTION_08_ATMOSPHERE_SPARKS.mp4",
+      "sha256": "2b6f35f2798216965d491ec790a30f66a7bc122d6b2506d722eda76846524216",
+      "drive_file_id": "1ruSx82JpQNZWNm9z0VrtX5PdwgY4gbbS",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-09",
+      "file_name": "B01_MOTION_09_BOUNDED_DEPTH.mp4",
+      "sha256": "e7972e698802aac316a55c7314f9f0d25cca460e76df6934963776122fabf676",
+      "drive_file_id": "1RXE-iLR4f3wrH7XLKnLuv_0t1nhuwRS-",
+      "qc": "pass"
+    },
+    {
+      "id": "B01-MOTION-10",
+      "file_name": "B01_MOTION_10_FULL_STACK.mp4",
+      "sha256": "5b269bb1c9d908830aff491ae8de23b796f53f2f8104cf0b6d17dac8d1dbc109",
+      "drive_file_id": "1FY3Hz2DBA3uc_rjnChpPIZJC4Dio34ri",
+      "qc": "pass_preferred"
+    }
   ],
-  "locked_recipe": {
-    "order": [
-      "FIRE-001",
-      "LIGHT-023",
-      "FIRE-002",
-      "ATM-001",
-      "SPATIAL-021"
-    ],
-    "recipe_ids": [
-      "RCP-FIRELIT-INTERIOR",
-      "RCP-MULTIPLANE"
-    ],
-    "camera_policy": "camera last; <= subtle breathing move",
-    "expansion_target": "10 secondary moving variants, not 10 more FX stills"
-  }
+  "preferred": [
+    "B01-MOTION-01",
+    "B01-MOTION-03",
+    "B01-MOTION-04",
+    "B01-MOTION-08",
+    "B01-MOTION-10"
+  ],
+  "notes": [
+    "Internal material motion precedes camera/depth motion.",
+    "No global warp used.",
+    "Architecture and ritual geometry remain protected.",
+    "Heat shimmer is allowed only locally and at reduced strength.",
+    "Full-stack proof is the preferred composite recipe candidate for section assembly."
+  ]
 }
