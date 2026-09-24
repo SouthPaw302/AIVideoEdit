@@ -25,3 +25,10 @@ State remains truthful:
 - mode_aware_qc_passed = true
 - artistic acceptance = pending user review
 - archive_complete = false until the exact final master/QC bytes are durable on Drive
+
+
+## Contract evidence correction
+- 19 real-media shot packages added and linked to nine hashed Drive section proofs.
+- current-main production contract bootstrap reached PASS.
+- current FX lock evidence fingerprint: `4de3c64bc9eefc80d1cc4d367ed04c92a8881e2a357fda8e4f3efc891221bfc6`
+- MUSIC_ANALYSIS normalized to current-main directing-contract enums: user-confirmed genre source is current_user_instruction; approximate working edit grid is 123.05 BPM while reactive controls remain timing authority.

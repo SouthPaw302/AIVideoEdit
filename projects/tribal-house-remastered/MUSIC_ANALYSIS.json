@@ -11,14 +11,14 @@
   "genre": {
     "status": "user_confirmed",
     "label": "tribal house",
-    "source": "current project/user direction",
+    "source": "current_user_instruction",
     "confidence": 1,
     "user_declaration": "Tribal House Test"
   },
   "rhythm": {
-    "tempo_status": "ambiguous_multi-pulse",
-    "tempo_bpm": null,
-    "pulse_description": "dense tribal percussion creates multiple plausible pulse readings; edit to measured section/energy structure rather than force a single BPM.",
+    "tempo_status": "approximate",
+    "tempo_bpm": 123.05,
+    "pulse_description": "Dense tribal-house percussion supports multiple pulse/subdivision readings; 123.05 BPM is the working approximate edit grid, while section boundaries, measured reactivity, and global song time remain the primary timing authority.",
     "meter_or_groove": "house-derived tribal electronic groove"
   },
   "sections": [
@@ -117,6 +117,8 @@
     }
   ],
   "analysis_notes": [
-    "Initial pulse estimators returned competing candidates near 63, 83, 99, 123, 129 and 172 BPM; no single BPM is promoted as authoritative without stronger evidence."
+    "Pulse estimators returned competing candidates near 63, 83, 99, 123, 129 and 172 BPM.",
+    "123.05 BPM is recorded as the approximate working edit grid required by the directing contract, not as an exact musicological claim.",
+    "AUDIO_MAP/REACTIVE_CONTROLS remain the authoritative effect-timing evidence for RMS, onset, low, mid and high-band response."
   ]
 }

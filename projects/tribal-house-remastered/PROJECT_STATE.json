@@ -22,8 +22,8 @@
   "mode_aware_qc_passed": true,
   "archive_complete": false,
   "production_model": "instrumental_batch_first_fx_heavy",
-  "note": "Formal FX lock PASS. Locked 305-second 720p candidate master passes full decode/timing/black/freeze QC. Artistic acceptance remains pending. Archive remains incomplete until the exact final master and QC record are durably uploaded to Drive.",
-  "fx_lock_evidence_fingerprint_sha256": "3d5dc69ca4a9018a6aeb54b1c5a9db03dbdc48e11a671108770d283fe380822e",
+  "note": "Production contract bootstrap PASS after real shot-package evidence was added. Formal FX lock revalidated against the expanded asset manifest. Directing guard enum/source cleanup applied to MUSIC_ANALYSIS; final 720p candidate remains technically QC-passed with artistic acceptance pending.",
+  "fx_lock_evidence_fingerprint_sha256": "4de3c64bc9eefc80d1cc4d367ed04c92a8881e2a357fda8e4f3efc891221bfc6",
   "fx_lock_verified_at": "2026-09-24T18:45:58Z",
   "final_candidate": {
     "file_name": "TRIBAL_HOUSE_LOCKED_FX_MASTER_720P_FINAL4.mp4",
