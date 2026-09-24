@@ -1,26 +1,32 @@
 # Status
 
-Stage: SHOT_PROOFS_ACCEPTED -> FORMAL FX LOCK NEXT
+Stage: FX_LOCKED
 
-Completed and archived:
-- canonical AUDIO_MAP + 24fps REACTIVE_CONTROLS
-- FX Pack 01: PASS
-- FX Pack 02: PASS
-- FX Pack 03: PASS
-- all 9 music-synced section proofs: PASS
-- 8 authored transitions integrated
-- heavy-FX prelock assembly: PASS
-  - 305.000 seconds
-  - 7,320 frames
-  - 24fps
-  - audio intact
-  - no black frames
-  - temporal activity survives assembly
+Formal current-main FX lock: PASS.
 
-Important:
-- prelock proof is not final master
-- formal current-main FX precompile lock is still required
-- fx_lock_verified remains FALSE until schema-v2 fx.lock.json exists and verifies
+- workflow: Tribal House Project FX Lock
+- run: 36043449083
+- lock: `projects/tribal-house-remastered/fx.lock.json`
+- schema: aivideoedit-fx-precompile-v2
+- evidence fingerprint: `3d5dc69ca4a9018a6aeb54b1c5a9db03dbdc48e11a671108770d283fe380822e`
+
+The separate Production Contract failure was caused only by two missing required project docs:
+- `RENDER_HISTORY.md`
+- `QC.md`
+
+Those are now added.
+
+Accepted/preserved:
+- base continuity
+- picture quality
+- Batches 01-09
+- full FX package inputs
+
+Not yet final:
+- locked full-resolution assembly
+- actual-export final mode-aware QC
+- final artistic acceptance
+- archive completion
 
 Exact next action:
-Run current-main FX_REQUIREMENTS through precompile_gate.py with current-main registry/runtime/proofs; generate and verify projects/tribal-house-remastered/fx.lock.json; then rebuild the final full-resolution assembly from the locked package.
+Verify the schema-v2 lock immediately before compile, rebuild the 305-second full-resolution heavy-FX assembly from the locked packages using global song time, run actual-export mode-aware QC, then archive the candidate master for review.

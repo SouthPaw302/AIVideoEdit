@@ -1,7 +1,7 @@
 {
   "schema": "aivideoedit.project-state.v1",
   "branch": "song/tribal-house-remastered",
-  "stage": "SHOT_PROOFS_ACCEPTED",
+  "stage": "FX_LOCKED",
   "director_brain_version": 2,
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
@@ -16,11 +16,13 @@
   "media_evidence_verified": true,
   "shot_proofs_accepted": true,
   "mode_aware_proofs_accepted": true,
-  "fx_lock_verified": false,
+  "fx_lock_verified": true,
   "assembly_complete": false,
   "final_qc_passed": false,
   "mode_aware_qc_passed": false,
   "archive_complete": false,
   "production_model": "instrumental_batch_first_fx_heavy",
-  "note": "All three full FX packs and all nine section proofs pass. 305-second heavy-FX prelock assembly also passes exported-film QC. Formal current-main precompile lock remains pending."
+  "note": "Formal current-main schema-v2 FX precompile gate PASS. User accepted continuity/picture quality of the early assembly as a base; final heavy-FX locked assembly and exported-film QC remain.",
+  "fx_lock_evidence_fingerprint_sha256": "3d5dc69ca4a9018a6aeb54b1c5a9db03dbdc48e11a671108770d283fe380822e",
+  "fx_lock_verified_at": "2026-09-24T18:45:58Z"
 }
