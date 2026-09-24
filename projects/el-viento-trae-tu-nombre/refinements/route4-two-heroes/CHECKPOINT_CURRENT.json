@@ -2,8 +2,8 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "4K final master rendered; QC passed; split reconstruction package fully uploaded",
-  "active_scope": "delivery/archive",
+  "current_stage": "1080p FX completion pass in progress; Batch 01 FX locked",
+  "active_scope": "creative_refinement/fx_completion",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
     "drive_file_id": "1M6uRTeYejXxn2rSDkTJu5H0_LiWrdwN4",
@@ -75,15 +75,18 @@
     "full 3840x2160 master reconstructed and muxed with locked audio",
     "final 4K sampled visual QC passed including 1:21 repaired region",
     "4K final handoff ZIP created and split into 21 Drive-safe parts",
-    "all 21 ZIP parts plus rebuild script and hashes verified present on Drive"
+    "all 21 ZIP parts plus rebuild script and hashes verified present on Drive",
+    "Batch 01 canonical FX runtime proof rendered, QC passed, Drive-backed and locked"
   ],
-  "exact_next_action": "On PC, download all 21 split ZIP parts plus REBUILD_4K_FINAL_ZIP.bat and hash file, rebuild the ZIP, extract it, run RECONSTRUCT_4K_MASTER.bat, verify the final SHA256, then upload the reconstructed 4K master to MontañaNegra.",
+  "exact_next_action": "Resume Batch 02 FX gate at 00:21.504 using the locked pre-FX motion sources; render, QC and lock the Batch 02 moving proof, then continue batch-by-batch. Do not upscale again until the full 1080p FX master is approved by the user.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
     "do not modify main",
     "do not overwrite preserved masters",
-    "do not return to rapid slideshow-style scene replacement"
+    "do not return to rapid slideshow-style scene replacement",
+    "do not upscale again until the full 1080p FX master is user-approved",
+    "do not use the foreign Batch 01 - Invocation ember/obsidian media as Route 4 canon"
   ],
   "extended_audio": {
     "file": "El Viento trae tu nombre.wav",
@@ -348,5 +351,22 @@
       "README_PC.txt"
     ],
     "reconstruction_master_sha256": "ce97c9717e1e6c836fbd5d9423428f17ed865ff44ce8a23bd66f8ce3064059e8"
+  },
+  "fx_completion_pass": {
+    "authority": "current user directive 2026-09-24",
+    "status": "in_progress",
+    "completed_batches": [
+      1
+    ],
+    "current_batch": 2,
+    "batch_01_proof": {
+      "file": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4",
+      "sha256": "8a507ce08b1da649c721a8f9ebc199f15d9b4ec42af90baed61f0ac4f2636e81",
+      "drive_file_id": "1Ou6VY_1hshnPzxd7L44a8QnlL7Jy6WRM",
+      "qc_contact_sheet_drive_id": "1xUlH03Hq2OuUoETIw1ufq0JTDg22HqUH",
+      "status": "locked"
+    },
+    "prior_4k_master_role": "rollback/reference only",
+    "upscale_gate": "blocked until user approves completed 1080p FX master"
   }
 }
