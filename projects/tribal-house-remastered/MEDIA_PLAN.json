@@ -1,0 +1,96 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "selected_capabilities": [
+    "generated_stills",
+    "generated_support_imagery",
+    "living_painting",
+    "living_still_fx",
+    "layered_composite",
+    "atmospheric_plate",
+    "reactive_plate",
+    "depth_25d",
+    "loop_media",
+    "transition_media",
+    "conventional_video",
+    "analysis_qc_media"
+  ],
+  "approach_summary": "Build a coherent mythic ritual world from generated hero imagery and support coverage; animate internal materials and atmosphere first, use cinematic continuation only when real temporal action is needed, and escalate density with the song.",
+  "visual_direction_gate": {
+    "required": true,
+    "presented_in_chat": true,
+    "locked": true,
+    "options": [
+      {
+        "number": 1,
+        "name": "The Fire-Spirit Rite",
+        "story_approach": "An ancient fire-spirit wakes under ritual percussion, gathers through earth/ash/bodies/architecture, crosses thresholds, reaches apotheosis, and resolves into calm power.",
+        "rendering_route": "Hybrid mythic living paintings plus bounded cinematic passages; volcanic nocturnal palette; fire, smoke, ash, sacred geometry and ritual architecture.",
+        "production_mode": "hybrid",
+        "storyboard": [
+          {
+            "number": 1,
+            "description": "Invocation: embers and hidden force wake in near-black ritual space."
+          },
+          {
+            "number": 2,
+            "description": "Manifestation and procession: one coherent spirit gains identity and crosses sacred spaces."
+          },
+          {
+            "number": 3,
+            "description": "Apotheosis and release: environment fully activates, then settles into transformed calm."
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "name": "Ancestral Procession",
+        "story_approach": "Human ritual participants carry an ancestral presence through a night procession toward a sacred convergence.",
+        "rendering_route": "Cinematic body/torch/procession coverage with restrained living-scene environmental inserts.",
+        "production_mode": "cinematic",
+        "storyboard": [
+          {
+            "number": 1,
+            "description": "Gathering figures and torchlight establish communal ritual."
+          },
+          {
+            "number": 2,
+            "description": "Procession crosses desert/ruin thresholds as percussion intensifies."
+          },
+          {
+            "number": 3,
+            "description": "Collective convergence ends in dawn-like release."
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "name": "Elemental Temple",
+        "story_approach": "No central character; a sacred environment itself wakes as percussion activates fire, stone, water, smoke and sky.",
+        "rendering_route": "Living-scene dominant environmental film with monumental architecture and reactive elemental states.",
+        "production_mode": "living_scene",
+        "storyboard": [
+          {
+            "number": 1,
+            "description": "Dormant temple geometry pulses under embers."
+          },
+          {
+            "number": 2,
+            "description": "Fire/water/smoke systems activate progressively through the groove."
+          },
+          {
+            "number": 3,
+            "description": "The temple reaches full luminous state and cools into stillness."
+          }
+        ]
+      }
+    ],
+    "user_selection": {
+      "status": "selected",
+      "selected_option_numbers": [
+        1
+      ],
+      "recorded_user_instruction": "Lock that story line follow repo and get to fucking work"
+    }
+  }
+}
