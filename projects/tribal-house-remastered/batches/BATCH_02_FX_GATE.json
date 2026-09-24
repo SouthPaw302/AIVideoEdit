@@ -1,0 +1,30 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 2,
+  "label": "Pulse",
+  "status": "technical_pass",
+  "anchor": "B02-STILL-01",
+  "canonical_fx": [
+    "FIRE-001",
+    "LIGHT-023",
+    "FIRE-002",
+    "ATM-001",
+    "SPATIAL-021",
+    "DISTORT-021"
+  ],
+  "protected_regions": [
+    "ritual circle topology",
+    "monolith geometry",
+    "central axis",
+    "horizon"
+  ],
+  "preferred": [
+    "B02-MOTION-05",
+    "B02-MOTION-10"
+  ],
+  "notes": [
+    "Heavy reliance on reusable effects; no new character identity introduced.",
+    "Heat distortion remains localized.",
+    "Internal rhythmic light/smoke/particle motion precedes camera/depth."
+  ]
+}

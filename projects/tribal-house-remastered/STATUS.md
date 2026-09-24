@@ -1,13 +1,12 @@
 # Status
 
-Stage: BATCH_01_FX_GATE_PASS / BATCH_02_NEXT
+Stage: BATCH_02_FX_GATE_PASS / BATCH_03_NEXT
 
-Batch 01 Invocation:
-- 10 MAIN stills backed up to Drive.
-- 13 FX_SECONDARY still candidates backed up to Drive.
-- 10 moving FX proofs rendered and backed up to Drive.
-- Small FX gate: technical PASS.
-- Preferred reusable motion variants: ember pulse, firelight breath, sigil activation, atmosphere sparks, full stack.
-- Architecture/topology protection held; no global warp.
+Batch 02 Pulse is durably backed up:
+- 10 standalone 16:9 stills in Drive
+- 10 moving FX proofs in Drive
+- FX gate technical PASS
+- Preferred treatments: sigil sweep + full stack
+- No storyboard/contact-sheet assets promoted
 
-Next: Batch 02 base media for the next musical phase, using fewer strong anchors and heavy reuse of the approved FX stack instead of brute-force still generation.
+Next: Batch 03 Emergence. Use a stronger existing manifestation still as an anchor and derive a cohesive set of standalone production stills plus moving proofs without presentation artifacts.
