@@ -1,0 +1,171 @@
+{
+  "schema": "aivideoedit.effect-package-index.v1",
+  "pack": "TRIBAL_HOUSE_FULL_FX_PACK02",
+  "status": "proof_pass",
+  "resolution": [
+    960,
+    540
+  ],
+  "fps": 24,
+  "focus": "additional music-reactive visualizer, particle, protected-depth, reflection and apex-motion variants",
+  "drive": {
+    "pack_folder_id": "1iWbhAiPm6waBuTNycoo1dvv7ocGbqDwH",
+    "clips_folder_id": "1qKGyaw62VmZ4M_qHf5oM6qtuLRJdHfmp",
+    "gifs_folder_id": "1x05S_Rj_20lVb7DlAF5yGr2edQA8evtZ",
+    "qc_folder_id": "10EgYlBUHlnheVi3JDzFp_4DNK5MIT_q5"
+  },
+  "assets": [
+    {
+      "index": 1,
+      "video": {
+        "file": "R01_B02_RADIAL_FREQUENCY_RING.mp4",
+        "sha256": "299ef2b25039968d8a68e0388209bb58679c73bf3f377af544743f374c1ba9f1",
+        "drive_file_id": "1cLo3406bg7z4pgoJNhJo0R2MaoAgbNJo"
+      },
+      "gif": {
+        "file": "R01_B02_RADIAL_FREQUENCY_RING.gif",
+        "sha256": "2e5965facd6787a7afd640b73c519523391f7d1eda626a37b091da2b19016e13",
+        "drive_file_id": "1-55LzDrB821F_rIfJtOeztYdNhOCRRNU"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 2,
+      "video": {
+        "file": "R02_B02_WAVEFORM_EMBER_BURSTS.mp4",
+        "sha256": "7d5f4b21aab93e458155e374afdece29593608207356c1007c906d973586accd",
+        "drive_file_id": "1LjxiMYaZLPQIjYKs-Vbu-Qpmmu7OHkhi"
+      },
+      "gif": {
+        "file": "R02_B02_WAVEFORM_EMBER_BURSTS.gif",
+        "sha256": "a673e24694d196403a390048b1c97bc8af196460cb41b00aebab9fa9f46c8ed3",
+        "drive_file_id": "18WcoSEFJGFrTAZGxXe7cCIkAHCZzJ8Wq"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 3,
+      "video": {
+        "file": "R03_B03_PROTECTED_AURA_DEPTH.mp4",
+        "sha256": "78eb77aca91a46d3eaa9241a13db2a91825d4a89840e8190531531768d3d9043",
+        "drive_file_id": "1K91N7HRq7PvObvS-eRQkxlEeyx2S2R2i"
+      },
+      "gif": {
+        "file": "R03_B03_PROTECTED_AURA_DEPTH.gif",
+        "sha256": "e8fc2d09fbb027e61878aaf1efe0e13c6ce7c6633792bfbb45d88726af3ef907",
+        "drive_file_id": "1D64syxDUpwxJt0kRsWALvy5KfBZayyM8"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 4,
+      "video": {
+        "file": "R04_B04_REFLECTION_DEPTH_TRAVEL.mp4",
+        "sha256": "09e387c706d0a78874fdec9370efa5cb71d03d62deca3dc6cfc93253152251d0",
+        "drive_file_id": "1VTkEvhbm6C8DdM1OweKzItPOklNGiLXo"
+      },
+      "gif": {
+        "file": "R04_B04_REFLECTION_DEPTH_TRAVEL.gif",
+        "sha256": "1fb8b9f2bc4d41c62948eb58394f0d4c4f5e318fe17116c7196bd6df27d6b4dd",
+        "drive_file_id": "1jOdBot5zpjJPUPDAUAhxzFnLqUlx3BoI"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 5,
+      "video": {
+        "file": "R05_B05_SPECTRUM_ENERGY_FLAME.mp4",
+        "sha256": "1d07940e1acf067fd2e214b1903234362990710d65c589df0b7d06e833846511",
+        "drive_file_id": "10OSbdU30EZrkKZ7-3ES8SmFLUSl19Y-I"
+      },
+      "gif": {
+        "file": "R05_B05_SPECTRUM_ENERGY_FLAME.gif",
+        "sha256": "3830f9c10bfe1582ed8f026676ebd9c00e4b4fb8d5e58c4156c2965499356714",
+        "drive_file_id": "1DXdMBP2tY-Wk7T3bqeV1s595xk1BFAr0"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 6,
+      "video": {
+        "file": "R06_B05_WAVEFORM_SMOKE_TRAILS.mp4",
+        "sha256": "3e531861382ac9b446e8dd53e43fa0e9a20fd6566bfec59345afc1de54a4540d",
+        "drive_file_id": "13NoLl4uXqRgyu0yJoOFjjiuU-AsELqso"
+      },
+      "gif": {
+        "file": "R06_B05_WAVEFORM_SMOKE_TRAILS.gif",
+        "sha256": "bf394334b65d19ab02864876952bc8561698fb4378a5f4be11e652fd4822df73",
+        "drive_file_id": "1Kp4SNnMp8laVAv9skbd_fLpjOfBiJcqb"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 7,
+      "video": {
+        "file": "R07_B05_TRANSIENT_IMPACT.mp4",
+        "sha256": "6c2fa82c75fcb42723f7f73d0a2ff8078a621753c484ef1767245f87d6ffce28",
+        "drive_file_id": "1H_2oDs18XuzWyC2lxPu0yrMAbc6-KDCp"
+      },
+      "gif": {
+        "file": "R07_B05_TRANSIENT_IMPACT.gif",
+        "sha256": "9490d234e20002f7deb7135dd484339db664c572ac7db93f49257f7d5cd182eb",
+        "drive_file_id": "1PfU390XrhQ7Nu9XFzH5C9TPJMuPxojGX"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 8,
+      "video": {
+        "file": "R08_B07_PARTICLE_TUNNEL_SHAFTS.mp4",
+        "sha256": "3a6f964f80f1159e127f4a0b391e56b9f7e6b27ebaa48682943ebfd8c138d87e",
+        "drive_file_id": "1Fono3m-sUySg7YDYOnfSJHGLRA1ICUC-"
+      },
+      "gif": {
+        "file": "R08_B07_PARTICLE_TUNNEL_SHAFTS.gif",
+        "sha256": "034f347ab8eef720340a0c5f580b04f34b1a6b7b854a3366f63c72c8d6eb97bb",
+        "drive_file_id": "1FD4AsxXdyuFtsLWhwgudusxoDQW7kR0R"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    },
+    {
+      "index": 9,
+      "video": {
+        "file": "R09_B07_LOOPABLE_ORBIT_SHAFTS.mp4",
+        "sha256": "7cdd1ab6f30d705eae4fd842ddb0ef6aa7f55c1a5e58e59e4aeaaeab7dab8fac",
+        "drive_file_id": "1aaQ_El-XSvjJ4fe9IvPq66pfbRQLhyoW"
+      },
+      "gif": {
+        "file": "R09_B07_LOOPABLE_ORBIT_SHAFTS.gif",
+        "sha256": "909dc01b4f875f69f8994663eebb0ec920276bcfa3756b254b5e3fca00701d1e",
+        "drive_file_id": "1DhhEwdaE_owwqMcvN8gV4-5PXUtTCvcn"
+      },
+      "seam_qc": "PASS",
+      "temporal_qc": "PASS",
+      "global_shift_qc": "PASS"
+    }
+  ],
+  "qc": {
+    "manifest_sha256": "f0a725382d957965cbd09ad156a22b0a1db09e716ad5c716f9f51cf9b0f8e64f",
+    "manifest_drive_file_id": "1ryi8PmZW2Qxum3tp01Zs9SkGbggXGMep",
+    "qc_sha256": "cce6e0521de6f09f6531efc2b23f26115a480022d74541ee34334bb03271f49c",
+    "qc_drive_file_id": "1rEWTdGUYiVQMQwsnaYITPvAj65ZtJTlx",
+    "contact_sheet_sha256": "cc44f5c4d3826a72508b455c79a03d444a012ecc8bb3224472b90c06d5e3f180",
+    "contact_sheet_drive_file_id": "1yfnWDt3mBk8KSvdbH-l97ExOf3-8vED5"
+  }
+}
