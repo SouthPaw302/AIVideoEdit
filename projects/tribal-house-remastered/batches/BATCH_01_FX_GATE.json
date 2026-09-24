@@ -1,0 +1,60 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "batch": 1,
+  "status": "moving_proof_in_progress",
+  "anchor_asset_id": "B01-MAIN-01",
+  "resolver_basis": "current-main deterministic FX resolver",
+  "scene_semantics": [
+    "fire",
+    "smoke",
+    "threshold",
+    "parallax"
+  ],
+  "selected_fx": [
+    {
+      "id": "FIRE-001",
+      "purpose": "living flame/ember behavior",
+      "scope": "central ember only"
+    },
+    {
+      "id": "LIGHT-023",
+      "purpose": "firelight breath",
+      "scope": "localized floor/nearby stone"
+    },
+    {
+      "id": "FIRE-002",
+      "purpose": "secondary ember/spark activity",
+      "scope": "central-to-midfield particles"
+    },
+    {
+      "id": "ATM-001",
+      "purpose": "smoke drift",
+      "scope": "environment only"
+    },
+    {
+      "id": "SPATIAL-021",
+      "purpose": "bounded multiplane depth",
+      "scope": "architecture after internal motion proof"
+    }
+  ],
+  "recipe_candidates": [
+    "RCP-FIRELIT-INTERIOR",
+    "RCP-MULTIPLANE"
+  ],
+  "protected_regions": [
+    "ritual circle topology",
+    "monolith geometry",
+    "central axis",
+    "horizon",
+    "future hero zone"
+  ],
+  "order": [
+    "internal_fire",
+    "firelight",
+    "smoke",
+    "embers",
+    "bounded_depth",
+    "camera_last"
+  ],
+  "proof_policy": "short moving proofs before full section render; no global warp; no identity/topology drift"
+}

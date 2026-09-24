@@ -1,0 +1,291 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "project": "Tribal House Remastered",
+  "branch": "song/tribal-house-remastered",
+  "batch": 1,
+  "label": "Invocation",
+  "drive": {
+    "batch_folder_id": "1u_YsRJdL0ZLEgYuDs3HgQN8G_wDK9nk8",
+    "main_folder_id": "1RRatOAqkG9kDuEVmS_diVEH3gxcimrpY",
+    "fx_folder_id": "1VP9LSpYLyTUYY9DJ2LW7WD-mcuLn89L7"
+  },
+  "assets": [
+    {
+      "id": "B01-MAIN-01",
+      "file_name": "B01_MAIN_01_ember_altar.png",
+      "role": "MAIN",
+      "sha256": "b856f23b650100f4e6ef6ab3951ce46981626b375e42f1b9a27a0798f8b138fb",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1PZ4fZOXjfYWDezEGBHHjLHn5Suw0FHLO",
+        "url": "https://drive.google.com/file/d/1PZ4fZOXjfYWDezEGBHHjLHn5Suw0FHLO/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-02",
+      "file_name": "B01_MAIN_02_ember_titan.png",
+      "role": "MAIN",
+      "sha256": "d14ea054dcf6dcf4613a5f8ee0b7eba160c179c14758c8a65305d5cb34da7972",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1Khfr4fYwq_WMP8ZrwUkoAXLs4ZKtGHEd",
+        "url": "https://drive.google.com/file/d/1Khfr4fYwq_WMP8ZrwUkoAXLs4ZKtGHEd/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-03",
+      "file_name": "B01_MAIN_03_ember_sigil.png",
+      "role": "MAIN",
+      "sha256": "d270aa9f7a2bb35552aaaded20fffdafc5205af367023a2ecd4e9f087ab23bf1",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1sM5VtJvvqRKbc9YSjxf-dUW-Vd6IPX_T",
+        "url": "https://drive.google.com/file/d/1sM5VtJvvqRKbc9YSjxf-dUW-Vd6IPX_T/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-04",
+      "file_name": "B01_MAIN_04_ember_wraith_ritual_arena.png",
+      "role": "MAIN",
+      "sha256": "c5c98ba93809b34d26e7206468fff8c5c21f6f80a0822676943fb3bdb821b87c",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "13GXTqrzUkRA72uUGRDrcUFkehkUjVjQW",
+        "url": "https://drive.google.com/file/d/13GXTqrzUkRA72uUGRDrcUFkehkUjVjQW/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-05",
+      "file_name": "B01_MAIN_05_ember_wraith_stone_temple.png",
+      "role": "MAIN",
+      "sha256": "016c09fe0bcb7746bf3bb467ea09844cf30eed61ec5257ca8e9428b64c591dbe",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1cAFRAqsbTsG3TLgFofoxwkjyEilWW11a",
+        "url": "https://drive.google.com/file/d/1cAFRAqsbTsG3TLgFofoxwkjyEilWW11a/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-06",
+      "file_name": "B01_MAIN_06_emberbound_shadow.png",
+      "role": "MAIN",
+      "sha256": "a85a276476d543a3a5c452b4b4f0cacbcd2bd84406d91ab0f3d9314733e29054",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1AoIcjtM_Cenfbm5LFhiNghwvxAoH2kH7",
+        "url": "https://drive.google.com/file/d/1AoIcjtM_Cenfbm5LFhiNghwvxAoH2kH7/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-07",
+      "file_name": "B01_MAIN_07_ember_wraith_basalt_cathedral.png",
+      "role": "MAIN",
+      "sha256": "fbe0621b88476a1212326954f96a4aaff21b1766eff981407e156bbec4174edd",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1v1cMiSYrduOr_1kHys0lu1H9SBzhHAw_",
+        "url": "https://drive.google.com/file/d/1v1cMiSYrduOr_1kHys0lu1H9SBzhHAw_/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-08",
+      "file_name": "B01_MAIN_08_emberlit_temple.png",
+      "role": "MAIN",
+      "sha256": "ee446d7dab8d0e55fdb8f9dba8a54f224a03285b49c876342cc8c591b24bdc96",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1ed2qzVivwd8GY-nyeC-5hqq51YMt2c2E",
+        "url": "https://drive.google.com/file/d/1ed2qzVivwd8GY-nyeC-5hqq51YMt2c2E/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-09",
+      "file_name": "B01_MAIN_09_ember_forged_temple.png",
+      "role": "MAIN",
+      "sha256": "77ff0c6dad64ab337a66f5767c8636b7be03ec5447db74e3cf5d51eb79b07d6a",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "10i3yiWL0SGRTkGYUfY8-cizHblPBYKtI",
+        "url": "https://drive.google.com/file/d/10i3yiWL0SGRTkGYUfY8-cizHblPBYKtI/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-MAIN-10",
+      "file_name": "B01_MAIN_10_molten_sigils.png",
+      "role": "MAIN",
+      "sha256": "6b2b15a56dc361b7239879c151abf970241cab35618952c10dfb30fe62880ec9",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1XKiuyQW5EuF_A7WGRT6XIEB1jT0JjUvv",
+        "url": "https://drive.google.com/file/d/1XKiuyQW5EuF_A7WGRT6XIEB1jT0JjUvv/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-01",
+      "file_name": "B01_FX_01_ember_sigils.png",
+      "role": "FX_SECONDARY",
+      "sha256": "825e0e5c5c5ad78d9bdfc01ad42a63bc0c458539ad6ae948e25af6e63641415e",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "12k5R6XQd9zS5BgFWBVYB2_o5Yf0JWlMo",
+        "url": "https://drive.google.com/file/d/12k5R6XQd9zS5BgFWBVYB2_o5Yf0JWlMo/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-02",
+      "file_name": "B01_FX_02_molten_sigils.png",
+      "role": "FX_SECONDARY",
+      "sha256": "8b88135a3d5e69447912194357fadd294551753fae24db256369466f596146c2",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1rVO1RRXTQcBvsttbPtg-12PhO4jI5uJ5",
+        "url": "https://drive.google.com/file/d/1rVO1RRXTQcBvsttbPtg-12PhO4jI5uJ5/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-03",
+      "file_name": "B01_FX_03_magma_temple.png",
+      "role": "FX_SECONDARY",
+      "sha256": "c81c69759feecde63f3457784540cae1262267241f3697a80fa87c747ae0fcf1",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1J1kN1fPhgTB4AKQfdcLTQmxkLQMxtkV2",
+        "url": "https://drive.google.com/file/d/1J1kN1fPhgTB4AKQfdcLTQmxkLQMxtkV2/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-04",
+      "file_name": "B01_FX_04_ember_awakening.png",
+      "role": "FX_SECONDARY",
+      "sha256": "2d5a80350f00f0ad66d5bce5ec3b48e411d562118b4028a408881dd06cb8e33e",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1EhleuJnAkCJQIaFAd4QsrTVwZ8hD_wAX",
+        "url": "https://drive.google.com/file/d/1EhleuJnAkCJQIaFAd4QsrTVwZ8hD_wAX/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-05",
+      "file_name": "B01_FX_05_ember_wraith_sanctuary.png",
+      "role": "FX_SECONDARY",
+      "sha256": "4f6038c760c4763574ec65537b207a5022fdb307e6000afc60b8aa9d200193d1",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "146PZLqFGXuMKGTaPhSzSa8fLZV3dAwa7",
+        "url": "https://drive.google.com/file/d/146PZLqFGXuMKGTaPhSzSa8fLZV3dAwa7/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-06",
+      "file_name": "B01_FX_06_colossal_ember_spirit.png",
+      "role": "FX_SECONDARY",
+      "sha256": "c34949dcf78da3f3e7aff38490cd8d2a877a476c6c882daca75a49c255edd8e5",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1UAbEvP4CYDOtrnVlnUZoM7ZjIXJQYHwl",
+        "url": "https://drive.google.com/file/d/1UAbEvP4CYDOtrnVlnUZoM7ZjIXJQYHwl/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-07",
+      "file_name": "B01_FX_07_ember_born_ritual.png",
+      "role": "FX_SECONDARY",
+      "sha256": "a3046fb852e06d482773dfbc9860468b50b805ea513f9281c8bb4d51a24e5290",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1oJTmWZRlqlKEMD5TlFsqmLAEcwPVfmbW",
+        "url": "https://drive.google.com/file/d/1oJTmWZRlqlKEMD5TlFsqmLAEcwPVfmbW/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-08",
+      "file_name": "B01_FX_08_ember_spirit_hall.png",
+      "role": "FX_SECONDARY",
+      "sha256": "685301ac7a510890b1a8a21822570f56ceb9b4374511ce859298efe65e7fc480",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1t-NI_oC3YJyqFAjhwl9iODzWhU124dps",
+        "url": "https://drive.google.com/file/d/1t-NI_oC3YJyqFAjhwl9iODzWhU124dps/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-09",
+      "file_name": "B01_FX_09_ember_entity_obsidian.png",
+      "role": "FX_SECONDARY",
+      "sha256": "b6ab7ecb50ac74a3daf12bd3fdfbd432dc7176941c074f31865a5f2a2a64a36d",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1kf_JK4boVHVaoNfmDqLJKhW8ZLNCjW8W",
+        "url": "https://drive.google.com/file/d/1kf_JK4boVHVaoNfmDqLJKhW8ZLNCjW8W/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-10",
+      "file_name": "B01_FX_10_molten_sigils_basalt.png",
+      "role": "FX_SECONDARY",
+      "sha256": "5697fa90d7a0509b9d8e1ba569e1c5c581e310d66d9e895a45ac3eea22ac93f9",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1cR0tBm4aH0IEjStBqcoHo-ystxI5xF8v",
+        "url": "https://drive.google.com/file/d/1cR0tBm4aH0IEjStBqcoHo-ystxI5xF8v/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-11",
+      "file_name": "B01_FX_11_emberlit_obsidian.png",
+      "role": "FX_SECONDARY",
+      "sha256": "dc9e698e72ee0b254396b50f51860c5f7a893883fcc1a79ae7b594246580d7cc",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1ZwnJh1XTzs-cjMFZ2lmFTkptshHjix_R",
+        "url": "https://drive.google.com/file/d/1ZwnJh1XTzs-cjMFZ2lmFTkptshHjix_R/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-12",
+      "file_name": "B01_FX_12_ember_wraith_ritual_temple.png",
+      "role": "FX_SECONDARY",
+      "sha256": "30eefdf0bb6661021139810b1d8d4745ab2a3c5868f844072fd69b8f38ffb265",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "15qgI3o2KjTXsWgyodKMlU0PsxETcBdJI",
+        "url": "https://drive.google.com/file/d/15qgI3o2KjTXsWgyodKMlU0PsxETcBdJI/view"
+      },
+      "lifecycle": "preserved_candidate"
+    },
+    {
+      "id": "B01-FX_SECONDARY-13",
+      "file_name": "B01_FX_13_emberbound_spirit.png",
+      "role": "FX_SECONDARY",
+      "sha256": "88564c060787257572c9f9f460a24b08b391e3aca057e5400adb26a48d8fe87b",
+      "storage": {
+        "provider": "google_drive",
+        "file_id": "1wYsN1bDEj2fIGQnWDvZIy50mNAHMHIPd",
+        "url": "https://drive.google.com/file/d/1wYsN1bDEj2fIGQnWDvZIy50mNAHMHIPd/view"
+      },
+      "lifecycle": "preserved_candidate"
+    }
+  ],
+  "note": "All generated Invocation media to date belongs to Batch 01. MAIN and FX_SECONDARY are preserved separately; creative lock occurs after moving proof gate."
+}
