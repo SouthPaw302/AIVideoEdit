@@ -1,11 +1,6 @@
 name: Generate Canonical FX2 Proof02
 
 on:
-  push:
-    branches: ["main"]
-    paths:
-      - "general/reusable/fx_v2/tools/generate_canonical_proof02.py"
-      - ".github/workflows/generate-fx2-proof02.yml"
   workflow_dispatch:
 
 permissions:
