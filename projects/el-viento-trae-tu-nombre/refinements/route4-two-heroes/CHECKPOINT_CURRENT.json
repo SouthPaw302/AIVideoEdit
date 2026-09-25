@@ -2,8 +2,8 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "corrected 154.375-second Route 4 contract boot-passes; FX precompile lock verified; missing-FX render pass pending",
-  "active_scope": "FX_LOCKED / render blocked",
+  "current_stage": "1080 FX master v6 rendered; repo technical gates passed; awaiting user visual review",
+  "active_scope": "visual review hold",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
     "drive_file_id": "1M6uRTeYejXxn2rSDkTJu5H0_LiWrdwN4",
@@ -83,7 +83,7 @@
     "Batch 05 canonical FX runtime proof rendered, QC passed, Drive-backed and locked",
     "Batch 06 canonical FX runtime proof rendered, QC passed, Drive-backed and locked without premature fade-to-black"
   ],
-  "exact_next_action": "No render now. When rendering is authorized, use the verified FX lock and preserved 154.375-second edit to perform the true missing-FX delta pass. Preserve timing, hero order, audio, intro/outro, camera motion and hand repair; then run final QC.",
+  "exact_next_action": "Review El_Viento_Route4_1080p_FX_MASTER_v6.mp4 at normal speed. If accepted, lock/promote/archive 1080. Do not upscale to 4K until explicit approval.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -429,9 +429,14 @@
     "core_batches_01_06": "reopened_missing_fx",
     "extended_act": "reopened_missing_fx",
     "fx_lock": "verified",
-    "four_k_status": "rollback/reference only",
+    "four_k_status": "blocked until approval",
     "render_authorization": "blocked by current no-render instruction",
     "fx_lock_sha256": "107090e7e09b2686f1c56b44d78d027b8802b7cdd2a16a583b1e8a5bbd073530",
-    "final_fx_complete": false
+    "final_fx_complete": false,
+    "render_status": "completed",
+    "master_file": "El_Viento_Route4_1080p_FX_MASTER_v6.mp4",
+    "master_sha256": "5fe93ef79d528a27cb7a15003aac9e9bc50a0db40a6719a102d36d5f10314af0",
+    "technical_qc": "PASS",
+    "user_visual_review": "pending"
   }
 }
