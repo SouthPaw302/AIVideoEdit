@@ -1,0 +1,109 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "project": "El Viento trae tu nombre",
+  "refinement_id": "route4-two-heroes",
+  "batch": 3,
+  "segment": "00:43.008-01:04.512",
+  "source_policy": "preserve locked pre-FX motion variants; no regeneration",
+  "selected_motion_sources": [
+    {
+      "name": "01_stone_map_motion_variant.mp4",
+      "sha256": "fe5cefd123706bb91b6b7ebb0c7e6333e33799a01795bc12b61b9204794aa798"
+    },
+    {
+      "name": "02_touching_map_motion_variant.mp4",
+      "sha256": "8e50ac2b8a7d3b9d7568445c2ad8ddb5a0053a3e745ae7181ed872bb3562639a"
+    },
+    {
+      "name": "03_portal_city_motion_variant.mp4",
+      "sha256": "ab23569ee0aa576c0fa331a68a4b17d475b0128326a795df406638f6723ed728"
+    },
+    {
+      "name": "04_embroidered_thread_motion_variant.mp4",
+      "sha256": "3c816bea57408a59a22a5b2278ab7d35967c0ff9fb9c020cde5dd0963991368a"
+    }
+  ],
+  "fx_decisions": [
+    {
+      "shot": 1,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "stone/map awakening; bounded map-region movement and gold activation"
+    },
+    {
+      "shot": 2,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-LIGHT-001",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "touch activates remembered geography while hand/map relationship stays stable"
+    },
+    {
+      "shot": 3,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-ATM-001",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "portal/coastal city becomes spatially present without invented geography"
+    },
+    {
+      "shot": 4,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-LIGHT-001",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "embroidered thread becomes explicit carrier into remembered presence"
+    }
+  ],
+  "runtime_authority": {
+    "runtime": "aivideoedit-fx-v2",
+    "seed": 302,
+    "implementation": "general/reusable/fx_v2/runtime.py",
+    "gate_finish": [
+      "authored-highlight bloom",
+      "very light temporal grain",
+      "restrained vignette"
+    ]
+  },
+  "prohibited_fx_confirmed_absent": [
+    "face morphing",
+    "hand deformation",
+    "new geography",
+    "subject replacement",
+    "architecture drift",
+    "horizon drift",
+    "hallucinated figures",
+    "whole-frame wobble"
+  ],
+  "moving_proof": {
+    "file": "El_Viento_Batch03_FX_Moving_Proof_v1.mp4",
+    "sha256": "a579a39fe470064838058252623d2a7d30a834ea3c44f997fa616743dba8851c",
+    "duration_seconds": 21.504,
+    "video_duration_seconds": 21.5,
+    "resolution": "1920x1080",
+    "fps": 24,
+    "audio": "canonical El Viento trae tu nombre.wav segment 00:43.008-01:04.512, stereo AAC 48 kHz",
+    "technical_qc": "pass",
+    "black_detect": "none",
+    "freeze_detect": "none",
+    "visual_continuity_qc": "pass",
+    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "lock_status": "locked",
+    "drive_file_id": "1s3c0KGtOTVvf80IGFcDVnaAP36vbCFxY",
+    "drive_folder_id": "1c5DBueZ5zbVwQG4Of1hJHmHJtg9qMpWE",
+    "qc_contact_sheet_drive_id": "1H5nI6P3A8gqd6KdSHO8D-xd1XPOCFFPC"
+  },
+  "note": "Batch 03 passed autonomous technical/visual review and is locked. Continue to Batch 04 without regenerating accepted Batches 01-03."
+}
