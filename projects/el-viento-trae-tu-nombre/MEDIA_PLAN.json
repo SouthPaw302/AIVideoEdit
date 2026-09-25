@@ -114,9 +114,11 @@
   },
   "large_batch_strategy": {
     "policy": "dependency_gated_batches",
-    "current_batch": "BATCH-01-HERO-CHARACTER-LOCK",
-    "current_batch_goal": "Establish immutable visual continuity for the recurring male and female heroes before any new environment/story plates are generated.",
-    "next_batch_rule": "Do not create the next media batch until the current batch is generated, QC-reviewed, hashed/registered and its downstream dependency is known.",
-    "proof_policy": "After storyboard/shot media exists, render short representative moving proofs before any full-song assembly."
-  }
+    "current_batch": "FX-RECONCILIATION",
+    "current_batch_goal": "Complete missing FX on the preserved 154.375-second Route 4 edit without regenerating accepted media or altering timing.",
+    "next_batch_rule": "No new media batch is authorized. Reuse accepted Route 4 media/loop/FX libraries; Batch 10 is forbidden unless explicitly requested.",
+    "proof_policy": "After a valid precompile FX lock exists, evaluate missing FX in moving full-edit context before any final master promotion.",
+    "media_generation": "locked unless QC failure or explicit user instruction"
+  },
+  "current_phase": "FX_GATES_REOPENED"
 }
