@@ -1,9 +1,10 @@
 {
   "schema": "aivideoedit.assembly.v1",
-  "status": "preserved_baseline_fx_incomplete",
-  "output_asset_id": "ROUTE4-1080P-CREATIVE-LOCK-V5-RECONSTRUCTED",
-  "output_uri": "reconstructible://4K-Upscale-Prep/native-1080-chunks",
-  "sha256": "5d822ef0442a086d13c9a7b94f0b6dcf8df5eac6e3b96495a70ff90192e68021",
+  "status": "assembled_fx_master_candidate_pending_visual_review",
+  "output_asset_id": "ROUTE4-1080P-FX-MASTER-V6",
+  "output_uri": "session:///mnt/data/El_Viento_Route4_1080p_FX_MASTER_v6.mp4",
+  "sha256": "5fe93ef79d528a27cb7a15003aac9e9bc50a0db40a6719a102d36d5f10314af0",
+  "size_bytes": 602346122,
   "duration_seconds": 154.375,
   "target_frames": 3705,
   "target_fps": 24,
@@ -14,38 +15,31 @@
   "video_codec": "h264",
   "audio_codec": "aac",
   "source_audio": {
-    "drive_id": "1M6uRTeYejXxn2rSDkTJu5H0_LiWrdwN4",
-    "authority_seconds": 154.48
+    "role": "preserved current mux authority",
+    "unchanged": true,
+    "duration_authority_seconds": 154.48
   },
-  "fx_lock_status": "STALE_REQUIRES_RECOMPILE",
-  "assembly_complete": false,
+  "fx_lock_sha256": "107090e7e09b2686f1c56b44d78d027b8802b7cdd2a16a583b1e8a5bbd073530",
+  "assembly_complete": true,
   "preservation": {
     "edit_timing": true,
     "hero_order": true,
     "intro_outro": true,
     "camera_motion": true,
-    "hand_repair": true
+    "hand_repair": true,
+    "audio_stream": true
   },
-  "route4_evidence": [
-    "refinements/route4-two-heroes/shot_locks/BATCH_01_OPENING_REMEMBRANCE.json",
-    "refinements/route4-two-heroes/shot_locks/BATCH_02_DISTANCE_AND_ORIGIN.json",
-    "refinements/route4-two-heroes/shot_locks/BATCH_03_VERSE3_EXPANSION.json",
-    "refinements/route4-two-heroes/shot_locks/BATCH_04_REMEMBERED_PRESENCE.json",
-    "refinements/route4-two-heroes/shot_locks/BATCH_05_CHORUS_CREST.json",
-    "refinements/route4-two-heroes/shot_locks/BATCH_06_RELEASE_TO_BLACK.json"
-  ],
   "qc": {
     "decode_probe": "PASS",
+    "duration_match": "PASS",
     "dimensions": "PASS 1920x1080",
     "fps": "PASS 24",
     "frame_count": "PASS 3705",
     "black_check": "PASS",
     "freeze_check": "PASS",
-    "fx_completion": "FAIL / user reports missing FX"
+    "silence_check": "PASS",
+    "export_variety": "PASS",
+    "temporal_qc": "REVIEW: spike locations match preserved baseline transitions; no new unexplained spike locations"
   },
-  "storage": {
-    "review_drive_id": "1epCHhbFUtkLx1ysVl0cYUfuDi64ozz4c",
-    "reconstruction_source_drive_folder_id": "1KmABtLstpEKHN_0nzPP_KEKDYyPFtKjn"
-  },
-  "updated_at": "2026-09-25T00:45:00Z"
+  "created_at": "2026-09-25T01:50:00Z"
 }
