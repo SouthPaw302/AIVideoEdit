@@ -85,7 +85,7 @@
       "conditional_preflight": null,
       "smoke": {
         "source_delta_max": 0.554392,
-        "temporal_delta_max": 0.0,
+        "temporal_delta_max": 0,
         "global_shift_px_max": 0.006617,
         "sample_output_sha256": "ad71703670e6a1830e514d09ecae0c88051a47e0a05a0d9c6034ebef3995bff6"
       }
@@ -196,7 +196,7 @@
       ],
       "conditional_preflight": null,
       "smoke": {
-        "source_delta_max": 2.0,
+        "source_delta_max": 2,
         "temporal_delta_max": 3.333333,
         "global_shift_px_max": 0.019229,
         "sample_output_sha256": "970f1205990c536438456966eb68687b4c2b9be1cbff9da750eeae18a23a90c4"
@@ -231,6 +231,12 @@
       }
     }
   ],
-  "result": "PASS",
-  "evidence_fingerprint_sha256": "6aa449a218bc1541101303a97cb1702c4229b46b079ad119e1345ffd33393f4a"
+  "result": "STALE",
+  "evidence_fingerprint_sha256": "6aa449a218bc1541101303a97cb1702c4229b46b079ad119e1345ffd33393f4a",
+  "status": "STALE_INVALIDATED",
+  "valid_for_render": false,
+  "replacement_required": true,
+  "invalidated_reason": "FX_REQUIREMENTS and SCRIPT corrected from obsolete 112.68-second S01-S11 contract to current 154.375-second Route 4 edit after user confirmed missing FX.",
+  "invalidated_at": "2026-09-25T00:45:00Z",
+  "legacy_scope": "112.68-second S01-S11 production only"
 }
