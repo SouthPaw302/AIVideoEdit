@@ -26,7 +26,7 @@
     "atmospheric and coastal motion",
     "celestial-thread finale resolution"
   ],
-  "delta_decision": "no additional FX required after current-edit audit; do not invent supplemental batch timing or duplicate baked-in treatment",
+  "delta_decision": "REOPENED: audit existing treatment but add genuinely missing FX without changing edit/timing.",
   "moving_proof": {
     "file": "El_Viento_ExtendedAct_BASELINE_AUDIT_v1.mp4",
     "sha256": "1692bf48051a6dfdadedce9a467c5a488417f21b5bb3b1b444880fc65bfd7129",
@@ -35,5 +35,9 @@
     "freeze_detect": "none",
     "drive_contact_sheet_id": "15SSXBvvxoh4PkuXpJKmTeP-xIRvxUAQc"
   },
-  "status": "locked_existing_fx_verified"
+  "status": "reopened_missing_fx",
+  "user_override": {
+    "at": "2026-09-25T00:45:00Z",
+    "direction": "Current 1080 extended act is not accepted as FX-complete."
+  }
 }
