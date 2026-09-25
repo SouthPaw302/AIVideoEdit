@@ -15,9 +15,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "reopened_missing_fx",
+      "fx_gate": "rendered_pending_user_visual_review",
       "fx_proof": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4",
-      "fx_review": "requires real delta FX pass against preserved current edit",
+      "fx_review": "included in 1080 FX master v6; technical QC passed",
       "proof": "El_Viento_Batch01_BASELINE_AUDIT_v1.mp4"
     },
     {
@@ -29,9 +29,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "reopened_missing_fx",
+      "fx_gate": "rendered_pending_user_visual_review",
       "fx_proof": "El_Viento_Batch02_FX_Moving_Proof_v1.mp4",
-      "fx_review": "requires real delta FX pass against preserved current edit"
+      "fx_review": "included in 1080 FX master v6; technical QC passed"
     },
     {
       "batch": 3,
@@ -42,9 +42,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "reopened_missing_fx",
+      "fx_gate": "rendered_pending_user_visual_review",
       "fx_proof": "El_Viento_Batch03_FX_Moving_Proof_v1.mp4",
-      "fx_review": "requires real delta FX pass against preserved current edit"
+      "fx_review": "included in 1080 FX master v6; technical QC passed"
     },
     {
       "batch": 4,
@@ -55,9 +55,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "reopened_missing_fx",
+      "fx_gate": "rendered_pending_user_visual_review",
       "fx_proof": "El_Viento_Batch04_FX_Moving_Proof_v1.mp4",
-      "fx_review": "requires real delta FX pass against preserved current edit"
+      "fx_review": "included in 1080 FX master v6; technical QC passed"
     },
     {
       "batch": 5,
@@ -68,9 +68,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "reopened_missing_fx",
+      "fx_gate": "rendered_pending_user_visual_review",
       "fx_proof": "El_Viento_Batch05_FX_Moving_Proof_v1.mp4",
-      "fx_review": "requires real delta FX pass against preserved current edit"
+      "fx_review": "included in 1080 FX master v6; technical QC passed"
     },
     {
       "batch": 6,
@@ -81,9 +81,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "reopened_missing_fx",
+      "fx_gate": "rendered_pending_user_visual_review",
       "fx_proof": "El_Viento_Batch06_FX_Moving_Proof_v1.mp4",
-      "fx_review": "requires real delta FX pass against preserved current edit"
+      "fx_review": "included in 1080 FX master v6; technical QC passed"
     }
   ],
   "preserved": [
@@ -93,14 +93,14 @@
     "main branch untouched"
   ],
   "pending": [
-    "complete missing FX pass for Batches 01-06 and extended act",
-    "run full mode-aware/temporal/final QC after FX completion",
-    "user approval of completed 1080 FX master"
+    "user full normal-speed visual review of 1080 FX master v6",
+    "archive/promote accepted 1080 master",
+    "4K upscale only after explicit visual approval"
   ],
   "optional_pending": [
     "Batch 06 FX still alternatives 09-10 only if explicitly requested"
   ],
-  "exact_resume_action": "FX lock is verified. Do not render under the current instruction. When rendering is authorized, apply the missing repo FX batch-by-batch to the preserved current edit, then run full QC.",
+  "exact_resume_action": "User reviews El_Viento_Route4_1080p_FX_MASTER_v6.mp4. Do not change or upscale it until visual feedback is received.",
   "do_not_do": [
     "do not invent Batch 07",
     "do not regenerate locked media without QC failure or explicit user direction",
@@ -146,9 +146,9 @@
     "baseline": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4"
   },
   "full_fx_gate": {
-    "status": "reopened_missing_fx",
-    "result": "PRECOMPILE_LOCK_VERIFIED_RENDER_PENDING",
-    "fx_lock_sha256": "107090e7e09b2686f1c56b44d78d027b8802b7cdd2a16a583b1e8a5bbd073530",
-    "updated_at": "2026-09-25T01:35:00Z"
+    "status": "rendered_pending_user_visual_review",
+    "result": "TECHNICAL_PASS",
+    "master_sha256": "5fe93ef79d528a27cb7a15003aac9e9bc50a0db40a6719a102d36d5f10314af0",
+    "updated_at": "2026-09-25T01:50:00Z"
   }
 }
