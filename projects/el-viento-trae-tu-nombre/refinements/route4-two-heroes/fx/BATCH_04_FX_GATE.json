@@ -4,108 +4,41 @@
   "refinement_id": "route4-two-heroes",
   "batch": 4,
   "segment": "01:04.512-01:26.016",
-  "source_policy": "preserve locked pre-FX motion variants; no regeneration",
-  "selected_motion_sources": [
-    {
-      "name": "01_motion_variant.mp4",
-      "sha256": "d71bb05a7a9eb54741d8b8e922b6eb8c9074e854aa67581b1cfb75afaf73083b"
-    },
-    {
-      "name": "02_motion_variant.mp4",
-      "sha256": "dbf84e7a8f03c170d112b9359e331ae0b11f0c7186aa5a0f0fc0914302904abc"
-    },
-    {
-      "name": "03_motion_variant.mp4",
-      "sha256": "b45388458209ef2cbc6c03886500fea006d602c5431074c13ef9f12c231bad2c"
-    },
-    {
-      "name": "04_motion_variant.mp4",
-      "sha256": "0724307c57445a823e985806ae238c7c13e26a9cfd29bd30335d26444807614a"
-    }
-  ],
-  "fx_decisions": [
-    {
-      "shot": 1,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-MOTION-002",
-        "FX2-MOTION-003",
-        "FX2-LIGHT-001",
-        "FX2-LIGHT-002"
-      ],
-      "intent": "intimate woman/harbor memory with fabric, water, lantern and sunset motion"
-    },
-    {
-      "shot": 2,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-ATM-001",
-        "FX2-LIGHT-001",
-        "FX2-LIGHT-002"
-      ],
-      "intent": "letter/relic remains readable; memory atmosphere and practical light stay off the hand/letter relationship"
-    },
-    {
-      "shot": 3,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-ATM-001",
-        "FX2-MOTION-003",
-        "FX2-LIGHT-002"
-      ],
-      "intent": "twilight route-away image; fort/coast geography remains fixed"
-    },
-    {
-      "shot": 4,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-ATM-001",
-        "FX2-MOTION-002",
-        "FX2-LIGHT-001"
-      ],
-      "intent": "chapel/return memory closes section without triggering ancestral climax"
-    }
-  ],
-  "runtime_authority": {
-    "runtime": "aivideoedit-fx-v2",
-    "seed": 302,
-    "implementation": "general/reusable/fx_v2/runtime.py",
-    "gate_finish": [
-      "authored-highlight bloom",
-      "very light temporal grain",
-      "restrained vignette"
-    ]
+  "section": "Remembered presence",
+  "review_mode": "baseline_fx_audit_delta_only",
+  "baseline_authority": {
+    "file": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4",
+    "drive_id": "1epCHhbFUtkLx1ysVl0cYUfuDi64ozz4c",
+    "policy": "preserve current edit, timing, hero order, audio, intro/outro, loops, camera motion and accepted repairs"
   },
-  "prohibited_fx_confirmed_absent": [
-    "face morphing",
-    "hand/letter deformation",
-    "ancestral climax",
-    "subject replacement",
-    "architecture drift",
-    "horizon/geography drift",
-    "whole-frame wobble"
+  "existing_fx_verified": [
+    "memory/apparition dissolve",
+    "luminous wall/map activation",
+    "gold energy travel",
+    "practical-light atmosphere"
   ],
-  "moving_proof": {
-    "file": "El_Viento_Batch04_FX_Moving_Proof_v1.mp4",
-    "sha256": "1416df27a1d15dc658cad1491a16301ac0a41753904d2d8b5f3257cbd5e58a38",
-    "duration_seconds": 21.504,
-    "video_duration_seconds": 21.5,
-    "resolution": "1920x1080",
-    "fps": 24,
-    "audio": "canonical El Viento trae tu nombre.wav segment 01:04.512-01:26.016, stereo AAC 48 kHz",
-    "technical_qc": "pass",
+  "delta_decision": "no duplicate FX stack added; current 1080p baseline already contains the intended moving FX language for this batch",
+  "technical_qc": {
+    "decode": "pass",
     "black_detect": "none",
     "freeze_detect": "none",
-    "visual_continuity_qc": "pass",
-    "artistic_acceptance": "accepted_by_autonomous_reviewer",
-    "lock_status": "locked",
-    "drive_file_id": "1cxoa6yYd4_LgGiHKTE6FuEQQFUAVQrhV",
-    "drive_folder_id": "1c5DBueZ5zbVwQG4Of1hJHmHJtg9qMpWE",
-    "qc_contact_sheet_drive_id": "1MGeGN3wz7GsmEjZnk2foILdKTeoX_x_B"
+    "temporal_motion": "present"
   },
-  "note": "Batch 04 passed autonomous technical/visual review and is locked. Continue to Batch 05."
+  "moving_proof": {
+    "file": "El_Viento_Batch04_BASELINE_AUDIT_v1.mp4",
+    "sha256": "96eee11e4469396e98665c27c3ccd765c88e92345f6956d911e27c809296d032",
+    "source": "current 1080p creative-lock edit",
+    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "drive_contact_sheet_id": "13khq9l2YNz3x5b6Cs7bRI3bU0QPpoqOJ"
+  },
+  "status": "locked_existing_fx_verified",
+  "prohibited_changes_confirmed_absent": [
+    "shot replacement",
+    "timing rewrite",
+    "hero identity drift",
+    "architecture/geography drift",
+    "whole-frame wobble",
+    "duplicate FX stacking"
+  ],
+  "note": "Gate completed by auditing the accepted current edit. Legacy pre-FX motion assets remain preserved as source/reference only and do not supersede the current timeline."
 }
