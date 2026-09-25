@@ -1,0 +1,82 @@
+{
+  "schema": "aivideoedit.fx-gate.v1",
+  "project": "El Viento trae tu nombre",
+  "refinement_id": "route4-two-heroes",
+  "batch": 6,
+  "segment": "01:46.176-01:52.680",
+  "source_policy": "preserve locked pre-FX motion variants; no regeneration",
+  "timing_authority_note": "Legacy Batch 06 lock called for release to black at 01:52.680, but current mux authority is 154.480 s and the accepted current edit continues into an extended final act. Therefore this FX gate preserves continuity and does NOT execute the legacy fade-to-black.",
+  "selected_motion_sources": [
+    {
+      "name": "01_ancestral_thread_motion_variant.mp4",
+      "sha256": "b392c2feae42a395558221ddd3c2d3f2eb2ff232a5ed582ad317cf9e3e532463"
+    },
+    {
+      "name": "02_map_thread_motion_variant.mp4",
+      "sha256": "3298bc685ff843ffda4eb5d112fa1a4e2ebf4814de3e919b1721acfc907556b8"
+    }
+  ],
+  "fx_decisions": [
+    {
+      "shot": 1,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-MOTION-003",
+        "FX2-LIGHT-001",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "ancestral-thread pair stays legible and connected; bounded thread/water/light motion"
+    },
+    {
+      "shot": 2,
+      "decision": "locked_after_autonomous_qc",
+      "canonical_fx_ids": [
+        "FX2-SURFACE-001",
+        "FX2-MOTION-002",
+        "FX2-LIGHT-001",
+        "FX2-LIGHT-002"
+      ],
+      "intent": "map/thread motif concentrates attention while preserving a clean handoff into the accepted extended final act"
+    }
+  ],
+  "runtime_authority": {
+    "runtime": "aivideoedit-fx-v2",
+    "seed": 302,
+    "implementation": "general/reusable/fx_v2/runtime.py",
+    "gate_finish": [
+      "authored-highlight bloom",
+      "very light temporal grain",
+      "restrained vignette"
+    ]
+  },
+  "prohibited_fx_confirmed_absent": [
+    "legacy fade-to-black at 01:52.680",
+    "face morphing",
+    "map deformation",
+    "subject replacement",
+    "architecture drift",
+    "horizon/geography drift",
+    "hallucinated figures",
+    "whole-frame wobble"
+  ],
+  "moving_proof": {
+    "file": "El_Viento_Batch06_FX_Moving_Proof_v1.mp4",
+    "sha256": "ec7c8d98d4e68a1f1996797bc7ae9cc561269697d1ad8861b3e2741755b60a47",
+    "duration_seconds": 6.504,
+    "resolution": "1920x1080",
+    "fps": 24,
+    "audio": "canonical El Viento trae tu nombre.wav segment 01:46.176-01:52.680, stereo AAC 48 kHz",
+    "technical_qc": "pass",
+    "black_detect": "none",
+    "freeze_detect": "none",
+    "visual_continuity_qc": "pass",
+    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "lock_status": "locked",
+    "drive_file_id": "1MgKKV4O4ZeYgt4BgS6Vbd6flvzlXgtH2",
+    "drive_folder_id": "1c5DBueZ5zbVwQG4Of1hJHmHJtg9qMpWE",
+    "qc_contact_sheet_drive_id": "1Q_pGjS-THHcdXTVirrfhk8AHnuuNCEBY"
+  },
+  "note": "Batch 06 passed autonomous technical/visual review and is locked as the hinge into the accepted 154.480 s extended act. No premature black release."
+}
