@@ -35,9 +35,12 @@
     "freeze_detect": "none",
     "drive_contact_sheet_id": "15SSXBvvxoh4PkuXpJKmTeP-xIRvxUAQc"
   },
-  "status": "reopened_missing_fx",
+  "status": "rendered_pending_user_visual_review",
   "user_override": {
     "at": "2026-09-25T00:45:00Z",
     "direction": "Current 1080 extended act is not accepted as FX-complete."
-  }
+  },
+  "master_candidate_sha256": "5fe93ef79d528a27cb7a15003aac9e9bc50a0db40a6719a102d36d5f10314af0",
+  "technical_qc_full_master": "pass",
+  "final_artistic_acceptance": "pending_user_visual_review"
 }
