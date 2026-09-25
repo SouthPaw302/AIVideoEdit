@@ -93,7 +93,6 @@
     "main branch untouched"
   ],
   "pending": [
-    "regenerate valid FX precompile lock for corrected 154.375-second contract",
     "complete missing FX pass for Batches 01-06 and extended act",
     "run full mode-aware/temporal/final QC after FX completion",
     "user approval of completed 1080 FX master"
@@ -101,7 +100,7 @@
   "optional_pending": [
     "Batch 06 FX still alternatives 09-10 only if explicitly requested"
   ],
-  "exact_resume_action": "Do not render yet. First regenerate and verify the FX lock using corrected current-script render inputs. Then, when rendering is authorized, apply missing repo FX batch-by-batch to the preserved current edit.",
+  "exact_resume_action": "FX lock is verified. Do not render under the current instruction. When rendering is authorized, apply the missing repo FX batch-by-batch to the preserved current edit, then run full QC.",
   "do_not_do": [
     "do not invent Batch 07",
     "do not regenerate locked media without QC failure or explicit user direction",
@@ -147,8 +146,9 @@
     "baseline": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4"
   },
   "full_fx_gate": {
-    "status": "reopened",
-    "result": "FAIL_MISSING_FX_REOPENED",
-    "updated_at": "2026-09-25T00:45:00Z"
+    "status": "reopened_missing_fx",
+    "result": "PRECOMPILE_LOCK_VERIFIED_RENDER_PENDING",
+    "fx_lock_sha256": "107090e7e09b2686f1c56b44d78d027b8802b7cdd2a16a583b1e8a5bbd073530",
+    "updated_at": "2026-09-25T01:35:00Z"
   }
 }
