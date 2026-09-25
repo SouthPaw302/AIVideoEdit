@@ -1,0 +1,29 @@
+{
+  "schema": "aivideoedit.full-fx-gate.v1",
+  "project": "El Viento trae tu nombre",
+  "refinement_id": "route4-two-heroes",
+  "baseline_file": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4",
+  "baseline_drive_id": "1epCHhbFUtkLx1ysVl0cYUfuDi64ozz4c",
+  "review_sha256": "2c1641ad8289fe62714d0bee28d50eb7d00a9192e143f96c3982156df01fb60c",
+  "duration_seconds": 154.375,
+  "resolution": "1920x1080",
+  "fps": 24,
+  "result": "fx_audit_complete_no_delta_render_required",
+  "core_batches_01_06": "locked_existing_fx_verified",
+  "extended_act": "locked_existing_fx_verified",
+  "technical_qc": {
+    "decode": "pass",
+    "black_detect": "none",
+    "freeze_detect": "none"
+  },
+  "preservation": {
+    "edit_timing": "unchanged",
+    "hero_order": "unchanged",
+    "audio": "unchanged",
+    "intro_outro": "unchanged",
+    "loops_camera_motion": "unchanged",
+    "hand_repair": "unchanged"
+  },
+  "next_step": "User reviews/approves the full 1080p FX master state. Do not upscale again until approval.",
+  "note": "The earlier 4K master remains rollback/reference only. The FX completion pass found substantial FX already baked into the accepted 1080 edit; duplicate stacking was intentionally avoided."
+}
