@@ -15,8 +15,10 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "locked",
-      "fx_proof": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4"
+      "fx_gate": "locked_existing_fx_verified",
+      "fx_proof": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4",
+      "fx_review": "current 1080p baseline audit; no duplicate stack",
+      "proof": "El_Viento_Batch01_BASELINE_AUDIT_v1.mp4"
     },
     {
       "batch": 2,
@@ -86,6 +88,7 @@
     "main branch untouched"
   ],
   "pending": [
+    "FX gate/review for Batches 02-06",
     "full 1080p FX assembly against the accepted current edit",
     "full-master QC",
     "user approval before any new upscale"
@@ -93,7 +96,7 @@
   "optional_pending": [
     "Batch 06 FX still alternatives 09-10 only if explicitly requested"
   ],
-  "exact_resume_action": "All six core FX gates are locked. Apply the approved Batch 01-06 FX language to the accepted 154.480 s 1080p creative-lock/current edit without changing its edit timing, intro/outro, hero order, scene transitions, camera motion or hand repair. Preserve the extended final act after 01:52.680. Render and QC one full 1080p FX master; do not upscale yet.",
+  "exact_resume_action": "Resume at Batch 02 FX gate using the current 1080p creative-lock edit as baseline. Audit existing FX first; add only missing effects without replacing shots, changing timing, or duplicating baked-in treatment.",
   "do_not_do": [
     "do not invent Batch 07",
     "do not regenerate locked media without QC failure or explicit user direction",
@@ -119,5 +122,10 @@
       5,
       6
     ]
+  },
+  "last_fx_action": {
+    "batch": 1,
+    "result": "locked_existing_fx_verified",
+    "proof_sha256": "0922b1b02dcc11f56ae090aff4884eef4af47a338e91eb0af7c7dc89f6b77c00"
   }
 }
