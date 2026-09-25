@@ -75,7 +75,8 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "pending"
+      "fx_gate": "locked",
+      "fx_proof": "El_Viento_Batch06_FX_Moving_Proof_v1.mp4"
     }
   ],
   "preserved": [
@@ -85,14 +86,14 @@
     "main branch untouched"
   ],
   "pending": [
-    "FX gate/review for Batch 06",
-    "Batch 06 moving proof",
-    "full 1080p FX assembly after core batch proofs pass"
+    "full 1080p FX assembly against the accepted current edit",
+    "full-master QC",
+    "user approval before any new upscale"
   ],
   "optional_pending": [
     "Batch 06 FX still alternatives 09-10 only if explicitly requested"
   ],
-  "exact_resume_action": "Resume at Batch 06 FX gate (01:46.176-01:52.680). Preserve the two locked thread/map shots. Because the current mux authority extends to 02:34.480, do not execute the legacy fade-to-black at 01:52.680; hand off cleanly into the existing extended final act.",
+  "exact_resume_action": "All six core FX gates are locked. Apply the approved Batch 01-06 FX language to the accepted 154.480 s 1080p creative-lock/current edit without changing its edit timing, intro/outro, hero order, scene transitions, camera motion or hand repair. Preserve the extended final act after 01:52.680. Render and QC one full 1080p FX master; do not upscale yet.",
   "do_not_do": [
     "do not invent Batch 07",
     "do not regenerate locked media without QC failure or explicit user direction",
@@ -100,14 +101,23 @@
     "do not overwrite preserved masters"
   ],
   "fx_completion_pass": {
-    "status": "in_progress",
+    "status": "core_fx_gates_locked_full_assembly_pending",
     "batch_01": "locked",
-    "current_batch": 6,
+    "current_batch": null,
     "reference_4k_policy": "rollback/reference only; do not upscale again during FX completion",
     "final_rule": "user approval required on the completed 1080p FX master before any new upscale",
     "batch_02": "locked",
     "batch_03": "locked",
     "batch_04": "locked",
-    "batch_05": "locked"
+    "batch_05": "locked",
+    "batch_06": "locked",
+    "core_batches_locked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
   }
 }
