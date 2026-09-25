@@ -93,13 +93,12 @@
     "main branch untouched"
   ],
   "pending": [
-    "extended-act FX audit for current 112.680-154.375 timeline",
-    "full 1080p FX-master comparison/QC after extended-act audit"
+    "user approval of full 1080p FX master state"
   ],
   "optional_pending": [
     "Batch 06 FX still alternatives 09-10 only if explicitly requested"
   ],
-  "exact_resume_action": "Audit the current extended final act (112.680-154.375) against preserved supplemental Batches 07-09 without inventing new timeline assignments. Preserve current edit and add only missing FX. Do not create Batch 10.",
+  "exact_resume_action": "Present/review the full 1080p FX master state. If approved, preserve it as the creative FX lock and only then permit a new 4K upscale/reconstruction if needed.",
   "do_not_do": [
     "do not invent Batch 07",
     "do not regenerate locked media without QC failure or explicit user direction",
@@ -143,5 +142,14 @@
     ],
     "method": "current-edit baseline FX audit/delta-only",
     "baseline": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4"
+  },
+  "full_fx_gate": {
+    "status": "complete",
+    "result": "fx_audit_complete_no_delta_render_required",
+    "review_file": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4",
+    "review_sha256": "2c1641ad8289fe62714d0bee28d50eb7d00a9192e143f96c3982156df01fb60c",
+    "core_batches_01_06": "locked",
+    "extended_act": "locked",
+    "technical_qc": "pass"
   }
 }
