@@ -2,7 +2,7 @@
   "schema": "aivideoedit.production-checkpoint.v1",
   "project": "El Viento trae tu nombre",
   "branch": "song/el-viento-trae-tu-nombre",
-  "current_stage": "1080p FX completion pass in progress; Batches 01-04 FX locked",
+  "current_stage": "1080p FX completion pass in progress; Batches 01-05 FX locked",
   "active_scope": "creative_refinement/fx_completion",
   "audio_revision": {
     "title": "El Viento trae tu nombre.wav",
@@ -79,9 +79,10 @@
     "Batch 01 canonical FX runtime proof rendered, QC passed, Drive-backed and locked",
     "Batch 02 canonical FX runtime proof rendered, QC passed, Drive-backed and locked",
     "Batch 03 canonical FX runtime proof rendered, QC passed, Drive-backed and locked",
-    "Batch 04 canonical FX runtime proof rendered, QC passed, Drive-backed and locked"
+    "Batch 04 canonical FX runtime proof rendered, QC passed, Drive-backed and locked",
+    "Batch 05 canonical FX runtime proof rendered, QC passed, Drive-backed and locked"
   ],
-  "exact_next_action": "Resume Batch 05 FX gate at 01:26.016. This is the chorus crest: escalate inherited-memory/thread energy using the locked sources, then QC and lock the proof.",
+  "exact_next_action": "Resume Batch 06 FX gate at 01:46.176. Apply bounded thread/map FX to its two shots, but do NOT use the legacy release-to-black because the current 154.480 s edit continues into the extended final act.",
   "do_not_do": [
     "do not use the old 112.680 s timing as current mux authority",
     "do not create Batch 10",
@@ -362,9 +363,10 @@
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
-    "current_batch": 5,
+    "current_batch": 6,
     "batch_01_proof": {
       "file": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4",
       "sha256": "8a507ce08b1da649c721a8f9ebc199f15d9b4ec42af90baed61f0ac4f2636e81",
@@ -393,6 +395,13 @@
       "sha256": "1416df27a1d15dc658cad1491a16301ac0a41753904d2d8b5f3257cbd5e58a38",
       "drive_file_id": "1cxoa6yYd4_LgGiHKTE6FuEQQFUAVQrhV",
       "qc_contact_sheet_drive_id": "1MGeGN3wz7GsmEjZnk2foILdKTeoX_x_B",
+      "status": "locked"
+    },
+    "batch_05_proof": {
+      "file": "El_Viento_Batch05_FX_Moving_Proof_v1.mp4",
+      "sha256": "8d2ece53c4a46f35dd74063e402828f0b9a0d9e6e3c7422fa9eb5dc74952ffea",
+      "drive_file_id": "1x_-bBs6YL7BlNAYbgmogytdP5Dgk1S13",
+      "qc_contact_sheet_drive_id": "1Zktzagr3_2hXADi9z0RJSDbJJ-8MGqJ8",
       "status": "locked"
     }
   }
