@@ -1,18 +1,15 @@
 # Final QC
 
-Technical pass: **PASS**
+Current preserved Route 4 baseline: **TECHNICAL PASS / CREATIVE REVISION REQUIRED**.
 
+- Native reconstruction: 1920x1080, 24 fps, 3705 frames, 154.375 s
+- Source-audio authority: 154.480 s
 - Decode: PASS
-- Duration: 112.666667 s vs 112.68 s target — PASS
-- Frame count: 2704 — PASS
-- 1920x1080 / 24 fps — PASS
+- Black detect: PASS
+- Freeze detect: PASS
 - Audio present: PASS
-- Canonical FX lock live-verified: PASS
-- blackdetect (repo threshold): PASS, zero events
-- freezedetect (repo threshold): PASS, zero events
-- Master SHA-256: `7ba526fbfc32c82e6045a46488314d83095152aa81da97f876afa2bdf57adffe`
-- QC contact sheet Drive ID: `1sXK0-zgCv_OuTOURE5POxeje71tyJseM`
+- Current FX lock: **STALE / INVALIDATED**
+- Full FX completion: **FAIL — missing FX confirmed by user review**
+- Final creative acceptance: **NOT GRANTED**
 
-Creative full-export review: **pending**.
-
-The user accepted all 11 moving proof recipes before this assembly. Final acceptance must refer to the complete export before advancing to FINAL_QC_PASSED.
+The obsolete 112.680-second QC record has been archived. Do not promote or upscale the current baseline as a completed FX master.
