@@ -23,7 +23,22 @@
       "production_mode": "living_scene",
       "section": "Opening remembrance",
       "source_lock": "refinements/route4-two-heroes/shot_locks/BATCH_01_OPENING_REMEMBRANCE.json",
-      "fx_status": "reopened_missing_fx"
+      "fx_status": "reopened_missing_fx",
+      "motion_regions": [
+        "sea/water",
+        "rain/mist",
+        "lantern/practical light",
+        "luminous thread",
+        "bounded depth layers"
+      ],
+      "protected_regions": [
+        "male hero identity",
+        "female hero identity",
+        "faces/anatomy",
+        "fort/harbor architecture",
+        "horizon/coastline",
+        "thread continuity"
+      ]
     },
     {
       "shot_id": "R4-B02",
@@ -32,7 +47,22 @@
       "production_mode": "living_scene",
       "section": "Distance and origin",
       "source_lock": "refinements/route4-two-heroes/shot_locks/BATCH_02_DISTANCE_AND_ORIGIN.json",
-      "fx_status": "reopened_missing_fx"
+      "fx_status": "reopened_missing_fx",
+      "motion_regions": [
+        "map/parchment details",
+        "harbor water",
+        "sky/atmosphere",
+        "practical light",
+        "bounded parallax"
+      ],
+      "protected_regions": [
+        "male hero identity",
+        "female hero identity",
+        "duo relationship",
+        "fort/harbor geography",
+        "map-contact anatomy",
+        "horizon"
+      ]
     },
     {
       "shot_id": "R4-B03",
@@ -41,7 +71,22 @@
       "production_mode": "living_scene",
       "section": "Verse 3 expansion",
       "source_lock": "refinements/route4-two-heroes/shot_locks/BATCH_03_VERSE3_EXPANSION.json",
-      "fx_status": "reopened_missing_fx"
+      "fx_status": "reopened_missing_fx",
+      "motion_regions": [
+        "memory overlays",
+        "rain/mist",
+        "lantern light",
+        "coastal water",
+        "double-exposure layers"
+      ],
+      "protected_regions": [
+        "hero identities",
+        "faces/anatomy",
+        "fort geometry",
+        "coastline",
+        "lantern architecture",
+        "no extra figures"
+      ]
     },
     {
       "shot_id": "R4-B04",
@@ -50,7 +95,22 @@
       "production_mode": "living_scene",
       "section": "Remembered presence",
       "source_lock": "refinements/route4-two-heroes/shot_locks/BATCH_04_REMEMBERED_PRESENCE.json",
-      "fx_status": "reopened_missing_fx"
+      "fx_status": "reopened_missing_fx",
+      "motion_regions": [
+        "memory apparition layers",
+        "map/wall light",
+        "gold light travel",
+        "atmospheric haze",
+        "bounded camera depth"
+      ],
+      "protected_regions": [
+        "hero identities",
+        "hands/anatomy",
+        "architecture",
+        "map geography",
+        "horizon",
+        "stable world topology"
+      ]
     },
     {
       "shot_id": "R4-B05",
@@ -59,7 +119,22 @@
       "production_mode": "living_scene",
       "section": "Chorus crest",
       "source_lock": "refinements/route4-two-heroes/shot_locks/BATCH_05_CHORUS_CREST.json",
-      "fx_status": "reopened_missing_fx"
+      "fx_status": "reopened_missing_fx",
+      "motion_regions": [
+        "thread energy",
+        "portal/window glow",
+        "map/table illumination",
+        "memory overlays",
+        "warm practical light"
+      ],
+      "protected_regions": [
+        "hero identities",
+        "faces/anatomy",
+        "fort/harbor geography",
+        "thread motif",
+        "architecture",
+        "no topology drift"
+      ]
     },
     {
       "shot_id": "R4-B06",
@@ -83,7 +158,23 @@
         "refinements/route4-two-heroes/media/BATCH_09_FINAL_SUPPLEMENTAL.json"
       ],
       "fx_status": "reopened_missing_fx",
-      "note": "Preserve current edit and timing. Supplemental manifests remain source libraries; no fabricated internal timecodes."
+      "note": "Preserve current edit and timing. Supplemental manifests remain source libraries; no fabricated internal timecodes.",
+      "motion_regions": [
+        "ancestral apparition layers",
+        "golden thread structures",
+        "harbor water/reflections",
+        "lantern/candle light",
+        "celestial atmosphere",
+        "bounded depth/parallax"
+      ],
+      "protected_regions": [
+        "hero identities",
+        "ancestral silhouettes",
+        "fort/harbor geography",
+        "thread continuity",
+        "intro/outro timing",
+        "final celestial-thread composition"
+      ]
     }
   ],
   "preservation": {
@@ -94,5 +185,5 @@
     "hand_repair": "locked",
     "upscale": "blocked until 1080 FX master is approved"
   },
-  "updated_at": "2026-09-25T00:45:00Z"
+  "updated_at": "2026-09-25T01:22:00Z"
 }
