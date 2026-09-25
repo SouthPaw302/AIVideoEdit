@@ -130,6 +130,7 @@
     "do not create Batch 10",
     "do not upscale before approved 1080 FX master"
   ],
-  "note": "Current user explicitly reports the existing 1080 is still missing FX. This manifest supersedes the obsolete 112.68-second FX contract. A new precompile lock is required before any future FX render.",
-  "updated_at": "2026-09-25T00:45:00Z"
+  "note": "Current user explicitly reports the existing 1080 is still missing FX. This manifest supersedes the obsolete 112.68-second FX contract. Precompile lock regeneration is requested now; rendering remains blocked by the current no-render instruction.",
+  "updated_at": "2026-09-25T00:45:00Z",
+  "lock_request_at": "2026-09-25T01:31:00Z"
 }
