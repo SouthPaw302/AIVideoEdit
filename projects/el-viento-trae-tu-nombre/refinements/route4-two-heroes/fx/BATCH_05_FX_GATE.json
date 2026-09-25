@@ -32,7 +32,7 @@
     "artistic_acceptance": "superseded_missing_fx",
     "drive_contact_sheet_id": "1OSwpoja8YaQ6ntMnHe5Vyxt0wfBSS74a"
   },
-  "status": "reopened_missing_fx",
+  "status": "rendered_pending_user_visual_review",
   "prohibited_changes_confirmed_absent": [
     "shot replacement",
     "timing rewrite",
@@ -47,5 +47,8 @@
     "direction": "Current 1080 is still missing FX; prior audit/lock is not sufficient artistic completion."
   },
   "prior_lock_preserved": true,
-  "current_authority": "Preserve current 154.375-second edit and perform a real delta FX pass; do not replace shots."
+  "current_authority": "Preserve current 154.375-second edit and perform a real delta FX pass; do not replace shots.",
+  "master_candidate_sha256": "5fe93ef79d528a27cb7a15003aac9e9bc50a0db40a6719a102d36d5f10314af0",
+  "technical_qc_full_master": "pass",
+  "final_artistic_acceptance": "pending_user_visual_review"
 }
