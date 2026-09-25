@@ -8,9 +8,9 @@
   "duration_seconds": 154.375,
   "resolution": "1920x1080",
   "fps": 24,
-  "result": "fx_audit_complete_no_delta_render_required",
-  "core_batches_01_06": "locked_existing_fx_verified",
-  "extended_act": "locked_existing_fx_verified",
+  "result": "FAIL_MISSING_FX_REOPENED",
+  "core_batches_01_06": "reopened_missing_fx",
+  "extended_act": "reopened_missing_fx",
   "technical_qc": {
     "decode": "pass",
     "black_detect": "none",
@@ -24,6 +24,11 @@
     "loops_camera_motion": "unchanged",
     "hand_repair": "unchanged"
   },
-  "next_step": "User reviews/approves the full 1080p FX master state. Do not upscale again until approval.",
-  "note": "The earlier 4K master remains rollback/reference only. The FX completion pass found substantial FX already baked into the accepted 1080 edit; duplicate stacking was intentionally avoided."
+  "next_step": "Rebuild a valid precompile FX lock from corrected 154.375-second requirements. Then perform the real full-timeline missing-FX pass on the preserved current edit; no rendering while the no-render instruction is active.",
+  "note": "Previous 'no delta render required' conclusion is superseded by direct user review.",
+  "final_fx_complete": false,
+  "user_override": {
+    "at": "2026-09-25T00:45:00Z",
+    "direction": "The current 1080 is missing FX."
+  }
 }
