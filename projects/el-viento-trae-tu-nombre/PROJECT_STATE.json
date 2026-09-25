@@ -3,7 +3,7 @@
   "project_id": "el-viento-trae-tu-nombre",
   "branch": "song/el-viento-trae-tu-nombre",
   "director_brain_version": 2,
-  "stage": "ASSEMBLED",
+  "stage": "SHOT_PROOFS_ACCEPTED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
   "music_analysis_complete": true,
@@ -18,8 +18,8 @@
   "shot_package_asset_count": 31,
   "shot_proofs_accepted": true,
   "mode_aware_proofs_accepted": true,
-  "fx_lock_verified": true,
-  "assembly_complete": true,
+  "fx_lock_verified": false,
+  "assembly_complete": false,
   "final_qc_passed": false,
   "mode_aware_qc_passed": false,
   "archive_complete": false,
@@ -37,8 +37,19 @@
   "previous_assembly_asset_id": "MASTER-1080P-OPTION3-V2",
   "previous_assembly_sha256": "4ac3f137d9bba34d05665acd9a344883f958bc04415b7b787e2bde2d020b96ab",
   "active_refinement_id": "route4-two-heroes",
-  "active_refinement_status": "HERO_CHARACTER_LOCK_REQUIRED",
+  "active_refinement_status": "FX_GATES_REOPENED_MISSING_FX",
   "active_direction": "route4_island_dream_ancestral_memory_two_heroes",
-  "next_media_batch": "BATCH-01-HERO-CHARACTER-LOCK",
-  "refinement_render_pending": true
+  "next_media_batch": null,
+  "refinement_render_pending": true,
+  "current_edit_duration_seconds": 154.375,
+  "current_audio_authority_seconds": 154.48,
+  "current_baseline_sha256": "5d822ef0442a086d13c9a7b94f0b6dcf8df5eac6e3b96495a70ff90192e68021",
+  "current_baseline_role": "preserved edit/timing baseline; FX incomplete",
+  "stale_legacy_contract": {
+    "duration_seconds": 112.68,
+    "shot_ids": "S01-S11",
+    "archived": true
+  },
+  "exact_next_action": "Regenerate the FX precompile lock against corrected Route 4 requirements, then resume the missing-FX pass on the preserved 154.375-second edit. Do not render while the current no-render instruction remains active.",
+  "updated_at": "2026-09-25T00:45:00Z"
 }
