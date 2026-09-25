@@ -28,10 +28,10 @@
     "file": "El_Viento_Batch06_BASELINE_AUDIT_v1.mp4",
     "sha256": "32333b686fe5ebedf94267abd9d1fa0dd8d40fa729eb31ec092686adf880bd09",
     "source": "current 1080p creative-lock edit",
-    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "artistic_acceptance": "superseded_missing_fx",
     "drive_contact_sheet_id": "1Yho3zLtyQNjQPC2Z6v_OKzDl9HgJCDD9"
   },
-  "status": "locked_existing_fx_verified",
+  "status": "reopened_missing_fx",
   "prohibited_changes_confirmed_absent": [
     "shot replacement",
     "timing rewrite",
@@ -40,5 +40,11 @@
     "whole-frame wobble",
     "duplicate FX stacking"
   ],
-  "note": "Gate completed by auditing the accepted current edit. Legacy pre-FX motion assets remain preserved as source/reference only and do not supersede the current timeline."
+  "note": "Gate completed by auditing the accepted current edit. Legacy pre-FX motion assets remain preserved as source/reference only and do not supersede the current timeline.",
+  "user_override": {
+    "at": "2026-09-25T00:45:00Z",
+    "direction": "Current 1080 is still missing FX; prior audit/lock is not sufficient artistic completion."
+  },
+  "prior_lock_preserved": true,
+  "current_authority": "Preserve current 154.375-second edit and perform a real delta FX pass; do not replace shots."
 }
