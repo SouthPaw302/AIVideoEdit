@@ -93,7 +93,7 @@
     "technical_qc": "pass",
     "black_detect": "none",
     "freeze_detect": "none",
-    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "artistic_acceptance": "superseded_missing_fx",
     "drive_qc_contact_id": "1xUlH03Hq2OuUoETIw1ufq0JTDg22HqUH",
     "note": "Legacy/replacement-style Batch 01 proof is not promotion authority because the current-edit preservation directive supersedes shot replacement."
   },
@@ -128,5 +128,11 @@
     "current intro/title treatment"
   ],
   "delta_decision": "no additional FX required for Batch 01 after baseline audit; avoid duplicate bloom/grain/light stacking",
-  "status": "locked_existing_fx_verified"
+  "status": "reopened_missing_fx",
+  "user_override": {
+    "at": "2026-09-25T00:45:00Z",
+    "direction": "Current 1080 is still missing FX; prior audit/lock is not sufficient artistic completion."
+  },
+  "prior_lock_preserved": true,
+  "current_authority": "Preserve current 154.375-second edit and perform a real delta FX pass; do not replace shots."
 }
