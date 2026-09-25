@@ -35,40 +35,35 @@
   },
   "refinement_scope": {
     "active": true,
-    "goal": "Rebuild the film from the planning table around Route 4 with two recurring hero characters, stronger narrative causality, more legible island/ancestral imagery and deeper purposeful use of the approved effect stack.",
+    "goal": "Finish the missing repo FX pass on the preserved Route 4 154.375-second edit. Preserve timing, hero order, audio, intro/outro, camera motion, hand repair and accepted media.",
     "allowed_changes": [
-      "replace the current creative storyboard for the new refinement",
-      "change shot count and shot timing while preserving the canonical song duration",
-      "generate new hero-character media and later environment/story media only when required by the repo sequence",
-      "reuse, crop, composite or texture-source existing approved media",
-      "create new motion/FX variants when a locked shot requires them",
-      "use production-approved repo FX and transitions where narratively motivated",
-      "build new proofs and a new full assembly candidate"
+      "apply or tune production-approved repo FX in existing scenes",
+      "reuse existing loop/motion/FX variation libraries",
+      "create QC/proof evidence from the preserved edit",
+      "update manifests/locks/QC records"
     ],
     "forbidden_changes": [
       "modify main for song-production assets",
       "delete or overwrite preserved v1 or Option 3 v2 masters",
       "change the canonical source audio",
       "change the current-user lyric sheet without a new user instruction",
-      "generate later media batches before their dependency gates are satisfied"
+      "generate later media batches before their dependency gates are satisfied",
+      "restart the production",
+      "regenerate accepted media without QC failure or explicit user direction",
+      "change current edit timing/hero order",
+      "create Batch 10",
+      "upscale before 1080 FX approval"
     ],
-    "restart_authorized": true
+    "restart_authorized": false
   },
   "recut_scope": {
     "active": true,
     "named_defects": [
-      "current film remains too abstract",
-      "insufficient human emotional spine",
-      "no stable recurring male and female hero characters",
-      "island, fort, village, harbor and ancestral imagery need more readable screen time",
-      "approved effects vocabulary is underused as a storytelling mechanism"
+      "current 1080 still lacks the intended full FX pass"
     ],
     "allowed_changes": [
-      "new two-hero storyboard",
-      "new visual media",
-      "new shot timing",
-      "new FX plan",
-      "new assembly"
+      "FX-only delta work inside the existing edit",
+      "QC evidence and gate metadata"
     ],
     "forbidden_changes": [
       "replacement of canonical audio",
@@ -76,7 +71,7 @@
     ],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Route 4 — Island Dream / Ancestral Memory with two recurring hero characters, one male and one female. Follow the repository workflow and create media in batches only as each dependency requires it. Do not stop between ordinary production steps.",
-  "exact_next_action": "Create and QC Batch 01 HERO CHARACTER LOCK only: canonical male hero references, canonical female hero references and at least one shared two-character anchor composition. Register accepted/candidate media before creating environment or later-story batches.",
-  "updated_at_utc": "2026-09-22T08:33:00Z"
+  "current_user_direction": "Preserve the existing Route 4 154.375-second edit and finish the missing FX using the repo stack. Do not render under the current no-render instruction; do not restart, regenerate accepted media, create Batch 10, modify main, or upscale before 1080 FX approval.",
+  "exact_next_action": "Regenerate and verify the FX precompile lock against corrected SCRIPT.json and FX_REQUIREMENTS.json. Then resume missing-FX work only when rendering is authorized.",
+  "updated_at_utc": "2026-09-25T01:28:00Z"
 }
