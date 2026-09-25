@@ -4,111 +4,42 @@
   "refinement_id": "route4-two-heroes",
   "batch": 5,
   "segment": "01:26.016-01:46.176",
-  "source_policy": "preserve locked pre-FX motion variants; no regeneration",
-  "selected_motion_sources": [
-    {
-      "name": "01_generations_motion_variant.mp4",
-      "sha256": "6146abaf2727f6ce8789bdf2367650d2c7cb3e14970ee64787aa48318417e502"
-    },
-    {
-      "name": "02_thread_generations_motion_variant.mp4",
-      "sha256": "5ac813f6293ec9bee834ef5679b603296b0cc108477f3f5a44b101b826ef7ec5"
-    },
-    {
-      "name": "03_harbor_threads_motion_variant.mp4",
-      "sha256": "c0055ec84b359c1a4aa0ee8f18222910f14676063c8c1748197f6bb6e538fbc3"
-    },
-    {
-      "name": "04_sunset_thread_motion_variant.mp4",
-      "sha256": "ac07ef7dfb1c348f14a55860b23a1df359353cf9beb409dedfd5d19e1e5e77d1"
-    }
-  ],
-  "fx_decisions": [
-    {
-      "shot": 1,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-ATM-001",
-        "FX2-MOTION-002",
-        "FX2-LIGHT-001",
-        "FX2-LIGHT-002"
-      ],
-      "intent": "generations emerge around hero while luminous thread remains readable"
-    },
-    {
-      "shot": 2,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-ATM-001",
-        "FX2-MOTION-002",
-        "FX2-LIGHT-001",
-        "FX2-LIGHT-002"
-      ],
-      "intent": "thread becomes carrier across generations with stronger but bounded light breathing"
-    },
-    {
-      "shot": 3,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-MOTION-002",
-        "FX2-MOTION-003",
-        "FX2-LIGHT-001",
-        "FX2-LIGHT-002"
-      ],
-      "intent": "chorus expands across harbor; preserve island geography while thread/water/light carry energy"
-    },
-    {
-      "shot": 4,
-      "decision": "locked_after_autonomous_qc",
-      "canonical_fx_ids": [
-        "FX2-SURFACE-001",
-        "FX2-MOTION-002",
-        "FX2-MOTION-003",
-        "FX2-LIGHT-001",
-        "FX2-LIGHT-002"
-      ],
-      "intent": "compress accumulated imagery toward single luminous thread motif"
-    }
-  ],
-  "runtime_authority": {
-    "runtime": "aivideoedit-fx-v2",
-    "seed": 302,
-    "implementation": "general/reusable/fx_v2/runtime.py",
-    "gate_finish": [
-      "authored-highlight bloom",
-      "very light temporal grain",
-      "restrained vignette"
-    ]
+  "section": "Chorus crest",
+  "review_mode": "baseline_fx_audit_delta_only",
+  "baseline_authority": {
+    "file": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4",
+    "drive_id": "1epCHhbFUtkLx1ysVl0cYUfuDi64ozz4c",
+    "policy": "preserve current edit, timing, hero order, audio, intro/outro, loops, camera motion and accepted repairs"
   },
-  "prohibited_fx_confirmed_absent": [
-    "face morphing",
-    "ancestral-figure morphing",
-    "subject replacement",
-    "architecture drift",
-    "horizon/geography drift",
-    "hallucinated extra generations",
-    "whole-frame wobble"
+  "existing_fx_verified": [
+    "portal/window glow evolution",
+    "thread energy",
+    "map/table light activation",
+    "memory double exposure",
+    "warm practical light"
   ],
-  "moving_proof": {
-    "file": "El_Viento_Batch05_FX_Moving_Proof_v1.mp4",
-    "sha256": "8d2ece53c4a46f35dd74063e402828f0b9a0d9e6e3c7422fa9eb5dc74952ffea",
-    "duration_seconds": 20.166667,
-    "target_segment_seconds": 20.16,
-    "resolution": "1920x1080",
-    "fps": 24,
-    "audio": "canonical El Viento trae tu nombre.wav segment 01:26.016-01:46.176, stereo AAC 48 kHz",
-    "technical_qc": "pass",
+  "delta_decision": "no duplicate FX stack added; current 1080p baseline already contains the intended moving FX language for this batch",
+  "technical_qc": {
+    "decode": "pass",
     "black_detect": "none",
     "freeze_detect": "none",
-    "visual_continuity_qc": "pass",
-    "artistic_acceptance": "accepted_by_autonomous_reviewer",
-    "lock_status": "locked",
-    "drive_file_id": "1x_-bBs6YL7BlNAYbgmogytdP5Dgk1S13",
-    "drive_folder_id": "1c5DBueZ5zbVwQG4Of1hJHmHJtg9qMpWE",
-    "qc_contact_sheet_drive_id": "1Zktzagr3_2hXADi9z0RJSDbJJ-8MGqJ8"
+    "temporal_motion": "present"
   },
-  "note": "Batch 05 chorus crest passed autonomous technical/visual review and is locked. Continue to Batch 06. Frame-quantized 24 fps video duration is 20.166667 s for the 20.16 s authored segment."
+  "moving_proof": {
+    "file": "El_Viento_Batch05_BASELINE_AUDIT_v1.mp4",
+    "sha256": "3b481fb99eae4cf5b28871282a08b8062bf44ef7a4e5f8957b218808c0a9d29f",
+    "source": "current 1080p creative-lock edit",
+    "artistic_acceptance": "accepted_by_autonomous_reviewer",
+    "drive_contact_sheet_id": "1OSwpoja8YaQ6ntMnHe5Vyxt0wfBSS74a"
+  },
+  "status": "locked_existing_fx_verified",
+  "prohibited_changes_confirmed_absent": [
+    "shot replacement",
+    "timing rewrite",
+    "hero identity drift",
+    "architecture/geography drift",
+    "whole-frame wobble",
+    "duplicate FX stacking"
+  ],
+  "note": "Gate completed by auditing the accepted current edit. Legacy pre-FX motion assets remain preserved as source/reference only and do not supersede the current timeline."
 }
