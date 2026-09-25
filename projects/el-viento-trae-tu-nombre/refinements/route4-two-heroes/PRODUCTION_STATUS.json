@@ -17,7 +17,7 @@
       "pre_fx_motion": true,
       "fx_gate": "locked_existing_fx_verified",
       "fx_proof": "El_Viento_Batch01_FX_Moving_Proof_v3.mp4",
-      "fx_review": "current 1080p baseline audit; no duplicate stack",
+      "fx_review": "audited against current 1080p creative-lock edit; no duplicate stack",
       "proof": "El_Viento_Batch01_BASELINE_AUDIT_v1.mp4"
     },
     {
@@ -29,8 +29,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "locked",
-      "fx_proof": "El_Viento_Batch02_FX_Moving_Proof_v1.mp4"
+      "fx_gate": "locked_existing_fx_verified",
+      "fx_proof": "El_Viento_Batch02_FX_Moving_Proof_v1.mp4",
+      "fx_review": "audited against current 1080p creative-lock edit; no duplicate stack"
     },
     {
       "batch": 3,
@@ -41,8 +42,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "locked",
-      "fx_proof": "El_Viento_Batch03_FX_Moving_Proof_v1.mp4"
+      "fx_gate": "locked_existing_fx_verified",
+      "fx_proof": "El_Viento_Batch03_FX_Moving_Proof_v1.mp4",
+      "fx_review": "audited against current 1080p creative-lock edit; no duplicate stack"
     },
     {
       "batch": 4,
@@ -53,8 +55,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "locked",
-      "fx_proof": "El_Viento_Batch04_FX_Moving_Proof_v1.mp4"
+      "fx_gate": "locked_existing_fx_verified",
+      "fx_proof": "El_Viento_Batch04_FX_Moving_Proof_v1.mp4",
+      "fx_review": "audited against current 1080p creative-lock edit; no duplicate stack"
     },
     {
       "batch": 5,
@@ -65,8 +68,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "locked",
-      "fx_proof": "El_Viento_Batch05_FX_Moving_Proof_v1.mp4"
+      "fx_gate": "locked_existing_fx_verified",
+      "fx_proof": "El_Viento_Batch05_FX_Moving_Proof_v1.mp4",
+      "fx_review": "audited against current 1080p creative-lock edit; no duplicate stack"
     },
     {
       "batch": 6,
@@ -77,8 +81,9 @@
       "clean_loops": true,
       "gif_previews": true,
       "pre_fx_motion": true,
-      "fx_gate": "locked",
-      "fx_proof": "El_Viento_Batch06_FX_Moving_Proof_v1.mp4"
+      "fx_gate": "locked_existing_fx_verified",
+      "fx_proof": "El_Viento_Batch06_FX_Moving_Proof_v1.mp4",
+      "fx_review": "audited against current 1080p creative-lock edit; no duplicate stack"
     }
   ],
   "preserved": [
@@ -88,15 +93,13 @@
     "main branch untouched"
   ],
   "pending": [
-    "FX gate/review for Batches 02-06",
-    "full 1080p FX assembly against the accepted current edit",
-    "full-master QC",
-    "user approval before any new upscale"
+    "extended-act FX audit for current 112.680-154.375 timeline",
+    "full 1080p FX-master comparison/QC after extended-act audit"
   ],
   "optional_pending": [
     "Batch 06 FX still alternatives 09-10 only if explicitly requested"
   ],
-  "exact_resume_action": "Resume at Batch 02 FX gate using the current 1080p creative-lock edit as baseline. Audit existing FX first; add only missing effects without replacing shots, changing timing, or duplicating baked-in treatment.",
+  "exact_resume_action": "Audit the current extended final act (112.680-154.375) against preserved supplemental Batches 07-09 without inventing new timeline assignments. Preserve current edit and add only missing FX. Do not create Batch 10.",
   "do_not_do": [
     "do not invent Batch 07",
     "do not regenerate locked media without QC failure or explicit user direction",
@@ -127,5 +130,18 @@
     "batch": 1,
     "result": "locked_existing_fx_verified",
     "proof_sha256": "0922b1b02dcc11f56ae090aff4884eef4af47a338e91eb0af7c7dc89f6b77c00"
+  },
+  "core_fx_gates": {
+    "status": "complete",
+    "batches": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "method": "current-edit baseline FX audit/delta-only",
+    "baseline": "El_Viento_Route4_1080p_CREATIVE_LOCK_v5_review.mp4"
   }
 }
