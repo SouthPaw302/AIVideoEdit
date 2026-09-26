@@ -9,7 +9,8 @@
     "atmospheric_plate",
     "reactive_plate",
     "transition_media",
-    "analysis_qc_media"
+    "analysis_qc_media",
+    "loop_media"
   ],
   "visual_direction_gate": {
     "required": false,
@@ -34,7 +35,9 @@
     "long_hold_scene_evolution": true,
     "use_phoenix_loop_methods": true,
     "use_canonical_main_fx_resolver": true,
-    "hero_library_status": "not_selected_until_measured_extraction"
+    "hero_library_status": "not_selected_until_measured_extraction",
+    "audio_authority": "private Google Drive production folder / 01 Source Audio",
+    "long_form_workflow": "current-main resolved workflows only"
   },
-  "current_phase": "SOURCE_LIBRARY_INGEST"
+  "current_phase": "LONG_FORM_AUDIO_AND_LOOP_ANALYSIS"
 }
