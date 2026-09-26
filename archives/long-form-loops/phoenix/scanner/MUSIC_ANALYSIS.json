@@ -1,0 +1,40 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": true,
+  "duration_seconds": 305,
+  "lyrics": {
+    "status": "instrumental",
+    "source": "current production direction",
+    "text_file": null,
+    "directing_use": "music structure, energy, groove, tension and release are primary narrative authority"
+  },
+  "genre": {
+    "status": "user_confirmed",
+    "label": "tribal house",
+    "source": "current_user_instruction",
+    "confidence": 1,
+    "user_declaration": "Tribal House Test"
+  },
+  "rhythm": {
+    "tempo_status": "approximate",
+    "tempo_bpm": 123.05,
+    "pulse_description": "Dense tribal-house percussion supports multiple pulse/subdivision readings; 123.05 BPM is the working approximate edit grid, while section boundaries, measured reactivity, and global song time remain the primary timing authority.",
+    "meter_or_groove": "house-derived tribal electronic groove"
+  },
+  "sections": [
+    {"id":"B01","start_seconds":0,"end_seconds":30,"energy":"building","musical_cues":["dark opening pulse","progressive ignition"],"visual_function":"Invocation — wake the hidden force."},
+    {"id":"B02","start_seconds":30,"end_seconds":58,"energy":"gathering","musical_cues":["ritual pulse gains body"],"visual_function":"Gathering — world and ritual response assemble."},
+    {"id":"B03","start_seconds":58,"end_seconds":106,"energy":"development","musical_cues":["expanded texture","identity emergence"],"visual_function":"First Manifestation — central spirit gains form."},
+    {"id":"B04","start_seconds":106,"end_seconds":134,"energy":"driving","musical_cues":["forward rhythmic pressure"],"visual_function":"Procession / Passage — move through thresholds and sacred space."},
+    {"id":"B05","start_seconds":134,"end_seconds":198,"energy":"peak_build","musical_cues":["long tension build","ceremonial overload"],"visual_function":"Possession / Peak Build — environment becomes fully alive."},
+    {"id":"B06","start_seconds":198,"end_seconds":228,"energy":"transition","musical_cues":["state shift"],"visual_function":"Threshold Crossing — enter a more mythic plane."},
+    {"id":"B07","start_seconds":228,"end_seconds":256,"energy":"high","musical_cues":["power reveal"],"visual_function":"Apotheosis — full mythic manifestation."},
+    {"id":"B08","start_seconds":256,"end_seconds":290,"energy":"release","musical_cues":["energy smooths"],"visual_function":"Release — power stabilizes and flows."},
+    {"id":"B09","start_seconds":290,"end_seconds":305,"energy":"cooldown","musical_cues":["closing decay"],"visual_function":"Afterglow / Exit — transformed stillness."}
+  ],
+  "analysis_notes": [
+    "Pulse estimators returned competing candidates near 63, 83, 99, 123, 129 and 172 BPM.",
+    "123.05 BPM is recorded as the approximate working edit grid required by the directing contract, not as an exact musicological claim.",
+    "AUDIO_MAP/REACTIVE_CONTROLS remain the authoritative effect-timing evidence for RMS, onset, low, mid and high-band response."
+  ]
+}
