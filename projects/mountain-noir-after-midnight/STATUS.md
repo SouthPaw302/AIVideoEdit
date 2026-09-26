@@ -20,11 +20,17 @@ Total source music: **752.040 s / 12:32.040**
 Target: **900.000 s / 15:00.000**
 Authored extension required: **147.960 s / 2:27.960**
 
+Completed in this pass:
+- Current-main bootstrap, production, recut and standard-workflow guards — **PASS**.
+- All four Drive WAV masters analyzed with canonical `AUDIO_MAP`, `EDIT_MAP` and 20 Hz `REACTIVE_CONTROLS` evidence.
+- All three authorized Drive visual references meaningfully sampled; 310 visual candidates reduced to 36 candidate frames with 204 measured near-duplicate rejections.
+- Drive chapter timing copied to `CHAPTERS.txt`; source hashes and ffprobe identities preserved.
+
 Current truth:
-- Repo-native music analysis is not complete.
-- No stills / HERO_LIBRARY are locked.
+- Signal analysis is complete, but lyrics status remains unresolved per track; do not advance to `REFERENCES_ANALYZED` yet.
+- Candidate visual manifests exist, but no still / HERO_LIBRARY is locked or canonical.
 - No shot packages or canonical proof render exist.
 - The sandbox 15-minute FFmpeg recut is rejected/non-canonical because it reused finished videos as the primary picture.
 
 Exact next action:
-Use the established GitHub Actions + current-main AIVideoEdit production pattern to analyze the four Drive WAVs, preserve edit-map/reactivity evidence, then meaningfully sample the visual library and build the real still/HERO library before any canonical prototype render.
+Resolve lyric authority per track, then semantically review the measured candidate frames and lock only the strongest source-derived stills before storyboard or proof rendering.

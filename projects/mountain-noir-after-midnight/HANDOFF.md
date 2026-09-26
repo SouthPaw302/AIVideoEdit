@@ -62,13 +62,10 @@ Rejected workprint:
 - Sparse text embedded as FX inside fog/reflection/light/pigment.
 
 ## Next agent
-1. Checkout production branch in GitHub Actions.
-2. Boot exact current main.
-3. Run production/narrative/recut/workflow guards.
-4. Pull the four canonical WAVs from Drive at runtime.
-5. Run current-main resolved audio edit-map/reactivity analysis.
-6. Preserve analysis evidence.
-7. Meaningfully sample the authorized visual library.
-8. Build/score real still candidates; create HERO_LIBRARY only if capability evidence is satisfied.
-9. Produce the first repo-native living-scene proof.
-10. Continue through FX lock, assembly and QC only after proof acceptance.
+1. Boot exact current main and rerun the four guards before stage changes.
+2. Resolve lyric status per track; do not infer absence from missing text records.
+3. Review `analysis/visual/*/HERO_LIBRARY.json` candidate evidence and exclude dark/end-card/duplicate frames.
+4. Lock only semantically stable source-derived stills with provenance.
+5. Build the storyboard and frame-followable script from the measured chapter/audio maps.
+6. Produce the first repo-native living-scene proof.
+7. Continue through FX lock, assembly and QC only after proof acceptance.

@@ -12,4 +12,4 @@ Reason: sandbox FFmpeg assembly primarily re-cut already-finished videos instead
 
 Do not promote or refine it as baseline.
 
-Next legitimate render milestone: repo-native representative living-scene proof after music analysis and real still/source selection.
+Next legitimate render milestone: repo-native representative living-scene proof after lyric authority, semantic still selection and storyboard/script lock.

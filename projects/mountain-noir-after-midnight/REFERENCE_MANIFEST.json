@@ -12,8 +12,13 @@
       "authorized_role": "visual_source_and_mountain_noir_language",
       "content_reuse_authorized": true,
       "whole_video_recut_authorized": false,
-      "extraction_policy": "pending_meaningful_sampling",
-      "analysis_complete": false
+      "total_frames": 4802,
+      "extracted_frames": 102,
+      "extraction_policy": "meaningful_sampling",
+      "sampling_description": "102 candidates sampled every 2 seconds across the full 200.125-second source; 12 perceptually diverse candidates retained for review; 43 near-duplicates rejected.",
+      "coverage": [{"start_seconds": 0.0, "end_seconds": 200.125, "samples": 102}],
+      "analysis_complete": true,
+      "analysis_evidence_uri": "repo://projects/mountain-noir-after-midnight/analysis/visual/irish_eyes/HERO_LIBRARY.json"
     },
     {
       "name": "Leave_It_By_The_Door_Cinematic_Living_Film_Compact.mp4",
@@ -26,8 +31,13 @@
       "authorized_role": "visual_source_and_living_scene_atmosphere",
       "content_reuse_authorized": true,
       "whole_video_recut_authorized": false,
-      "extraction_policy": "pending_meaningful_sampling",
-      "analysis_complete": false
+      "total_frames": 4772,
+      "extracted_frames": 101,
+      "extraction_policy": "meaningful_sampling",
+      "sampling_description": "101 candidates sampled every 2 seconds across the full 198.833-second source; 12 perceptually diverse candidates retained for review; 76 near-duplicates rejected.",
+      "coverage": [{"start_seconds": 0.0, "end_seconds": 198.833, "samples": 101}],
+      "analysis_complete": true,
+      "analysis_evidence_uri": "repo://projects/mountain-noir-after-midnight/analysis/visual/leave_it_by_the_door/HERO_LIBRARY.json"
     },
     {
       "name": "Silver_Coin_V7_YouTube_Final_720p24.mp4",
@@ -40,8 +50,13 @@
       "authorized_role": "visual_source_and_reusable_environmental_fx",
       "content_reuse_authorized": true,
       "whole_video_recut_authorized": false,
-      "extraction_policy": "pending_meaningful_sampling",
-      "analysis_complete": false
+      "total_frames": 5050,
+      "extracted_frames": 107,
+      "extraction_policy": "meaningful_sampling",
+      "sampling_description": "107 candidates sampled every 2 seconds across the full 210.417-second source; 12 perceptually diverse candidates retained for review; 85 near-duplicates rejected.",
+      "coverage": [{"start_seconds": 0.0, "end_seconds": 210.417, "samples": 107}],
+      "analysis_complete": true,
+      "analysis_evidence_uri": "repo://projects/mountain-noir-after-midnight/analysis/visual/silver_coin/HERO_LIBRARY.json"
     }
   ],
   "images": [],
@@ -102,6 +117,6 @@
     }
   ],
   "usable_visual_reference": true,
-  "analysis_completed_at": null,
-  "note": "No HERO_LIBRARY or locked still set exists yet."
+  "analysis_completed_at": "2026-09-26T07:20:00Z",
+  "note": "Meaningful visual sampling is complete. Candidate hero manifests are evidence only; no still is locked or canonical, and semantic identity/shot-scale review remains open."
 }

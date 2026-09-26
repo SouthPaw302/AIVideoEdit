@@ -1,73 +1,47 @@
 {
   "schema": "aivideoedit.music-analysis.v1",
-  "analysis_complete": false,
+  "analysis_complete": true,
   "production_type": "multi_track_long_form_compilation",
-  "target_duration_seconds": 900,
+  "target_duration_seconds": 900.0,
   "source_music_duration_seconds": 752.04,
   "authored_extension_required_seconds": 147.96,
+  "analysis_method": "current-main audio_map.py + painterly-motion analyze_edit_map.py + build_reactivity.py",
   "lyrics": {
     "status": "unresolved_per_track",
-    "source": "pending repo-native analysis / verified lyric records",
+    "source": "No verified lyric record was present in the Drive source package during this pass.",
     "text_file": null,
-    "directing_use": "pending"
+    "directing_use": "pending_authority_resolution"
   },
   "genre": {
     "status": "user_confirmed",
     "label": "MountainNoir / MontañaNoir atmospheric cinematic folk, trip-hop and dark ambient long-form",
     "source": "current_user_instruction",
-    "confidence": 1
+    "confidence": 1.0,
+    "user_declaration": "Build a new YouTube long-form MountainNoir living-painting film from the four Drive masters."
   },
   "rhythm": {
-    "tempo_status": "per_track_pending_repo_analysis",
+    "tempo_status": "measured_per_track",
     "tempo_bpm": null,
-    "pulse_description": "Run current-main resolved audio edit-map/reactivity workflow on all four canonical WAVs.",
-    "meter_or_groove": "pending measured analysis"
+    "pulse_description": "Measured per-track BPM, beats, onset events, energy phases and 20 Hz reactive controls are preserved in the track artifacts.",
+    "meter_or_groove": "Semantic meter and lyric-section labels remain unresolved; use phrase, energy and transition anchors rather than assuming a shared beat grid."
   },
-  "sources": [
-    {
-      "id": "SRC-AUDIO-IRISH-EYES",
-      "name": "Irish eyes (Remastered).wav",
-      "drive_id": "1TtfXzs_p_zGxZRLdB92rKVFNKIGARuFd",
-      "sha256": "8b0ccd2e57a6e683d526d950bd88b42af0f0867b06e3d1b014a2b3131f3cfb1e",
-      "duration_seconds": 187.12,
-      "analysis_status": "pending"
-    },
-    {
-      "id": "SRC-AUDIO-LEAVE-DOOR",
-      "name": "Leave It by the Door.wav",
-      "drive_id": "19fYuhcZzi8cnIJmQZmsByh5tQU_AL83P",
-      "sha256": "3354715f5873df14e7d245a1e8f094ff38aade95264f16da3b4bbd71563f4a82",
-      "duration_seconds": 198.84,
-      "analysis_status": "pending"
-    },
-    {
-      "id": "SRC-AUDIO-SILVER-COIN",
-      "name": "Silver Coin (Remastered).wav",
-      "drive_id": "1Usuzmm1WF8rxXs6_qKr4WsAsdcyausxr",
-      "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
-      "duration_seconds": 207.44,
-      "analysis_status": "pending"
-    },
-    {
-      "id": "SRC-AUDIO-EL-VIENTO",
-      "name": "El Viento trae tu nombre Instrumental.wav",
-      "drive_id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6",
-      "sha256": "8d451360246378db551282c3703add4cd474c9ad3a4c6cf778390ae727820fe0",
-      "duration_seconds": 158.64,
-      "analysis_status": "pending",
-      "instrumental": true
-    }
+  "sections": [
+    {"id": "OPEN", "start_seconds": 0.0, "end_seconds": 37.0, "energy": "opening atmosphere", "musical_cues": ["authored extension", "pre-Irish Eyes threshold"], "visual_function": "Establish black water, rain, ridge and the unified MountainNoir world before the first source track."},
+    {"id": "IRISH_EYES", "start_seconds": 37.0, "end_seconds": 224.12, "energy": "measured track map", "musical_cues": ["Irish Eyes audio map", "89.1029 BPM estimate", "585 onset events", "20 Hz reactive controls"], "visual_function": "Arrival, wet road, ridge, water and watch-house imagery with internal weather motion."},
+    {"id": "THRESHOLD", "start_seconds": 224.12, "end_seconds": 261.12, "energy": "transition atmosphere", "musical_cues": ["authored extension", "measured transition boundary"], "visual_function": "Use rain, threshold and reflection as a non-verbal bridge between source worlds."},
+    {"id": "LEAVE_IT", "start_seconds": 261.12, "end_seconds": 459.96, "energy": "measured track map", "musical_cues": ["Leave It by the Door audio map", "161.499 BPM estimate", "576 onset events", "20 Hz reactive controls"], "visual_function": "Move inward to hearth, hands, rain glass and communal warmth without breaking the nocturnal world."},
+    {"id": "FIRELIGHT", "start_seconds": 459.96, "end_seconds": 496.96, "energy": "interlude atmosphere", "musical_cues": ["authored extension", "firelight breathing space"], "visual_function": "Let fire, smoke and room tone carry the emotional reset before the next track."},
+    {"id": "SILVER_COIN", "start_seconds": 496.96, "end_seconds": 704.4, "energy": "measured track map", "musical_cues": ["Silver Coin audio map", "86.1328 BPM estimate", "806 onset events", "20 Hz reactive controls"], "visual_function": "Open back toward moonlit water, silver reflection and restrained depth movement."},
+    {"id": "MEMORY_WIND", "start_seconds": 704.4, "end_seconds": 741.4, "energy": "transition atmosphere", "musical_cues": ["authored extension", "memory and wind bridge"], "visual_function": "Thin the image toward mist, memory, horizon and a final cultural bridge."},
+    {"id": "EL_VIENTO", "start_seconds": 741.4, "end_seconds": 900.0, "energy": "measured closing movement", "musical_cues": ["El Viento instrumental audio map", "92.2852 BPM estimate", "861 onset events", "20 Hz reactive controls"], "visual_function": "Close on coastal watch, stone, lantern and wind; integrated text FX remain sparse and world-bound."}
   ],
-  "sections": [],
-  "energy_curve": [],
-  "musical_cues": [],
-  "visual_function": "One continuous nocturnal MountainNoir world. Music maps determine section timing, animation intensity, transition placement and loop windows; they do not authorize recycling finished videos as the picture.",
-  "required_repo_evidence": [
-    "AUDIO_MAP",
-    "EDIT_MAP",
-    "REACTIVE_CONTROLS",
-    "source SHA-256",
-    "ffprobe metadata"
+  "tracks": [
+    {"id": "SRC-AUDIO-IRISH-EYES", "name": "Irish eyes (Remastered).wav", "drive_id": "1TtfXzs_p_zGxZRLdB92rKVFNKIGARuFd", "sha256": "8b0ccd2e57a6e683d526d950bd88b42af0f0867b06e3d1b014a2b3131f3cfb1e", "duration_seconds": 187.12, "measured": {"bpm": 89.1029, "beats": 268, "onset_events": 585, "rolls": 20, "silences": 2, "edit_map_sections": 5, "sync_points": 40, "reactive_control_hz": 20.0, "reactive_control_frames": 3743}, "artifacts": ["analysis/audio/irish_eyes_remastered/AUDIO_MAP.json", "analysis/audio/irish_eyes_remastered/EDIT_MAP.json", "analysis/audio/irish_eyes_remastered/REACTIVE_CONTROLS.json"]},
+    {"id": "SRC-AUDIO-LEAVE-DOOR", "name": "Leave It by the Door.wav", "drive_id": "19fYuhcZzi8cnIJmQZmsByh5tQU_AL83P", "sha256": "3354715f5873df14e7d245a1e8f094ff38aade95264f16da3b4bbd71563f4a82", "duration_seconds": 198.84, "measured": {"bpm": 161.499, "beats": 525, "onset_events": 576, "rolls": 6, "silences": 1, "edit_map_sections": 10, "sync_points": 40, "reactive_control_hz": 20.0, "reactive_control_frames": 3977}, "artifacts": ["analysis/audio/leave_it_by_the_door/AUDIO_MAP.json", "analysis/audio/leave_it_by_the_door/EDIT_MAP.json", "analysis/audio/leave_it_by_the_door/REACTIVE_CONTROLS.json"]},
+    {"id": "SRC-AUDIO-SILVER-COIN", "name": "Silver Coin (Remastered).wav", "drive_id": "1Usuzmm1WF8rxXs6_qKr4WsAsdcyausxr", "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92", "duration_seconds": 207.44, "measured": {"bpm": 86.1328, "beats": 298, "onset_events": 806, "rolls": 26, "silences": 1, "edit_map_sections": 8, "sync_points": 40, "reactive_control_hz": 20.0, "reactive_control_frames": 4149}, "artifacts": ["analysis/audio/silver_coin_remastered/AUDIO_MAP.json", "analysis/audio/silver_coin_remastered/EDIT_MAP.json", "analysis/audio/silver_coin_remastered/REACTIVE_CONTROLS.json"]},
+    {"id": "SRC-AUDIO-EL-VIENTO", "name": "El Viento trae tu nombre Instrumental.wav", "drive_id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6", "sha256": "8d451360246378db551282c3703add4cd474c9ad3a4c6cf778390ae727820fe0", "duration_seconds": 158.64, "instrumental": true, "measured": {"bpm": 92.2852, "beats": 239, "onset_events": 861, "rolls": 2, "silences": 0, "edit_map_sections": 7, "sync_points": 40, "reactive_control_hz": 20.0, "reactive_control_frames": 3173}, "artifacts": ["analysis/audio/el_viento_instrumental/AUDIO_MAP.json", "analysis/audio/el_viento_instrumental/EDIT_MAP.json", "analysis/audio/el_viento_instrumental/REACTIVE_CONTROLS.json"]}
   ],
-  "note": "No repo-native music analysis has been completed yet."
+  "required_repo_evidence": ["AUDIO_MAP", "EDIT_MAP", "REACTIVE_CONTROLS", "source SHA-256", "ffprobe metadata", "Drive chapter manifest"],
+  "production_gate_status": "signal analysis complete; lyrics status still requires explicit per-track resolution before REFERENCES_ANALYZED",
+  "visual_function": "One continuous nocturnal MountainNoir world. Music maps determine section timing, animation intensity, transition placement and loop windows; they do not authorize recycling finished videos as the picture."
 }

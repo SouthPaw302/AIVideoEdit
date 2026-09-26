@@ -17,4 +17,4 @@ YouTube long-form MountainNoir / MontañaNoir living-painting film.
 3. Zero-Drift: faces, architecture, geography and horizons stay stable.
 4. Appalachian MountainNoir and Spanish MontañaNoir remain one cinematic world.
 
-Current state: source ingest verified; production contract passes; music analysis and meaningful visual sampling pending; no still library locked; no repo-native prototype accepted.
+Current state: source ingest verified; current-main production contract and standard workflows pass; canonical audio/edit/reactivity evidence and meaningful visual sampling are recorded; stills remain candidate-only; no repo-native prototype accepted.

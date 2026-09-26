@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.visual-sampling.v1",
+  "status": "candidate_review_complete_not_locked",
+  "method": "hero_library_extract.py; full-source candidate sampling at 2-second intervals, perceptual quality/diversity greedy selection, near-duplicate rejection",
+  "source_authority": "Google Drive / 03 Visual Source Library",
+  "sources": [
+    {
+      "id": "SRC-VID-IRISH-EYES",
+      "drive_id": "1b_dz3H1pLxkMFL7ubdT7qrbD2ajxjcyp",
+      "sha256": "3d416319fa1405094626901632220e6e9e3422b16e18768aef28e0fd7e6c875d",
+      "artifact": "analysis/visual/irish_eyes/HERO_LIBRARY.json",
+      "candidate_count": 102,
+      "selected_candidate_count": 12,
+      "near_duplicate_rejections": 43,
+      "selected_times_seconds": [6, 32, 44, 66, 88, 100, 110, 132, 154, 176, 188, 196]
+    },
+    {
+      "id": "SRC-VID-LEAVE-DOOR",
+      "drive_id": "1ImD93X3X4abrAw5F9ZwkAXUmJM4vlRMN",
+      "sha256": "b5210c90b6b005a588e7e7b637f686f30f639fb56622ef7bf1240f4629776cec",
+      "artifact": "analysis/visual/leave_it_by_the_door/HERO_LIBRARY.json",
+      "candidate_count": 101,
+      "selected_candidate_count": 12,
+      "near_duplicate_rejections": 76,
+      "selected_times_seconds": [0, 24, 30, 58, 74, 120, 142, 160, 186, 196, 198, 198.792],
+      "warning": "Duplicate-heavy source; semantic review must prefer distinct room/action compositions over late repeats."
+    },
+    {
+      "id": "SRC-VID-SILVER-COIN",
+      "drive_id": "19pP51qoZqIzBqut3hl1MOpRHapkyU8es",
+      "sha256": "d59a9e587623aed66e22cf23641b72931fc0ac38ef7e412e227b25f7cf9b207b",
+      "artifact": "analysis/visual/silver_coin/HERO_LIBRARY.json",
+      "candidate_count": 107,
+      "selected_candidate_count": 12,
+      "near_duplicate_rejections": 85,
+      "selected_times_seconds": [10, 12, 40, 70, 94, 104, 140, 152, 188, 190, 200, 210.375],
+      "warning": "Duplicate-heavy source; the dark end-card candidate at 210.375 seconds is excluded from picture selection."
+    }
+  ],
+  "manual_review_rules": [
+    "Keep source geography and composition truthful; these are reference/source-library images, not a finished-video recut.",
+    "Reject black/end-card frames, unusably dark frames, duplicate poses and any frame with unstable face/anatomy/architecture drift.",
+    "Do not mark a frame canonical until semantic identity, shot scale, motion regions and protected regions are reviewed.",
+    "No locked stills or HERO_LIBRARY is promoted by this pass."
+  ],
+  "unmeasured_dimensions": ["semantic subject identity", "semantic shot scale", "narrative meaning", "face/anatomy stability"],
+  "next_action": "Resolve lyric authority, then perform semantic review and lock only the strongest candidate frames for the storyboard."
+}

@@ -35,9 +35,9 @@
     "long_hold_scene_evolution": true,
     "use_phoenix_loop_methods": true,
     "use_canonical_main_fx_resolver": true,
-    "hero_library_status": "not_selected_until_measured_extraction",
+    "hero_library_status": "candidate_manifests_measured; canonical selection pending semantic review",
     "audio_authority": "private Google Drive production folder / 01 Source Audio",
     "long_form_workflow": "current-main resolved workflows only"
   },
-  "current_phase": "LONG_FORM_AUDIO_AND_LOOP_ANALYSIS"
+  "current_phase": "LYRICS_AUTHORITY_AND_CANDIDATE_STILL_REVIEW"
 }
