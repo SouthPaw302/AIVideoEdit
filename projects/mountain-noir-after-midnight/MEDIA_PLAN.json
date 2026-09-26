@@ -2,7 +2,6 @@
   "schema": "aivideoedit.media-plan.v1",
   "user_approach_established": true,
   "selected_capabilities": [
-    "canonical_hero_library",
     "living_painting",
     "living_still_fx",
     "layered_composite",
@@ -34,7 +33,8 @@
     "internal_motion_before_camera": true,
     "long_hold_scene_evolution": true,
     "use_phoenix_loop_methods": true,
-    "use_canonical_main_fx_resolver": true
+    "use_canonical_main_fx_resolver": true,
+    "hero_library_status": "not_selected_until_measured_extraction"
   },
   "current_phase": "SOURCE_LIBRARY_INGEST"
 }
