@@ -1,0 +1,53 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": false,
+  "production_type": "multi_track_long_form_compilation",
+  "target_duration_seconds": 900,
+  "lyrics": {
+    "status": "unresolved_for_source_tracks",
+    "source": "pending_source_audio_analysis",
+    "text_file": null,
+    "directing_use": "pending"
+  },
+  "genre": {
+    "status": "user_directed",
+    "label": "Mountain Noir atmospheric cinematic folk / trip-hop long form",
+    "source": "current_user_instruction",
+    "confidence": 1,
+    "user_declaration": "MountainNoir style"
+  },
+  "rhythm": {
+    "tempo_status": "per_track_pending",
+    "tempo_bpm": null,
+    "pulse_description": "pending multi-track scanner pass",
+    "meter_or_groove": "pending"
+  },
+  "sources": [
+    {
+      "id": "SRC-VID-IRISH-EYES",
+      "duration_seconds": 200.149,
+      "analysis_status": "pending"
+    },
+    {
+      "id": "SRC-VID-LEAVE-DOOR",
+      "duration_seconds": 198.84,
+      "analysis_status": "pending"
+    },
+    {
+      "id": "SRC-VID-SILVER-COIN",
+      "duration_seconds": 210.416667,
+      "analysis_status": "pending"
+    },
+    {
+      "id": "SRC-AUDIO-ENDING",
+      "duration_seconds": 158.64,
+      "analysis_status": "pending",
+      "instrumental": true
+    }
+  ],
+  "sections": [],
+  "energy_curve": [],
+  "musical_cues": [],
+  "narrative_function": "One continuous nocturnal Mountain Noir journey rather than disconnected videos.",
+  "note": "Verified sources total 768.045667 seconds. Remaining duration will be authored through analyzed transitions, long holds/reprises and the ending treatment; no silent padding."
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "aivideoedit.drive-storage-index.v1",
+  "provider": "google_drive",
+  "repository": "SouthPaw302/AIVideoEdit",
+  "branch": "song/mountain-noir-after-midnight",
+  "project": "mountain-noir-after-midnight",
+  "root": {
+    "id": "1otVl9gQkDrgacPesVEIoW_9FdyXokns9",
+    "name": "Mountain Noir - After Midnight - Long Form 01"
+  },
+  "folders": {
+    "source_audio": "1SQ48Bg7geugeCGeSVYxDTM-mQ0YXUeac",
+    "canonical_references": "1ubTZmQ6VB_EQCkZGg45xfy9fmpv0ujNi",
+    "visual_source_library": "14LQZ-Zmi1f8jqUkIRe2D2canKjZ0DHlo",
+    "fx_loops": "1ghoMI9TMRfoo1LAjcoDOuI0IOdLN5JIV",
+    "workprints": "1YigVgwTEKBiR551L6Oo7t0KLDHu65n_O",
+    "qc_contact_sheets": "1F6CZ_DlJNd-QTa1hjP1l_-7RtsRmsjwA",
+    "final_masters": "1Ft2QvmFPdBF-jzAh8R-OwHtUAvt0713l",
+    "manifests_repo_records": "1IofzVMS4g6DnoGSXXu3TslCt1ub3g-2c",
+    "archive": "18LZhxWYa4EaA-g0RJqZ0RlwV64yCyxGO"
+  },
+  "staged_assets": [
+    {
+      "id": "1b_dz3H1pLxkMFL7ubdT7qrbD2ajxjcyp",
+      "name": "Irish_Eyes_Mountainnoir_Upload.mp4",
+      "category": "visual_source"
+    },
+    {
+      "id": "1ImD93X3X4abrAw5F9ZwkAXUmJM4vlRMN",
+      "name": "Leave_It_By_The_Door_Cinematic_Living_Film_Compact.mp4",
+      "category": "visual_source"
+    },
+    {
+      "id": "19pP51qoZqIzBqut3hl1MOpRHapkyU8es",
+      "name": "Silver_Coin_V7_YouTube_Final_720p24.mp4",
+      "category": "visual_source"
+    },
+    {
+      "id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6",
+      "name": "El Viento trae tu nombre Instrumental.wav",
+      "category": "source_audio"
+    }
+  ],
+  "updated_at_utc": "2026-09-26T05:35:00Z"
+}

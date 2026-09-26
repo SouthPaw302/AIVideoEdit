@@ -1,0 +1,15 @@
+{
+  "schema": "aivideoedit.video-script.v1",
+  "locked": false,
+  "based_on_storyboard": false,
+  "target_fps": 24,
+  "duration_seconds": 900,
+  "total_frames": 21600,
+  "basis": [
+    "current_user_direction",
+    "authorized_visual_references",
+    "pending_music_analysis"
+  ],
+  "entries": [],
+  "status": "pending_reference_and_music_analysis"
+}

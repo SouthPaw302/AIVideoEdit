@@ -1,0 +1,35 @@
+{
+  "schema": "aivideoedit.text-fx-plan.v1",
+  "status": "direction_locked_implementation_pending",
+  "reference": "song/el-viento-trae-tu-nombre visual/FX language",
+  "purpose": "Make text feel embedded in the Mountain Noir world rather than superimposed captions.",
+  "rules": {
+    "frequency": "sparse",
+    "use_cases": [
+      "opening identity",
+      "chapter/track emergence",
+      "occasional poetic fragments",
+      "closing identity"
+    ],
+    "typography": "editorial serif/small-caps Mountain Noir treatment; exact font selected from available licensed/system fonts during proof",
+    "palette": "warm off-white / aged paper / muted gold, scene-motivated",
+    "opacity": "restrained except brief chapter readability peaks",
+    "integration": [
+      "fog reveal",
+      "reflection reveal",
+      "warm halation",
+      "grain/pigment erosion",
+      "layer occlusion",
+      "slow drift",
+      "light-breath response"
+    ],
+    "forbidden": [
+      "hard caption boxes",
+      "karaoke timing",
+      "constant lower thirds",
+      "generic EDM waveform text",
+      "unmotivated full-screen neon typography"
+    ]
+  },
+  "proof_required": true
+}

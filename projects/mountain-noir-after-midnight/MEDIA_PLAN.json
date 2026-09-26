@@ -1,0 +1,40 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "selected_capabilities": [
+    "canonical_hero_library",
+    "living_painting",
+    "living_still_fx",
+    "layered_composite",
+    "depth_25d",
+    "atmospheric_plate",
+    "reactive_plate",
+    "transition_media",
+    "analysis_qc_media"
+  ],
+  "visual_direction_gate": {
+    "required": false,
+    "reason": "Current user supplied explicit direction plus usable authorized visual references from existing Mountain Noir productions.",
+    "presented_in_chat": false,
+    "locked": false
+  },
+  "direction": {
+    "working_title": "Mountain Noir — After Midnight",
+    "target_duration_seconds": 900,
+    "target_fps": 24,
+    "review_resolution": "1920x1080",
+    "production_mode": "hybrid",
+    "structure": "long living-scene holds, seamless source-derived loops, atmospheric transitions, sparse integrated text FX, then El Viento instrumental closing movement",
+    "text_fx_reference": "latest El Viento production language",
+    "no_waveform_visualizer": true
+  },
+  "source_strategy": {
+    "preserve_verified_masters": true,
+    "derive_coverage_from_authorized_source_media": true,
+    "internal_motion_before_camera": true,
+    "long_hold_scene_evolution": true,
+    "use_phoenix_loop_methods": true,
+    "use_canonical_main_fx_resolver": true
+  },
+  "current_phase": "SOURCE_LIBRARY_INGEST"
+}

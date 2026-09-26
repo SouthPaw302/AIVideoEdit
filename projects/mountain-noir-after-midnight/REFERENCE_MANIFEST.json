@@ -1,0 +1,77 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [
+    {
+      "name": "Irish_Eyes_Mountainnoir_Upload.mp4",
+      "sha256": "3d416319fa1405094626901632220e6e9e3422b16e18768aef28e0fd7e6c875d",
+      "duration_seconds": 200.149,
+      "total_frames": 4804,
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "drive_id": "1b_dz3H1pLxkMFL7ubdT7qrbD2ajxjcyp",
+      "authorized_role": "source_content_and_mountain_noir_visual_language",
+      "extraction_policy": "pending_meaningful_sampling",
+      "analysis_complete": false
+    },
+    {
+      "name": "Leave_It_By_The_Door_Cinematic_Living_Film_Compact.mp4",
+      "sha256": "b5210c90b6b005a588e7e7b637f686f30f639fb56622ef7bf1240f4629776cec",
+      "duration_seconds": 198.84,
+      "total_frames": 4772,
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "drive_id": "1ImD93X3X4abrAw5F9ZwkAXUmJM4vlRMN",
+      "authorized_role": "source_content_and_living_scene_atmosphere",
+      "extraction_policy": "pending_meaningful_sampling",
+      "analysis_complete": false
+    },
+    {
+      "name": "Silver_Coin_V7_YouTube_Final_720p24.mp4",
+      "sha256": "d59a9e587623aed66e22cf23641b72931fc0ac38ef7e412e227b25f7cf9b207b",
+      "duration_seconds": 210.416667,
+      "total_frames": 5050,
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "drive_id": "19pP51qoZqIzBqut3hl1MOpRHapkyU8es",
+      "authorized_role": "source_content_and_reusable_environmental_fx",
+      "extraction_policy": "pending_meaningful_sampling",
+      "analysis_complete": false
+    }
+  ],
+  "images": [],
+  "audio": [
+    {
+      "name": "El Viento trae tu nombre Instrumental.wav",
+      "sha256": "8d451360246378db551282c3703add4cd474c9ad3a4c6cf778390ae727820fe0",
+      "duration_seconds": 158.64,
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "drive_id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6",
+      "authorized_role": "canonical_ending_audio",
+      "analysis_complete": false
+    }
+  ],
+  "repo_references": [
+    {
+      "ref": "song/el-viento-trae-tu-nombre",
+      "role": "text_fx_and_transition_language",
+      "content_reuse": false
+    },
+    {
+      "ref": "feature/long-form-loops",
+      "role": "phoenix_loop_scanner_archive",
+      "content_reuse": true
+    },
+    {
+      "ref": "song/tribal-house-remastered",
+      "role": "loop_fx_provenance",
+      "content_reuse": true
+    }
+  ],
+  "usable_visual_reference": true,
+  "analysis_completed_at": null,
+  "note": "All long references require recorded meaningful sampling before REFERENCES_ANALYZED."
+}

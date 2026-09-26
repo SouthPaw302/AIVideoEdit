@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "allow": {
+    "current_user_instruction": true,
+    "current_uploaded_media": true,
+    "current_branch_decisions": true,
+    "current_main": true,
+    "historical_chats": false,
+    "historical_summaries": false,
+    "unrelated_song_branches": true,
+    "prior_project_storyboards": false,
+    "prior_project_visual_dna": true,
+    "prior_project_media": true
+  },
+  "explicit_user_authorizations": [
+    "unrelated_song_branches",
+    "prior_project_visual_dna",
+    "prior_project_media"
+  ],
+  "authorized_sources": [
+    {
+      "source": "Google Drive AIVideoEdit production library",
+      "role": "visual source and reusable FX/loop media",
+      "basis": "current user explicitly directed use of the Drive/GitHub media library"
+    },
+    {
+      "source": "song/el-viento-trae-tu-nombre",
+      "role": "text/FX/motion-language reference",
+      "basis": "current user explicitly requested the El Viento production style"
+    },
+    {
+      "source": "feature/long-form-loops and Tribal House Mythic Phoenix records",
+      "role": "long-form loop and reactive-FX method reference",
+      "basis": "current user directed long-form looped FX production"
+    },
+    {
+      "source": "current uploaded El Viento trae tu nombre Instrumental.wav",
+      "role": "ending audio authority",
+      "basis": "current user supplied it for the end"
+    }
+  ],
+  "note": "Historical chat/summaries remain non-authoritative. Only the specifically authorized prior media/visual-DNA/branches above may be used."
+}
