@@ -1,6 +1,6 @@
 # Status
 
-Stage: **SOURCE_INGESTED**
+Stage: **SOURCE_INGESTED — PROVISIONAL WORKPRINT RENDERED**
 
 Repository / Actions status: **HEALTHY**.
 Production branch: `song/mountain-noir-after-midnight`.
@@ -29,8 +29,8 @@ Completed in this pass:
 Current truth:
 - Signal analysis is complete, but lyrics status remains unresolved per track; do not advance to `REFERENCES_ANALYZED` yet.
 - Candidate visual manifests exist, but no still / HERO_LIBRARY is locked or canonical.
-- No shot packages or canonical proof render exist.
-- The sandbox 15-minute FFmpeg recut is rejected/non-canonical because it reused finished videos as the primary picture.
+- A real 15-minute workprint has now been rendered locally from the verified Drive assets, including the requested continuous audio bed and integrated channel/title typography.
+- The earlier Drive sandbox workprint remains rejected/non-canonical. The new local workprint is the current review deliverable, but it is not promoted to final master until the open lyric/still-lock gates are resolved.
 
 Exact next action:
 Resolve lyric authority per track, then semantically review the measured candidate frames and lock only the strongest source-derived stills before storyboard or proof rendering.

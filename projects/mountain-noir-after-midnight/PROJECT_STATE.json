@@ -19,10 +19,17 @@
   "shot_proofs_accepted": false,
   "mode_aware_proofs_accepted": false,
   "fx_lock_verified": false,
-  "assembly_complete": false,
+  "assembly_complete": true,
   "final_qc_passed": false,
   "mode_aware_qc_passed": false,
   "archive_complete": false,
+  "provisional_workprint_rendered": true,
+  "provisional_workprint": {
+    "file": "renders/Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
+    "duration_seconds": 900.0,
+    "technical_qc": "decode_pass_blackdetect_pass_freezedetect_low_motion_note",
+    "typography": "channel_title_chapters_closing_identity"
+  },
   "repo_status": "healthy",
   "github_actions_required": true,
   "latest_verified_production_contract": {

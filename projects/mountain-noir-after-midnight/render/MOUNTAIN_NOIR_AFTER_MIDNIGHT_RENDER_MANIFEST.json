@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.mountain-noir-after-midnight.render-manifest.v1",
+  "project": "Mountain Noir — After Midnight",
+  "branch": "song/mountain-noir-after-midnight",
+  "render": {
+    "file": "Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
+    "duration_seconds": 900.0,
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2,
+    "audio_layout": "bridged continuous 15-minute bed"
+  },
+  "picture_method": "AIVideoEdit fast source-assembly path with crossfaded, graded atmospheric bridges and source-derived visual holds",
+  "audio_order": [
+    "Mountain Noir — After Midnight",
+    "Irish Eyes",
+    "Rain / Threshold",
+    "Leave It by the Door",
+    "Firelight",
+    "Silver Coin",
+    "Memory / Wind",
+    "El Viento trae tu nombre — Instrumental"
+  ],
+  "typography": {
+    "channel_identity": "MOUNTAIN NOIR / MONTANA NOIR",
+    "title": "AFTER MIDNIGHT",
+    "font": "Georgia",
+    "treatment": "warm off-white and muted gold serif, restrained fades, sparse chapter emergence"
+  },
+  "technical_qc": {
+    "full_decode": "PASS",
+    "blackdetect": "PASS — no black interval reported",
+    "freezedetect": "PASS WITH NOTE — one 2.125-second low-motion atmospheric interval at 256.042–258.167 seconds; no sustained freeze over 3 seconds",
+    "repo_temporal_qc": "COMPLETE — report saved beside render"
+  },
+  "source_assets": {
+    "audio": "Google Drive canonical WAV masters",
+    "visuals": [
+      "Irish_Eyes_Mountainnoir_Upload.mp4",
+      "Leave_It_By_The_Door_Cinematic_Living_Film_Compact.mp4",
+      "Silver_Coin_V7_YouTube_Final_720p24.mp4"
+    ]
+  }
+}
