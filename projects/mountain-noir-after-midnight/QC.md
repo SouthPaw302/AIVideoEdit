@@ -1,7 +1,28 @@
 # QC
 
-Current stage: source ingest only.
+Canonical stage: **SOURCE_INGESTED**.
 
-Pre-render requirements: bootstrap current main; meaningful-sampling analysis of long references; per-track scanner pass; hash verification; frame-followable script lock; canonical FX resolver; proof gates; mode-aware proof for long holds, loops, text FX, transitions and source integrity.
+Verified:
+- Production Contract run `36223990802` — **PASS**
+- Head `1b03cfa05661dba4980b1452f27adb44a1488af9`
+- `main` untouched
 
-Final QC inspects the actual export for resolution, frame rate/count, duration, audio, decode integrity, black/freeze behavior, source integrity and text readability. Technical PASS is not artistic acceptance.
+Required before first canonical proof:
+- GitHub Actions current-main bootstrap PASS
+- production/narrative/recut/workflow guards PASS
+- repo-native music analysis for all four WAV masters
+- meaningful visual sampling
+- actual still/HERO selection with provenance
+- frame-followable script based on measured music evidence
+- canonical FX resolver / requirements
+- real proof media
+
+Visual QC:
+- Living Painting must be visible
+- internal material motion before camera
+- no face/anatomy/architecture/geography/horizon drift
+- no mechanical loop seams
+- coherent MountainNoir/MontañaNoir world
+- text embedded in fog/reflection/light/pigment
+
+Rejected sandbox workprint is not a canonical QC candidate.

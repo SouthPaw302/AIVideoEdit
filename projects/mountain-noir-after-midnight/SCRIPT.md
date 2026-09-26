@@ -1,9 +1,18 @@
 # Script
 
-Status: **UNLOCKED — pending reference/music analysis**
+Status: **UNLOCKED WORKING DIRECTION — NOT CANON**
 
-Target: ~15:00 / 24 fps.
+Target: 15:00 / 24 fps / 21,600 frames.
 
-Final script will be frame-followable and contiguous, preserve verified source masters, use source-derived loops/internal FX evolution, and place sparse Mountain Noir text moments as visual FX rather than conventional captions.
+Working macro order:
+1. Opening / black water.
+2. Irish Eyes — arrival / road / ridge / water / watch-house.
+3. Music-derived threshold bridge.
+4. Leave It by the Door — same-world interior / hearth / rain glass.
+5. Memory bridge.
+6. Silver Coin — moonlit water / silver reflection / restrained depth.
+7. Coastal bridge.
+8. El Viento instrumental — coastal watch / mist / stone / lantern.
+9. Afterglow.
 
-Do not claim final assembly until this file and SCRIPT.json are locked.
+Do not lock exact frames, loop durations or still assignments until repo-native music analysis and actual still selection are complete.

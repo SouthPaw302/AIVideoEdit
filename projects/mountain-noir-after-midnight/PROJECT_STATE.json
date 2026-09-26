@@ -8,8 +8,8 @@
   "reference_analysis_complete": false,
   "music_analysis_complete": false,
   "lyrics_status_resolved": false,
-  "genre_authority_resolved": false,
-  "visual_approach_established": false,
+  "genre_authority_resolved": true,
+  "visual_approach_established": true,
   "storyboard_locked": false,
   "script_locked": false,
   "shot_packages_built": false,
@@ -23,6 +23,24 @@
   "final_qc_passed": false,
   "mode_aware_qc_passed": false,
   "archive_complete": false,
-  "exact_next_action": "Analyze verified audio/video sources plus El Viento/Phoenix reference systems, then lock the 15-minute frame-followable long-form loop script and FX/text cue map.",
-  "updated_at": "2026-09-26T05:35:00Z"
+  "repo_status": "healthy",
+  "github_actions_required": true,
+  "latest_verified_production_contract": {
+    "run_id": 36223990802,
+    "conclusion": "success",
+    "head_sha": "1b03cfa05661dba4980b1452f27adb44a1488af9"
+  },
+  "canonical_music_master_count": 4,
+  "canonical_music_duration_seconds": 752.04,
+  "target_duration_seconds": 900,
+  "authored_extension_required_seconds": 147.96,
+  "hero_library_status": "not_created",
+  "locked_still_count": 0,
+  "rejected_noncanonical_workprint": {
+    "name": "Mountain_Noir_After_Midnight_15min_REVIEW_v1.mp4",
+    "drive_id": "13rKVvBu0P9VHpZ1HDPGMtgaThaRSdzBi",
+    "reason": "Re-cut finished source videos instead of constructing the requested new long-form living-painting production."
+  },
+  "exact_next_action": "Use GitHub Actions with current main to analyze all four Drive WAV masters through the repo-resolved audio/edit-map/reactivity workflows; then meaningfully sample visual sources and build the still/HERO library before any prototype render.",
+  "updated_at": "2026-09-26T06:45:00Z"
 }

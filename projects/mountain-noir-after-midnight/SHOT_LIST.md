@@ -1,14 +1,25 @@
 # Long-form shot / loop map
 
-Not locked yet. Stage: SOURCE_INGESTED.
+Status: **DRAFT ONLY — no stills locked, no shot packages built.**
 
-Planned macro movements:
-1. Night Road / Rain Glass.
-2. Dark Water / Irish Eyes.
-3. Firelight Threshold.
-4. Mountain Noir Passage using source-derived Silver Coin / Leave It environmental coverage.
-5. After Midnight Convergence: fog, reflections, depth and long loop evolution.
-6. El Viento Closing Movement using the supplied instrumental.
-7. Afterglow and final Mountain Noir text decay.
+Recurring scene families:
+- Rain Road
+- Black Water
+- Watch House Exterior
+- Threshold / Door / Rain Glass
+- Hearth Interior
+- Memory Interior
+- Silver Shore
+- Coastal Transformation
+- Coastal Watch
+- Afterglow
 
-Exact frame spans follow scanner/reference analysis.
+These are scene roles, not selected still assets.
+
+Before executable shot packages:
+1. repo-native music analysis;
+2. meaningful visual sampling;
+3. actual still candidate scoring/selection;
+4. HERO_LIBRARY only if capability evidence is satisfied;
+5. hashed media assignments;
+6. proof render + Zero-Drift/mode-aware QC.

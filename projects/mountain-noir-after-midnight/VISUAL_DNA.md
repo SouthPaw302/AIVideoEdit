@@ -1,16 +1,27 @@
 # Visual DNA — Mountain Noir After Midnight
 
-## World
-Continuous nocturnal Mountain Noir: wet roads, dark water, distant ridges, windows/firelight, fog, smoke, rain, reflections, weather, old textures and restrained painterly depth.
+## Core pillars
 
-## Motion law
-Internal material motion first. Rain, water, smoke, fog, reflected light, embers and practical light move independently. Camera drift is secondary and bounded.
+### Living Painting
+Oil/classical-illustration atmosphere brought to subtle life through fire, rain, water, mist, smoke, candle/lantern light, reflections, embers, fabric and weather.
+
+### Melancholic / Moody Isolation
+Rustic, timeless, solitary spaces: wet Appalachian roads and ridges, black water, lonely cabins/watch houses, dim interiors, coastal stone and mist.
+
+### Zero-Drift
+Protect faces, anatomy, architecture, geography, horizon and composition. Internal material motion precedes camera movement. Depth/parallax is bounded.
+
+### Cultural bridge
+Appalachian MountainNoir and Spanish MontañaNoir must feel like one dark cinematic world rather than disconnected videos.
 
 ## Long-form law
 Strong compositions may hold while internal state evolves:
-`material motion -> atmosphere/light -> transparent overlay -> restrained depth/camera -> transition -> new composition`.
+`material motion -> atmosphere/light -> transparent overlay -> restrained depth/camera -> transition -> new composition`
 
 ## Text as FX
-Text belongs inside the world: sparse editorial typography, low-opacity emergence through fog/reflection/grain/warm light, occasional layer occlusion, restrained tracking, pigment/fog/light handoffs. No hard caption boxes, karaoke treatment, generic waveform graphics or constant titling.
+Sparse editorial text belongs inside fog, reflection, grain, pigment and practical light. No hard caption boxes, karaoke treatment, generic waveform graphics or constant titling.
 
-Use El Viento for text/FX integration language and the Phoenix archive for long-form loop/reactive behavior. Protect source composition, faces, architecture and horizon topology.
+Use El Viento for text/FX integration language and Phoenix for long-form loop/reactive behavior.
+
+## Current asset truth
+No actual stills are locked yet. Scene-family names in SHOT_LIST are design roles only.

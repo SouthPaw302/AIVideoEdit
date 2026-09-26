@@ -1,11 +1,11 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Create a ~15-minute Mountain Noir long-form atmospheric film from authorized existing source media, seamless loop/FX techniques, and integrated text FX, ending on the supplied El Viento instrumental.",
+  "mission": "Create a 15-minute Mountain Noir long-form living-painting film from the four canonical Drive music masters and authorized Drive/GitHub visual source libraries, with seamless loops/FX and integrated text FX, ending on El Viento instrumental.",
   "direction_authority": "user_directed",
   "production_mode": "hybrid",
   "canon_lock": {
     "locked": false,
-    "picture_language": "Mountain Noir nocturnal living-world imagery; wet roads, water, mist, firelight, reflections, restrained depth, painterly continuity, sparse embedded text FX.",
+    "picture_language": "Mountain Noir nocturnal living-world imagery: living painting, wet roads, black water, mist, firelight, reflections, rustic interiors, coastal watch imagery, restrained depth, sparse embedded text FX.",
     "items": []
   },
   "accepted_baseline": {
@@ -15,29 +15,16 @@
     "user_acceptance_statement": null
   },
   "accepted_source_library": {
-    "status": "none",
-    "role": null,
-    "file_or_locator": null,
+    "status": "candidate_sources_verified",
+    "role": "visual source/reference library",
+    "file_or_locator": "Google Drive production folders recorded in DRIVE_STORAGE_INDEX.json",
     "sha256": null,
-    "user_acceptance_statement": null,
-    "content_reuse_authorized": false,
+    "user_acceptance_statement": "Use Drive/GitHub media library to build a new long-form film; do not simply edit the finished videos together.",
+    "content_reuse_authorized": true,
     "timeline_locked": false
   },
-  "refinement_scope": {
-    "active": false,
-    "goal": null,
-    "allowed_changes": [],
-    "forbidden_changes": [],
-    "restart_authorized": false
-  },
-  "recut_scope": {
-    "active": false,
-    "named_defects": [],
-    "allowed_changes": [],
-    "forbidden_changes": [],
-    "source_replacement_authorized": false
-  },
-  "current_user_direction": "Create the long-form video using the Drive/GitHub media library; use proper Mountain Noir text as an FX through parts of the film like the El Viento production; follow the current-main AIVideoEdit workflow; use the supplied file for the ending.",
-  "exact_next_action": "Finish reference/music analysis and hash-level source-library selection, then lock the 15-minute loop/shot/text-FX script before rendering.",
-  "updated_at_utc": "2026-09-26T05:35:00Z"
+  "current_user_direction": "Run the AIVideoEdit repo through GitHub Actions as prior agents did. Use the four music files already in Drive. Build a new YouTube long-form MountainNoir living-painting film. Do not use finished videos as the primary picture.",
+  "execution_requirement": "GitHub Actions production runner using exact current-main authority; production branch only.",
+  "exact_next_action": "Analyze the four Drive WAV masters through the current-main resolved music/edit-map/reactivity workflows in GitHub Actions, then meaningfully sample visual sources and build the real still library before proofs.",
+  "updated_at_utc": "2026-09-26T06:45:00Z"
 }

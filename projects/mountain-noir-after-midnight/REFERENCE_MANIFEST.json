@@ -5,12 +5,13 @@
       "name": "Irish_Eyes_Mountainnoir_Upload.mp4",
       "sha256": "3d416319fa1405094626901632220e6e9e3422b16e18768aef28e0fd7e6c875d",
       "duration_seconds": 200.149,
-      "total_frames": 4804,
       "width": 1280,
       "height": 720,
       "fps": 24,
       "drive_id": "1b_dz3H1pLxkMFL7ubdT7qrbD2ajxjcyp",
-      "authorized_role": "source_content_and_mountain_noir_visual_language",
+      "authorized_role": "visual_source_and_mountain_noir_language",
+      "content_reuse_authorized": true,
+      "whole_video_recut_authorized": false,
       "extraction_policy": "pending_meaningful_sampling",
       "analysis_complete": false
     },
@@ -18,12 +19,13 @@
       "name": "Leave_It_By_The_Door_Cinematic_Living_Film_Compact.mp4",
       "sha256": "b5210c90b6b005a588e7e7b637f686f30f639fb56622ef7bf1240f4629776cec",
       "duration_seconds": 198.84,
-      "total_frames": 4772,
       "width": 1280,
       "height": 720,
       "fps": 24,
       "drive_id": "1ImD93X3X4abrAw5F9ZwkAXUmJM4vlRMN",
-      "authorized_role": "source_content_and_living_scene_atmosphere",
+      "authorized_role": "visual_source_and_living_scene_atmosphere",
+      "content_reuse_authorized": true,
+      "whole_video_recut_authorized": false,
       "extraction_policy": "pending_meaningful_sampling",
       "analysis_complete": false
     },
@@ -31,12 +33,13 @@
       "name": "Silver_Coin_V7_YouTube_Final_720p24.mp4",
       "sha256": "d59a9e587623aed66e22cf23641b72931fc0ac38ef7e412e227b25f7cf9b207b",
       "duration_seconds": 210.416667,
-      "total_frames": 5050,
       "width": 1280,
       "height": 720,
       "fps": 24,
       "drive_id": "19pP51qoZqIzBqut3hl1MOpRHapkyU8es",
-      "authorized_role": "source_content_and_reusable_environmental_fx",
+      "authorized_role": "visual_source_and_reusable_environmental_fx",
+      "content_reuse_authorized": true,
+      "whole_video_recut_authorized": false,
       "extraction_policy": "pending_meaningful_sampling",
       "analysis_complete": false
     }
@@ -44,34 +47,61 @@
   "images": [],
   "audio": [
     {
+      "name": "Irish eyes (Remastered).wav",
+      "sha256": "8b0ccd2e57a6e683d526d950bd88b42af0f0867b06e3d1b014a2b3131f3cfb1e",
+      "duration_seconds": 187.12,
+      "drive_id": "1TtfXzs_p_zGxZRLdB92rKVFNKIGARuFd",
+      "authorized_role": "canonical_music_master",
+      "analysis_complete": false
+    },
+    {
+      "name": "Leave It by the Door.wav",
+      "sha256": "3354715f5873df14e7d245a1e8f094ff38aade95264f16da3b4bbd71563f4a82",
+      "duration_seconds": 198.84,
+      "drive_id": "19fYuhcZzi8cnIJmQZmsByh5tQU_AL83P",
+      "authorized_role": "canonical_music_master",
+      "analysis_complete": false
+    },
+    {
+      "name": "Silver Coin (Remastered).wav",
+      "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+      "duration_seconds": 207.44,
+      "drive_id": "1Usuzmm1WF8rxXs6_qKr4WsAsdcyausxr",
+      "authorized_role": "canonical_music_master",
+      "analysis_complete": false
+    },
+    {
       "name": "El Viento trae tu nombre Instrumental.wav",
       "sha256": "8d451360246378db551282c3703add4cd474c9ad3a4c6cf778390ae727820fe0",
       "duration_seconds": 158.64,
-      "sample_rate_hz": 48000,
-      "channels": 2,
       "drive_id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6",
-      "authorized_role": "canonical_ending_audio",
+      "authorized_role": "canonical_music_master_closing_movement",
       "analysis_complete": false
     }
   ],
   "repo_references": [
     {
       "ref": "song/el-viento-trae-tu-nombre",
-      "role": "text_fx_and_transition_language",
+      "role": "text_fx_transition_and_living_painting_language",
       "content_reuse": false
     },
     {
       "ref": "feature/long-form-loops",
-      "role": "phoenix_loop_scanner_archive",
+      "role": "phoenix_long_form_loop_and_audio_reactivity_method",
       "content_reuse": true
     },
     {
       "ref": "song/tribal-house-remastered",
-      "role": "loop_fx_provenance",
+      "role": "loop_fx_provenance_and_successful_actions_pattern",
       "content_reuse": true
+    },
+    {
+      "ref": "song/silver-coin-alternate",
+      "role": "successful_actions_bootstrap_pattern",
+      "content_reuse": false
     }
   ],
   "usable_visual_reference": true,
   "analysis_completed_at": null,
-  "note": "All long references require recorded meaningful sampling before REFERENCES_ANALYZED."
+  "note": "No HERO_LIBRARY or locked still set exists yet."
 }

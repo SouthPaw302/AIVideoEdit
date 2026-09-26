@@ -3,43 +3,56 @@
   "analysis_complete": false,
   "production_type": "multi_track_long_form_compilation",
   "target_duration_seconds": 900,
+  "source_music_duration_seconds": 752.04,
+  "authored_extension_required_seconds": 147.96,
   "lyrics": {
-    "status": "unresolved_for_source_tracks",
-    "source": "pending_source_audio_analysis",
+    "status": "unresolved_per_track",
+    "source": "pending repo-native analysis / verified lyric records",
     "text_file": null,
     "directing_use": "pending"
   },
   "genre": {
-    "status": "user_directed",
-    "label": "Mountain Noir atmospheric cinematic folk / trip-hop long form",
+    "status": "user_confirmed",
+    "label": "MountainNoir / MontañaNoir atmospheric cinematic folk, trip-hop and dark ambient long-form",
     "source": "current_user_instruction",
-    "confidence": 1,
-    "user_declaration": "MountainNoir style"
+    "confidence": 1
   },
   "rhythm": {
-    "tempo_status": "per_track_pending",
+    "tempo_status": "per_track_pending_repo_analysis",
     "tempo_bpm": null,
-    "pulse_description": "pending multi-track scanner pass",
-    "meter_or_groove": "pending"
+    "pulse_description": "Run current-main resolved audio edit-map/reactivity workflow on all four canonical WAVs.",
+    "meter_or_groove": "pending measured analysis"
   },
   "sources": [
     {
-      "id": "SRC-VID-IRISH-EYES",
-      "duration_seconds": 200.149,
+      "id": "SRC-AUDIO-IRISH-EYES",
+      "name": "Irish eyes (Remastered).wav",
+      "drive_id": "1TtfXzs_p_zGxZRLdB92rKVFNKIGARuFd",
+      "sha256": "8b0ccd2e57a6e683d526d950bd88b42af0f0867b06e3d1b014a2b3131f3cfb1e",
+      "duration_seconds": 187.12,
       "analysis_status": "pending"
     },
     {
-      "id": "SRC-VID-LEAVE-DOOR",
+      "id": "SRC-AUDIO-LEAVE-DOOR",
+      "name": "Leave It by the Door.wav",
+      "drive_id": "19fYuhcZzi8cnIJmQZmsByh5tQU_AL83P",
+      "sha256": "3354715f5873df14e7d245a1e8f094ff38aade95264f16da3b4bbd71563f4a82",
       "duration_seconds": 198.84,
       "analysis_status": "pending"
     },
     {
-      "id": "SRC-VID-SILVER-COIN",
-      "duration_seconds": 210.416667,
+      "id": "SRC-AUDIO-SILVER-COIN",
+      "name": "Silver Coin (Remastered).wav",
+      "drive_id": "1Usuzmm1WF8rxXs6_qKr4WsAsdcyausxr",
+      "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+      "duration_seconds": 207.44,
       "analysis_status": "pending"
     },
     {
-      "id": "SRC-AUDIO-ENDING",
+      "id": "SRC-AUDIO-EL-VIENTO",
+      "name": "El Viento trae tu nombre Instrumental.wav",
+      "drive_id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6",
+      "sha256": "8d451360246378db551282c3703add4cd474c9ad3a4c6cf778390ae727820fe0",
       "duration_seconds": 158.64,
       "analysis_status": "pending",
       "instrumental": true
@@ -48,6 +61,13 @@
   "sections": [],
   "energy_curve": [],
   "musical_cues": [],
-  "narrative_function": "One continuous nocturnal Mountain Noir journey rather than disconnected videos.",
-  "note": "Verified sources total 768.045667 seconds. Remaining duration will be authored through analyzed transitions, long holds/reprises and the ending treatment; no silent padding."
+  "visual_function": "One continuous nocturnal MountainNoir world. Music maps determine section timing, animation intensity, transition placement and loop windows; they do not authorize recycling finished videos as the picture.",
+  "required_repo_evidence": [
+    "AUDIO_MAP",
+    "EDIT_MAP",
+    "REACTIVE_CONTROLS",
+    "source SHA-256",
+    "ffprobe metadata"
+  ],
+  "note": "No repo-native music analysis has been completed yet."
 }

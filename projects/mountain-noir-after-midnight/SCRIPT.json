@@ -8,8 +8,9 @@
   "basis": [
     "current_user_direction",
     "authorized_visual_references",
-    "pending_music_analysis"
+    "pending_repo_native_music_analysis",
+    "pending_real_still_selection"
   ],
   "entries": [],
-  "status": "pending_reference_and_music_analysis"
+  "status": "working_direction_only_not_executable_not_user_accepted"
 }

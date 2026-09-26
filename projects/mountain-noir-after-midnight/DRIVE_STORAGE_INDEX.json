@@ -21,6 +21,26 @@
   },
   "staged_assets": [
     {
+      "id": "1TtfXzs_p_zGxZRLdB92rKVFNKIGARuFd",
+      "name": "Irish eyes (Remastered).wav",
+      "category": "source_audio"
+    },
+    {
+      "id": "19fYuhcZzi8cnIJmQZmsByh5tQU_AL83P",
+      "name": "Leave It by the Door.wav",
+      "category": "source_audio"
+    },
+    {
+      "id": "1Usuzmm1WF8rxXs6_qKr4WsAsdcyausxr",
+      "name": "Silver Coin (Remastered).wav",
+      "category": "source_audio"
+    },
+    {
+      "id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6",
+      "name": "El Viento trae tu nombre Instrumental.wav",
+      "category": "source_audio"
+    },
+    {
       "id": "1b_dz3H1pLxkMFL7ubdT7qrbD2ajxjcyp",
       "name": "Irish_Eyes_Mountainnoir_Upload.mp4",
       "category": "visual_source"
@@ -36,10 +56,10 @@
       "category": "visual_source"
     },
     {
-      "id": "1JlyFlsfqg6ur42QK6hiBnHdi-G1429A6",
-      "name": "El Viento trae tu nombre Instrumental.wav",
-      "category": "source_audio"
+      "id": "13rKVvBu0P9VHpZ1HDPGMtgaThaRSdzBi",
+      "name": "Mountain_Noir_After_Midnight_15min_REVIEW_v1.mp4",
+      "category": "rejected_workprint"
     }
   ],
-  "updated_at_utc": "2026-09-26T05:35:00Z"
+  "updated_at_utc": "2026-09-26T06:45:00Z"
 }
