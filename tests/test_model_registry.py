@@ -73,5 +73,5 @@ def test_default_registry_declares_cpu_first_authority():
     models = {x["id"]: x for x in data["models"]}
     onnx = models["music-beat-onnx-v1"]
     assert onnx["hardware"]["required"] == "cpu"
-    assert onnx["fallback"] == "music-beat-dsp-v1"
+    assert onnx["fallback"] == "music-beat-micro-dsp-v1"
     assert onnx["authority"] == "evidence_only"

@@ -67,6 +67,15 @@ class ModelRegistry:
                 return False, f"repo_python source missing: {source}", None
             return True, "repo_python source available", str(path)
 
+        if runtime == "builtin_python":
+            source = str(rec.get("source") or "")
+            path = (self.repo_root / source).resolve()
+            if self.repo_root != path and self.repo_root not in path.parents:
+                return False, "builtin_python source escaped repository root", None
+            if not path.is_file():
+                return False, f"builtin_python source missing: {source}", None
+            return True, "builtin Python worker available", str(path)
+
         if runtime == "onnxruntime":
             artifact = str(rec.get("artifact_path") or "")
             if not artifact:
