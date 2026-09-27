@@ -124,6 +124,8 @@ class CoreAdapter:
         if not bootstrap.is_file():
             return {"ok": False, "bootstrapped": False, "error": "installed main lacks bootstrap.py", **self.status()}
 
+        requested_ref = _core_ref()
+        boot_branch = "main"
         cmd = [
             sys.executable,
             str(bootstrap),
@@ -131,13 +133,13 @@ class CoreAdapter:
             "--repo-root",
             str(CORE_REPO),
             "--branch",
-            _core_ref(),
+            boot_branch,
         ]
         if offline:
             cmd.append("--offline")
         env = dict(os.environ)
-        if _core_ref() != "main":
-            env["AIVIDEOEDIT_AUTHORITY_REF"] = _core_ref()
+        if requested_ref != "main":
+            env["AIVIDEOEDIT_AUTHORITY_REF"] = requested_ref
             env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
         proc = _run(cmd, CORE_REPO, timeout=300, env=env)
         result = {
@@ -158,7 +160,7 @@ class CoreAdapter:
         capabilities = self._records(matrix, ("capabilities", "media_capabilities", "items"))
         effects = self._records(fx, ("effects", "fx", "registry", "items"))
         ref = _core_ref()
-        bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == ref
+        bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == "main"
         return {
             "ok": True,
             "bootstrapped": bootstrapped,

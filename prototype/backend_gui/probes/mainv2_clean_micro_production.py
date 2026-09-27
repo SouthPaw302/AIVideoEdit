@@ -95,7 +95,7 @@ def main():
     try:
         wait_until(lambda: request("http://127.0.0.1:8099/api/system") if _ping() else None,60)
         core=request("http://127.0.0.1:8099/api/core/bootstrap",{"offline":True})
-        if not core.get("bootstrapped") or core.get("core_branch")!="MainV2-clean":
+        if not core.get("bootstrapped") or core.get("requested_core_ref")!="MainV2-clean" or core.get("core_branch")!="main":
             raise RuntimeError(f"validation core bootstrap failed: {core}")
         snapshots.append({"core":core})
 
