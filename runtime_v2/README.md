@@ -207,3 +207,16 @@ project workspace. The response combines the Runtime Gatekeeper, bounded Jev
 decision, and optional Harness escalation. This is advisory/read-only; executing
 the action performs the gate again so a stale preview cannot authorize a later
 mutation.
+
+
+Thin-client decision preview:
+
+```bash
+python -m runtime_v2.client --url "$AIVIDEOEDIT_BRIDGE_URL" \
+  project-decide my-project storyboard.set \
+  --payload '{"checks":{"technical_qc":true}}'
+```
+
+Use `project-decide` for production decisions because it evaluates the actual
+Studio project workspace. The older generic `decide` command evaluates the
+bridge checkout and is intended for bridge-local diagnostics.

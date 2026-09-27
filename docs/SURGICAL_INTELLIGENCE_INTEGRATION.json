@@ -42,7 +42,8 @@
     "Deployed MainV2 Bridge and Studio require HMAC-signed session attestations.",
     "Studio production music analysis consumes Runtime V2 beat evidence directly; Beat This ONNX is preferred when provisioned and verified.",
     "Director Brain operating.* mutations now pass through the same canonical guard, Runtime Gatekeeper, and post-mutation capsule refresh as the main Tool API mutation family.",
-    "SandAgent can call production.decide through the existing remote production proxy to preview the real project workspace gate + Jev result; execution still performs an independent gate check."
+    "SandAgent can call production.decide through the existing remote production proxy to preview the real project workspace gate + Jev result; execution still performs an independent gate check.",
+    "Bridge capability discovery advertises the production proxy and project-aware decision service, and the thin client exposes project-decide for SandAgent use."
   ],
   "verification": {
     "micro_tests": [

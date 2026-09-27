@@ -1,8 +1,9 @@
-# DeepSeek Harness adapter prototype
+# DeepSeek Harness adapter (optional / provider-neutral)
 
-This folder contains an optional adapter for testing DeepSeek Harness against the
-AIVideoEdit Studio prototype. It does not replace the AIVideoEdit production
-engine, contracts, guards, GUI, or branch model.
+This folder originated as the DeepSeek Harness prototype adapter and is now the
+optional provider-neutral Harness seam used by Runtime V2 on `MainV2`. It does
+not replace the AIVideoEdit production engine, contracts, guards, GUI, branch
+model, Runtime Gatekeeper, or Jev.
 
 ## Architecture
 
@@ -28,8 +29,8 @@ for example `mcp__aivideo__production__status`.
 
 ## Safety / isolation rules
 
-- This integration lives only on `prototype/deepseek-harness`.
-- It must not mutate repository `main`.
+- `prototype/deepseek-harness` is retained as historical validation material; current integration work is isolated on `MainV2`.
+- Harness remains optional and must not mutate repository `main`.
 - AIVideoEdit remains authoritative for production state.
 - Canonical production guards remain in force.
 - Harness state is orchestration/session state, not production truth.

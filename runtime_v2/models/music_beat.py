@@ -11,7 +11,7 @@ from array import array
 from pathlib import Path
 from typing import Any
 
-from .registry import ModelRegistry
+from .registry import ModelRegistry, inferred_repo_root
 
 BEAT_THIS_SAMPLE_RATE = 22050
 BEAT_THIS_N_FFT = 1024
@@ -339,7 +339,7 @@ def analyze_beat_this_onnx(path: Path, model_path: Path) -> dict[str, Any]:
 
 
 def analyze_repo_dsp(path: Path, source: str) -> dict[str, Any]:
-    repo_root = Path(os.environ["AIVIDEOEDIT_REPO_ROOT"]).resolve()
+    repo_root = inferred_repo_root()
     module_path = (repo_root / source).resolve()
     spec = importlib.util.spec_from_file_location("aivideoedit_audio_map", module_path)
     if not spec or not spec.loader:

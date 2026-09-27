@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from runtime_v2.client import BridgeClient, _json_arg
+from runtime_v2.client import BridgeClient, _json_arg, build_parser
 
 
 class FakeResponse:
@@ -55,3 +55,22 @@ def test_json_arg_supports_file(tmp_path: Path):
 def test_client_rejects_relative_base_url():
     with pytest.raises(ValueError):
         BridgeClient("/relative")
+
+
+
+def test_project_decide_cli_parses_project_and_action():
+    args = build_parser().parse_args(
+        [
+            "--url",
+            "https://bridge.example.test",
+            "project-decide",
+            "demo",
+            "storyboard.set",
+            "--payload",
+            '{"checks":{"qc":true}}',
+        ]
+    )
+    assert args.command == "project-decide"
+    assert args.project_id == "demo"
+    assert args.action == "storyboard.set"
+    assert _json_arg(args.payload)["checks"]["qc"] is True

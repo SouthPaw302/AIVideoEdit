@@ -82,6 +82,10 @@ def build_parser() -> argparse.ArgumentParser:
     call.add_argument("--args", default="{}", help="JSON object or @file.json")
     decide = sub.add_parser("decide")
     decide.add_argument("--payload", required=True, help="JSON object or @file.json")
+    project_decide = sub.add_parser("project-decide")
+    project_decide.add_argument("project_id")
+    project_decide.add_argument("action")
+    project_decide.add_argument("--payload", default="{}", help="Additional production.decide arguments as JSON or @file.json")
     music = sub.add_parser("music")
     music.add_argument("path")
     return ap

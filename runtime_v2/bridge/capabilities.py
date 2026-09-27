@@ -34,7 +34,17 @@ READY_CAPABILITIES: tuple[Capability, ...] = (
     Capability(name="model.registry", status="ready", description="Provider-neutral intelligence registry with deterministic fallback."),
     Capability(name="model.music_beat", status="ready", description="CPU music/beat evidence worker with optional ONNX and existing-DSP fallback."),
     Capability(name="jev.decide", status="ready", description="Bounded deterministic PASS/FAIL/RETRY/CONTINUE/ESCALATE decision hook."),
-    Capability(name="harness.optional", status="ready", description="Optional provider-neutral specialist-agent request seam."),
+    Capability(name="harness.optional", status="ready", description="Optional provider-neutral specialist-agent request seam."),    Capability(
+        name="production.proxy",
+        status="ready",
+        description="Provider-neutral proxy to the private Studio Tool API when Studio is configured.",
+    ),
+    Capability(
+        name="production.project_decide",
+        status="ready",
+        description="Project-aware read-only Gatekeeper + Jev preview with optional Harness escalation.",
+    ),
+
 )
 
 PLANNED_CAPABILITIES: tuple[Capability, ...] = (
