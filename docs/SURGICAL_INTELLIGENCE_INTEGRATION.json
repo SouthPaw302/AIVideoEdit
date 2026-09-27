@@ -1,0 +1,53 @@
+{
+  "plan": "AIVideoEdit Surgical Intelligence Integration",
+  "version": "1.0-MainV2",
+  "principles": [
+    "No rewrite of AIVideoEdit.",
+    "Integrate one bounded capability at a time.",
+    "Preserve existing production contracts, guards, canon, FX system, and branch model.",
+    "Every step must be independently testable.",
+    "Full productions are not required for routine verification.",
+    "Large models are optional reasoning providers, not production authority."
+  ],
+  "implementation_status": {
+    "1_harden_boot": "IMPLEMENTED_MAINV2",
+    "2_runtime_gatekeeper": "IMPLEMENTED_MAINV2",
+    "3_model_registry": "IMPLEMENTED_MAINV2",
+    "4_first_onnx_worker": "IMPLEMENTED_OPTIONAL_MODEL_REQUIRED_FOR_ONNX_PATH",
+    "5_jev_decision_hook": "IMPLEMENTED_MAINV2",
+    "6_deepseek_harness": "OPTIONAL_PROVIDER_NEUTRAL",
+    "7_regression_verification": "IMPLEMENTED_MICRO_FIXTURES_NO_FULL_PRODUCTION"
+  },
+  "target_architecture": {
+    "primary_agent": "Already-authorized sandbox agent",
+    "boot": "AIVideoEdit bootstrap plus portable session state",
+    "enforcement": "Runtime Gatekeeper",
+    "embedded_inference": "ONNX and existing deterministic DSP workers",
+    "bounded_decisions": "Jev",
+    "specialist_agents": "Optional DeepSeek Harness",
+    "execution": "Existing AIVideoEdit Tool API, guards, FX, proofs, assembly and QC"
+  },
+  "runtime_rules": [
+    "Main remains the production authority by default.",
+    "MainV2 authority must be selected explicitly during experimental validation.",
+    "ONNX evidence cannot bypass production guards.",
+    "Jev output is bounded to PASS, FAIL, RETRY, CONTINUE, ESCALATE.",
+    "Harness specialist output is advisory only.",
+    "Large model binaries are not committed to normal git history.",
+    "No automatic full-production regression is required for routine changes."
+  ],
+  "verification": {
+    "micro_tests": [
+      "boot capsule attestation and tamper rejection",
+      "branch/stage/canon/scope gatekeeper denials",
+      "model fallback and unknown model rejection",
+      "CPU 120 BPM audio fixture",
+      "deterministic Jev replay",
+      "provider-neutral specialist fixture",
+      "HTTP intelligence surface",
+      "golden JSON comparison"
+    ],
+    "full_production": "Reserved for explicit integration checkpoint before promotion to main."
+  },
+  "promotion_rule": "Do not promote MainV2 to main until boot integration and one checkpoint end-to-end production are explicitly approved."
+}

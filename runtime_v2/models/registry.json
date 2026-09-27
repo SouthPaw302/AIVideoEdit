@@ -1,0 +1,39 @@
+{
+  "schema": "aivideoedit.model-registry.v1",
+  "models": [
+    {
+      "id": "music.beat.onnx.v1",
+      "capability": "music_and_beat_analysis",
+      "runtime": "onnxruntime",
+      "source": "external_model_file",
+      "version": "1",
+      "hardware": "cpu",
+      "gpu_optional": true,
+      "path_env": "AIVIDEOEDIT_BEAT_ONNX_MODEL",
+      "fallback": "music.beat.repo-dsp.v1",
+      "authority": "evidence_only"
+    },
+    {
+      "id": "music.beat.repo-dsp.v1",
+      "capability": "music_and_beat_analysis",
+      "runtime": "repo_python",
+      "source": "general/reusable/tools/audio_map.py",
+      "version": "1",
+      "hardware": "cpu",
+      "gpu_optional": false,
+      "fallback": "music.beat.micro-dsp.v1",
+      "authority": "evidence_only"
+    },
+    {
+      "id": "music.beat.micro-dsp.v1",
+      "capability": "music_and_beat_analysis",
+      "runtime": "builtin_python",
+      "source": "runtime_v2.models.music_beat",
+      "version": "1",
+      "hardware": "cpu",
+      "gpu_optional": false,
+      "fallback": null,
+      "authority": "evidence_only"
+    }
+  ]
+}
