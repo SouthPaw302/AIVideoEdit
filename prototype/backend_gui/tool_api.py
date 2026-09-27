@@ -3,6 +3,7 @@
 from __future__ import annotations
 from typing import Callable
 from pathlib import Path
+import os
 import subprocess
 import sys
 
@@ -194,7 +195,7 @@ _READ_ONLY_TOOLS = {
 }
 
 _UNGATED_BOOTSTRAP_TOOLS = {
-    "core.bootstrap", "project.create", "production.initialize",
+    "core.bootstrap", "project.create", "project.prepare", "production.initialize",
 }
 
 _CHANGE_TAGS = {
@@ -234,6 +235,11 @@ def _refresh_boot_capsule(project_id: str) -> None:
         return
     engine = Path(current["engine_root"])
     project_dir = Path(current["project_dir"])
+    env = dict(os.environ)
+    core_ref = os.environ.get("AIVE_CORE_REF", "main").strip() or "main"
+    if core_ref != "main":
+        env["AIVIDEOEDIT_AUTHORITY_REF"] = core_ref
+        env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
     proc = subprocess.run(
         [
             sys.executable, str(engine / "bootstrap.py"), "boot",
@@ -242,6 +248,7 @@ def _refresh_boot_capsule(project_id: str) -> None:
             "--project-dir", str(project_dir.relative_to(engine)),
         ],
         cwd=str(engine), capture_output=True, text=True, timeout=300, check=False,
+        env=env,
     )
     if proc.returncode != 0:
         raise RuntimeError(
