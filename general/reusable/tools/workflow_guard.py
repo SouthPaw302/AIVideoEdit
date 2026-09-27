@@ -28,6 +28,7 @@ else:
 REGISTRY = OS_ROOT / "general/reusable/STANDARD_WORKFLOW_REGISTRY.json"
 RESOLVER = OS_ROOT / "general/reusable/tools/workflow_resolver.py"
 MEDIA = OS_ROOT / "general/reusable/MEDIA_CAPABILITY_MATRIX.json"
+CONTRACT = OS_ROOT / "general/reusable/PRODUCTION_CONTRACT.json"
 
 # Optional execution engines may extend an already-resolved AIVideoEdit workflow,
 # but they may never register themselves as workflow authority. This protects the
@@ -95,6 +96,23 @@ def validate(branch: str):
         return [f"standard workflow selection failed: {exc}"]
     selected = resolved.get("selected_workflows", [])
     mandatory = {"WF-PROJECT-STATE", "WF-RENDER-DELIVERY", "WF-MACHINE-QC", "WF-CACHE-INVALIDATION"}
+    state = load_json(project / "PROJECT_STATE.json")
+    order = load_json(project / "OPERATING_ORDER.json") if (project / "OPERATING_ORDER.json").is_file() else {}
+    contract = load_json(CONTRACT)
+    try:
+        version = int(state.get("director_brain_version", 0) or 0)
+    except (TypeError, ValueError):
+        version = 0
+    stage = state.get("stage")
+    states = contract.get("states", [])
+    if (
+        version >= 3
+        and stage in states
+        and states.index(stage) >= states.index("APPROACH_ESTABLISHED")
+        and order.get("direction_authority") == "music_led"
+        and order.get("production_mode") in {"living_scene", "hybrid"}
+    ):
+        mandatory.update({"WF-MUSIC-DIRECTED-SECTION-ASSEMBLY", "WF-PROFILE-DRIVEN-SCENE-TREATMENT"})
     missing = mandatory - set(selected)
     if missing:
         errors.append("standard workflow selection missing mandatory defaults: " + ", ".join(sorted(missing)))
