@@ -11,6 +11,7 @@ import tempfile
 import time
 import urllib.parse
 import urllib.request
+import urllib.error
 from pathlib import Path
 
 HERE=Path(__file__).resolve().parent
@@ -21,8 +22,12 @@ STACK=BACKEND/"stack.py"
 def request(url:str,payload:dict|None=None,timeout=600):
     data=None if payload is None else json.dumps(payload).encode()
     req=urllib.request.Request(url,data=data,headers={"Content-Type":"application/json"} if data else {})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
-        return json.loads(r.read().decode())
+    try:
+        with urllib.request.urlopen(req,timeout=timeout) as r:
+            return json.loads(r.read().decode())
+    except urllib.error.HTTPError as exc:
+        body=exc.read().decode("utf-8",errors="replace")
+        raise RuntimeError(f"HTTP {exc.code} {url}: {body}") from exc
 
 
 def tool(name:str,args:dict|None=None):
