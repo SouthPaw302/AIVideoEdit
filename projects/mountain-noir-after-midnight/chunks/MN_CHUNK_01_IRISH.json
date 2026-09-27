@@ -1,0 +1,18 @@
+{
+  "schema": "aivideoedit.living-scene-chunk.v1",
+  "chunk": "Irish Eyes",
+  "fps": 24,
+  "width": 960,
+  "height": 540,
+  "seed": 302,
+  "preset": "veryfast",
+  "crf": 19,
+  "transition_fraction": 0.075,
+  "scenes": [
+    {"id":"MN01_BLACK_WATER","duration":30.0,"image":"../assets/derived/IE_L23_DARK_LAKE_RIDGE_frame.png","family":"village","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":2.8,"micro_strength":0.34,"reflection_strength":0.055,"canvas_amount":0.26,"transition":"pigment"},
+    {"id":"MN02_RAIN_ROAD","duration":38.0,"image":"../assets/derived/IE_L21_ROAD_RAIN_GLASS_frame.png","family":"village","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":3.0,"micro_strength":0.38,"reflection_strength":0.07,"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN03_RIDGE_MIST","duration":39.0,"image":"../assets/derived/IE_L23_DARK_LAKE_RIDGE_frame.png","family":"village","effects":["parallax","micro","reflection","atmosphere","particles","focus","canvas"],"parallax":2.4,"micro_strength":0.30,"reflection_strength":0.045,"focus_amount":0.7,"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN04_WINDOW_WAKE","duration":39.0,"image":"../assets/derived/IE_L22_WARM_WINDOW_CANDLE_frame.png","family":"threshold","effects":["parallax","micro","atmosphere","particles","firelight","haze","shafts","canvas"],"parallax":2.3,"micro_strength":0.28,"firelight_strength":0.022,"haze_strength":0.55,"shaft_strength":0.020,"light_origin":[0.74,0.20],"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN05_RAIN_THRESHOLD","duration":38.12,"image":"../assets/derived/IE_L21_ROAD_RAIN_GLASS_frame.png","family":"threshold","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":2.6,"micro_strength":0.32,"reflection_strength":0.06,"canvas_amount":0.25,"transition":"pigment"}
+  ]
+}

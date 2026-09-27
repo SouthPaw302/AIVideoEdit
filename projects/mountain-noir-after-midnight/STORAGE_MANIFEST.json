@@ -16,6 +16,14 @@
       "uploaded_at_utc": "2026-09-27T02:07:13Z"
     },
     {
+      "category": "proofs",
+      "asset_name": "proofs__Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
+      "sha256": "08193f660b5496ad5f1424cae650cfdff688f095aeb69354cd108543879b16dc",
+      "bytes": 4468032,
+      "uploaded_at_utc": "2026-09-27T02:27:52Z"
+    },
+    {
       "category": "source",
       "asset_name": "source__01_enchanted_woodland_coin_portrait.png",
       "original_name": "01_enchanted_woodland_coin_portrait.png",

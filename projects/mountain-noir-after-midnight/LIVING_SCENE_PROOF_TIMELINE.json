@@ -1,0 +1,8 @@
+{
+  "schema": "aivideoedit.temporal-qc-timeline.v1",
+  "scenes": [
+    {"id": "PROOF_RIDGE", "start": 0.0, "end": 10.0},
+    {"id": "PROOF_WINDOW", "start": 10.0, "end": 20.0},
+    {"id": "PROOF_COIN", "start": 20.0, "end": 30.0}
+  ]
+}

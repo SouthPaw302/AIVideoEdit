@@ -1,16 +1,23 @@
 {
   "schema": "aivideoedit.video-script.v1",
   "locked": false,
-  "based_on_storyboard": false,
+  "based_on_storyboard": true,
   "target_fps": 24,
   "duration_seconds": 900,
   "total_frames": 21600,
   "basis": [
     "current_user_direction",
-    "authorized_visual_references",
-    "pending_repo_native_music_analysis",
-    "pending_real_still_selection"
+    "approved raw source library",
+    "MUSIC_ANALYSIS.json",
+    "AUDIO_EDIT_PLAN.json",
+    "LIVING_SCENE_MANIFEST.json",
+    "TEXT_RENDER_FILTER.txt"
   ],
-  "entries": [],
-  "status": "working_direction_only_not_executable_not_user_accepted"
+  "entries": [
+    {"id":"IRISH_EYES","start_seconds":0.0,"end_seconds":184.12,"audio":"Irish Eyes","visual_scene_ids":"MN01–MN05"},
+    {"id":"LEAVE_IT_BY_THE_DOOR","start_seconds":184.12,"end_seconds":379.96,"audio":"Leave It by the Door","visual_scene_ids":"MN06–MN10"},
+    {"id":"SILVER_COIN","start_seconds":379.96,"end_seconds":584.4,"audio":"Silver Coin","visual_scene_ids":"MN11–MN15"},
+    {"id":"EL_VIENTO_FINALE","start_seconds":584.4,"end_seconds":900.0,"audio":"El Viento trae tu nombre — Instrumental","visual_scene_ids":"MN16–MN23"}
+  ],
+  "status": "executable_source_derived_living_scene_plan_proof_pending"
 }
