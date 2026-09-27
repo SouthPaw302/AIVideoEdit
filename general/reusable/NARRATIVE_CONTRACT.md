@@ -44,7 +44,7 @@ For compatibility, a project may store the last item as `narrative_function` or 
 These cues control visual development, shot/scene timing, animation intensity, transition timing, and FX escalation according to the declared production mode.
 
 ## 4. Choose directing authority and production mode
-Director Brain v2 separates:
+Director Brain v3 separates:
 
 Direction authority:
 - `reference_led`
@@ -67,7 +67,7 @@ Before shot packages:
 - cover the entire target frame range without gaps;
 - map each frame span to visual/action intent, actual visual media, animation behavior, musical cues, lyric cues when applicable, and transition.
 
-For compatibility, `story_action` remains valid. Director Brain v2 may use `visual_action` when a conventional story action would misdescribe a living-scene section.
+For compatibility, `story_action` remains valid. Director Brain v3 may use `visual_action` when a conventional story action would misdescribe a living-scene section.
 
 For `living_scene`, declare semantic `motion_regions` and `protected_regions`. For `hybrid`, declare the shot-level mode and apply the corresponding requirements.
 

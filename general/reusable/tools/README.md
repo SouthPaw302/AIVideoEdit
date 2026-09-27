@@ -27,6 +27,8 @@ Do not create production-named reusable directories and do not recreate the supe
 ## Standard workflow tools
 - `workflow_resolver.py` — validates the neutral workflow registry and resolves the workflow set for a project from its current mode/media capabilities.
 - `workflow_guard.py` — fail-closed bootstrap/stage guard for standard workflow selection.
+- `recipe_execution_guard.py` — validates music-directed section controls, pass declarations, hashed proof outputs, effect application coverage, and final assembly evidence for Director Brain v3 productions.
+- `test_recipe_execution_guard.py` — regression tests for missing recipe, valid complete evidence, and locked-effect coverage failures.
 - `promote_standard_library.py` — idempotent migration/generator used to build the neutral standard effect/workflow registries and proofs.
 
 ## Optional scene runtime

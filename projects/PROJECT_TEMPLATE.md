@@ -2,8 +2,8 @@
 
 Use only on `song/<slug>`. A new supplied audio master creates a fresh branch from current `main` unless the user explicitly names an existing branch to continue.
 
-## Director Brain v2
-All new productions use Director Brain v2. Set `"director_brain_version": 2` in `PROJECT_STATE.json` and create `OPERATING_ORDER.json` from `projects/OPERATING_ORDER_TEMPLATE.json`.
+## Director Brain v3
+All new productions use Director Brain v3. Set `"director_brain_version": 3` in `PROJECT_STATE.json` and create `OPERATING_ORDER.json` from `projects/OPERATING_ORDER_TEMPLATE.json`.
 
 `OPERATING_ORDER.json` is the short project-level directing brief. It must answer, without searching old chats:
 - What are we making now?
@@ -25,7 +25,7 @@ Do not put historical provenance or another project's identity into the Operatin
 - `STATUS.md`
 - `HANDOFF.md`
 - `PROJECT_STATE.json`
-- `OPERATING_ORDER.json` for Director Brain v2
+- `OPERATING_ORDER.json` for Director Brain v3
 - `SOURCE_AUTHORITY.json`
 - `REFERENCE_MANIFEST.json`
 - `MEDIA_PLAN.json`
@@ -44,7 +44,8 @@ Do not put historical provenance or another project's identity into the Operatin
 
 Recovery/recut productions additionally use evidence files as applicable:
 - `HERO_LIBRARY.json` when `canonical_hero_library` is selected or a source-library recut is active;
-- `RENDER_RECIPE.json` when a recorded creative recipe/render implementation is used, especially when proof and production backends differ;
+- `RENDER_RECIPE.json` when a recorded creative recipe/render implementation is used, especially when proof and production backends differ; music-led living-scene and hybrid v3 productions always require it;
+- `MUSIC_CONTROL_MAP.json`, `SECTION_RENDER_MANIFEST.json`, and `FX_APPLICATION_PROOF.json` for music-directed section assembly;
 - `REFINEMENT_QC.json` before a source-library recut may claim `FINAL_QC_PASSED`;
 - `project_fx/*.json` plus matching `*.lock.json` for any project-local experimental FX.
 
@@ -53,7 +54,7 @@ The machine stage is recorded in `PROJECT_STATE.json` and validated by `general/
 Historical chats/branches/media are excluded by default in `SOURCE_AUTHORITY.json`. Explicit user authorization is required to add any such source.
 
 ## Operating Order requirement
-For Director Brain v2, before `APPROACH_ESTABLISHED`, `OPERATING_ORDER.json` must contain:
+For Director Brain v3, before `APPROACH_ESTABLISHED`, `OPERATING_ORDER.json` must contain:
 - `mission`
 - `direction_authority`: `reference_led`, `music_led`, or `user_directed`
 - `production_mode`: `living_scene`, `cinematic`, or `hybrid`
@@ -202,10 +203,10 @@ Minimum machine shape:
 
 Frame ranges must be contiguous from frame `0` through `total_frames - 1`. When lyrics are present, add `"lyrics"` to `basis` and map lyric cues into the relevant entries.
 
-For Director Brain v2 `living_scene`, every entry requires semantic `motion_regions` and `protected_regions`. For `hybrid`, every entry declares its shot-level `production_mode` as `living_scene` or `cinematic`; living-scene entries carry the semantic region requirements.
+For Director Brain v3 `living_scene`, every entry requires semantic `motion_regions` and `protected_regions`. For `hybrid`, every entry declares its shot-level `production_mode` as `living_scene` or `cinematic`; living-scene entries carry the semantic region requirements.
 
 ## Asset lifecycle and source-derived provenance
-Director Brain v2 generated/derived visual assets should record a `lifecycle_status` using:
+Director Brain v3 generated/derived visual assets should record a `lifecycle_status` using:
 - `exploratory`
 - `candidate`
 - `approved`
@@ -238,6 +239,8 @@ Use `general/reusable/tools/hero_library_extract.py` when approved video is bein
 
 ## Backend-independent render recipe
 When proof and production backends differ, create `RENDER_RECIPE.json` with `schema: "aivideoedit.render-recipe.v1"`, a recipe identity, proof backend, production backend, parameter/backend mapping, hashed render implementation, and an `equivalence_proof` whose status is `PASS`, whose representative proof is hashed, and which records `behavior_preserved=true`, `effects_visible=true`, and `traceable=true`. Backend substitution without this evidence is invalid.
+
+For music-led living-scene or hybrid Director Brain v3 work, add `execution_profile.id: "music_directed_section_assembly"` to that same recipe. It must point to a frame-aligned `MUSIC_CONTROL_MAP.json`, a `SECTION_RENDER_MANIFEST.json` that declares base/reactive/fill/transition passes and a neutral scene profile per music section, and `FX_APPLICATION_PROOF.json` that ties each locked effect to a hashed section output with visible-change evidence. A pass may be marked `not_applicable` only with a section-specific reason. The recipe must declare its intended variation; sparse treatment is a deliberate choice, never an accidental omission.
 
 ## Project-local FX
 Canonical reusable FX authority remains `general/reusable/fx_v2/`. One-off project effects may live under `project_fx/`, but each manifest must pass `general/reusable/fx_v2/project_local_fx_gate.py` and have a current sibling `*.lock.json`. Require real implementation and inputs, truthful technology labeling, recorded deterministic parameters when applicable, hashed proof media, visible pixel change, PASS QC, and `placeholder=false`. A project-local lock never promotes the effect into canonical `fx_v2`.
