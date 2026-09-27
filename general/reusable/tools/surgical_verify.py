@@ -22,6 +22,7 @@ DEFAULT_TESTS = [
     "tests/test_bootstrap_validation_ref.py",
     "tests/test_tool_api_gate_boundaries.py",
     "tests/test_operating_gate_path.py",
+    "tests/test_fx_runtime_dependencies.py",
 ]
 
 

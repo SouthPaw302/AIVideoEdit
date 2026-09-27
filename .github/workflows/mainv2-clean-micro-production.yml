@@ -11,6 +11,7 @@ on:
       - "prototype/backend_gui/production_project.py"
       - "prototype/backend_gui/tool_api.py"
       - "prototype/backend_gui/probes/mainv2_clean_micro_production.py"
+      - "general/reusable/fx_v2/requirements-runtime.txt"
       - ".github/workflows/mainv2-clean-micro-production.yml"
 
 permissions:
@@ -32,8 +33,11 @@ jobs:
           python-version: "3.11"
       - name: Install media runtime
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y ffmpeg
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update -y
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install -r general/reusable/fx_v2/requirements-runtime.txt
       - name: Assert validation branch
         run: test "$(git branch --show-current)" = "MainV2-clean"
       - name: Run actual micro production
