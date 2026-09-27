@@ -59,7 +59,7 @@ curl -H "Authorization: Bearer replace-me" http://127.0.0.1:8787/capabilities
 ## Test
 
 ```bash
-pytest -q runtime_v2/tests
+python -m pytest -q runtime_v2/tests
 ```
 
 ## Security boundary
