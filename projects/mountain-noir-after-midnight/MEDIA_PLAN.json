@@ -2,6 +2,12 @@
   "schema": "aivideoedit.media-plan.v1",
   "user_approach_established": true,
   "selected_capabilities": [
+    "source_video",
+    "source_images",
+    "authorized_source_images",
+    "accepted_source_library",
+    "canonical_hero_library",
+    "source_derived_coverage",
     "living_painting",
     "living_still_fx",
     "layered_composite",
@@ -16,7 +22,7 @@
     "required": false,
     "reason": "Current user supplied explicit direction plus usable authorized visual references from existing Mountain Noir productions.",
     "presented_in_chat": false,
-    "locked": false
+    "locked": true
   },
   "direction": {
     "working_title": "Mountain Noir — After Midnight",
@@ -31,6 +37,8 @@
   "source_strategy": {
     "preserve_verified_masters": true,
     "derive_coverage_from_authorized_source_media": true,
+    "accepted_raw_source_set": "MOUNTAIN-NOIR-AFTER-MIDNIGHT-SOURCE-SET-V1",
+    "finished_video_masters_excluded_from_picture": true,
     "internal_motion_before_camera": true,
     "long_hold_scene_evolution": true,
     "use_phoenix_loop_methods": true,
@@ -39,5 +47,5 @@
     "audio_authority": "private Google Drive production folder / 01 Source Audio",
     "long_form_workflow": "current-main resolved workflows only"
   },
-  "current_phase": "LYRICS_AUTHORITY_AND_CANDIDATE_STILL_REVIEW"
+  "current_phase": "ACCEPTED_SOURCE_LIBRARY_AND_AUDIO_EDIT_PLAN"
 }

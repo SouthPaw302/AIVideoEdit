@@ -15,12 +15,12 @@
     "user_acceptance_statement": null
   },
   "accepted_source_library": {
-    "status": "none",
-    "role": null,
-    "file_or_locator": null,
-    "sha256": null,
-    "user_acceptance_statement": null,
-    "content_reuse_authorized": false,
+    "status": "accepted",
+    "role": "visual_world",
+    "file_or_locator": "projects/mountain-noir-after-midnight/assets/source",
+    "sha256": "674d27de4c11b733466ce38f5cb04d45856d043e1e397eb9d7a3bc1775546e07",
+    "user_acceptance_statement": "User approved the displayed source set and directed: copy them to the working drive folder, create GitHub asset links/blobs, and get to work.",
+    "content_reuse_authorized": true,
     "timeline_locked": false
   },
   "refinement_scope": {
@@ -37,8 +37,8 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Run the AIVideoEdit repo through GitHub Actions as prior agents did. Use the four music files already in Drive. Build a new YouTube long-form MountainNoir living-painting film. Do not use finished videos as the primary picture.",
+  "current_user_direction": "Build a new YouTube long-form MountainNoir living-painting film from the approved raw Drive source set. Do not use finished videos as picture. Mix the first three songs back to back with small overlaps, then place El Viento instrumental last and keep any duration extension inside that finale movement before muxing.",
   "execution_requirement": "GitHub Actions production runner using exact current-main authority; production branch only.",
-  "exact_next_action": "Resolve lyrics status per track and confirm the musical authority, then review the sampled candidate frames and lock only the strongest source-derived stills before storyboard or proof rendering.",
-  "updated_at_utc": "2026-09-26T07:20:00Z"
+  "exact_next_action": "Build the source-backed storyboard and frame-followable script from the accepted raw source library, then produce short mode-aware living-scene proofs before assembly.",
+  "updated_at_utc": "2026-09-27T01:00:00Z"
 }

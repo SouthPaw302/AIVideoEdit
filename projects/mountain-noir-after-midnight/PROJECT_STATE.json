@@ -3,11 +3,11 @@
   "project_id": "mountain-noir-after-midnight",
   "branch": "song/mountain-noir-after-midnight",
   "director_brain_version": 2,
-  "stage": "SOURCE_INGESTED",
+  "stage": "REFERENCES_ANALYZED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
   "music_analysis_complete": true,
-  "lyrics_status_resolved": false,
+  "lyrics_status_resolved": true,
   "genre_authority_resolved": true,
   "visual_approach_established": true,
   "storyboard_locked": false,
@@ -19,16 +19,14 @@
   "shot_proofs_accepted": false,
   "mode_aware_proofs_accepted": false,
   "fx_lock_verified": false,
-  "assembly_complete": true,
+  "assembly_complete": false,
   "final_qc_passed": false,
   "mode_aware_qc_passed": false,
   "archive_complete": false,
-  "provisional_workprint_rendered": true,
+  "provisional_workprint_rendered": false,
   "provisional_workprint": {
-    "file": "renders/Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
-    "duration_seconds": 900.0,
-    "technical_qc": "decode_pass_blackdetect_pass_freezedetect_low_motion_note",
-    "typography": "channel_title_chapters_closing_identity"
+    "status": "rejected_historical_attempt",
+    "reason": "It re-cut finished source videos rather than building from the approved raw source set."
   },
   "repo_status": "healthy",
   "github_actions_required": true,
@@ -41,13 +39,13 @@
   "canonical_music_duration_seconds": 752.04,
   "target_duration_seconds": 900,
   "authored_extension_required_seconds": 147.96,
-  "hero_library_status": "candidate_manifests_created_not_locked",
-  "locked_still_count": 0,
+  "hero_library_status": "accepted_raw_source_set_v1",
+  "locked_still_count": 10,
   "rejected_noncanonical_workprint": {
     "name": "Mountain_Noir_After_Midnight_15min_REVIEW_v1.mp4",
     "drive_id": "13rKVvBu0P9VHpZ1HDPGMtgaThaRSdzBi",
     "reason": "Re-cut finished source videos instead of constructing the requested new long-form living-painting production."
   },
-  "exact_next_action": "Resolve lyrics status per track and confirm the musical authority, then review the sampled candidate frames and lock only the strongest source-derived stills before storyboard or proof rendering.",
-  "updated_at": "2026-09-26T07:20:00Z"
+  "exact_next_action": "Build a source-backed storyboard and frame-followable script, then prove the living-scene treatment before full assembly.",
+  "updated_at": "2026-09-27T01:00:00Z"
 }

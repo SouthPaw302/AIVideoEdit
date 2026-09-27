@@ -1,0 +1,4 @@
+# Large audio, source media, derived frames, and render intermediates are indexed
+# by ../STORAGE_MANIFEST.json and stored in the project GitHub Release.
+*
+!.gitignore

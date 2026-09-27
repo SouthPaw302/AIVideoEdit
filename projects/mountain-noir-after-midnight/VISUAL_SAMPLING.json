@@ -1,8 +1,8 @@
 {
   "schema": "aivideoedit.visual-sampling.v1",
-  "status": "candidate_review_complete_not_locked",
+  "status": "superseded_for_picture_by_approved_raw_source_set",
   "method": "hero_library_extract.py; full-source candidate sampling at 2-second intervals, perceptual quality/diversity greedy selection, near-duplicate rejection",
-  "source_authority": "Google Drive / 03 Visual Source Library",
+  "source_authority": "Historical sampling only; not permitted as picture source after current-user raw-source approval.",
   "sources": [
     {
       "id": "SRC-VID-IRISH-EYES",
@@ -44,5 +44,5 @@
     "No locked stills or HERO_LIBRARY is promoted by this pass."
   ],
   "unmeasured_dimensions": ["semantic subject identity", "semantic shot scale", "narrative meaning", "face/anatomy stability"],
-  "next_action": "Resolve lyric authority, then perform semantic review and lock only the strongest candidate frames for the storyboard."
+  "next_action": "Use the accepted raw source set recorded in ASSET_MANIFEST.json; do not promote frames from finished masters."
 }
