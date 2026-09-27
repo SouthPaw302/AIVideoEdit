@@ -32,6 +32,12 @@ jobs:
         run: python -m pytest -q tests/test_music_beat_worker.py
       - name: Run Jev bounded-decision unit tests
         run: python -m pytest -q tests/test_jev_decision.py
+      - name: Run optional Harness routing tests
+        run: python -m pytest -q tests/test_harness_router.py
+      - name: Run optional Harness MCP smoke test
+        env:
+          AIVE_HARNESS_ENABLED: "1"
+        run: python prototype/backend_gui/harness_selftest.py
       - name: Provision pinned Beat This ONNX model
         run: python -m general.reusable.tools.model_provision music-beat-onnx-v1
       - name: Run real CPU ONNX checkpoint
