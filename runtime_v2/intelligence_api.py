@@ -8,6 +8,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 
 from runtime_v2.gatekeeper import evaluate_action
+from runtime_v2.decision_pipeline import decide_action
 from runtime_v2.harness.adapter import (
     specialist_request,
     status as harness_status,
@@ -44,6 +45,18 @@ class JevRequest(StrictModel):
 
 class MusicRequest(StrictModel):
     path: str = Field(min_length=1)
+
+
+class DecisionRequest(StrictModel):
+    action: str = Field(min_length=1, max_length=128)
+    mutation: bool = False
+    checks: dict[str, bool | None] = Field(default_factory=dict)
+    observations: dict[str, Any] = Field(default_factory=dict)
+    requested_changes: list[str] = Field(default_factory=list, max_length=64)
+    expected_stage: str | None = None
+    target_branch: str | None = None
+    protected_canon_replacement: bool = False
+    next_action_permitted: bool = False
 
 
 class SpecialistRequest(StrictModel):
@@ -182,6 +195,22 @@ def music_analyze(request: MusicRequest):
 @router.post("/jev")
 def jev(request: JevRequest):
     return jev_decide(request.evidence)
+
+
+@router.post("/decide")
+def bounded_decide(request: DecisionRequest):
+    return decide_action(
+        repo=_repo_root(),
+        action=request.action,
+        mutation=request.mutation,
+        checks=request.checks,
+        observations=request.observations,
+        requested_changes=request.requested_changes,
+        expected_stage=request.expected_stage,
+        target_branch=request.target_branch,
+        protected_canon_replacement=request.protected_canon_replacement,
+        next_action_permitted=request.next_action_permitted,
+    )
 
 
 @router.get("/harness")

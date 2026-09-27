@@ -18,6 +18,7 @@ from runtime_v2.boot.capsule import (
 )
 from runtime_v2.gatekeeper import evaluate_action
 from runtime_v2.harness.adapter import specialist_request
+from runtime_v2.decision_pipeline import decide_action
 from runtime_v2.intelligence_api import router
 from runtime_v2.jev.decision import decide
 from runtime_v2.models.music_beat import analyze_music
@@ -376,3 +377,29 @@ def test_preserved_el_viento_drift_replay():
         fixture["operating_order"],
     )
     assert errors == fixture["expected_consistency_errors"]
+
+
+
+def test_bounded_decision_pipeline_escalates_without_enabled_harness(tmp_path: Path, monkeypatch):
+    repo, os_root, project = _fixture_repo(tmp_path)
+    capsule = build_capsule(
+        repo=repo,
+        os_root=os_root,
+        branch="song/fixture",
+        project=project,
+        authority_ref="MainV2",
+        authority_commit="abc",
+        session_id="s2",
+    )
+    _write_json(repo / ".aivideoedit/boot_capsule.json", capsule)
+    _write_json(repo / ".aivideoedit/session_attestation.json", sign_capsule(capsule))
+    monkeypatch.setenv("AIVIDEOEDIT_HARNESS_ENABLED", "0")
+    result = decide_action(
+        repo=repo,
+        action="proof.review",
+        mutation=False,
+        checks={"technical_qc": True, "creative_qc": None},
+        expected_stage="INITIALIZED",
+    )
+    assert result["jev"]["decision"] == "ESCALATE"
+    assert result["specialist"]["status"] == "ESCALATE"

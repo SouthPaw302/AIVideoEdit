@@ -6,6 +6,7 @@ import hmac
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -60,6 +61,38 @@ def _git(repo: Path, *args: str) -> str:
 
 def _canonical_bytes(data: dict[str, Any]) -> bytes:
     return json.dumps(data, sort_keys=True, separators=(",", ":")).encode("utf-8")
+
+
+def _model_snapshot(os_root: Path, repo: Path) -> dict[str, Any]:
+    original = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
+    os.environ["AIVIDEOEDIT_REPO_ROOT"] = str(repo)
+    sys.path.insert(0, str(os_root))
+    try:
+        from runtime_v2.models.registry import ModelRegistry
+        registry = ModelRegistry.load_default()
+        resolution = registry.resolve_capability("music_and_beat_analysis")
+        return {
+            "music_and_beat_analysis": {
+                "requested": resolution.requested,
+                "resolved": resolution.resolved,
+                "available": resolution.available,
+                "used_fallback": resolution.used_fallback,
+                "reason": resolution.reason,
+                "authority": resolution.record.get("authority"),
+                "model_path": resolution.model_path,
+            }
+        }
+    except Exception as exc:
+        return {"music_and_beat_analysis": {"available": False, "error": str(exc)}}
+    finally:
+        try:
+            sys.path.remove(str(os_root))
+        except ValueError:
+            pass
+        if original is None:
+            os.environ.pop("AIVIDEOEDIT_REPO_ROOT", None)
+        else:
+            os.environ["AIVIDEOEDIT_REPO_ROOT"] = original
 
 
 def _media_locators(project: Path | None) -> dict[str, Any]:
@@ -174,6 +207,7 @@ def build_capsule(
         "guards": {path: _sha256(os_root / path) for path in GUARD_PATHS},
         "registries": {path: _sha256(os_root / path) for path in REGISTRY_PATHS},
         "media": _media_locators(project),
+        "models": _model_snapshot(os_root, repo),
     }
 
 

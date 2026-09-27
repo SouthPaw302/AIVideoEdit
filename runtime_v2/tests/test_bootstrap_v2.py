@@ -17,7 +17,14 @@ def test_offline_boot_capsule_fixture(tmp_path: Path):
     (fixture / "general/reusable").mkdir(parents=True, exist_ok=True)
     (fixture / "runtime_v2/boot").mkdir(parents=True)
 
-    for rel in ("bootstrap.py", "runtime_v2/boot/capsule.py"):
+    for rel in (
+        "bootstrap.py",
+        "runtime_v2/__init__.py",
+        "runtime_v2/boot/capsule.py",
+        "runtime_v2/models/__init__.py",
+        "runtime_v2/models/registry.py",
+        "runtime_v2/models/registry.json",
+    ):
         src = source_repo / rel
         dst = fixture / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -77,3 +84,6 @@ def test_offline_boot_capsule_fixture(tmp_path: Path):
     assert capsule["active"]["branch"] == "MainV2"
     assert capsule["active"]["next_contract_stage"] == "INITIALIZED"
     assert attestation["session_id"] == capsule["session_id"]
+    model = capsule["models"]["music_and_beat_analysis"]
+    assert model["available"] is True
+    assert model["resolved"] == "music.beat.micro-dsp.v1"
