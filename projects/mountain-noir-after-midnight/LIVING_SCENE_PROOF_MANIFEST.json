@@ -1,0 +1,15 @@
+{
+  "schema": "aivideoedit.living-scene-proof.v1",
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "seed": 302,
+  "preset": "veryfast",
+  "crf": 19,
+  "transition_fraction": 0.1,
+  "scenes": [
+    {"id":"PROOF_RIDGE","duration":10.0,"image":"assets/derived/IE_L23_DARK_LAKE_RIDGE_frame.png","family":"village","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":2.8,"micro_strength":0.34,"reflection_strength":0.055,"canvas_amount":0.26,"transition":"pigment"},
+    {"id":"PROOF_WINDOW","duration":10.0,"image":"assets/derived/IE_L22_WARM_WINDOW_CANDLE_frame.png","family":"threshold","effects":["parallax","micro","atmosphere","particles","firelight","haze","shafts","canvas"],"parallax":2.3,"micro_strength":0.28,"firelight_strength":0.022,"haze_strength":0.55,"shaft_strength":0.020,"light_origin":[0.74,0.20],"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"PROOF_COIN","duration":10.0,"image":"assets/source/silver-coin/01_enchanted_woodland_coin_portrait.png","family":"coin","effects":["parallax","micro","atmosphere","glint","focus","canvas"],"parallax":2.6,"micro_strength":0.25,"focus_amount":0.55,"glint_center":[0.50,0.53],"glint_radius":0.17,"glint_strength":21,"canvas_amount":0.26,"transition":"pigment"}
+  ]
+}

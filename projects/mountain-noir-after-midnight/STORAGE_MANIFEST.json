@@ -1,0 +1,179 @@
+{
+  "schema": "aivideoedit.storage-manifest.v1",
+  "provider": "github_releases",
+  "repository": "SouthPaw302/AIVideoEdit",
+  "song_slug": "mountain-noir-after-midnight",
+  "branch": "song/mountain-noir-after-midnight",
+  "release_tag": "media-mountain-noir-after-midnight",
+  "release_url": "https://github.com/SouthPaw302/AIVideoEdit/releases/tag/media-mountain-noir-after-midnight",
+  "assets": [
+    {
+      "category": "final",
+      "asset_name": "final__Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
+      "sha256": "a580c212b0f3dbe6f1d60da7cb69c14c5b6486d0517920cf215c4df3092d72ad",
+      "bytes": 105587047,
+      "uploaded_at_utc": "2026-09-27T06:01:53Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_15min_MASTER.m4a",
+      "original_name": "Mountain_Noir_After_Midnight_15min_MASTER.m4a",
+      "sha256": "5b9f6d0ae05601cf9cb0480d01b6c8964b686f8661ab9f9d78c043b19269ddf2",
+      "bytes": 29627680,
+      "uploaded_at_utc": "2026-09-27T02:07:13Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_01_IRISH.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_01_IRISH.mp4",
+      "sha256": "33ad2eb72226a656af0ce08984aed334f4554ca8ef886ce870522a7118bd3e4d",
+      "bytes": 6936647,
+      "uploaded_at_utc": "2026-09-27T05:50:36Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_02_LEAVE.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_02_LEAVE.mp4",
+      "sha256": "0fda46883cfdbf83579adb9ee19bbfc252dd4a92038279575b5cbd6074394555",
+      "bytes": 7948972,
+      "uploaded_at_utc": "2026-09-27T05:50:41Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_03_SILVER.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_03_SILVER.mp4",
+      "sha256": "619e324d494d566913aeed72ff39ef00f7892c4732ad27401fc8f81ee5704491",
+      "bytes": 10576544,
+      "uploaded_at_utc": "2026-09-27T05:50:49Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_04_EL_VIENTO.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_04_EL_VIENTO.mp4",
+      "sha256": "c441fde3b2b4a3128c730dcc56da11c91539da1631091c64f38f7f59ecf7d518",
+      "bytes": 24828441,
+      "uploaded_at_utc": "2026-09-27T05:51:23Z"
+    },
+    {
+      "category": "proofs",
+      "asset_name": "proofs__Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
+      "sha256": "08193f660b5496ad5f1424cae650cfdff688f095aeb69354cd108543879b16dc",
+      "bytes": 4468032,
+      "uploaded_at_utc": "2026-09-27T02:27:52Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__01_enchanted_woodland_coin_portrait.png",
+      "original_name": "01_enchanted_woodland_coin_portrait.png",
+      "sha256": "0783a34aaf19bedc5d98a74beb6a86c4f5a1d881b3c0acd4e9d71240ce119475",
+      "bytes": 2532044,
+      "uploaded_at_utc": "2026-09-27T02:04:32Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__01_male_fort_sunset.png",
+      "original_name": "01_male_fort_sunset.png",
+      "sha256": "59b738fbcdcbb0f335d352607f6b5ea24131a441376958f373ba20f8216d26c7",
+      "bytes": 2590555,
+      "uploaded_at_utc": "2026-09-27T02:04:51Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__02_female_fort_rain.png",
+      "original_name": "02_female_fort_rain.png",
+      "sha256": "f194c6f8bfac223e9744a8a2b129177f5c6394b60eca7b946d096cc725750315",
+      "bytes": 2692378,
+      "uploaded_at_utc": "2026-09-27T02:04:48Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__04_twilight_inn_beneath_the_flower_crown.png",
+      "original_name": "04_twilight_inn_beneath_the_flower_crown.png",
+      "sha256": "81cfa4e39aa944782978ec921bac45078dfe4ad8adb4372f9ba132168cc3a723",
+      "bytes": 2457882,
+      "uploaded_at_utc": "2026-09-27T02:04:35Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__El_Viento_trae_tu_nombre_Instrumental.wav",
+      "original_name": "El_Viento_trae_tu_nombre_Instrumental.wav",
+      "sha256": "8d451360246378db551282c3703add4cd474c9ad3a4c6cf778390ae727820fe0",
+      "bytes": 30472730,
+      "uploaded_at_utc": "2026-09-27T02:06:27Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__IE_L21_ROAD_RAIN_GLASS_16x9_V3.mp4",
+      "original_name": "IE_L21_ROAD_RAIN_GLASS_16x9_V3.mp4",
+      "sha256": "161dcefb278f9f09eb96f3d96041110b338f9bbe84c87469b547f860eac6821d",
+      "bytes": 2275774,
+      "uploaded_at_utc": "2026-09-27T02:04:26Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__IE_L22_WARM_WINDOW_CANDLE_16x9_V1.mp4",
+      "original_name": "IE_L22_WARM_WINDOW_CANDLE_16x9_V1.mp4",
+      "sha256": "69814efe52df37fa7db1ba6ae1d89f59be27c91df027c033e831c9e5f58d4af2",
+      "bytes": 2553667,
+      "uploaded_at_utc": "2026-09-27T02:04:29Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__IE_L23_DARK_LAKE_RIDGE_16x9_V2.mp4",
+      "original_name": "IE_L23_DARK_LAKE_RIDGE_16x9_V2.mp4",
+      "sha256": "9bce0b9fd9f0f3eb29a8d2ea0c7bc75dd3e46ceb72e009f7fe7ee904cfb4cb0a",
+      "bytes": 4384739,
+      "uploaded_at_utc": "2026-09-27T02:04:23Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__Irish_eyes_Remastered.wav",
+      "original_name": "Irish_eyes_Remastered.wav",
+      "sha256": "8b0ccd2e57a6e683d526d950bd88b42af0f0867b06e3d1b014a2b3131f3cfb1e",
+      "bytes": 35927212,
+      "uploaded_at_utc": "2026-09-27T02:05:27Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__Leave_It_by_the_Door.wav",
+      "original_name": "Leave_It_by_the_Door.wav",
+      "sha256": "3354715f5873df14e7d245a1e8f094ff38aade95264f16da3b4bbd71563f4a82",
+      "bytes": 38191130,
+      "uploaded_at_utc": "2026-09-27T02:06:37Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__Silver_Coin_Remastered.wav",
+      "original_name": "Silver_Coin_Remastered.wav",
+      "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92",
+      "bytes": 39828652,
+      "uploaded_at_utc": "2026-09-27T02:06:06Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__shot_03_ocean_memory.png",
+      "original_name": "shot_03_ocean_memory.png",
+      "sha256": "e8864ecbfb037fa156bfd7817190e98e605653bf77157d7c50a45b46dfc404af",
+      "bytes": 3207546,
+      "uploaded_at_utc": "2026-09-27T02:04:40Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__shot_07_veil_of_memory.png",
+      "original_name": "shot_07_veil_of_memory.png",
+      "sha256": "31adc42ffef33b9166351797c65609c08da9e5427262c9aae54eba953dda3410",
+      "bytes": 3109914,
+      "uploaded_at_utc": "2026-09-27T02:04:43Z"
+    },
+    {
+      "category": "source",
+      "asset_name": "source__shot_10_glowing_thread.png",
+      "original_name": "shot_10_glowing_thread.png",
+      "sha256": "fc6c883d778c9b991800eaea79753f2eae5de55549cad3655068b1338d221954",
+      "bytes": 1734030,
+      "uploaded_at_utc": "2026-09-27T02:04:54Z"
+    }
+  ]
+}

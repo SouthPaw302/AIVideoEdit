@@ -1,0 +1,22 @@
+{
+  "schema": "aivideoedit.audio-master-qc.v1",
+  "master": {
+    "wav": "assets/audio/Mountain_Noir_After_Midnight_15min_MASTER.wav",
+    "wav_sha256": "a2b17fa99e7bbe5aca8b230abe0b2f87904fa80bd035e9a327f3765bdaa1558a",
+    "m4a": "assets/audio/Mountain_Noir_After_Midnight_15min_MASTER.m4a",
+    "m4a_sha256": "5b9f6d0ae05601cf9cb0480d01b6c8964b686f8661ab9f9d78c043b19269ddf2",
+    "duration_seconds": 900.0,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "delivery_codec": "aac"
+  },
+  "render_basis": "AUDIO_EDIT_PLAN.json and AUDIO_RENDER_FILTER.txt",
+  "checks": {
+    "ffprobe_duration": "PASS: 900.000000 seconds for WAV and M4A",
+    "decode": "PASS: ffmpeg -v error decode of the AAC master returned no errors",
+    "silence": "PASS: no silence interval detected at -60 dB for 0.25 seconds or longer",
+    "waveform": "analysis/qc/AUDIO_MASTER_WAVEFORM.png inspected for continuous stereo program material"
+  },
+  "release_asset": "generated__Mountain_Noir_After_Midnight_15min_MASTER.m4a",
+  "result": "PASS"
+}

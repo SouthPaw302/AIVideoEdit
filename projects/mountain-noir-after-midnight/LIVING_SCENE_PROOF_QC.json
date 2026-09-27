@@ -1,0 +1,32 @@
+{
+  "schema": "aivideoedit.living-scene-proof-qc.v1",
+  "proof": {
+    "name": "Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
+    "release_asset": "proofs__Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
+    "sha256": "08193f660b5496ad5f1424cae650cfdff688f095aeb69354cd108543879b16dc",
+    "duration_seconds": 30.0,
+    "video": "h264 1280x720 at 24 fps",
+    "audio": "aac stereo at 48000 Hz"
+  },
+  "visual_review": {
+    "source_usage": "new source-derived living-scene animation from the accepted raw library only",
+    "completed_video_picture_reuse": false,
+    "typography": "Palatino serif channel identity and title treatment inspected from the proof contact sheet",
+    "result": "PASS"
+  },
+  "temporal_qc": {
+    "sample_fps": 3.0,
+    "samples": 90,
+    "median_flow": 0.13813141733408,
+    "p95_flow": 0.97963378727436,
+    "risk_count": 6,
+    "unexplained_risk_count": 0,
+    "all_risks": "expected pigment transitions around 10 and 20 seconds"
+  },
+  "technical_qc": {
+    "decode": "PASS",
+    "blackdetect": "PASS: no detected black-frame interval",
+    "freezedetect": "PASS: no detected freeze interval at n=0.001 for 2 seconds"
+  },
+  "result": "PASS"
+}

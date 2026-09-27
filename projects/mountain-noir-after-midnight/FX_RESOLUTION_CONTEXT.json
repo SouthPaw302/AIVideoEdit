@@ -1,0 +1,9 @@
+{
+  "level": "project",
+  "environment": ["rain", "fog", "water", "wet_ground", "threshold", "hearth"],
+  "materials": ["glass", "reflection", "stone"],
+  "objects": ["parallax"],
+  "needs": ["memory"],
+  "motifs": ["rain", "fog", "firelight", "silver"],
+  "constraints": ["no_global_warp"]
+}
