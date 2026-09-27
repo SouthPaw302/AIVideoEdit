@@ -1,0 +1,61 @@
+name: MainV2 Pre-Dawn Full Checkpoint
+
+on:
+  push:
+    branches:
+      - song/pre-dawn-mainv2-checkpoint
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install runtime dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install -r runtime_v2/requirements-onnx.txt
+
+      - name: Fetch MainV2 authority ref
+        run: git fetch origin MainV2:refs/remotes/origin/MainV2
+
+      - name: Boot exact MainV2 production state
+        run: |
+          mkdir -p projects/pre-dawn-mainv2-checkpoint/checkpoint_out
+          python bootstrap.py boot             --repo-root .             --branch song/pre-dawn-mainv2-checkpoint             --project-dir projects/pre-dawn-mainv2-checkpoint             --authority-ref MainV2             --offline | tee projects/pre-dawn-mainv2-checkpoint/checkpoint_out/bootstrap.log
+
+      - name: Verify Runtime V2 and pinned ONNX CPU
+        run: |
+          python -m runtime_v2.verify --provision-model --require-onnx             | tee projects/pre-dawn-mainv2-checkpoint/checkpoint_out/runtime_v2_verify.json
+
+      - name: Run full-length checkpoint project
+        run: python projects/pre-dawn-mainv2-checkpoint/run_checkpoint.py
+
+      - name: Save attestation and capsule
+        if: always()
+        run: |
+          cp .aivideoedit/boot_capsule.json projects/pre-dawn-mainv2-checkpoint/checkpoint_out/boot_capsule.json || true
+          cp .aivideoedit/session_attestation.json projects/pre-dawn-mainv2-checkpoint/checkpoint_out/session_attestation.json || true
+          ffprobe -v error -show_streams -show_format -of json             projects/pre-dawn-mainv2-checkpoint/checkpoint_out/pre-dawn-mainv2-full-proof.mp4             > projects/pre-dawn-mainv2-checkpoint/checkpoint_out/ffprobe.json || true
+
+      - name: Upload checkpoint artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pre-dawn-mainv2-full-checkpoint
+          path: projects/pre-dawn-mainv2-checkpoint/checkpoint_out/
+          if-no-files-found: warn
+          retention-days: 7
