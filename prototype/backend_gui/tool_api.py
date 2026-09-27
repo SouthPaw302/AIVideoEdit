@@ -248,13 +248,16 @@ def _refresh_boot_capsule(project_id: str) -> None:
     if core_ref != "main":
         env["AIVIDEOEDIT_AUTHORITY_REF"] = core_ref
         env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
+    boot_cmd = [
+        sys.executable, str(engine / "bootstrap.py"), "boot",
+        "--repo-root", str(engine),
+        "--branch", str(current["branch"]),
+        "--project-dir", str(project_dir.relative_to(engine)),
+    ]
+    if os.environ.get("AIVE_OFFLINE", "").strip().lower() in {"1", "true", "yes", "on"}:
+        boot_cmd.append("--offline")
     proc = subprocess.run(
-        [
-            sys.executable, str(engine / "bootstrap.py"), "boot",
-            "--repo-root", str(engine),
-            "--branch", str(current["branch"]),
-            "--project-dir", str(project_dir.relative_to(engine)),
-        ],
+        boot_cmd,
         cwd=str(engine), capture_output=True, text=True, timeout=300, check=False,
         env=env,
     )

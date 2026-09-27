@@ -233,12 +233,15 @@ def initialize(project_id: str) -> dict:
     if core_ref != "main":
         boot_env["AIVIDEOEDIT_AUTHORITY_REF"] = core_ref
         boot_env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
-    boot = _run([
+    boot_cmd = [
         sys.executable, str(engine / "bootstrap.py"), "boot",
         "--repo-root", str(engine),
         "--branch", branch,
         "--project-dir", f"projects/{project_dir.name}",
-    ], engine, timeout=300, env=boot_env)
+    ]
+    if os.environ.get("AIVE_OFFLINE", "").strip().lower() in {"1", "true", "yes", "on"}:
+        boot_cmd.append("--offline")
+    boot = _run(boot_cmd, engine, timeout=300, env=boot_env)
     if boot.returncode != 0:
         return {
             "ok": False,

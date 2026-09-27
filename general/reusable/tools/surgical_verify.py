@@ -24,6 +24,7 @@ DEFAULT_TESTS = [
     "tests/test_operating_gate_path.py",
     "tests/test_fx_runtime_dependencies.py",
     "tests/test_archive_manifest_stability.py",
+    "tests/test_offline_boot_propagation.py",
 ]
 
 
