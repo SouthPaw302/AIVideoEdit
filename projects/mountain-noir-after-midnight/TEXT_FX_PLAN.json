@@ -1,19 +1,20 @@
 {
   "schema": "aivideoedit.text-fx-plan.v1",
-  "status": "direction_locked_implementation_pending",
+  "status": "render_plan_locked",
   "reference": "song/el-viento-trae-tu-nombre visual/FX language",
   "purpose": "Make text feel embedded in the Mountain Noir world rather than superimposed captions.",
   "rules": {
-    "frequency": "sparse",
+    "frequency": "one persistent low-opacity channel mark plus sparse opening and chapter treatment",
     "use_cases": [
+      "persistent lower-right channel identity: MOUNTAIN NOIR",
       "opening identity",
       "chapter/track emergence",
       "occasional poetic fragments",
       "closing identity"
     ],
-    "typography": "editorial serif/small-caps Mountain Noir treatment; exact font selected from available licensed/system fonts during proof",
+    "typography": "Palatino (pala.ttf), editorial serif / small-caps treatment",
     "palette": "warm off-white / aged paper / muted gold, scene-motivated",
-    "opacity": "restrained except brief chapter readability peaks",
+    "opacity": "persistent mark at 58%; chapter treatments 62–88% only during their short emergence windows",
     "integration": [
       "fog reveal",
       "reflection reveal",
@@ -31,5 +32,6 @@
       "unmotivated full-screen neon typography"
     ]
   },
+  "render_artifact": "TEXT_RENDER_FILTER.txt",
   "proof_required": true
 }
