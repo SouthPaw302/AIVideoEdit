@@ -1,0 +1,5 @@
+{
+  "schema": "aivideoedit.hero-library-landmarks.v1",
+  "basis": "One landmark in each four-second source-derived contact-reel segment; all ten accepted raw visual sources must be represented.",
+  "times_seconds": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0, 26.0, 30.0, 34.0, 38.0]
+}
