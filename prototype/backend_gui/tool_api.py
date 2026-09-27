@@ -26,6 +26,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime_v2.action_policy import policy_for
 from runtime_v2.boot.capsule import refresh_from_session
+from runtime_v2.decision_pipeline import decide_action
 from runtime_v2.gatekeeper import evaluate_action
 
 TOOL_SCHEMAS=[
@@ -39,6 +40,7 @@ TOOL_SCHEMAS=[
 {"name":"project.prepare","description":"Queue all missing preview, review-frame and QC work for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.initialize","description":"Create an isolated canonical song-branch production workspace.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.status","description":"Show canonical production branch, stage, next stage, manifest sync state and guard status.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
+{"name":"production.decide","description":"Read-only project-aware Runtime V2 gate + Jev decision preview for a proposed action; execution rechecks independently.","input_schema":{"type":"object","required":["project_id","action"],"properties":{"project_id":{"type":"string"},"action":{"type":"string"},"mutation":{"type":"boolean"},"checks":{"type":"object"},"observations":{"type":"object"},"protected_canon_replacement":{"type":"boolean"},"next_action_permitted":{"type":"boolean"}}}},
 {"name":"production.sync_assets","description":"Sync workstation media into canonical manifests without advancing stage or claiming analysis.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.analyze","description":"Queue evidence-producing reference extraction and music signal analysis.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.set_music_context","description":"Record explicit lyrics status/text and genre authority.","input_schema":{"type":"object","required":["project_id","lyrics_status","genre"],"properties":{"project_id":{"type":"string"},"lyrics_status":{"type":"string","enum":["present","absent"]},"genre":{"type":"string"},"lyrics_text":{"type":"string"},"directing_use":{"type":"string"}}}},
@@ -200,6 +202,25 @@ def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],pre
     if name=="project.prepare":_project(pid);jobs=prepare_project(pid);return {"project_id":pid,"queued":len(jobs),"jobs":jobs}
     if name=="production.initialize":_project(pid);return production_project.initialize(pid)
     if name=="production.status":_project(pid);return production_project.status(pid)
+    if name=="production.decide":
+        _project(pid);current=production_project.status(pid);engine=Path(str(current.get("engine_root") or "")).resolve()
+        if not engine.is_dir():raise RuntimeError("production workspace is not initialized")
+        proposed=str(a.get("action") or "").strip()
+        if not proposed:raise ValueError("action is required")
+        policy=policy_for(proposed)
+        return decide_action(
+            repo=engine,
+            action=proposed,
+            mutation=bool(a.get("mutation",True)),
+            checks=a.get("checks") if isinstance(a.get("checks"),dict) else {},
+            observations=a.get("observations") if isinstance(a.get("observations"),dict) else {},
+            requested_changes=list(policy.change_tags),
+            expected_stage=str(current.get("stage") or "") or None,
+            target_branch=str(current.get("branch") or "") or None,
+            protected_canon_replacement=bool(a.get("protected_canon_replacement",False)),
+            canon_sensitive=policy.canon_sensitive,
+            next_action_permitted=bool(a.get("next_action_permitted",False)),
+        )
     if name=="production.sync_assets":_project(pid);return production_project.sync_assets(pid)
     if name=="production.analyze":_project(pid);job=base.add_job("analyze_production",pid,None);dispatch_job(job);return {"job":job}
     if name=="production.set_music_context":_project(pid);return production_analysis.set_music_context(pid,lyrics_status=str(a.get("lyrics_status") or ""),genre=str(a.get("genre") or ""),lyrics_text=str(a.get("lyrics_text") or ""),directing_use=str(a.get("directing_use") or "default"))

@@ -197,3 +197,13 @@ metadata and preprocessing compatibility are verified independently without
 committing the 83 MB model to normal git history.
 
 Director Brain `operating.*` mutations use the same guard/attestation/refresh path; they are no longer a separate mutation bypass.
+
+
+### Project-aware decision preview
+
+Remote SandAgents can call the normal production proxy with
+`production.decide` to evaluate a proposed action against the actual Studio
+project workspace. The response combines the Runtime Gatekeeper, bounded Jev
+decision, and optional Harness escalation. This is advisory/read-only; executing
+the action performs the gate again so a stale preview cannot authorize a later
+mutation.

@@ -37,6 +37,7 @@ class GateRequest(StrictModel):
     expected_stage: str | None = None
     target_branch: str | None = None
     protected_canon_replacement: bool = False
+    canon_sensitive: bool = False
 
 
 class JevRequest(StrictModel):
@@ -56,6 +57,7 @@ class DecisionRequest(StrictModel):
     expected_stage: str | None = None
     target_branch: str | None = None
     protected_canon_replacement: bool = False
+    canon_sensitive: bool = False
     next_action_permitted: bool = False
 
 
@@ -146,6 +148,7 @@ def gate(request: GateRequest):
         protected_canon_replacement=(
             request.protected_canon_replacement
         ),
+        canon_sensitive=request.canon_sensitive,
     ).as_dict()
 
 
@@ -209,6 +212,7 @@ def bounded_decide(request: DecisionRequest):
         expected_stage=request.expected_stage,
         target_branch=request.target_branch,
         protected_canon_replacement=request.protected_canon_replacement,
+        canon_sensitive=request.canon_sensitive,
         next_action_permitted=request.next_action_permitted,
     )
 

@@ -19,6 +19,7 @@ def decide_action(
     expected_stage: str | None = None,
     target_branch: str | None = None,
     protected_canon_replacement: bool = False,
+    canon_sensitive: bool = False,
     next_action_permitted: bool = False,
 ) -> dict[str, Any]:
     gate = evaluate_action(
@@ -29,6 +30,7 @@ def decide_action(
         expected_stage=expected_stage,
         target_branch=target_branch,
         protected_canon_replacement=protected_canon_replacement,
+        canon_sensitive=canon_sensitive,
     )
     evidence = {
         "gate": gate.decision,

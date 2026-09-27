@@ -41,7 +41,8 @@
     "Tool API mutations declare bounded change tags; active refinement/recut scopes fail closed when the requested class is not allowed.",
     "Deployed MainV2 Bridge and Studio require HMAC-signed session attestations.",
     "Studio production music analysis consumes Runtime V2 beat evidence directly; Beat This ONNX is preferred when provisioned and verified.",
-    "Director Brain operating.* mutations now pass through the same canonical guard, Runtime Gatekeeper, and post-mutation capsule refresh as the main Tool API mutation family."
+    "Director Brain operating.* mutations now pass through the same canonical guard, Runtime Gatekeeper, and post-mutation capsule refresh as the main Tool API mutation family.",
+    "SandAgent can call production.decide through the existing remote production proxy to preview the real project workspace gate + Jev result; execution still performs an independent gate check."
   ],
   "verification": {
     "micro_tests": [
@@ -59,7 +60,8 @@
       "operation-policy denial when requested change tags exceed active refinement scope",
       "required-HMAC attestation denial when signing key is absent",
       "Studio production-analysis integration of embedded beat evidence with deterministic fallback",
-      "action-policy classification separates creative/content mutations from workflow/evidence mutations"
+      "action-policy classification separates creative/content mutations from workflow/evidence mutations",
+      "project-aware decision preview carries the same canon-sensitive policy used by execution"
     ],
     "full_production": "Reserved for explicit integration checkpoint before promotion to main.",
     "real_onnx_checkpoint": "Provision the pinned 83 MB Beat This model outside git history and execute one CPU fixture before promotion."

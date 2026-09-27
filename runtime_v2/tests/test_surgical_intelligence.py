@@ -505,3 +505,40 @@ def test_action_policy_separates_content_from_workflow_mutations():
 
     assert policy_for("operating.lock_canon").canon_sensitive is True
     assert policy_for("operating.lock_canon").change_tags == ("canon", "accepted_baseline")
+
+
+
+def test_decision_pipeline_honors_canon_sensitive_policy(tmp_path: Path):
+    repo, os_root, project = _fixture_repo(tmp_path)
+    order_path = project / "OPERATING_ORDER.json"
+    order = json.loads(order_path.read_text(encoding="utf-8"))
+    order["refinement_scope"]["active"] = False
+    _write_json(order_path, order)
+    capsule = build_capsule(
+        repo=repo,
+        os_root=os_root,
+        branch="song/fixture",
+        project=project,
+        authority_ref="MainV2",
+        authority_commit="abc",
+        session_id="canon-preview-1",
+    )
+    _write_json(repo / ".aivideoedit/boot_capsule.json", capsule)
+    _write_json(repo / ".aivideoedit/session_attestation.json", sign_capsule(capsule))
+    policy = policy_for("storyboard.set")
+    result = decide_action(
+        repo=repo,
+        action="storyboard.set",
+        mutation=True,
+        checks={"technical_qc": True},
+        requested_changes=list(policy.change_tags),
+        expected_stage="INITIALIZED",
+        target_branch="song/fixture",
+        canon_sensitive=policy.canon_sensitive,
+    )
+    assert result["gatekeeper"]["decision"] == "DENY"
+    assert result["jev"]["decision"] == "FAIL"
+    assert any(
+        "canon-sensitive mutation denied" in reason
+        for reason in result["gatekeeper"]["reasons"]
+    )
