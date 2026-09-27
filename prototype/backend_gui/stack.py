@@ -14,10 +14,18 @@ import production_analysis
 import production_assembly
 import production_project
 from core_adapter import CORE
+from runtime_v2.boot.capsule import refresh_from_session
 
 WORKER_COUNT=max(1,int(os.environ.get("AIVE_WORKERS","2")))
 JOB_QUEUE:queue.Queue[dict]=queue.Queue()
 def all_tool_schemas():return tool_api.schemas()+operating_tools.schemas()+harness_tools.schemas()
+
+def _refresh_runtime_capsule(pid):
+    status=production_project.status(pid);engine_text=status.get("engine_root")
+    if not engine_text:return
+    engine=Path(engine_text)
+    if (engine/".aivideoedit"/"boot_capsule.json").is_file():
+        refresh_from_session(engine)
 
 def sync_project_job(job):
     pid=job["project"];base.update_job(job["id"],status="running",started_at=base.now(),progress=5)
@@ -62,12 +70,13 @@ def analyze_production_job(job):
         needs=[]
         if not result.get("lyrics_status_resolved"):needs.append("lyrics status")
         if not result.get("genre_authority_resolved"):needs.append("genre")
+        _refresh_runtime_capsule(pid)
         suffix=f" · needs {', '.join(needs)}" if needs else "";base.update_job(job["id"],status="complete",progress=100,result=f"Reference/music analysis complete{suffix}",finished_at=base.now())
     except Exception as exc:base.update_job(job["id"],status="failed",progress=100,result=str(exc)[:600],finished_at=base.now())
 def assemble_production_job(job):
     pid=job["project"];base.update_job(job["id"],status="running",started_at=base.now(),progress=10,result="Assembling accepted shot proofs…")
     try:
-        result=production_assembly.assemble(pid,width=int(job.get("width") or 1280),height=int(job.get("height") or 720));asset=result.get("asset") or {};base.update_job(job["id"],status="complete",progress=100,result=f"Assembly ready · {asset.get('metadata',{}).get('duration_seconds','?')}s · {asset.get('id','')}",finished_at=base.now())
+        result=production_assembly.assemble(pid,width=int(job.get("width") or 1280),height=int(job.get("height") or 720));_refresh_runtime_capsule(pid);asset=result.get("asset") or {};base.update_job(job["id"],status="complete",progress=100,result=f"Assembly ready · {asset.get('metadata',{}).get('duration_seconds','?')}s · {asset.get('id','')}",finished_at=base.now())
     except Exception as exc:base.update_job(job["id"],status="failed",progress=100,result=str(exc)[:900],finished_at=base.now())
 def execute_job(job):
     handlers={"ffmpeg_check":lambda:base.run_ffmpeg_check(job["id"]),"analyze_media":lambda:base.analyze_asset(job["id"],job["asset_id"]),"make_proxy":lambda:base.make_proxy(job["id"],job["asset_id"]),"extract_review_frames":lambda:base.extract_review_frames(job["id"],job["asset_id"]),"qc_media":lambda:base.qc_asset(job["id"],job["asset_id"]),"sync_project":lambda:sync_project_job(job),"analyze_production":lambda:analyze_production_job(job),"assemble_production":lambda:assemble_production_job(job)}

@@ -11,9 +11,9 @@
   ],
   "implementation_status": {
     "1_harden_boot": "IMPLEMENTED_MAINV2",
-    "2_runtime_gatekeeper": "IMPLEMENTED_MAINV2",
+    "2_runtime_gatekeeper": "IMPLEMENTED_MAINV2_TOOL_API_GATE_EXECUTE_REFRESH",
     "3_model_registry": "IMPLEMENTED_MAINV2",
-    "4_first_onnx_worker": "IMPLEMENTED_OPTIONAL_MODEL_REQUIRED_FOR_ONNX_PATH",
+    "4_first_onnx_worker": "PINNED_BEAT_THIS_ADAPTER_AND_PROVISIONER_IMPLEMENTED_REAL_MODEL_INFERENCE_CHECKPOINT_PENDING",
     "5_jev_decision_hook": "IMPLEMENTED_MAINV2",
     "6_deepseek_harness": "OPTIONAL_PROVIDER_NEUTRAL",
     "7_regression_verification": "IMPLEMENTED_MICRO_FIXTURES_NO_FULL_PRODUCTION"
@@ -34,7 +34,9 @@
     "Jev output is bounded to PASS, FAIL, RETRY, CONTINUE, ESCALATE.",
     "Harness specialist output is advisory only.",
     "Large model binaries are not committed to normal git history.",
-    "No automatic full-production regression is required for routine changes."
+    "No automatic full-production regression is required for routine changes.",
+    "Set AIVE_AUTHORITY_REF=MainV2 to make the Studio core and song workspaces exercise MainV2; default remains main.",
+    "Canonical Tool API mutations on V2-capable workspaces execute gate -> mutation -> capsule refresh; async analysis/assembly refresh at successful job completion."
   ],
   "verification": {
     "micro_tests": [
@@ -45,9 +47,12 @@
       "deterministic Jev replay",
       "provider-neutral specialist fixture",
       "HTTP intelligence surface",
-      "golden JSON comparison"
+      "golden JSON comparison",
+      "Beat This exact mel/chunk/I-O/postprocess adapter with fake ONNX session",
+      "offline bootstrap fixture using local git archive"
     ],
-    "full_production": "Reserved for explicit integration checkpoint before promotion to main."
+    "full_production": "Reserved for explicit integration checkpoint before promotion to main.",
+    "real_onnx_checkpoint": "Provision the pinned 83 MB Beat This model outside git history and execute one CPU fixture before promotion."
   },
   "promotion_rule": "Do not promote MainV2 to main until boot integration and one checkpoint end-to-end production are explicitly approved."
 }
