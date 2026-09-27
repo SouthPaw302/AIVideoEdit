@@ -65,7 +65,7 @@ SCHEMAS = [
                 "motifs": {"type": "array", "items": {"type": "string"}},
                 "tags": {"type": "array", "items": {"type": "string"}},
                 "constraints": {"type": "array", "items": {"type": "string"}},
-                "allow_proof_required": {"type": "boolean", "default": false},
+                "allow_proof_required": {"type": "boolean", "default": False},
                 "max_effects": {"type": "integer", "minimum": 1, "maximum": 12}
             },
         },
