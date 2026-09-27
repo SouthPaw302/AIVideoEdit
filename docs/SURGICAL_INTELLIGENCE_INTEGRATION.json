@@ -16,7 +16,8 @@
     "4_first_onnx_worker": "INTEGRATED_IN_STUDIO_ANALYSIS_PINNED_BEAT_THIS_ONNX_WITH_DETERMINISTIC_FALLBACK_REAL_CPU_MODEL_CHECKPOINT_PENDING",
     "5_jev_decision_hook": "IMPLEMENTED_MAINV2",
     "6_deepseek_harness": "OPTIONAL_PROVIDER_NEUTRAL",
-    "7_regression_verification": "IMPLEMENTED_ONE_COMMAND_MICRO_SUITE_GOLDEN_REPLAY_AND_OPTIONAL_REAL_ONNX_CHECKPOINT"
+    "7_regression_verification": "IMPLEMENTED_ONE_COMMAND_MICRO_SUITE_GOLDEN_REPLAY_AND_OPTIONAL_REAL_ONNX_CHECKPOINT",
+    "0_remote_tool_bridge": "IMPLEMENTED_MAINV2_AUTHENTICATED_BRIDGE_SAFE_EXECUTION_WORKER_PRODUCTION_PROXY_AND_THIN_CLIENT"
   },
   "target_architecture": {
     "primary_agent": "Already-authorized sandbox agent",
@@ -25,7 +26,8 @@
     "embedded_inference": "ONNX and existing deterministic DSP workers",
     "bounded_decisions": "Jev",
     "specialist_agents": "Optional DeepSeek Harness",
-    "execution": "Existing AIVideoEdit Tool API, guards, FX, proofs, assembly and QC"
+    "execution": "Existing AIVideoEdit Tool API, guards, FX, proofs, assembly and QC",
+    "remote_capability_layer": "Runtime V2 HTTPS Bridge with allowlisted execution worker and existing Studio Tool API proxy"
   },
   "runtime_rules": [
     "Main remains the production authority by default.",
@@ -43,10 +45,12 @@
     "Studio production music analysis consumes Runtime V2 beat evidence directly; Beat This ONNX is preferred when provisioned and verified.",
     "Director Brain operating.* mutations now pass through the same canonical guard, Runtime Gatekeeper, and post-mutation capsule refresh as the main Tool API mutation family.",
     "SandAgent can call production.decide through the existing remote production proxy to preview the real project workspace gate + Jev result; execution still performs an independent gate check.",
-    "Bridge capability discovery advertises the production proxy and project-aware decision service, and the thin client exposes project-decide for SandAgent use."
+    "Bridge capability discovery advertises the production proxy and project-aware decision service, and the thin client exposes project-decide for SandAgent use.",
+    "SandAgent remote access uses the Runtime V2 bridge; arbitrary shell execution is not exposed and production mutations still pass canonical AIVideoEdit guards."
   ],
   "verification": {
     "micro_tests": [
+      "authenticated bridge discovery, safe execution allowlist, isolated workspaces and artifact hashing",
       "boot capsule attestation and tamper rejection",
       "branch/stage/canon/scope gatekeeper denials",
       "model fallback and unknown model rejection",
