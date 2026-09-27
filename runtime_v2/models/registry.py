@@ -24,11 +24,18 @@ class ModelResolution:
 def git_blob_sha1(path: Path) -> str:
     size = path.stat().st_size
     digest = hashlib.sha1()
-    digest.update(f"blob {size}\\0".encode("utf-8"))
+    digest.update(b"blob " + str(size).encode("ascii") + bytes([0]))
     with path.open("rb") as handle:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def inferred_repo_root() -> Path:
+    configured = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
+    if configured:
+        return Path(configured).expanduser().resolve()
+    return Path(__file__).resolve().parents[2]
 
 
 class ModelRegistry:
@@ -57,9 +64,9 @@ class ModelRegistry:
             if explicit:
                 return Path(explicit).expanduser().resolve()
         cache_relpath = record.get("cache_relpath")
-        repo_root = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
-        if cache_relpath and repo_root:
-            return (Path(repo_root).expanduser().resolve() / str(cache_relpath)).resolve()
+        repo_root = inferred_repo_root()
+        if cache_relpath:
+            return (repo_root / str(cache_relpath)).resolve()
         return None
 
     def verify_model_file(self, record: dict[str, Any], path: Path) -> tuple[bool, str]:
@@ -80,10 +87,8 @@ class ModelRegistry:
         if runtime == "builtin_python":
             return True, "builtin runtime available", None
         if runtime == "repo_python":
-            repo_root = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
-            if not repo_root:
-                return False, "AIVIDEOEDIT_REPO_ROOT is not configured", None
-            source = Path(repo_root) / str(record.get("source") or "")
+            repo_root = inferred_repo_root()
+            source = repo_root / str(record.get("source") or "")
             if not source.is_file():
                 return False, "repository analysis module is missing", None
             missing = [

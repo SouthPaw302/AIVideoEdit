@@ -289,7 +289,10 @@ def _bpm_from_onsets(onsets: list[float]) -> float | None:
 
 
 def analyze_dsp(path: Path) -> dict[str, Any]:
-    samples, rate = _read_wav_mono(path)
+    try:
+        samples, rate = _read_wav_mono(path)
+    except (wave.Error, ValueError, EOFError):
+        samples, rate = _decode_for_beat_this(path)
     env, hop_seconds = _energy_envelope(samples, rate)
     beats = _onsets(env, hop_seconds)
     bpm = _bpm_from_onsets(beats)

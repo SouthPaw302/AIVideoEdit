@@ -52,9 +52,12 @@ class SpecialistRequest(StrictModel):
 
 
 def _repo_root() -> Path:
-    root = Path(
-        os.environ.get("AIVIDEOEDIT_REPO_ROOT") or Path.cwd()
-    ).expanduser().resolve()
+    configured = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
+    root = (
+        Path(configured).expanduser().resolve()
+        if configured
+        else Path(__file__).resolve().parents[1]
+    )
     if not root.is_dir():
         raise HTTPException(
             status_code=503,
