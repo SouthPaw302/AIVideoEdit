@@ -134,6 +134,10 @@
       "role": "fail_closed_production_guard"
     },
     {
+      "path": "general/reusable/tools/recipe_execution_guard.py",
+      "role": "fail_closed_music_directed_recipe_guard"
+    },
+    {
       "path": "general/reusable/tools/narrative_guard.py",
       "role": "fail_closed_directing_guard"
     },
