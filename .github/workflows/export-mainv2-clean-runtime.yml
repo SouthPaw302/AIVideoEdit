@@ -1,0 +1,35 @@
+name: Export MainV2 Clean Runtime
+
+on:
+  push:
+    branches:
+      - song/pre-dawn-in-paris-mainv2-clean
+    paths:
+      - ".github/workflows/export-mainv2-clean-runtime.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2-clean
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Boot exact validation authority
+        run: |
+          python bootstrap.py boot --repo-root . --branch main --offline
+      - name: Package booted runtime
+        run: |
+          tar -czf /tmp/aivideoedit-mainv2-clean-runtime.tgz             --exclude='./.git/objects/pack/*.pack'             --exclude='./.git/objects/pack/*.idx'             .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aivideoedit-mainv2-clean-runtime
+          path: /tmp/aivideoedit-mainv2-clean-runtime.tgz
+          retention-days: 1
