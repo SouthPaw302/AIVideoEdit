@@ -1,0 +1,11 @@
+{
+  "schema": "aivideoedit.project-state.v1",
+  "project": "pre-dawn-mainv2-checkpoint",
+  "branch": "song/pre-dawn-mainv2-checkpoint",
+  "stage": "REFERENCES_ANALYZED",
+  "director_brain_version": 2,
+  "source_ingest_complete": true,
+  "reference_analysis_complete": true,
+  "visual_approach_established": false,
+  "exact_next_action": "Render the full 84.36-second checkpoint proof from the canonical still using analyzed music, without regenerating the image."
+}

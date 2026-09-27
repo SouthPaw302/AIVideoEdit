@@ -1,0 +1,22 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "assets": [
+    {
+      "id": "audio-main",
+      "path": "inputs/pre-dawn-in-paris.m4a",
+      "type": "audio",
+      "lifecycle_status": "approved",
+      "sha256": "2ecb9c370ebda2cb2df8b85ee0785a4e24978f47357788903c62354575b20382",
+      "duration_seconds": 84.36
+    },
+    {
+      "id": "canon-image",
+      "path": "inputs/canon.jpg",
+      "type": "image",
+      "lifecycle_status": "canonical",
+      "sha256": "c3107db18254a057cd9a67436b3b2701b1dc87eb0bcf3cdd616b1856adac1110",
+      "width": 1254,
+      "height": 1254
+    }
+  ]
+}

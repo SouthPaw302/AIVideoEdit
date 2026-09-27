@@ -1,0 +1,15 @@
+{
+  "schema": "aivideoedit.reference-manifest.v1",
+  "videos": [],
+  "images": [
+    {
+      "name": "canon.jpg",
+      "path": "inputs/canon.jpg",
+      "width": 1254,
+      "height": 1254,
+      "analysis_complete": true,
+      "role": "user_supplied_canonical_visual",
+      "notes": "Motorcycle rider, moonlit mountain road, raven, Aurelian sign, circular celestial geometry. Preserve composition and identity."
+    }
+  ]
+}

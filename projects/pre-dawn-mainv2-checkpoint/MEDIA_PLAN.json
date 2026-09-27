@@ -1,0 +1,7 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "selected_capabilities": [],
+  "checkpoint_mode": true,
+  "user_supplied_canon": "inputs/canon.jpg",
+  "generated_media_allowed": false
+}

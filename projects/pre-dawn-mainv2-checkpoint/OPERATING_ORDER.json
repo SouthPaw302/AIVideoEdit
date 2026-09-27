@@ -1,0 +1,35 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Run a full-length MainV2 checkpoint production from the supplied music and single canonical image.",
+  "current_user_direction": "Use the whole music file and the supplied image; run the project through GitHub Actions and return artifacts.",
+  "exact_next_action": "Render the full 84.36-second checkpoint proof from the canonical still using analyzed music, without regenerating the image.",
+  "direction_authority": "user_directed",
+  "production_mode": "living_scene",
+  "canon_lock": {
+    "locked": true,
+    "picture_language": "Dark mountain-noir motorcycle scene; moon, mountains, raven, road and circular celestial geometry remain fixed. Only bounded camera/atmospheric motion is permitted.",
+    "items": [
+      "inputs/canon.jpg"
+    ]
+  },
+  "accepted_baseline": {
+    "status": "accepted",
+    "file_or_locator": "inputs/canon.jpg",
+    "sha256": "c3107db18254a057cd9a67436b3b2701b1dc87eb0bcf3cdd616b1856adac1110",
+    "user_acceptance_statement": "User supplied this image as the visual source and instructed AIVideoEdit to run the project based on it."
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": "",
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "goal": "",
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "source_replacement_authorized": false
+  }
+}
