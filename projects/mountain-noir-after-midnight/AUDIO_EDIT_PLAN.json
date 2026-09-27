@@ -1,0 +1,32 @@
+{
+  "schema": "aivideoedit.audio-edit-plan.v1",
+  "target_duration_seconds": 900.0,
+  "sample_rate_hz": 48000,
+  "channels": 2,
+  "codec_target": "aac",
+  "join": {
+    "duration_seconds": 3.0,
+    "curve": "equal_power",
+    "no_silence": true,
+    "no_standalone_interludes": true
+  },
+  "ordered_sources": [
+    {"source": "assets/audio/Irish_eyes_Remastered.wav", "timeline_start_seconds": 0.0, "timeline_end_seconds": 187.12},
+    {"source": "assets/audio/Leave_It_by_the_Door.wav", "timeline_start_seconds": 184.12, "timeline_end_seconds": 382.96},
+    {"source": "assets/audio/Silver_Coin_Remastered.wav", "timeline_start_seconds": 379.96, "timeline_end_seconds": 587.4},
+    {"source": "assets/audio/El_Viento_trae_tu_nombre_Instrumental.wav", "timeline_start_seconds": 584.4, "timeline_end_seconds": 900.0, "extended_internally": true}
+  ],
+  "el_viento_internal_assembly": {
+    "prelude": [0.0, 90.836],
+    "loop_phrase": [90.836, 135.721],
+    "loop_phrase_repeat_count": 5,
+    "outro": [140.301, 158.64],
+    "join_seconds": 3.0,
+    "terminal_fade_seconds": 2.5,
+    "result_seconds": 315.6
+  },
+  "outputs": {
+    "wav": "assets/audio/Mountain_Noir_After_Midnight_15min_MASTER.wav",
+    "aac": "assets/audio/Mountain_Noir_After_Midnight_15min_MASTER.m4a"
+  }
+}

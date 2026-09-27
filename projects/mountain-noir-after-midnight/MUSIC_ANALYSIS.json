@@ -1,0 +1,87 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": true,
+  "production_type": "continuous_multi-track_long-form_music_film",
+  "target_duration_seconds": 900.0,
+  "source_music_duration_seconds": 752.04,
+  "lyrics": {
+    "status": "present",
+    "text_file": "LYRICS.md",
+    "directing_use": "excluded_by_current_user",
+    "exclusion_source": "current_user_instruction",
+    "exclusion_instruction": "The vocal masters contain lyrics, but no verified transcript was supplied. Do not transcribe by ear, invent lyric text, or display lyric captions; use only sparse channel identity and chapter typography."
+  },
+  "genre": {
+    "status": "user_confirmed",
+    "label": "MountainNoir / MontañaNoir atmospheric cinematic folk, trip-hop and dark ambient long-form",
+    "source": "current_user_instruction",
+    "user_declaration": "Build a new YouTube long-form MountainNoir living-painting film from the four Drive masters, using raw source imagery and looped effects rather than completed videos."
+  },
+  "rhythm": {
+    "tempo_status": "non_metric",
+    "tempo_bpm": null,
+    "pulse_description": "This is a continuous compilation of independently measured songs, so there is no single honest global BPM. Scene motion follows each chapter's measured energy, onset, and reactive-control artifacts while the three joins use restrained equal-power overlaps.",
+    "meter_or_groove": "Irish Eyes 89.1029 BPM estimate; Leave It by the Door 161.499 BPM estimate; Silver Coin 86.1328 BPM estimate; El Viento instrumental 92.2852 BPM estimate. The global film uses phrase-level pacing rather than a fabricated common grid."
+  },
+  "sequence_rule": "Irish Eyes, Leave It by the Door, and Silver Coin play back to back with three-second equal-power overlaps. El Viento instrumental is last and owns the final extension. No standalone interludes, silence padding, added ambience, or additional songs are permitted.",
+  "join_policy": {
+    "overlap_seconds": 3.0,
+    "curve": "equal_power",
+    "zero_silence": true,
+    "standalone_interludes": false
+  },
+  "sections": [
+    {
+      "id": "IRISH_EYES",
+      "start_seconds": 0.0,
+      "end_seconds": 184.12,
+      "energy": "wet nocturnal arrival; measured 89.1029 BPM source pulse",
+      "musical_cues": ["Irish Eyes remastered master", "outgoing three-second equal-power overlap begins at 184.12"],
+      "visual_function": "Establish black water, rain glass, road and ridge with low-frequency internal weather motion."
+    },
+    {
+      "id": "LEAVE_IT_BY_THE_DOOR",
+      "start_seconds": 184.12,
+      "end_seconds": 379.96,
+      "energy": "threshold movement and contained amber warmth; independently measured 161.499 BPM source pulse",
+      "musical_cues": ["incoming Irish Eyes overlap resolves at 187.12", "outgoing three-second equal-power overlap begins at 379.96"],
+      "visual_function": "Move through rain glass into the warm threshold world without reusing the finished Leave It video."
+    },
+    {
+      "id": "SILVER_COIN",
+      "start_seconds": 379.96,
+      "end_seconds": 584.4,
+      "energy": "silver reflection and inn firelight; measured 86.1328 BPM source pulse",
+      "musical_cues": ["incoming Leave It overlap resolves at 382.96", "outgoing three-second equal-power overlap begins at 584.40"],
+      "visual_function": "Open the woodland coin and inn images into subtle pigment, glint and warm practical-light motion."
+    },
+    {
+      "id": "EL_VIENTO_FINALE",
+      "start_seconds": 584.4,
+      "end_seconds": 900.0,
+      "energy": "instrumental wind, coastal memory and quiet final release; measured 92.2852 BPM source pulse",
+      "musical_cues": ["incoming Silver Coin overlap resolves at 587.40", "source-only internal phrase extension", "terminal 2.5-second fade"],
+      "visual_function": "Carry the full final movement through mist map, rain fort, sunset fort and glowing thread with restrained channel identity text."
+    }
+  ],
+  "tracks": [
+    {"id": "SRC-AUDIO-IRISH-EYES", "name": "Irish eyes (Remastered).wav", "duration_seconds": 187.12, "bpm_estimate": 89.1029, "sha256": "8b0ccd2e57a6e683d526d950bd88b42af0f0867b06e3d1b014a2b3131f3cfb1e"},
+    {"id": "SRC-AUDIO-LEAVE-DOOR", "name": "Leave It by the Door.wav", "duration_seconds": 198.84, "bpm_estimate": 161.499, "sha256": "3354715f5873df14e7d245a1e8f094ff38aade95264f16da3b4bbd71563f4a82"},
+    {"id": "SRC-AUDIO-SILVER-COIN", "name": "Silver Coin (Remastered).wav", "duration_seconds": 207.44, "bpm_estimate": 86.1328, "sha256": "6b6d7a134959086157f88baf3751718597bf61f73886a48281f6d8b2c3361a92"},
+    {"id": "SRC-AUDIO-EL-VIENTO", "name": "El Viento trae tu nombre Instrumental.wav", "duration_seconds": 158.64, "bpm_estimate": 92.2852, "instrumental": true, "sha256": "8d451360246378db551282c3703add4cd474c9ad3a4c6cf778390ae727820fe0"}
+  ],
+  "finale_extension": {
+    "target_duration_seconds": 315.6,
+    "source_duration_seconds": 158.64,
+    "method": "source-only internal instrumental phrase loop with three-second equal-power joins and a terminal fade",
+    "phrase_layout": [
+      {"source_in_seconds": 0.0, "source_out_seconds": 90.836, "role": "prelude"},
+      {"source_in_seconds": 90.836, "source_out_seconds": 135.721, "role": "loop_phrase", "repeat_count": 5},
+      {"source_in_seconds": 140.301, "source_out_seconds": 158.64, "role": "outro"}
+    ],
+    "forbidden": ["silence padding", "detached ambience", "additional song", "unapproved generated audio"]
+  },
+  "required_repo_evidence": ["AUDIO_EDIT_PLAN.json", "AUDIO_RENDER_FILTER.txt", "AUDIO_MASTER_QC.json", "source SHA-256", "Drive source IDs", "living-scene manifest"],
+  "production_gate_status": "audio analysis and sequence authority resolved",
+  "visual_function": "One continuous new MountainNoir living-painting world. Music maps determine animation intensity and timing; they do not authorize recycling completed music videos as picture."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "aivideoedit.living-scene-chunk.v1",
+  "chunk": "Leave It by the Door",
+  "fps": 24,
+  "width": 960,
+  "height": 540,
+  "seed": 302,
+  "preset": "veryfast",
+  "crf": 19,
+  "transition_fraction": 0.075,
+  "scenes": [
+    {"id":"MN06_AMBER_DOOR","duration":39.0,"image":"../assets/derived/IE_L22_WARM_WINDOW_CANDLE_frame.png","family":"threshold","effects":["parallax","micro","atmosphere","particles","firelight","haze","shafts","canvas"],"parallax":2.1,"micro_strength":0.27,"firelight_strength":0.024,"haze_strength":0.50,"shaft_strength":0.024,"light_origin":[0.78,0.20],"canvas_amount":0.25,"transition":"pigment"},
+    {"id":"MN07_GLASS_AND_RAIN","duration":40.0,"image":"../assets/derived/IE_L21_ROAD_RAIN_GLASS_frame.png","family":"threshold","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":2.8,"micro_strength":0.34,"reflection_strength":0.075,"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN08_HEARTH_BREATH","duration":39.0,"image":"../assets/derived/IE_L22_WARM_WINDOW_CANDLE_frame.png","family":"tavern","effects":["parallax","micro","atmosphere","particles","firelight","haze","shafts","canvas"],"parallax":2.0,"micro_strength":0.25,"firelight_strength":0.028,"haze_strength":0.58,"shaft_strength":0.022,"light_origin":[0.76,0.19],"canvas_amount":0.25,"transition":"pigment"},
+    {"id":"MN09_WET_RETURN","duration":39.0,"image":"../assets/derived/IE_L21_ROAD_RAIN_GLASS_frame.png","family":"threshold","effects":["parallax","micro","reflection","atmosphere","particles","focus","canvas"],"parallax":2.5,"micro_strength":0.30,"reflection_strength":0.065,"focus_amount":0.65,"canvas_amount":0.23,"transition":"pigment"},
+    {"id":"MN10_DOOR_AFTERGLOW","duration":38.84,"image":"../assets/derived/IE_L22_WARM_WINDOW_CANDLE_frame.png","family":"threshold","effects":["parallax","micro","atmosphere","particles","firelight","shafts","canvas"],"parallax":2.2,"micro_strength":0.26,"firelight_strength":0.023,"shaft_strength":0.020,"light_origin":[0.80,0.18],"canvas_amount":0.25,"transition":"pigment"}
+  ]
+}

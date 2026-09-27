@@ -1,0 +1,21 @@
+{
+  "schema": "aivideoedit.living-scene-chunk.v1",
+  "chunk": "El Viento finale",
+  "fps": 24,
+  "width": 960,
+  "height": 540,
+  "seed": 302,
+  "preset": "veryfast",
+  "crf": 19,
+  "transition_fraction": 0.075,
+  "scenes": [
+    {"id":"MN16_OCEAN_MEMORY","duration":40.0,"image":"../assets/source/el-viento/shot_03_ocean_memory.png","family":"dawn","effects":["parallax","micro","reflection","atmosphere","particles","focus","canvas"],"parallax":2.5,"micro_strength":0.28,"reflection_strength":0.05,"focus_amount":0.55,"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN17_VEIL_OF_MEMORY","duration":40.0,"image":"../assets/source/el-viento/shot_07_veil_of_memory.png","family":"village","effects":["parallax","micro","atmosphere","particles","focus","canvas"],"parallax":2.1,"micro_strength":0.24,"focus_amount":0.50,"canvas_amount":0.25,"transition":"pigment"},
+    {"id":"MN18_FORT_RAIN","duration":40.0,"image":"../assets/source/el-viento/02_female_fort_rain.png","family":"village","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":2.7,"micro_strength":0.28,"reflection_strength":0.045,"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN19_FORT_SUNSET","duration":40.0,"image":"../assets/source/el-viento/01_male_fort_sunset.png","family":"dawn","effects":["parallax","micro","atmosphere","particles","firelight","shafts","canvas"],"parallax":2.4,"micro_strength":0.26,"firelight_strength":0.018,"shaft_strength":0.018,"light_origin":[0.72,0.18],"canvas_amount":0.25,"transition":"pigment"},
+    {"id":"MN20_OCEAN_RETURN","duration":40.0,"image":"../assets/source/el-viento/shot_03_ocean_memory.png","family":"dawn","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":2.3,"micro_strength":0.25,"reflection_strength":0.055,"canvas_amount":0.25,"transition":"pigment"},
+    {"id":"MN21_GLOWING_THREAD","duration":40.0,"image":"../assets/source/el-viento/shot_10_glowing_thread.png","family":"coin","effects":["parallax","micro","atmosphere","glint","focus","canvas"],"parallax":2.2,"micro_strength":0.24,"focus_amount":0.50,"glint_center":[0.52,0.52],"glint_radius":0.20,"glint_strength":18,"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN22_RAIN_RESOLUTION","duration":40.0,"image":"../assets/source/el-viento/02_female_fort_rain.png","family":"village","effects":["parallax","micro","reflection","atmosphere","particles","canvas"],"parallax":2.4,"micro_strength":0.24,"reflection_strength":0.04,"canvas_amount":0.24,"transition":"pigment"},
+    {"id":"MN23_LAST_LIGHT","duration":35.6,"image":"../assets/source/el-viento/01_male_fort_sunset.png","family":"dawn","effects":["parallax","micro","atmosphere","particles","firelight","shafts","canvas"],"parallax":1.8,"micro_strength":0.20,"firelight_strength":0.015,"shaft_strength":0.015,"light_origin":[0.72,0.18],"canvas_amount":0.23,"transition":"pigment"}
+  ]
+}
