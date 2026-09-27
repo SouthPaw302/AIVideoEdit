@@ -14,6 +14,7 @@ from runtime_v2.boot.capsule import (
     build_capsule,
     sign_capsule,
     verify_capsule,
+    validate_project_consistency,
 )
 from runtime_v2.gatekeeper import evaluate_action
 from runtime_v2.harness.adapter import specialist_request
@@ -364,3 +365,14 @@ def test_intelligence_http_surface(
             "context": {},
         },
     ).json()["status"] == "ESCALATE"
+
+
+
+def test_preserved_el_viento_drift_replay():
+    fixture_path = Path(__file__).resolve().parents[1] / "regression" / "golden" / "el_viento_20260925_drift.json"
+    fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+    errors = validate_project_consistency(
+        fixture["project_state"],
+        fixture["operating_order"],
+    )
+    assert errors == fixture["expected_consistency_errors"]

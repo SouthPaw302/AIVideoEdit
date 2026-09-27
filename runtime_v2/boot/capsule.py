@@ -92,6 +92,16 @@ def _media_locators(project: Path | None) -> dict[str, Any]:
     }
 
 
+def validate_project_consistency(state: dict[str, Any], order: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    state_next = str(state.get("exact_next_action") or "").strip()
+    order_next = str(order.get("exact_next_action") or "").strip()
+    if state_next and order_next and state_next != order_next:
+        errors.append("exact_next_action mismatch between PROJECT_STATE.json and OPERATING_ORDER.json")
+    state_branch = str(state.get("branch") or "").strip()
+    return errors
+
+
 def _next_stage(contract: dict[str, Any], stage: str | None) -> str:
     states = contract.get("states", [])
     if isinstance(states, list) and stage in states:
@@ -119,6 +129,12 @@ def build_capsule(
     refine = order.get("refinement_scope") if isinstance(order.get("refinement_scope"), dict) else {}
     recut = order.get("recut_scope") if isinstance(order.get("recut_scope"), dict) else {}
     stage = state.get("stage")
+    consistency_errors = validate_project_consistency(state, order)
+    if consistency_errors:
+        raise ValueError("; ".join(consistency_errors))
+    order_next = str(order.get("exact_next_action") or "").strip()
+    state_next = str(state.get("exact_next_action") or "").strip()
+    exact_next_action = order_next or state_next or None
     return {
         "schema": CAPSULE_SCHEMA,
         "session_id": session_id,
@@ -130,7 +146,8 @@ def build_capsule(
             "project_dir": project.resolve().relative_to(repo).as_posix() if project else None,
             "stage": stage,
             "next_contract_stage": _next_stage(contract, stage),
-            "exact_next_action": order.get("exact_next_action"),
+            "exact_next_action": exact_next_action,
+            "exact_next_action_source": "OPERATING_ORDER.json" if order_next else ("PROJECT_STATE.json" if state_next else None),
         },
         "operating_order": {
             "sha256": _sha256(project / "OPERATING_ORDER.json") if project else None,

@@ -1,0 +1,35 @@
+{
+  "schema": "aivideoedit.golden-state-replay.v1",
+  "source": {
+    "branch": "song/el-viento-trae-tu-nombre",
+    "commit": "2f382a87ea646a024cecac98be070c44cfd010ed",
+    "project_state_blob": "d5004a291215b4ce2dc3f62cde8d4efca1de015f",
+    "operating_order_blob": "4436851d51cdb008ddb5991513464d67e27792fb",
+    "captured_from": "preserved production branch"
+  },
+  "project_state": {
+    "branch": "song/el-viento-trae-tu-nombre",
+    "stage": "ASSEMBLED",
+    "assembly_complete": true,
+    "final_qc_passed": false,
+    "exact_next_action": "User performs full normal-speed visual review of El_Viento_Route4_1080p_FX_MASTER_v6.mp4. If accepted, mark final creative QC accepted and archive/promote the 1080 master. Do not upscale to 4K until that acceptance."
+  },
+  "operating_order": {
+    "canon_lock": {
+      "locked": true
+    },
+    "refinement_scope": {
+      "active": true,
+      "restart_authorized": false
+    },
+    "recut_scope": {
+      "active": true,
+      "source_replacement_authorized": false
+    },
+    "exact_next_action": "Regenerate and verify the FX precompile lock against corrected SCRIPT.json and FX_REQUIREMENTS.json. Then resume missing-FX work only when rendering is authorized."
+  },
+  "expected_consistency_errors": [
+    "exact_next_action mismatch between PROJECT_STATE.json and OPERATING_ORDER.json"
+  ],
+  "interpretation": "Historical successful production snapshot intentionally retained as a negative drift replay. Runtime V2 must surface the mismatch rather than choose one silently."
+}
