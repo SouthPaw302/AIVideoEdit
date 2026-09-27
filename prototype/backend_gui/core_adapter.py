@@ -30,6 +30,11 @@ CAPABILITY_MATRIX = Path("general/reusable/MEDIA_CAPABILITY_MATRIX.json")
 FX_REGISTRY = Path("general/reusable/fx_v2/registry.json")
 
 
+def _core_ref() -> str:
+    value = os.environ.get("AIVE_CORE_REF", "main").strip()
+    return value or "main"
+
+
 def _read_json(path: Path, default: Any) -> Any:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -85,10 +90,11 @@ class CoreAdapter:
             )
             if proc.returncode != 0:
                 return proc
-            target = "origin/main"
+            ref = _core_ref()
+            target = f"origin/{ref}"
             check = _run(["git", "rev-parse", "--verify", target], CORE_REPO, timeout=30)
             if check.returncode != 0:
-                target = "main"
+                target = ref
             return _run(["git", "checkout", "--detach", target], CORE_REPO, timeout=60)
 
         if not HOST_BOOTSTRAP.is_file():
@@ -124,7 +130,7 @@ class CoreAdapter:
             "--repo-root",
             str(CORE_REPO),
             "--branch",
-            "main",
+            _core_ref(),
         ]
         if offline:
             cmd.append("--offline")
@@ -146,11 +152,13 @@ class CoreAdapter:
         fx = _read_json(self.os_root / FX_REGISTRY, {}) if self.os_root.is_dir() else {}
         capabilities = self._records(matrix, ("capabilities", "media_capabilities", "items"))
         effects = self._records(fx, ("effects", "fx", "registry", "items"))
-        bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == "main"
+        ref = _core_ref()
+        bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == ref
         return {
             "ok": True,
             "bootstrapped": bootstrapped,
-            "mode": "isolated-canonical-main",
+            "mode": "isolated-canonical-main" if ref == "main" else "isolated-validation-ref",
+            "requested_core_ref": ref,
             "host_repo": str(self.host_repo),
             "host_branch": _host_branch(),
             "core_repo": str(self.core_repo) if self.core_repo.exists() else None,

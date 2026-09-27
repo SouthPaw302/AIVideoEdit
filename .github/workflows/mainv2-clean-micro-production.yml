@@ -1,0 +1,48 @@
+name: MainV2 Clean Micro Production
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - MainV2-clean
+    paths:
+      - "prototype/backend_gui/core_adapter.py"
+      - "prototype/backend_gui/production_project.py"
+      - "prototype/backend_gui/probes/mainv2_clean_micro_production.py"
+      - ".github/workflows/mainv2-clean-micro-production.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  micro-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      AIVE_PROBE_EVIDENCE: /tmp/aive-micro-production
+      AIVE_CORE_REF: MainV2-clean
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install media runtime
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+      - name: Assert validation branch
+        run: test "$(git branch --show-current)" = "MainV2-clean"
+      - name: Run actual micro production
+        run: python prototype/backend_gui/probes/mainv2_clean_micro_production.py
+      - name: Package evidence
+        if: always()
+        run: |
+          tar -czf /tmp/mainv2-clean-micro-production.tgz -C /tmp/aive-micro-production . || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mainv2-clean-micro-production
+          path: /tmp/mainv2-clean-micro-production.tgz
+          retention-days: 3

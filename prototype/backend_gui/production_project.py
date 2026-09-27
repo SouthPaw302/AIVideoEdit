@@ -210,7 +210,10 @@ def initialize(project_id: str) -> dict:
         raise RuntimeError((proc.stderr or proc.stdout or "local core clone failed")[-1200:])
 
     branch = _branch(project_id)
-    checkout = _run(["git", "checkout", "-b", branch, "main"], engine, timeout=60)
+    base_commit = str(CORE.status().get("main_commit") or "").strip()
+    checkout = _run(["git", "checkout", "-b", branch, base_commit or "main"], engine, timeout=60)
+    if checkout.returncode != 0:
+        checkout = _run(["git", "checkout", "-b", branch, "main"], engine, timeout=60)
     if checkout.returncode != 0:
         checkout = _run(["git", "checkout", "-b", branch, "origin/main"], engine, timeout=60)
     if checkout.returncode != 0:
