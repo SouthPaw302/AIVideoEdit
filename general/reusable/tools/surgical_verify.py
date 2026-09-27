@@ -23,6 +23,7 @@ DEFAULT_TESTS = [
     "tests/test_tool_api_gate_boundaries.py",
     "tests/test_operating_gate_path.py",
     "tests/test_fx_runtime_dependencies.py",
+    "tests/test_archive_manifest_stability.py",
 ]
 
 

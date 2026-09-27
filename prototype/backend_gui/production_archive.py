@@ -30,7 +30,7 @@ def build(pid,*,note:str=""):
     assembly=production_assembly.status(pid)
     if not assembly.get("assembly_complete") or not assembly.get("output_present"):raise RuntimeError("verified final assembly is required")
     records=[]
-    canonical_files=["PROJECT.md","STATUS.md","HANDOFF.md","PROJECT_STATE.json","SOURCE_AUTHORITY.json","REFERENCE_MANIFEST.json","MEDIA_PLAN.json","ASSET_MANIFEST.json","MUSIC_ANALYSIS.json","SCRIPT.md","SCRIPT.json","VISUAL_DNA.md","SHOT_LIST.md","RENDER_HISTORY.md","QC.md","STORYBOARD.json","ASSEMBLY.json","FINAL_QC.json","FX_REQUIREMENTS.json","fx.lock.json"]
+    canonical_files=["PROJECT.md","STATUS.md","HANDOFF.md","SOURCE_AUTHORITY.json","REFERENCE_MANIFEST.json","MEDIA_PLAN.json","ASSET_MANIFEST.json","MUSIC_ANALYSIS.json","SCRIPT.md","SCRIPT.json","VISUAL_DNA.md","SHOT_LIST.md","RENDER_HISTORY.md","QC.md","STORYBOARD.json","ASSEMBLY.json","FINAL_QC.json","FX_REQUIREMENTS.json","fx.lock.json"]
     for name in canonical_files:
         path=project_dir/name
         if path.is_file():records.append({"path":name,"sha256":_sha(path),"size_bytes":path.stat().st_size})
@@ -41,7 +41,8 @@ def build(pid,*,note:str=""):
                 records.append({"path":path.relative_to(project_dir).as_posix(),"sha256":_sha(path),"size_bytes":path.stat().st_size})
     assembly_record=assembly.get("assembly") or {};asset=assembly.get("asset") or {}
     media={"asset_id":assembly_record.get("output_asset_id"),"uri":assembly_record.get("output_uri"),"sha256":assembly_record.get("sha256"),"browser_url":asset.get("source_url"),"size_bytes":asset.get("size_bytes"),"storage_policy":"heavy_media_external_or_workstation; not embedded in Git archive manifest"}
-    manifest={"schema":"aivideoedit.archive-manifest.v1","project_id":pid,"branch":current.get("branch"),"core_main_commit":current.get("main_commit"),"production_stage":"FINAL_QC_PASSED","records":records,"final_media":media,"final_qc_sha256":_sha(project_dir/"FINAL_QC.json"),"assembly_record_sha256":_sha(project_dir/"ASSEMBLY.json"),"note":str(note or "").strip() or None,"created_at":base.now()}
+    state_before_archive=_read(project_dir/"PROJECT_STATE.json",{})
+    manifest={"schema":"aivideoedit.archive-manifest.v1","project_id":pid,"branch":current.get("branch"),"core_main_commit":current.get("main_commit"),"production_stage":"FINAL_QC_PASSED","project_state_snapshot":state_before_archive,"records":records,"final_media":media,"final_qc_sha256":_sha(project_dir/"FINAL_QC.json"),"assembly_record_sha256":_sha(project_dir/"ASSEMBLY.json"),"note":str(note or "").strip() or None,"created_at":base.now()}
     archive_path=project_dir/"ARCHIVE_MANIFEST.json";_write(archive_path,manifest)
     state_path=project_dir/"PROJECT_STATE.json";state=_read(state_path,{});state.update({"archive_complete":True,"archive_manifest_sha256":_sha(archive_path),"archive_record_count":len(records),"archived_at":base.now()});_write(state_path,state)
     commit=production_project._git_commit_paths(engine,[archive_path,state_path],"Create content-addressed production archive manifest");production_project._clear_guard_marker(engine)
