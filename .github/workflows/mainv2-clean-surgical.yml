@@ -31,7 +31,7 @@ jobs:
       - name: Run music worker fallback unit tests
         run: python -m pytest -q tests/test_music_beat_worker.py
       - name: Provision pinned Beat This ONNX model
-        run: python general/reusable/tools/model_provision.py music-beat-onnx-v1
+        run: python -m general.reusable.tools.model_provision music-beat-onnx-v1
       - name: Run real CPU ONNX checkpoint
         shell: bash
         run: |
