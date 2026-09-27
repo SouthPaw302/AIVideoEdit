@@ -12,25 +12,39 @@ Implemented:
 - `GET /health`
 - `GET /version`
 - `GET /capabilities`
-- strict Pydantic response schemas
+- strict Pydantic API schemas
 - optional bearer-token protection via `BRIDGE_TOKEN`
 - client/request-generated `X-Request-ID`
 - configurable request timeout via `BRIDGE_REQUEST_TIMEOUT_SECONDS`
 - JSONL audit logging via `BRIDGE_AUDIT_LOG`
 - machine-readable OpenAPI schema
-- unit tests
 
-Not implemented yet:
+## Step 2: Safe Execution Worker
 
-- arbitrary or allowlisted CLI execution
-- Git/repo write operations
-- JEV evaluation
-- DeepSeek Harness routing
-- ONNX/model execution
-- external LLM routing
-- MCP exposure
+Implemented:
 
-Those are deliberately excluded from Step 1.
+- `GET /tools` for machine-readable tool discovery
+- `POST /tools/run` for registered tool execution
+- no `shell=True` and no arbitrary shell endpoint
+- static allowlist registry
+- one isolated workspace per execution
+- sanitized child-process environment
+- execution timeouts
+- bounded stdout/stderr capture
+- artifact enumeration, size reporting, and SHA-256 hashing
+- automatic workspace cleanup by default
+- optional retained workspaces for debugging
+
+Initial registered tools are intentionally narrow:
+
+- `runtime.python.version`
+- `runtime.python.probe`
+- `system.git.version`
+- `system.ffmpeg.version`
+- `system.ffprobe.version`
+
+The registry architecture is ready for approved repo scripts and read-only repo tools,
+but those are connected in Step 3 rather than giving Step 2 broad filesystem access.
 
 ## Run locally
 
@@ -48,12 +62,26 @@ export BRIDGE_TOKEN="replace-me"
 python -m runtime_v2.bridge
 ```
 
-Then:
+Optional worker configuration:
+
+```bash
+export BRIDGE_EXECUTION_TIMEOUT_SECONDS="20"
+export BRIDGE_MAX_OUTPUT_BYTES="262144"
+export BRIDGE_WORKSPACE_ROOT="/tmp/aivideoedit-runtime-v2/jobs"
+export BRIDGE_KEEP_WORKSPACES="0"
+```
+
+Examples:
 
 ```bash
 curl http://127.0.0.1:8787/health
-curl -H "Authorization: Bearer replace-me" http://127.0.0.1:8787/version
-curl -H "Authorization: Bearer replace-me" http://127.0.0.1:8787/capabilities
+curl -H "Authorization: Bearer replace-me" http://127.0.0.1:8787/tools
+
+curl \
+  -H "Authorization: Bearer replace-me" \
+  -H "Content-Type: application/json" \
+  -d '{"tool":"runtime.python.probe"}' \
+  http://127.0.0.1:8787/tools/run
 ```
 
 ## Test
@@ -64,9 +92,17 @@ python -m pytest -q runtime_v2/tests
 
 ## Security boundary
 
-The bridge currently executes no shell commands and has no repository mutation
-endpoint. Health is intentionally public for infrastructure liveness checks.
-All other endpoints require a bearer token when `BRIDGE_TOKEN` is configured.
+The worker executes only commands registered server-side. The request cannot supply
+an executable, shell string, working directory, environment variables, or filesystem
+root. Built-in tools do not currently accept user arguments.
 
-HTTPS should be terminated by the deployment platform or reverse proxy. Secrets
-remain server-side and must never be committed to the repository.
+Each execution receives its own workspace. The worker returns only relative artifact
+paths and hashes and removes the workspace unless debugging retention is explicitly
+enabled.
+
+This is process-level hardening, not a kernel/container security boundary. Network
+and OS-level isolation should be provided by the deployment environment before
+higher-risk tools are registered.
+
+Git/repo integration, JEV, model execution, external LLM routing, and MCP exposure
+remain separate later steps.

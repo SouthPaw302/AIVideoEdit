@@ -24,6 +24,11 @@ READY_CAPABILITIES: tuple[Capability, ...] = (
         status="ready",
         description="Machine-readable capability discovery.",
     ),
+    Capability(
+        name="cli.run",
+        status="ready",
+        description="Execute registered, allowlisted tools in isolated job workspaces.",
+    ),
 )
 
 PLANNED_CAPABILITIES: tuple[Capability, ...] = (
@@ -31,11 +36,6 @@ PLANNED_CAPABILITIES: tuple[Capability, ...] = (
         name="repo.read",
         status="planned",
         description="Read-only repository inspection through an allowlisted adapter.",
-    ),
-    Capability(
-        name="cli.run",
-        status="planned",
-        description="Allowlisted command execution in isolated workspaces.",
     ),
     Capability(
         name="jev.evaluate",

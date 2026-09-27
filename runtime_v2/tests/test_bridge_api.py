@@ -6,8 +6,10 @@ from runtime_v2.bridge.app import create_app
 from runtime_v2.bridge.config import BridgeSettings
 
 
-def test_health_is_public_and_has_request_id():
-    app = create_app(BridgeSettings(bearer_token="secret"))
+def test_health_is_public_and_has_request_id(tmp_path: Path):
+    app = create_app(
+        BridgeSettings(bearer_token="secret", workspace_root=str(tmp_path / "jobs"))
+    )
     client = TestClient(app)
 
     response = client.get("/health", headers={"X-Request-ID": "test-health-1"})
@@ -17,12 +19,14 @@ def test_health_is_public_and_has_request_id():
     assert response.json() == {
         "status": "ok",
         "service": "aivideoedit-agent-bridge",
-        "version": "0.1.0",
+        "version": "0.2.0",
     }
 
 
-def test_protected_endpoint_rejects_missing_token():
-    app = create_app(BridgeSettings(bearer_token="secret"))
+def test_protected_endpoint_rejects_missing_token(tmp_path: Path):
+    app = create_app(
+        BridgeSettings(bearer_token="secret", workspace_root=str(tmp_path / "jobs"))
+    )
     client = TestClient(app)
 
     response = client.get("/version")
@@ -32,8 +36,10 @@ def test_protected_endpoint_rejects_missing_token():
     assert response.json()["request_id"]
 
 
-def test_version_accepts_valid_token():
-    app = create_app(BridgeSettings(bearer_token="secret"))
+def test_version_accepts_valid_token(tmp_path: Path):
+    app = create_app(
+        BridgeSettings(bearer_token="secret", workspace_root=str(tmp_path / "jobs"))
+    )
     client = TestClient(app)
 
     response = client.get(
@@ -44,10 +50,11 @@ def test_version_accepts_valid_token():
     assert response.status_code == 200
     assert response.json()["runtime"] == "runtime_v2"
     assert response.json()["api_version"] == "v1"
+    assert response.json()["service_version"] == "0.2.0"
 
 
-def test_capabilities_can_hide_planned_entries():
-    app = create_app(BridgeSettings())
+def test_capabilities_can_hide_planned_entries(tmp_path: Path):
+    app = create_app(BridgeSettings(workspace_root=str(tmp_path / "jobs")))
     client = TestClient(app)
 
     response = client.get("/capabilities?include_planned=false")
@@ -58,12 +65,18 @@ def test_capabilities_can_hide_planned_entries():
         "bridge.health",
         "bridge.version",
         "bridge.capabilities",
+        "cli.run",
     ]
 
 
 def test_audit_jsonl_is_written(tmp_path: Path):
     audit_path = tmp_path / "audit" / "bridge.jsonl"
-    app = create_app(BridgeSettings(audit_log_path=str(audit_path)))
+    app = create_app(
+        BridgeSettings(
+            audit_log_path=str(audit_path),
+            workspace_root=str(tmp_path / "jobs"),
+        )
+    )
     client = TestClient(app)
 
     response = client.get("/health")
