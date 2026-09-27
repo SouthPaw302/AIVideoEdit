@@ -229,7 +229,7 @@ def test_surgical_stack(
     )
     registry = ModelRegistry.load_default()
     resolution = registry.resolve(
-        "music.beat.onnx.v1"
+        "music.beat.beat-this-onnx.v1"
     )
     assert resolution.used_fallback is True
 

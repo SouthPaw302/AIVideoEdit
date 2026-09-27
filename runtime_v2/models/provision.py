@@ -7,7 +7,7 @@ import tempfile
 import urllib.request
 from pathlib import Path
 
-from .registry import ModelRegistry
+from .registry import ModelRegistry, inferred_repo_root
 
 
 def provision(model_id: str, *, force: bool = False) -> dict:
@@ -16,9 +16,12 @@ def provision(model_id: str, *, force: bool = False) -> dict:
     if record.get("runtime") != "onnxruntime":
         raise ValueError(f"model is not externally provisioned ONNX: {model_id}")
 
-    repo_root = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
-    if not repo_root:
-        raise RuntimeError("AIVIDEOEDIT_REPO_ROOT must point to the AIVideoEdit checkout")
+    # The registry already supports an explicit AIVIDEOEDIT_REPO_ROOT override
+    # and otherwise infers the checkout from this module, so provisioning works
+    # in both Compose and ordinary local clones.
+    repo_root = inferred_repo_root()
+    if not repo_root.is_dir():
+        raise RuntimeError("AIVideoEdit repository root is unavailable")
     destination = registry.model_path(record)
     if destination is None:
         raise RuntimeError("model registry has no cache path")

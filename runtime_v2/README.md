@@ -220,3 +220,30 @@ python -m runtime_v2.client --url "$AIVIDEOEDIT_BRIDGE_URL" \
 Use `project-decide` for production decisions because it evaluates the actual
 Studio project workspace. The older generic `decide` command evaluates the
 bridge checkout and is intended for bridge-local diagnostics.
+
+
+## One-command verification
+
+Routine Runtime V2 verification does not require a full video production:
+
+```bash
+python -m runtime_v2.verify
+```
+
+That runs the complete Runtime V2 micro-test suite and reports whether the pinned
+Beat This model is currently provisioned. To perform the real CPU ONNX promotion
+checkpoint and fail unless it passes:
+
+```bash
+python -m runtime_v2.verify --require-onnx
+```
+
+To provision the exact registry-pinned model first (outside normal git history):
+
+```bash
+python -m runtime_v2.verify --provision-model --require-onnx
+```
+
+The verifier deliberately reports the full-production checkpoint as not run.
+A real end-to-end production remains an explicit promotion checkpoint rather
+than a routine regression test.

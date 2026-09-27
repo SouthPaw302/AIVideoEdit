@@ -16,7 +16,7 @@
     "4_first_onnx_worker": "INTEGRATED_IN_STUDIO_ANALYSIS_PINNED_BEAT_THIS_ONNX_WITH_DETERMINISTIC_FALLBACK_REAL_CPU_MODEL_CHECKPOINT_PENDING",
     "5_jev_decision_hook": "IMPLEMENTED_MAINV2",
     "6_deepseek_harness": "OPTIONAL_PROVIDER_NEUTRAL",
-    "7_regression_verification": "IMPLEMENTED_MICRO_FIXTURES_NO_FULL_PRODUCTION"
+    "7_regression_verification": "IMPLEMENTED_ONE_COMMAND_MICRO_SUITE_GOLDEN_REPLAY_AND_OPTIONAL_REAL_ONNX_CHECKPOINT"
   },
   "target_architecture": {
     "primary_agent": "Already-authorized sandbox agent",
@@ -65,7 +65,9 @@
       "project-aware decision preview carries the same canon-sensitive policy used by execution"
     ],
     "full_production": "Reserved for explicit integration checkpoint before promotion to main.",
-    "real_onnx_checkpoint": "Provision the pinned 83 MB Beat This model outside git history and execute one CPU fixture before promotion."
+    "real_onnx_checkpoint": "Pinned model source/preprocessing verified; execute the one-command real CPU checkpoint in a network-capable/runtime environment before promotion.",
+    "command": "python -m runtime_v2.verify",
+    "real_onnx_command": "python -m runtime_v2.verify --provision-model --require-onnx"
   },
   "promotion_rule": "Do not promote MainV2 to main until boot integration and one checkpoint end-to-end production are explicitly approved."
 }
