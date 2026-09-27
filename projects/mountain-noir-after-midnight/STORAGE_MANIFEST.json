@@ -8,6 +8,14 @@
   "release_url": "https://github.com/SouthPaw302/AIVideoEdit/releases/tag/media-mountain-noir-after-midnight",
   "assets": [
     {
+      "category": "final",
+      "asset_name": "final__Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
+      "sha256": "a580c212b0f3dbe6f1d60da7cb69c14c5b6486d0517920cf215c4df3092d72ad",
+      "bytes": 105587047,
+      "uploaded_at_utc": "2026-09-27T06:01:53Z"
+    },
+    {
       "category": "generated",
       "asset_name": "generated__Mountain_Noir_After_Midnight_15min_MASTER.m4a",
       "original_name": "Mountain_Noir_After_Midnight_15min_MASTER.m4a",

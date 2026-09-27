@@ -1,0 +1,12 @@
+{
+  "schema": "aivideoedit.temporal-qc-timeline.v1",
+  "note": "Compatibility transition timeline for the main temporal QC utility. End times are derived directly from LIVING_SCENE_MANIFEST.json.",
+  "scenes": [
+    {"end": 30.0}, {"end": 68.0}, {"end": 107.0}, {"end": 146.0},
+    {"end": 184.12}, {"end": 223.12}, {"end": 263.12}, {"end": 302.12},
+    {"end": 341.12}, {"end": 379.96}, {"end": 420.0}, {"end": 461.0},
+    {"end": 502.0}, {"end": 543.0}, {"end": 584.4}, {"end": 624.4},
+    {"end": 664.4}, {"end": 704.4}, {"end": 744.4}, {"end": 784.4},
+    {"end": 824.4}, {"end": 864.4}, {"end": 900.0}
+  ]
+}

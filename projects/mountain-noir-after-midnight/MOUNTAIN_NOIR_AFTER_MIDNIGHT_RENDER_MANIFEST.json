@@ -1,0 +1,38 @@
+{
+  "schema": "aivideoedit.mountain-noir-after-midnight.render-manifest.v2",
+  "project": "Mountain Noir — After Midnight",
+  "branch": "song/mountain-noir-after-midnight",
+  "render": {
+    "file": "Mountain_Noir_After_Midnight_15min_WORKPRINT_v1.mp4",
+    "duration_seconds": 900.0,
+    "resolution": "1280x720",
+    "fps": 24,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2,
+    "sha256": "a580c212b0f3dbe6f1d60da7cb69c14c5b6486d0517920cf215c4df3092d72ad"
+  },
+  "picture_method": "Twenty-three source-derived living scenes rendered from approved raw images and raw source loops, with local motion, weather, light, glow, and crossfades. Completed music videos are excluded from picture use.",
+  "audio_order": [
+    "Irish Eyes",
+    "Leave It by the Door",
+    "Silver Coin",
+    "El Viento trae tu nombre — Instrumental"
+  ],
+  "audio_transitions": "Three-second equal-power overlaps between the first three songs and into the finale; the finale is extended only from its own source material to exactly 15 minutes.",
+  "typography": "Persistent lower-right MOUNTAIN NOIR identity with restrained Palatino serif title and chapter fades; no lyric captions.",
+  "technical_qc": {
+    "full_decode": "PASS",
+    "duration": "PASS — 900.000 seconds",
+    "blackdetect": "PASS — no black interval",
+    "freezedetect": "REVIEWED — conservative low-variance detector flags intentional slow living-scene holds; no black/failure interval",
+    "temporal_qc": "PASS — 67 motion-risk samples, all within 2.4 seconds of the planned scene-transition lead window; no unexplained in-scene discontinuity",
+    "visual_contact_sheet": "PASS — source-derived scenes, typography, and continuity visually confirmed"
+  },
+  "remote_storage": {
+    "github_release": "https://github.com/SouthPaw302/AIVideoEdit/releases/tag/media-mountain-noir-after-midnight",
+    "drive_checkpoint_folder": "https://drive.google.com/drive/folders/1H3wSdP2CdQFBGw6J-9pim-InlYTuM5fJ",
+    "drive_final_upload": "local copy prepared for user upload — connector timed out twice on the 100.7 MB final after the verified checkpoint uploads succeeded"
+  }
+}
