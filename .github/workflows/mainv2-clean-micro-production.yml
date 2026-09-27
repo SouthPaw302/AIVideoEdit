@@ -6,8 +6,10 @@ on:
     branches:
       - MainV2-clean
     paths:
+      - "bootstrap.py"
       - "prototype/backend_gui/core_adapter.py"
       - "prototype/backend_gui/production_project.py"
+      - "prototype/backend_gui/tool_api.py"
       - "prototype/backend_gui/probes/mainv2_clean_micro_production.py"
       - ".github/workflows/mainv2-clean-micro-production.yml"
 
