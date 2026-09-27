@@ -2,7 +2,7 @@
   "schema": "aivideoedit.operating-order.v1",
   "mission": "Run a full-length MainV2 checkpoint production from the supplied music and single canonical image.",
   "current_user_direction": "Use the whole music file and the supplied image; run the project through GitHub Actions and return artifacts.",
-  "exact_next_action": "Render the full 84.36-second checkpoint proof from the canonical still using analyzed music, without regenerating the image.",
+  "exact_next_action": "Analyze the full supplied music with the pinned Runtime V2 music worker, record evidence, then refresh attestation.",
   "direction_authority": "user_directed",
   "production_mode": "living_scene",
   "canon_lock": {
