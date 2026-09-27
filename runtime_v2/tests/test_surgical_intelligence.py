@@ -444,10 +444,12 @@ def test_action_policy_scope_fails_closed(tmp_path: Path):
     )
     _write_json(repo / ".aivideoedit/boot_capsule.json", capsule)
     _write_json(repo / ".aivideoedit/session_attestation.json", sign_capsule(capsule))
-    policy = policy_for("fx.lock")
+    # Use a content mutation that declares bounded change tags. fx.lock is
+    # intentionally scope-neutral control/evidence and is tested separately.
+    policy = policy_for("fx.set_requirements")
     decision = evaluate_action(
         repo=repo,
-        action="fx.lock",
+        action="fx.set_requirements",
         mutation=True,
         requested_changes=list(policy.change_tags),
         canon_sensitive=policy.canon_sensitive,
