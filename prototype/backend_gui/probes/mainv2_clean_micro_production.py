@@ -182,6 +182,11 @@ def main():
         assembly=tool("assembly.status",{"project_id":pid})
         if not assembly.get("assembly_complete"):
             raise RuntimeError(f"assembly incomplete: {assembly}")
+        source_url=str((assembly.get("asset") or {}).get("source_url") or "")
+        if not source_url:
+            raise RuntimeError(f"assembly source URL missing: {assembly}")
+        with urllib.request.urlopen("http://127.0.0.1:8099"+source_url, timeout=120) as r:
+            (evidence/"final_video.mp4").write_bytes(r.read())
         tool("production.advance",{"project_id":pid,"target_stage":"ASSEMBLED"})
 
         qc=tool("final_qc.run_technical",{"project_id":pid})

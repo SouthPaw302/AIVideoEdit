@@ -54,3 +54,11 @@ jobs:
           name: mainv2-clean-micro-production
           path: /tmp/mainv2-clean-micro-production.tgz
           retention-days: 3
+      - name: Upload final micro-production video
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mainv2-clean-micro-production-video
+          path: /tmp/aive-micro-production/final_video.mp4
+          if-no-files-found: error
+          retention-days: 3
