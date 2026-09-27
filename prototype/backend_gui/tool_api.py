@@ -20,6 +20,7 @@ import production_assembly
 import production_final_qc
 import production_archive
 import runtime_gatekeeper
+from general.reusable.tools.jev_decision import decide as jev_decide
 from core_adapter import CORE
 
 TOOL_SCHEMAS=[
@@ -248,13 +249,26 @@ def _require_runtime_gate(project_id: str, operation: str) -> dict:
     current = production_project.status(project_id)
     if not current.get("initialized"):
         raise RuntimeError("production workspace is not initialized")
-    return runtime_gatekeeper.require(
+    gate = runtime_gatekeeper.require(
         engine=Path(current["engine_root"]),
         project_dir=Path(current["project_dir"]),
         branch=str(current["branch"]),
         operation=operation,
         change_tags=_CHANGE_TAGS.get(operation, [operation]),
     )
+    decision = jev_decide({
+        "gate": "PASS",
+        "checks": {
+            "runtime_gatekeeper": gate.get("decision") == "PASS",
+            "session_attestation": True,
+        },
+        "next_action_permitted": True,
+    })
+    if decision.get("decision") != "CONTINUE":
+        raise RuntimeError(
+            "JEV BLOCK: " + str(decision.get("decision")) + ": " + str(decision.get("reason"))
+        )
+    return {"gatekeeper": gate, "jev": decision}
 
 
 def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
