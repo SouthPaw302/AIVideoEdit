@@ -2,6 +2,9 @@
 """Provider-neutral Tool API for AIVideoEdit."""
 from __future__ import annotations
 from typing import Callable
+from pathlib import Path
+import subprocess
+import sys
 import server as base
 import storage
 import production_project
@@ -16,6 +19,7 @@ import production_fx
 import production_assembly
 import production_final_qc
 import production_archive
+import runtime_gatekeeper
 from core_adapter import CORE
 
 TOOL_SCHEMAS=[
@@ -102,7 +106,7 @@ def _project_status(pid):
     qp=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="pass");qf=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="fail")
     return {"project":p,"assets":len(assets),"ready_assets":sum(1 for a in assets if a.get("status")=="ready"),"qc_pass":qp,"qc_fail":qf,"unchecked":max(0,len(assets)-qp-qf),"active_jobs":sum(1 for j in jobs if j.get("status") in {"queued","running"}),"canonical_core":CORE.status(),"production":production_project.status(pid)}
 
-def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
+def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
     a=arguments or {};pid=str(a.get("project_id") or "")
     if name=="core.status":return CORE.status()
     if name=="core.bootstrap":return CORE.bootstrap(bool(a.get("offline",False)))
@@ -172,3 +176,101 @@ def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_projec
         if not storage.status().get("configured"):raise ValueError("external storage is not configured")
         job=base.add_job("sync_project",pid,None);dispatch_job(job);return {"job":job}
     raise ValueError(f"unknown tool: {name}")
+
+
+_READ_ONLY_TOOLS = {
+    "core.status", "capabilities.list", "fx.list", "project.list", "project.status",
+    "production.status", "approach.status", "storyboard.status", "storyboard.guard",
+    "shots.status", "shots.template", "generated.status", "proofs.status",
+    "fx.status", "fx.registry", "fx.verify", "assembly.status", "final_qc.status",
+    "archive.status", "archive.verify", "production.guard", "media.list",
+    "storage.status",
+}
+
+_UNGATED_BOOTSTRAP_TOOLS = {
+    "core.bootstrap", "project.create", "production.initialize",
+}
+
+_CHANGE_TAGS = {
+    "production.sync_assets": ["media manifest update"],
+    "production.analyze": ["analysis evidence"],
+    "production.set_music_context": ["music context"],
+    "approach.set_capabilities": ["production approach"],
+    "approach.set_routes": ["visual direction"],
+    "approach.select_route": ["visual direction"],
+    "storyboard.set": ["storyboard"],
+    "storyboard.lock": ["storyboard lock"],
+    "shots.build_packages": ["shot packages"],
+    "generated.request": ["generation request"],
+    "generated.register": ["generated media registration"],
+    "generated.accept": ["asset acceptance"],
+    "generated.reject": ["asset rejection"],
+    "proofs.record": ["proof record"],
+    "proofs.accept": ["proof acceptance"],
+    "proofs.finalize": ["proof acceptance"],
+    "proofs.reject": ["proof rejection"],
+    "fx.set_requirements": ["fx requirements"],
+    "fx.lock": ["fx lock"],
+    "assembly.run": ["assembly"],
+    "final_qc.run_technical": ["qc evidence"],
+    "final_qc.accept_creative": ["final acceptance"],
+    "final_qc.reject": ["final rejection"],
+    "archive.build": ["archive"],
+    "production.advance": ["stage advance"],
+    "media.prepare": ["media derivative"],
+    "storage.sync": ["external backup"],
+}
+
+
+def _refresh_boot_capsule(project_id: str) -> None:
+    current = production_project.status(project_id)
+    if not current.get("initialized"):
+        return
+    engine = Path(current["engine_root"])
+    project_dir = Path(current["project_dir"])
+    proc = subprocess.run(
+        [
+            sys.executable, str(engine / "bootstrap.py"), "boot",
+            "--repo-root", str(engine),
+            "--branch", str(current["branch"]),
+            "--project-dir", str(project_dir.relative_to(engine)),
+        ],
+        cwd=str(engine), capture_output=True, text=True, timeout=300, check=False,
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(
+            "mutation completed but boot capsule refresh failed: "
+            + ((proc.stderr or proc.stdout or "unknown bootstrap failure")[-1600:])
+        )
+
+
+def _require_runtime_gate(project_id: str, operation: str) -> dict:
+    current = production_project.status(project_id)
+    if not current.get("initialized"):
+        raise RuntimeError("production workspace is not initialized")
+    return runtime_gatekeeper.require(
+        engine=Path(current["engine_root"]),
+        project_dir=Path(current["project_dir"]),
+        branch=str(current["branch"]),
+        operation=operation,
+        change_tags=_CHANGE_TAGS.get(operation, [operation]),
+    )
+
+
+def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
+    a = arguments or {}
+    pid = str(a.get("project_id") or "")
+    if name not in _READ_ONLY_TOOLS and name not in _UNGATED_BOOTSTRAP_TOOLS and pid:
+        _require_runtime_gate(pid, name)
+
+    result = _call_tool_unchecked(
+        name, a, dispatch_job=dispatch_job, prepare_project=prepare_project
+    )
+
+    if (
+        name not in _READ_ONLY_TOOLS
+        and name not in _UNGATED_BOOTSTRAP_TOOLS
+        and pid
+    ):
+        _refresh_boot_capsule(pid)
+    return result
