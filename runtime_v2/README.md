@@ -106,3 +106,23 @@ higher-risk tools are registered.
 
 Git/repo integration, JEV, model execution, external LLM routing, and MCP exposure
 remain separate later steps.
+
+
+## Surgical Intelligence Integration
+
+MainV2 layers bounded intelligence around the existing production system rather than
+replacing it. Production boot still defaults to main. Experimental validation uses:
+
+    python bootstrap.py boot --repo-root . --authority-ref MainV2
+
+The stack now includes a portable boot capsule and attestation, Runtime Gatekeeper,
+provider-neutral model registry, optional ONNX music/beat inference, existing
+AIVideoEdit audio_map fallback, bounded Jev decisions, optional Harness requests,
+and micro-fixture/golden regression verification.
+
+ONNX remains optional:
+
+    python -m pip install -r runtime_v2/requirements-onnx.txt
+    export AIVIDEOEDIT_BEAT_ONNX_MODEL=/absolute/path/to/approved-beat-model.onnx
+
+Large model binaries are not committed to normal repository history.

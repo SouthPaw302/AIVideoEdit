@@ -11,7 +11,7 @@ import tempfile
 @dataclass(frozen=True)
 class BridgeSettings:
     service_name: str = "aivideoedit-agent-bridge"
-    service_version: str = "0.2.0"
+    service_version: str = "0.3.0"
     api_version: str = "v1"
     request_timeout_seconds: float = 30.0
     execution_timeout_seconds: float = 20.0

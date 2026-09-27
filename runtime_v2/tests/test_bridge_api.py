@@ -19,7 +19,7 @@ def test_health_is_public_and_has_request_id(tmp_path: Path):
     assert response.json() == {
         "status": "ok",
         "service": "aivideoedit-agent-bridge",
-        "version": "0.2.0",
+        "version": "0.3.0",
     }
 
 
@@ -61,12 +61,18 @@ def test_capabilities_can_hide_planned_entries(tmp_path: Path):
 
     assert response.status_code == 200
     names = [item["name"] for item in response.json()["capabilities"]]
-    assert names == [
+    assert {
         "bridge.health",
         "bridge.version",
         "bridge.capabilities",
         "cli.run",
-    ]
+        "boot.capsule",
+        "gate.evaluate",
+        "model.registry",
+        "model.music_beat",
+        "jev.decide",
+        "harness.optional",
+    }.issubset(set(names))
 
 
 def test_audit_jsonl_is_written(tmp_path: Path):

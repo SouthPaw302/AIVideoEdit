@@ -29,6 +29,12 @@ READY_CAPABILITIES: tuple[Capability, ...] = (
         status="ready",
         description="Execute registered, allowlisted tools in isolated job workspaces.",
     ),
+    Capability(name="boot.capsule", status="ready", description="Portable deterministic production-state capsule and session attestation."),
+    Capability(name="gate.evaluate", status="ready", description="Fail-closed branch, stage, canon, scope and attestation gate."),
+    Capability(name="model.registry", status="ready", description="Provider-neutral intelligence registry with deterministic fallback."),
+    Capability(name="model.music_beat", status="ready", description="CPU music/beat evidence worker with optional ONNX and existing-DSP fallback."),
+    Capability(name="jev.decide", status="ready", description="Bounded deterministic PASS/FAIL/RETRY/CONTINUE/ESCALATE decision hook."),
+    Capability(name="harness.optional", status="ready", description="Optional provider-neutral specialist-agent request seam."),
 )
 
 PLANNED_CAPABILITIES: tuple[Capability, ...] = (

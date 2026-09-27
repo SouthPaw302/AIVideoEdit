@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """AIVideoEdit portable OS bootstrap.
 
-Every session materializes the entire exact current `main` commit into
-`.aivideoedit/os/`, runs current-main fail-closed guards against the active
-workspace, attests critical OS hashes, and generates the session Second Brain.
-GitHub `main` remains the operating-system authority.
+Every session materializes an exact authority ref into `.aivideoedit/os/`,
+runs fail-closed guards against the active workspace, attests critical OS hashes,
+and generates the session Second Brain plus a portable boot capsule. Production
+defaults to GitHub `main`; experimental refs must be selected explicitly.
 """
 from __future__ import annotations
 
@@ -18,13 +18,13 @@ import shutil
 import subprocess
 import sys
 import tarfile
+import urllib.parse
 import urllib.request
 import uuid
 from pathlib import Path
 
 REPOSITORY = "SouthPaw302/AIVideoEdit"
 DEFAULT_REF = "main"
-API_MAIN = f"https://api.github.com/repos/{REPOSITORY}/commits/{DEFAULT_REF}"
 SESSION_DIRNAME = ".aivideoedit"
 SESSION_SCHEMA = "aivideoedit.session.v1"
 MANIFEST_PATH = "general/reusable/AIVIDEOEDIT_OS_MANIFEST.json"
@@ -128,19 +128,20 @@ def detect_project_dir(repo: Path, branch: str, explicit: str | None) -> Path | 
     return candidates[0] if len(candidates) == 1 else None
 
 
-def fetch_main_sha(offline: bool, repo: Path) -> tuple[str, str]:
+def fetch_authority_sha(offline: bool, repo: Path, authority_ref: str) -> tuple[str, str]:
+    encoded = urllib.parse.quote(authority_ref, safe="")
     if not offline:
         try:
-            data = json.loads(http_bytes(API_MAIN).decode("utf-8"))
+            data = json.loads(http_bytes(f"https://api.github.com/repos/{REPOSITORY}/commits/{encoded}").decode("utf-8"))
             sha = str(data.get("sha") or "")
             if sha:
-                return sha, "github-main"
+                return sha, f"github-{authority_ref}"
         except Exception as exc:
-            print(f"BOOTSTRAP: GitHub main lookup unavailable ({exc}); trying local origin/main.", file=sys.stderr)
-    sha = git(repo, "rev-parse", "origin/main") or git(repo, "rev-parse", "main")
+            print(f"BOOTSTRAP: GitHub {authority_ref} lookup unavailable ({exc}); trying local git.", file=sys.stderr)
+    sha = git(repo, "rev-parse", f"origin/{authority_ref}") or git(repo, "rev-parse", authority_ref)
     if sha:
-        return sha, "local-git-main"
-    raise SystemExit("BOOTSTRAP FAIL: cannot establish authoritative main commit.")
+        return sha, f"local-git-{authority_ref}"
+    raise SystemExit(f"BOOTSTRAP FAIL: cannot establish authoritative ref {authority_ref}.")
 
 
 def safe_extract_tar(tf: tarfile.TarFile, dest: Path, strip_first_component: bool) -> None:
@@ -167,22 +168,22 @@ def safe_extract_tar(tf: tarfile.TarFile, dest: Path, strip_first_component: boo
                 target.write_bytes(src.read())
 
 
-def materialize_entire_main(repo: Path, os_root: Path, main_sha: str, offline: bool) -> str:
+def materialize_entire_authority(repo: Path, os_root: Path, authority_sha: str, offline: bool) -> str:
     if offline:
         try:
-            p = subprocess.run(["git", "-C", str(repo), "archive", "--format=tar", main_sha],
+            p = subprocess.run(["git", "-C", str(repo), "archive", "--format=tar", authority_sha],
                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
         except FileNotFoundError:
             raise SystemExit("BOOTSTRAP FAIL: --offline requires git.")
         if p.returncode != 0:
-            raise SystemExit("BOOTSTRAP FAIL: git archive of authoritative main failed.")
+            raise SystemExit("BOOTSTRAP FAIL: git archive of authoritative ref failed.")
         with tarfile.open(fileobj=io.BytesIO(p.stdout), mode="r:") as tf:
             safe_extract_tar(tf, os_root, False)
         return "git-archive"
     try:
-        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/{main_sha}", timeout=90)
+        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/{authority_sha}", timeout=90)
     except Exception as exc:
-        raise SystemExit(f"BOOTSTRAP FAIL: exact current-main OS download failed: {exc}. Use --offline only when local origin/main is trusted/current.")
+        raise SystemExit(f"BOOTSTRAP FAIL: exact authority OS download failed: {exc}. Use --offline when the local authority ref is trusted/current.")
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf:
         safe_extract_tar(tf, os_root, True)
     return "github-archive"
@@ -235,19 +236,20 @@ def run_bootstrap_guards(repo: Path, os_root: Path, branch: str, project: Path |
         run_guard(workflow, ["--branch", branch], env, "standard workflow contract")
 
 
-def handoff_to_current_main_bootstrap(repo: Path, os_root: Path, branch: str, args: argparse.Namespace) -> None:
-    if branch == "main" or os.environ.get("AIVIDEOEDIT_BOOTSTRAP_REEXEC") == "1":
+def handoff_to_authority_bootstrap(repo: Path, os_root: Path, branch: str, args: argparse.Namespace) -> None:
+    if os.environ.get("AIVIDEOEDIT_BOOTSTRAP_REEXEC") == "1":
         return
     canonical = os_root / "bootstrap.py"
     if not canonical.is_file():
-        raise SystemExit("BOOTSTRAP FAIL: current-main snapshot lacks bootstrap.py")
+        raise SystemExit("BOOTSTRAP FAIL: authority snapshot lacks bootstrap.py")
     try:
         same = Path(__file__).resolve().is_file() and sha256_file(Path(__file__).resolve()) == sha256_file(canonical)
     except Exception:
         same = False
     if same:
         return
-    cmd = [sys.executable, str(canonical), "boot", "--repo-root", str(repo), "--branch", branch]
+    cmd = [sys.executable, str(canonical), "boot", "--repo-root", str(repo), "--branch", branch,
+           "--authority-ref", str(args.authority_ref or DEFAULT_REF)]
     if args.project_dir:
         cmd += ["--project-dir", str(args.project_dir)]
     if args.offline:
@@ -306,7 +308,7 @@ def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | N
     lines = [
         "# AIVideoEdit Session Second Brain", "",
         "> Generated by `bootstrap.py`. Ephemeral working context; never a separate authority.", "",
-        f"- Session: `{session_id}`", f"- Current-main OS commit: `{main_sha}`", f"- Active branch: `{branch}`", "",
+        f"- Session: `{session_id}`", f"- Authority OS commit: `{main_sha}`", f"- Active branch: `{branch}`", "",
         "## PRIME DIRECTIVE", prime or "ERROR: PRIME_DIRECTIVE.md was not readable.", "",
     ]
     if not project:
@@ -374,7 +376,8 @@ def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | N
 
 
 def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, main_sha: str,
-                  os_source: str, archive_source: str, manifest_hash: str, file_hashes: dict[str, str]) -> Path:
+                  authority_ref: str, os_source: str, archive_source: str, manifest_hash: str,
+                  file_hashes: dict[str, str]) -> Path:
     session_dir = repo / SESSION_DIRNAME
     session_id = str(uuid.uuid4())
     order = read_json_if(project / "OPERATING_ORDER.json") if project else {}
@@ -388,7 +391,8 @@ def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, 
         "schema": SESSION_SCHEMA, "session_id": session_id,
         "started_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "repository": REPOSITORY,
         "branch": branch, "project_dir": project.relative_to(repo).as_posix() if project else None,
-        "os_main_commit": main_sha, "os_source": os_source, "archive_source": archive_source,
+        "os_main_commit": main_sha, "os_authority_ref": authority_ref, "os_authority_commit": main_sha,
+        "os_source": os_source, "archive_source": archive_source,
         "os_root": str(os_root), "manifest_sha256": manifest_hash, "os_files": file_hashes, "guard_result": "PASS",
         "director_brain_version": state.get("director_brain_version") if project else None,
         "direction_authority": order.get("direction_authority") if order else None,
@@ -407,24 +411,67 @@ def boot(args: argparse.Namespace) -> int:
     repo = find_repo_root(Path(args.repo_root) if args.repo_root else None)
     branch = detect_branch(repo, args.branch)
     project = detect_project_dir(repo, branch, args.project_dir)
+    authority_ref = str(args.authority_ref or DEFAULT_REF)
     session_dir = repo / SESSION_DIRNAME
     os_root = session_dir / "os"
-    if session_dir.exists():
-        shutil.rmtree(session_dir)
+
+    session_dir.mkdir(parents=True, exist_ok=True)
+    if os_root.exists():
+        shutil.rmtree(os_root)
+    for ephemeral in ("session.json", "SECOND_BRAIN.md", "boot_capsule.json", "session_attestation.json"):
+        (session_dir / ephemeral).unlink(missing_ok=True)
     os_root.mkdir(parents=True, exist_ok=True)
-    main_sha, os_source = fetch_main_sha(args.offline, repo)
-    archive_source = materialize_entire_main(repo, os_root, main_sha, args.offline)
-    handoff_to_current_main_bootstrap(repo, os_root, branch, args)
+
+    authority_sha, os_source = fetch_authority_sha(args.offline, repo, authority_ref)
+    archive_source = materialize_entire_authority(repo, os_root, authority_sha, args.offline)
+    handoff_to_authority_bootstrap(repo, os_root, branch, args)
+
     manifest, manifest_bytes = load_os_manifest(os_root)
     file_hashes = attest_manifest_files(os_root, manifest)
     run_bootstrap_guards(repo, os_root, branch, project)
-    session_path = write_session(repo, os_root, branch, project, main_sha, os_source, archive_source,
-                                 sha256_bytes(manifest_bytes), file_hashes)
+    session_path = write_session(
+        repo, os_root, branch, project, authority_sha, authority_ref, os_source, archive_source,
+        sha256_bytes(manifest_bytes), file_hashes
+    )
+
+    session = read_json_if(session_path)
+    capsule_tool = os_root / "runtime_v2" / "boot" / "capsule.py"
+    if not capsule_tool.is_file():
+        raise SystemExit("BOOTSTRAP FAIL: authority snapshot lacks Runtime V2 boot capsule writer.")
+    capsule_cmd = [
+        sys.executable, str(capsule_tool),
+        "--repo-root", str(repo),
+        "--os-root", str(os_root),
+        "--branch", branch,
+        "--authority-ref", authority_ref,
+        "--authority-commit", authority_sha,
+        "--session-id", str(session.get("session_id") or ""),
+    ]
+    if project:
+        capsule_cmd += ["--project-dir", str(project.relative_to(repo))]
+    capsule_run = subprocess.run(
+        capsule_cmd,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if capsule_run.returncode != 0:
+        raise SystemExit(
+            "BOOTSTRAP FAIL: Runtime V2 boot capsule creation failed: "
+            + capsule_run.stderr.strip()
+        )
+
     print("AIVideoEdit OS BOOTSTRAP: PASS")
-    print(f"main={main_sha}")
+    print(f"authority_ref={authority_ref}")
+    print(f"authority_commit={authority_sha}")
+    if authority_ref == "main":
+        print(f"main={authority_sha}")
     print(f"branch={branch}")
     print(f"os={os_root}")
     print(f"session={session_path}")
+    print(f"capsule={session_dir / 'boot_capsule.json'}")
+    print(f"attestation={session_dir / 'session_attestation.json'}")
     print(f"second_brain={session_dir / 'SECOND_BRAIN.md'}")
     if project:
         print(f"project={project.relative_to(repo)}")
@@ -464,7 +511,9 @@ def main() -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("boot", help="load exact current-main OS and attest this session")
     b.add_argument("--repo-root"); b.add_argument("--branch"); b.add_argument("--project-dir")
-    b.add_argument("--offline", action="store_true", help="materialize exact local origin/main via git archive instead of GitHub")
+    b.add_argument("--authority-ref", default=os.environ.get("AIVIDEOEDIT_AUTHORITY_REF", DEFAULT_REF),
+                   help="OS authority ref. Defaults to main; use MainV2 explicitly for experimental validation.")
+    b.add_argument("--offline", action="store_true", help="materialize exact local authority ref via git archive instead of GitHub")
     b.set_defaults(func=boot)
     s = sub.add_parser("status", help="show current session attestation"); s.add_argument("--repo-root"); s.set_defaults(func=status)
     i = sub.add_parser("install", help="install AIVideoEdit main into an empty sandbox"); i.add_argument("--workspace", required=True); i.set_defaults(func=install)
