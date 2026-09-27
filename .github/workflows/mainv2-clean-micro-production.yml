@@ -36,10 +36,11 @@ jobs:
         run: test "$(git branch --show-current)" = "MainV2-clean"
       - name: Run actual micro production
         run: python prototype/backend_gui/probes/mainv2_clean_micro_production.py
-      - name: Package evidence
+      - name: Package compact evidence
         if: always()
         run: |
-          tar -czf /tmp/mainv2-clean-micro-production.tgz -C /tmp/aive-micro-production . || true
+          cd /tmp/aive-micro-production
+          tar -czf /tmp/mainv2-clean-micro-production.tgz result.json stack.log 2>/dev/null || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
