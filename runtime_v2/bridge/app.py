@@ -22,6 +22,7 @@ from .schemas import (
 )
 from runtime_v2.worker import ToolExecutor, build_default_registry
 from runtime_v2.intelligence_api import router as intelligence_router
+from runtime_v2.production_proxy import router as production_proxy_router
 from runtime_v2.worker.registry import ToolRegistryError
 
 
@@ -53,6 +54,7 @@ def create_app(settings: BridgeSettings | None = None) -> FastAPI:
     app.state.tool_registry = registry
     app.state.tool_executor = executor
     app.include_router(intelligence_router)
+    app.include_router(production_proxy_router)
     app.add_middleware(BridgeMiddleware, settings=resolved)
 
     @app.get("/health", response_model=HealthResponse, tags=["bridge"])

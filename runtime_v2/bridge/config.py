@@ -22,6 +22,8 @@ class BridgeSettings:
         Path(tempfile.gettempdir()) / "aivideoedit-runtime-v2" / "jobs"
     )
     keep_workspaces: bool = False
+    studio_url: str | None = None
+    studio_timeout_seconds: float = 60.0
 
     @classmethod
     def from_env(cls) -> "BridgeSettings":
@@ -42,6 +44,11 @@ class BridgeSettings:
         audit_path = os.getenv("BRIDGE_AUDIT_LOG") or None
         workspace_root = os.getenv("BRIDGE_WORKSPACE_ROOT") or cls.workspace_root
         keep_workspaces = _truthy(os.getenv("BRIDGE_KEEP_WORKSPACES", "0"))
+        studio_url = (os.getenv("AIVIDEOEDIT_STUDIO_URL") or "").strip() or None
+        studio_timeout = _positive_float(
+            "AIVIDEOEDIT_STUDIO_TIMEOUT_SECONDS",
+            os.getenv("AIVIDEOEDIT_STUDIO_TIMEOUT_SECONDS", "60"),
+        )
 
         return cls(
             request_timeout_seconds=request_timeout,
@@ -51,6 +58,8 @@ class BridgeSettings:
             audit_log_path=audit_path,
             workspace_root=workspace_root,
             keep_workspaces=keep_workspaces,
+            studio_url=studio_url,
+            studio_timeout_seconds=studio_timeout,
         )
 
 

@@ -126,3 +126,42 @@ ONNX remains optional:
     export AIVIDEOEDIT_BEAT_ONNX_MODEL=/absolute/path/to/approved-beat-model.onnx
 
 Large model binaries are not committed to normal repository history.
+
+
+## Remote SandAgent deployment
+
+Runtime V2 can be the single public HTTPS-facing endpoint while the existing
+Studio Tool API remains private.
+
+The included Compose topology runs:
+
+- `bridge`: public Runtime V2 API, bearer-token protected
+- `studio`: private existing AIVideoEdit Tool API, not published to the host
+- persistent job, Studio-state, and model-cache volumes
+
+Start locally:
+
+```bash
+cp runtime_v2/.env.example .env
+# edit BRIDGE_TOKEN
+docker compose -f runtime_v2/docker-compose.yml up --build
+```
+
+SandAgent can then use the dependency-free client:
+
+```bash
+export AIVIDEOEDIT_BRIDGE_URL="https://your-runtime.example.com"
+export AIVIDEOEDIT_BRIDGE_TOKEN="..."
+python -m runtime_v2.client health
+python -m runtime_v2.client capabilities
+python -m runtime_v2.client tools
+python -m runtime_v2.client call production.status --args '{"project_id":"demo"}'
+```
+
+Production calls sent to `/production/call` are reverse-adapted to Studio's
+existing `/api/tools/call`; Runtime V2 does not implement a parallel production
+mutation engine. On MainV2-capable workspaces the underlying Tool API performs
+Gatekeeper -> canonical operation -> capsule refresh.
+
+In production, terminate TLS at the hosting platform/reverse proxy and expose
+only the bridge port. Do not publish the Studio port directly.
