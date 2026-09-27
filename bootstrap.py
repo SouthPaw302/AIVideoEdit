@@ -491,20 +491,25 @@ def status(args: argparse.Namespace) -> int:
 
 def install(args: argparse.Namespace) -> int:
     dst = Path(args.workspace).expanduser().resolve()
+    authority_ref = str(getattr(args, "authority_ref", None) or DEFAULT_REF)
     if dst.exists() and any(dst.iterdir()):
         raise SystemExit(f"INSTALL FAIL: workspace is not empty: {dst}")
     dst.parent.mkdir(parents=True, exist_ok=True)
     if shutil.which("git"):
-        p = subprocess.run(["git", "clone", "--branch", DEFAULT_REF, "--single-branch", f"https://github.com/{REPOSITORY}.git", str(dst)], check=False)
+        p = subprocess.run(["git", "clone", "--branch", authority_ref, "--single-branch", f"https://github.com/{REPOSITORY}.git", str(dst)], check=False)
         if p.returncode != 0:
             raise SystemExit("INSTALL FAIL: git clone failed.")
     else:
-        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/refs/heads/{DEFAULT_REF}", timeout=90)
+        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/refs/heads/{urllib.parse.quote(authority_ref, safe='')}", timeout=90)
         dst.mkdir(parents=True, exist_ok=True)
         with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf:
             safe_extract_tar(tf, dst, True)
     print(f"AIVideoEdit installed at {dst}")
-    print(f"Next: {sys.executable} {dst/'bootstrap.py'} boot --repo-root {dst}")
+    print(f"authority_ref={authority_ref}")
+    next_cmd = f"{sys.executable} {dst/'bootstrap.py'} boot --repo-root {dst}"
+    if authority_ref != DEFAULT_REF:
+        next_cmd += f" --authority-ref {authority_ref}"
+    print(f"Next: {next_cmd}")
     return 0
 
 
@@ -518,7 +523,7 @@ def main() -> int:
     b.add_argument("--offline", action="store_true", help="materialize exact local authority ref via git archive instead of GitHub")
     b.set_defaults(func=boot)
     s = sub.add_parser("status", help="show current session attestation"); s.add_argument("--repo-root"); s.set_defaults(func=status)
-    i = sub.add_parser("install", help="install AIVideoEdit main into an empty sandbox"); i.add_argument("--workspace", required=True); i.set_defaults(func=install)
+    i = sub.add_parser("install", help="install an exact AIVideoEdit authority ref into an empty sandbox"); i.add_argument("--workspace", required=True); i.add_argument("--authority-ref", default=DEFAULT_REF); i.set_defaults(func=install)
     args = ap.parse_args()
     return int(args.func(args))
 

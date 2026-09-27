@@ -210,9 +210,10 @@ def initialize(project_id: str) -> dict:
         raise RuntimeError((proc.stderr or proc.stdout or "local core clone failed")[-1200:])
 
     branch = _branch(project_id)
-    checkout = _run(["git", "checkout", "-b", branch, "main"], engine, timeout=60)
+    authority_ref = str(CORE.status().get("authority_ref") or "main")
+    checkout = _run(["git", "checkout", "-b", branch, authority_ref], engine, timeout=60)
     if checkout.returncode != 0:
-        checkout = _run(["git", "checkout", "-b", branch, "origin/main"], engine, timeout=60)
+        checkout = _run(["git", "checkout", "-b", branch, f"origin/{authority_ref}"], engine, timeout=60)
     if checkout.returncode != 0:
         shutil.rmtree(engine, ignore_errors=True)
         raise RuntimeError((checkout.stderr or checkout.stdout or "song branch creation failed")[-1200:])
@@ -225,12 +226,15 @@ def initialize(project_id: str) -> dict:
     if commit.returncode != 0:
         raise RuntimeError((commit.stderr or commit.stdout or "initial project commit failed")[-1200:])
 
-    boot = _run([
+    boot_cmd = [
         sys.executable, str(engine / "bootstrap.py"), "boot",
         "--repo-root", str(engine),
         "--branch", branch,
         "--project-dir", f"projects/{project_dir.name}",
-    ], engine, timeout=300)
+    ]
+    if authority_ref != "main":
+        boot_cmd += ["--authority-ref", authority_ref]
+    boot = _run(boot_cmd, engine, timeout=300)
     if boot.returncode != 0:
         return {
             "ok": False,
@@ -396,6 +400,8 @@ def status(project_id: str) -> dict:
         "engine_root": str(engine) if engine.is_dir() else None,
         "project_dir": str(project_dir) if project_dir.is_dir() else None,
         "main_commit": session.get("os_main_commit"),
+        "authority_ref": session.get("os_authority_ref") or "main",
+        "authority_commit": session.get("os_authority_commit") or session.get("os_main_commit"),
         "session_id": session.get("session_id"),
         "workstation_asset_sync_complete": bool(state.get("workstation_asset_sync_complete")),
         "workstation_asset_count": int(state.get("workstation_asset_count") or 0),

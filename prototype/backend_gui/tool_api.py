@@ -2,6 +2,8 @@
 """Provider-neutral Tool API for AIVideoEdit."""
 from __future__ import annotations
 from typing import Callable
+import sys
+from pathlib import Path
 import server as base
 import storage
 import production_project
@@ -17,6 +19,13 @@ import production_assembly
 import production_final_qc
 import production_archive
 from core_adapter import CORE
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from runtime_v2.boot.capsule import refresh_from_session
+from runtime_v2.gatekeeper import evaluate_action
 
 TOOL_SCHEMAS=[
 {"name":"core.status","description":"Show canonical AIVideoEdit OS/bootstrap status.","input_schema":{"type":"object","properties":{}}},
@@ -102,7 +111,63 @@ def _project_status(pid):
     qp=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="pass");qf=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="fail")
     return {"project":p,"assets":len(assets),"ready_assets":sum(1 for a in assets if a.get("status")=="ready"),"qc_pass":qp,"qc_fail":qf,"unchecked":max(0,len(assets)-qp-qf),"active_jobs":sum(1 for j in jobs if j.get("status") in {"queued","running"}),"canonical_core":CORE.status(),"production":production_project.status(pid)}
 
-def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
+PRODUCTION_MUTATIONS = {
+    "production.sync_assets",
+    "production.analyze",
+    "production.set_music_context",
+    "approach.set_capabilities",
+    "approach.set_routes",
+    "approach.select_route",
+    "storyboard.set",
+    "storyboard.lock",
+    "shots.build_packages",
+    "generated.request",
+    "generated.register",
+    "generated.accept",
+    "generated.reject",
+    "proofs.record",
+    "proofs.accept",
+    "proofs.finalize",
+    "proofs.reject",
+    "fx.set_requirements",
+    "fx.lock",
+    "assembly.run",
+    "final_qc.run_technical",
+    "final_qc.accept_creative",
+    "final_qc.reject",
+    "archive.build",
+    "production.advance",
+}
+
+
+def _runtime_gate_before(name: str, pid: str) -> tuple[bool, Path | None]:
+    if name not in PRODUCTION_MUTATIONS or not pid:
+        return False, None
+    current = production_project.status(pid)
+    engine_text = current.get("engine_root")
+    if not engine_text:
+        return False, None
+    engine = Path(str(engine_text)).resolve()
+    if not (engine / ".aivideoedit" / "boot_capsule.json").is_file():
+        return False, engine
+    decision = evaluate_action(
+        repo=engine,
+        action=name,
+        mutation=True,
+        expected_stage=str(current.get("stage") or "") or None,
+        target_branch=str(current.get("branch") or "") or None,
+    )
+    if decision.decision != "PASS":
+        raise RuntimeError("Runtime Gatekeeper DENY: " + "; ".join(decision.reasons))
+    return True, engine
+
+
+def _runtime_refresh(enabled: bool, engine: Path | None) -> None:
+    if enabled and engine is not None:
+        refresh_from_session(engine)
+
+
+def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
     a=arguments or {};pid=str(a.get("project_id") or "")
     if name=="core.status":return CORE.status()
     if name=="core.bootstrap":return CORE.bootstrap(bool(a.get("offline",False)))
@@ -172,3 +237,18 @@ def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_projec
         if not storage.status().get("configured"):raise ValueError("external storage is not configured")
         job=base.add_job("sync_project",pid,None);dispatch_job(job);return {"job":job}
     raise ValueError(f"unknown tool: {name}")
+
+
+
+def call_tool(name, arguments, *, dispatch_job: Callable[[dict], None], prepare_project: Callable[[str], list[dict]]):
+    args = arguments or {}
+    pid = str(args.get("project_id") or "")
+    gated, engine = _runtime_gate_before(name, pid)
+    result = _call_tool_unchecked(
+        name,
+        arguments,
+        dispatch_job=dispatch_job,
+        prepare_project=prepare_project,
+    )
+    _runtime_refresh(gated, engine)
+    return result

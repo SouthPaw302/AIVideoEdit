@@ -239,6 +239,31 @@ def write_capsule(
     return capsule_path, attestation_path
 
 
+def refresh_from_session(repo: Path) -> tuple[Path, Path]:
+    repo = repo.resolve()
+    session = _read_json(repo / ".aivideoedit" / "session.json")
+    if not session:
+        raise RuntimeError("cannot refresh capsule without bootstrap session")
+    os_root_text = str(session.get("os_root") or "")
+    authority_ref = str(session.get("os_authority_ref") or "main")
+    authority_commit = str(session.get("os_authority_commit") or session.get("os_main_commit") or "")
+    branch = str(session.get("branch") or "")
+    session_id = str(session.get("session_id") or "")
+    project_text = session.get("project_dir")
+    if not os_root_text or not authority_commit or not branch or not session_id:
+        raise RuntimeError("bootstrap session is missing capsule refresh fields")
+    project = (repo / str(project_text)).resolve() if project_text else None
+    return write_capsule(
+        repo=repo,
+        os_root=Path(os_root_text),
+        branch=branch,
+        project=project,
+        authority_ref=authority_ref,
+        authority_commit=authority_commit,
+        session_id=session_id,
+    )
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo-root", required=True)

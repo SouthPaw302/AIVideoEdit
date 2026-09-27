@@ -28,6 +28,7 @@ SESSION_FILE = SESSION_ROOT / "session.json"
 CONTRACT = Path("general/reusable/PRODUCTION_CONTRACT.json")
 CAPABILITY_MATRIX = Path("general/reusable/MEDIA_CAPABILITY_MATRIX.json")
 FX_REGISTRY = Path("general/reusable/fx_v2/registry.json")
+AUTHORITY_REF = os.environ.get("AIVE_AUTHORITY_REF", "main").strip() or "main"
 
 
 def _read_json(path: Path, default: Any) -> Any:
@@ -70,6 +71,7 @@ class CoreAdapter:
         self.core_repo = CORE_REPO
         self.os_root = OS_ROOT
         self.session_file = SESSION_FILE
+        self.authority_ref = AUTHORITY_REF
 
     def _install_core(self, offline: bool) -> subprocess.CompletedProcess:
         CORE_HOME.mkdir(parents=True, exist_ok=True)
@@ -85,16 +87,20 @@ class CoreAdapter:
             )
             if proc.returncode != 0:
                 return proc
-            target = "origin/main"
+            target = f"origin/{self.authority_ref}"
             check = _run(["git", "rev-parse", "--verify", target], CORE_REPO, timeout=30)
             if check.returncode != 0:
-                target = "main"
+                target = self.authority_ref
             return _run(["git", "checkout", "--detach", target], CORE_REPO, timeout=60)
 
         if not HOST_BOOTSTRAP.is_file():
             raise RuntimeError("host bootstrap.py not found")
         return _run(
-            [sys.executable, str(HOST_BOOTSTRAP), "install", "--workspace", str(CORE_REPO)],
+            [
+                sys.executable, str(HOST_BOOTSTRAP), "install",
+                "--workspace", str(CORE_REPO),
+                "--authority-ref", self.authority_ref,
+            ],
             HOST_REPO,
         )
 
@@ -126,6 +132,8 @@ class CoreAdapter:
             "--branch",
             "main",
         ]
+        if self.authority_ref != "main":
+            cmd += ["--authority-ref", self.authority_ref]
         if offline:
             cmd.append("--offline")
         proc = _run(cmd, CORE_REPO, timeout=300)
@@ -146,11 +154,19 @@ class CoreAdapter:
         fx = _read_json(self.os_root / FX_REGISTRY, {}) if self.os_root.is_dir() else {}
         capabilities = self._records(matrix, ("capabilities", "media_capabilities", "items"))
         effects = self._records(fx, ("effects", "fx", "registry", "items"))
-        bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == "main"
+        session_authority = str(session.get("os_authority_ref") or "main")
+        bootstrapped = (
+            bool(session)
+            and self.os_root.is_dir()
+            and session.get("branch") == "main"
+            and session_authority == self.authority_ref
+        )
         return {
             "ok": True,
             "bootstrapped": bootstrapped,
-            "mode": "isolated-canonical-main",
+            "mode": "isolated-canonical-authority",
+            "authority_ref": self.authority_ref,
+            "authority_commit": session.get("os_authority_commit") or session.get("os_main_commit"),
             "host_repo": str(self.host_repo),
             "host_branch": _host_branch(),
             "core_repo": str(self.core_repo) if self.core_repo.exists() else None,
