@@ -1,4 +1,4 @@
-[0:v]drawtext=fontfile='C\:/Windows/Fonts/pala.ttf':text='MOUNTAIN NOIR':fontcolor=0xE8D8B6@0.58:fontsize=22:x=w-text_w-48:y=h-text_h-42:shadowcolor=black@0.55:shadowx=1:shadowy=1,
+[0:v]scale=1280:720:flags=lanczos,drawtext=fontfile='C\:/Windows/Fonts/pala.ttf':text='MOUNTAIN NOIR':fontcolor=0xE8D8B6@0.58:fontsize=22:x=w-text_w-48:y=h-text_h-42:shadowcolor=black@0.55:shadowx=1:shadowy=1,
 drawtext=fontfile='C\:/Windows/Fonts/pala.ttf':text='MOUNTAIN NOIR':fontcolor=0xE8D8B6@0.88:fontsize=54:x=(w-text_w)/2:y=h*0.36:shadowcolor=black@0.60:shadowx=2:shadowy=2:enable='between(t,1,27)',
 drawtext=fontfile='C\:/Windows/Fonts/pala.ttf':text='AFTER MIDNIGHT':fontcolor=0xE8D8B6@0.78:fontsize=28:x=(w-text_w)/2:y=h*0.47:shadowcolor=black@0.58:shadowx=1:shadowy=1:enable='between(t,3,27)',
 drawtext=fontfile='C\:/Windows/Fonts/pala.ttf':text='LEAVE IT BY THE DOOR':fontcolor=0xE8D8B6@0.74:fontsize=28:x=(w-text_w)/2:y=h*0.82:shadowcolor=black@0.58:shadowx=1:shadowy=1:enable='between(t,184.12,194.12)',
