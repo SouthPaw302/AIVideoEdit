@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
 import os
@@ -17,6 +18,17 @@ class ModelResolution:
     used_fallback: bool
     reason: str
     record: dict[str, Any]
+    model_path: str | None = None
+
+
+def git_blob_sha1(path: Path) -> str:
+    size = path.stat().st_size
+    digest = hashlib.sha1()
+    digest.update(f"blob {size}\\0".encode("utf-8"))
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
 
 class ModelRegistry:
@@ -38,38 +50,63 @@ class ModelRegistry:
             raise KeyError(f"unknown or unapproved model identifier: {model_id}")
         return self.models[model_id]
 
-    def available(self, record: dict[str, Any]) -> tuple[bool, str]:
+    def model_path(self, record: dict[str, Any]) -> Path | None:
+        env_name = record.get("path_env")
+        if env_name:
+            explicit = os.environ.get(str(env_name))
+            if explicit:
+                return Path(explicit).expanduser().resolve()
+        cache_relpath = record.get("cache_relpath")
+        repo_root = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
+        if cache_relpath and repo_root:
+            return (Path(repo_root).expanduser().resolve() / str(cache_relpath)).resolve()
+        return None
+
+    def verify_model_file(self, record: dict[str, Any], path: Path) -> tuple[bool, str]:
+        if not path.is_file():
+            return False, "model file does not exist"
+        expected_size = record.get("source_size_bytes")
+        if expected_size is not None and path.stat().st_size != int(expected_size):
+            return False, f"model size mismatch: expected {expected_size}, got {path.stat().st_size}"
+        expected_blob = str(record.get("source_git_blob_sha1") or "")
+        if expected_blob:
+            actual_blob = git_blob_sha1(path)
+            if actual_blob != expected_blob:
+                return False, f"model Git blob mismatch: expected {expected_blob}, got {actual_blob}"
+        return True, "model file matches pinned source identity"
+
+    def available(self, record: dict[str, Any]) -> tuple[bool, str, Path | None]:
         runtime = record.get("runtime")
         if runtime == "builtin_python":
-            return True, "builtin runtime available"
+            return True, "builtin runtime available", None
         if runtime == "repo_python":
             repo_root = os.environ.get("AIVIDEOEDIT_REPO_ROOT")
             if not repo_root:
-                return False, "AIVIDEOEDIT_REPO_ROOT is not configured"
+                return False, "AIVIDEOEDIT_REPO_ROOT is not configured", None
             source = Path(repo_root) / str(record.get("source") or "")
             if not source.is_file():
-                return False, "repository analysis module is missing"
+                return False, "repository analysis module is missing", None
             missing = [
                 m
                 for m in ("librosa", "numpy", "soundfile")
                 if importlib.util.find_spec(m) is None
             ]
             if missing:
-                return False, "repository DSP dependencies unavailable: " + ", ".join(missing)
+                return False, "repository DSP dependencies unavailable: " + ", ".join(missing), None
             if shutil.which("ffmpeg") is None:
-                return False, "ffmpeg unavailable for repository DSP"
-            return True, "existing AIVideoEdit audio_map runtime available"
+                return False, "ffmpeg unavailable for repository DSP", None
+            return True, "existing AIVideoEdit audio_map runtime available", None
         if runtime == "onnxruntime":
             if importlib.util.find_spec("onnxruntime") is None:
-                return False, "onnxruntime package unavailable"
-            env_name = record.get("path_env")
-            model_path = os.environ.get(str(env_name or "")) if env_name else None
-            if not model_path:
-                return False, f"{env_name} is not configured"
-            if not Path(model_path).expanduser().is_file():
-                return False, "configured ONNX model file does not exist"
-            return True, "onnxruntime and model file available"
-        return False, f"unsupported runtime: {runtime}"
+                return False, "onnxruntime package unavailable", None
+            if importlib.util.find_spec("numpy") is None:
+                return False, "numpy package unavailable", None
+            model_path = self.model_path(record)
+            if model_path is None:
+                return False, "approved model is not provisioned and no model path is configured", None
+            ok, reason = self.verify_model_file(record, model_path)
+            return ok, reason, model_path
+        return False, f"unsupported runtime: {runtime}", None
 
     def resolve(self, model_id: str) -> ModelResolution:
         self.require(model_id)
@@ -77,7 +114,7 @@ class ModelRegistry:
         trail: list[str] = []
         for _ in range(8):
             record = self.require(current)
-            ok, reason = self.available(record)
+            ok, reason, model_path = self.available(record)
             if ok:
                 prefix = "; ".join(trail)
                 final_reason = (prefix + "; " if prefix else "") + reason
@@ -88,6 +125,7 @@ class ModelRegistry:
                     current != model_id,
                     final_reason,
                     record,
+                    str(model_path) if model_path else None,
                 )
             trail.append(f"{current} unavailable ({reason})")
             fallback = record.get("fallback")
@@ -99,6 +137,7 @@ class ModelRegistry:
                     current != model_id,
                     "; ".join(trail),
                     record,
+                    str(model_path) if model_path else None,
                 )
             current = str(fallback)
         raise RuntimeError("model fallback chain exceeded safety limit")
