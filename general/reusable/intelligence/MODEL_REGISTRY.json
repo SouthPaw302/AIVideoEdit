@@ -1,0 +1,36 @@
+{
+  "schema": "aivideoedit.model-registry.v1",
+  "models": [
+    {
+      "id": "music-beat-onnx-v1",
+      "capability": "music_and_beat_analysis",
+      "purpose": "Beat/downbeat and tempo evidence for production timing.",
+      "runtime": "onnxruntime",
+      "source": "external://beat-this",
+      "version": "pinned-by-worker-step4",
+      "artifact_path": ".aivideoedit/models/beat_this.onnx",
+      "hardware": {
+        "required": "cpu",
+        "optional": "gpu"
+      },
+      "fallback": "music-beat-dsp-v1",
+      "authority": "evidence_only",
+      "enabled": true
+    },
+    {
+      "id": "music-beat-dsp-v1",
+      "capability": "music_and_beat_analysis",
+      "purpose": "Deterministic repo-native rhythm analysis fallback.",
+      "runtime": "repo_python",
+      "source": "general/reusable/tools/audio_map.py",
+      "version": "repo-main",
+      "artifact_path": null,
+      "hardware": {
+        "required": "cpu"
+      },
+      "fallback": null,
+      "authority": "evidence_only",
+      "enabled": true
+    }
+  ]
+}

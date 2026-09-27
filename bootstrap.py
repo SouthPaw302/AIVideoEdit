@@ -499,6 +499,7 @@ def build_boot_capsule(repo: Path, os_root: Path, branch: str, project: Path | N
         "general/reusable/STANDARD_WORKFLOW_REGISTRY.json",
         "general/reusable/CANONICAL_EFFECT_REGISTRY.json",
         "general/reusable/fx_v2/registry.json",
+        "general/reusable/intelligence/MODEL_REGISTRY.json",
     ):
         if rel in file_hashes:
             registries[rel] = file_hashes[rel]
