@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Frame-followable storyboard/script evidence with Director Brain v2 mode support."""
+"""Frame-followable storyboard/script evidence with Director Brain v3 mode support."""
 from __future__ import annotations
 import json,os,subprocess,sys
 from pathlib import Path
@@ -54,7 +54,7 @@ def _v2_mode(project_dir):
     state=_read_json(project_dir/"PROJECT_STATE.json",{});version=int(state.get("director_brain_version") or 0)
     if version<2:return 0,None
     order=_read_json(project_dir/"OPERATING_ORDER.json",{});mode=str(order.get("production_mode") or "")
-    if mode not in {"living_scene","cinematic","hybrid"}:raise RuntimeError("Director Brain v2 production mode is unresolved")
+    if mode not in {"living_scene","cinematic","hybrid"}:raise RuntimeError("Director Brain v3 production mode is unresolved")
     return version,mode
 def _string_list(value):return [str(x).strip() for x in value if str(x).strip()] if isinstance(value,list) else []
 def _normalize_entries(entries,duration,fps,music,project_dir):

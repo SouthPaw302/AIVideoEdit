@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Explicit Director Brain v2 operating-order configuration.
+"""Explicit Director Brain v3 operating-order configuration.
 
 V2 is enabled only after the current user/agent supplies real direction authority,
 production mode, mission and next action. No creative defaults are invented.
@@ -30,7 +30,7 @@ def _modes():
     return data
 def configure(pid,*,direction_authority:str,production_mode:str,mission:str,current_user_direction:str,exact_next_action:str):
     current,engine,project_dir=_project(pid)
-    if current.get("stage") not in {"REFERENCES_ANALYZED","APPROACH_ESTABLISHED"}:raise RuntimeError("Director Brain v2 must be configured during creative-direction setup")
+    if current.get("stage") not in {"REFERENCES_ANALYZED","APPROACH_ESTABLISHED"}:raise RuntimeError("Director Brain v3 must be configured during creative-direction setup")
     modes=_modes();authority=str(direction_authority or "").strip();mode=str(production_mode or "").strip()
     if authority not in set(modes.get("direction_authorities",[])):raise ValueError("invalid direction_authority")
     if mode not in set((modes.get("production_modes") or {}).keys()):raise ValueError("invalid production_mode")
@@ -42,20 +42,20 @@ def configure(pid,*,direction_authority:str,production_mode:str,mission:str,curr
     if gate and gate.get("locked"):
         selection=gate.get("user_selection") or {};numbers=set(selection.get("selected_option_numbers") or []);options=[x for x in gate.get("options",[]) if isinstance(x,dict) and x.get("number") in numbers]
         missing=[str(x.get("number")) for x in options if x.get("production_mode") not in {"living_scene","cinematic","hybrid"}]
-        if missing:raise RuntimeError("selected visual route(s) need production_mode before enabling Director Brain v2: "+", ".join(missing))
+        if missing:raise RuntimeError("selected visual route(s) need production_mode before enabling Director Brain v3: "+", ".join(missing))
         selected_modes={x.get("production_mode") for x in options}
         if mode!="hybrid" and any(x!=mode for x in selected_modes):raise RuntimeError("overall production_mode conflicts with selected visual route")
     order={"schema":"aivideoedit.operating-order.v1","mission":mission,"current_user_direction":direction,"exact_next_action":next_action,"direction_authority":authority,"production_mode":mode,"canon_lock":{"locked":False,"picture_language":None,"items":[]},"accepted_baseline":{"status":"none","file_or_locator":None,"sha256":None,"user_acceptance_statement":None},"refinement_scope":{"active":False,"goal":None,"allowed_changes":[],"forbidden_changes":[],"restart_authorized":False},"configured_at":base.now(),"authority_source":"explicit_current_user_or_agent_input"}
     order_path=project_dir/"OPERATING_ORDER.json";_write(order_path,order)
-    state_path=project_dir/"PROJECT_STATE.json";state=_read(state_path,{});state["director_brain_version"]=2;state["direction_authority_resolved"]=True;state["production_mode_resolved"]=True;state["production_mode"]=mode;state["direction_authority"]=authority;_write(state_path,state)
-    commit=production_project._git_commit_paths(engine,[order_path,state_path],"Enable Director Brain v2 operating order");production_project._clear_guard_marker(engine)
+    state_path=project_dir/"PROJECT_STATE.json";state=_read(state_path,{});state["director_brain_version"]=3;state["direction_authority_resolved"]=True;state["production_mode_resolved"]=True;state["production_mode"]=mode;state["direction_authority"]=authority;_write(state_path,state)
+    commit=production_project._git_commit_paths(engine,[order_path,state_path],"Enable Director Brain v3 operating order");production_project._clear_guard_marker(engine)
     guard=production_project.run_guard(pid)
     if not guard.get("guard_pass"):
-        raise RuntimeError("Director Brain v2 operating order was recorded but canonical guard rejected current project state: "+str(guard.get("stderr") or guard.get("stdout") or "unknown")[-1800:])
+        raise RuntimeError("Director Brain v3 operating order was recorded but canonical guard rejected current project state: "+str(guard.get("stderr") or guard.get("stdout") or "unknown")[-1800:])
     return {**status(pid),"commit":commit,"guard":"PASS"}
 def update_next_action(pid,*,exact_next_action:str,current_user_direction:str=""):
     current,engine,project_dir=_project(pid);order_path=project_dir/"OPERATING_ORDER.json";order=_read(order_path,{})
-    if order.get("schema")!="aivideoedit.operating-order.v1":raise RuntimeError("Director Brain v2 operating order is not configured")
+    if order.get("schema")!="aivideoedit.operating-order.v1":raise RuntimeError("Director Brain v3 operating order is not configured")
     action=str(exact_next_action or "").strip()
     if not action:raise ValueError("exact_next_action is required")
     order["exact_next_action"]=action
@@ -63,7 +63,7 @@ def update_next_action(pid,*,exact_next_action:str,current_user_direction:str=""
     order["updated_at"]=base.now();_write(order_path,order);commit=production_project._git_commit_paths(engine,[order_path],"Update Director Brain operating order");production_project._clear_guard_marker(engine);return {**status(pid),"commit":commit}
 def lock_canon(pid,*,picture_language:str,items:list[str],baseline_asset_id:str="",acceptance_statement:str=""):
     current,engine,project_dir=_project(pid);order_path=project_dir/"OPERATING_ORDER.json";order=_read(order_path,{})
-    if order.get("schema")!="aivideoedit.operating-order.v1":raise RuntimeError("Director Brain v2 operating order is not configured")
+    if order.get("schema")!="aivideoedit.operating-order.v1":raise RuntimeError("Director Brain v3 operating order is not configured")
     language=str(picture_language or "").strip();canon_items=[str(x).strip() for x in items if str(x).strip()]
     if not language or not canon_items:raise ValueError("picture_language and at least one canon item are required")
     order["canon_lock"]={"locked":True,"picture_language":language,"items":canon_items,"locked_at":base.now()}

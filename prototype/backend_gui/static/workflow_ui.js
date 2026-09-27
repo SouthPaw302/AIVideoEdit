@@ -14,14 +14,14 @@
   };
 
   async function refreshOperating(){
-    if(!productionState?.initialized){operatingState=null;id('directorModeLabel').textContent='Legacy / not configured';id('directorModeMeta').textContent='Connect the production engine before enabling Director Brain v2.';id('configureDirector').disabled=true;return;}
+    if(!productionState?.initialized){operatingState=null;id('directorModeLabel').textContent='Legacy / not configured';id('directorModeMeta').textContent='Connect the production engine before enabling Director Brain v3.';id('configureDirector').disabled=true;return;}
     id('configureDirector').disabled=false;
     try{
       operatingState=await toolCall('operating.status',{project_id:projectId()});
       const version=Number(operatingState.director_brain_version||0);
       if(version>=2){
         id('directorModeLabel').textContent=`${String(operatingState.production_mode||'').replaceAll('_',' ')} · ${String(operatingState.direction_authority||'').replaceAll('_',' ')}`;
-        id('directorModeMeta').textContent=operatingState.current_user_direction||operatingState.mission||'Director Brain v2 configured.';
+        id('directorModeMeta').textContent=operatingState.current_user_direction||operatingState.mission||'Director Brain v3 configured.';
       }else{
         id('directorModeLabel').textContent='Legacy / not configured';
         id('directorModeMeta').textContent='Enable v2 to explicitly lock direction authority and production mode.';
@@ -45,7 +45,7 @@
     const args={project_id:projectId(),direction_authority:id('directionAuthority').value,production_mode:id('productionMode').value,mission:id('directorMission').value.trim(),current_user_direction:id('directorCurrentDirection').value.trim(),exact_next_action:id('directorNextAction').value.trim()};
     if(!args.mission||!args.current_user_direction||!args.exact_next_action){id('productionStatus').textContent='Mission, current direction, and exact next action are required.';return;}
     id('saveDirectorMode').disabled=true;
-    try{operatingState=await toolCall('operating.configure_v2',args);id('directorDialog').close();id('productionStatus').textContent='Director Brain v2 enabled with explicit authority and production mode.';await refreshOperating();}
+    try{operatingState=await toolCall('operating.configure_v3',args);id('directorDialog').close();id('productionStatus').textContent='Director Brain v3 enabled with explicit authority and production mode.';await refreshOperating();}
     catch(e){id('productionStatus').textContent=e.message;}
     finally{id('saveDirectorMode').disabled=false;}
   }

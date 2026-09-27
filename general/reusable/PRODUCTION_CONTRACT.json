@@ -27,10 +27,10 @@
     "ARCHIVED"
   ],
   "director_brain_policy": {
-    "current_version": 2,
+    "current_version": 3,
     "version_state_key": "director_brain_version",
     "operating_order_file": "OPERATING_ORDER.json",
-    "new_projects_use_version": 2,
+    "new_projects_use_version": 3,
     "legacy_projects_may_remain_unmigrated_until_explicitly_updated": true,
     "direction_authorities": [
       "reference_led",
@@ -121,6 +121,18 @@
       "effects_visible",
       "traceable_render_implementation"
     ]
+  },
+  "recipe_execution_policy": {
+    "applies_to": "Director Brain v3 music-led living_scene and hybrid productions",
+    "execution_profile": "music_directed_section_assembly",
+    "required_artifacts": [
+      "MUSIC_CONTROL_MAP.json",
+      "SECTION_RENDER_MANIFEST.json",
+      "FX_APPLICATION_PROOF.json"
+    ],
+    "rule": "A selected recipe must be evidenced by section proofs, actual effect applications, assembly evidence, and final effect coverage. Declared available effects alone are not execution evidence.",
+    "intentional_absence_rule": "A base, reactive, fill, or transition pass may be not_applicable only with a section-specific reason.",
+    "creative_waiver_rule": "Deliberate sparse treatment must be declared in the recipe variation policy; it may not be inferred from missing passes."
   },
   "project_local_fx_policy": {
     "directory": "project_fx",

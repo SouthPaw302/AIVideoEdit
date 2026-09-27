@@ -161,7 +161,7 @@ def resolve_project(project: Path, registry: dict):
 
 def regression_scenarios(registry: dict):
     scenarios = [
-        ("living_scene", ["generated_stills", "living_painting", "living_still_fx", "loop_media"], {"WF-LIVING-SCENE-ASSEMBLY", "WF-TEMPORAL-QC"}),
+        ("living_scene", ["generated_stills", "living_painting", "living_still_fx", "loop_media", "reactive_plate"], {"WF-LIVING-SCENE-ASSEMBLY", "WF-MUSIC-DIRECTED-SECTION-ASSEMBLY", "WF-PROFILE-DRIVEN-SCENE-TREATMENT", "WF-TEMPORAL-QC"}),
         ("cinematic", ["source_video", "conventional_video"], {"WF-REAL-FOOTAGE-RESTORATION", "WF-TRACKING", "WF-STABILIZATION"}),
         ("hybrid", ["accepted_source_library", "canonical_hero_library", "source_derived_coverage", "reactive_plate", "depth_25d", "loop_media"], {"WF-SOURCE-DERIVED-LOOPS", "WF-AUDIO-REACTIVITY", "WF-SCENE-GRAPH-25D"}),
         ("cinematic", ["generated_stills", "generated_support_imagery"], {"WF-SEQUENTIAL-GENERATED-CINEMA"}),
