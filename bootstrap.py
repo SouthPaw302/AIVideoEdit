@@ -34,6 +34,13 @@ CACHE_ARCHIVE = "cache/main.tar.gz"
 CACHE_META = "cache/main.json"
 
 
+def authority_ref() -> str:
+    ref = os.environ.get("AIVIDEOEDIT_AUTHORITY_REF", DEFAULT_REF).strip() or DEFAULT_REF
+    if ref != DEFAULT_REF and os.environ.get("AIVIDEOEDIT_VALIDATION_MODE") != "1":
+        raise SystemExit("BOOTSTRAP FAIL: non-main authority ref requires explicit validation mode.")
+    return ref
+
+
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -133,6 +140,12 @@ def detect_project_dir(repo: Path, branch: str, explicit: str | None) -> Path | 
 
 
 def fetch_main_sha(offline: bool, repo: Path) -> tuple[str, str]:
+    ref = authority_ref()
+    if ref != DEFAULT_REF:
+        sha = git(repo, "rev-parse", f"origin/{ref}") or git(repo, "rev-parse", ref) or git(repo, "rev-parse", "HEAD")
+        if sha:
+            return sha, f"validation-ref:{ref}"
+        raise SystemExit(f"BOOTSTRAP FAIL: cannot establish validation authority ref {ref}.")
     if not offline:
         try:
             data = json.loads(http_bytes(API_MAIN).decode("utf-8"))
@@ -513,7 +526,7 @@ def build_boot_capsule(repo: Path, os_root: Path, branch: str, project: Path | N
         "session_id": session_id,
         "repository": REPOSITORY,
         "authority": {
-            "ref": DEFAULT_REF,
+            "ref": authority_ref(),
             "commit": main_sha,
             "manifest_sha256": manifest_hash,
             "archive_source": archive_source,

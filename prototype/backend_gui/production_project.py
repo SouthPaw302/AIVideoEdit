@@ -20,8 +20,8 @@ import server as base
 from core_adapter import CORE
 
 
-def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedProcess:
-    return subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=timeout, check=False)
+def _run(cmd: list[str], cwd: Path, timeout: int = 300, env: dict | None = None) -> subprocess.CompletedProcess:
+    return subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=timeout, check=False, env=env)
 
 
 def _engine_root(project_id: str) -> Path:
@@ -228,12 +228,17 @@ def initialize(project_id: str) -> dict:
     if commit.returncode != 0:
         raise RuntimeError((commit.stderr or commit.stdout or "initial project commit failed")[-1200:])
 
+    boot_env = dict(os.environ)
+    core_ref = os.environ.get("AIVE_CORE_REF", "main").strip() or "main"
+    if core_ref != "main":
+        boot_env["AIVIDEOEDIT_AUTHORITY_REF"] = core_ref
+        boot_env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
     boot = _run([
         sys.executable, str(engine / "bootstrap.py"), "boot",
         "--repo-root", str(engine),
         "--branch", branch,
         "--project-dir", f"projects/{project_dir.name}",
-    ], engine, timeout=300)
+    ], engine, timeout=300, env=boot_env)
     if boot.returncode != 0:
         return {
             "ok": False,

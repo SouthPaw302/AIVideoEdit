@@ -19,6 +19,7 @@ DEFAULT_TESTS = [
     "tests/test_surgical_regression.py",
     "tests/test_remote_bridge.py",
     "tests/test_core_validation_ref.py",
+    "tests/test_bootstrap_validation_ref.py",
 ]
 
 

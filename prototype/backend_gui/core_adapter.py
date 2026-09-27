@@ -58,7 +58,7 @@ def _host_branch() -> str:
     return "unknown"
 
 
-def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedProcess:
+def _run(cmd: list[str], cwd: Path, timeout: int = 300, env: dict | None = None) -> subprocess.CompletedProcess:
     return subprocess.run(
         cmd,
         cwd=str(cwd),
@@ -66,6 +66,7 @@ def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedP
         text=True,
         timeout=timeout,
         check=False,
+        env=env,
     )
 
 
@@ -134,7 +135,11 @@ class CoreAdapter:
         ]
         if offline:
             cmd.append("--offline")
-        proc = _run(cmd, CORE_REPO, timeout=300)
+        env = dict(os.environ)
+        if _core_ref() != "main":
+            env["AIVIDEOEDIT_AUTHORITY_REF"] = _core_ref()
+            env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
+        proc = _run(cmd, CORE_REPO, timeout=300, env=env)
         result = {
             "ok": proc.returncode == 0,
             "returncode": proc.returncode,
