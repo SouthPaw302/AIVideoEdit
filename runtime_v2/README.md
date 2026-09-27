@@ -165,3 +165,33 @@ Gatekeeper -> canonical operation -> capsule refresh.
 
 In production, terminate TLS at the hosting platform/reverse proxy and expose
 only the bridge port. Do not publish the Studio port directly.
+
+
+## Hardened production integration
+
+MainV2 production mutations now layer Runtime V2 enforcement in front of the
+existing canonical AIVideoEdit Tool API rather than replacing it.
+
+For each attested MainV2 mutation the runtime:
+
+1. re-runs the canonical production guard;
+2. verifies the signed boot capsule and current branch;
+3. rejects stale HEAD, project-state, operating-order, and media-manifest state;
+4. maps the requested Tool API operation to bounded change tags;
+5. enforces active refinement/recut allowed and forbidden scope;
+6. performs the existing canonical operation;
+7. refreshes the boot capsule after a successful state change.
+
+The deployed Compose topology requires a separate
+`AIVIDEOEDIT_ATTESTATION_KEY` and sets
+`AIVIDEOEDIT_REQUIRE_SIGNED_ATTESTATION=1`.
+
+Studio music analysis also consumes the Runtime V2 music worker directly.
+The pinned Beat This ONNX provider is preferred when its verified model is
+provisioned; otherwise the registry falls back to existing/built-in deterministic
+DSP evidence. The older RMS energy/section analysis remains in place and is
+recorded alongside the embedded rhythm evidence.
+
+A real pinned-model CPU inference fixture remains a promotion checkpoint; model
+metadata and preprocessing compatibility are verified independently without
+committing the 83 MB model to normal git history.

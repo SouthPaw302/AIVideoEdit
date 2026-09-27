@@ -24,6 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from runtime_v2.action_policy import policy_for
 from runtime_v2.boot.capsule import refresh_from_session
 from runtime_v2.gatekeeper import evaluate_action
 
@@ -148,12 +149,29 @@ def _runtime_gate_before(name: str, pid: str) -> tuple[bool, Path | None]:
     if not engine_text:
         return False, None
     engine = Path(str(engine_text)).resolve()
-    if not (engine / ".aivideoedit" / "boot_capsule.json").is_file():
+    capsule_path = engine / ".aivideoedit" / "boot_capsule.json"
+    authority_ref = str(current.get("authority_ref") or "main")
+
+    # Preserve legacy/main behavior until Runtime V2 is explicitly selected,
+    # but fail closed for a MainV2 production that lost its attested session.
+    if not capsule_path.is_file():
+        if authority_ref == "MainV2":
+            raise RuntimeError("Runtime Gatekeeper DENY: MainV2 session attestation is missing")
         return False, engine
+
+    policy = policy_for(name)
+    if policy.requires_canonical_guard:
+        guard = production_project.run_guard(pid)
+        if not guard.get("guard_pass"):
+            detail = guard.get("stderr") or guard.get("stdout") or "canonical production guard failed"
+            raise RuntimeError("Runtime Gatekeeper DENY: " + str(detail)[-1800:])
+
     decision = evaluate_action(
         repo=engine,
         action=name,
         mutation=True,
+        requested_changes=list(policy.change_tags),
+        canon_sensitive=policy.canon_sensitive,
         expected_stage=str(current.get("stage") or "") or None,
         target_branch=str(current.get("branch") or "") or None,
     )

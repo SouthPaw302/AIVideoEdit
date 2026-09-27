@@ -125,13 +125,23 @@ def _media_locators(project: Path | None) -> dict[str, Any]:
     }
 
 
-def validate_project_consistency(state: dict[str, Any], order: dict[str, Any]) -> list[str]:
+def validate_project_consistency(
+    state: dict[str, Any],
+    order: dict[str, Any],
+    branch: str | None = None,
+) -> list[str]:
     errors: list[str] = []
     state_next = str(state.get("exact_next_action") or "").strip()
     order_next = str(order.get("exact_next_action") or "").strip()
     if state_next and order_next and state_next != order_next:
         errors.append("exact_next_action mismatch between PROJECT_STATE.json and OPERATING_ORDER.json")
+    state_tool = str(state.get("exact_next_tool") or "").strip()
+    order_tool = str(order.get("exact_next_tool") or "").strip()
+    if state_tool and order_tool and state_tool != order_tool:
+        errors.append("exact_next_tool mismatch between PROJECT_STATE.json and OPERATING_ORDER.json")
     state_branch = str(state.get("branch") or "").strip()
+    if branch and state_branch and state_branch != branch:
+        errors.append(f"project branch mismatch: PROJECT_STATE={state_branch} active={branch}")
     return errors
 
 
@@ -162,12 +172,15 @@ def build_capsule(
     refine = order.get("refinement_scope") if isinstance(order.get("refinement_scope"), dict) else {}
     recut = order.get("recut_scope") if isinstance(order.get("recut_scope"), dict) else {}
     stage = state.get("stage")
-    consistency_errors = validate_project_consistency(state, order)
+    consistency_errors = validate_project_consistency(state, order, branch)
     if consistency_errors:
         raise ValueError("; ".join(consistency_errors))
     order_next = str(order.get("exact_next_action") or "").strip()
     state_next = str(state.get("exact_next_action") or "").strip()
     exact_next_action = order_next or state_next or None
+    order_tool = str(order.get("exact_next_tool") or "").strip()
+    state_tool = str(state.get("exact_next_tool") or "").strip()
+    exact_next_tool = order_tool or state_tool or None
     return {
         "schema": CAPSULE_SCHEMA,
         "session_id": session_id,
@@ -178,8 +191,10 @@ def build_capsule(
             "branch_commit": _git(repo, "rev-parse", "HEAD") or None,
             "project_dir": project.resolve().relative_to(repo).as_posix() if project else None,
             "stage": stage,
+            "project_state_sha256": _sha256(project / "PROJECT_STATE.json") if project else None,
             "next_contract_stage": _next_stage(contract, stage),
             "exact_next_action": exact_next_action,
+            "exact_next_tool": exact_next_tool,
             "exact_next_action_source": "OPERATING_ORDER.json" if order_next else ("PROJECT_STATE.json" if state_next else None),
         },
         "operating_order": {

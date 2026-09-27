@@ -10,8 +10,9 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends ffmpeg git ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-COPY runtime_v2/requirements.txt /tmp/runtime-v2-requirements.txt
-RUN python -m pip install -r /tmp/runtime-v2-requirements.txt
+COPY runtime_v2/requirements.txt /tmp/runtime_v2/requirements.txt
+COPY runtime_v2/requirements-onnx.txt /tmp/runtime_v2/requirements-onnx.txt
+RUN python -m pip install -r /tmp/runtime_v2/requirements-onnx.txt
 
 COPY . /app
 

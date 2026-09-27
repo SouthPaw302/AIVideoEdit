@@ -10,6 +10,7 @@ import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
+from runtime_v2.action_policy import policy_for
 from runtime_v2.boot.capsule import (
     build_capsule,
     sign_capsule,
@@ -403,3 +404,79 @@ def test_bounded_decision_pipeline_escalates_without_enabled_harness(tmp_path: P
     )
     assert result["jev"]["decision"] == "ESCALATE"
     assert result["specialist"]["status"] == "ESCALATE"
+
+
+
+def test_gatekeeper_rejects_stale_attested_project_state(tmp_path: Path):
+    repo, os_root, project = _fixture_repo(tmp_path)
+    capsule = build_capsule(
+        repo=repo,
+        os_root=os_root,
+        branch="song/fixture",
+        project=project,
+        authority_ref="MainV2",
+        authority_commit="abc",
+        session_id="stale-1",
+    )
+    _write_json(repo / ".aivideoedit/boot_capsule.json", capsule)
+    _write_json(repo / ".aivideoedit/session_attestation.json", sign_capsule(capsule))
+    _write_json(project / "PROJECT_STATE.json", {"stage": "SOURCE_INGESTED"})
+    decision = evaluate_action(
+        repo=repo,
+        action="production.analyze",
+        mutation=True,
+        current_branch="song/fixture",
+    )
+    assert decision.decision == "DENY"
+    assert any("PROJECT_STATE.json changed" in reason for reason in decision.reasons)
+
+
+def test_action_policy_scope_fails_closed(tmp_path: Path):
+    repo, os_root, project = _fixture_repo(tmp_path)
+    capsule = build_capsule(
+        repo=repo,
+        os_root=os_root,
+        branch="song/fixture",
+        project=project,
+        authority_ref="MainV2",
+        authority_commit="abc",
+        session_id="scope-1",
+    )
+    _write_json(repo / ".aivideoedit/boot_capsule.json", capsule)
+    _write_json(repo / ".aivideoedit/session_attestation.json", sign_capsule(capsule))
+    policy = policy_for("fx.lock")
+    decision = evaluate_action(
+        repo=repo,
+        action="fx.lock",
+        mutation=True,
+        requested_changes=list(policy.change_tags),
+        canon_sensitive=policy.canon_sensitive,
+        current_branch="song/fixture",
+    )
+    assert decision.decision == "DENY"
+    assert any("outside allowed scope" in reason for reason in decision.reasons)
+
+
+def test_signed_attestation_can_be_required(tmp_path: Path, monkeypatch):
+    repo, os_root, project = _fixture_repo(tmp_path)
+    capsule = build_capsule(
+        repo=repo,
+        os_root=os_root,
+        branch="song/fixture",
+        project=project,
+        authority_ref="MainV2",
+        authority_commit="abc",
+        session_id="signed-1",
+    )
+    _write_json(repo / ".aivideoedit/boot_capsule.json", capsule)
+    _write_json(repo / ".aivideoedit/session_attestation.json", sign_capsule(capsule))
+    monkeypatch.setenv("AIVIDEOEDIT_REQUIRE_SIGNED_ATTESTATION", "1")
+    monkeypatch.delenv("AIVIDEOEDIT_ATTESTATION_KEY", raising=False)
+    decision = evaluate_action(
+        repo=repo,
+        action="production.analyze",
+        mutation=True,
+        current_branch="song/fixture",
+    )
+    assert decision.decision == "DENY"
+    assert "attestation key" in decision.reasons[0]

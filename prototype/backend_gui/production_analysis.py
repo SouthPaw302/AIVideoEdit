@@ -13,6 +13,7 @@ import json
 import math
 import shutil
 import subprocess
+import sys
 import wave
 from pathlib import Path
 
@@ -172,6 +173,32 @@ def _tempo_from_envelope(envelope: list[float], step: float) -> tuple[float | No
     return round(bpm, 2), round(max(0.0, min(1.0, best[0])), 3)
 
 
+def _runtime_music_evidence(source: Path) -> dict:
+    """Return Runtime V2 beat/music evidence without making it production authority."""
+    repo_root = Path(__file__).resolve().parents[2]
+    if str(repo_root) not in sys.path:
+        sys.path.insert(0, str(repo_root))
+    try:
+        from runtime_v2.models.music_beat import analyze_music
+        evidence = analyze_music(source)
+        return {
+            **evidence,
+            "integration": "studio_production_analysis",
+            "authority": "evidence_only",
+        }
+    except Exception as exc:
+        return {
+            "schema": "aivideoedit.music-analysis-evidence.v1",
+            "engine": "runtime_v2_unavailable",
+            "bpm": None,
+            "beat_positions_seconds": [],
+            "downbeat_positions_seconds": [],
+            "confidence": 0.0,
+            "authority": "evidence_only",
+            "error": str(exc)[:1200],
+        }
+
+
 def _music_analysis(asset: dict, analysis_root: Path) -> dict:
     source = Path(asset["local_path"])
     wav = analysis_root / str(asset["id"]) / "analysis_mono.wav"
@@ -180,7 +207,18 @@ def _music_analysis(asset: dict, analysis_root: Path) -> dict:
         wav.unlink()
     except Exception:
         pass
-    bpm, confidence = _tempo_from_envelope(envelope, step)
+
+    legacy_bpm, legacy_confidence = _tempo_from_envelope(envelope, step)
+    embedded = _runtime_music_evidence(source)
+    embedded_bpm = embedded.get("bpm")
+    embedded_confidence = embedded.get("confidence")
+    bpm = float(embedded_bpm) if isinstance(embedded_bpm, (int, float)) else legacy_bpm
+    confidence = (
+        float(embedded_confidence)
+        if isinstance(embedded_confidence, (int, float))
+        else legacy_confidence
+    )
+
     duration = float((asset.get("metadata") or {}).get("duration_seconds") or len(envelope) * step)
     points = []
     stride = max(1, len(envelope) // 40)
@@ -209,13 +247,29 @@ def _music_analysis(asset: dict, analysis_root: Path) -> dict:
         "schema": "aivideoedit.music-analysis.v1",
         "source_asset_id": asset["id"],
         "source_uri": f"aive://asset/{asset['id']}",
-        "analysis_method": "ffmpeg PCM decode + 100ms RMS/onset autocorrelation",
-        "rhythm_or_pulse": {"estimated_bpm": bpm, "confidence": confidence, "status": "pulse_detected" if metric else "weak_or_unresolved"},
-        "tempo_or_non_metric_status": {"status": "estimated_metric" if metric else "non_metric_or_unresolved", "estimated_bpm": bpm, "confidence": confidence},
+        "analysis_method": "Runtime V2 beat evidence (Beat This ONNX when provisioned, deterministic fallback) plus existing 100ms RMS energy mapping",
+        "rhythm_or_pulse": {
+            "estimated_bpm": bpm,
+            "confidence": confidence,
+            "status": "pulse_detected" if metric else "weak_or_unresolved",
+            "beat_positions_seconds": embedded.get("beat_positions_seconds", []),
+            "downbeat_positions_seconds": embedded.get("downbeat_positions_seconds", []),
+        },
+        "tempo_or_non_metric_status": {
+            "status": "estimated_metric" if metric else "non_metric_or_unresolved",
+            "estimated_bpm": bpm,
+            "confidence": confidence,
+        },
         "meter_or_groove": {"status": "unresolved_by_signal_only", "note": "Meter/groove interpretation is intentionally deferred to an agent or user."},
         "section_map": sections,
         "energy_curve": points,
         "musical_cues": cues,
+        "embedded_rhythm_evidence": embedded,
+        "legacy_signal_estimate": {
+            "estimated_bpm": legacy_bpm,
+            "confidence": legacy_confidence,
+            "method": "100ms RMS/onset autocorrelation",
+        },
         "narrative_function": {"status": "pending_interpretation", "note": "Signal analysis supplies timing/energy evidence but does not invent narrative intent."},
         "duration_seconds": duration,
         "analysis_complete": True,
