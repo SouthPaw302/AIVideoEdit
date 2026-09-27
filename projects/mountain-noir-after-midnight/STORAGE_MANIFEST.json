@@ -16,6 +16,38 @@
       "uploaded_at_utc": "2026-09-27T02:07:13Z"
     },
     {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_01_IRISH.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_01_IRISH.mp4",
+      "sha256": "33ad2eb72226a656af0ce08984aed334f4554ca8ef886ce870522a7118bd3e4d",
+      "bytes": 6936647,
+      "uploaded_at_utc": "2026-09-27T05:50:36Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_02_LEAVE.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_02_LEAVE.mp4",
+      "sha256": "0fda46883cfdbf83579adb9ee19bbfc252dd4a92038279575b5cbd6074394555",
+      "bytes": 7948972,
+      "uploaded_at_utc": "2026-09-27T05:50:41Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_03_SILVER.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_03_SILVER.mp4",
+      "sha256": "619e324d494d566913aeed72ff39ef00f7892c4732ad27401fc8f81ee5704491",
+      "bytes": 10576544,
+      "uploaded_at_utc": "2026-09-27T05:50:49Z"
+    },
+    {
+      "category": "generated",
+      "asset_name": "generated__Mountain_Noir_After_Midnight_chunk_04_EL_VIENTO.mp4",
+      "original_name": "Mountain_Noir_After_Midnight_chunk_04_EL_VIENTO.mp4",
+      "sha256": "c441fde3b2b4a3128c730dcc56da11c91539da1631091c64f38f7f59ecf7d518",
+      "bytes": 24828441,
+      "uploaded_at_utc": "2026-09-27T05:51:23Z"
+    },
+    {
       "category": "proofs",
       "asset_name": "proofs__Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
       "original_name": "Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",

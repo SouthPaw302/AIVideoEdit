@@ -17,7 +17,8 @@
     "qc_contact_sheets": "1F6CZ_DlJNd-QTa1hjP1l_-7RtsRmsjwA",
     "final_masters": "1Ft2QvmFPdBF-jzAh8R-OwHtUAvt0713l",
     "manifests_repo_records": "1IofzVMS4g6DnoGSXXu3TslCt1ub3g-2c",
-    "archive": "18LZhxWYa4EaA-g0RJqZ0RlwV64yCyxGO"
+    "archive": "18LZhxWYa4EaA-g0RJqZ0RlwV64yCyxGO",
+    "production_checkpoints": "1H3wSdP2CdQFBGw6J-9pim-InlYTuM5fJ"
   },
   "staged_assets": [
     {
@@ -59,7 +60,37 @@
       "id": "13rKVvBu0P9VHpZ1HDPGMtgaThaRSdzBi",
       "name": "Mountain_Noir_After_Midnight_15min_REVIEW_v1.mp4",
       "category": "rejected_workprint"
+    },
+    {
+      "id": "1K9mC50NA9A6_HKwvOjVWHfMtIH0BmynE",
+      "name": "Mountain_Noir_After_Midnight_15min_MASTER.m4a",
+      "category": "production_checkpoint_audio_master"
+    },
+    {
+      "id": "1TgG99fGWOXT0Ny3VL4vVY_XmJU0ftJcV",
+      "name": "Mountain_Noir_After_Midnight_living_scene_proof_v1.mp4",
+      "category": "production_checkpoint_proof"
+    },
+    {
+      "id": "1z_1Wncd_W7Iu12y2bOszd7wl1mva-9kg",
+      "name": "Mountain_Noir_After_Midnight_chunk_01_IRISH.mp4",
+      "category": "production_checkpoint_generated_chapter"
+    },
+    {
+      "id": "1vfrIefIX2cfbgaJF6kkugfArhaA6Gpcj",
+      "name": "Mountain_Noir_After_Midnight_chunk_02_LEAVE.mp4",
+      "category": "production_checkpoint_generated_chapter"
+    },
+    {
+      "id": "1IsMXEMJZVvKCkaFIBdS8ET6THEak2She",
+      "name": "Mountain_Noir_After_Midnight_chunk_03_SILVER.mp4",
+      "category": "production_checkpoint_generated_chapter"
+    },
+    {
+      "id": "1YAlWxXYyYeJ6WfBzB55Q3JfGsq9MPq4y",
+      "name": "Mountain_Noir_After_Midnight_chunk_04_EL_VIENTO.mp4",
+      "category": "production_checkpoint_generated_chapter"
     }
   ],
-  "updated_at_utc": "2026-09-26T06:45:00Z"
+  "updated_at_utc": "2026-09-27T05:52:00Z"
 }
