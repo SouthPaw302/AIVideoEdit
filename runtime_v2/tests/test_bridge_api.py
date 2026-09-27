@@ -50,7 +50,7 @@ def test_version_accepts_valid_token(tmp_path: Path):
     assert response.status_code == 200
     assert response.json()["runtime"] == "runtime_v2"
     assert response.json()["api_version"] == "v1"
-    assert response.json()["service_version"] == "0.2.0"
+    assert response.json()["service_version"] == "0.3.0"
 
 
 def test_capabilities_can_hide_planned_entries(tmp_path: Path):

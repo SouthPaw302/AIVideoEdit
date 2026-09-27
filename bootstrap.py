@@ -248,8 +248,10 @@ def handoff_to_authority_bootstrap(repo: Path, os_root: Path, branch: str, args:
         same = False
     if same:
         return
-    cmd = [sys.executable, str(canonical), "boot", "--repo-root", str(repo), "--branch", branch,
-           "--authority-ref", str(args.authority_ref or DEFAULT_REF)]
+    cmd = [sys.executable, str(canonical), "boot", "--repo-root", str(repo), "--branch", branch]
+    authority_ref = str(args.authority_ref or DEFAULT_REF)
+    if authority_ref != DEFAULT_REF:
+        cmd += ["--authority-ref", authority_ref]
     if args.project_dir:
         cmd += ["--project-dir", str(args.project_dir)]
     if args.offline:

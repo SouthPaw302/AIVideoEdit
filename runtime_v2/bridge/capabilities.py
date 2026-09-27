@@ -43,16 +43,6 @@ PLANNED_CAPABILITIES: tuple[Capability, ...] = (
         status="planned",
         description="Read-only repository inspection through an allowlisted adapter.",
     ),
-    Capability(
-        name="jev.evaluate",
-        status="planned",
-        description="Deterministic workflow and policy evaluation.",
-    ),
-    Capability(
-        name="model.run",
-        status="planned",
-        description="Specialist ONNX/model execution through registered capabilities.",
-    ),
 )
 
 

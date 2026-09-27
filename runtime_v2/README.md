@@ -104,8 +104,8 @@ This is process-level hardening, not a kernel/container security boundary. Netwo
 and OS-level isolation should be provided by the deployment environment before
 higher-risk tools are registered.
 
-Git/repo integration, JEV, model execution, external LLM routing, and MCP exposure
-remain separate later steps.
+Repo mutation integration, external LLM routing, and broader MCP exposure remain later steps.
+Jev and bounded model execution are now present in the Surgical Intelligence layer.
 
 
 ## Surgical Intelligence Integration
