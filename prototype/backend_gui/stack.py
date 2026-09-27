@@ -10,6 +10,7 @@ import storage
 import tool_api
 import operating_tools
 import harness_tools
+import remote_bridge
 import production_analysis
 import production_assembly
 import production_project
@@ -99,6 +100,20 @@ def prepare_project(pid):
         if (asset.get("qc") or {}).get("status")!="pass":created.append(base.add_job("qc_media",pid,asset["id"]))
     for job in created:dispatch_job(job)
     return created
+def _tool_call(name: str, args: dict):
+    if name.startswith("harness."):
+        return harness_tools.call(name,args)
+    if name.startswith("operating."):
+        return operating_tools.call(name,args)
+    return tool_api.call_tool(name,args,dispatch_job=dispatch_job,prepare_project=prepare_project)
+
+
+def _remote_auth(handler):
+    ok,reason=remote_bridge.authorize(handler.headers)
+    rid=remote_bridge.request_id(handler.headers)
+    return ok,reason,rid
+
+
 def _json_body(handler):
     length=int(handler.headers.get("Content-Length","0") or 0);raw=handler.rfile.read(length) if length else b"{}"
     try:
@@ -113,6 +128,15 @@ class StackHandler(base.Handler):
         if path=="/api/storage":return self.send_json(storage.status())
         if path=="/api/core":return self.send_json(CORE.status())
         if path=="/api/tools":return self.send_json({"schema":"aivideoedit.tools.v1","tools":all_tool_schemas()})
+        if path=="/api/remote/health":
+            if not remote_bridge.enabled():
+                return self.send_json({"ok":False,"error":"remote bridge disabled"},404)
+            return self.send_json({"ok":True,"schema":"aivideoedit.remote-health.v1","bridge":"existing_stack_adapter"})
+        if path=="/api/remote/capabilities":
+            ok,reason,rid=_remote_auth(self)
+            if not ok:return self.send_json({"ok":False,"error":reason,"request_id":rid},401)
+            names=[x.get("name") for x in all_tool_schemas() if isinstance(x,dict) and x.get("name")]
+            return self.send_json({"ok":True,"request_id":rid,"result":remote_bridge.capability_document(names,harness_enabled=harness_tools.status().get("enabled",False))})
         return super().do_GET()
     def do_POST(self):
         path=urlparse(self.path).path
@@ -124,15 +148,21 @@ class StackHandler(base.Handler):
             try:
                 data=_json_body(self);name=str(data.get("name") or "");args=data.get("arguments") if isinstance(data.get("arguments"),dict) else {}
                 if not name:return self.send_json({"error":"tool name is required"},400)
-                if name.startswith("harness."):
-                    result=harness_tools.call(name,args)
-                elif name.startswith("operating."):
-                    result=operating_tools.call(name,args)
-                else:
-                    result=tool_api.call_tool(name,args,dispatch_job=dispatch_job,prepare_project=prepare_project)
+                result=_tool_call(name,args)
                 return self.send_json({"ok":True,"tool":name,"result":result})
             except ValueError as exc:return self.send_json({"ok":False,"error":str(exc)},400)
             except Exception as exc:return self.send_json({"ok":False,"error":str(exc)},500)
+        if path=="/api/remote/call":
+            ok,reason,rid=_remote_auth(self)
+            if not ok:return self.send_json({"ok":False,"error":reason,"request_id":rid},401)
+            try:
+                data=_json_body(self);name=str(data.get("name") or "");args=data.get("arguments") if isinstance(data.get("arguments"),dict) else {}
+                valid={x.get("name") for x in all_tool_schemas() if isinstance(x,dict)}
+                if name not in valid:return self.send_json({"ok":False,"error":"unknown or unapproved tool","request_id":rid},400)
+                result=_tool_call(name,args)
+                return self.send_json({"ok":True,"request_id":rid,"tool":name,"result":result})
+            except ValueError as exc:return self.send_json({"ok":False,"error":str(exc),"request_id":rid},400)
+            except Exception as exc:return self.send_json({"ok":False,"error":str(exc),"request_id":rid},500)
         if path.startswith("/api/projects/") and path.endswith("/prepare"):
             parts=path.strip("/").split("/");pid=parts[2]
             if not base.find_project(pid):return self.send_json({"error":"project not found"},404)

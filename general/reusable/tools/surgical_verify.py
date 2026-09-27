@@ -17,6 +17,7 @@ DEFAULT_TESTS = [
     "tests/test_jev_decision.py",
     "tests/test_harness_router.py",
     "tests/test_surgical_regression.py",
+    "tests/test_remote_bridge.py",
 ]
 
 

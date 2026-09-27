@@ -28,6 +28,8 @@ jobs:
           python -m py_compile general/reusable/tools/jev_decision.py
           python -m py_compile general/reusable/tools/harness_router.py
           python -m py_compile prototype/backend_gui/runtime_gatekeeper.py
+          python -m py_compile prototype/backend_gui/remote_bridge.py
+          python -m py_compile prototype/backend_gui/remote_agent_client.py
       - name: Run bounded surgical regression suite
         run: python general/reusable/tools/surgical_verify.py --json-out /tmp/surgical-verification.json
       - name: Run optional Harness MCP smoke test
