@@ -480,3 +480,28 @@ def test_signed_attestation_can_be_required(tmp_path: Path, monkeypatch):
     )
     assert decision.decision == "DENY"
     assert "attestation key" in decision.reasons[0]
+
+
+
+def test_action_policy_separates_content_from_workflow_mutations():
+    assert policy_for("storyboard.set").change_tags
+    assert policy_for("storyboard.set").canon_sensitive is True
+    assert policy_for("fx.set_requirements").change_tags
+    assert policy_for("production.sync_assets").change_tags
+
+    for action in (
+        "production.analyze",
+        "proofs.record",
+        "fx.lock",
+        "assembly.run",
+        "final_qc.run_technical",
+        "archive.build",
+        "production.advance",
+        "operating.configure_v2",
+        "operating.update_next_action",
+        "operating.set_refinement",
+    ):
+        assert policy_for(action).change_tags == ()
+
+    assert policy_for("operating.lock_canon").canon_sensitive is True
+    assert policy_for("operating.lock_canon").change_tags == ("canon", "accepted_baseline")

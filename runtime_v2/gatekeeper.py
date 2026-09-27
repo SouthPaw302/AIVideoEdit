@@ -48,6 +48,8 @@ _TAG_ALIASES: dict[str, tuple[str, ...]] = {
     "final_qc": ("final qc", "qc"),
     "archive": ("archive",),
     "stage": ("stage", "advance"),
+    "canon": ("canon", "picture language", "visual canon"),
+    "accepted_baseline": ("accepted baseline", "baseline"),
 }
 
 

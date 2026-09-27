@@ -195,3 +195,5 @@ recorded alongside the embedded rhythm evidence.
 A real pinned-model CPU inference fixture remains a promotion checkpoint; model
 metadata and preprocessing compatibility are verified independently without
 committing the 83 MB model to normal git history.
+
+Director Brain `operating.*` mutations use the same guard/attestation/refresh path; they are no longer a separate mutation bypass.

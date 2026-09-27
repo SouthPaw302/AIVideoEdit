@@ -11,8 +11,8 @@ class ActionPolicy:
 
 
 _POLICIES: dict[str, ActionPolicy] = {
+    # Content/source mutations: enforced against active refinement/recut scope.
     "production.sync_assets": ActionPolicy(("source_media", "asset_manifest", "reference_manifest")),
-    "production.analyze": ActionPolicy(("analysis", "music", "references")),
     "production.set_music_context": ActionPolicy(("music", "lyrics", "genre")),
     "approach.set_capabilities": ActionPolicy(("visual_approach",), canon_sensitive=True),
     "approach.set_routes": ActionPolicy(("visual_approach",), canon_sensitive=True),
@@ -20,22 +20,30 @@ _POLICIES: dict[str, ActionPolicy] = {
     "storyboard.set": ActionPolicy(("storyboard", "script"), canon_sensitive=True),
     "storyboard.lock": ActionPolicy(("storyboard", "script"), canon_sensitive=True),
     "shots.build_packages": ActionPolicy(("shots",), canon_sensitive=True),
-    "generated.request": ActionPolicy(("generated_media",)),
-    "generated.register": ActionPolicy(("generated_media",)),
+    "generated.request": ActionPolicy(("generated_media",), canon_sensitive=True),
+    "generated.register": ActionPolicy(("generated_media",), canon_sensitive=True),
     "generated.accept": ActionPolicy(("generated_media", "accepted_media"), canon_sensitive=True),
     "generated.reject": ActionPolicy(("generated_media", "accepted_media"), canon_sensitive=True),
-    "proofs.record": ActionPolicy(("proofs",)),
-    "proofs.accept": ActionPolicy(("proofs", "accepted_media"), canon_sensitive=True),
-    "proofs.finalize": ActionPolicy(("proofs", "accepted_media"), canon_sensitive=True),
-    "proofs.reject": ActionPolicy(("proofs", "accepted_media"), canon_sensitive=True),
-    "fx.set_requirements": ActionPolicy(("fx", "transitions")),
-    "fx.lock": ActionPolicy(("fx", "transitions")),
-    "assembly.run": ActionPolicy(("assembly",)),
-    "final_qc.run_technical": ActionPolicy(("final_qc",)),
-    "final_qc.accept_creative": ActionPolicy(("final_qc",)),
-    "final_qc.reject": ActionPolicy(("final_qc",)),
-    "archive.build": ActionPolicy(("archive",)),
-    "production.advance": ActionPolicy(("stage",)),
+    "fx.set_requirements": ActionPolicy(("fx", "transitions"), canon_sensitive=True),
+    "operating.lock_canon": ActionPolicy(("canon", "accepted_baseline"), canon_sensitive=True),
+
+    # Control/evidence mutations still require fresh attestation and canonical
+    # guards, but they do not themselves alter the bounded creative scope.
+    "production.analyze": ActionPolicy(()),
+    "proofs.record": ActionPolicy(()),
+    "proofs.accept": ActionPolicy(()),
+    "proofs.finalize": ActionPolicy(()),
+    "proofs.reject": ActionPolicy(()),
+    "fx.lock": ActionPolicy(()),
+    "assembly.run": ActionPolicy(()),
+    "final_qc.run_technical": ActionPolicy(()),
+    "final_qc.accept_creative": ActionPolicy(()),
+    "final_qc.reject": ActionPolicy(()),
+    "archive.build": ActionPolicy(()),
+    "production.advance": ActionPolicy(()),
+    "operating.configure_v2": ActionPolicy(()),
+    "operating.update_next_action": ActionPolicy(()),
+    "operating.set_refinement": ActionPolicy(()),
 }
 
 
