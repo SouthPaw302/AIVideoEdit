@@ -26,6 +26,7 @@ import production_assembly
 import production_final_qc
 import production_archive
 import runtime_gatekeeper
+import operating_tools
 from general.reusable.tools.jev_decision import decide as jev_decide
 from core_adapter import CORE
 
@@ -131,6 +132,9 @@ def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],pre
     if name=="production.sync_assets":_project(pid);return production_project.sync_assets(pid)
     if name=="production.analyze":_project(pid);job=base.add_job("analyze_production",pid,None);dispatch_job(job);return {"job":job}
     if name=="production.set_music_context":_project(pid);return production_analysis.set_music_context(pid,lyrics_status=str(a.get("lyrics_status") or ""),genre=str(a.get("genre") or ""),lyrics_text=str(a.get("lyrics_text") or ""),directing_use=str(a.get("directing_use") or "default"))
+    if name.startswith("operating."):
+        _project(pid)
+        return operating_tools.call(name,a)
     if name=="approach.status":_project(pid);return production_approach.status(pid)
     if name=="approach.set_capabilities":_project(pid);return production_approach.set_capabilities(pid,a.get("capabilities") if isinstance(a.get("capabilities"),list) else [],str(a.get("approach_summary") or ""))
     if name=="approach.set_routes":_project(pid);return production_approach.set_routes(pid,a.get("routes") if isinstance(a.get("routes"),list) else [],str(a.get("presentation_channel") or "studio"))
@@ -187,7 +191,7 @@ def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],pre
 
 _READ_ONLY_TOOLS = {
     "core.status", "capabilities.list", "fx.list", "project.list", "project.status",
-    "production.status", "approach.status", "storyboard.status", "storyboard.guard",
+    "production.status", "operating.status", "approach.status", "storyboard.status", "storyboard.guard",
     "shots.status", "shots.template", "generated.status", "proofs.status",
     "fx.status", "fx.registry", "fx.verify", "assembly.status", "final_qc.status",
     "archive.status", "archive.verify", "production.guard", "media.list",
@@ -199,6 +203,10 @@ _UNGATED_BOOTSTRAP_TOOLS = {
 }
 
 _CHANGE_TAGS = {
+    "operating.configure_v2": ["operating order"],
+    "operating.update_next_action": ["operating order"],
+    "operating.lock_canon": ["canon lock"],
+    "operating.set_refinement": ["refinement scope"],
     "production.sync_assets": ["media manifest update"],
     "production.analyze": ["analysis evidence"],
     "production.set_music_context": ["music context"],

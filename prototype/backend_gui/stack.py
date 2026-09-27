@@ -103,8 +103,6 @@ def prepare_project(pid):
 def _tool_call(name: str, args: dict):
     if name.startswith("harness."):
         return harness_tools.call(name,args)
-    if name.startswith("operating."):
-        return operating_tools.call(name,args)
     return tool_api.call_tool(name,args,dispatch_job=dispatch_job,prepare_project=prepare_project)
 
 
