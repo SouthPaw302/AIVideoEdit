@@ -62,7 +62,7 @@ def main() -> int:
             "fx.registry", "fx.set_requirements", "fx.lock", "fx.verify",
             "assembly.status", "assembly.run", "final_qc.status", "final_qc.run_technical",
             "final_qc.accept_creative", "final_qc.reject", "archive.status", "archive.build",
-            "archive.verify", "operating.status", "operating.configure_v2",
+            "archive.verify", "operating.status", "operating.configure_v2", "operating.configure_v3",
         }
         missing = sorted(expected_tools - set(names))
         check(not missing, "missing Tool API contracts: " + ", ".join(missing), failures)

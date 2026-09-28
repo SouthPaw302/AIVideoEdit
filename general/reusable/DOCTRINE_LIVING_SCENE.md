@@ -47,6 +47,9 @@ Weather and environmental motion must behave as coupled systems rather than inde
 ## Loop rule
 Living scenes should not advertise their loops. Prefer phase-continuous behavior, multiple overlapping periods, deterministic wrap/reseed behavior, and independent motion layers rather than one repeated global cycle.
 
+## Music-directed section rule
+For music-led living-scene or hybrid work, lock contiguous music sections before building the master. Give each section a neutral scene profile and explicit base, reactive, fill, and transition intent. Render short proofs for every non-absent pass, then assemble from proved handles. Selected effects must be recorded against the actual section outputs; an available or locked effect is not evidence that it reached the final picture.
+
 ## Refinement rule
 Once a picture baseline is accepted, local repair is preferred over rebuild. Patch failed shots, weak effects, excessive camera motion, generated-continuation drift, or delivery defects without disturbing approved picture language, timing, identities, or hero assets.
 

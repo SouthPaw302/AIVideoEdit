@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Small regression suite for Director Brain v2 guard behavior."""
+"""Small regression suite for Director Brain v3 guard behavior."""
 from __future__ import annotations
 
 import importlib.util

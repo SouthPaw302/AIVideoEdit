@@ -1,4 +1,4 @@
-name: DeepSeek Harness Optional Smoke Test
+name: DeepSeek Harness Optional Smoke
 
 on:
   workflow_dispatch:
@@ -10,26 +10,22 @@ jobs:
   harness-smoke:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      AIVE_HARNESS_ENABLED: "1"
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: MainV2
-          fetch-depth: 0
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Run provider-neutral Harness MCP smoke test
+      - name: Run provider-neutral MCP smoke test
         run: python prototype/backend_gui/harness_selftest.py
-
-      - name: Confirm Harness remains optional
+      - name: Verify normal Tool API imports with Harness optional
         run: |
           python - <<'PY'
-          from runtime_v2.harness.adapter import status
-          s = status(False).as_dict()
-          assert s["enabled"] is False
-          assert s["provider_neutral"] is True
-          assert s["production_authority"] == "aivideoedit"
-          print("PASS: Harness optional/provider-neutral")
+          import sys
+          sys.path.insert(0, "prototype/backend_gui")
+          import tool_api
+          names={x["name"] for x in tool_api.schemas()}
+          assert "production.status" in names
+          print("PASS normal Tool API remains available")
           PY

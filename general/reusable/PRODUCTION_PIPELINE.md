@@ -3,7 +3,7 @@
 This ordered method applies to every `song/<slug>` branch and is enforced by `PRODUCTION_CONTRACT.json`, `production_guard.py`, `narrative_guard.py`, and, where source-library/recut features are present, `recut_guard.py`.
 
 ## 0 — Initialize authority/state
-Create the branch-local template files. New productions use Director Brain v2: set `director_brain_version=2` in `PROJECT_STATE.json` and create `OPERATING_ORDER.json` from the template. `SOURCE_AUTHORITY.json` allows current user inputs, current branch decisions, and current `main`; historical chats/unrelated branches are denied unless explicitly authorized.
+Create the branch-local template files. New productions use Director Brain v3: set `director_brain_version=3` in `PROJECT_STATE.json` and create `OPERATING_ORDER.json` from the template. `SOURCE_AUTHORITY.json` allows current user inputs, current branch decisions, and current `main`; historical chats/unrelated branches are denied unless explicitly authorized.
 
 Bootstrap current Main before production work. Read the Prime Directive and generated Second Brain before acting. Director Brain must keep complete-edit `accepted_baseline` state separate from `accepted_source_library` state.
 
@@ -65,7 +65,7 @@ Production mode:
 - `cinematic`
 - `hybrid`
 
-For Director Brain v2, record both in `OPERATING_ORDER.json` before `APPROACH_ESTABLISHED`. Also record the one-sentence mission, current-user direction, and exact next action.
+For Director Brain v3, record both in `OPERATING_ORDER.json` before `APPROACH_ESTABLISHED`. Also record the one-sentence mission, current-user direction, and exact next action.
 
 ## 2D — Accepted visual source: defect-first recovery/recut gate
 When the current user has approved visual source material but the edit/timeline is still allowed to change, record it as `accepted_source_library`; do not overload `accepted_baseline`.
@@ -85,7 +85,7 @@ Do not force generation when composition repetition, pacing, weak coverage, tran
 ## 3 — Establish visual/media approach
 Create/lock the production's visual DNA and `MEDIA_PLAN.json`. Choose deliberately among source footage, extracted frames, accepted source libraries, canonical hero libraries, source-derived coverage, generated stills/support imagery, living paintings, layered composites, depth/2.5D, reactive/atmospheric plates, loops, transitions, real radiance fields, real 3DGS when valid, and conventional video.
 
-For a no-reference production, `APPROACH_ESTABLISHED` is valid only after the Visual Direction Selection Gate is locked. For Director Brain v2, it also requires a valid Operating Order.
+For a no-reference production, `APPROACH_ESTABLISHED` is valid only after the Visual Direction Selection Gate is locked. For Director Brain v3, it also requires a valid Operating Order.
 
 For a source-library recut, `canonical_hero_library` means a non-empty, measured, diversity-selected shot library with source/hash evidence. Final selection may use dense time sampling for candidates but must not simply keep every Nth second.
 
@@ -124,7 +124,7 @@ If `MEDIA_PLAN.json` selects generated stills/support imagery/living paintings, 
 
 If a shot is source-derived from an accepted source library, its asset provenance must record the accepted source-library SHA-256, source time or range, and the derivation performed. Crops/reframes, detail extraction, alternate framing, source-range reuse, conservative pan/scan, restrained depth/parallax where valid, masked/layered treatment, and source-derived environmental inserts remain `source_derived`; generated new content is a separate origin and must not be mislabeled.
 
-Director Brain v2 visual assets should carry lifecycle state: `exploratory`, `candidate`, `approved`, `canonical`, `derived`, `rejected`, or `retired`. Locked canonical assets are not casually regenerated.
+Director Brain v3 visual assets should carry lifecycle state: `exploratory`, `candidate`, `approved`, `canonical`, `derived`, `rejected`, or `retired`. Locked canonical assets are not casually regenerated.
 
 A user's request to keep chat light or avoid previews is **not** permission to skip generation. If the runtime surfaces generated-image previews as part of producing assets, allow them and keep surrounding chatter minimal.
 
@@ -143,6 +143,8 @@ Creative recipe is separate from render backend. If a proof uses one backend and
 ## 7 — Music-directed behavior
 Use the `MUSIC_ANALYSIS.json` section map and preferably one preserved, smoothed, frame-aligned song analysis bus (RMS/onset/low/mid/high) when several systems need the same signals. Musical cues are directing inputs, not optional decoration.
 
+For music-led living-scene or hybrid Director Brain v3 work, use the standard music-directed section assembly. Record contiguous sections in `MUSIC_CONTROL_MAP.json`; assign every section a neutral scene profile and explicit base/reactive/fill/transition pass status in `SECTION_RENDER_MANIFEST.json`; prove every non-absent pass before assembly. `FX_APPLICATION_PROOF.json` must tie selected FX to actual hashed section outputs and visible-change evidence. A local render is not a final candidate until this execution evidence is complete.
+
 ## 8 — Lock FX
 Only accepted shot recipes enter the production FX manifest. Resolve reusable callable effects from `fx_v2/registry.json`, declare real pixel-altering render inputs, run the fail-closed canonical precompile gate, generate and verify `fx.lock.json` immediately before compile.
 
@@ -156,7 +158,7 @@ Inspect the actual full export for black/damaged frames, freezes, repetition, lo
 
 Also compare the complete export against `SCRIPT.json`: every scripted section must materially appear. A technically clean export fails if the intended visual behavior is absent or replaced by placeholders.
 
-Apply `MODE_AWARE_QC.md`. Director Brain v2 requires mode-aware proof acceptance and final QC state, not only technical pass flags.
+Apply `MODE_AWARE_QC.md`. Director Brain v3 requires mode-aware proof acceptance and final QC state, not only technical pass flags.
 
 `export_variety_qc.py` records composition/repetition evidence and supports before/after report comparison. Its metrics are evidence, not an automatic artistic verdict.
 

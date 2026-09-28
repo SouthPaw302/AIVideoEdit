@@ -22,7 +22,7 @@ After bootstrap, read in this order:
 2. `.aivideoedit/SECOND_BRAIN.md`
 3. `.aivideoedit/os/SOUL.md`
 
-For Director Brain v2 projects, `SECOND_BRAIN.md` must surface the active `OPERATING_ORDER.json`; do not begin production until you know the direction authority, production mode, canon state, accepted baseline, accepted source library, baseline-refinement scope, source-library recut scope, forbidden changes, named defects, and exact next action.
+For Director Brain v3 projects, `SECOND_BRAIN.md` must surface the active `OPERATING_ORDER.json`; do not begin production until you know the direction authority, production mode, canon state, accepted baseline, accepted source library, baseline-refinement scope, source-library recut scope, forbidden changes, named defects, and exact next action.
 
 ## Authority
 1. Current explicit user instruction.
@@ -71,7 +71,7 @@ A supplied reference can lead any of the three production modes. Never assume â€
 - Use `python .aivideoedit/os/general/reusable/tools/workflow_resolver.py --project <project-dir> --json` to inspect the selected standard workflows; do not substitute historical production names for capability names.
 - If the session attestation is missing, branch-mismatched, or its critical OS hashes changed, the guard must fail.
 - Start every new agent/session with a fresh bootstrap, even when reusing the same sandbox.
-- For a Director Brain v2 project, do not perform an action outside `refinement_scope.allowed_changes` while baseline refinement is active unless the current user updates authorization.
+- For a Director Brain v3 project, do not perform an action outside `refinement_scope.allowed_changes` while baseline refinement is active unless the current user updates authorization.
 - For an active source-library recut, do not act outside `recut_scope.allowed_changes`, do not violate `forbidden_changes`, and do not replace source canon when `source_replacement_authorized=false`.
 
 ## Non-negotiable sequence
@@ -101,7 +101,7 @@ Before `APPROACH_ESTABLISHED`, the agent must:
 4. give every route a name, interpretation, rendering/media treatment, production mode, and a numbered mini-storyboard with at least three beats/frames;
 5. accept a single route, a hybrid of numbered routes, or explicit user modifications;
 6. record the presented options and the user's explicit current-chat selection in `MEDIA_PLAN.json`; and
-7. lock the resulting direction authority + production mode in `OPERATING_ORDER.json` for Director Brain v2 projects before production media is generated.
+7. lock the resulting direction authority + production mode in `OPERATING_ORDER.json` for Director Brain v3 projects before production media is generated.
 
 Concept/storyboard previews created solely to let the user choose a route are decision artifacts, not production media. They may not be silently promoted into the production unless the user-selected direction authorizes them.
 
@@ -112,10 +112,10 @@ After the storyboard/shot map is locked and **before shot packages are built**, 
 
 The script must cover the complete target frame range and map each span to: shot ID, story action, planned visual media, animation behavior, musical cues, lyric cue when applicable, and transition.
 
-For Director Brain v2 `living_scene` work, every script entry must identify semantic `motion_regions` and protected regions. For `hybrid`, every entry must declare whether that shot is using `living_scene` or `cinematic` behavior and meet the corresponding requirements.
+For Director Brain v3 `living_scene` work, every script entry must identify semantic `motion_regions` and protected regions. For `hybrid`, every entry must declare whether that shot is using `living_scene` or `cinematic` behavior and meet the corresponding requirements.
 
 ### Canon, baseline refinement, and source-library recut law
-For Director Brain v2 projects:
+For Director Brain v3 projects:
 - canonical assets are never disposable source material;
 - asset lifecycle is `exploratory -> candidate -> approved -> canonical -> derived`, with `rejected` and `retired` terminal/side states as appropriate;
 - an accepted baseline must record its locator, hash, and current-user acceptance statement and protects the complete edit;

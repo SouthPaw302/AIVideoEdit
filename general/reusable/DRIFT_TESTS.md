@@ -5,7 +5,7 @@ These scenarios test whether the operating system keeps an agent on the intended
 ## 1. New music-only project, no visual reference
 Expected behavior:
 - bootstrap current `main`;
-- create Director Brain v2 project state and Operating Order;
+- create Director Brain v3 project state and Operating Order;
 - analyze music/lyrics/genre;
 - present at least three materially distinct visual routes before production media;
 - include genuinely different production modes where appropriate;
@@ -98,7 +98,7 @@ Drift failure:
 - overwriting the accepted artistic master with platform packaging.
 
 ## Pass condition
-Director Brain v2 passes when an agent can immediately answer:
+Director Brain v3 passes when an agent can immediately answer:
 1. What am I making?
 2. Who/what is directing it?
 3. What production mode is active?

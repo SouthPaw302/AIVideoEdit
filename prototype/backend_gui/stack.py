@@ -10,22 +10,15 @@ import storage
 import tool_api
 import operating_tools
 import harness_tools
+import remote_bridge
 import production_analysis
 import production_assembly
 import production_project
 from core_adapter import CORE
-from runtime_v2.boot.capsule import refresh_from_session
 
 WORKER_COUNT=max(1,int(os.environ.get("AIVE_WORKERS","2")))
 JOB_QUEUE:queue.Queue[dict]=queue.Queue()
 def all_tool_schemas():return tool_api.schemas()+operating_tools.schemas()+harness_tools.schemas()
-
-def _refresh_runtime_capsule(pid):
-    status=production_project.status(pid);engine_text=status.get("engine_root")
-    if not engine_text:return
-    engine=Path(engine_text)
-    if (engine/".aivideoedit"/"boot_capsule.json").is_file():
-        refresh_from_session(engine)
 
 def sync_project_job(job):
     pid=job["project"];base.update_job(job["id"],status="running",started_at=base.now(),progress=5)
@@ -70,13 +63,12 @@ def analyze_production_job(job):
         needs=[]
         if not result.get("lyrics_status_resolved"):needs.append("lyrics status")
         if not result.get("genre_authority_resolved"):needs.append("genre")
-        _refresh_runtime_capsule(pid)
         suffix=f" · needs {', '.join(needs)}" if needs else "";base.update_job(job["id"],status="complete",progress=100,result=f"Reference/music analysis complete{suffix}",finished_at=base.now())
     except Exception as exc:base.update_job(job["id"],status="failed",progress=100,result=str(exc)[:600],finished_at=base.now())
 def assemble_production_job(job):
     pid=job["project"];base.update_job(job["id"],status="running",started_at=base.now(),progress=10,result="Assembling accepted shot proofs…")
     try:
-        result=production_assembly.assemble(pid,width=int(job.get("width") or 1280),height=int(job.get("height") or 720));_refresh_runtime_capsule(pid);asset=result.get("asset") or {};base.update_job(job["id"],status="complete",progress=100,result=f"Assembly ready · {asset.get('metadata',{}).get('duration_seconds','?')}s · {asset.get('id','')}",finished_at=base.now())
+        result=production_assembly.assemble(pid,width=int(job.get("width") or 1280),height=int(job.get("height") or 720));asset=result.get("asset") or {};base.update_job(job["id"],status="complete",progress=100,result=f"Assembly ready · {asset.get('metadata',{}).get('duration_seconds','?')}s · {asset.get('id','')}",finished_at=base.now())
     except Exception as exc:base.update_job(job["id"],status="failed",progress=100,result=str(exc)[:900],finished_at=base.now())
 def execute_job(job):
     handlers={"ffmpeg_check":lambda:base.run_ffmpeg_check(job["id"]),"analyze_media":lambda:base.analyze_asset(job["id"],job["asset_id"]),"make_proxy":lambda:base.make_proxy(job["id"],job["asset_id"]),"extract_review_frames":lambda:base.extract_review_frames(job["id"],job["asset_id"]),"qc_media":lambda:base.qc_asset(job["id"],job["asset_id"]),"sync_project":lambda:sync_project_job(job),"analyze_production":lambda:analyze_production_job(job),"assemble_production":lambda:assemble_production_job(job)}
@@ -108,6 +100,18 @@ def prepare_project(pid):
         if (asset.get("qc") or {}).get("status")!="pass":created.append(base.add_job("qc_media",pid,asset["id"]))
     for job in created:dispatch_job(job)
     return created
+def _tool_call(name: str, args: dict):
+    if name.startswith("harness."):
+        return harness_tools.call(name,args)
+    return tool_api.call_tool(name,args,dispatch_job=dispatch_job,prepare_project=prepare_project)
+
+
+def _remote_auth(handler):
+    ok,reason=remote_bridge.authorize(handler.headers)
+    rid=remote_bridge.request_id(handler.headers)
+    return ok,reason,rid
+
+
 def _json_body(handler):
     length=int(handler.headers.get("Content-Length","0") or 0);raw=handler.rfile.read(length) if length else b"{}"
     try:
@@ -122,6 +126,15 @@ class StackHandler(base.Handler):
         if path=="/api/storage":return self.send_json(storage.status())
         if path=="/api/core":return self.send_json(CORE.status())
         if path=="/api/tools":return self.send_json({"schema":"aivideoedit.tools.v1","tools":all_tool_schemas()})
+        if path=="/api/remote/health":
+            if not remote_bridge.enabled():
+                return self.send_json({"ok":False,"error":"remote bridge disabled"},404)
+            return self.send_json({"ok":True,"schema":"aivideoedit.remote-health.v1","bridge":"existing_stack_adapter"})
+        if path=="/api/remote/capabilities":
+            ok,reason,rid=_remote_auth(self)
+            if not ok:return self.send_json({"ok":False,"error":reason,"request_id":rid},401)
+            names=[x.get("name") for x in all_tool_schemas() if isinstance(x,dict) and x.get("name")]
+            return self.send_json({"ok":True,"request_id":rid,"result":remote_bridge.capability_document(names,harness_enabled=harness_tools.status().get("enabled",False))})
         return super().do_GET()
     def do_POST(self):
         path=urlparse(self.path).path
@@ -133,15 +146,21 @@ class StackHandler(base.Handler):
             try:
                 data=_json_body(self);name=str(data.get("name") or "");args=data.get("arguments") if isinstance(data.get("arguments"),dict) else {}
                 if not name:return self.send_json({"error":"tool name is required"},400)
-                if name.startswith("harness."):
-                    result=harness_tools.call(name,args)
-                elif name.startswith("operating."):
-                    result=operating_tools.call(name,args)
-                else:
-                    result=tool_api.call_tool(name,args,dispatch_job=dispatch_job,prepare_project=prepare_project)
+                result=_tool_call(name,args)
                 return self.send_json({"ok":True,"tool":name,"result":result})
             except ValueError as exc:return self.send_json({"ok":False,"error":str(exc)},400)
             except Exception as exc:return self.send_json({"ok":False,"error":str(exc)},500)
+        if path=="/api/remote/call":
+            ok,reason,rid=_remote_auth(self)
+            if not ok:return self.send_json({"ok":False,"error":reason,"request_id":rid},401)
+            try:
+                data=_json_body(self);name=str(data.get("name") or "");args=data.get("arguments") if isinstance(data.get("arguments"),dict) else {}
+                valid={x.get("name") for x in all_tool_schemas() if isinstance(x,dict)}
+                if name not in valid:return self.send_json({"ok":False,"error":"unknown or unapproved tool","request_id":rid},400)
+                result=_tool_call(name,args)
+                return self.send_json({"ok":True,"request_id":rid,"tool":name,"result":result})
+            except ValueError as exc:return self.send_json({"ok":False,"error":str(exc),"request_id":rid},400)
+            except Exception as exc:return self.send_json({"ok":False,"error":str(exc),"request_id":rid},500)
         if path.startswith("/api/projects/") and path.endswith("/prepare"):
             parts=path.strip("/").split("/");pid=parts[2]
             if not base.find_project(pid):return self.send_json({"error":"project not found"},404)

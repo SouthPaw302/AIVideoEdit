@@ -11,7 +11,6 @@ from __future__ import annotations
 import json
 import os
 import shutil
-import stat
 import subprocess
 import sys
 from pathlib import Path
@@ -29,7 +28,11 @@ SESSION_FILE = SESSION_ROOT / "session.json"
 CONTRACT = Path("general/reusable/PRODUCTION_CONTRACT.json")
 CAPABILITY_MATRIX = Path("general/reusable/MEDIA_CAPABILITY_MATRIX.json")
 FX_REGISTRY = Path("general/reusable/fx_v2/registry.json")
-AUTHORITY_REF = os.environ.get("AIVE_AUTHORITY_REF", "main").strip() or "main"
+
+
+def _core_ref() -> str:
+    value = os.environ.get("AIVE_CORE_REF", "main").strip()
+    return value or "main"
 
 
 def _read_json(path: Path, default: Any) -> Any:
@@ -55,7 +58,7 @@ def _host_branch() -> str:
     return "unknown"
 
 
-def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedProcess:
+def _run(cmd: list[str], cwd: Path, timeout: int = 300, env: dict | None = None) -> subprocess.CompletedProcess:
     return subprocess.run(
         cmd,
         cwd=str(cwd),
@@ -63,13 +66,8 @@ def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedP
         text=True,
         timeout=timeout,
         check=False,
+        env=env,
     )
-
-
-def _remove_readonly(func, path, _exc_info) -> None:
-    """Permit replacement of a Git cache containing read-only pack files on Windows."""
-    os.chmod(path, stat.S_IWRITE)
-    func(path)
 
 
 class CoreAdapter:
@@ -78,12 +76,11 @@ class CoreAdapter:
         self.core_repo = CORE_REPO
         self.os_root = OS_ROOT
         self.session_file = SESSION_FILE
-        self.authority_ref = AUTHORITY_REF
 
     def _install_core(self, offline: bool) -> subprocess.CompletedProcess:
         CORE_HOME.mkdir(parents=True, exist_ok=True)
         if CORE_REPO.exists():
-            shutil.rmtree(CORE_REPO, onerror=_remove_readonly)
+            shutil.rmtree(CORE_REPO)
 
         if offline:
             if not shutil.which("git"):
@@ -94,20 +91,17 @@ class CoreAdapter:
             )
             if proc.returncode != 0:
                 return proc
-            target = f"origin/{self.authority_ref}"
+            ref = _core_ref()
+            target = f"origin/{ref}"
             check = _run(["git", "rev-parse", "--verify", target], CORE_REPO, timeout=30)
             if check.returncode != 0:
-                target = self.authority_ref
+                target = ref
             return _run(["git", "checkout", "--detach", target], CORE_REPO, timeout=60)
 
         if not HOST_BOOTSTRAP.is_file():
             raise RuntimeError("host bootstrap.py not found")
         return _run(
-            [
-                sys.executable, str(HOST_BOOTSTRAP), "install",
-                "--workspace", str(CORE_REPO),
-                "--authority-ref", self.authority_ref,
-            ],
+            [sys.executable, str(HOST_BOOTSTRAP), "install", "--workspace", str(CORE_REPO)],
             HOST_REPO,
         )
 
@@ -130,6 +124,8 @@ class CoreAdapter:
         if not bootstrap.is_file():
             return {"ok": False, "bootstrapped": False, "error": "installed main lacks bootstrap.py", **self.status()}
 
+        requested_ref = _core_ref()
+        boot_branch = "main"
         cmd = [
             sys.executable,
             str(bootstrap),
@@ -137,13 +133,15 @@ class CoreAdapter:
             "--repo-root",
             str(CORE_REPO),
             "--branch",
-            "main",
+            boot_branch,
         ]
-        if self.authority_ref != "main":
-            cmd += ["--authority-ref", self.authority_ref]
         if offline:
             cmd.append("--offline")
-        proc = _run(cmd, CORE_REPO, timeout=300)
+        env = dict(os.environ)
+        if requested_ref != "main":
+            env["AIVIDEOEDIT_AUTHORITY_REF"] = requested_ref
+            env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
+        proc = _run(cmd, CORE_REPO, timeout=300, env=env)
         result = {
             "ok": proc.returncode == 0,
             "returncode": proc.returncode,
@@ -161,19 +159,13 @@ class CoreAdapter:
         fx = _read_json(self.os_root / FX_REGISTRY, {}) if self.os_root.is_dir() else {}
         capabilities = self._records(matrix, ("capabilities", "media_capabilities", "items"))
         effects = self._records(fx, ("effects", "fx", "registry", "items"))
-        session_authority = str(session.get("os_authority_ref") or "main")
-        bootstrapped = (
-            bool(session)
-            and self.os_root.is_dir()
-            and session.get("branch") == "main"
-            and session_authority == self.authority_ref
-        )
+        ref = _core_ref()
+        bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == "main"
         return {
             "ok": True,
             "bootstrapped": bootstrapped,
-            "mode": "isolated-canonical-authority",
-            "authority_ref": self.authority_ref,
-            "authority_commit": session.get("os_authority_commit") or session.get("os_main_commit"),
+            "mode": "isolated-canonical-main" if ref == "main" else "isolated-validation-ref",
+            "requested_core_ref": ref,
             "host_repo": str(self.host_repo),
             "host_branch": _host_branch(),
             "core_repo": str(self.core_repo) if self.core_repo.exists() else None,

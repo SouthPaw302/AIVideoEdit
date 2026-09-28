@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """AIVideoEdit portable OS bootstrap.
 
-Every session materializes an exact authority ref into `.aivideoedit/os/`,
-runs fail-closed guards against the active workspace, attests critical OS hashes,
-and generates the session Second Brain plus a portable boot capsule. Production
-defaults to GitHub `main`; experimental refs must be selected explicitly.
+Every session materializes the entire exact current `main` commit into
+`.aivideoedit/os/`, runs current-main fail-closed guards against the active
+workspace, attests critical OS hashes, and generates the session Second Brain.
+GitHub `main` remains the operating-system authority.
 """
 from __future__ import annotations
 
@@ -18,16 +18,27 @@ import shutil
 import subprocess
 import sys
 import tarfile
-import urllib.parse
 import urllib.request
 import uuid
 from pathlib import Path
 
 REPOSITORY = "SouthPaw302/AIVideoEdit"
 DEFAULT_REF = "main"
+API_MAIN = f"https://api.github.com/repos/{REPOSITORY}/commits/{DEFAULT_REF}"
 SESSION_DIRNAME = ".aivideoedit"
 SESSION_SCHEMA = "aivideoedit.session.v1"
+BOOT_CAPSULE_SCHEMA = "aivideoedit.boot-capsule.v1"
+ATTESTATION_SCHEMA = "aivideoedit.session-attestation.v1"
 MANIFEST_PATH = "general/reusable/AIVIDEOEDIT_OS_MANIFEST.json"
+CACHE_ARCHIVE = "cache/main.tar.gz"
+CACHE_META = "cache/main.json"
+
+
+def authority_ref() -> str:
+    ref = os.environ.get("AIVIDEOEDIT_AUTHORITY_REF", DEFAULT_REF).strip() or DEFAULT_REF
+    if ref != DEFAULT_REF and os.environ.get("AIVIDEOEDIT_VALIDATION_MODE") != "1":
+        raise SystemExit("BOOTSTRAP FAIL: non-main authority ref requires explicit validation mode.")
+    return ref
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -128,20 +139,31 @@ def detect_project_dir(repo: Path, branch: str, explicit: str | None) -> Path | 
     return candidates[0] if len(candidates) == 1 else None
 
 
-def fetch_authority_sha(offline: bool, repo: Path, authority_ref: str) -> tuple[str, str]:
-    encoded = urllib.parse.quote(authority_ref, safe="")
+def fetch_main_sha(offline: bool, repo: Path) -> tuple[str, str]:
+    ref = authority_ref()
+    if ref != DEFAULT_REF:
+        sha = git(repo, "rev-parse", f"origin/{ref}") or git(repo, "rev-parse", ref) or git(repo, "rev-parse", "HEAD")
+        if sha:
+            return sha, f"validation-ref:{ref}"
+        raise SystemExit(f"BOOTSTRAP FAIL: cannot establish validation authority ref {ref}.")
     if not offline:
         try:
-            data = json.loads(http_bytes(f"https://api.github.com/repos/{REPOSITORY}/commits/{encoded}").decode("utf-8"))
+            data = json.loads(http_bytes(API_MAIN).decode("utf-8"))
             sha = str(data.get("sha") or "")
             if sha:
-                return sha, f"github-{authority_ref}"
+                return sha, "github-main"
         except Exception as exc:
-            print(f"BOOTSTRAP: GitHub {authority_ref} lookup unavailable ({exc}); trying local git.", file=sys.stderr)
-    sha = git(repo, "rev-parse", f"origin/{authority_ref}") or git(repo, "rev-parse", authority_ref)
+            print(f"BOOTSTRAP: GitHub main lookup unavailable ({exc}); trying local origin/main.", file=sys.stderr)
+    sha = git(repo, "rev-parse", "origin/main") or git(repo, "rev-parse", "main")
     if sha:
-        return sha, f"local-git-{authority_ref}"
-    raise SystemExit(f"BOOTSTRAP FAIL: cannot establish authoritative ref {authority_ref}.")
+        return sha, "local-git-main"
+    cache_meta = repo / SESSION_DIRNAME / CACHE_META
+    cached = read_json_if(cache_meta)
+    cached_sha = str(cached.get("main_commit") or "")
+    archive = repo / SESSION_DIRNAME / CACHE_ARCHIVE
+    if offline and cached_sha and archive.is_file():
+        return cached_sha, "cached-main"
+    raise SystemExit("BOOTSTRAP FAIL: cannot establish authoritative main commit.")
 
 
 def safe_extract_tar(tf: tarfile.TarFile, dest: Path, strip_first_component: bool) -> None:
@@ -168,22 +190,62 @@ def safe_extract_tar(tf: tarfile.TarFile, dest: Path, strip_first_component: boo
                 target.write_bytes(src.read())
 
 
-def materialize_entire_authority(repo: Path, os_root: Path, authority_sha: str, offline: bool) -> str:
+def _cache_paths(repo: Path) -> tuple[Path, Path]:
+    root = repo / SESSION_DIRNAME
+    return root / CACHE_ARCHIVE, root / CACHE_META
+
+
+def _write_main_cache(repo: Path, main_sha: str, data: bytes) -> None:
+    archive, meta = _cache_paths(repo)
+    archive.parent.mkdir(parents=True, exist_ok=True)
+    archive.write_bytes(data)
+    meta.write_text(json.dumps({
+        "schema": "aivideoedit.main-cache.v1",
+        "main_commit": main_sha,
+        "archive_sha256": sha256_bytes(data),
+        "cached_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+    }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def materialize_entire_main(repo: Path, os_root: Path, main_sha: str, offline: bool) -> str:
     if offline:
         try:
-            p = subprocess.run(["git", "-C", str(repo), "archive", "--format=tar", authority_sha],
+            p = subprocess.run(["git", "-C", str(repo), "archive", "--format=tar", main_sha],
                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
         except FileNotFoundError:
-            raise SystemExit("BOOTSTRAP FAIL: --offline requires git.")
-        if p.returncode != 0:
-            raise SystemExit("BOOTSTRAP FAIL: git archive of authoritative ref failed.")
-        with tarfile.open(fileobj=io.BytesIO(p.stdout), mode="r:") as tf:
-            safe_extract_tar(tf, os_root, False)
-        return "git-archive"
+            p = None
+        if p is not None and p.returncode == 0:
+            with tarfile.open(fileobj=io.BytesIO(p.stdout), mode="r:") as tf:
+                safe_extract_tar(tf, os_root, False)
+            return "git-archive"
+
+        archive, meta = _cache_paths(repo)
+        cached = read_json_if(meta)
+        if archive.is_file() and str(cached.get("main_commit") or "") == main_sha:
+            data = archive.read_bytes()
+            expected = str(cached.get("archive_sha256") or "")
+            if expected and sha256_bytes(data) != expected:
+                raise SystemExit("BOOTSTRAP FAIL: cached main archive hash mismatch.")
+            with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf:
+                safe_extract_tar(tf, os_root, True)
+            return "cached-github-archive"
+        raise SystemExit("BOOTSTRAP FAIL: offline boot needs local git main or a verified cached main archive.")
+
     try:
-        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/{authority_sha}", timeout=90)
+        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/{main_sha}", timeout=90)
     except Exception as exc:
-        raise SystemExit(f"BOOTSTRAP FAIL: exact authority OS download failed: {exc}. Use --offline when the local authority ref is trusted/current.")
+        archive, meta = _cache_paths(repo)
+        cached = read_json_if(meta)
+        if archive.is_file() and str(cached.get("main_commit") or "") == main_sha:
+            data = archive.read_bytes()
+            expected = str(cached.get("archive_sha256") or "")
+            if expected and sha256_bytes(data) != expected:
+                raise SystemExit("BOOTSTRAP FAIL: cached main archive hash mismatch.")
+            with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf:
+                safe_extract_tar(tf, os_root, True)
+            return "cached-github-archive"
+        raise SystemExit(f"BOOTSTRAP FAIL: exact current-main OS download failed: {exc}.")
+    _write_main_cache(repo, main_sha, data)
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf:
         safe_extract_tar(tf, os_root, True)
     return "github-archive"
@@ -236,12 +298,12 @@ def run_bootstrap_guards(repo: Path, os_root: Path, branch: str, project: Path |
         run_guard(workflow, ["--branch", branch], env, "standard workflow contract")
 
 
-def handoff_to_authority_bootstrap(repo: Path, os_root: Path, branch: str, args: argparse.Namespace) -> None:
-    if os.environ.get("AIVIDEOEDIT_BOOTSTRAP_REEXEC") == "1":
+def handoff_to_current_main_bootstrap(repo: Path, os_root: Path, branch: str, args: argparse.Namespace) -> None:
+    if branch == "main" or os.environ.get("AIVIDEOEDIT_BOOTSTRAP_REEXEC") == "1":
         return
     canonical = os_root / "bootstrap.py"
     if not canonical.is_file():
-        raise SystemExit("BOOTSTRAP FAIL: authority snapshot lacks bootstrap.py")
+        raise SystemExit("BOOTSTRAP FAIL: current-main snapshot lacks bootstrap.py")
     try:
         same = Path(__file__).resolve().is_file() and sha256_file(Path(__file__).resolve()) == sha256_file(canonical)
     except Exception:
@@ -249,9 +311,6 @@ def handoff_to_authority_bootstrap(repo: Path, os_root: Path, branch: str, args:
     if same:
         return
     cmd = [sys.executable, str(canonical), "boot", "--repo-root", str(repo), "--branch", branch]
-    authority_ref = str(args.authority_ref or DEFAULT_REF)
-    if authority_ref != DEFAULT_REF:
-        cmd += ["--authority-ref", authority_ref]
     if args.project_dir:
         cmd += ["--project-dir", str(args.project_dir)]
     if args.offline:
@@ -310,7 +369,7 @@ def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | N
     lines = [
         "# AIVideoEdit Session Second Brain", "",
         "> Generated by `bootstrap.py`. Ephemeral working context; never a separate authority.", "",
-        f"- Session: `{session_id}`", f"- Authority OS commit: `{main_sha}`", f"- Active branch: `{branch}`", "",
+        f"- Session: `{session_id}`", f"- Current-main OS commit: `{main_sha}`", f"- Active branch: `{branch}`", "",
         "## PRIME DIRECTIVE", prime or "ERROR: PRIME_DIRECTIVE.md was not readable.", "",
     ]
     if not project:
@@ -377,9 +436,126 @@ def build_second_brain(repo: Path, os_root: Path, branch: str, project: Path | N
     return "\n".join(lines) + "\n"
 
 
+def _sha256_optional(path: Path) -> str | None:
+    return sha256_file(path) if path.is_file() else None
+
+
+def _stable_json_sha256(value: dict) -> str:
+    raw = json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return sha256_bytes(raw)
+
+
+def _project_snapshot(repo: Path, project: Path | None) -> dict:
+    if project is None:
+        return {
+            "project_dir": None,
+            "stage": None,
+            "exact_next_action": None,
+            "project_state_sha256": None,
+            "operating_order_sha256": None,
+            "reference_manifest_sha256": None,
+            "asset_manifest_sha256": None,
+            "media_locators": [],
+        }
+
+    state_path = project / "PROJECT_STATE.json"
+    order_path = project / "OPERATING_ORDER.json"
+    refs_path = project / "REFERENCE_MANIFEST.json"
+    assets_path = project / "ASSET_MANIFEST.json"
+    state = read_json_if(state_path)
+    order = read_json_if(order_path)
+    exact_next_action = (
+        str(order.get("exact_next_action") or "").strip()
+        or str(state.get("exact_next_action") or "").strip()
+        or None
+    )
+    media_locators: list[str] = []
+    for section in ("accepted_baseline", "accepted_source_library"):
+        rec = order.get(section)
+        if isinstance(rec, dict):
+            locator = str(rec.get("file_or_locator") or "").strip()
+            if locator:
+                media_locators.append(locator)
+
+    return {
+        "project_dir": project.relative_to(repo).as_posix(),
+        "stage": state.get("stage"),
+        "exact_next_action": exact_next_action,
+        "project_state_sha256": _sha256_optional(state_path),
+        "operating_order_sha256": _sha256_optional(order_path),
+        "reference_manifest_sha256": _sha256_optional(refs_path),
+        "asset_manifest_sha256": _sha256_optional(assets_path),
+        "media_locators": sorted(set(media_locators)),
+    }
+
+
+def build_boot_capsule(repo: Path, os_root: Path, branch: str, project: Path | None,
+                       main_sha: str, session_id: str, manifest_hash: str,
+                       file_hashes: dict[str, str], archive_source: str) -> dict:
+    project_snapshot = _project_snapshot(repo, project)
+    guards = {}
+    registries = {}
+    for rel in (
+        "general/reusable/tools/production_guard.py",
+        "general/reusable/tools/narrative_guard.py",
+        "general/reusable/tools/recut_guard.py",
+        "general/reusable/tools/workflow_guard.py",
+    ):
+        if rel in file_hashes:
+            guards[rel] = file_hashes[rel]
+        else:
+            digest = _sha256_optional(os_root / rel)
+            if digest:
+                guards[rel] = digest
+    for rel in (
+        "general/reusable/PRODUCTION_CONTRACT.json",
+        "general/reusable/STANDARD_WORKFLOW_REGISTRY.json",
+        "general/reusable/CANONICAL_EFFECT_REGISTRY.json",
+        "general/reusable/fx_v2/registry.json",
+        "general/reusable/intelligence/MODEL_REGISTRY.json",
+    ):
+        if rel in file_hashes:
+            registries[rel] = file_hashes[rel]
+        else:
+            digest = _sha256_optional(os_root / rel)
+            if digest:
+                registries[rel] = digest
+
+    return {
+        "schema": BOOT_CAPSULE_SCHEMA,
+        "session_id": session_id,
+        "repository": REPOSITORY,
+        "authority": {
+            "ref": authority_ref(),
+            "commit": main_sha,
+            "manifest_sha256": manifest_hash,
+            "archive_source": archive_source,
+        },
+        "active": {
+            "branch": branch,
+            **project_snapshot,
+        },
+        "guards": guards,
+        "registries": registries,
+    }
+
+
+def write_boot_capsule(session_dir: Path, capsule: dict) -> tuple[Path, Path]:
+    capsule_path = session_dir / "boot_capsule.json"
+    capsule_path.write_text(json.dumps(capsule, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    attestation = {
+        "schema": ATTESTATION_SCHEMA,
+        "session_id": capsule.get("session_id"),
+        "capsule_sha256": _stable_json_sha256(capsule),
+        "authority_commit": capsule.get("authority", {}).get("commit"),
+    }
+    attestation_path = session_dir / "session_attestation.json"
+    attestation_path.write_text(json.dumps(attestation, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return capsule_path, attestation_path
+
+
 def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, main_sha: str,
-                  authority_ref: str, os_source: str, archive_source: str, manifest_hash: str,
-                  file_hashes: dict[str, str]) -> Path:
+                  os_source: str, archive_source: str, manifest_hash: str, file_hashes: dict[str, str]) -> Path:
     session_dir = repo / SESSION_DIRNAME
     session_id = str(uuid.uuid4())
     order = read_json_if(project / "OPERATING_ORDER.json") if project else {}
@@ -393,8 +569,7 @@ def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, 
         "schema": SESSION_SCHEMA, "session_id": session_id,
         "started_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "repository": REPOSITORY,
         "branch": branch, "project_dir": project.relative_to(repo).as_posix() if project else None,
-        "os_main_commit": main_sha, "os_authority_ref": authority_ref, "os_authority_commit": main_sha,
-        "os_source": os_source, "archive_source": archive_source,
+        "os_main_commit": main_sha, "os_source": os_source, "archive_source": archive_source,
         "os_root": str(os_root), "manifest_sha256": manifest_hash, "os_files": file_hashes, "guard_result": "PASS",
         "director_brain_version": state.get("director_brain_version") if project else None,
         "direction_authority": order.get("direction_authority") if order else None,
@@ -406,74 +581,46 @@ def write_session(repo: Path, os_root: Path, branch: str, project: Path | None, 
     path = session_dir / "session.json"
     path.write_text(json.dumps(rec, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (session_dir / "SECOND_BRAIN.md").write_text(build_second_brain(repo, os_root, branch, project, main_sha, session_id), encoding="utf-8")
-    return path
+    capsule = build_boot_capsule(
+        repo, os_root, branch, project, main_sha, session_id,
+        manifest_hash, file_hashes, archive_source,
+    )
+    capsule_path, attestation_path = write_boot_capsule(session_dir, capsule)
+    return path, capsule_path, attestation_path
 
 
 def boot(args: argparse.Namespace) -> int:
     repo = find_repo_root(Path(args.repo_root) if args.repo_root else None)
     branch = detect_branch(repo, args.branch)
     project = detect_project_dir(repo, branch, args.project_dir)
-    authority_ref = str(args.authority_ref or DEFAULT_REF)
     session_dir = repo / SESSION_DIRNAME
     os_root = session_dir / "os"
-
     session_dir.mkdir(parents=True, exist_ok=True)
-    if os_root.exists():
-        shutil.rmtree(os_root)
-    for ephemeral in ("session.json", "SECOND_BRAIN.md", "boot_capsule.json", "session_attestation.json"):
-        (session_dir / ephemeral).unlink(missing_ok=True)
+    for child in list(session_dir.iterdir()):
+        if child.name == "cache":
+            continue
+        if child.is_dir():
+            shutil.rmtree(child)
+        else:
+            child.unlink()
     os_root.mkdir(parents=True, exist_ok=True)
-
-    authority_sha, os_source = fetch_authority_sha(args.offline, repo, authority_ref)
-    archive_source = materialize_entire_authority(repo, os_root, authority_sha, args.offline)
-    handoff_to_authority_bootstrap(repo, os_root, branch, args)
-
+    main_sha, os_source = fetch_main_sha(args.offline, repo)
+    archive_source = materialize_entire_main(repo, os_root, main_sha, args.offline)
+    handoff_to_current_main_bootstrap(repo, os_root, branch, args)
     manifest, manifest_bytes = load_os_manifest(os_root)
     file_hashes = attest_manifest_files(os_root, manifest)
     run_bootstrap_guards(repo, os_root, branch, project)
-    session_path = write_session(
-        repo, os_root, branch, project, authority_sha, authority_ref, os_source, archive_source,
-        sha256_bytes(manifest_bytes), file_hashes
+    session_path, capsule_path, attestation_path = write_session(
+        repo, os_root, branch, project, main_sha, os_source, archive_source,
+        sha256_bytes(manifest_bytes), file_hashes,
     )
-
-    session = read_json_if(session_path)
-    capsule_tool = os_root / "runtime_v2" / "boot" / "capsule.py"
-    if not capsule_tool.is_file():
-        raise SystemExit("BOOTSTRAP FAIL: authority snapshot lacks Runtime V2 boot capsule writer.")
-    capsule_cmd = [
-        sys.executable, str(capsule_tool),
-        "--repo-root", str(repo),
-        "--os-root", str(os_root),
-        "--branch", branch,
-        "--authority-ref", authority_ref,
-        "--authority-commit", authority_sha,
-        "--session-id", str(session.get("session_id") or ""),
-    ]
-    if project:
-        capsule_cmd += ["--project-dir", str(project.relative_to(repo))]
-    capsule_run = subprocess.run(
-        capsule_cmd,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        check=False,
-    )
-    if capsule_run.returncode != 0:
-        raise SystemExit(
-            "BOOTSTRAP FAIL: Runtime V2 boot capsule creation failed: "
-            + capsule_run.stderr.strip()
-        )
-
     print("AIVideoEdit OS BOOTSTRAP: PASS")
-    print(f"authority_ref={authority_ref}")
-    print(f"authority_commit={authority_sha}")
-    if authority_ref == "main":
-        print(f"main={authority_sha}")
+    print(f"main={main_sha}")
     print(f"branch={branch}")
     print(f"os={os_root}")
     print(f"session={session_path}")
-    print(f"capsule={session_dir / 'boot_capsule.json'}")
-    print(f"attestation={session_dir / 'session_attestation.json'}")
+    print(f"boot_capsule={capsule_path}")
+    print(f"session_attestation={attestation_path}")
     print(f"second_brain={session_dir / 'SECOND_BRAIN.md'}")
     if project:
         print(f"project={project.relative_to(repo)}")
@@ -491,25 +638,20 @@ def status(args: argparse.Namespace) -> int:
 
 def install(args: argparse.Namespace) -> int:
     dst = Path(args.workspace).expanduser().resolve()
-    authority_ref = str(getattr(args, "authority_ref", None) or DEFAULT_REF)
     if dst.exists() and any(dst.iterdir()):
         raise SystemExit(f"INSTALL FAIL: workspace is not empty: {dst}")
     dst.parent.mkdir(parents=True, exist_ok=True)
     if shutil.which("git"):
-        p = subprocess.run(["git", "clone", "--branch", authority_ref, "--single-branch", f"https://github.com/{REPOSITORY}.git", str(dst)], check=False)
+        p = subprocess.run(["git", "clone", "--branch", DEFAULT_REF, "--single-branch", f"https://github.com/{REPOSITORY}.git", str(dst)], check=False)
         if p.returncode != 0:
             raise SystemExit("INSTALL FAIL: git clone failed.")
     else:
-        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/refs/heads/{urllib.parse.quote(authority_ref, safe='')}", timeout=90)
+        data = http_bytes(f"https://codeload.github.com/{REPOSITORY}/tar.gz/refs/heads/{DEFAULT_REF}", timeout=90)
         dst.mkdir(parents=True, exist_ok=True)
         with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf:
             safe_extract_tar(tf, dst, True)
     print(f"AIVideoEdit installed at {dst}")
-    print(f"authority_ref={authority_ref}")
-    next_cmd = f"{sys.executable} {dst/'bootstrap.py'} boot --repo-root {dst}"
-    if authority_ref != DEFAULT_REF:
-        next_cmd += f" --authority-ref {authority_ref}"
-    print(f"Next: {next_cmd}")
+    print(f"Next: {sys.executable} {dst/'bootstrap.py'} boot --repo-root {dst}")
     return 0
 
 
@@ -518,12 +660,10 @@ def main() -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("boot", help="load exact current-main OS and attest this session")
     b.add_argument("--repo-root"); b.add_argument("--branch"); b.add_argument("--project-dir")
-    b.add_argument("--authority-ref", default=os.environ.get("AIVIDEOEDIT_AUTHORITY_REF", DEFAULT_REF),
-                   help="OS authority ref. Defaults to main; use MainV2 explicitly for experimental validation.")
-    b.add_argument("--offline", action="store_true", help="materialize exact local authority ref via git archive instead of GitHub")
+    b.add_argument("--offline", action="store_true", help="materialize exact local origin/main via git archive instead of GitHub")
     b.set_defaults(func=boot)
     s = sub.add_parser("status", help="show current session attestation"); s.add_argument("--repo-root"); s.set_defaults(func=status)
-    i = sub.add_parser("install", help="install an exact AIVideoEdit authority ref into an empty sandbox"); i.add_argument("--workspace", required=True); i.add_argument("--authority-ref", default=DEFAULT_REF); i.set_defaults(func=install)
+    i = sub.add_parser("install", help="install AIVideoEdit main into an empty sandbox"); i.add_argument("--workspace", required=True); i.set_defaults(func=install)
     args = ap.parse_args()
     return int(args.func(args))
 

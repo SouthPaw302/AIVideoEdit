@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 from branch_policy import resolve_production_project
+from recipe_execution_guard import validate as validate_recipe_execution
 
 SCRIPT_ROOT = Path(__file__).resolve().parents[3]
 if os.environ.get("AIVIDEOEDIT_REPO_ROOT"):
@@ -126,6 +127,7 @@ def verify_bootstrap_session(branch: str):
         "general/reusable/STANDARD_WORKFLOW_REGISTRY.json",
         "general/reusable/tools/workflow_resolver.py",
         "general/reusable/tools/workflow_guard.py",
+        "general/reusable/tools/recipe_execution_guard.py",
     ]
     for rel in critical:
         p = os_root / rel
@@ -339,7 +341,7 @@ def validate_operating_order(project, state, stage, states, modes, errors):
         return load_json(path) if path.is_file() else None
 
     if not path.is_file():
-        fail("Director Brain v2 requires OPERATING_ORDER.json", errors)
+        fail("Director Brain v3 requires OPERATING_ORDER.json", errors)
         return None
 
     order = load_json(path)
@@ -439,7 +441,7 @@ def validate_operating_order(project, state, stage, states, modes, errors):
             script = load_json(script_path)
             entries = script.get("entries")
             if not isinstance(entries, list) or not entries:
-                fail("Director Brain v2 SCRIPT.json requires entries", errors)
+                fail("Director Brain v3 SCRIPT.json requires entries", errors)
             else:
                 for i, entry in enumerate(entries, start=1):
                     if not isinstance(entry, dict):
@@ -469,12 +471,12 @@ def validate_operating_order(project, state, stage, states, modes, errors):
 
     if at("SHOT_PROOFS_ACCEPTED") and not truthy(state.get("mode_aware_proofs_accepted")):
         fail(
-            "Director Brain v2 SHOT_PROOFS_ACCEPTED requires mode_aware_proofs_accepted=true",
+            "Director Brain v3 SHOT_PROOFS_ACCEPTED requires mode_aware_proofs_accepted=true",
             errors,
         )
     if at("FINAL_QC_PASSED") and not truthy(state.get("mode_aware_qc_passed")):
         fail(
-            "Director Brain v2 FINAL_QC_PASSED requires mode_aware_qc_passed=true",
+            "Director Brain v3 FINAL_QC_PASSED requires mode_aware_qc_passed=true",
             errors,
         )
 
@@ -579,8 +581,9 @@ def validate(branch: str):
     def at(name):
         return idx >= states.index(name)
 
-    validate_operating_order(project, state, stage, states, modes, errors)
+    order = validate_operating_order(project, state, stage, states, modes, errors)
     validate_asset_lifecycle(project, state, contract, errors)
+    validate_recipe_execution(project, state, order or {}, stage, states, errors)
 
     if at("SOURCE_INGESTED") and not truthy(state.get("source_ingest_complete")):
         fail("SOURCE_INGESTED requires source_ingest_complete=true", errors)

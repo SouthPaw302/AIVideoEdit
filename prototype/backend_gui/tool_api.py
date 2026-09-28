@@ -2,8 +2,15 @@
 """Provider-neutral Tool API for AIVideoEdit."""
 from __future__ import annotations
 from typing import Callable
-import sys
 from pathlib import Path
+import os
+import subprocess
+import sys
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 import server as base
 import storage
 import production_project
@@ -18,16 +25,10 @@ import production_fx
 import production_assembly
 import production_final_qc
 import production_archive
+import runtime_gatekeeper
+import operating_tools
+from general.reusable.tools.jev_decision import decide as jev_decide
 from core_adapter import CORE
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
-
-from runtime_v2.action_policy import policy_for
-from runtime_v2.boot.capsule import refresh_from_session
-from runtime_v2.decision_pipeline import decide_action
-from runtime_v2.gatekeeper import evaluate_action
 
 TOOL_SCHEMAS=[
 {"name":"core.status","description":"Show canonical AIVideoEdit OS/bootstrap status.","input_schema":{"type":"object","properties":{}}},
@@ -40,7 +41,6 @@ TOOL_SCHEMAS=[
 {"name":"project.prepare","description":"Queue all missing preview, review-frame and QC work for a project.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.initialize","description":"Create an isolated canonical song-branch production workspace.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.status","description":"Show canonical production branch, stage, next stage, manifest sync state and guard status.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
-{"name":"production.decide","description":"Read-only project-aware Runtime V2 gate + Jev decision preview for a proposed action; execution rechecks independently.","input_schema":{"type":"object","required":["project_id","action"],"properties":{"project_id":{"type":"string"},"action":{"type":"string"},"mutation":{"type":"boolean"},"checks":{"type":"object"},"observations":{"type":"object"},"protected_canon_replacement":{"type":"boolean"},"next_action_permitted":{"type":"boolean"}}}},
 {"name":"production.sync_assets","description":"Sync workstation media into canonical manifests without advancing stage or claiming analysis.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.analyze","description":"Queue evidence-producing reference extraction and music signal analysis.","input_schema":{"type":"object","required":["project_id"],"properties":{"project_id":{"type":"string"}}}},
 {"name":"production.set_music_context","description":"Record explicit lyrics status/text and genre authority.","input_schema":{"type":"object","required":["project_id","lyrics_status","genre"],"properties":{"project_id":{"type":"string"},"lyrics_status":{"type":"string","enum":["present","absent"]},"genre":{"type":"string"},"lyrics_text":{"type":"string"},"directing_use":{"type":"string"}}}},
@@ -114,79 +114,6 @@ def _project_status(pid):
     qp=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="pass");qf=sum(1 for a in assets if (a.get("qc") or {}).get("status")=="fail")
     return {"project":p,"assets":len(assets),"ready_assets":sum(1 for a in assets if a.get("status")=="ready"),"qc_pass":qp,"qc_fail":qf,"unchecked":max(0,len(assets)-qp-qf),"active_jobs":sum(1 for j in jobs if j.get("status") in {"queued","running"}),"canonical_core":CORE.status(),"production":production_project.status(pid)}
 
-PRODUCTION_MUTATIONS = {
-    "production.sync_assets",
-    "production.analyze",
-    "production.set_music_context",
-    "approach.set_capabilities",
-    "approach.set_routes",
-    "approach.select_route",
-    "storyboard.set",
-    "storyboard.lock",
-    "shots.build_packages",
-    "generated.request",
-    "generated.register",
-    "generated.accept",
-    "generated.reject",
-    "proofs.record",
-    "proofs.accept",
-    "proofs.finalize",
-    "proofs.reject",
-    "fx.set_requirements",
-    "fx.lock",
-    "assembly.run",
-    "final_qc.run_technical",
-    "final_qc.accept_creative",
-    "final_qc.reject",
-    "archive.build",
-    "production.advance",
-}
-
-
-def _runtime_gate_before(name: str, pid: str) -> tuple[bool, Path | None]:
-    if name not in PRODUCTION_MUTATIONS or not pid:
-        return False, None
-    current = production_project.status(pid)
-    engine_text = current.get("engine_root")
-    if not engine_text:
-        return False, None
-    engine = Path(str(engine_text)).resolve()
-    capsule_path = engine / ".aivideoedit" / "boot_capsule.json"
-    authority_ref = str(current.get("authority_ref") or "main")
-
-    # Preserve legacy/main behavior until Runtime V2 is explicitly selected,
-    # but fail closed for a MainV2 production that lost its attested session.
-    if not capsule_path.is_file():
-        if authority_ref == "MainV2":
-            raise RuntimeError("Runtime Gatekeeper DENY: MainV2 session attestation is missing")
-        return False, engine
-
-    policy = policy_for(name)
-    if policy.requires_canonical_guard:
-        guard = production_project.run_guard(pid)
-        if not guard.get("guard_pass"):
-            detail = guard.get("stderr") or guard.get("stdout") or "canonical production guard failed"
-            raise RuntimeError("Runtime Gatekeeper DENY: " + str(detail)[-1800:])
-
-    decision = evaluate_action(
-        repo=engine,
-        action=name,
-        mutation=True,
-        requested_changes=list(policy.change_tags),
-        canon_sensitive=policy.canon_sensitive,
-        expected_stage=str(current.get("stage") or "") or None,
-        target_branch=str(current.get("branch") or "") or None,
-    )
-    if decision.decision != "PASS":
-        raise RuntimeError("Runtime Gatekeeper DENY: " + "; ".join(decision.reasons))
-    return True, engine
-
-
-def _runtime_refresh(enabled: bool, engine: Path | None) -> None:
-    if enabled and engine is not None:
-        refresh_from_session(engine)
-
-
 def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
     a=arguments or {};pid=str(a.get("project_id") or "")
     if name=="core.status":return CORE.status()
@@ -202,28 +129,12 @@ def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],pre
     if name=="project.prepare":_project(pid);jobs=prepare_project(pid);return {"project_id":pid,"queued":len(jobs),"jobs":jobs}
     if name=="production.initialize":_project(pid);return production_project.initialize(pid)
     if name=="production.status":_project(pid);return production_project.status(pid)
-    if name=="production.decide":
-        _project(pid);current=production_project.status(pid);engine=Path(str(current.get("engine_root") or "")).resolve()
-        if not engine.is_dir():raise RuntimeError("production workspace is not initialized")
-        proposed=str(a.get("action") or "").strip()
-        if not proposed:raise ValueError("action is required")
-        policy=policy_for(proposed)
-        return decide_action(
-            repo=engine,
-            action=proposed,
-            mutation=bool(a.get("mutation",True)),
-            checks=a.get("checks") if isinstance(a.get("checks"),dict) else {},
-            observations=a.get("observations") if isinstance(a.get("observations"),dict) else {},
-            requested_changes=list(policy.change_tags),
-            expected_stage=str(current.get("stage") or "") or None,
-            target_branch=str(current.get("branch") or "") or None,
-            protected_canon_replacement=bool(a.get("protected_canon_replacement",False)),
-            canon_sensitive=policy.canon_sensitive,
-            next_action_permitted=bool(a.get("next_action_permitted",False)),
-        )
     if name=="production.sync_assets":_project(pid);return production_project.sync_assets(pid)
     if name=="production.analyze":_project(pid);job=base.add_job("analyze_production",pid,None);dispatch_job(job);return {"job":job}
     if name=="production.set_music_context":_project(pid);return production_analysis.set_music_context(pid,lyrics_status=str(a.get("lyrics_status") or ""),genre=str(a.get("genre") or ""),lyrics_text=str(a.get("lyrics_text") or ""),directing_use=str(a.get("directing_use") or "default"))
+    if name.startswith("operating."):
+        _project(pid)
+        return operating_tools.call(name,a)
     if name=="approach.status":_project(pid);return production_approach.status(pid)
     if name=="approach.set_capabilities":_project(pid);return production_approach.set_capabilities(pid,a.get("capabilities") if isinstance(a.get("capabilities"),list) else [],str(a.get("approach_summary") or ""))
     if name=="approach.set_routes":_project(pid);return production_approach.set_routes(pid,a.get("routes") if isinstance(a.get("routes"),list) else [],str(a.get("presentation_channel") or "studio"))
@@ -278,16 +189,125 @@ def _call_tool_unchecked(name,arguments,*,dispatch_job:Callable[[dict],None],pre
     raise ValueError(f"unknown tool: {name}")
 
 
+_READ_ONLY_TOOLS = {
+    "core.status", "capabilities.list", "fx.list", "project.list", "project.status",
+    "production.status", "operating.status", "approach.status", "storyboard.status", "storyboard.guard",
+    "shots.status", "shots.template", "generated.status", "proofs.status",
+    "fx.status", "fx.registry", "fx.verify", "assembly.status", "final_qc.status",
+    "archive.status", "archive.verify", "production.guard", "media.list",
+    "storage.status",
+}
 
-def call_tool(name, arguments, *, dispatch_job: Callable[[dict], None], prepare_project: Callable[[str], list[dict]]):
-    args = arguments or {}
-    pid = str(args.get("project_id") or "")
-    gated, engine = _runtime_gate_before(name, pid)
-    result = _call_tool_unchecked(
-        name,
-        arguments,
-        dispatch_job=dispatch_job,
-        prepare_project=prepare_project,
+_UNGATED_BOOTSTRAP_TOOLS = {
+    "core.bootstrap", "project.create", "project.prepare", "production.initialize",
+}
+
+_CHANGE_TAGS = {
+    "operating.configure_v2": ["operating order"],
+    "operating.update_next_action": ["operating order"],
+    "operating.lock_canon": ["canon lock"],
+    "operating.set_refinement": ["refinement scope"],
+    "production.sync_assets": ["media manifest update"],
+    "production.analyze": ["analysis evidence"],
+    "production.set_music_context": ["music context"],
+    "approach.set_capabilities": ["production approach"],
+    "approach.set_routes": ["visual direction"],
+    "approach.select_route": ["visual direction"],
+    "storyboard.set": ["storyboard"],
+    "storyboard.lock": ["storyboard lock"],
+    "shots.build_packages": ["shot packages"],
+    "generated.request": ["generation request"],
+    "generated.register": ["generated media registration"],
+    "generated.accept": ["asset acceptance"],
+    "generated.reject": ["asset rejection"],
+    "proofs.record": ["proof record"],
+    "proofs.accept": ["proof acceptance"],
+    "proofs.finalize": ["proof acceptance"],
+    "proofs.reject": ["proof rejection"],
+    "fx.set_requirements": ["fx requirements"],
+    "fx.lock": ["fx lock"],
+    "assembly.run": ["assembly"],
+    "final_qc.run_technical": ["qc evidence"],
+    "final_qc.accept_creative": ["final acceptance"],
+    "final_qc.reject": ["final rejection"],
+    "archive.build": ["archive"],
+    "production.advance": ["stage advance"],
+    "media.prepare": ["media derivative"],
+    "storage.sync": ["external backup"],
+}
+
+
+def _refresh_boot_capsule(project_id: str) -> None:
+    current = production_project.status(project_id)
+    if not current.get("initialized"):
+        return
+    engine = Path(current["engine_root"])
+    project_dir = Path(current["project_dir"])
+    env = dict(os.environ)
+    core_ref = os.environ.get("AIVE_CORE_REF", "main").strip() or "main"
+    if core_ref != "main":
+        env["AIVIDEOEDIT_AUTHORITY_REF"] = core_ref
+        env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
+    boot_cmd = [
+        sys.executable, str(engine / "bootstrap.py"), "boot",
+        "--repo-root", str(engine),
+        "--branch", str(current["branch"]),
+        "--project-dir", str(project_dir.relative_to(engine)),
+    ]
+    if os.environ.get("AIVE_OFFLINE", "").strip().lower() in {"1", "true", "yes", "on"}:
+        boot_cmd.append("--offline")
+    proc = subprocess.run(
+        boot_cmd,
+        cwd=str(engine), capture_output=True, text=True, timeout=300, check=False,
+        env=env,
     )
-    _runtime_refresh(gated, engine)
+    if proc.returncode != 0:
+        raise RuntimeError(
+            "mutation completed but boot capsule refresh failed: "
+            + ((proc.stderr or proc.stdout or "unknown bootstrap failure")[-1600:])
+        )
+
+
+def _require_runtime_gate(project_id: str, operation: str) -> dict:
+    current = production_project.status(project_id)
+    if not current.get("initialized"):
+        raise RuntimeError("production workspace is not initialized")
+    gate = runtime_gatekeeper.require(
+        engine=Path(current["engine_root"]),
+        project_dir=Path(current["project_dir"]),
+        branch=str(current["branch"]),
+        operation=operation,
+        change_tags=_CHANGE_TAGS.get(operation, [operation]),
+    )
+    decision = jev_decide({
+        "gate": "PASS",
+        "checks": {
+            "runtime_gatekeeper": gate.get("decision") == "PASS",
+            "session_attestation": True,
+        },
+        "next_action_permitted": True,
+    })
+    if decision.get("decision") != "CONTINUE":
+        raise RuntimeError(
+            "JEV BLOCK: " + str(decision.get("decision")) + ": " + str(decision.get("reason"))
+        )
+    return {"gatekeeper": gate, "jev": decision}
+
+
+def call_tool(name,arguments,*,dispatch_job:Callable[[dict],None],prepare_project:Callable[[str],list[dict]]):
+    a = arguments or {}
+    pid = str(a.get("project_id") or "")
+    if name not in _READ_ONLY_TOOLS and name not in _UNGATED_BOOTSTRAP_TOOLS and pid:
+        _require_runtime_gate(pid, name)
+
+    result = _call_tool_unchecked(
+        name, a, dispatch_job=dispatch_job, prepare_project=prepare_project
+    )
+
+    if (
+        name not in _READ_ONLY_TOOLS
+        and name not in _UNGATED_BOOTSTRAP_TOOLS
+        and pid
+    ):
+        _refresh_boot_capsule(pid)
     return result
