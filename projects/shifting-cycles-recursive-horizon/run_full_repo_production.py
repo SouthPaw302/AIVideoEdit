@@ -29,16 +29,16 @@ SCENES=[
 ("scene_10","10_concentric_rings_twilight.png",218.0,247.16,["reflection","water","parallax"]),
 ]
 STACKS={
-"scene_01":["FX2-SPATIAL-021","FX2-LIGHT-002","FX2-AUDIO-021","FX2-MOTION-003"],
+"scene_01":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-LIGHT-002","FX2-AUDIO-021","FX2-SURFACE-022","FX2-SURFACE-023"],
 "scene_02":["FX2-SPATIAL-021","FX2-LIGHT-001","FX2-AUDIO-021","FX2-CAMERA-022"],
-"scene_03":["FX2-SPATIAL-021","FX2-MOTION-003","FX2-SURFACE-023","FX2-AUDIO-021"],
+"scene_03":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-SURFACE-022","FX2-SURFACE-023","FX2-LIGHT-024","FX2-AUDIO-021"],
 "scene_04":["FX2-SPATIAL-021","FX2-LIGHT-024","FX2-AUDIO-021","FX2-CAMERA-023"],
-"scene_05":["FX2-SPATIAL-021","FX2-ATM-021","FX2-AUDIO-021","FX2-LIGHT-002"],
+"scene_05":["FX2-SPATIAL-021","FX2-ATM-021","FX2-VIS-022","FX2-LIGHT-002","FX2-AUDIO-021"],
 "scene_06":["FX2-SPATIAL-021","FX2-LIGHT-027","FX2-AUDIO-021","FX2-CAMERA-022"],
 "scene_07":["FX2-SPATIAL-021","FX2-LIGHT-002","FX2-AUDIO-021","FX2-CAMERA-023"],
 "scene_08":["FX2-SPATIAL-021","FX2-LIGHT-002","FX2-AUDIO-021","FX2-CAMERA-022","FX2-VIS-022"],
 "scene_09":["FX2-SPATIAL-021","FX2-LIGHT-027","FX2-AUDIO-021","FX2-VIS-022","FX2-DISTORT-021"],
-"scene_10":["FX2-SPATIAL-021","FX2-MOTION-003","FX2-SURFACE-023","FX2-AUDIO-021","FX2-LIGHT-001"],
+"scene_10":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-SURFACE-022","FX2-SURFACE-023","FX2-LIGHT-001","FX2-AUDIO-021","FX2-CAMERA-022"],
 }
 TRANS="FX2-TRANS-025"
 
@@ -93,6 +93,61 @@ def write_fx_plan(outdir, media_dir):
     mf=PROJECT/"FX_REQUIREMENTS_FULL.json"; mf.write_text(json.dumps(manifest,indent=2)+"\n")
     return manifest,plans
 
+def _soft_band_mask(h,w,y0,y1,feather=36):
+    mask=np.zeros((h,w),np.float32)
+    y0=max(0,min(h-1,int(y0))); y1=max(y0+1,min(h,int(y1)))
+    mask[y0:y1]=1.0
+    if feather>0:
+        mask=cv2.GaussianBlur(mask,(0,0),feather)
+        m=float(mask.max())
+        if m>1e-6: mask/=m
+    return mask[...,None]
+
+def _blend(base, treated, mask):
+    return np.clip(base.astype(np.float32)*(1.0-mask)+treated.astype(np.float32)*mask,0,255).astype(np.uint8)
+
+def _internal_scene_motion(frame, sid, t, c):
+    # Bounded, scene-local motion that moves world regions independently of the camera.
+    h,w=frame.shape[:2]
+    out=frame.copy()
+    energy=float(c["rms_n"]); onset=float(c["onset_n"])
+    if sid in {"scene_01","scene_03","scene_10"}:
+        y0=int(h*0.53)
+        lower=out[y0:].copy()
+        amp=2.0+5.0*energy
+        yy,xx=np.mgrid[0:lower.shape[0],0:w].astype(np.float32)
+        phase=2.0*math.pi*(t/5.3)
+        dx=(amp*np.sin(yy/15.0+phase)+1.5*np.sin(yy/37.0-phase*0.7)).astype(np.float32)
+        dy=(1.5*np.sin(xx/63.0-phase*0.45)).astype(np.float32)
+        warped=cv2.remap(lower,xx+dx,yy+dy,cv2.INTER_CUBIC,borderMode=cv2.BORDER_REFLECT101)
+        alpha=_soft_band_mask(h,w,y0,h,22)[y0:]
+        out[y0:]=_blend(lower,warped,alpha)
+        # Independent luminous ring pulse concentrated near the horizon.
+        pulse=(0.5+0.5*math.sin(2.0*math.pi*t/(3.1 if sid!="scene_10" else 6.4)))
+        glow=cv2.GaussianBlur(out,(0,0),8)
+        band=_soft_band_mask(h,w,int(h*.34),int(h*.66),42)
+        strength=(0.05+0.10*pulse+0.08*onset)
+        out=np.clip(out.astype(np.float32)*(1-band*strength)+glow.astype(np.float32)*(band*strength),0,255).astype(np.uint8)
+    elif sid=="scene_05":
+        # Two fog layers drift at different speeds to avoid one obvious loop.
+        blur=cv2.GaussianBlur(out,(0,0),5)
+        shift1=int(round(7*math.sin(2*math.pi*t/7.1)))
+        shift2=int(round(11*math.sin(2*math.pi*t/11.7+1.2)))
+        fog1=np.roll(blur,shift1,axis=1); fog2=np.roll(blur,shift2,axis=1)
+        sky=_soft_band_mask(h,w,0,int(h*.78),54)
+        mix=0.06+0.11*energy
+        out=np.clip(out.astype(np.float32)*(1-sky*mix)+((0.58*fog1+0.42*fog2).astype(np.float32))*sky*mix,0,255).astype(np.uint8)
+        # Sparse reactive star/particle glints in upper field.
+        rng=np.random.default_rng(302)
+        pts=rng.integers([0,0],[w,max(1,int(h*.62))],size=(42,2))
+        gl=out.copy()
+        vis=0.18+0.72*max(energy,onset)
+        for x,y in pts:
+            r=1+int(2*vis)
+            cv2.circle(gl,(int(x),int(y)),r,(210,225,255),-1,cv2.LINE_AA)
+        out=cv2.addWeighted(out,1.0,gl,0.10*vis,0)
+    return out
+
 def render_scene(sid,name,start,end,tags, media_dir,outdir,reactive,fx):
     src=fit(cv2.imread(str(media_dir/name)))
     if src is None: raise RuntimeError(f"missing image {name}")
@@ -106,16 +161,19 @@ def render_scene(sid,name,start,end,tags, media_dir,outdir,reactive,fx):
     for i in range(total):
         t=i/FPS; c=ctrl_at(reactive,start+t)
         ctx=FXContext(t=t,duration=dur,frame_index=i,fps=FPS,energy=float(c["rms_n"]),transient=float(c["onset_n"]))
-        frame=src.copy()
+        frame=_internal_scene_motion(src.copy(),sid,t,c)
         # semantic matte: sky/upper and reflection/lower regions used to keep motion local
         h,w=frame.shape[:2]
         if sid in {"scene_01","scene_03","scene_10"}:
             lower=frame[h//2:].copy()
         for eid in STACKS[sid]:
             treated=fx.apply_frame(eid,frame,ctx)
-            if eid in {"FX2-MOTION-003","FX2-SURFACE-023"} and sid in {"scene_01","scene_03","scene_10"}:
-                frame[:h//2]=frame[:h//2]
-                frame[h//2:]=treated[h//2:]
+            if sid in {"scene_01","scene_03","scene_10"} and eid in {"FX2-MOTION-002","FX2-MOTION-003","FX2-SURFACE-022","FX2-SURFACE-023"}:
+                mask=_soft_band_mask(h,w,int(h*.50),h,26)
+                frame=_blend(frame,treated,mask)
+            elif sid=="scene_05" and eid in {"FX2-ATM-021","FX2-VIS-022","FX2-LIGHT-002"}:
+                mask=_soft_band_mask(h,w,0,int(h*.82),48)
+                frame=_blend(frame,treated,mask)
             else:
                 frame=treated
         if next_src is not None and i>=total-FPS:
