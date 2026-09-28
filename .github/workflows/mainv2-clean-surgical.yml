@@ -1,9 +1,9 @@
-name: MainV2 Clean Surgical Verification
+name: MainV2 Surgical Verification
 
 on:
   push:
     branches:
-      - MainV2-clean
+      - MainV2
   workflow_dispatch:
 
 permissions:
@@ -39,6 +39,6 @@ jobs:
       - name: Upload compact verification report
         uses: actions/upload-artifact@v4
         with:
-          name: mainv2-clean-surgical-verification
+          name: mainv2-surgical-verification
           path: /tmp/surgical-verification.json
           retention-days: 3
