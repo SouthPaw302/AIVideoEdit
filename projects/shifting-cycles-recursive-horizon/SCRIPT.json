@@ -1,0 +1,85 @@
+{
+  "schema": "aivideoedit.script.v1",
+  "scenes": [
+    {
+      "id": "scene_01",
+      "start_seconds": 0,
+      "end_seconds": 20.5,
+      "visual": "01_recursive_horizon_anchor.png",
+      "animation": "depth_drift + ring_pulse",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_02",
+      "start_seconds": 20.5,
+      "end_seconds": 36.5,
+      "visual": "02_celestial_orrery_observatory.png",
+      "animation": "vertical_light_strings + reveal",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_03",
+      "start_seconds": 36.5,
+      "end_seconds": 52,
+      "visual": "03_golden_orbital_harmony_cityscape.png",
+      "animation": "reflection_shimmer + rhythmic_pan",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_04",
+      "start_seconds": 52,
+      "end_seconds": 77.5,
+      "visual": "04_golden_causeway_beneath_orbital_rings.png",
+      "animation": "forward_dolly + light_sweep",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_05",
+      "start_seconds": 77.5,
+      "end_seconds": 94,
+      "visual": "05_celestial_ruins_cloudsea.png",
+      "animation": "fog_travel + fragment_drift",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_06",
+      "start_seconds": 94,
+      "end_seconds": 115.5,
+      "visual": "06_celestial_rings_golden_dawn.png",
+      "animation": "alignment_pulse + controlled_parallax",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_07",
+      "start_seconds": 115.5,
+      "end_seconds": 143,
+      "visual": "07_celestial_golden_ring_metropolis.png",
+      "animation": "orchestral_lift + vertical_light",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_08",
+      "start_seconds": 143,
+      "end_seconds": 173.5,
+      "visual": "08_golden_orbital_metropolis_sunset.png",
+      "animation": "polyrhythmic_nodes + layered_depth",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_09",
+      "start_seconds": 173.5,
+      "end_seconds": 218,
+      "visual": "09_cosmic_arcology_radiant_horizon.png",
+      "animation": "climax_bloom + orbital_expansion",
+      "transition": "music_cued_handoff"
+    },
+    {
+      "id": "scene_10",
+      "start_seconds": 218,
+      "end_seconds": 247.16,
+      "visual": "10_concentric_rings_twilight.png",
+      "animation": "convergence + reflection_breath",
+      "transition": "resolve_hold"
+    }
+  ]
+}
