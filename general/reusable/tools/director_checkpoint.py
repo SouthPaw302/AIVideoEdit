@@ -4,7 +4,10 @@ from __future__ import annotations
 import argparse,json
 from datetime import datetime,timezone
 from pathlib import Path
-try:\n    from .execution_ledger import sha256_file\nexcept ImportError:\n    from execution_ledger import sha256_file
+try:
+    from .execution_ledger import sha256_file
+except ImportError:
+    from execution_ledger import sha256_file
 SCHEMA="aivideoedit.director-checkpoints.v1"
 ORDER=["media_selection","representative_proof","rough_cut","fx_pass","final_review"]
 def _now():return datetime.now(timezone.utc).isoformat().replace("+00:00","Z")
