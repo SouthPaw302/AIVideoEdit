@@ -37,8 +37,23 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Build a new YouTube long-form MountainNoir living-painting film from the approved raw Drive source set. Do not use finished videos as picture. Mix the first three songs back to back with small overlaps, then place El Viento instrumental last and keep any duration extension inside that finale movement before muxing.",
+  "current_user_direction": "Rerun Mountain Noir under MainV2 Director supervision. Do not reuse the failed long-form edit. Start with a short representative proof; no full 15-minute render until the proof is visually accepted.",
   "execution_requirement": "GitHub Actions production runner using exact current-main authority; production branch only.",
-  "exact_next_action": "Build the source-backed storyboard and frame-followable script from the accepted raw source library, then produce short mode-aware living-scene proofs before assembly.",
-  "updated_at_utc": "2026-09-27T01:00:00Z"
+  "exact_next_action": "Render a 30-second source-backed Director proof using MainV2 canonical FX execution receipts; review before any full-length assembly.",
+  "updated_at_utc": "2026-09-28T09:05:00Z",
+  "director_supervision": {
+    "required": true,
+    "reviewer_role": "sandbox_director",
+    "checkpoint_file": "DIRECTOR_CHECKPOINTS.json",
+    "execution_ledger_file": "PRODUCTION_EXECUTION_LEDGER.json",
+    "checkpoints": [
+      "media_selection",
+      "representative_proof",
+      "rough_cut",
+      "fx_pass",
+      "final_review"
+    ],
+    "runner_may_choose_art_direction": false,
+    "technical_pass_is_creative_pass": false
+  }
 }

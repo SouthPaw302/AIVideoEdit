@@ -1,0 +1,51 @@
+name: Mountain Noir Director Proof
+on:
+  workflow_dispatch:
+  push:
+    branches: [song/mountain-noir-after-midnight-mainv2-runtime]
+    paths:
+      - "projects/mountain-noir-after-midnight/run_director_proof.py"
+      - ".github/workflows/mountain-noir-director-proof.yml"
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
+      MN_PROOF_OUT: /tmp/mn-director-proof
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install proof runtime
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+          python -m pip install numpy opencv-python-headless onnxruntime pytest
+          python -m pip install -r general/reusable/fx_v2/requirements-runtime.txt
+      - name: Boot MainV2
+        run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
+      - name: Guard
+        run: |
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$GITHUB_REF_NAME"
+          python .aivideoedit/os/general/reusable/tools/workflow_guard.py --branch "$GITHUB_REF_NAME"
+      - name: Provision Beat This
+        run: python -m general.reusable.tools.model_provision music-beat-onnx-v1
+      - name: Render Director proof
+        run: python projects/mountain-noir-after-midnight/run_director_proof.py
+      - name: Upload proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: mountain-noir-director-proof
+          path: |
+            /tmp/mn-director-proof/Mountain_Noir_Director_Proof_30s.mp4
+            /tmp/mn-director-proof/result.json
+            /tmp/mn-director-proof/JEV_DECISION.json
+            /tmp/mn-director-proof/FX_REQUIREMENTS.json
+            /tmp/mn-director-proof/FX_LOCK.json
+            /tmp/mn-director-proof/PRODUCTION_EXECUTION_LEDGER.json
+          retention-days: 5

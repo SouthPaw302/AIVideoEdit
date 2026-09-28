@@ -204,6 +204,26 @@
     {
       "path": "general/reusable/fx_v2/verify_promoted_effects.py",
       "role": "neutral_standard_effect_verifier"
+    },
+    {
+      "path": "general/reusable/DIRECTOR_SUPERVISION.md",
+      "role": "sandbox_director_execution_contract"
+    },
+    {
+      "path": "general/reusable/tools/execution_ledger.py",
+      "role": "production_execution_receipt_ledger"
+    },
+    {
+      "path": "general/reusable/tools/director_checkpoint.py",
+      "role": "sandbox_director_checkpoint_gate"
+    },
+    {
+      "path": "general/reusable/fx_v2/executor.py",
+      "role": "canonical_fx_execution_boundary"
+    },
+    {
+      "path": "general/reusable/fx_v2/execution_guard.py",
+      "role": "fail_closed_fx_execution_guard"
     }
   ],
   "purpose": "Critical files whose exact current-main hashes are attested at every agent-session bootstrap. The bootstrap materializes the entire main branch, not only this list.",

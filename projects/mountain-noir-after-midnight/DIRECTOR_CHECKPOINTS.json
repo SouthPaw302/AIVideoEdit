@@ -1,0 +1,29 @@
+{
+  "schema": "aivideoedit.director-checkpoints.v1",
+  "project": "mountain-noir-after-midnight",
+  "created_at": "2026-09-28T09:05:00Z",
+  "updated_at": "2026-09-28T09:05:00Z",
+  "checkpoints": {
+    "media_selection": {
+      "status": "approved",
+      "reviewer": "sandbox_director",
+      "at": "2026-09-28T09:05:00Z",
+      "evidence": {
+        "basis": "accepted raw source set only; finished masters excluded"
+      },
+      "notes": "Six distinct source-backed visuals. No generic rain overlay."
+    },
+    "representative_proof": {
+      "status": "pending"
+    },
+    "rough_cut": {
+      "status": "pending"
+    },
+    "fx_pass": {
+      "status": "pending"
+    },
+    "final_review": {
+      "status": "pending"
+    }
+  }
+}

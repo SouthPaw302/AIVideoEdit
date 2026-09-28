@@ -2,7 +2,7 @@
   "schema": "aivideoedit.project-state.v1",
   "project_id": "mountain-noir-after-midnight",
   "branch": "song/mountain-noir-after-midnight-mainv2-runtime",
-  "director_brain_version": 2,
+  "director_brain_version": 4,
   "stage": "REFERENCES_ANALYZED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
@@ -46,6 +46,6 @@
     "drive_id": "13rKVvBu0P9VHpZ1HDPGMtgaThaRSdzBi",
     "reason": "Re-cut finished source videos instead of constructing the requested new long-form living-painting production."
   },
-  "exact_next_action": "Build a source-backed storyboard and frame-followable script, then prove the living-scene treatment before full assembly.",
-  "updated_at": "2026-09-28T05:50:00Z"
+  "exact_next_action": "Render a 30-second source-backed Director proof using MainV2 canonical FX execution receipts; review before any full-length assembly.",
+  "updated_at": "2026-09-28T09:05:00Z"
 }
