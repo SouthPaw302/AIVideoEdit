@@ -112,7 +112,10 @@ def main():
         if not init.get("guard_pass"):
             raise RuntimeError(f"production init guard failed: {init}")
         tool("production.sync_assets",{"project_id":pid})
-        ingest=tool("production.advance",{"project_id":pid,"target_stage":"SOURCE_INGESTED"})\n        snapshots.append({"source_ingested":ingest})\n        if not ingest.get("advanced"):\n            raise RuntimeError("SOURCE_INGESTED advance failed: "+json.dumps(ingest,sort_keys=True))
+        ingest=tool("production.advance",{"project_id":pid,"target_stage":"SOURCE_INGESTED"})
+        snapshots.append({"source_ingested":ingest})
+        if not ingest.get("advanced"):
+            raise RuntimeError("SOURCE_INGESTED advance failed: "+json.dumps(ingest,sort_keys=True))
         tool("production.set_music_context",{
             "project_id":pid,"lyrics_status":"absent","genre":"synthetic verification pulse",
             "directing_use":"music timing only"
