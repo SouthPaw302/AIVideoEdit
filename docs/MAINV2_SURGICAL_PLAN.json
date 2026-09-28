@@ -1,6 +1,6 @@
 {
   "plan": "AIVideoEdit Surgical Intelligence Integration",
-  "branch": "MainV2-clean",
+  "branch": "MainV2",
   "source_main_commit": "9fc16c16eae69514bf959170f96d6eb5ad4d9e56",
   "rules": [
     "No rewrite of AIVideoEdit.",

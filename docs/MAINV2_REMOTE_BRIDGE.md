@@ -1,4 +1,4 @@
-# MainV2-clean Remote Tool Bridge
+# MainV2 Remote Tool Bridge
 
 This is a thin authenticated adapter inside the existing AIVideoEdit Studio stack.
 
