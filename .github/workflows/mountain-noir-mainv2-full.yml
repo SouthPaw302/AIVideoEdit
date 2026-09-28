@@ -1,0 +1,90 @@
+name: Mountain Noir MainV2 Full Production
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - song/mountain-noir-after-midnight-mainv2-runtime
+    paths:
+      - "projects/mountain-noir-after-midnight/run_mainv2_full.py"
+      - "projects/mountain-noir-after-midnight/LIVING_SCENE_MANIFEST.json"
+      - "projects/mountain-noir-after-midnight/AUDIO_RENDER_FILTER.txt"
+      - "projects/mountain-noir-after-midnight/FX_RESOLUTION_CONTEXT.json"
+      - ".github/workflows/mountain-noir-mainv2-full.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  full-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
+      MN_MAINV2_OUT: /tmp/mountain-noir-mainv2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install media and MainV2 dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install --upgrade pip
+          python -m pip install pytest numpy onnxruntime opencv-python-headless
+          python -m pip install -r general/reusable/fx_v2/requirements-runtime.txt
+
+      - name: Boot exact MainV2 authority on production branch
+        run: |
+          python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
+          grep -q '"authority_ref": "MainV2"' .aivideoedit/session.json ||             grep -q '"os_main_commit"' .aivideoedit/session.json
+
+      - name: Run MainV2 guards
+        run: |
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$GITHUB_REF_NAME"
+          python .aivideoedit/os/general/reusable/tools/recut_guard.py --branch "$GITHUB_REF_NAME"
+          python .aivideoedit/os/general/reusable/tools/workflow_guard.py --branch "$GITHUB_REF_NAME"
+
+      - name: Run Jev and harness surgical verification
+        env:
+          AIVE_HARNESS_ENABLED: "1"
+        run: |
+          python general/reusable/tools/surgical_verify.py --json-out /tmp/mountain-noir-mainv2/surgical-verification.json
+          python prototype/backend_gui/harness_selftest.py
+
+      - name: Provision pinned Beat This ONNX model
+        run: python -m general.reusable.tools.model_provision music-beat-onnx-v1
+
+      - name: Run full source-to-final MainV2 production
+        run: python projects/mountain-noir-after-midnight/run_mainv2_full.py
+
+      - name: Upload compact MainV2 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mountain-noir-mainv2-evidence
+          path: |
+            /tmp/mountain-noir-mainv2/result.json
+            /tmp/mountain-noir-mainv2/surgical-verification.json
+            /tmp/mountain-noir-mainv2/FX_RESOLUTION.json
+            /tmp/mountain-noir-mainv2/FX_REQUIREMENTS.json
+            /tmp/mountain-noir-mainv2/FX_LOCK.json
+            /tmp/mountain-noir-mainv2/onnx
+            /tmp/mountain-noir-mainv2/qc
+          if-no-files-found: warn
+          retention-days: 5
+
+      - name: Upload finished MainV2 video
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mountain-noir-after-midnight-mainv2-video
+          path: /tmp/mountain-noir-mainv2/Mountain_Noir_After_Midnight_MAINV2_720p.mp4
+          if-no-files-found: warn
+          retention-days: 5
