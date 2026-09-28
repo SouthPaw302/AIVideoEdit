@@ -26,6 +26,8 @@ import cv2
 import numpy as np
 
 REPO = Path(__file__).resolve().parents[2]
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
 PROJECT = Path(__file__).resolve().parent
 OUT = Path(os.environ.get("MN_MAINV2_OUT", "/tmp/mountain-noir-mainv2")).resolve()
 MEDIA_TAG = "media-mountain-noir-after-midnight"
