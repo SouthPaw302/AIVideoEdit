@@ -1,0 +1,68 @@
+name: Shifting Cycles Full Repo Production
+on:
+  workflow_dispatch:
+  push:
+    branches: [song/shifting-cycles-recursive-horizon]
+    paths:
+      - ".github/workflows/shifting-cycles-full-repo.yml"
+permissions:
+  contents: read
+jobs:
+  full-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install full runtime
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libsndfile1
+          python -m pip install --quiet numpy opencv-python-headless soundfile onnxruntime pytest
+      - name: Boot exact MainV2
+        run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
+      - name: Resolve complete workflow plan
+        run: |
+          python .aivideoedit/os/general/reusable/tools/workflow_resolver.py --project "$GITHUB_WORKSPACE/projects/shifting-cycles-recursive-horizon" --json > workflow-plan.json
+          cat workflow-plan.json
+      - name: Fetch canonical production media
+        run: |
+          P="$GITHUB_WORKSPACE/projects/shifting-cycles-recursive-horizon/runtime_inputs"
+          mkdir -p "$P"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-1be8-822f-856e-85a7118b3524/raw?se=2026-09-28T22%3A52%3A54Z&sp=r&sv=2026-02-06&sr=b&scid=e3bdfce3-021d-5206-8289-51e359edf1c2&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A14%3A33Z&ske=2026-09-29T19%3A14%3A33Z&sks=b&skv=2026-02-06&sig=MiKmnYVQZRyFA3kLrnFFR1gdqkopjNG9j9%2B9tvXnP0Q%3D' -o "$P/Shifting_Cycles.wav"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-9080-81f7-89ea-70d794016075/raw?se=2026-09-28T22%3A52%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=22ce3034-7cd6-533c-a1b1-3e07d582a4f6&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A10%3A07Z&ske=2026-09-29T19%3A10%3A07Z&sks=b&skv=2026-02-06&sig=RV3iCY2aoatq5HkQlKsnbOt0eHuUHz3k9nz3diWy1Qw%3D' -o "$P/01_recursive_horizon_anchor.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-2908-81f5-ba69-2837001ff7b2/raw?se=2026-09-28T22%3A52%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=ff911c7e-316e-5811-967a-0e48040cb426&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A42%3A38Z&ske=2026-09-29T22%3A42%3A38Z&sks=b&skv=2026-02-06&sig=07t%2B/j0%2BoRX8i4e0sWjfMCPFLI7UbjOA%2B9NN/IcS6sU%3D' -o "$P/02_celestial_orrery_observatory.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntpreastus2.oaiusercontent.com/files/00000000-580c-81f6-97a1-41b1c0f0afbd/raw?se=2026-09-28T22%3A52%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=801b41b6-6b89-56aa-8d74-3d7570028183&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A18%3A58Z&ske=2026-09-29T19%3A18%3A58Z&sks=b&skv=2026-02-06&sig=asSeJdhWyDEG4zKvfKbsp4JrMW0e9egxjrIEv1nXcpU%3D' -o "$P/03_golden_orbital_harmony_cityscape.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-3b38-81f7-86aa-373eb161650d/raw?se=2026-09-28T22%3A52%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=12c0f7b1-0f24-51ab-b6b9-f10344ff9303&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A14%3A35Z&ske=2026-09-29T19%3A14%3A35Z&sks=b&skv=2026-02-06&sig=CNvBHTFyPvNq80zuohs3XnP7cEZyc2PbgrIjdCWN46o%3D' -o "$P/04_golden_causeway_beneath_orbital_rings.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-e740-81f7-b192-d127cb2970cd/raw?se=2026-09-28T22%3A52%3A49Z&sp=r&sv=2026-02-06&sr=b&scid=8972bbb9-9ad1-55c1-89e5-c5587c9485c1&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A45%3A00Z&ske=2026-09-29T22%3A45%3A00Z&sks=b&skv=2026-02-06&sig=6mUsxoqrVY1nUpIx7OvjcPzSqND2nsJEx55E1UBToWU%3D' -o "$P/05_celestial_ruins_cloudsea.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-9138-81f7-806a-e97ab222223c/raw?se=2026-09-28T22%3A52%3A49Z&sp=r&sv=2026-02-06&sr=b&scid=67f8a960-e8fd-53b2-81d7-0950df1be9ea&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A35%3A01Z&ske=2026-09-29T19%3A35%3A01Z&sks=b&skv=2026-02-06&sig=ZZeRfABthSj77eFsBFqBhW6B/rndAmy%2B%2Buj16N2bEtU%3D' -o "$P/06_celestial_rings_golden_dawn.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntpreastus2.oaiusercontent.com/files/00000000-5bc8-81f6-9baa-6d86ab96fb74/raw?se=2026-09-28T22%3A52%3A50Z&sp=r&sv=2026-02-06&sr=b&scid=9c8fff2c-4fda-5ac2-b629-14c0cdaf35aa&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A23%3A41Z&ske=2026-09-29T19%3A23%3A41Z&sks=b&skv=2026-02-06&sig=12IiertREJsCm90l3EHzpZzC0p57pcFfNwM6uwfc/f4%3D' -o "$P/07_celestial_golden_ring_metropolis.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-ca80-81f5-8798-721cdf7f47a8/raw?se=2026-09-28T22%3A52%3A50Z&sp=r&sv=2026-02-06&sr=b&scid=be1d6139-9b46-5132-9bdd-db7212cb82bd&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A30%3A11Z&ske=2026-09-29T19%3A30%3A11Z&sks=b&skv=2026-02-06&sig=Rpy3hlx84NLdG9DwZnBlNFUoRyVKZi6AOz36wI6YyDo%3D' -o "$P/08_golden_orbital_metropolis_sunset.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-311c-81f7-9b95-a8c155d3b0bd/raw?se=2026-09-28T22%3A52%3A50Z&sp=r&sv=2026-02-06&sr=b&scid=252a4c30-7f99-5e59-9b0b-5be088a6925a&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A10%3A07Z&ske=2026-09-29T19%3A10%3A07Z&sks=b&skv=2026-02-06&sig=A/eyXfVd8Ogw0unDJZnR4zs%2Bo%2BxAeS/7YsYAoAup08M%3D' -o "$P/09_cosmic_arcology_radiant_horizon.png"
+          curl -fL --retry 2 --connect-timeout 20 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-37b0-81f7-acc2-99ae6aee1f10/raw?se=2026-09-28T22%3A52%3A51Z&sp=r&sv=2026-02-06&sr=b&scid=26e57beb-7677-58b8-a8f3-51b81bbaff12&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T19%3A10%3A07Z&ske=2026-09-29T19%3A10%3A07Z&sks=b&skv=2026-02-06&sig=O06AYTfTFhoraWxmhIYi/jXwkeYlWmsRuIK%2B9Syr0uk%3D' -o "$P/10_concentric_rings_twilight.png"
+          sha256sum "$P"/* | tee /tmp/source_hashes.txt
+      - name: Provision pinned Beat This ONNX
+        run: python general/reusable/tools/model_provision.py music-beat-onnx-v1
+      - name: Run full resolved production
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python projects/shifting-cycles-recursive-horizon/run_full_repo_production.py             --media-dir projects/shifting-cycles-recursive-horizon/runtime_inputs             --audio projects/shifting-cycles-recursive-horizon/runtime_inputs/Shifting_Cycles.wav             --out-dir /tmp/shifting-full
+      - name: Export source and runtime evidence
+        if: always()
+        run: |
+          mkdir -p /tmp/shifting-full
+          cp /tmp/source_hashes.txt /tmp/shifting-full/ 2>/dev/null || true
+          cp workflow-plan.json /tmp/shifting-full/ 2>/dev/null || true
+          cp projects/shifting-cycles-recursive-horizon/FX_REQUIREMENTS_FULL.json /tmp/shifting-full/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shifting-cycles-full-repo-production
+          path: /tmp/shifting-full
+          retention-days: 5
