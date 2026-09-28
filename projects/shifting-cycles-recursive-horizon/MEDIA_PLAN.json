@@ -1,0 +1,25 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "user_approach_established": true,
+  "production_mode": "living_scene",
+  "visual_direction_gate": {
+    "required": false,
+    "reason": "User explicitly adopted the freshly generated Recursive Horizon image batch as media.",
+    "presented_in_chat": true,
+    "locked": true
+  },
+  "direction": {
+    "working_title": "Shifting Cycles — Recursive Horizon",
+    "target_duration_seconds": 247.16,
+    "target_fps": 24,
+    "review_resolution": "1280x720",
+    "structure": "music-directed evolving living scenes; no equal-duration slideshow"
+  },
+  "source_strategy": {
+    "preserve_verified_masters": true,
+    "accepted_raw_source_set": "RECURSIVE-HORIZON-10-STILLS-V1",
+    "finished_video_masters_excluded_from_picture": true,
+    "internal_motion_before_camera": true,
+    "use_canonical_main_fx_resolver": true
+  }
+}
