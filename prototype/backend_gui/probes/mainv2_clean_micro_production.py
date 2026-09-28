@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run one tiny end-to-end production through the actual MainV2-clean stack."""
+"""Run one tiny end-to-end production through the actual MainV2 stack."""
 from __future__ import annotations
 
 import json
@@ -88,18 +88,18 @@ def main():
     env={**os.environ,
          "AIVE_HOST":"127.0.0.1","AIVE_PORT":"8099",
          "AIVE_RUNTIME":str(runtime),
-         "AIVE_CORE_REF":"MainV2-clean"}
+         "AIVE_CORE_REF":"MainV2"}
     log=(evidence/"stack.log").open("w")
     proc=subprocess.Popen([sys.executable,str(STACK)],cwd=str(BACKEND),env=env,stdout=log,stderr=subprocess.STDOUT)
     snapshots=[]
     try:
         wait_until(lambda: request("http://127.0.0.1:8099/api/system") if _ping() else None,60)
         core=request("http://127.0.0.1:8099/api/core/bootstrap",{"offline":True})
-        if not core.get("bootstrapped") or core.get("requested_core_ref")!="MainV2-clean" or core.get("core_branch")!="main":
+        if not core.get("bootstrapped") or core.get("requested_core_ref")!="MainV2" or core.get("core_branch")!="main":
             raise RuntimeError(f"validation core bootstrap failed: {core}")
         snapshots.append({"core":core})
 
-        project=tool("project.create",{"name":"MainV2 Clean Micro Production"})["project"]
+        project=tool("project.create",{"name":"MainV2 Micro Production"})["project"]
         pid=project["id"]
         uv=upload(pid,video,"video/mp4")
         ua=upload(pid,audio,"audio/wav")
@@ -202,7 +202,7 @@ def main():
             "instruction":"Automated agent acceptance of synthetic verification export only."
         })
         tool("production.advance",{"project_id":pid,"target_stage":"FINAL_QC_PASSED"})
-        tool("archive.build",{"project_id":pid,"note":"Synthetic MainV2-clean micro-production verification."})
+        tool("archive.build",{"project_id":pid,"note":"Synthetic MainV2 micro-production verification."})
         av=tool("archive.verify",{"project_id":pid})
         if not av.get("ok"):
             raise RuntimeError(f"archive verify failed: {av}")
