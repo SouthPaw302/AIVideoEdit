@@ -92,5 +92,12 @@
       ],
       "motion": "resolved convergence + reflection breathing"
     }
-  ]
+  ],
+  "recipe_identity": "shifting-cycles-recursive-horizon-v1",
+  "proof_backend": "ffmpeg-director-v1",
+  "production_backend": "ffmpeg-director-v1",
+  "render_implementation": {
+    "file_or_locator": "render_shifting_cycles.py",
+    "sha256": "ac38c0a27737bd186609fa360a165b7a83cec0dc6aaef4a007860fb688c9a0aa"
+  }
 }
