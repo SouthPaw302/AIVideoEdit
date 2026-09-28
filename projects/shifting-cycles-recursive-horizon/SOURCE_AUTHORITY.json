@@ -1,0 +1,13 @@
+{
+  "schema": "aivideoedit.source-authority.v1",
+  "audio": {
+    "name": "Shifting Cycles.wav",
+    "duration_seconds": 247.16,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sha256": "4bde5e5bd9bf5246ce1e9ba5239889f2fddf4e8340ea214345c6f7a4dc9e813a",
+    "drive_id": "1ZBGuPaRj2D59bvg6ePeDrdtkH_70Oq6U"
+  },
+  "visual_source_authority": "ten fresh Recursive Horizon generated stills on project Drive folder",
+  "prior_project_picture_reuse": false
+}
