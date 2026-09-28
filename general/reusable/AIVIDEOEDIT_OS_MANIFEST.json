@@ -194,6 +194,10 @@
       "role": "fail_closed_standard_workflow_guard"
     },
     {
+      "path": "general/reusable/tools/recipe_execution_guard.py",
+      "role": "fail_closed_recipe_execution_guard"
+    },
+    {
       "path": "general/reusable/fx_v2/effect_name_registry.json",
       "role": "neutral_standard_effect_name_registry"
     },
