@@ -19,7 +19,15 @@
       }
     },
     "rough_cut": {
-      "status": "pending"
+      "status": "review_required",
+      "reviewer": "sandbox_director",
+      "evidence": {
+        "sha256": "617c424f09365433227de49c2a644ddccfe8dc3a5f53adb9f4cb775578127fa9",
+        "duration_seconds": 247.16,
+        "resolution": "1280x720",
+        "fps": 24,
+        "contact_sheet_drive_id": "1B4EesXFuF2IkYZ1AxnDWs0wCaVfTsCeo"
+      }
     },
     "fx_pass": {
       "status": "pending"
