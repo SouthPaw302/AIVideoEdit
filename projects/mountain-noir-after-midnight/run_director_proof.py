@@ -118,7 +118,7 @@ wr.release()
 for c in caps.values():c.release()
 final=OUT/"Mountain_Noir_Director_Proof_30s.mp4"
 run(["ffmpeg","-y","-loglevel","error","-i",silent,"-i",media["audio.wav"],"-t","30","-map","0:v","-map","1:a","-c:v","libx264","-preset","fast","-crf","18","-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-ar","48000","-movflags","+faststart",final])
-run([sys.executable,REPO/"general/reusable/fx_v2/execution_guard.py","--requirements",reqp,"--ledger",LEDGER])
+run([sys.executable,REPO/".aivideoedit/os/general/reusable/fx_v2/execution_guard.py","--requirements",reqp,"--ledger",LEDGER])
 result={"result":"PASS","duration_seconds":30,"cuts":cuts,"video":final.name,"sha256":sha(final),"jev":jev,"generic_rain_overlay":False}
 (OUT/"result.json").write_text(json.dumps(result,indent=2)+"\n")
 print(json.dumps(result,indent=2))
