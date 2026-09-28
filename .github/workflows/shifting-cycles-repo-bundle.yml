@@ -1,0 +1,42 @@
+name: Shifting Cycles Booted Repo Bundle
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [song/shifting-cycles-recursive-horizon]
+    paths:
+      - ".github/workflows/shifting-cycles-repo-bundle.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Boot exact MainV2 authority
+        run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
+      - name: Resolve full workflow plan
+        run: |
+          python .aivideoedit/os/general/reusable/tools/workflow_resolver.py             --project "$GITHUB_WORKSPACE/projects/shifting-cycles-recursive-horizon"             --json > /tmp/workflow-plan.json
+          cat /tmp/workflow-plan.json
+      - name: Package booted repository
+        run: |
+          tar --exclude=.git --exclude='*.mp4' --exclude='*.wav' -czf /tmp/shifting-cycles-booted-repo.tar.gz .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shifting-cycles-booted-repo
+          path: |
+            /tmp/shifting-cycles-booted-repo.tar.gz
+            /tmp/workflow-plan.json
+          retention-days: 3
