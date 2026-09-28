@@ -58,7 +58,7 @@ record(LEDGER,component="onnx",subject="music-beat-onnx-v1",stage="consumed",act
 
 fx_effects=["FX2-LIGHT-001","FX2-LIGHT-002","FX2-MOTION-003"]
 fx_trans=["FX2-TRANS-001"]
-req={"schema":"aivideoedit.fx-requirements.v2","project":"mountain-noir-after-midnight","runtime":"fx_v2","seed":302,"effects":[{"id":x} for x in fx_effects],"transitions":[{"id":x} for x in fx_trans],"render_inputs":["projects/mountain-noir-after-midnight/run_director_proof.py"]}
+req={"schema":"aivideoedit.fx-requirements.v2","project":"mountain-noir-after-midnight","runtime":"aivideoedit-fx-v2","seed":302,"effects":[{"id":x} for x in fx_effects],"transitions":[{"id":x} for x in fx_trans],"render_inputs":["projects/mountain-noir-after-midnight/run_director_proof.py"]}
 reqp=OUT/"FX_REQUIREMENTS.json";reqp.write_text(json.dumps(req,indent=2)+"\n")
 for x in fx_effects+fx_trans:record(LEDGER,component="fx",subject=x,stage="selected",actor="sandbox_director",consumer="canonical_fx_executor",required_execution=True)
 lock=OUT/"FX_LOCK.json";gate=REPO/"general/reusable/fx_v2/precompile_gate.py"
