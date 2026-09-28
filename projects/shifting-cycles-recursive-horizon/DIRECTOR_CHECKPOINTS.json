@@ -1,0 +1,31 @@
+{
+  "schema": "aivideoedit.director-checkpoints.v1",
+  "project": "shifting-cycles-recursive-horizon",
+  "checkpoints": {
+    "media_selection": {
+      "status": "approved",
+      "reviewer": "sandbox_director",
+      "evidence": {
+        "drive_folder": "1o3UaCEj-HSHAmpP1-JypY19qob1E-TLw",
+        "asset_count": 10
+      }
+    },
+    "representative_proof": {
+      "status": "approved",
+      "reviewer": "sandbox_director",
+      "evidence": {
+        "sha256": "0cdc894883a47fc8bd91ca6d5c3767312063db74be966654ff5f273af6d6c40a",
+        "drive_id": "1KbBhg834TIuSK5Xa6hQJpIlw2LVjPKSZ"
+      }
+    },
+    "rough_cut": {
+      "status": "pending"
+    },
+    "fx_pass": {
+      "status": "pending"
+    },
+    "final_review": {
+      "status": "pending"
+    }
+  }
+}
