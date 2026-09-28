@@ -1,0 +1,126 @@
+{
+  "schema": "aivideoedit.asset-manifest.v1",
+  "assets": [
+    {
+      "id": "SRC-AUDIO-SHIFTING-CYCLES",
+      "origin": "user_upload+google_drive",
+      "kind": "audio_master",
+      "role": "canonical_music_master",
+      "name": "Shifting Cycles.wav",
+      "drive_id": "1ZBGuPaRj2D59bvg6ePeDrdtkH_70Oq6U",
+      "sha256": "4bde5e5bd9bf5246ce1e9ba5239889f2fddf4e8340ea214345c6f7a4dc9e813a",
+      "duration_seconds": 247.16,
+      "lifecycle_status": "canonical"
+    },
+    {
+      "id": "SRC-STILL-01",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "01_recursive_horizon_anchor.png",
+      "drive_id": "1_-JyEUi7bz8LuklPLPfUSW_1FZObWLcL",
+      "sha256": "464062eb24bcb6ab77aa6f552fd95bad8d149d05fd2cca8b9cc6a803b1959f27",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-02",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "02_celestial_orrery_observatory.png",
+      "drive_id": "1MM68Z2WQqXplms36HTgzY9Th72HmPxSi",
+      "sha256": "359acafa922d87049ea17db2c33e0ceffebd475336c1b3ffa2facddc7446ac09",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-03",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "03_golden_orbital_harmony_cityscape.png",
+      "drive_id": "1q06mtNpUNZ39YcjpM1njEvs_-kLk7sKV",
+      "sha256": "b36442cae3c8981f1b035ca27bfd602aa86f1ae26f59eb6e846186633350526d",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-04",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "04_golden_causeway_beneath_orbital_rings.png",
+      "drive_id": "1W5VGVnm_ot1pTguROoNfXhuANpwECPft",
+      "sha256": "f04b7d227f27b6459ed728744c258728e66cccce18e7fb1b1d0578942629fa95",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-05",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "05_celestial_ruins_cloudsea.png",
+      "drive_id": "1ifx3XjvHCsqso0xq5v5RCGNz8AOCtEda",
+      "sha256": "7dc1c1a09a141b155c2db0bac039c3acec4a63577ac5c03ed4b837cfd1b81ff6",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-06",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "06_celestial_rings_golden_dawn.png",
+      "drive_id": "1DxDBADF3TUV3d07EEjJZZM7jLqHsFjMM",
+      "sha256": "bf85d301a2bd726bcddc46fee7bb583ecc696149de6d48f48e8e653f2d6e3464",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-07",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "07_celestial_golden_ring_metropolis.png",
+      "drive_id": "1oB4a0sP0g33UbeCXe9saW3JQb2eIZ_EZ",
+      "sha256": "b9db6486fea701f9d09e297fc4c5e4e773223ee1a53f4777e88048e2e8995421",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-08",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "08_golden_orbital_metropolis_sunset.png",
+      "drive_id": "1UQn46Th0dQiyY1_klkgWGLb4Lmr6zHUy",
+      "sha256": "3c9626730d5e5cb149cfd8acafda1adc2e1451c2c978df3a56da25c45389f81b",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-09",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "09_cosmic_arcology_radiant_horizon.png",
+      "drive_id": "1Uxd4Sq7xoYWTKvNqaGuvfX21BoDsAxSg",
+      "sha256": "305da8dcf35e421d3e3db8a4fef385a3ded5b2793bc03e10e8f5f44bf32506eb",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    },
+    {
+      "id": "SRC-STILL-10",
+      "origin": "generated_current_chat+google_drive",
+      "kind": "source_image",
+      "role": "canonical_visual_source",
+      "name": "10_concentric_rings_twilight.png",
+      "drive_id": "1w0agSK72jVlLU_vrLoEQGGHR-8iaBu0v",
+      "sha256": "4ff48b890855bb67a75efac6eb5f182d79a818f951891579122e704cf3ade572",
+      "lifecycle_status": "canonical",
+      "content_reuse_authorized": true
+    }
+  ]
+}
