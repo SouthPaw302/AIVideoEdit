@@ -57,7 +57,7 @@ record(LEDGER,component="onnx",subject="music-beat-onnx-v1",stage="executed",act
 record(LEDGER,component="onnx",subject="music-beat-onnx-v1",stage="consumed",actor="proof_edit_map",consumer="proof_renderer",evidence={"cuts":cuts})
 
 fx_effects=["FX2-LIGHT-001","FX2-LIGHT-002","FX2-MOTION-003"]
-fx_trans=["FX2-TRANS-001"]
+fx_trans=["FX2-TRANS-025"]
 req={"schema":"aivideoedit.fx-requirements.v2","project":"mountain-noir-after-midnight","runtime":"aivideoedit-fx-v2","seed":302,"effects":[{"id":x} for x in fx_effects],"transitions":[{"id":x} for x in fx_trans],"render_inputs":["projects/mountain-noir-after-midnight/run_director_proof.py"]}
 reqp=OUT/"FX_REQUIREMENTS.json";reqp.write_text(json.dumps(req,indent=2)+"\n")
 for x in fx_effects+fx_trans:record(LEDGER,component="fx",subject=x,stage="selected",actor="sandbox_director",consumer="canonical_fx_executor",required_execution=True)
@@ -112,7 +112,7 @@ for n in range(N):
  if idx<5 and cuts[idx+1]-xf<=t<cuts[idx+1]:
   p=(t-(cuts[idx+1]-xf))/xf
   nxt=base_frame(idx+1,max(0,t-cuts[idx+1]))
-  fr=fx.apply_transition("FX2-TRANS-001",fr,nxt,p,ctx)
+  fr=fx.apply_transition("FX2-TRANS-025",fr,nxt,p,ctx)
  wr.write(fr)
 wr.release()
 for c in caps.values():c.release()
