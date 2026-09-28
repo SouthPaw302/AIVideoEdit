@@ -55,6 +55,7 @@ jobs:
         env:
           AIVE_HARNESS_ENABLED: "1"
         run: |
+          mkdir -p /tmp/mountain-noir-mainv2
           python general/reusable/tools/surgical_verify.py --json-out /tmp/mountain-noir-mainv2/surgical-verification.json
           python prototype/backend_gui/harness_selftest.py
 
