@@ -1,0 +1,48 @@
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "track": "Shifting Cycles.wav",
+  "duration_seconds": 247.16,
+  "lyrics": {
+    "status": "absent",
+    "directing_use": "music_primary"
+  },
+  "inferred_style": "progressive jazz fusion / modern classical / intelligent electronic",
+  "narrative_function": "complexity becoming order",
+  "section_boundaries_seconds": [
+    0,
+    20.5,
+    36.5,
+    52,
+    77.5,
+    94,
+    115.5,
+    143,
+    173.5,
+    218,
+    247.16
+  ],
+  "energy_mean_by_section": [
+    0.0546,
+    0.0732,
+    0.0982,
+    0.1136,
+    0.1361,
+    0.1421,
+    0.1269,
+    0.1801,
+    0.1824,
+    0.1444
+  ],
+  "direction": [
+    "emergence",
+    "curiosity",
+    "rhythmic architecture",
+    "forward motion",
+    "dissolution",
+    "realignment",
+    "orchestral lift",
+    "interlocking cycles",
+    "climax",
+    "resolution"
+  ]
+}
