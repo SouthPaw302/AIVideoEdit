@@ -1,0 +1,127 @@
+{
+  "schema": "aivideoedit.music-control-map.v1",
+  "audio_sha256": "4bde5e5bd9bf5246ce1e9ba5239889f2fddf4e8340ea214345c6f7a4dc9e813a",
+  "fps": 24,
+  "sections": [
+    {
+      "id": "scene_01",
+      "start_frame": 0,
+      "end_frame": 492,
+      "controls": {
+        "rms": 0.0546,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_02",
+      "start_frame": 492,
+      "end_frame": 876,
+      "controls": {
+        "rms": 0.0732,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_03",
+      "start_frame": 876,
+      "end_frame": 1248,
+      "controls": {
+        "rms": 0.0982,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_04",
+      "start_frame": 1248,
+      "end_frame": 1860,
+      "controls": {
+        "rms": 0.1136,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_05",
+      "start_frame": 1860,
+      "end_frame": 2256,
+      "controls": {
+        "rms": 0.1361,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_06",
+      "start_frame": 2256,
+      "end_frame": 2772,
+      "controls": {
+        "rms": 0.1421,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_07",
+      "start_frame": 2772,
+      "end_frame": 3432,
+      "controls": {
+        "rms": 0.1269,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_08",
+      "start_frame": 3432,
+      "end_frame": 4164,
+      "controls": {
+        "rms": 0.1801,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_09",
+      "start_frame": 4164,
+      "end_frame": 5232,
+      "controls": {
+        "rms": 0.1824,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    },
+    {
+      "id": "scene_10",
+      "start_frame": 5232,
+      "end_frame": 5932,
+      "controls": {
+        "rms": 0.1444,
+        "onset": "onnx_pending_runtime",
+        "low": "runtime_analysis",
+        "mid": "runtime_analysis",
+        "high": "runtime_analysis"
+      }
+    }
+  ]
+}
