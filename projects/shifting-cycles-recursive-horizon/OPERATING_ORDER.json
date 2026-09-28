@@ -21,7 +21,7 @@
     "status": "accepted",
     "role": "visual_world",
     "file_or_locator": "ASSET_MANIFEST.json",
-    "sha256": "9a85263ff871695abc52ab031f21be1daee3a018c4a85b33d1eefe4635ba763d",
+    "sha256": "5ffab90268444ce39652a4624d0aca926c72561d68b7a4450a7e5546035e9e69",
     "user_acceptance_statement": "User directed the generated image batch to become alive as the media for this new render.",
     "content_reuse_authorized": true,
     "timeline_locked": false
