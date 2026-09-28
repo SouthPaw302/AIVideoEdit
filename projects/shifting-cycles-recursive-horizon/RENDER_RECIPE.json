@@ -1,7 +1,15 @@
 {
   "schema": "aivideoedit.render-recipe.v1",
   "project": "shifting-cycles-recursive-horizon",
-  "execution_profile": "music_directed_section_assembly",
+  "execution_profile": {
+    "id": "music_directed_section_assembly",
+    "music_control_map": "MUSIC_CONTROL_MAP.json",
+    "section_manifest": "SECTION_RENDER_MANIFEST.json",
+    "application_proof": "FX_APPLICATION_PROOF.json",
+    "variation_policy": {
+      "intent": "Ten distinct living-scene treatments follow the measured musical sections; internal scene motion precedes camera motion and no global effect may substitute for section-specific direction."
+    }
+  },
   "variation_policy": "Each scene has distinct motion grammar. Internal motion precedes camera drift. Repetition of one global effect across all scenes is forbidden.",
   "scenes": [
     {
