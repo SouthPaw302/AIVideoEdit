@@ -13,6 +13,8 @@ on:
       - "prototype/backend_gui/production_archive.py"
       - "prototype/backend_gui/probes/mainv2_micro_production.py"
       - "general/reusable/fx_v2/requirements-runtime.txt"
+      - "general/reusable/AIVIDEOEDIT_OS_MANIFEST.json"
+      - "general/reusable/tools/recipe_execution_guard.py"
       - ".github/workflows/mainv2-micro-production.yml"
 
 permissions:
