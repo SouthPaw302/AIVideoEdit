@@ -20,8 +20,8 @@
   "accepted_source_library": {
     "status": "accepted",
     "role": "visual_world",
-    "file_or_locator": "Google Drive / AIVideoEdit / 10 Productions / Shifting Cycles — Recursive Horizon / 01 Source Media",
-    "sha256": "manifested-per-asset",
+    "file_or_locator": "ASSET_MANIFEST.json",
+    "sha256": "9a85263ff871695abc52ab031f21be1daee3a018c4a85b33d1eefe4635ba763d",
     "user_acceptance_statement": "User directed the generated image batch to become alive as the media for this new render.",
     "content_reuse_authorized": true,
     "timeline_locked": false
