@@ -1,16 +1,16 @@
-name: MainV2 Clean ONNX Checkpoint
+name: MainV2 ONNX Checkpoint
 
 on:
   push:
     branches:
-      - MainV2-clean
+      - MainV2
     paths:
       - "general/reusable/intelligence/MODEL_REGISTRY.json"
       - "general/reusable/tools/model_registry.py"
       - "general/reusable/tools/model_provision.py"
       - "general/reusable/tools/music_beat_worker.py"
       - "tests/test_music_beat_worker.py"
-      - ".github/workflows/mainv2-clean-onnx.yml"
+      - ".github/workflows/mainv2-onnx.yml"
   workflow_dispatch:
 
 permissions:
