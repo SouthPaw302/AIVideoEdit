@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import os
 import shutil
+import stat
 import subprocess
 import sys
 from pathlib import Path
@@ -65,6 +66,12 @@ def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedP
     )
 
 
+def _remove_readonly(func, path, _exc_info) -> None:
+    """Permit replacement of a Git cache containing read-only pack files on Windows."""
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
+
+
 class CoreAdapter:
     def __init__(self) -> None:
         self.host_repo = HOST_REPO
@@ -76,7 +83,7 @@ class CoreAdapter:
     def _install_core(self, offline: bool) -> subprocess.CompletedProcess:
         CORE_HOME.mkdir(parents=True, exist_ok=True)
         if CORE_REPO.exists():
-            shutil.rmtree(CORE_REPO)
+            shutil.rmtree(CORE_REPO, onerror=_remove_readonly)
 
         if offline:
             if not shutil.which("git"):
