@@ -1,0 +1,88 @@
+{
+  "schema": "aivideoedit.render-recipe.v1",
+  "project": "shifting-cycles-recursive-horizon",
+  "execution_profile": "music_directed_section_assembly",
+  "variation_policy": "Each scene has distinct motion grammar. Internal motion precedes camera drift. Repetition of one global effect across all scenes is forbidden.",
+  "scenes": [
+    {
+      "id": "scene_01",
+      "fx": [
+        "depth_25d",
+        "moving_light_field"
+      ],
+      "motion": "recursive ring pulse + restrained dolly"
+    },
+    {
+      "id": "scene_02",
+      "fx": [
+        "light_breath",
+        "layered_compositing"
+      ],
+      "motion": "vertical string-light breathing + reveal"
+    },
+    {
+      "id": "scene_03",
+      "fx": [
+        "wet_reflection_ripple",
+        "localized_flow"
+      ],
+      "motion": "polyrhythmic reflection shimmer"
+    },
+    {
+      "id": "scene_04",
+      "fx": [
+        "moving_light_field",
+        "scene_graph_25d"
+      ],
+      "motion": "forward causeway dolly + traveling highlight"
+    },
+    {
+      "id": "scene_05",
+      "fx": [
+        "atmospheric_fog",
+        "ghosted_memory_transition"
+      ],
+      "motion": "fog travel + fragment drift"
+    },
+    {
+      "id": "scene_06",
+      "fx": [
+        "light_peak_handoff",
+        "depth_25d"
+      ],
+      "motion": "structural alignment pulse"
+    },
+    {
+      "id": "scene_07",
+      "fx": [
+        "light_breath",
+        "layered_compositing"
+      ],
+      "motion": "vertical orchestral lift"
+    },
+    {
+      "id": "scene_08",
+      "fx": [
+        "localized_flow",
+        "moving_light_field"
+      ],
+      "motion": "interlocking orbital nodes"
+    },
+    {
+      "id": "scene_09",
+      "fx": [
+        "moving_light_field",
+        "temporal_palette"
+      ],
+      "motion": "controlled climax bloom + orbital expansion"
+    },
+    {
+      "id": "scene_10",
+      "fx": [
+        "reflection_to_water",
+        "depth_25d"
+      ],
+      "motion": "resolved convergence + reflection breathing"
+    }
+  ]
+}
