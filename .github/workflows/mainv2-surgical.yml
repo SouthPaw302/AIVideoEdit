@@ -27,6 +27,10 @@ jobs:
           python -m py_compile general/reusable/tools/music_beat_worker.py
           python -m py_compile general/reusable/tools/jev_decision.py
           python -m py_compile general/reusable/tools/harness_router.py
+          python -m py_compile general/reusable/tools/execution_ledger.py
+          python -m py_compile general/reusable/tools/director_checkpoint.py
+          python -m py_compile general/reusable/fx_v2/executor.py
+          python -m py_compile general/reusable/fx_v2/execution_guard.py
           python -m py_compile prototype/backend_gui/runtime_gatekeeper.py
           python -m py_compile prototype/backend_gui/remote_bridge.py
           python -m py_compile prototype/backend_gui/remote_agent_client.py

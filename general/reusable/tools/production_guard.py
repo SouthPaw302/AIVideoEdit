@@ -18,6 +18,8 @@ from pathlib import Path
 
 from branch_policy import resolve_production_project
 from recipe_execution_guard import validate as validate_recipe_execution
+from execution_ledger import verify_ledger
+from director_checkpoint import verify_checkpoints
 
 SCRIPT_ROOT = Path(__file__).resolve().parents[3]
 if os.environ.get("AIVIDEOEDIT_REPO_ROOT"):
@@ -128,6 +130,10 @@ def verify_bootstrap_session(branch: str):
         "general/reusable/tools/workflow_resolver.py",
         "general/reusable/tools/workflow_guard.py",
         "general/reusable/tools/recipe_execution_guard.py",
+        "general/reusable/tools/execution_ledger.py",
+        "general/reusable/tools/director_checkpoint.py",
+        "general/reusable/fx_v2/executor.py",
+        "general/reusable/fx_v2/execution_guard.py",
     ]
     for rel in critical:
         p = os_root / rel
@@ -468,6 +474,21 @@ def validate_operating_order(project, state, stage, states, modes, errors):
                                 f"living-scene SCRIPT entry {i} requires protected_regions",
                                 errors,
                             )
+
+    supervision=order.get("director_supervision") if isinstance(order,dict) else None
+    if version >= 4:
+        if not isinstance(supervision,dict) or supervision.get("required") is not True:
+            fail("Director Brain v4 requires OPERATING_ORDER.director_supervision.required=true", errors)
+        else:
+            checkpoints=project/str(supervision.get("checkpoint_file") or "DIRECTOR_CHECKPOINTS.json")
+            ledger=project/str(supervision.get("execution_ledger_file") or "PRODUCTION_EXECUTION_LEDGER.json")
+            if at("SHOT_PROOFS_ACCEPTED"):
+                errors.extend(verify_checkpoints(checkpoints,"representative_proof"))
+            if at("ASSEMBLED"):
+                errors.extend(verify_checkpoints(checkpoints,"rough_cut"))
+            if at("FINAL_QC_PASSED"):
+                errors.extend(verify_checkpoints(checkpoints,"final_review"))
+                errors.extend(verify_ledger(ledger))
 
     if at("SHOT_PROOFS_ACCEPTED") and not truthy(state.get("mode_aware_proofs_accepted")):
         fail(

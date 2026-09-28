@@ -39,5 +39,20 @@
   },
   "current_user_direction": "Record the latest explicit production instruction from the current user.",
   "exact_next_action": "State one concrete next production action.",
-  "updated_at_utc": null
+  "updated_at_utc": null,
+  "director_supervision": {
+    "required": true,
+    "reviewer_role": "sandbox_director",
+    "checkpoint_file": "DIRECTOR_CHECKPOINTS.json",
+    "execution_ledger_file": "PRODUCTION_EXECUTION_LEDGER.json",
+    "checkpoints": [
+      "media_selection",
+      "representative_proof",
+      "rough_cut",
+      "fx_pass",
+      "final_review"
+    ],
+    "runner_may_choose_art_direction": false,
+    "technical_pass_is_creative_pass": false
+  }
 }
