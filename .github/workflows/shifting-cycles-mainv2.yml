@@ -1,0 +1,41 @@
+name: Shifting Cycles MainV2 Boot
+on:
+  workflow_dispatch:
+  push:
+    branches: [song/shifting-cycles-recursive-horizon]
+    paths:
+      - "projects/shifting-cycles-recursive-horizon/**"
+      - ".github/workflows/shifting-cycles-mainv2.yml"
+permissions:
+  contents: read
+jobs:
+  boot-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install lightweight runtime
+        run: python -m pip install pytest numpy
+      - name: Boot exact MainV2 authority
+        run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
+      - name: Run production guards
+        run: |
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$GITHUB_REF_NAME"
+          python .aivideoedit/os/general/reusable/tools/workflow_guard.py --branch "$GITHUB_REF_NAME"
+      - name: Run surgical verification
+        run: python general/reusable/tools/surgical_verify.py --json-out /tmp/shifting-cycles-surgical.json
+      - name: Harness smoke
+        env:
+          AIVE_HARNESS_ENABLED: "1"
+        run: python prototype/backend_gui/harness_selftest.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shifting-cycles-mainv2-boot-evidence
+          path: /tmp/shifting-cycles-surgical.json
+          retention-days: 5
