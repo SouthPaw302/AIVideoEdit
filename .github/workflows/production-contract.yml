@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Enforce zero Actions artifact storage
+        run: python general/reusable/tools/storage_guard.py
       - name: Resolve contract branch
         shell: bash
         run: |
