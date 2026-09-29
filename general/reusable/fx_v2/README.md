@@ -103,3 +103,17 @@ Use the read-only harness tool `harness.fx_resolve` when working through the Stu
 Not every successful production technique deserves a new FX ID. `recipes.json` preserves composition-level methods such as ghosted narrative object overlays, transparent scene handoffs, protected-subject environmental motion, artifact salvage, long-hold scene evolution, multiplane alpha compositing, instrument-axis audio visualization, temporal painting and pigment travel.
 
 Recipes may combine existing primitives, protection rules and editorial steps. Prefer a recipe over duplicating the underlying FX implementations.
+
+
+## Authored camera motion
+
+The existing approved camera FX are the reusable camera layer. Do not create project-local crop/zoom code when these IDs can express the move:
+
+- `FX2-CAMERA-023` — `narrative_camera_travel`: bounded push, pullback and lateral reframe using source-locked crop/resize.
+- `FX2-CAMERA-021` — `corridor_push_focus_definition`: authored push plus restrained definition gain.
+- `FX2-CAMERA-022` — `loopable_eased_orbit`: loop-safe micro-orbit.
+- `FX2-CAMERA-024` — `rack_focus_heat_pulse`: focus/perception move with heat pulse.
+
+`narrative_camera_travel` accepts `zoom_start`, `zoom_end`, `center_start`, `center_end`, `easing` (`smoothstep`, `cosine`, or `linear`) and `zoom_cap`. The crop is clamped inside the source frame and the canonical cap defaults to 1.40x, matching the stronger authored camera language proven by recent music-recut work without inventing border pixels.
+
+Song/project timing stays on the production branch. Reusable profiles live in `presets.json -> camera_profiles`. Internal scene motion still precedes camera motion; these profiles are editorial/spatial controls, not a substitute for living-scene motion or real depth.
