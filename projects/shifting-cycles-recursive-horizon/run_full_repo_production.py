@@ -32,12 +32,12 @@ STACKS={
 "scene_01":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-LIGHT-002","FX2-AUDIO-021","FX2-SURFACE-022","FX2-SURFACE-023"],
 "scene_02":["FX2-SPATIAL-021","FX2-LIGHT-001","FX2-AUDIO-021","FX2-CAMERA-022"],
 "scene_03":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-SURFACE-022","FX2-SURFACE-023","FX2-LIGHT-024","FX2-AUDIO-021"],
-"scene_04":["FX2-SPATIAL-021","FX2-LIGHT-024","FX2-AUDIO-021","FX2-CAMERA-023"],
-"scene_05":["FX2-SPATIAL-021","FX2-ATM-021","FX2-VIS-022","FX2-LIGHT-002","FX2-AUDIO-021"],
+"scene_04":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-LIGHT-024","FX2-LIGHT-028","FX2-AUDIO-021","FX2-CAMERA-023"],
+"scene_05":["FX2-SPATIAL-021","FX2-ATM-021","FX2-COMP-023","FX2-VIS-022","FX2-LIGHT-002","FX2-AUDIO-021"],
 "scene_06":["FX2-SPATIAL-021","FX2-LIGHT-027","FX2-AUDIO-021","FX2-CAMERA-022"],
-"scene_07":["FX2-SPATIAL-021","FX2-LIGHT-002","FX2-AUDIO-021","FX2-CAMERA-023"],
+"scene_07":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-LIGHT-002","FX2-LIGHT-028","FX2-AUDIO-021","FX2-CAMERA-023"],
 "scene_08":["FX2-SPATIAL-021","FX2-LIGHT-002","FX2-AUDIO-021","FX2-CAMERA-022","FX2-VIS-022"],
-"scene_09":["FX2-SPATIAL-021","FX2-LIGHT-027","FX2-AUDIO-021","FX2-VIS-022","FX2-DISTORT-021"],
+"scene_09":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-LIGHT-027","FX2-LIGHT-028","FX2-AUDIO-021","FX2-VIS-022","FX2-DISTORT-021"],
 "scene_10":["FX2-SPATIAL-021","FX2-MOTION-002","FX2-SURFACE-022","FX2-SURFACE-023","FX2-LIGHT-001","FX2-AUDIO-021","FX2-CAMERA-022"],
 }
 TRANS="FX2-TRANS-025"
@@ -128,24 +128,76 @@ def _internal_scene_motion(frame, sid, t, c):
         band=_soft_band_mask(h,w,int(h*.34),int(h*.66),42)
         strength=(0.05+0.10*pulse+0.08*onset)
         out=np.clip(out.astype(np.float32)*(1-band*strength)+glow.astype(np.float32)*(band*strength),0,255).astype(np.uint8)
+    elif sid=="scene_04":
+        # Causeway energy travels through the architecture rather than moving the whole camera.
+        band=_soft_band_mask(h,w,int(h*.46),h,28)
+        sweep=np.zeros((h,w),np.float32)
+        cx=(t/5.8%1.0)*w
+        xx=np.arange(w,dtype=np.float32)[None,:]
+        sweep[:]=np.exp(-((xx-cx)/(w*.12))**2)
+        sweep=cv2.GaussianBlur(sweep,(0,0),9)[...,None]*band
+        glow=cv2.GaussianBlur(out,(0,0),7).astype(np.float32)
+        k=0.10+0.18*energy+0.10*onset
+        out=np.clip(out.astype(np.float32)*(1-sweep*k)+glow*sweep*k,0,255).astype(np.uint8)
+        # Slow independent reflection displacement.
+        y0=int(h*.58); low=out[y0:].copy()
+        yy,xx2=np.mgrid[0:low.shape[0],0:w].astype(np.float32)
+        dx=(3.0+5.0*energy)*np.sin(yy/18.0+2*math.pi*t/4.7)
+        low=cv2.remap(low,xx2+dx.astype(np.float32),yy,cv2.INTER_CUBIC,borderMode=cv2.BORDER_REFLECT101)
+        out[y0:]=low
     elif sid=="scene_05":
-        # Two fog layers drift at different speeds to avoid one obvious loop.
-        blur=cv2.GaussianBlur(out,(0,0),5)
-        shift1=int(round(7*math.sin(2*math.pi*t/7.1)))
-        shift2=int(round(11*math.sin(2*math.pi*t/11.7+1.2)))
+        # Layered fog with independent periods plus onset-driven glints.
+        blur=cv2.GaussianBlur(out,(0,0),7)
+        shift1=int(round(14*math.sin(2*math.pi*t/6.3)))
+        shift2=int(round(22*math.sin(2*math.pi*t/10.9+1.2)))
         fog1=np.roll(blur,shift1,axis=1); fog2=np.roll(blur,shift2,axis=1)
-        sky=_soft_band_mask(h,w,0,int(h*.78),54)
-        mix=0.06+0.11*energy
-        out=np.clip(out.astype(np.float32)*(1-sky*mix)+((0.58*fog1+0.42*fog2).astype(np.float32))*sky*mix,0,255).astype(np.uint8)
-        # Sparse reactive star/particle glints in upper field.
+        sky=_soft_band_mask(h,w,0,int(h*.84),48)
+        mix=0.10+0.18*energy
+        out=np.clip(out.astype(np.float32)*(1-sky*mix)+((0.55*fog1+0.45*fog2).astype(np.float32))*sky*mix,0,255).astype(np.uint8)
         rng=np.random.default_rng(302)
-        pts=rng.integers([0,0],[w,max(1,int(h*.62))],size=(42,2))
-        gl=out.copy()
-        vis=0.18+0.72*max(energy,onset)
+        pts=rng.integers([0,0],[w,max(1,int(h*.66))],size=(58,2))
+        gl=out.copy(); vis=0.22+0.78*max(energy,onset)
+        drift=int(round(18*math.sin(2*math.pi*t/8.7)))
         for x,y in pts:
-            r=1+int(2*vis)
-            cv2.circle(gl,(int(x),int(y)),r,(210,225,255),-1,cv2.LINE_AA)
-        out=cv2.addWeighted(out,1.0,gl,0.10*vis,0)
+            x=(int(x)+drift)%w
+            r=1+int(2.5*vis)
+            cv2.circle(gl,(x,int(y)),r,(214,228,255),-1,cv2.LINE_AA)
+        out=cv2.addWeighted(out,1.0,gl,0.15*vis,0)
+    elif sid=="scene_07":
+        # Cascading vertical light across the city/architecture with separate reflection movement.
+        overlay=out.copy()
+        phase=(t/4.9)%1.0
+        for j in range(9):
+            x=int(((phase+j/9.0)%1.0)*w)
+            cv2.line(overlay,(x,0),(x,h), (205,225,255), 2, cv2.LINE_AA)
+        overlay=cv2.GaussianBlur(overlay,(0,0),4)
+        mask=_soft_band_mask(h,w,0,int(h*.74),34)
+        k=0.05+0.13*energy+0.09*onset
+        out=np.clip(out.astype(np.float32)*(1-mask*k)+overlay.astype(np.float32)*mask*k,0,255).astype(np.uint8)
+        y0=int(h*.55); low=out[y0:].copy()
+        yy,xx2=np.mgrid[0:low.shape[0],0:w].astype(np.float32)
+        dx=(2.0+4.0*energy)*np.sin(yy/20.0+2*math.pi*t/6.1)
+        out[y0:]=cv2.remap(low,xx2+dx.astype(np.float32),yy,cv2.INTER_CUBIC,borderMode=cv2.BORDER_REFLECT101)
+    elif sid=="scene_09":
+        # Climactic section: sky and reflection run as two independent systems.
+        sky=out[:int(h*.58)].copy()
+        yy,xx2=np.mgrid[0:sky.shape[0],0:w].astype(np.float32)
+        dx=(4.0+7.0*energy)*np.sin(yy/24.0+2*math.pi*t/7.3)
+        dy=(1.5+2.5*onset)*np.sin(xx2/79.0-2*math.pi*t/9.1)
+        out[:sky.shape[0]]=cv2.remap(sky,xx2+dx.astype(np.float32),yy+dy.astype(np.float32),cv2.INTER_CUBIC,borderMode=cv2.BORDER_REFLECT101)
+        y0=int(h*.58); low=out[y0:].copy()
+        yy2,xx3=np.mgrid[0:low.shape[0],0:w].astype(np.float32)
+        dx2=(4.0+8.0*energy)*np.sin(yy2/17.0-2*math.pi*t/5.4)
+        out[y0:]=cv2.remap(low,xx3+dx2.astype(np.float32),yy2,cv2.INTER_CUBIC,borderMode=cv2.BORDER_REFLECT101)
+        # Beat/onset spark field concentrated around the orbital arc.
+        rng=np.random.default_rng(909)
+        pts=rng.integers([0,0],[w,max(1,int(h*.55))],size=(72,2))
+        gl=out.copy(); vis=min(1.0,0.28+0.55*energy+0.65*onset)
+        shift=int(round(24*math.sin(2*math.pi*t/6.7)))
+        for x,y in pts:
+            x=(int(x)+shift)%w
+            cv2.circle(gl,(x,int(y)),1+int(3*vis),(210,225,255),-1,cv2.LINE_AA)
+        out=cv2.addWeighted(out,1.0,gl,0.13*vis,0)
     return out
 
 def render_scene(sid,name,start,end,tags, media_dir,outdir,reactive,fx):
