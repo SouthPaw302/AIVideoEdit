@@ -30,13 +30,11 @@ jobs:
       - name: Boot MainV2 authority
         run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
       - name: Download approved visual master artifact
-        uses: actions/download-artifact@v4
-        with:
-          repository: SouthPaw302/AIVideoEdit
-          run-id: 36501941296
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          name: shifting-cycles-full-repo-production
-          path: /work/artifact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /work/artifact
+          gh run download 36501941296 --repo SouthPaw302/AIVideoEdit --name shifting-cycles-full-repo-production --dir /work/artifact
       - name: Stage approved master
         run: cp /work/artifact/Shifting_Cycles_Recursive_Horizon_FULL_STACK_v1.mp4 /work/master.mp4
       - name: Fetch canonical music and detail stills
