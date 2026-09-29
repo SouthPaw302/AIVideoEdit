@@ -12,8 +12,13 @@ jobs:
     permissions:
       contents: read
       actions: read
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -23,8 +28,6 @@ jobs:
           sudo apt-get install -y -qq ffmpeg
           pip install -q opencv-python-headless numpy
       - name: Boot MainV2 authority
-        env:
-          AIVIDEOEDIT_AUTHORITY_REF: MainV2
         run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
       - name: Download approved visual master artifact
         uses: actions/download-artifact@v4
