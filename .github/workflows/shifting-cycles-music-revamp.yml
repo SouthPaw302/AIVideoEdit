@@ -31,6 +31,7 @@ jobs:
         run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
       - name: Fetch approved visual master proxy
         run: |
+          mkdir -p /work
           curl -fL --retry 2 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-7958-81f7-b92e-24afbad756ef/raw?se=2026-09-29T02%3A09%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=b4470294-3b6e-561b-b428-80face3fb49b&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A57%3A31Z&ske=2026-09-29T22%3A57%3A31Z&sks=b&skv=2026-02-06&sig=fgpzdHYGKZG0XynxtGLrMhz/clbMEp1c%2BVFgH9bRh/8%3D' -o /work/master.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of json /work/master.mp4
       - name: Fetch canonical music and detail stills
