@@ -22,40 +22,41 @@
       "status": "approved",
       "reviewer": "sandbox_director",
       "evidence": {
-        "github_run_id": 36501941296,
-        "final_sha256": "2d70ca1b94033de028786d8def2c4cb86baa1d1bd2102853d7f9588195e5dcdd",
-        "full_stack_artifact_id": 11005159427,
-        "inspected_in_sandbox": true,
-        "duration_seconds": 247.125,
-        "black_sample_frames": 0,
-        "temporal_delta_mean": 0.04612217487563994,
-        "temporal_delta_min": 0.01563361625514403
+        "full_stack_run_id": 36501941296,
+        "final_repair": "scene_09_zero_drift_localized_repair",
+        "inspected_in_sandbox": true
       },
       "notes": [
-        "Final localized-motion revision materially improved scenes 4, 5, 7 and 9 without replacing canonical media."
+        "Full stack v3 reviewed; scene 09 rejected for architecture warp, repaired locally under refinement rule, then reassembled and QC'd."
       ]
     },
     "fx_pass": {
       "status": "approved",
       "reviewer": "sandbox_director",
       "evidence": {
-        "execution_ledger_errors": [],
-        "beat_engine": "beat_this_onnx",
+        "beat_this_engine": "beat_this_onnx",
         "bpm": 100,
-        "beats": 410,
-        "downbeats": 104
+        "beat_count": 410,
+        "downbeat_count": 104,
+        "canonical_fx_execution": true,
+        "loops_and_gifs": true,
+        "zero_drift_repair": true
       }
     },
     "final_review": {
       "status": "approved",
       "reviewer": "sandbox_director",
       "evidence": {
-        "github_run_id": 36501941296,
-        "sha256": "2d70ca1b94033de028786d8def2c4cb86baa1d1bd2102853d7f9588195e5dcdd",
-        "inspected_in_sandbox": true
+        "sha256": "de08d76723e716f25179a33807138f84020fdf4824783616002e79e96dcd2117",
+        "duration_seconds": 247.16,
+        "resolution": "960x540",
+        "fps": 24,
+        "drive_final_id": "14jVvW6ayYfzlWnw81xuzVclyLfY5PiBi",
+        "black_sample_frames": 0,
+        "temporal_delta_mean": 0.03669738175380446
       },
       "notes": [
-        "Promoted after full temporal audit; no user review required before archive/promotion."
+        "Director final review PASS. Scene 09 architecture remains stable after repair; full duration/audio and temporal QC verified."
       ]
     }
   }
