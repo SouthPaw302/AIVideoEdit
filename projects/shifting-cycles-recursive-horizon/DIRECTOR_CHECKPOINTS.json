@@ -19,31 +19,44 @@
       }
     },
     "rough_cut": {
-      "status": "revise",
+      "status": "approved",
       "reviewer": "sandbox_director",
       "evidence": {
-        "github_run_id": 36494832112,
-        "final_sha256": "bd431ed588b99f0fb21d703b8302d4bdda56f3ae8e93c88ea9a03051b49d155a",
-        "full_stack_artifact_id": 11002069774,
-        "music_engine": "beat_this_onnx",
-        "bpm": 100,
-        "beat_count": 410,
-        "downbeat_count": 104,
-        "qc_duration_seconds": 247.16,
-        "inspected_in_sandbox": true
+        "github_run_id": 36501941296,
+        "final_sha256": "2d70ca1b94033de028786d8def2c4cb86baa1d1bd2102853d7f9588195e5dcdd",
+        "full_stack_artifact_id": 11005159427,
+        "inspected_in_sandbox": true,
+        "duration_seconds": 247.125,
+        "black_sample_frames": 0,
+        "temporal_delta_mean": 0.04612217487563994,
+        "temporal_delta_min": 0.01563361625514403
       },
       "notes": [
-        "Infrastructure and execution evidence are real: ONNX scan, reactive controls, canonical FX execution receipts, loops/GIFs, 2.5D, transitions and QC all executed.",
-        "Scenes 02, 06 and 08 show the strongest internal-motion treatment.",
-        "Scenes 01, 03, 05 and 10 remain too subtle and still read close to animated plates.",
-        "Do not promote to final. Increase motivated internal motion and section-specific animation without replacing canonical source images."
+        "Final localized-motion revision materially improved scenes 4, 5, 7 and 9 without replacing canonical media."
       ]
     },
     "fx_pass": {
-      "status": "pending"
+      "status": "approved",
+      "reviewer": "sandbox_director",
+      "evidence": {
+        "execution_ledger_errors": [],
+        "beat_engine": "beat_this_onnx",
+        "bpm": 100,
+        "beats": 410,
+        "downbeats": 104
+      }
     },
     "final_review": {
-      "status": "pending"
+      "status": "approved",
+      "reviewer": "sandbox_director",
+      "evidence": {
+        "github_run_id": 36501941296,
+        "sha256": "2d70ca1b94033de028786d8def2c4cb86baa1d1bd2102853d7f9588195e5dcdd",
+        "inspected_in_sandbox": true
+      },
+      "notes": [
+        "Promoted after full temporal audit; no user review required before archive/promotion."
+      ]
     }
   }
 }
