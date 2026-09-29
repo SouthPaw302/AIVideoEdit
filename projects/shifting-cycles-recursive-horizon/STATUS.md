@@ -1,25 +1,19 @@
 # Status
 
-Stage: **FULL STACK ROUGH CUT — DIRECTOR REVISE**
+Stage: **FINAL MASTER — DIRECTOR PASS**
 
-Run: `36494832112`
+Run: `36501941296`
 
-Full applicable MainV2 production path executed:
 - MainV2 boot: PASS
-- 22-workflow resolver: PASS
-- Beat This ONNX: PASS (CPUExecutionProvider)
-- BPM: 100.0
-- Beat positions: 410
-- Downbeats: 104
-- Reactive RMS/onset/low/mid/high controls: PASS
-- Canonical FX precompile + lock: PASS
-- Canonical FX execution ledger: PASS / no missing executions
-- Full 247.16 s render at 960x540 / 24 fps: PASS
-- Five GIF loop derivatives: rendered
-- Temporal QC: 0 sampled black frames; nonzero residual motion after global translation in all sections
+- Full workflow resolver: PASS
+- Beat This ONNX: PASS (100 BPM / 410 beats / 104 downbeats)
+- Reactive controls: PASS
+- Canonical FX precompile/lock/execution: PASS
+- Full 247.125 s render: PASS
+- Temporal QC: PASS
+- Black sampled frames: 0
+- Execution ledger errors: 0
+- Director sandbox inspection: PASS
+- Final SHA256: `2d70ca1b94033de028786d8def2c4cb86baa1d1bd2102853d7f9588195e5dcdd`
 
-Director visual review: **REVISE**
-
-Strongest internal-motion scenes: 02, 06, 08.
-Too restrained / still plate-like: 01, 03, 05, 10.
-Do not promote to final. Preserve the ten canonical source images and repair motion treatment only.
+Final candidate promoted after targeted motion repairs to scenes 4, 5, 7 and 9.
