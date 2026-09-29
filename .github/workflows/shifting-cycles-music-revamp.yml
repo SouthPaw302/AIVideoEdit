@@ -31,27 +31,27 @@ jobs:
         run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "$GITHUB_REF_NAME"
       - name: Fetch approved visual master proxy
         run: |
-          mkdir -p /work
-          curl -fL --retry 2 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-7958-81f7-b92e-24afbad756ef/raw?se=2026-09-29T02%3A09%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=b4470294-3b6e-561b-b428-80face3fb49b&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A57%3A31Z&ske=2026-09-29T22%3A57%3A31Z&sks=b&skv=2026-02-06&sig=fgpzdHYGKZG0XynxtGLrMhz/clbMEp1c%2BVFgH9bRh/8%3D' -o /work/master.mp4
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of json /work/master.mp4
+          mkdir -p /tmp/aive_work
+          curl -fL --retry 2 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-7958-81f7-b92e-24afbad756ef/raw?se=2026-09-29T02%3A09%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=b4470294-3b6e-561b-b428-80face3fb49b&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A57%3A31Z&ske=2026-09-29T22%3A57%3A31Z&sks=b&skv=2026-02-06&sig=fgpzdHYGKZG0XynxtGLrMhz/clbMEp1c%2BVFgH9bRh/8%3D' -o /tmp/aive_work/master.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of json /tmp/aive_work/master.mp4
       - name: Fetch canonical music and detail stills
         run: |
-          curl -fL --retry 2 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-9eec-81f5-bad7-a751eb7ca336/raw?se=2026-09-29T02%3A02%3A12Z&sp=r&sv=2026-02-06&sr=b&scid=965798e1-179a-5e42-8e7a-1f81c5aeae60&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A49%3A35Z&ske=2026-09-29T22%3A49%3A35Z&sks=b&skv=2026-02-06&sig=JbyYTGldt%2BqGHZH7WyBcRwnS5ruotR08XFXJtUPClqs%3D' -o /work/music.wav
-          curl -fL --retry 2 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-6630-81f5-844c-7230f042bdf1/raw?se=2026-09-29T02%3A02%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=bfe3c6b4-3bb6-5eab-a8be-3a54e3564103&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A53%3A42Z&ske=2026-09-29T22%3A53%3A42Z&sks=b&skv=2026-02-06&sig=fiEc%2BzCVp3uEVpsfWMdshK/CEruJIUgTIYXWk5EhZoI%3D' -o /work/04_golden_causeway_beneath_orbital_rings.png
-          curl -fL --retry 2 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-7e6c-81f7-a2cd-942fd43b7644/raw?se=2026-09-29T02%3A02%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=317c1fce-ead0-5841-bfc9-f4c6469515bc&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A56%3A02Z&ske=2026-09-29T22%3A56%3A02Z&sks=b&skv=2026-02-06&sig=5nYGhkd5UIU0ank59XejvlapHrt8gGXU4dg8v7AxAg0%3D' -o /work/09_cosmic_arcology_radiant_horizon.png
-          curl -fL --retry 2 'https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-8a74-822f-87d7-ea8035dfb7c1/raw?se=2026-09-29T02%3A02%3A18Z&sp=r&sv=2026-02-06&sr=b&scid=6410eed1-6693-5a1b-b623-fd28e16c14ff&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A44%3A47Z&ske=2026-09-29T22%3A44%3A47Z&sks=b&skv=2026-02-06&sig=ZQhSykEm%2B5QsKM4umwL%2BscRPvxkpJ7XLhOKY96TWkSM%3D' -o /work/10_concentric_rings_twilight.png
-          sha256sum /work/music.wav
+          curl -fL --retry 2 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-9eec-81f5-bad7-a751eb7ca336/raw?se=2026-09-29T02%3A02%3A12Z&sp=r&sv=2026-02-06&sr=b&scid=965798e1-179a-5e42-8e7a-1f81c5aeae60&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A49%3A35Z&ske=2026-09-29T22%3A49%3A35Z&sks=b&skv=2026-02-06&sig=JbyYTGldt%2BqGHZH7WyBcRwnS5ruotR08XFXJtUPClqs%3D' -o /tmp/aive_work/music.wav
+          curl -fL --retry 2 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-6630-81f5-844c-7230f042bdf1/raw?se=2026-09-29T02%3A02%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=bfe3c6b4-3bb6-5eab-a8be-3a54e3564103&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A53%3A42Z&ske=2026-09-29T22%3A53%3A42Z&sks=b&skv=2026-02-06&sig=fiEc%2BzCVp3uEVpsfWMdshK/CEruJIUgTIYXWk5EhZoI%3D' -o /tmp/aive_work/04_golden_causeway_beneath_orbital_rings.png
+          curl -fL --retry 2 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-7e6c-81f7-a2cd-942fd43b7644/raw?se=2026-09-29T02%3A02%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=317c1fce-ead0-5841-bfc9-f4c6469515bc&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A56%3A02Z&ske=2026-09-29T22%3A56%3A02Z&sks=b&skv=2026-02-06&sig=5nYGhkd5UIU0ank59XejvlapHrt8gGXU4dg8v7AxAg0%3D' -o /tmp/aive_work/09_cosmic_arcology_radiant_horizon.png
+          curl -fL --retry 2 'https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-8a74-822f-87d7-ea8035dfb7c1/raw?se=2026-09-29T02%3A02%3A18Z&sp=r&sv=2026-02-06&sr=b&scid=6410eed1-6693-5a1b-b623-fd28e16c14ff&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T22%3A44%3A47Z&ske=2026-09-29T22%3A44%3A47Z&sks=b&skv=2026-02-06&sig=ZQhSykEm%2B5QsKM4umwL%2BscRPvxkpJ7XLhOKY96TWkSM%3D' -o /tmp/aive_work/10_concentric_rings_twilight.png
+          sha256sum /tmp/aive_work/music.wav
       - name: Render camera and differential-image pass
         run: python projects/shifting-cycles-recursive-horizon/run_music_revamp.py
       - name: Verify result
         run: |
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of json /work/out/Shifting_Cycles_Recursive_Horizon_MUSIC_REVAMP_CAMERA_PASS_v1.mp4
-          sha256sum /work/out/Shifting_Cycles_Recursive_Horizon_MUSIC_REVAMP_CAMERA_PASS_v1.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of json /tmp/aive_work/out/Shifting_Cycles_Recursive_Horizon_MUSIC_REVAMP_CAMERA_PASS_v1.mp4
+          sha256sum /tmp/aive_work/out/Shifting_Cycles_Recursive_Horizon_MUSIC_REVAMP_CAMERA_PASS_v1.mp4
       - uses: actions/upload-artifact@v4
         with:
           name: shifting-cycles-music-revamp-camera-pass
           path: |
-            /work/out/Shifting_Cycles_Recursive_Horizon_MUSIC_REVAMP_CAMERA_PASS_v1.mp4
-            /work/out/CAMERA_PASS_PLAN.json
+            /tmp/aive_work/out/Shifting_Cycles_Recursive_Horizon_MUSIC_REVAMP_CAMERA_PASS_v1.mp4
+            /tmp/aive_work/out/CAMERA_PASS_PLAN.json
             projects/shifting-cycles-recursive-horizon/BEATGRID_MUSIC_REVAMP.json
           retention-days: 5
