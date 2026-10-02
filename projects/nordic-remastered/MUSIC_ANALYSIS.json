@@ -1,1 +1,177 @@
-{}
+{
+  "schema": "aivideoedit.music-analysis.v1",
+  "analysis_complete": true,
+  "source": {
+    "asset_id": "source_audio_001",
+    "sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+    "canonical_timing_tool": "general/reusable/tools/audio_map.py @ MainV2",
+    "canonical_audiomap_sha256": "f62f04c55a6ab1cb2824ba78b07790214f59879c3be671b3786972e732aefca4"
+  },
+  "lyrics": {
+    "status": "present",
+    "source": "source_audio_best_effort_phonetic_transcription",
+    "text_file": "LYRICS.md",
+    "directing_use": "required",
+    "transcription_status": "phonetic_unverified",
+    "semantic_interpretation_allowed": false,
+    "note": "Use vocal phrase timing and emotional contour as directing input; do not invent a translation or narrative meaning."
+  },
+  "genre": {
+    "status": "confident",
+    "label": "ethereal Nordic electronica / cinematic darkwave downtempo",
+    "source": "audio_analysis",
+    "confidence": 0.78
+  },
+  "rhythm": {
+    "tempo_status": "measured",
+    "tempo_bpm": 184.5703,
+    "half_time_pulse_bpm": 92.2852,
+    "pulse_description": "Canonical audio_map detects a 184.57 BPM beat grid; the music reads naturally as a broad half-time pulse near 92.29 BPM for visual pacing.",
+    "meter_or_groove": "4/4 electronic pulse with steady downbeat structure, atmospheric sustained layers, and half-time cinematic weight",
+    "beat_count": 409,
+    "downbeat_count": 103,
+    "canonical_phase_4_4": 0
+  },
+  "sections": [
+    {
+      "id": "A",
+      "start_seconds": 0,
+      "end_seconds": 20,
+      "energy": "void to low",
+      "musical_cues": [
+        "near-silent opening",
+        "first clear surge at ~2.0 s",
+        "sparse pulse and atmospheric vocal texture"
+      ],
+      "visual_function": "Establish the paired heroes, craft, horizon, and visual world with minimal internal motion and long holds."
+    },
+    {
+      "id": "B",
+      "start_seconds": 20,
+      "end_seconds": 33,
+      "energy": "low to medium",
+      "musical_cues": [
+        "energy surge at ~20.0 s",
+        "pulse becomes more assertive",
+        "tension builds toward 33 s"
+      ],
+      "visual_function": "Widen the world: alternate full-body pair, craft detail, hair/wind detail, and landscape coverage while preserving identity."
+    },
+    {
+      "id": "C",
+      "start_seconds": 33,
+      "end_seconds": 63,
+      "energy": "medium to sustained high",
+      "musical_cues": [
+        "major surge at ~33.0 s",
+        "high-energy plateau from ~35 s",
+        "dense repeated beat grid"
+      ],
+      "visual_function": "Begin active progression with generated reference-faithful coverage, environmental movement, and faster but still readable cuts."
+    },
+    {
+      "id": "D",
+      "start_seconds": 63,
+      "end_seconds": 92,
+      "energy": "high",
+      "musical_cues": [
+        "brief softening near 63 s",
+        "sustained high-energy body",
+        "secondary surge near ~82 s"
+      ],
+      "visual_function": "Expand cinematic coverage around the same heroes/world: alternate angles, close profiles, craft movement, and source-consistent environmental inserts."
+    },
+    {
+      "id": "E",
+      "start_seconds": 92,
+      "end_seconds": 114,
+      "energy": "drop then re-surge",
+      "musical_cues": [
+        "largest drop near 92 s",
+        "immediate surge near 94 s",
+        "second drop around 110 s",
+        "rebuild beginning ~114 s"
+      ],
+      "visual_function": "Contrast and reset: intimate close shots during the drop, then snap back to stronger motion and scale on the 94 s return; hold tension through 110-114 s."
+    },
+    {
+      "id": "F",
+      "start_seconds": 114,
+      "end_seconds": 131,
+      "energy": "high / climax",
+      "musical_cues": [
+        "strong surge at ~114 s",
+        "highest sustained energy around 120-129 s",
+        "dense beat/downbeat cadence"
+      ],
+      "visual_function": "Climax with the richest multi-shot batch, strongest craft/environment motion, and shortest shot durations while maintaining zero-drift identity."
+    },
+    {
+      "id": "G",
+      "start_seconds": 131,
+      "end_seconds": 137.92,
+      "energy": "falling to void",
+      "musical_cues": [
+        "drop at ~131-132 s",
+        "rapid energy decay",
+        "final silence begins near 135.98 s"
+      ],
+      "visual_function": "Return to stillness: settle the paired heroes and craft into a final restrained tableau, then fade on the true audio tail."
+    }
+  ],
+  "key_moments_seconds": [
+    {
+      "t": 2,
+      "kind": "surge"
+    },
+    {
+      "t": 20,
+      "kind": "surge"
+    },
+    {
+      "t": 33,
+      "kind": "surge"
+    },
+    {
+      "t": 63,
+      "kind": "drop"
+    },
+    {
+      "t": 82,
+      "kind": "surge"
+    },
+    {
+      "t": 92,
+      "kind": "drop"
+    },
+    {
+      "t": 94,
+      "kind": "surge"
+    },
+    {
+      "t": 110,
+      "kind": "drop"
+    },
+    {
+      "t": 114,
+      "kind": "surge"
+    },
+    {
+      "t": 129,
+      "kind": "drop"
+    },
+    {
+      "t": 131,
+      "kind": "drop"
+    },
+    {
+      "t": 132,
+      "kind": "drop"
+    },
+    {
+      "t": 136,
+      "kind": "drop"
+    }
+  ],
+  "canonical_audio_map_note": "The MainV2 audio_map output is the single timing authority for this source hash. Do not re-measure beat timing later in this production."
+}

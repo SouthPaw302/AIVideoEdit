@@ -1,11 +1,11 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Create a complete music video for Nordic (Remastered) from the current user-supplied song and video while following AIVideoEdit's production contract from boot through archive.",
+  "mission": "Build a complete 137.92-second reference-led music video for Nordic (Remastered), expanding the supplied twin-hero futuristic sunset world into enough reference-faithful coverage to follow the song without repetition or drift.",
   "direction_authority": "reference_led",
   "production_mode": "hybrid",
   "canon_lock": {
     "locked": false,
-    "picture_language": "Not established; analyze the supplied video before locking the visual world.",
+    "picture_language": "Reference analysis complete; lock after the visual/media approach and first generated batch are director-approved.",
     "items": []
   },
   "accepted_baseline": {
@@ -15,12 +15,12 @@
     "user_acceptance_statement": null
   },
   "accepted_source_library": {
-    "status": "none",
-    "role": null,
-    "file_or_locator": null,
-    "sha256": null,
-    "user_acceptance_statement": null,
-    "content_reuse_authorized": false,
+    "status": "accepted",
+    "role": "visual_world",
+    "file_or_locator": "gdrive://1DAuBUcPZnfBTaYjHbKJDQBheoPs9GoPa",
+    "sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+    "user_acceptance_statement": "Use the video and this music file; create the production from the given video and follow the repo.",
+    "content_reuse_authorized": true,
     "timeline_locked": false
   },
   "refinement_scope": {
@@ -37,9 +37,9 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Use the supplied video and Nordic (Remastered) music file, follow the repository top to bottom, call its tools, use Drive and GitHub runners/Actions, boot the repo, and do not deviate.",
-  "exact_next_action": "Bootstrap the exact current-main AIVideoEdit OS on song/nordic-remastered and pass production, narrative, recut, and workflow guards before source ingest.",
-  "updated_at_utc": null,
+  "current_user_direction": "Follow MainV2 top to bottom. Use the installed repo tools, scan the song for BPM/sections, use the given video as the source language, and create the needed stacks/batches of images for animation rather than deviating from the repository.",
+  "exact_next_action": "Establish and lock the reference-led hybrid media approach, storyboard/shot map, and frame-followable script before generating the first production image batch.",
+  "updated_at_utc": "2026-10-02T06:55:00Z",
   "director_supervision": {
     "required": true,
     "reviewer_role": "sandbox_director",

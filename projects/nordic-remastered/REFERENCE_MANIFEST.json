@@ -7,13 +7,72 @@
       "uri": "gdrive://1DAuBUcPZnfBTaYjHbKJDQBheoPs9GoPa",
       "drive_url": "https://drive.google.com/file/d/1DAuBUcPZnfBTaYjHbKJDQBheoPs9GoPa/view",
       "sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
-      "authorized_role": "current_project_source_media",
+      "authorized_role": "reference_and_authorized_visual_source",
       "content_reuse_authorized": true,
       "duration_seconds": 25.51873,
+      "video_stream_duration_seconds": 25.255344,
       "total_frames": 631,
-      "extracted_frames": 0,
-      "extraction_policy": "pending_all_frames",
-      "analysis_complete": false
+      "extracted_frames": 631,
+      "extraction_policy": "all_frames",
+      "extraction_evidence": {
+        "method": "ffmpeg full-frame extraction",
+        "output_count": 631,
+        "frame_dimensions": [
+          720,
+          1600
+        ],
+        "completed": true
+      },
+      "analysis_complete": true,
+      "analysis": {
+        "source_form": "vertical phone screen recording containing an embedded generated visual clip",
+        "usable_picture_region": {
+          "crop_pixels": {
+            "x": 104,
+            "y": 728,
+            "width": 486,
+            "height": 742
+          },
+          "derived_crop_sha256": "9fd5d2cead30df994ae6266609860a197340f13f9e62717262adbca3fd890b35",
+          "note": "Crop removes most social-feed UI for visual-language analysis; original video remains canonical source identity."
+        },
+        "picture_language": [
+          "two pale long-haired human-like / elf-like figures presented as a paired hero identity",
+          "matte black fitted futuristic clothing with minimal ornament",
+          "barren pale airfield / salt-flat-like ground",
+          "sleek dark futuristic craft behind the figures",
+          "golden-hour sky with warm peach/gold highlights against graphite clothing and cool pale skin",
+          "mostly frontal portrait staging with full-body, medium, and close framing",
+          "restrained camera language; visual change comes mainly from framing and subtle subject motion",
+          "subtle mouth/head/hair movement suitable for living-scene continuation rather than whole-frame wobble"
+        ],
+        "motion_language": {
+          "dominant": "low-motion portrait performance",
+          "internal_motion": [
+            "mouth/vocal articulation",
+            "small head turns",
+            "hair movement",
+            "micro posture shifts"
+          ],
+          "camera_behavior": "restrained; no aggressive handheld or constant zoom",
+          "transition_behavior": "framing changes and source motion are more important than flashy camera motion"
+        },
+        "continuity_anchors": [
+          "paired hero identities",
+          "long pale-blond hair",
+          "black fitted suits",
+          "sunset airfield world",
+          "sleek dark craft silhouette",
+          "gold/graphite/pale neutral palette"
+        ],
+        "diversity_probe": {
+          "tool": "general/reusable/tools/hero_library_extract.py @ MainV2",
+          "original_full_frame_result": "1 selected frame; social-feed frame is duplicate-heavy",
+          "cropped_picture_region_result": "10 selected candidates from 101 dense candidates",
+          "cropped_near_duplicate_rejections": 91,
+          "warning": "candidate pool is duplicate-heavy; additional generated coverage is required for a 137.92 s production"
+        }
+      }
     }
   ],
   "images": [],
