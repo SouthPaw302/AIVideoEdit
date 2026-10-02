@@ -2,14 +2,19 @@
 
 Stage: STORYBOARD_LOCKED
 
-MainV2 passed APPROACH_ESTABLISHED.
+MainV2 passed APPROACH_ESTABLISHED and the 47-shot frame-followable script remains locked.
 
-Locked:
-- 47-shot scene architecture across 137.92 s;
-- all scene boundaries snapped to canonical music anchors;
-- SCRIPT.md + SCRIPT.json cover frames 0–3309 with no gaps;
-- reference-led hybrid shot behavior declared per shot;
-- living-scene motion/protected regions declared;
-- vocal/lyric cues remain phonetic only.
+Production still library now completed:
+- 10 Drive batches: B01–B10;
+- 10 stills per batch;
+- **100 stills total, verified by Drive folder listing**;
+- batch root: `05 Production Batches`;
+- all generated batches remain `candidate` until moving-proof / FX review;
+- B10 contains continuity-safe alternate framings derived from the same storyboard language to bring coverage to the requested ~100 stills.
 
-Next: create **Batch B01 — 10 real production stills**, hash and register them, build shot packages, and make short moving proofs before continuing.
+Next repo step:
+1. map the 100 candidate stills into real shot packages;
+2. hash/register per-shot media evidence;
+3. build short mode-aware animation proofs with MainV2 motion/FX tools;
+4. reject/retire weak plates instead of silently replacing them;
+5. advance to SHOT_PACKAGES_BUILT only after real media evidence is complete.

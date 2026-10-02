@@ -1,0 +1,142 @@
+{
+  "schema": "aivideoedit.production-batches.v1",
+  "project": "Nordic Remastered",
+  "branch": "song/nordic-remastered",
+  "storage_root": {
+    "provider": "google_drive",
+    "folder_id": "14j91aPh27IvroLvBf3bIYeSjOiIb4Z1D",
+    "url": "https://drive.google.com/drive/folders/14j91aPh27IvroLvBf3bIYeSjOiIb4Z1D"
+  },
+  "total_batches": 10,
+  "total_stills": 100,
+  "verification": {
+    "method": "Google Drive folder listing",
+    "result": "PASS",
+    "expected_per_batch": 10,
+    "verified_counts": {
+      "B01": 10,
+      "B02": 10,
+      "B03": 10,
+      "B04": 10,
+      "B05": 10,
+      "B06": 10,
+      "B07": 10,
+      "B08": 10,
+      "B09": 10,
+      "B10": 10
+    }
+  },
+  "batches": [
+    {
+      "id": "B01",
+      "still_range": [
+        1,
+        10
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1ft2yBogwEP9NQWB008aHnwPgyo9yi_l0",
+      "drive_url": "https://drive.google.com/drive/folders/1ft2yBogwEP9NQWB008aHnwPgyo9yi_l0"
+    },
+    {
+      "id": "B02",
+      "still_range": [
+        11,
+        20
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "10lD5DMTR-mFCGEQcGlv9Ydy-3ckk5Qn2",
+      "drive_url": "https://drive.google.com/drive/folders/10lD5DMTR-mFCGEQcGlv9Ydy-3ckk5Qn2"
+    },
+    {
+      "id": "B03",
+      "still_range": [
+        21,
+        30
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1p24cyCDbQJETU8CANM9gGsAA7TLcUpbd",
+      "drive_url": "https://drive.google.com/drive/folders/1p24cyCDbQJETU8CANM9gGsAA7TLcUpbd"
+    },
+    {
+      "id": "B04",
+      "still_range": [
+        31,
+        40
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1_4Da7Un6rQCBfClH7I4WsuJg57QyR0ch",
+      "drive_url": "https://drive.google.com/drive/folders/1_4Da7Un6rQCBfClH7I4WsuJg57QyR0ch"
+    },
+    {
+      "id": "B05",
+      "still_range": [
+        41,
+        50
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1Wp33i7hrkY0ifn92p9qU63jAHtS1m8l0",
+      "drive_url": "https://drive.google.com/drive/folders/1Wp33i7hrkY0ifn92p9qU63jAHtS1m8l0"
+    },
+    {
+      "id": "B06",
+      "still_range": [
+        51,
+        60
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "10xTy_B4vX6Dtq6X9GLlTSmzl7ChLir6M",
+      "drive_url": "https://drive.google.com/drive/folders/10xTy_B4vX6Dtq6X9GLlTSmzl7ChLir6M"
+    },
+    {
+      "id": "B07",
+      "still_range": [
+        61,
+        70
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1GvPaqPun25bT_v6fT4gYd38KMHKyg3-4",
+      "drive_url": "https://drive.google.com/drive/folders/1GvPaqPun25bT_v6fT4gYd38KMHKyg3-4"
+    },
+    {
+      "id": "B08",
+      "still_range": [
+        71,
+        80
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1t7YgfEOPmG9uOH3sio6UGExskLMBSvtq",
+      "drive_url": "https://drive.google.com/drive/folders/1t7YgfEOPmG9uOH3sio6UGExskLMBSvtq"
+    },
+    {
+      "id": "B09",
+      "still_range": [
+        81,
+        90
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1MCcAJVd1Lakm25ziebXQAA-ROSENeVrz",
+      "drive_url": "https://drive.google.com/drive/folders/1MCcAJVd1Lakm25ziebXQAA-ROSENeVrz"
+    },
+    {
+      "id": "B10",
+      "still_range": [
+        91,
+        100
+      ],
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1O2TCx_bmjJHvHj_pNgNUgvZzqO9If5qv",
+      "drive_url": "https://drive.google.com/drive/folders/1O2TCx_bmjJHvHj_pNgNUgvZzqO9If5qv"
+    }
+  ],
+  "note": "B01-B09 are extracted/expanded storyboard stills. B10 contains continuity-safe alternate framings derived from the same storyboard panels to bring coverage to the requested ~100 stills. No batch is accepted until moving-proof / FX review."
+}

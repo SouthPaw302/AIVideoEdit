@@ -20,6 +20,156 @@
       "sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
       "uri": "gdrive://1sqG_muNUbxfP7UVNHotD25tS-P8xxUu_",
       "status": "ingested"
+    },
+    {
+      "id": "generated_b01_stills",
+      "name": "B01 stills 001-010",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1ft2yBogwEP9NQWB008aHnwPgyo9yi_l0",
+      "count": 10,
+      "still_range": [
+        1,
+        10
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b02_stills",
+      "name": "B02 stills 011-020",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://10lD5DMTR-mFCGEQcGlv9Ydy-3ckk5Qn2",
+      "count": 10,
+      "still_range": [
+        11,
+        20
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b03_stills",
+      "name": "B03 stills 021-030",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1p24cyCDbQJETU8CANM9gGsAA7TLcUpbd",
+      "count": 10,
+      "still_range": [
+        21,
+        30
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b04_stills",
+      "name": "B04 stills 031-040",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1_4Da7Un6rQCBfClH7I4WsuJg57QyR0ch",
+      "count": 10,
+      "still_range": [
+        31,
+        40
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b05_stills",
+      "name": "B05 stills 041-050",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1Wp33i7hrkY0ifn92p9qU63jAHtS1m8l0",
+      "count": 10,
+      "still_range": [
+        41,
+        50
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b06_stills",
+      "name": "B06 stills 051-060",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://10xTy_B4vX6Dtq6X9GLlTSmzl7ChLir6M",
+      "count": 10,
+      "still_range": [
+        51,
+        60
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b07_stills",
+      "name": "B07 stills 061-070",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1GvPaqPun25bT_v6fT4gYd38KMHKyg3-4",
+      "count": 10,
+      "still_range": [
+        61,
+        70
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b08_stills",
+      "name": "B08 stills 071-080",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1t7YgfEOPmG9uOH3sio6UGExskLMBSvtq",
+      "count": 10,
+      "still_range": [
+        71,
+        80
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b09_stills",
+      "name": "B09 stills 081-090",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1MCcAJVd1Lakm25ziebXQAA-ROSENeVrz",
+      "count": 10,
+      "still_range": [
+        81,
+        90
+      ],
+      "status": "generated_unreviewed"
+    },
+    {
+      "id": "generated_b10_stills",
+      "name": "B10 stills 091-100",
+      "kind": "generated_still_batch",
+      "origin": "generated",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1O2TCx_bmjJHvHj_pNgNUgvZzqO9If5qv",
+      "count": 10,
+      "still_range": [
+        91,
+        100
+      ],
+      "status": "generated_unreviewed"
     }
   ]
 }
