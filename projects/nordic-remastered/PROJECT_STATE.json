@@ -2,7 +2,7 @@
   "schema": "aivideoedit.project-state.v1",
   "director_brain_version": 3,
   "branch": "song/nordic-remastered",
-  "stage": "FINAL_QC_PASSED",
+  "stage": "ARCHIVED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
   "music_analysis_complete": true,
@@ -16,7 +16,7 @@
   "fx_lock_verified": true,
   "assembly_complete": true,
   "final_qc_passed": true,
-  "archive_complete": false,
+  "archive_complete": true,
   "mode_aware_proofs_accepted": true,
   "shot_package_count": 47,
   "media_evidence_verified": true,
@@ -32,5 +32,7 @@
   "final_qc_passed_at": "2026-10-02T23:52:00Z",
   "mode_aware_qc_passed": true,
   "mode_aware_qc_passed_at": "2026-10-02T23:41:00Z",
-  "mode_aware_qc_evidence": "projects/nordic-remastered/FINAL_QC.json"
+  "mode_aware_qc_evidence": "projects/nordic-remastered/FINAL_QC.json",
+  "archive_complete_at": "2026-10-02T23:43:00Z",
+  "final_mainv2_contract_run_id": 37078710645
 }
