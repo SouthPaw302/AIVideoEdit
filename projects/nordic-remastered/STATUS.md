@@ -2,21 +2,14 @@
 
 Stage: STORYBOARD_LOCKED
 
-Active subject canon: **Nordic aliens / Tall Whites** from the accepted source video.
+Active subject canon: **Nordic aliens / Tall Whites**.
 
 Completed:
-- rejected Viking B01-B10 quarantined and removed from active manifests;
 - B01R: 10 source-canon candidate stills;
-- B02R: 10 exact-source-derived stills for S11-S20;
-- Director `media_selection` checkpoint: **APPROVED**;
-- representative hybrid motion proof: **APPROVED** after rejecting the too-subtle living V1;
-- proof evidence backed up to Drive Director Proofs.
+- B02R: 10 exact-source-derived stills;
+- representative hybrid motion proof: **APPROVED**;
+- B03R: 10 exact-source-derived stills for S21-S30, backed up to Drive.
 
-Approved motion language:
-- living_scene: localized hair/cloth/atmosphere motion, protected faces, restrained/locked camera;
-- cinematic: bounded camera travel, readable craft/world progression, controlled atmosphere/light;
-- no Viking/Norse imagery; Tall White identities/craft/world remain protected.
+B03R remains candidate media. Director source-canon review: PASS. Low-resolution limitations are inherited from the accepted source clip; no invented content is used to hide them.
 
-No FX lock is claimed yet.
-
-Next: build **B03R source-canon stills 021-030 for S21-S30** using extracted source imagery and the approved motion language, then continue the Batch-10 cadence.
+Next: build **B04R source-canon stills 031-040 for S31-S40**, preserve the approved motion language, and continue Batch-10 cadence.

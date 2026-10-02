@@ -11,8 +11,8 @@
     "folder_id": "11oDq40ic59HPrYWwBJMxIsJx0L1Xtnhd"
   },
   "planned_batches": 5,
-  "completed_candidate_batches": 2,
-  "active_stills": 20,
+  "completed_candidate_batches": 3,
+  "active_stills": 30,
   "batches": [
     {
       "id": "B01R",
@@ -43,8 +43,12 @@
         21,
         30
       ],
-      "count": 0,
-      "lifecycle_status": "planned"
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1z9BxHaLogcb72eED67M99NptEWoVjwqf",
+      "backup_presentation_id": "1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38",
+      "source_derivation": "exact extracted frames; crop/reframe/upscale/blurred-edge extension only",
+      "director_media_selection": "PASS"
     },
     {
       "id": "B04R",
