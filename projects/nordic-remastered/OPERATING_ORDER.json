@@ -1,12 +1,20 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Build a complete 137.92-second reference-led music video for Nordic (Remastered), expanding the supplied twin-hero futuristic sunset world into enough reference-faithful coverage to follow the song without repetition or drift.",
+  "mission": "Build a complete 137.92-second reference-led hybrid music video for Nordic (Remastered) by expanding the supplied paired-hero futuristic sunset world into five controlled Batch-10 stacks and animating them with MainV2's canonical motion/FX tools.",
   "direction_authority": "reference_led",
   "production_mode": "hybrid",
   "canon_lock": {
-    "locked": false,
-    "picture_language": "Reference analysis complete; lock after the visual/media approach and first generated batch are director-approved.",
-    "items": []
+    "locked": true,
+    "picture_language": "Paired pale long-haired futuristic heroes in matte-black fitted suits on a barren pale sunset airfield with a sleek dark craft; warm gold/peach sky, graphite clothing, cool pale neutrals; restrained portrait camera and localized internal motion.",
+    "items": [
+      "paired hero identity and relative visual relationship",
+      "long pale-blond hair",
+      "matte-black fitted suit language",
+      "pale barren airfield / salt-flat environment",
+      "sleek dark craft design language",
+      "golden-hour lighting direction and gold/graphite/pale palette",
+      "restrained camera grammar and zero-drift continuity"
+    ]
   },
   "accepted_baseline": {
     "status": "none",
@@ -37,9 +45,9 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Follow MainV2 top to bottom. Use the installed repo tools, scan the song for BPM/sections, use the given video as the source language, and create the needed stacks/batches of images for animation rather than deviating from the repository.",
-  "exact_next_action": "Establish and lock the reference-led hybrid media approach, storyboard/shot map, and frame-followable script before generating the first production image batch.",
-  "updated_at_utc": "2026-10-02T06:55:00Z",
+  "current_user_direction": "Follow MainV2 top to bottom using its installed tools. Build the needed image batches from the given video, scan the song/BPM, animate through repo FX/motion tools, and do not deviate.",
+  "exact_next_action": "Lock the complete shot map/storyboard and frame-followable SCRIPT.md/SCRIPT.json across the 137.92-second master before generating Batch B01.",
+  "updated_at_utc": "2026-10-02T07:02:00Z",
   "director_supervision": {
     "required": true,
     "reviewer_role": "sandbox_director",
