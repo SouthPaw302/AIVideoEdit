@@ -2,19 +2,10 @@
 
 Stage: STORYBOARD_LOCKED
 
-MainV2 passed APPROACH_ESTABLISHED and the 47-shot frame-followable script remains locked.
+Director media-selection checkpoint: **REJECTED** for the existing B01-B10 candidate still library.
 
-Production still library now completed:
-- 10 Drive batches: B01–B10;
-- 10 stills per batch;
-- **100 stills total, verified by Drive folder listing**;
-- batch root: `05 Production Batches`;
-- all generated batches remain `candidate` until moving-proof / FX review;
-- B10 contains continuity-safe alternate framings derived from the same storyboard language to bring coverage to the requested ~100 stills.
+Reason: the 100 stills materially drifted away from the locked reference visual world into Viking fjords, warriors, longships, villages, and snow-mountain imagery. That violates Zero-Drift subject/world/wardrobe/craft continuity.
 
-Next repo step:
-1. map the 100 candidate stills into real shot packages;
-2. hash/register per-shot media evidence;
-3. build short mode-aware animation proofs with MainV2 motion/FX tools;
-4. reject/retire weak plates instead of silently replacing them;
-5. advance to SHOT_PACKAGES_BUILT only after real media evidence is complete.
+The rejected Drive media is preserved for audit but is not canon and must not be used downstream.
+
+Current next action: rebuild **B01R (10 stills)** directly from the accepted source reference: paired pale-haired futuristic heroes, matte-black fitted suits, barren pale sunset airfield, sleek dark craft, gold/graphite/pale palette. Run representative moving proof and FX gate before proceeding to B02R.

@@ -1,0 +1,43 @@
+{
+  "schema": "aivideoedit.production-execution-ledger.v1",
+  "project": "Nordic Remastered",
+  "created_at": "2026-10-02T08:05:00Z",
+  "updated_at": "2026-10-02T08:05:00Z",
+  "events": [
+    {
+      "component": "director_review",
+      "subject": "B01-B10_candidate_stills",
+      "stage": "executed",
+      "at": "2026-10-02T08:05:00Z",
+      "actor": "sandbox_director",
+      "consumer": null,
+      "evidence": {
+        "batch_manifest": "BATCH_MANIFEST.json"
+      },
+      "metadata": {
+        "result": "REJECTED",
+        "reason": "visual canon drift"
+      },
+      "required_execution": true,
+      "required_consumption": false,
+      "reason": null
+    },
+    {
+      "component": "media_selection",
+      "subject": "accepted_source_reference",
+      "stage": "selected",
+      "at": "2026-10-02T08:05:00Z",
+      "actor": "sandbox_director",
+      "consumer": "B01R_regeneration",
+      "evidence": {
+        "source_video": "gdrive://1DAuBUcPZnfBTaYjHbKJDQBheoPs9GoPa"
+      },
+      "metadata": {
+        "canon": "paired pale-haired futuristic heroes / black suits / barren sunset airfield / dark craft"
+      },
+      "required_execution": true,
+      "required_consumption": true,
+      "reason": null
+    }
+  ]
+}

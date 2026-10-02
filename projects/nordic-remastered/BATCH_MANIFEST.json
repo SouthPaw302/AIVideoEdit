@@ -24,7 +24,9 @@
       "B08": 10,
       "B09": 10,
       "B10": 10
-    }
+    },
+    "director_review": "REJECTED",
+    "director_review_reason": "Zero-Drift failure: generated library materially changed subject identity, world, wardrobe, architecture, and craft."
   },
   "batches": [
     {
@@ -34,9 +36,10 @@
         10
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1ft2yBogwEP9NQWB008aHnwPgyo9yi_l0",
-      "drive_url": "https://drive.google.com/drive/folders/1ft2yBogwEP9NQWB008aHnwPgyo9yi_l0"
+      "drive_url": "https://drive.google.com/drive/folders/1ft2yBogwEP9NQWB008aHnwPgyo9yi_l0",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B02",
@@ -45,9 +48,10 @@
         20
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "10lD5DMTR-mFCGEQcGlv9Ydy-3ckk5Qn2",
-      "drive_url": "https://drive.google.com/drive/folders/10lD5DMTR-mFCGEQcGlv9Ydy-3ckk5Qn2"
+      "drive_url": "https://drive.google.com/drive/folders/10lD5DMTR-mFCGEQcGlv9Ydy-3ckk5Qn2",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B03",
@@ -56,9 +60,10 @@
         30
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1p24cyCDbQJETU8CANM9gGsAA7TLcUpbd",
-      "drive_url": "https://drive.google.com/drive/folders/1p24cyCDbQJETU8CANM9gGsAA7TLcUpbd"
+      "drive_url": "https://drive.google.com/drive/folders/1p24cyCDbQJETU8CANM9gGsAA7TLcUpbd",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B04",
@@ -67,9 +72,10 @@
         40
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1_4Da7Un6rQCBfClH7I4WsuJg57QyR0ch",
-      "drive_url": "https://drive.google.com/drive/folders/1_4Da7Un6rQCBfClH7I4WsuJg57QyR0ch"
+      "drive_url": "https://drive.google.com/drive/folders/1_4Da7Un6rQCBfClH7I4WsuJg57QyR0ch",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B05",
@@ -78,9 +84,10 @@
         50
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1Wp33i7hrkY0ifn92p9qU63jAHtS1m8l0",
-      "drive_url": "https://drive.google.com/drive/folders/1Wp33i7hrkY0ifn92p9qU63jAHtS1m8l0"
+      "drive_url": "https://drive.google.com/drive/folders/1Wp33i7hrkY0ifn92p9qU63jAHtS1m8l0",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B06",
@@ -89,9 +96,10 @@
         60
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "10xTy_B4vX6Dtq6X9GLlTSmzl7ChLir6M",
-      "drive_url": "https://drive.google.com/drive/folders/10xTy_B4vX6Dtq6X9GLlTSmzl7ChLir6M"
+      "drive_url": "https://drive.google.com/drive/folders/10xTy_B4vX6Dtq6X9GLlTSmzl7ChLir6M",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B07",
@@ -100,9 +108,10 @@
         70
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1GvPaqPun25bT_v6fT4gYd38KMHKyg3-4",
-      "drive_url": "https://drive.google.com/drive/folders/1GvPaqPun25bT_v6fT4gYd38KMHKyg3-4"
+      "drive_url": "https://drive.google.com/drive/folders/1GvPaqPun25bT_v6fT4gYd38KMHKyg3-4",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B08",
@@ -111,9 +120,10 @@
         80
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1t7YgfEOPmG9uOH3sio6UGExskLMBSvtq",
-      "drive_url": "https://drive.google.com/drive/folders/1t7YgfEOPmG9uOH3sio6UGExskLMBSvtq"
+      "drive_url": "https://drive.google.com/drive/folders/1t7YgfEOPmG9uOH3sio6UGExskLMBSvtq",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B09",
@@ -122,9 +132,10 @@
         90
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1MCcAJVd1Lakm25ziebXQAA-ROSENeVrz",
-      "drive_url": "https://drive.google.com/drive/folders/1MCcAJVd1Lakm25ziebXQAA-ROSENeVrz"
+      "drive_url": "https://drive.google.com/drive/folders/1MCcAJVd1Lakm25ziebXQAA-ROSENeVrz",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     },
     {
       "id": "B10",
@@ -133,10 +144,11 @@
         100
       ],
       "count": 10,
-      "lifecycle_status": "candidate",
+      "lifecycle_status": "rejected",
       "drive_folder_id": "1O2TCx_bmjJHvHj_pNgNUgvZzqO9If5qv",
-      "drive_url": "https://drive.google.com/drive/folders/1O2TCx_bmjJHvHj_pNgNUgvZzqO9If5qv"
+      "drive_url": "https://drive.google.com/drive/folders/1O2TCx_bmjJHvHj_pNgNUgvZzqO9If5qv",
+      "rejection_reason": "Director media-selection review: visual canon drift. Viking/fjord/warrior imagery does not match locked paired pale-haired futuristic heroes, matte-black suits, barren sunset airfield, and sleek dark craft."
     }
   ],
-  "note": "B01-B09 are extracted/expanded storyboard stills. B10 contains continuity-safe alternate framings derived from the same storyboard panels to bring coverage to the requested ~100 stills. No batch is accepted until moving-proof / FX review."
+  "note": "B01-B10 remain preserved in Drive as rejected candidate media. They are not canon and must not be used downstream. Rebuild starts with B01R from the accepted source reference."
 }
