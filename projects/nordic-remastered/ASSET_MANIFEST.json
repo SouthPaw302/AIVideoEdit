@@ -201,7 +201,16 @@
           "derivation": "full source with blurred-edge wide reset",
           "backup_slide_object_id": "b02r_20"
         }
-      ]
+      ],
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+        "source_range_seconds": [
+          0,
+          25.255344
+        ],
+        "derivation": "Exact frames extracted from the accepted source video, then crop/reframe/upscale and where needed blurred-edge 16:9 extension using only pixels from the same extracted source frame. Per-file source_frame records identify the exact frame used."
+      }
     },
     {
       "id": "generated_b03r_stills",
@@ -308,7 +317,16 @@
           "backup_slide_object_id": "b03r_30",
           "lifecycle_status": "candidate"
         }
-      ]
+      ],
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+        "source_range_seconds": [
+          0,
+          25.255344
+        ],
+        "derivation": "Exact frames extracted from the accepted source video, then crop/reframe/upscale and where needed blurred-edge 16:9 extension using only pixels from the same extracted source frame. Per-file source_frame records identify the exact frame used."
+      }
     },
     {
       "id": "generated_b04r_stills",
@@ -415,7 +433,16 @@
           "backup_slide_object_id": "b04r_40",
           "lifecycle_status": "candidate"
         }
-      ]
+      ],
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+        "source_range_seconds": [
+          0,
+          25.255344
+        ],
+        "derivation": "Exact frames extracted from the accepted source video, then crop/reframe/upscale and where needed blurred-edge 16:9 extension using only pixels from the same extracted source frame. Per-file source_frame records identify the exact frame used."
+      }
     },
     {
       "id": "generated_b05r_stills",
@@ -532,7 +559,16 @@
           "lifecycle_status": "candidate",
           "role": "alternate_plate"
         }
-      ]
+      ],
+      "provenance": {
+        "kind": "source_derived",
+        "source_library_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+        "source_range_seconds": [
+          0,
+          25.255344
+        ],
+        "derivation": "Exact frames extracted from the accepted source video, then crop/reframe/upscale and where needed blurred-edge 16:9 extension using only pixels from the same extracted source frame. Per-file source_frame records identify the exact frame used."
+      }
     }
   ]
 }
