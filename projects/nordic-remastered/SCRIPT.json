@@ -1,3 +1,1380 @@
 {
-  "entries": []
+  "schema": "aivideoedit.video-script.v1",
+  "locked": true,
+  "based_on_storyboard": true,
+  "target_fps": 24,
+  "duration_seconds": 137.92,
+  "total_frames": 3310,
+  "basis": [
+    "storyboard",
+    "music_analysis",
+    "lyrics"
+  ],
+  "timing_authority": {
+    "source_audio_sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+    "tool": "general/reusable/tools/scene_timeline.py @ MainV2",
+    "audiomap_tool": "general/reusable/tools/audio_map.py @ MainV2",
+    "audiomap_sha256": "f62f04c55a6ab1cb2824ba78b07790214f59879c3be671b3786972e732aefca4",
+    "snap_window_seconds": 0.25,
+    "scene_count": 47
+  },
+  "entries": [
+    {
+      "shot_id": "S01",
+      "start_frame": 0,
+      "end_frame": 95,
+      "production_mode": "living_scene",
+      "story_action": "Fade up on the paired heroes beside the sleek craft; hold the full visual world and horizon.",
+      "visual_media": "Planned generated/source-derived plate B01_01 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "low/void intro",
+        "first clear surge near 2 s",
+        "half-time visual weight",
+        "scene boundary snapped at 0.0000 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "fade in from black",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S02",
+      "start_frame": 96,
+      "end_frame": 189,
+      "production_mode": "living_scene",
+      "story_action": "Medium paired portrait; one hero turns slightly toward the other as hair moves in the wind.",
+      "visual_media": "Planned generated/source-derived plate B01_02 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "low/void intro",
+        "first clear surge near 2 s",
+        "half-time visual weight",
+        "scene boundary snapped at 3.9938 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S03",
+      "start_frame": 190,
+      "end_frame": 284,
+      "production_mode": "living_scene",
+      "story_action": "Close portrait on the vocal-performing hero with the second hero soft in depth behind.",
+      "visual_media": "Planned generated/source-derived plate B01_03 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "low/void intro",
+        "first clear surge near 2 s",
+        "half-time visual weight",
+        "scene boundary snapped at 7.9180 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S04",
+      "start_frame": 285,
+      "end_frame": 386,
+      "production_mode": "living_scene",
+      "story_action": "Reverse close/profile on the second hero; sunset rim light and hair carry the motion.",
+      "visual_media": "Planned generated/source-derived plate B01_04 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "low/void intro",
+        "first clear surge near 2 s",
+        "half-time visual weight",
+        "scene boundary snapped at 11.8654 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S05",
+      "start_frame": 387,
+      "end_frame": 479,
+      "production_mode": "living_scene",
+      "story_action": "Return to a full-body pair tableau as the craft silhouette and pale ground settle the intro.",
+      "visual_media": "Planned generated/source-derived plate B01_05 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "low/void intro",
+        "first clear surge near 2 s",
+        "half-time visual weight",
+        "scene boundary snapped at 16.1146 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S06",
+      "start_frame": 480,
+      "end_frame": 559,
+      "production_mode": "cinematic",
+      "story_action": "Wide airfield/craft establishing angle expands the world on the 20-second surge.",
+      "visual_media": "Planned generated/source-derived plate B01_06 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "20 s energy surge",
+        "medium build",
+        "approach to 33 s transition",
+        "scene boundary snapped at 20.0000 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "section-change cut on canonical music anchor"
+    },
+    {
+      "shot_id": "S07",
+      "start_frame": 560,
+      "end_frame": 638,
+      "production_mode": "living_scene",
+      "story_action": "Low-angle pair portrait with wind lifting hair and subtle suit/cloth response.",
+      "visual_media": "Planned generated/source-derived plate B01_07 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "20 s energy surge",
+        "medium build",
+        "approach to 33 s transition",
+        "scene boundary snapped at 23.3128 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S08",
+      "start_frame": 639,
+      "end_frame": 716,
+      "production_mode": "cinematic",
+      "story_action": "Craft detail and horizon insert: dark hull surfaces, warm reflection, pale terrain.",
+      "visual_media": "Planned generated/source-derived plate B01_08 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "20 s energy surge",
+        "medium build",
+        "approach to 33 s transition",
+        "scene boundary snapped at 26.6101 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S09",
+      "start_frame": 717,
+      "end_frame": 791,
+      "production_mode": "living_scene",
+      "story_action": "Three-quarter pair composition; both heroes orient toward the craft as the build completes.",
+      "visual_media": "Planned generated/source-derived plate B01_09 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "20 s energy surge",
+        "medium build",
+        "approach to 33 s transition",
+        "scene boundary snapped at 29.8841 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S10",
+      "start_frame": 792,
+      "end_frame": 865,
+      "production_mode": "cinematic",
+      "story_action": "On the 33-second surge, begin a purposeful walk parallel to the craft in a wider cinematic frame.",
+      "visual_media": "Planned generated/source-derived plate B01_10 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 33.0000 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "section-change cut on canonical music anchor"
+    },
+    {
+      "shot_id": "S11",
+      "start_frame": 866,
+      "end_frame": 936,
+      "production_mode": "living_scene",
+      "story_action": "Medium moving two-shot; identities remain locked while dust and hair react to motion.",
+      "visual_media": "Planned generated/source-derived plate B02_01 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 36.0838 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S12",
+      "start_frame": 937,
+      "end_frame": 1007,
+      "production_mode": "cinematic",
+      "story_action": "Close side profile of hero one; craft geometry passes behind without lens or axis drift.",
+      "visual_media": "Planned generated/source-derived plate B02_02 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 39.0327 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S13",
+      "start_frame": 1008,
+      "end_frame": 1077,
+      "production_mode": "living_scene",
+      "story_action": "Wide pair-and-craft composition with stronger wind and low dust movement.",
+      "visual_media": "Planned generated/source-derived plate B02_03 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 41.9817 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S14",
+      "start_frame": 1078,
+      "end_frame": 1148,
+      "production_mode": "living_scene",
+      "story_action": "Close side profile of hero two; mouth/vocal micro-motion and sunset edge light stay restrained.",
+      "visual_media": "Planned generated/source-derived plate B02_04 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 44.9306 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S15",
+      "start_frame": 1149,
+      "end_frame": 1227,
+      "production_mode": "cinematic",
+      "story_action": "Rear three-quarter pair shot looking across the airfield toward the craft nose.",
+      "visual_media": "Planned generated/source-derived plate B02_05 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 47.8795 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S16",
+      "start_frame": 1228,
+      "end_frame": 1297,
+      "production_mode": "cinematic",
+      "story_action": "Craft underbody / landing-structure detail with subtle reflected light and dust.",
+      "visual_media": "Planned generated/source-derived plate B02_06 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 51.1536 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S17",
+      "start_frame": 1298,
+      "end_frame": 1368,
+      "production_mode": "living_scene",
+      "story_action": "Medium pair shot separated slightly in frame, linked by matching eyeline and horizon.",
+      "visual_media": "Planned generated/source-derived plate B02_07 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 54.1025 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S18",
+      "start_frame": 1369,
+      "end_frame": 1438,
+      "production_mode": "living_scene",
+      "story_action": "Hero one isolated medium portrait; hair crosses the shoulder while background remains stable.",
+      "visual_media": "Planned generated/source-derived plate B02_08 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 57.0514 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S19",
+      "start_frame": 1439,
+      "end_frame": 1511,
+      "production_mode": "living_scene",
+      "story_action": "Hero two joins frame; match the earlier paired stance but with stronger environmental energy.",
+      "visual_media": "Planned generated/source-derived plate B02_09 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "33 s major surge",
+        "sustained high-energy plateau",
+        "dense 184.57 BPM grid",
+        "scene boundary snapped at 59.9771 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S20",
+      "start_frame": 1512,
+      "end_frame": 1581,
+      "production_mode": "cinematic",
+      "story_action": "Brief visual reset after the 63-second softening: wide static airfield with heroes small against craft.",
+      "visual_media": "Planned generated/source-derived plate B02_10 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 63.0000 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "section-change cut on canonical music anchor"
+    },
+    {
+      "shot_id": "S21",
+      "start_frame": 1582,
+      "end_frame": 1651,
+      "production_mode": "living_scene",
+      "story_action": "Living medium two-shot; subtle breath, hair and suit motion under sustained high energy.",
+      "visual_media": "Planned generated/source-derived plate B03_01 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 65.8982 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S22",
+      "start_frame": 1652,
+      "end_frame": 1722,
+      "production_mode": "cinematic",
+      "story_action": "Detail on hands/boots/ground contact, preserving anatomy and suit materials.",
+      "visual_media": "Planned generated/source-derived plate B03_02 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 68.8472 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S23",
+      "start_frame": 1723,
+      "end_frame": 1793,
+      "production_mode": "cinematic",
+      "story_action": "Wide cinematic pass along the craft flank with the paired heroes crossing foreground.",
+      "visual_media": "Planned generated/source-derived plate B03_03 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 71.7729 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S24",
+      "start_frame": 1794,
+      "end_frame": 1855,
+      "production_mode": "living_scene",
+      "story_action": "Hero one three-quarter portrait with controlled wind and distant craft lights.",
+      "visual_media": "Planned generated/source-derived plate B03_04 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 74.7450 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S25",
+      "start_frame": 1856,
+      "end_frame": 1926,
+      "production_mode": "living_scene",
+      "story_action": "Hero two three-quarter portrait from complementary angle; no identity or wardrobe drift.",
+      "visual_media": "Planned generated/source-derived plate B03_05 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 77.3457 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S26",
+      "start_frame": 1927,
+      "end_frame": 1997,
+      "production_mode": "living_scene",
+      "story_action": "Secondary 82-second surge: pair turns together toward the craft in a stronger medium-wide frame.",
+      "visual_media": "Planned generated/source-derived plate B03_06 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 80.2946 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S27",
+      "start_frame": 1998,
+      "end_frame": 2068,
+      "production_mode": "cinematic",
+      "story_action": "Craft nose / canopy detail with light activation and dust response.",
+      "visual_media": "Planned generated/source-derived plate B03_07 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 83.2435 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S28",
+      "start_frame": 2069,
+      "end_frame": 2138,
+      "production_mode": "living_scene",
+      "story_action": "Alternating close two-shot: both faces readable, background compressed but topology unchanged.",
+      "visual_media": "Planned generated/source-derived plate B03_08 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 86.1925 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S29",
+      "start_frame": 2139,
+      "end_frame": 2207,
+      "production_mode": "living_scene",
+      "story_action": "Wide climax-prep composition: pair foreground, craft centered behind, stronger atmosphere.",
+      "visual_media": "Planned generated/source-derived plate B03_09 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "63 s softening then sustained high",
+        "secondary surge near 82 s",
+        "half-time weighted edits",
+        "scene boundary snapped at 89.1414 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S30",
+      "start_frame": 2208,
+      "end_frame": 2280,
+      "production_mode": "living_scene",
+      "story_action": "At the 92-second drop, cut to an intimate near-still close pair portrait; motion nearly disappears.",
+      "visual_media": "Planned generated/source-derived plate B03_10 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "92 s major drop",
+        "94 s re-entry",
+        "110 s drop / 114 s rebuild",
+        "scene boundary snapped at 92.0000 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "section-change cut on canonical music anchor",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S31",
+      "start_frame": 2281,
+      "end_frame": 2359,
+      "production_mode": "living_scene",
+      "story_action": "94-second return: medium pair shot snaps back with stronger hair/wind and controlled light response.",
+      "visual_media": "Planned generated/source-derived plate B04_01 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "92 s major drop",
+        "94 s re-entry",
+        "110 s drop / 114 s rebuild",
+        "scene boundary snapped at 95.0393 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S32",
+      "start_frame": 2360,
+      "end_frame": 2437,
+      "production_mode": "cinematic",
+      "story_action": "Craft detail with a first clear activation pulse; no topology change.",
+      "visual_media": "Planned generated/source-derived plate B04_02 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "92 s major drop",
+        "94 s re-entry",
+        "110 s drop / 114 s rebuild",
+        "scene boundary snapped at 98.3133 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S33",
+      "start_frame": 2438,
+      "end_frame": 2508,
+      "production_mode": "cinematic",
+      "story_action": "Low-angle cinematic pair shot; stance widens as the music regains weight.",
+      "visual_media": "Planned generated/source-derived plate B04_03 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "92 s major drop",
+        "94 s re-entry",
+        "110 s drop / 114 s rebuild",
+        "scene boundary snapped at 101.5873 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S34",
+      "start_frame": 2509,
+      "end_frame": 2586,
+      "production_mode": "living_scene",
+      "story_action": "Close portrait on the vocal hero against a clean gold sky, minimal camera movement.",
+      "visual_media": "Planned generated/source-derived plate B04_04 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "92 s major drop",
+        "94 s re-entry",
+        "110 s drop / 114 s rebuild",
+        "scene boundary snapped at 104.5362 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S35",
+      "start_frame": 2587,
+      "end_frame": 2657,
+      "production_mode": "cinematic",
+      "story_action": "Fast environment insert: dust ribbon and craft reflection timed to the high-energy phrase.",
+      "visual_media": "Planned generated/source-derived plate B04_05 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "92 s major drop",
+        "94 s re-entry",
+        "110 s drop / 114 s rebuild",
+        "scene boundary snapped at 107.8102 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S36",
+      "start_frame": 2658,
+      "end_frame": 2735,
+      "production_mode": "living_scene",
+      "story_action": "110-second drop: hold a quiet profile with only hair and breath moving before the rebuild.",
+      "visual_media": "Planned generated/source-derived plate B04_06 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "92 s major drop",
+        "94 s re-entry",
+        "110 s drop / 114 s rebuild",
+        "scene boundary snapped at 110.7592 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S37",
+      "start_frame": 2736,
+      "end_frame": 2783,
+      "production_mode": "cinematic",
+      "story_action": "114-second surge: hard return to a wide pair-and-craft hero frame.",
+      "visual_media": "Planned generated/source-derived plate B04_07 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 114.0000 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "section-change cut on canonical music anchor"
+    },
+    {
+      "shot_id": "S38",
+      "start_frame": 2784,
+      "end_frame": 2838,
+      "production_mode": "living_scene",
+      "story_action": "Medium cinematic walk toward camera; preserve exact hero identity and suit geometry.",
+      "visual_media": "Planned generated/source-derived plate B04_08 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 115.9837 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S39",
+      "start_frame": 2839,
+      "end_frame": 2885,
+      "production_mode": "cinematic",
+      "story_action": "Craft activation insert with controlled lights/reflections and dust, no invented structural changes.",
+      "visual_media": "Planned generated/source-derived plate B04_09 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 118.2824 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S40",
+      "start_frame": 2886,
+      "end_frame": 2940,
+      "production_mode": "living_scene",
+      "story_action": "High-energy close two-shot with strong wind and shorter edit duration.",
+      "visual_media": "Planned generated/source-derived plate B04_10 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 120.2329 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S41",
+      "start_frame": 2941,
+      "end_frame": 2987,
+      "production_mode": "cinematic",
+      "story_action": "Wide airfield frame with craft beginning bounded motion while heroes remain stable anchors.",
+      "visual_media": "Planned generated/source-derived plate B05_01 in the locked reference visual world.",
+      "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 122.5317 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "hard cut or canonical short transition"
+    },
+    {
+      "shot_id": "S42",
+      "start_frame": 2988,
+      "end_frame": 3042,
+      "production_mode": "living_scene",
+      "story_action": "Profile close on hero one, then slight eyeline shift toward hero two; no facial drift.",
+      "visual_media": "Planned generated/source-derived plate B05_02 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 124.5054 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S43",
+      "start_frame": 3043,
+      "end_frame": 3089,
+      "production_mode": "living_scene",
+      "story_action": "Complementary profile on hero two with matching light direction and hair force.",
+      "visual_media": "Planned generated/source-derived plate B05_03 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 126.7810 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S44",
+      "start_frame": 3090,
+      "end_frame": 3143,
+      "production_mode": "living_scene",
+      "story_action": "Peak tableau: both heroes foreground while craft/environment energy reaches maximum.",
+      "visual_media": "Planned generated/source-derived plate B05_04 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "114 s surge",
+        "peak energy 120–129 s",
+        "shorter high-energy coverage",
+        "scene boundary snapped at 128.7546 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S45",
+      "start_frame": 3144,
+      "end_frame": 3199,
+      "production_mode": "living_scene",
+      "story_action": "131-second drop: pair returns to a calm full-body stance beside the craft.",
+      "visual_media": "Planned generated/source-derived plate B05_05 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "131–132 s energy collapse",
+        "final decay",
+        "silence tail begins near 135.98 s",
+        "scene boundary snapped at 131.0000 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "section-change cut on canonical music anchor",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S46",
+      "start_frame": 3200,
+      "end_frame": 3254,
+      "production_mode": "living_scene",
+      "story_action": "Closer paired portrait as wind and environmental motion fall away toward silence.",
+      "visual_media": "Planned generated/source-derived plate B05_06 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "131–132 s energy collapse",
+        "final decay",
+        "silence tail begins near 135.98 s",
+        "scene boundary snapped at 133.3290 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    },
+    {
+      "shot_id": "S47",
+      "start_frame": 3255,
+      "end_frame": 3309,
+      "production_mode": "living_scene",
+      "story_action": "Final wide tableau: heroes and craft held against the sunset horizon, then fade into the true audio tail.",
+      "visual_media": "Planned generated/source-derived plate B05_07 in the locked reference visual world.",
+      "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+      "music_cues": [
+        "131–132 s energy collapse",
+        "final decay",
+        "silence tail begins near 135.98 s",
+        "scene boundary snapped at 135.6133 s by MainV2 scene_timeline.py"
+      ],
+      "lyric_cue": null,
+      "transition": "short match cut / restrained atmospheric dissolve",
+      "motion_regions": [
+        "hair",
+        "mouth/face micro-expression where applicable",
+        "cloth/suit surface",
+        "dust/atmosphere",
+        "sun glints/reflections",
+        "craft lights/background atmosphere"
+      ],
+      "protected_regions": [
+        "faces",
+        "hands",
+        "body anatomy",
+        "hero silhouette/identity",
+        "suit geometry",
+        "craft geometry",
+        "horizon",
+        "lighting direction"
+      ]
+    }
+  ]
 }

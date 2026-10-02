@@ -1,15 +1,15 @@
 # Status
 
-Stage: APPROACH_ESTABLISHED
+Stage: STORYBOARD_LOCKED
 
-MainV2 passed SOURCE_INGESTED and REFERENCES_ANALYZED.
+MainV2 passed APPROACH_ESTABLISHED.
 
 Locked:
-- direction authority: reference_led;
-- production mode: hybrid;
-- accepted source library: supplied video;
-- picture-language canon: paired pale-haired heroes / black suits / sunset airfield / sleek craft;
-- five Batch-10 coverage plan (50 primary scene plates);
-- music-edit basis: 184.57 BPM canonical grid with ~92.29 BPM half-time visual weight.
+- 47-shot scene architecture across 137.92 s;
+- all scene boundaries snapped to canonical music anchors;
+- SCRIPT.md + SCRIPT.json cover frames 0–3309 with no gaps;
+- reference-led hybrid shot behavior declared per shot;
+- living-scene motion/protected regions declared;
+- vocal/lyric cues remain phonetic only.
 
-Next: lock the complete storyboard/shot map and frame-followable script before any production image generation.
+Next: create **Batch B01 — 10 real production stills**, hash and register them, build shot packages, and make short moving proofs before continuing.

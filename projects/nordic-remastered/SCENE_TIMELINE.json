@@ -1,0 +1,295 @@
+{
+  "schema": "aivideoedit.scene-timeline.v1",
+  "duration_sec": 137.92,
+  "scenes": [
+    {
+      "id": "S01",
+      "start": 0,
+      "end": 3.9938,
+      "section": "A"
+    },
+    {
+      "id": "S02",
+      "start": 3.9938,
+      "end": 7.918,
+      "section": "A"
+    },
+    {
+      "id": "S03",
+      "start": 7.918,
+      "end": 11.8654,
+      "section": "A"
+    },
+    {
+      "id": "S04",
+      "start": 11.8654,
+      "end": 16.1146,
+      "section": "A"
+    },
+    {
+      "id": "S05",
+      "start": 16.1146,
+      "end": 20,
+      "section": "A"
+    },
+    {
+      "id": "S06",
+      "start": 20,
+      "end": 23.3128,
+      "section": "B"
+    },
+    {
+      "id": "S07",
+      "start": 23.3128,
+      "end": 26.6101,
+      "section": "B"
+    },
+    {
+      "id": "S08",
+      "start": 26.6101,
+      "end": 29.8841,
+      "section": "B"
+    },
+    {
+      "id": "S09",
+      "start": 29.8841,
+      "end": 33,
+      "section": "B"
+    },
+    {
+      "id": "S10",
+      "start": 33,
+      "end": 36.0838,
+      "section": "C"
+    },
+    {
+      "id": "S11",
+      "start": 36.0838,
+      "end": 39.0327,
+      "section": "C"
+    },
+    {
+      "id": "S12",
+      "start": 39.0327,
+      "end": 41.9817,
+      "section": "C"
+    },
+    {
+      "id": "S13",
+      "start": 41.9817,
+      "end": 44.9306,
+      "section": "C"
+    },
+    {
+      "id": "S14",
+      "start": 44.9306,
+      "end": 47.8795,
+      "section": "C"
+    },
+    {
+      "id": "S15",
+      "start": 47.8795,
+      "end": 51.1536,
+      "section": "C"
+    },
+    {
+      "id": "S16",
+      "start": 51.1536,
+      "end": 54.1025,
+      "section": "C"
+    },
+    {
+      "id": "S17",
+      "start": 54.1025,
+      "end": 57.0514,
+      "section": "C"
+    },
+    {
+      "id": "S18",
+      "start": 57.0514,
+      "end": 59.9771,
+      "section": "C"
+    },
+    {
+      "id": "S19",
+      "start": 59.9771,
+      "end": 63,
+      "section": "C"
+    },
+    {
+      "id": "S20",
+      "start": 63,
+      "end": 65.8982,
+      "section": "D"
+    },
+    {
+      "id": "S21",
+      "start": 65.8982,
+      "end": 68.8472,
+      "section": "D"
+    },
+    {
+      "id": "S22",
+      "start": 68.8472,
+      "end": 71.7729,
+      "section": "D"
+    },
+    {
+      "id": "S23",
+      "start": 71.7729,
+      "end": 74.745,
+      "section": "D"
+    },
+    {
+      "id": "S24",
+      "start": 74.745,
+      "end": 77.3457,
+      "section": "D"
+    },
+    {
+      "id": "S25",
+      "start": 77.3457,
+      "end": 80.2946,
+      "section": "D"
+    },
+    {
+      "id": "S26",
+      "start": 80.2946,
+      "end": 83.2435,
+      "section": "D"
+    },
+    {
+      "id": "S27",
+      "start": 83.2435,
+      "end": 86.1925,
+      "section": "D"
+    },
+    {
+      "id": "S28",
+      "start": 86.1925,
+      "end": 89.1414,
+      "section": "D"
+    },
+    {
+      "id": "S29",
+      "start": 89.1414,
+      "end": 92,
+      "section": "D"
+    },
+    {
+      "id": "S30",
+      "start": 92,
+      "end": 95.0393,
+      "section": "E"
+    },
+    {
+      "id": "S31",
+      "start": 95.0393,
+      "end": 98.3133,
+      "section": "E"
+    },
+    {
+      "id": "S32",
+      "start": 98.3133,
+      "end": 101.5873,
+      "section": "E"
+    },
+    {
+      "id": "S33",
+      "start": 101.5873,
+      "end": 104.5362,
+      "section": "E"
+    },
+    {
+      "id": "S34",
+      "start": 104.5362,
+      "end": 107.8102,
+      "section": "E"
+    },
+    {
+      "id": "S35",
+      "start": 107.8102,
+      "end": 110.7592,
+      "section": "E"
+    },
+    {
+      "id": "S36",
+      "start": 110.7592,
+      "end": 114,
+      "section": "E"
+    },
+    {
+      "id": "S37",
+      "start": 114,
+      "end": 115.9837,
+      "section": "F"
+    },
+    {
+      "id": "S38",
+      "start": 115.9837,
+      "end": 118.2824,
+      "section": "F"
+    },
+    {
+      "id": "S39",
+      "start": 118.2824,
+      "end": 120.2329,
+      "section": "F"
+    },
+    {
+      "id": "S40",
+      "start": 120.2329,
+      "end": 122.5317,
+      "section": "F"
+    },
+    {
+      "id": "S41",
+      "start": 122.5317,
+      "end": 124.5054,
+      "section": "F"
+    },
+    {
+      "id": "S42",
+      "start": 124.5054,
+      "end": 126.781,
+      "section": "F"
+    },
+    {
+      "id": "S43",
+      "start": 126.781,
+      "end": 128.7546,
+      "section": "F"
+    },
+    {
+      "id": "S44",
+      "start": 128.7546,
+      "end": 131,
+      "section": "F"
+    },
+    {
+      "id": "S45",
+      "start": 131,
+      "end": 133.329,
+      "section": "G"
+    },
+    {
+      "id": "S46",
+      "start": 133.329,
+      "end": 135.6133,
+      "section": "G"
+    },
+    {
+      "id": "S47",
+      "start": 135.6133,
+      "end": 137.92,
+      "section": "G"
+    }
+  ],
+  "audio_timing": {
+    "schema": "aivideoedit.audiomap.v1",
+    "source_sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+    "snap_window_sec": 0.25,
+    "tool": "general/reusable/tools/scene_timeline.py @ MainV2",
+    "rule": "Scene order is immutable; boundaries were snapped to nearby canonical audio anchors."
+  }
+}

@@ -1,19 +1,20 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Build a complete 137.92-second reference-led hybrid music video for Nordic (Remastered) by expanding the supplied paired-hero futuristic sunset world into five controlled Batch-10 stacks and animating them with MainV2's canonical motion/FX tools.",
+  "mission": "Build a complete 137.92-second reference-led hybrid music video for Nordic (Remastered) from the locked paired-hero/craft world using five Batch-10 stacks and MainV2 animation/FX tools.",
   "direction_authority": "reference_led",
   "production_mode": "hybrid",
   "canon_lock": {
     "locked": true,
     "picture_language": "Paired pale long-haired futuristic heroes in matte-black fitted suits on a barren pale sunset airfield with a sleek dark craft; warm gold/peach sky, graphite clothing, cool pale neutrals; restrained portrait camera and localized internal motion.",
     "items": [
-      "paired hero identity and relative visual relationship",
+      "paired hero identity",
       "long pale-blond hair",
       "matte-black fitted suit language",
-      "pale barren airfield / salt-flat environment",
+      "pale barren airfield",
       "sleek dark craft design language",
-      "golden-hour lighting direction and gold/graphite/pale palette",
-      "restrained camera grammar and zero-drift continuity"
+      "golden-hour light direction and palette",
+      "restrained camera grammar",
+      "47-shot locked coverage architecture"
     ]
   },
   "accepted_baseline": {
@@ -45,9 +46,9 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Follow MainV2 top to bottom using its installed tools. Build the needed image batches from the given video, scan the song/BPM, animate through repo FX/motion tools, and do not deviate.",
-  "exact_next_action": "Lock the complete shot map/storyboard and frame-followable SCRIPT.md/SCRIPT.json across the 137.92-second master before generating Batch B01.",
-  "updated_at_utc": "2026-10-02T07:02:00Z",
+  "current_user_direction": "Follow MainV2 top to bottom using installed repo tools; use the given video as visual authority, the song/BPM as timing authority, and build stacked image batches for animation without drift.",
+  "exact_next_action": "Generate real Batch B01 (10 reference-faithful production stills), record hashes/lifecycle in ASSET_MANIFEST, build corresponding shot packages, then create short mode-aware moving proofs before advancing to B02.",
+  "updated_at_utc": "2026-10-02T07:10:00Z",
   "director_supervision": {
     "required": true,
     "reviewer_role": "sandbox_director",
