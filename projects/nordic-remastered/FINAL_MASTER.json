@@ -1,0 +1,16 @@
+{
+  "schema": "aivideoedit.final-master.v1",
+  "project": "nordic-remastered",
+  "branch": "song/nordic-remastered",
+  "file_name": "Nordic_Remastered_Final_Master.mp4",
+  "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c",
+  "duration_seconds": 137.916667,
+  "width": 1280,
+  "height": 720,
+  "fps": 24,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "fx_lock_file": "projects/nordic-remastered/FX_LOCK.json",
+  "final_qc_file": "projects/nordic-remastered/FINAL_QC.json",
+  "status": "FINAL_MASTER_RENDERED"
+}
