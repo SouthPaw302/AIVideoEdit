@@ -142,6 +142,10 @@
       "role": "fail_closed_recut_guard"
     },
     {
+      "path": "general/reusable/tools/recipe_execution_guard.py",
+      "role": "fail_closed_recipe_execution_guard"
+    },
+    {
       "path": "general/reusable/tools/hero_library_extract.py",
       "role": "canonical_hero_library_extractor"
     },
