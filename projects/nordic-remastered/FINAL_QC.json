@@ -1,0 +1,22 @@
+{
+  "schema": "aivideoedit.final-qc.v1",
+  "project": "nordic-remastered",
+  "branch": "song/nordic-remastered",
+  "master_sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c",
+  "technical": {
+    "full_decode": "PASS",
+    "duration_seconds": 137.916667,
+    "video": {"codec":"h264","width":1280,"height":720,"fps":24},
+    "audio": {"codec":"aac","sample_rate":48000,"channels":2},
+    "long_black_events": 0,
+    "fx_visible_change": "PASS_47_OF_47"
+  },
+  "director_review": {
+    "sample_times_seconds": [2,20,40,60,80,100,120,136],
+    "identity_continuity": "PASS",
+    "world_continuity": "PASS",
+    "tall_white_not_viking": "PASS",
+    "known_source_limitation": "Some later accepted source-derived imagery remains visibly lower-resolution/pixelated; no identity/world drift was introduced by the FX pass."
+  },
+  "status": "PASS"
+}
