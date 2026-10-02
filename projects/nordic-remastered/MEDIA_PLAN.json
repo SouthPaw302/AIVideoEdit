@@ -1,0 +1,9 @@
+{
+  "schema": "aivideoedit.media-plan.v1",
+  "selected_capabilities": [],
+  "user_approach_established": false,
+  "production_mode": "hybrid",
+  "production_mode_authority": "bootstrap_compatibility_only",
+  "production_mode_locked": false,
+  "bootstrap_note": "Provisional resolver input only; no creative direction is implied. Replace through Director Brain after current-production analysis."
+}

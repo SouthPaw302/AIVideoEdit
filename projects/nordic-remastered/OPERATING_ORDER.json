@@ -1,0 +1,58 @@
+{
+  "schema": "aivideoedit.operating-order.v1",
+  "mission": "Create a complete music video for Nordic (Remastered) from the current user-supplied song and video while following AIVideoEdit's production contract from boot through archive.",
+  "direction_authority": "reference_led",
+  "production_mode": "hybrid",
+  "canon_lock": {
+    "locked": false,
+    "picture_language": "Not established; analyze the supplied video before locking the visual world.",
+    "items": []
+  },
+  "accepted_baseline": {
+    "status": "none",
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null
+  },
+  "accepted_source_library": {
+    "status": "none",
+    "role": null,
+    "file_or_locator": null,
+    "sha256": null,
+    "user_acceptance_statement": null,
+    "content_reuse_authorized": false,
+    "timeline_locked": false
+  },
+  "refinement_scope": {
+    "active": false,
+    "goal": null,
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "restart_authorized": false
+  },
+  "recut_scope": {
+    "active": false,
+    "named_defects": [],
+    "allowed_changes": [],
+    "forbidden_changes": [],
+    "source_replacement_authorized": false
+  },
+  "current_user_direction": "Use the supplied video and Nordic (Remastered) music file, follow the repository top to bottom, call its tools, use Drive and GitHub runners/Actions, boot the repo, and do not deviate.",
+  "exact_next_action": "Bootstrap the exact current-main AIVideoEdit OS on song/nordic-remastered and pass production, narrative, recut, and workflow guards before source ingest.",
+  "updated_at_utc": null,
+  "director_supervision": {
+    "required": true,
+    "reviewer_role": "sandbox_director",
+    "checkpoint_file": "DIRECTOR_CHECKPOINTS.json",
+    "execution_ledger_file": "PRODUCTION_EXECUTION_LEDGER.json",
+    "checkpoints": [
+      "media_selection",
+      "representative_proof",
+      "rough_cut",
+      "fx_pass",
+      "final_review"
+    ],
+    "runner_may_choose_art_direction": false,
+    "technical_pass_is_creative_pass": false
+  }
+}
