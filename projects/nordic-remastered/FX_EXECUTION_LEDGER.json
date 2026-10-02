@@ -1,0 +1,18 @@
+{
+  "schema": "aivideoedit.fx-execution-ledger.v1",
+  "project": "nordic-remastered",
+  "branch": "song/nordic-remastered",
+  "consumer": "nordic_fx_workprint",
+  "seed": 302,
+  "shot_count": 47,
+  "effects": [
+    {"id":"FX2-MOTION-002","name":"localized_living_flow","stage":"executed"},
+    {"id":"FX2-LIGHT-002","name":"moving_light_field","stage":"executed"},
+    {"id":"FX2-CAMERA-023","name":"narrative_camera_travel","stage":"executed"},
+    {"id":"FX2-LIGHT-028","name":"warm_halation_bloom","stage":"executed"},
+    {"id":"FX2-TRANS-025","name":"ghosted_memory_transition","stage":"executed"}
+  ],
+  "visible_change_pass_count": 47,
+  "output": {"drive_file_id":"1xRCUP4kn0fdPNMqzvuBLN2f75LJWTFB_","sha256":"bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c","duration_seconds":137.916667,"width":1280,"height":720,"fps":24},
+  "status": "EXECUTED"
+}
