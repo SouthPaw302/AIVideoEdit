@@ -29,9 +29,11 @@
         "path": "REPRESENTATIVE_PROOF.json",
         "drive_uri": "gslides://19g6BcWLyukzmFFGTdQBwyUe8anqKTByPHK-qiGjcN0w",
         "living_proof_sha256": "e067a3a8a15d101377fff89eccddf4e104b6188a699bb60a16d4f9e6c0e70b12",
-        "cinematic_proof_sha256": "bcc097d657775444f3ca324403b1854476a5286fa9ffad20e24617e48ad78092"
+        "cinematic_proof_sha256": "bcc097d657775444f3ca324403b1854476a5286fa9ffad20e24617e48ad78092",
+        "full_shot_proof_count": 47,
+        "full_proof_storage": "SHOT_PROOF_STORAGE.json"
       },
-      "notes": "V1 living motion rejected as too weak. V2 passes living-scene checks; S08 passes representative cinematic checks. Tall White reference/world coherence PASS. No FX lock is claimed."
+      "notes": "V1 living motion rejected as too weak. V2 passes living-scene checks; S08 passes representative cinematic checks. Tall White reference/world coherence PASS. No FX lock is claimed. Full 47-shot mode-aware proof set rendered, visually reviewed and director-accepted."
     },
     "rough_cut": {
       "status": "pending"

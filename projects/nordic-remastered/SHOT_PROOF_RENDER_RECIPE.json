@@ -1,0 +1,20 @@
+{
+  "schema": "aivideoedit.shot-proof-render-recipe.v1",
+  "fps": 24,
+  "resolution": [
+    640,
+    360
+  ],
+  "seed": 302,
+  "audio_source_sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+  "living_scene": {
+    "basis": "MainV2 localized living-flow behavior",
+    "policy": "Cyclic localized warp on lower material zones and side hair zones; broad upper-center face protection; independent low-opacity dust; restrained camera.",
+    "proof_strength": 1.55
+  },
+  "cinematic": {
+    "policy": "Bounded 2.8-4.4% eased push/pan with independent low dust atmosphere; no whole-frame shake, endless zoom or topology changes."
+  },
+  "audio_policy": "Each proof uses its exact SCRIPT frame/time range from Nordic (Remastered).",
+  "fx_lock_claimed": false
+}

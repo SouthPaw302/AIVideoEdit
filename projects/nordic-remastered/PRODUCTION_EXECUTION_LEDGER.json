@@ -2,7 +2,7 @@
   "schema": "aivideoedit.production-execution-ledger.v1",
   "project": "Nordic Remastered",
   "created_at": "2026-10-02T08:05:00Z",
-  "updated_at": "2026-10-02T19:30:00Z",
+  "updated_at": "2026-10-02T19:55:00Z",
   "events": [
     {
       "component": "director_review",
@@ -107,6 +107,44 @@
       },
       "metadata": {
         "decision": "Use approved restrained living/cinematic behavior for next source-canon batch."
+      },
+      "required_execution": true,
+      "required_consumption": true,
+      "reason": null
+    },
+    {
+      "component": "shot_proof_render",
+      "subject": "S01-S47",
+      "stage": "executed",
+      "at": "2026-10-02T19:55:00Z",
+      "actor": "sandbox_director",
+      "consumer": "shot_proof_acceptance",
+      "evidence": {
+        "acceptance": "shot_proofs/ACCEPTANCE.json",
+        "storage": "SHOT_PROOF_STORAGE.json",
+        "recipe": "SHOT_PROOF_RENDER_RECIPE.json"
+      },
+      "metadata": {
+        "proof_count": 47,
+        "technical_mode_pass_count": 47,
+        "fx_lock_claimed": false
+      },
+      "required_execution": true,
+      "required_consumption": true,
+      "reason": null
+    },
+    {
+      "component": "shot_proof_render",
+      "subject": "S01-S47",
+      "stage": "consumed",
+      "at": "2026-10-02T19:55:00Z",
+      "actor": "sandbox_director",
+      "consumer": "fx_planning",
+      "evidence": {
+        "project_state_stage": "SHOT_PROOFS_ACCEPTED"
+      },
+      "metadata": {
+        "decision": "Proceed to FX planning from accepted proof recipes."
       },
       "required_execution": true,
       "required_consumption": true,

@@ -1,0 +1,55 @@
+{
+  "schema": "aivideoedit.shot-proof.v1",
+  "shot_id": "S15",
+  "production_mode": "cinematic",
+  "package_sha256": "1ae412b1c7b3443c115abbb487b0b78747d16165e82665c2c20d7e69a0ded433",
+  "proof_asset": {
+    "asset_id": "proof_S15",
+    "uri": "working-container://nordic_shot_proofs/S15_proof.mp4",
+    "sha256": "006a290f24f9e0be2daa25aadead89eef599937d2c2219e6c0d0a8c94f9e127d",
+    "content_type": "video/mp4",
+    "name": "S15_proof.mp4",
+    "duration_seconds": 3.2917
+  },
+  "durable_visual_backup": {
+    "uri": "gslides://1Vha-1hRpNGPKH0svMpCPO2tx59aotbSPlQEN_PHndtQ#slide=proof_S15",
+    "sha256": "072d2e7c09dcb95e65cbceb2081ad5b51a900fa5f1747816f77c30cc01d9fdd0",
+    "content_type": "image/gif",
+    "note": "Animated Drive proof deck preserves motion behavior; exact song slice is preserved by source audio time range and MP4 proof hash."
+  },
+  "audio_source": {
+    "asset_id": "source_audio_001",
+    "sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+    "frame_range": [
+      1149,
+      1227
+    ],
+    "time_range_seconds": [
+      47.875,
+      51.1667
+    ]
+  },
+  "checks": {
+    "story_action_readable": true,
+    "coverage_sufficient": true,
+    "continuity_controlled": true,
+    "shot_progression_present": true,
+    "pacing_music_directed": true
+  },
+  "technical_and_mode_checks_passed": true,
+  "technical_qc": {
+    "black_frames": 0,
+    "decoded": true,
+    "audio_present": true
+  },
+  "reference_led_qc": {
+    "tall_white_identity_stable": true,
+    "alien_craft_world_stable": true,
+    "viking_norse_drift": false
+  },
+  "creative_status": "accepted",
+  "acceptance_authority": "sandbox_director_delegated_by_current_user",
+  "user_acceptance_statement": "Follow the repo and be the director.",
+  "notes": "Director-level shot proof acceptance. Source-derived batches retain visible source-resolution limitations for later rough-cut/final QC; no FX lock is claimed.",
+  "accepted_at": "2026-10-02T19:55:00Z"
+}

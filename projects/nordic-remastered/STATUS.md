@@ -1,16 +1,20 @@
 # Status
 
-Stage: SHOT_PACKAGES_BUILT
+Stage: SHOT_PROOFS_ACCEPTED
 
 Active subject canon: **Nordic aliens / Tall Whites**.
 
 Complete:
-- 50 active replacement stills across B01R-B05R;
-- representative hybrid motion language approved;
-- **47/47 scripted shot packages built**;
-- every package contains the repo-required source/alpha/layers/depth/generated/fx_assets/transition/loop/preview/notes structure;
-- every package has non-empty hashed media evidence and source-canon provenance.
+- 50 active replacement stills;
+- 47/47 real shot packages with verified hashed media evidence;
+- 47/47 temporal shot proofs rendered against exact Nordic audio ranges;
+- automated black/frame/motion checks: PASS 47/47;
+- director visual review: Tall White identity/world continuity PASS;
+- five animated proof decks backed up to Drive Director Proofs;
+- mode-aware proof set: **ACCEPTED** under the user's delegated Director instruction.
 
-No package is proof-accepted yet. No FX lock is claimed.
+Known limitation carried forward: B02R-B05R inherit visible low-resolution/pixelation from the accepted source clip. This is not hidden; rough-cut/final QC must decide whether mastering treatment is sufficient.
 
-Next repo step: render temporal proofs for all 47 packages, apply the per-shot living_scene/cinematic QC checks, record proof hashes, and explicitly accept/reject each current package before SHOT_PROOFS_ACCEPTED.
+No FX lock is claimed yet.
+
+Next: build and execute the FX plan, prove visible pixel changes, and run the canonical precompile FX lock before assembly.

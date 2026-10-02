@@ -1,0 +1,29 @@
+{
+  "schema": "aivideoedit.shot-proof-storage.v1",
+  "project": "Nordic Remastered",
+  "local_mp4_root": "working-container://nordic_shot_proofs/",
+  "drive_visual_backup_root": "gdrive://1ndIDa6pHzavMdLXHoiaqQahsP_rGUKBl",
+  "proof_decks": [
+    {
+      "shots": "S01-S10",
+      "presentation_id": "1hE83Ea3teAGHh4_kfszlKlM3kh2pLuOOFsAOwlDTj-k"
+    },
+    {
+      "shots": "S11-S20",
+      "presentation_id": "1Vha-1hRpNGPKH0svMpCPO2tx59aotbSPlQEN_PHndtQ"
+    },
+    {
+      "shots": "S21-S30",
+      "presentation_id": "1BVKe-OTtXKVy8bgcsQpQPFn_8MaeZ6_tYtqrNaShUxY"
+    },
+    {
+      "shots": "S31-S40",
+      "presentation_id": "1qocyzKb7twZnhgROJmSefa1hOxD-9rM60x4TL7fbxjQ"
+    },
+    {
+      "shots": "S41-S47",
+      "presentation_id": "1ZJlRUEDvDf-ijYTgYVnELbqOg3lXyFl_Yhir22vj6TI"
+    }
+  ],
+  "note": "Drive decks contain animated GIF visual proofs. MP4 hashes bind the exact audio-synced proof renders."
+}

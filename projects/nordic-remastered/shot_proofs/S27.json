@@ -1,0 +1,55 @@
+{
+  "schema": "aivideoedit.shot-proof.v1",
+  "shot_id": "S27",
+  "production_mode": "cinematic",
+  "package_sha256": "c7d5787880b4253d53dcd29602ff839f0e3222a8267405a83da2d09c4310a244",
+  "proof_asset": {
+    "asset_id": "proof_S27",
+    "uri": "working-container://nordic_shot_proofs/S27_proof.mp4",
+    "sha256": "beb1a8f9cd1168302be52f3d22156541936c4da16004ffa179e87e90089bda78",
+    "content_type": "video/mp4",
+    "name": "S27_proof.mp4",
+    "duration_seconds": 2.9583
+  },
+  "durable_visual_backup": {
+    "uri": "gslides://1BVKe-OTtXKVy8bgcsQpQPFn_8MaeZ6_tYtqrNaShUxY#slide=proof_S27",
+    "sha256": "504c2b0eddad2ea3415d85cb4110a085c313a02dce5406f186beb70efe8fd9d6",
+    "content_type": "image/gif",
+    "note": "Animated Drive proof deck preserves motion behavior; exact song slice is preserved by source audio time range and MP4 proof hash."
+  },
+  "audio_source": {
+    "asset_id": "source_audio_001",
+    "sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+    "frame_range": [
+      1998,
+      2068
+    ],
+    "time_range_seconds": [
+      83.25,
+      86.2083
+    ]
+  },
+  "checks": {
+    "story_action_readable": true,
+    "coverage_sufficient": true,
+    "continuity_controlled": true,
+    "shot_progression_present": true,
+    "pacing_music_directed": true
+  },
+  "technical_and_mode_checks_passed": true,
+  "technical_qc": {
+    "black_frames": 0,
+    "decoded": true,
+    "audio_present": true
+  },
+  "reference_led_qc": {
+    "tall_white_identity_stable": true,
+    "alien_craft_world_stable": true,
+    "viking_norse_drift": false
+  },
+  "creative_status": "accepted",
+  "acceptance_authority": "sandbox_director_delegated_by_current_user",
+  "user_acceptance_statement": "Follow the repo and be the director.",
+  "notes": "Director-level shot proof acceptance. Source-derived batches retain visible source-resolution limitations for later rough-cut/final QC; no FX lock is claimed.",
+  "accepted_at": "2026-10-02T19:55:00Z"
+}

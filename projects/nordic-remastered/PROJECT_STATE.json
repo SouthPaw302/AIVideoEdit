@@ -2,7 +2,7 @@
   "schema": "aivideoedit.project-state.v1",
   "director_brain_version": 3,
   "branch": "song/nordic-remastered",
-  "stage": "SHOT_PACKAGES_BUILT",
+  "stage": "SHOT_PROOFS_ACCEPTED",
   "source_ingest_complete": true,
   "reference_analysis_complete": true,
   "music_analysis_complete": true,
@@ -12,13 +12,16 @@
   "storyboard_locked": true,
   "script_locked": true,
   "shot_packages_built": true,
-  "shot_proofs_accepted": false,
+  "shot_proofs_accepted": true,
   "fx_lock_verified": false,
   "assembly_complete": false,
   "final_qc_passed": false,
   "archive_complete": false,
-  "mode_aware_proofs_accepted": false,
+  "mode_aware_proofs_accepted": true,
   "shot_package_count": 47,
   "media_evidence_verified": true,
-  "media_evidence_verified_at": "2026-10-02T19:41:00Z"
+  "media_evidence_verified_at": "2026-10-02T19:41:00Z",
+  "shot_proof_acceptance_instruction": "Follow the repo and be the director.",
+  "shot_proof_count": 47,
+  "shot_proofs_accepted_at": "2026-10-02T19:55:00Z"
 }

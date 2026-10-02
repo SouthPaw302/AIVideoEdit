@@ -1,0 +1,55 @@
+{
+  "schema": "aivideoedit.shot-proof.v1",
+  "shot_id": "S16",
+  "production_mode": "cinematic",
+  "package_sha256": "f9ba59db539fab166c3b2b009f70dcdec1db8fb44b57f2fc3deac464792be341",
+  "proof_asset": {
+    "asset_id": "proof_S16",
+    "uri": "working-container://nordic_shot_proofs/S16_proof.mp4",
+    "sha256": "36174e1e39cafc23b3b0c6fc43564f3c4cd3c7120ad0b024857191d6de5ad0ca",
+    "content_type": "video/mp4",
+    "name": "S16_proof.mp4",
+    "duration_seconds": 2.9167
+  },
+  "durable_visual_backup": {
+    "uri": "gslides://1Vha-1hRpNGPKH0svMpCPO2tx59aotbSPlQEN_PHndtQ#slide=proof_S16",
+    "sha256": "254df2e849b1d3ee20f05a108e48b518bc09a35ecee84b9ea449d8cdd6039867",
+    "content_type": "image/gif",
+    "note": "Animated Drive proof deck preserves motion behavior; exact song slice is preserved by source audio time range and MP4 proof hash."
+  },
+  "audio_source": {
+    "asset_id": "source_audio_001",
+    "sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+    "frame_range": [
+      1228,
+      1297
+    ],
+    "time_range_seconds": [
+      51.1667,
+      54.0833
+    ]
+  },
+  "checks": {
+    "story_action_readable": true,
+    "coverage_sufficient": true,
+    "continuity_controlled": true,
+    "shot_progression_present": true,
+    "pacing_music_directed": true
+  },
+  "technical_and_mode_checks_passed": true,
+  "technical_qc": {
+    "black_frames": 0,
+    "decoded": true,
+    "audio_present": true
+  },
+  "reference_led_qc": {
+    "tall_white_identity_stable": true,
+    "alien_craft_world_stable": true,
+    "viking_norse_drift": false
+  },
+  "creative_status": "accepted",
+  "acceptance_authority": "sandbox_director_delegated_by_current_user",
+  "user_acceptance_statement": "Follow the repo and be the director.",
+  "notes": "Director-level shot proof acceptance. Source-derived batches retain visible source-resolution limitations for later rough-cut/final QC; no FX lock is claimed.",
+  "accepted_at": "2026-10-02T19:55:00Z"
+}
