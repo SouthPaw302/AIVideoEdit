@@ -1,0 +1,56 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S20",
+  "branch": "song/nordic-remastered",
+  "production_mode": "cinematic",
+  "shot_behavior": "SOURCE_DERIVED",
+  "frame_range": {
+    "start": 1512,
+    "end": 1581
+  },
+  "duration_frames": 70,
+  "story_action": "Brief visual reset after the 63-second softening: wide static airfield with heroes small against craft.",
+  "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+  "music_cues": [
+    "63 s softening then sustained high",
+    "secondary surge near 82 s",
+    "half-time weighted edits",
+    "scene boundary snapped at 63.0000 s by MainV2 scene_timeline.py"
+  ],
+  "lyric_cue": null,
+  "transition": "section-change cut on canonical music anchor",
+  "identity_canon": "Nordic aliens / Tall Whites from accepted source video",
+  "media_evidence": [
+    {
+      "asset_id": "b02r_020",
+      "name": "NR_B02R_020.png",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_20",
+      "sha256": "cb5937cc7405e9e8af03979d1753a360ae58d4f2ab8ed7121354a694d6bdc98a",
+      "lifecycle_status": "candidate",
+      "origin": "source_derived",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "source_frame": "frame_0182",
+      "derivation": "full source with blurred-edge wide reset"
+    }
+  ],
+  "motion_plan": {
+    "continuity_plan": "Preserve Tall White identities, suits, craft topology, airfield, horizon and golden-hour light.",
+    "staging_plan": "Brief visual reset after the 63-second softening: wide static airfield with heroes small against craft.",
+    "camera_envelope": "bounded motion only; no endless zoom, whole-frame shake or axis drift",
+    "representative_language": "approved TallWhite_motion_language_v2"
+  },
+  "package_directories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "creative_status": "candidate",
+  "proof_status": "pending"
+}

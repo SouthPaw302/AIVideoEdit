@@ -1,0 +1,72 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S30",
+  "branch": "song/nordic-remastered",
+  "production_mode": "living_scene",
+  "shot_behavior": "LIVING_STILL",
+  "frame_range": {
+    "start": 2208,
+    "end": 2280
+  },
+  "duration_frames": 73,
+  "story_action": "At the 92-second drop, cut to an intimate near-still close pair portrait; motion nearly disappears.",
+  "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+  "music_cues": [
+    "92 s major drop",
+    "94 s re-entry",
+    "110 s drop / 114 s rebuild",
+    "scene boundary snapped at 92.0000 s by MainV2 scene_timeline.py"
+  ],
+  "lyric_cue": null,
+  "transition": "section-change cut on canonical music anchor",
+  "identity_canon": "Nordic aliens / Tall Whites from accepted source video",
+  "media_evidence": [
+    {
+      "asset_id": "b03r_030",
+      "name": "NR_B03R_030.png",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_30",
+      "sha256": "362687ed60a39d66377a009b79b0e29d9d8418921620d7e654864da5147146e6",
+      "lifecycle_status": "candidate",
+      "origin": "source_derived",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "source_frame": "frame_0564",
+      "derivation": "intimate close pair crop"
+    }
+  ],
+  "motion_plan": {
+    "motion_regions": [
+      "hair",
+      "mouth/face micro-expression where applicable",
+      "cloth/suit surface",
+      "dust/atmosphere",
+      "sun glints/reflections",
+      "craft lights/background atmosphere"
+    ],
+    "protected_regions": [
+      "faces",
+      "hands",
+      "body anatomy",
+      "hero silhouette/identity",
+      "suit geometry",
+      "craft geometry",
+      "horizon",
+      "lighting direction"
+    ],
+    "camera_rule": "restrained; internal motion first",
+    "representative_language": "approved TallWhite_motion_language_v2"
+  },
+  "package_directories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "creative_status": "candidate",
+  "proof_status": "pending"
+}

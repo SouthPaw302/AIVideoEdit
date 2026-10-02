@@ -1,0 +1,72 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S42",
+  "branch": "song/nordic-remastered",
+  "production_mode": "living_scene",
+  "shot_behavior": "LIVING_STILL",
+  "frame_range": {
+    "start": 2988,
+    "end": 3042
+  },
+  "duration_frames": 55,
+  "story_action": "Profile close on hero one, then slight eyeline shift toward hero two; no facial drift.",
+  "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+  "music_cues": [
+    "114 s surge",
+    "peak energy 120–129 s",
+    "shorter high-energy coverage",
+    "scene boundary snapped at 124.5054 s by MainV2 scene_timeline.py"
+  ],
+  "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+  "transition": "short match cut / restrained atmospheric dissolve",
+  "identity_canon": "Nordic aliens / Tall Whites from accepted source video",
+  "media_evidence": [
+    {
+      "asset_id": "b05r_042",
+      "name": "NR_B05R_042.png",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_42",
+      "sha256": "305e23a48431f94e6f30a5f0118d0a606c65f6e46aea758e9648e345d8570b2d",
+      "lifecycle_status": "candidate",
+      "origin": "source_derived",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "source_frame": "frame_0564",
+      "derivation": "source crop/reframe or blurred-edge wide extension"
+    }
+  ],
+  "motion_plan": {
+    "motion_regions": [
+      "hair",
+      "mouth/face micro-expression where applicable",
+      "cloth/suit surface",
+      "dust/atmosphere",
+      "sun glints/reflections",
+      "craft lights/background atmosphere"
+    ],
+    "protected_regions": [
+      "faces",
+      "hands",
+      "body anatomy",
+      "hero silhouette/identity",
+      "suit geometry",
+      "craft geometry",
+      "horizon",
+      "lighting direction"
+    ],
+    "camera_rule": "restrained; internal motion first",
+    "representative_language": "approved TallWhite_motion_language_v2"
+  },
+  "package_directories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "creative_status": "candidate",
+  "proof_status": "pending"
+}

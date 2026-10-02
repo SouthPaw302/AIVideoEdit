@@ -1,0 +1,56 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S15",
+  "branch": "song/nordic-remastered",
+  "production_mode": "cinematic",
+  "shot_behavior": "SOURCE_DERIVED",
+  "frame_range": {
+    "start": 1149,
+    "end": 1227
+  },
+  "duration_frames": 79,
+  "story_action": "Rear three-quarter pair shot looking across the airfield toward the craft nose.",
+  "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+  "music_cues": [
+    "33 s major surge",
+    "sustained high-energy plateau",
+    "dense 184.57 BPM grid",
+    "scene boundary snapped at 47.8795 s by MainV2 scene_timeline.py"
+  ],
+  "lyric_cue": null,
+  "transition": "hard cut or canonical short transition",
+  "identity_canon": "Nordic aliens / Tall Whites from accepted source video",
+  "media_evidence": [
+    {
+      "asset_id": "b02r_015",
+      "name": "NR_B02R_015.png",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_15",
+      "sha256": "ed30ea1e564eb99906652149768e083ba4ed82219cb2ab96048d62e1e94c7c81",
+      "lifecycle_status": "candidate",
+      "origin": "source_derived",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "source_frame": "frame_0092",
+      "derivation": "available paired three-quarter crop; replaces impossible invented rear view"
+    }
+  ],
+  "motion_plan": {
+    "continuity_plan": "Preserve Tall White identities, suits, craft topology, airfield, horizon and golden-hour light.",
+    "staging_plan": "Rear three-quarter pair shot looking across the airfield toward the craft nose.",
+    "camera_envelope": "bounded motion only; no endless zoom, whole-frame shake or axis drift",
+    "representative_language": "approved TallWhite_motion_language_v2"
+  },
+  "package_directories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "creative_status": "candidate",
+  "proof_status": "pending"
+}

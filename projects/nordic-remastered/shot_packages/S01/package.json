@@ -1,0 +1,72 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S01",
+  "branch": "song/nordic-remastered",
+  "production_mode": "living_scene",
+  "shot_behavior": "LIVING_STILL",
+  "frame_range": {
+    "start": 0,
+    "end": 95
+  },
+  "duration_frames": 96,
+  "story_action": "Fade up on the paired heroes beside the sleek craft; hold the full visual world and horizon.",
+  "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+  "music_cues": [
+    "low/void intro",
+    "first clear surge near 2 s",
+    "half-time visual weight",
+    "scene boundary snapped at 0.0000 s by MainV2 scene_timeline.py"
+  ],
+  "lyric_cue": null,
+  "transition": "fade in from black",
+  "identity_canon": "Nordic aliens / Tall Whites from accepted source video",
+  "media_evidence": [
+    {
+      "asset_id": "b01r_001",
+      "name": "NR_B01R_001.png",
+      "uri": "gdrive://10SKh81_XS8uNhrzynSK3MWv-pDLkrZYV",
+      "sha256": "92bbc9e1af56dbdf0a3a07b5cadd729075daadbd0b20de733af22350a15e2e4a",
+      "lifecycle_status": "candidate",
+      "origin": "generated",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "source_frame": null,
+      "derivation": "source-canon generated/reframed plate"
+    }
+  ],
+  "motion_plan": {
+    "motion_regions": [
+      "hair",
+      "mouth/face micro-expression where applicable",
+      "cloth/suit surface",
+      "dust/atmosphere",
+      "sun glints/reflections",
+      "craft lights/background atmosphere"
+    ],
+    "protected_regions": [
+      "faces",
+      "hands",
+      "body anatomy",
+      "hero silhouette/identity",
+      "suit geometry",
+      "craft geometry",
+      "horizon",
+      "lighting direction"
+    ],
+    "camera_rule": "restrained; internal motion first",
+    "representative_language": "approved TallWhite_motion_language_v2"
+  },
+  "package_directories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "creative_status": "candidate",
+  "proof_status": "pending"
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S07",
+  "branch": "song/nordic-remastered",
+  "production_mode": "living_scene",
+  "shot_behavior": "LIVING_STILL",
+  "frame_range": {
+    "start": 560,
+    "end": 638
+  },
+  "duration_frames": 79,
+  "story_action": "Low-angle pair portrait with wind lifting hair and subtle suit/cloth response.",
+  "animation_behavior": "Localized hair, mouth/face micro-motion where appropriate, cloth, dust, atmosphere and light behavior; restrained depth/parallax; preserve authored composition.",
+  "music_cues": [
+    "20 s energy surge",
+    "medium build",
+    "approach to 33 s transition",
+    "scene boundary snapped at 23.3128 s by MainV2 scene_timeline.py"
+  ],
+  "lyric_cue": "Recurring phonetic female vocal phrase / sustained vowel; timing and emotional contour only, semantics unverified.",
+  "transition": "short match cut / restrained atmospheric dissolve",
+  "identity_canon": "Nordic aliens / Tall Whites from accepted source video",
+  "media_evidence": [
+    {
+      "asset_id": "b01r_007",
+      "name": "NR_B01R_007.png",
+      "uri": "gdrive://1e0sIfmk9QqdsEweRs-Hg_mectFIr3U23",
+      "sha256": "130b13eac87ea49ce912ccffcd906f8f40fdd85a58489c63d8d510f2aea3c6c9",
+      "lifecycle_status": "candidate",
+      "origin": "generated",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "source_frame": null,
+      "derivation": "source-canon generated/reframed plate"
+    }
+  ],
+  "motion_plan": {
+    "motion_regions": [
+      "hair",
+      "mouth/face micro-expression where applicable",
+      "cloth/suit surface",
+      "dust/atmosphere",
+      "sun glints/reflections",
+      "craft lights/background atmosphere"
+    ],
+    "protected_regions": [
+      "faces",
+      "hands",
+      "body anatomy",
+      "hero silhouette/identity",
+      "suit geometry",
+      "craft geometry",
+      "horizon",
+      "lighting direction"
+    ],
+    "camera_rule": "restrained; internal motion first",
+    "representative_language": "approved TallWhite_motion_language_v2"
+  },
+  "package_directories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "creative_status": "candidate",
+  "proof_status": "pending"
+}

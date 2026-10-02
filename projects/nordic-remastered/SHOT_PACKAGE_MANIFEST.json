@@ -1,0 +1,634 @@
+{
+  "schema": "aivideoedit.shot-package-manifest.v1",
+  "project": "Nordic Remastered",
+  "branch": "song/nordic-remastered",
+  "shot_count": 47,
+  "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+  "tall_white_identity_lock": true,
+  "required_subdirectories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "representative_motion_language": "TallWhite_motion_language_v2",
+  "packages": [
+    {
+      "shot_id": "S01",
+      "package_path": "shot_packages/S01/package.json",
+      "asset_id": "b01r_001",
+      "sha256": "92bbc9e1af56dbdf0a3a07b5cadd729075daadbd0b20de733af22350a15e2e4a",
+      "uri": "gdrive://10SKh81_XS8uNhrzynSK3MWv-pDLkrZYV",
+      "production_mode": "living_scene",
+      "frame_range": [
+        0,
+        95
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S02",
+      "package_path": "shot_packages/S02/package.json",
+      "asset_id": "b01r_002",
+      "sha256": "094d770af982e59e89c36900926eec706f42228a6cb37860274e950cc1f4e1d5",
+      "uri": "gdrive://1jSubKbHrt2vs-N1XH47uL5AS8OgqU3ay",
+      "production_mode": "living_scene",
+      "frame_range": [
+        96,
+        189
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S03",
+      "package_path": "shot_packages/S03/package.json",
+      "asset_id": "b01r_003",
+      "sha256": "b7d7014a58d8824b733555966bc0ea3927014863f758af41de6f90272ec40c49",
+      "uri": "gdrive://1XCr2_NLyEXHeFaalNqCjJPpyGNiOgHpn",
+      "production_mode": "living_scene",
+      "frame_range": [
+        190,
+        284
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S04",
+      "package_path": "shot_packages/S04/package.json",
+      "asset_id": "b01r_004",
+      "sha256": "d39a0e46b93c40c3a7a8c6654f5a794e449edef70cba4d681d855136e3e738eb",
+      "uri": "gdrive://112P4u2uO1xXpNsfpo9JQfhRwXj-0MBNW",
+      "production_mode": "living_scene",
+      "frame_range": [
+        285,
+        386
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S05",
+      "package_path": "shot_packages/S05/package.json",
+      "asset_id": "b01r_005",
+      "sha256": "6f61e298fbe08b8512153c39d45ed25e1e623708400484583d182c574c6c2d97",
+      "uri": "gdrive://1H_kitdGQJ5mFk5g_mIkpM1tpG_HyZdxA",
+      "production_mode": "living_scene",
+      "frame_range": [
+        387,
+        479
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S06",
+      "package_path": "shot_packages/S06/package.json",
+      "asset_id": "b01r_006",
+      "sha256": "624c6fbb7781ae1be21df732e0aad40810128f2e579725c352fe1f95ca64216d",
+      "uri": "gdrive://17n3lEScC7SqNDqlZn3xq_jloMAsWOLwH",
+      "production_mode": "cinematic",
+      "frame_range": [
+        480,
+        559
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S07",
+      "package_path": "shot_packages/S07/package.json",
+      "asset_id": "b01r_007",
+      "sha256": "130b13eac87ea49ce912ccffcd906f8f40fdd85a58489c63d8d510f2aea3c6c9",
+      "uri": "gdrive://1e0sIfmk9QqdsEweRs-Hg_mectFIr3U23",
+      "production_mode": "living_scene",
+      "frame_range": [
+        560,
+        638
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S08",
+      "package_path": "shot_packages/S08/package.json",
+      "asset_id": "b01r_008",
+      "sha256": "8e4ebcbc71d9cb6e8a3514ba55fd3bb30dd7e389bceca97d7d30634660f48275",
+      "uri": "gdrive://1enBsvAwVnB7C0yO1L2myZiNgPe7F3odI",
+      "production_mode": "cinematic",
+      "frame_range": [
+        639,
+        716
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S09",
+      "package_path": "shot_packages/S09/package.json",
+      "asset_id": "b01r_009",
+      "sha256": "933e4aaacb06c56f0cf2cf3a00a35afc21226a7ccc423e6d6d5bc908206cc66e",
+      "uri": "gdrive://1E8vp1tByC9IA-odIPJ3vX0_HJpoTqL-q",
+      "production_mode": "living_scene",
+      "frame_range": [
+        717,
+        791
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S10",
+      "package_path": "shot_packages/S10/package.json",
+      "asset_id": "b01r_010",
+      "sha256": "6b7b8fbcda4f4dcecb03745f26b7519d0e8021205a511cbfdee3ff20c3b37504",
+      "uri": "gdrive://1w3vstM9WWH-tcaW0E_iibe0GeEJdnaFF",
+      "production_mode": "cinematic",
+      "frame_range": [
+        792,
+        865
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S11",
+      "package_path": "shot_packages/S11/package.json",
+      "asset_id": "b02r_011",
+      "sha256": "e409f3bbebbcae9785e406b563b8bc23e832a75cf420a1cde63eb0dbcfc49bda",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_11",
+      "production_mode": "living_scene",
+      "frame_range": [
+        866,
+        936
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S12",
+      "package_path": "shot_packages/S12/package.json",
+      "asset_id": "b02r_012",
+      "sha256": "58b299cfcba6dceb6de7032882d719d7d5739c68ed05d1a8a09a3f75af992c69",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_12",
+      "production_mode": "cinematic",
+      "frame_range": [
+        937,
+        1007
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S13",
+      "package_path": "shot_packages/S13/package.json",
+      "asset_id": "b02r_013",
+      "sha256": "85c65128a9657128d05e73977e683b7675a616529bab4cb40aab2c3e81046816",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_13",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1008,
+        1077
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S14",
+      "package_path": "shot_packages/S14/package.json",
+      "asset_id": "b02r_014",
+      "sha256": "060235db2c382fbe86f7465737523e8b939b221f80e0ebb81939640bea07f603",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_14",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1078,
+        1148
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S15",
+      "package_path": "shot_packages/S15/package.json",
+      "asset_id": "b02r_015",
+      "sha256": "ed30ea1e564eb99906652149768e083ba4ed82219cb2ab96048d62e1e94c7c81",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_15",
+      "production_mode": "cinematic",
+      "frame_range": [
+        1149,
+        1227
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S16",
+      "package_path": "shot_packages/S16/package.json",
+      "asset_id": "b02r_016",
+      "sha256": "73677add2c3622d72e91e694bdeb501d667cbe0d2326a777bc56e01ee1bcbd0b",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_16",
+      "production_mode": "cinematic",
+      "frame_range": [
+        1228,
+        1297
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S17",
+      "package_path": "shot_packages/S17/package.json",
+      "asset_id": "b02r_017",
+      "sha256": "d193e554dc903068ddc2923ade35c39454ea2d9560465dbef48b1343ca3f3d95",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_17",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1298,
+        1368
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S18",
+      "package_path": "shot_packages/S18/package.json",
+      "asset_id": "b02r_018",
+      "sha256": "7df76273e09cfbf1a7c2245eafdf51d8e18969235553af29cfbd0352a0c32680",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_18",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1369,
+        1438
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S19",
+      "package_path": "shot_packages/S19/package.json",
+      "asset_id": "b02r_019",
+      "sha256": "2850b59bd6c16f04c8c5541024de5b96e8fa2306c3d66e6f0170cb7b8e3f0bf0",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_19",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1439,
+        1511
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S20",
+      "package_path": "shot_packages/S20/package.json",
+      "asset_id": "b02r_020",
+      "sha256": "cb5937cc7405e9e8af03979d1753a360ae58d4f2ab8ed7121354a694d6bdc98a",
+      "uri": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY#slide=b02r_20",
+      "production_mode": "cinematic",
+      "frame_range": [
+        1512,
+        1581
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S21",
+      "package_path": "shot_packages/S21/package.json",
+      "asset_id": "b03r_021",
+      "sha256": "33ffe669008ceb13fab8a473047a0ff746fbafedf65682c4a36cbdb39fbb10d8",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_21",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1582,
+        1651
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S22",
+      "package_path": "shot_packages/S22/package.json",
+      "asset_id": "b03r_022",
+      "sha256": "1d17c39c7933fe50a62942848690a1127ca9004d55fbbdcbf04c355293aa0032",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_22",
+      "production_mode": "cinematic",
+      "frame_range": [
+        1652,
+        1722
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S23",
+      "package_path": "shot_packages/S23/package.json",
+      "asset_id": "b03r_023",
+      "sha256": "71481fc0aa3ca0d0e5d7d42e1ab593f8cb8defe046158426ebf352a19b0d4ae8",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_23",
+      "production_mode": "cinematic",
+      "frame_range": [
+        1723,
+        1793
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S24",
+      "package_path": "shot_packages/S24/package.json",
+      "asset_id": "b03r_024",
+      "sha256": "60e9dce302fda49122a9c1a72945dcbba1e6cc58652d72baaf8fe2b3439b7f22",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_24",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1794,
+        1855
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S25",
+      "package_path": "shot_packages/S25/package.json",
+      "asset_id": "b03r_025",
+      "sha256": "978021eb89ff8154145af1e0eb850ac3c68a864eb3a4ca6a2d77d1614726f22f",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_25",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1856,
+        1926
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S26",
+      "package_path": "shot_packages/S26/package.json",
+      "asset_id": "b03r_026",
+      "sha256": "11e12b8b36a3f26c3e3e5c528c7fe3044014c89defe4e7160a3eb3b9a6e895c7",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_26",
+      "production_mode": "living_scene",
+      "frame_range": [
+        1927,
+        1997
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S27",
+      "package_path": "shot_packages/S27/package.json",
+      "asset_id": "b03r_027",
+      "sha256": "8b4399631ca2f053cee8aa18dfdced47bea1b82eacb719404b1b21b43c6ee049",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_27",
+      "production_mode": "cinematic",
+      "frame_range": [
+        1998,
+        2068
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S28",
+      "package_path": "shot_packages/S28/package.json",
+      "asset_id": "b03r_028",
+      "sha256": "08bb6063b3d0de26da621da07073af6947fbbc4c1a23b5b9517c1c8d6cfaccaa",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_28",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2069,
+        2138
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S29",
+      "package_path": "shot_packages/S29/package.json",
+      "asset_id": "b03r_029",
+      "sha256": "1902e0011c49a023662c244cb2d6f498b3c2c16f172bbe93d75bfb1130a93abc",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_29",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2139,
+        2207
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S30",
+      "package_path": "shot_packages/S30/package.json",
+      "asset_id": "b03r_030",
+      "sha256": "362687ed60a39d66377a009b79b0e29d9d8418921620d7e654864da5147146e6",
+      "uri": "gslides://1WJFj9domAsFIuh7Luj9KWxgym5UU6uZccT2ZZyJXA38#slide=b03r_30",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2208,
+        2280
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S31",
+      "package_path": "shot_packages/S31/package.json",
+      "asset_id": "b04r_031",
+      "sha256": "523a4657883569c0ab3598dcff4049c165a21a124ac7174f37aa51b4acd51b95",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_31",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2281,
+        2359
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S32",
+      "package_path": "shot_packages/S32/package.json",
+      "asset_id": "b04r_032",
+      "sha256": "287acc48690fdf7cf533c1545f0ff45125a9626456ca1ff6723ef1a57fcfdf46",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_32",
+      "production_mode": "cinematic",
+      "frame_range": [
+        2360,
+        2437
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S33",
+      "package_path": "shot_packages/S33/package.json",
+      "asset_id": "b04r_033",
+      "sha256": "3b86f624bfea70dcd02113c76101e12afb2ea37ca0e1b0e2f3ba6e0c34c8f16f",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_33",
+      "production_mode": "cinematic",
+      "frame_range": [
+        2438,
+        2508
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S34",
+      "package_path": "shot_packages/S34/package.json",
+      "asset_id": "b04r_034",
+      "sha256": "15f0c6eec335f3f10fffeb7208151db477c138afd9e27f1212b4dc1576ad7974",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_34",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2509,
+        2586
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S35",
+      "package_path": "shot_packages/S35/package.json",
+      "asset_id": "b04r_035",
+      "sha256": "5e1fa819e62a1971479b8240230da9cf9e1bcc459115179eb7c18d7a8010dfa6",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_35",
+      "production_mode": "cinematic",
+      "frame_range": [
+        2587,
+        2657
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S36",
+      "package_path": "shot_packages/S36/package.json",
+      "asset_id": "b04r_036",
+      "sha256": "1c3776524eee1aa3f189e094479a8ec1c9f62d511f578c40758ee114d2bf2b25",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_36",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2658,
+        2735
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S37",
+      "package_path": "shot_packages/S37/package.json",
+      "asset_id": "b04r_037",
+      "sha256": "5354b0c0c84dc943713debf2f53e935210f50d99f253bb6ae274bd75e3d3fb19",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_37",
+      "production_mode": "cinematic",
+      "frame_range": [
+        2736,
+        2783
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S38",
+      "package_path": "shot_packages/S38/package.json",
+      "asset_id": "b04r_038",
+      "sha256": "db1fc540714358265d1ab5d6f9e1c463370eac1ae9385f5d06ebf5aca3e6e7b2",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_38",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2784,
+        2838
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S39",
+      "package_path": "shot_packages/S39/package.json",
+      "asset_id": "b04r_039",
+      "sha256": "3ca353be7e83a8e7d60e1966b0c2989cecd7685109333a36bb7a5797700a4a3f",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_39",
+      "production_mode": "cinematic",
+      "frame_range": [
+        2839,
+        2885
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S40",
+      "package_path": "shot_packages/S40/package.json",
+      "asset_id": "b04r_040",
+      "sha256": "71d88bf95a3dee2858d171014aea8a593c44b7c8668c12fa131f17f786b5bd0e",
+      "uri": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c#slide=b04r_40",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2886,
+        2940
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S41",
+      "package_path": "shot_packages/S41/package.json",
+      "asset_id": "b05r_041",
+      "sha256": "cfab9744cf05b50cbf04db155e5df55defe4a82f3589e66a9b369d10ed459ca4",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_41",
+      "production_mode": "cinematic",
+      "frame_range": [
+        2941,
+        2987
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S42",
+      "package_path": "shot_packages/S42/package.json",
+      "asset_id": "b05r_042",
+      "sha256": "305e23a48431f94e6f30a5f0118d0a606c65f6e46aea758e9648e345d8570b2d",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_42",
+      "production_mode": "living_scene",
+      "frame_range": [
+        2988,
+        3042
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S43",
+      "package_path": "shot_packages/S43/package.json",
+      "asset_id": "b05r_043",
+      "sha256": "11428941743421d380d1687991591ddd952d24504c4e39d0efe1804da797ca42",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_43",
+      "production_mode": "living_scene",
+      "frame_range": [
+        3043,
+        3089
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S44",
+      "package_path": "shot_packages/S44/package.json",
+      "asset_id": "b05r_044",
+      "sha256": "d0ba206bd570863406e0493a4f63a39ef2af586351309b6729fe85fc813c2ecf",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_44",
+      "production_mode": "living_scene",
+      "frame_range": [
+        3090,
+        3143
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S45",
+      "package_path": "shot_packages/S45/package.json",
+      "asset_id": "b05r_045",
+      "sha256": "2419a03b5107693596f2b9ee98bd9c0c274c532eeac18e0fd1017e335d0ce721",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_45",
+      "production_mode": "living_scene",
+      "frame_range": [
+        3144,
+        3199
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S46",
+      "package_path": "shot_packages/S46/package.json",
+      "asset_id": "b05r_046",
+      "sha256": "0d939069c799282a254ea5236d4228c815c01a317165d36997500386f6732ea2",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_46",
+      "production_mode": "living_scene",
+      "frame_range": [
+        3200,
+        3254
+      ],
+      "proof_status": "pending"
+    },
+    {
+      "shot_id": "S47",
+      "package_path": "shot_packages/S47/package.json",
+      "asset_id": "b05r_047",
+      "sha256": "be9d3be5fbe127ed6559b4aba6d65069d818ddc7477e89168dd90fd3bdd0ebe8",
+      "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_47",
+      "production_mode": "living_scene",
+      "frame_range": [
+        3255,
+        3309
+      ],
+      "proof_status": "pending"
+    }
+  ]
+}

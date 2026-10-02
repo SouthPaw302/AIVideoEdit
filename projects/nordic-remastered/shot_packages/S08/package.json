@@ -1,0 +1,56 @@
+{
+  "schema": "aivideoedit.shot-package.v1",
+  "shot_id": "S08",
+  "branch": "song/nordic-remastered",
+  "production_mode": "cinematic",
+  "shot_behavior": "SOURCE_DERIVED",
+  "frame_range": {
+    "start": 639,
+    "end": 716
+  },
+  "duration_frames": 78,
+  "story_action": "Craft detail and horizon insert: dark hull surfaces, warm reflection, pale terrain.",
+  "animation_behavior": "Bounded cinematic continuation or layered motion from the canonical plate with readable subject/craft action, controlled camera vector, and zero-drift identity/topology.",
+  "music_cues": [
+    "20 s energy surge",
+    "medium build",
+    "approach to 33 s transition",
+    "scene boundary snapped at 26.6101 s by MainV2 scene_timeline.py"
+  ],
+  "lyric_cue": null,
+  "transition": "hard cut or canonical short transition",
+  "identity_canon": "Nordic aliens / Tall Whites from accepted source video",
+  "media_evidence": [
+    {
+      "asset_id": "b01r_008",
+      "name": "NR_B01R_008.png",
+      "uri": "gdrive://1enBsvAwVnB7C0yO1L2myZiNgPe7F3odI",
+      "sha256": "8e4ebcbc71d9cb6e8a3514ba55fd3bb30dd7e389bceca97d7d30634660f48275",
+      "lifecycle_status": "candidate",
+      "origin": "generated",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "source_frame": null,
+      "derivation": "source-canon generated/reframed plate"
+    }
+  ],
+  "motion_plan": {
+    "continuity_plan": "Preserve Tall White identities, suits, craft topology, airfield, horizon and golden-hour light.",
+    "staging_plan": "Craft detail and horizon insert: dark hull surfaces, warm reflection, pale terrain.",
+    "camera_envelope": "bounded motion only; no endless zoom, whole-frame shake or axis drift",
+    "representative_language": "approved TallWhite_motion_language_v2"
+  },
+  "package_directories": [
+    "source",
+    "alpha",
+    "layers",
+    "depth",
+    "generated",
+    "fx_assets",
+    "transition",
+    "loop",
+    "preview",
+    "notes"
+  ],
+  "creative_status": "candidate",
+  "proof_status": "pending"
+}
