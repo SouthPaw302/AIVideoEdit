@@ -18,5 +18,7 @@
   "final_qc_passed": false,
   "archive_complete": false,
   "mode_aware_proofs_accepted": false,
-  "shot_package_count": 47
+  "shot_package_count": 47,
+  "media_evidence_verified": true,
+  "media_evidence_verified_at": "2026-10-02T19:41:00Z"
 }

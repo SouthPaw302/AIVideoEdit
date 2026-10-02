@@ -26,6 +26,7 @@
       "name": "NR_B05R_045.png",
       "uri": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw#slide=b05r_45",
       "sha256": "2419a03b5107693596f2b9ee98bd9c0c274c532eeac18e0fd1017e335d0ce721",
+      "status": "derived",
       "lifecycle_status": "candidate",
       "origin": "source_derived",
       "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
