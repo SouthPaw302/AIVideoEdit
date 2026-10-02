@@ -37,10 +37,11 @@
           "note": "Crop removes most social-feed UI for visual-language analysis; original video remains canonical source identity."
         },
         "picture_language": [
-          "two pale long-haired human-like / elf-like figures presented as a paired hero identity",
+          "two Nordic alien / Tall White humanoids matching the accepted source identities",
+          "very pale skin and very long pale-blond hair",
           "matte black fitted futuristic clothing with minimal ornament",
           "barren pale airfield / salt-flat-like ground",
-          "sleek dark futuristic craft behind the figures",
+          "sleek dark swept-wing alien craft behind the figures",
           "golden-hour sky with warm peach/gold highlights against graphite clothing and cool pale skin",
           "mostly frontal portrait staging with full-body, medium, and close framing",
           "restrained camera language; visual change comes mainly from framing and subtle subject motion",
@@ -58,11 +59,12 @@
           "transition_behavior": "framing changes and source motion are more important than flashy camera motion"
         },
         "continuity_anchors": [
-          "paired hero identities",
-          "long pale-blond hair",
-          "black fitted suits",
+          "same two Tall White alien identities",
+          "tall pale humanoid proportions",
+          "very long pale-blond hair",
+          "matte-black fitted suits",
           "sunset airfield world",
-          "sleek dark craft silhouette",
+          "same dark swept-wing alien craft silhouette",
           "gold/graphite/pale neutral palette"
         ],
         "diversity_probe": {
