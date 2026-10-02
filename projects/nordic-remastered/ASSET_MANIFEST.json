@@ -1,4 +1,25 @@
 {
   "schema": "aivideoedit.asset-manifest.v1",
-  "assets": []
+  "assets": [
+    {
+      "id": "source_video_001",
+      "name": "1000100358.mp4",
+      "kind": "source_video",
+      "origin": "ingested",
+      "lifecycle_status": "canonical",
+      "sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "uri": "gdrive://1DAuBUcPZnfBTaYjHbKJDQBheoPs9GoPa",
+      "status": "ingested"
+    },
+    {
+      "id": "source_audio_001",
+      "name": "Nordic (Remastered).mp3",
+      "kind": "source_audio",
+      "origin": "ingested",
+      "lifecycle_status": "canonical",
+      "sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f",
+      "uri": "gdrive://1sqG_muNUbxfP7UVNHotD25tS-P8xxUu_",
+      "status": "ingested"
+    }
+  ]
 }

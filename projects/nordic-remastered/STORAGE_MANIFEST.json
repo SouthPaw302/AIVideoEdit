@@ -1,0 +1,26 @@
+{
+  "schema": "aivideoedit.storage-manifest.v1",
+  "provider": "google_drive",
+  "project_root": {
+    "id": "1sZWzBbvn699V02VpNgSilxCdIStXaXSP",
+    "url": "https://drive.google.com/drive/folders/1sZWzBbvn699V02VpNgSilxCdIStXaXSP"
+  },
+  "folders": {
+    "source_media": "1SNVS4HQw3j6M4D-8RfuAW15QEC6ZpAqQ",
+    "source_audio": "1mPaamur7ye_TBlT0hT7FwJS3VwFcO_mf",
+    "director_proofs": "1ndIDa6pHzavMdLXHoiaqQahsP_rGUKBl",
+    "final_masters": "1bzZLEeAjncwCIpApVjs3PxJhjkbmgdo3"
+  },
+  "assets": [
+    {
+      "role": "source_video",
+      "id": "1DAuBUcPZnfBTaYjHbKJDQBheoPs9GoPa",
+      "sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded"
+    },
+    {
+      "role": "source_audio",
+      "id": "1sqG_muNUbxfP7UVNHotD25tS-P8xxUu_",
+      "sha256": "d5dc263e6edc7a248503acc1f8ecc5cc2ab91727905ef8ddac3d63a6a1644c2f"
+    }
+  ]
+}

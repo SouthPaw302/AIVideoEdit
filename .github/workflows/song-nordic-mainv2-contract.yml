@@ -1,0 +1,46 @@
+name: Nordic Remastered MainV2 Contract
+
+on:
+  push:
+    branches:
+      - song/nordic-remastered
+    paths:
+      - "projects/nordic-remastered/**"
+      - ".github/workflows/song-nordic-mainv2-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mainv2-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      AIVIDEOEDIT_AUTHORITY_REF: MainV2
+      AIVIDEOEDIT_VALIDATION_MODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Bootstrap exact MainV2 AIVideoEdit OS
+        run: python bootstrap.py boot --repo-root "$GITHUB_WORKSPACE" --branch "song/nordic-remastered" --project-dir "projects/nordic-remastered"
+      - name: Verify MainV2 production guards
+        run: |
+          python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "song/nordic-remastered"
+          python .aivideoedit/os/general/reusable/tools/narrative_guard.py --branch "song/nordic-remastered"
+          python .aivideoedit/os/general/reusable/tools/recut_guard.py --branch "song/nordic-remastered"
+          python .aivideoedit/os/general/reusable/tools/workflow_guard.py --branch "song/nordic-remastered"
+      - name: Upload boot evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: nordic-remastered-mainv2-boot
+          path: |
+            .aivideoedit/session.json
+            .aivideoedit/boot_capsule.json
+            .aivideoedit/session_attestation.json
+            .aivideoedit/SECOND_BRAIN.md
+          retention-days: 3
