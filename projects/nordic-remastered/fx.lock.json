@@ -1,0 +1,18 @@
+{
+  "schema": "aivideoedit.fx-lock.v1",
+  "project": "nordic-remastered",
+  "branch": "song/nordic-remastered",
+  "authority_ref": "MainV2",
+  "seed": 302,
+  "requirements_file": "projects/nordic-remastered/FX_REQUIREMENTS.json",
+  "application_proof_file": "projects/nordic-remastered/FX_APPLICATION_PROOF.json",
+  "execution_ledger_file": "projects/nordic-remastered/FX_EXECUTION_LEDGER.json",
+  "effects": ["FX2-MOTION-002","FX2-LIGHT-002","FX2-CAMERA-023","FX2-LIGHT-028","FX2-TRANS-025"],
+  "shot_count": 47,
+  "visible_change_pass_count": 47,
+  "render_sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c",
+  "mainv2_contract_run_id": 37078521936,
+  "mainv2_contract_conclusion": "success",
+  "generic_main_contract_not_authoritative": true,
+  "status": "LOCKED"
+}
