@@ -1,0 +1,23 @@
+{
+  "schema": "aivideoedit.archive-manifest.v1",
+  "project": "nordic-remastered",
+  "branch": "song/nordic-remastered",
+  "authority_ref": "MainV2",
+  "final_master": {
+    "file_name": "Nordic_Remastered_Final_Master.mp4",
+    "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c",
+    "duration_seconds": 137.916667
+  },
+  "evidence": [
+    "FX_REQUIREMENTS.json",
+    "FX_APPLICATION_PROOF.json",
+    "FX_EXECUTION_LEDGER.json",
+    "fx.lock.json",
+    "FINAL_QC.json",
+    "FINAL_MASTER.json",
+    "PROJECT_STATE.json"
+  ],
+  "mainv2_contract_run_id": 37078710645,
+  "mainv2_contract_conclusion": "success",
+  "status": "ARCHIVED"
+}
