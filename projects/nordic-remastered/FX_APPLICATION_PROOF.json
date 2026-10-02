@@ -1,0 +1,63 @@
+{
+  "schema": "aivideoedit.fx-application-proof.v1",
+  "project": "Nordic Remastered",
+  "branch": "song/nordic-remastered",
+  "applications": [
+    {
+      "effect_id": "FX2-MOTION-002",
+      "visible_change": {
+        "status": "PASS"
+      },
+      "output": {
+        "file_or_locator": "gdrive://1xRCUP4kn0fdPNMqzvuBLN2f75LJWTFB_",
+        "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c"
+      }
+    },
+    {
+      "effect_id": "FX2-LIGHT-002",
+      "visible_change": {
+        "status": "PASS"
+      },
+      "output": {
+        "file_or_locator": "gdrive://1xRCUP4kn0fdPNMqzvuBLN2f75LJWTFB_",
+        "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c"
+      }
+    },
+    {
+      "effect_id": "FX2-CAMERA-023",
+      "visible_change": {
+        "status": "PASS"
+      },
+      "output": {
+        "file_or_locator": "gdrive://1xRCUP4kn0fdPNMqzvuBLN2f75LJWTFB_",
+        "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c"
+      }
+    },
+    {
+      "effect_id": "FX2-LIGHT-028",
+      "visible_change": {
+        "status": "PASS"
+      },
+      "output": {
+        "file_or_locator": "gdrive://1xRCUP4kn0fdPNMqzvuBLN2f75LJWTFB_",
+        "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c"
+      }
+    },
+    {
+      "effect_id": "FX2-TRANS-025",
+      "visible_change": {
+        "status": "PASS"
+      },
+      "output": {
+        "file_or_locator": "gdrive://1xRCUP4kn0fdPNMqzvuBLN2f75LJWTFB_",
+        "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c"
+      }
+    }
+  ],
+  "assembly": {
+    "status": "PASS",
+    "file_or_locator": "gdrive://1xRCUP4kn0fdPNMqzvuBLN2f75LJWTFB_",
+    "sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c"
+  },
+  "note": "47/47 shot visible-change checks passed against accepted production plates."
+}
