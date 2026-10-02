@@ -54,7 +54,7 @@
     "rule": "Generate one Batch-10, build/inspect reference-faithful motion/FX proofs, preserve accepted plates, then continue to the next Batch-10. Do not silently replace accepted media.",
     "batches": [
       {
-        "id": "B01",
+        "id": "B01R",
         "count": 10,
         "purpose": "hero/world foundation",
         "coverage": [
@@ -66,7 +66,7 @@
         "music_target": "0-33 s"
       },
       {
-        "id": "B02",
+        "id": "B02R",
         "count": 10,
         "purpose": "world expansion and environmental coverage",
         "coverage": [
@@ -79,7 +79,7 @@
         "music_target": "33-63 s"
       },
       {
-        "id": "B03",
+        "id": "B03R",
         "count": 10,
         "purpose": "sustained high-energy progression",
         "coverage": [
@@ -92,7 +92,7 @@
         "music_target": "63-92 s"
       },
       {
-        "id": "B04",
+        "id": "B04R",
         "count": 10,
         "purpose": "drop/re-entry contrast",
         "coverage": [
@@ -105,7 +105,7 @@
         "music_target": "92-114 s"
       },
       {
-        "id": "B05",
+        "id": "B05R",
         "count": 10,
         "purpose": "climax and resolution",
         "coverage": [
@@ -186,5 +186,29 @@
     "Reference clip may teach and supply canon; phone/social UI must not leak into the artistic master.",
     "No generated plate may silently change hero identity, wardrobe logic, craft topology, or world lighting.",
     "Visible production quality outranks metadata completion."
-  ]
+  ],
+  "subject_canon": "Nordic aliens / Tall Whites",
+  "identity_lock": {
+    "label": "Tall Whites",
+    "authority": "current_user_instruction + accepted_source_video",
+    "required_traits": [
+      "same two tall pale Nordic-looking alien humanoids from source",
+      "very long pale-blond hair",
+      "matte-black fitted futuristic suits",
+      "dark swept-wing alien craft",
+      "barren pale sunset airfield",
+      "warm gold/peach sky"
+    ],
+    "forbidden_substitutions": [
+      "historical Norse or Viking people",
+      "warriors",
+      "fur costumes",
+      "longships",
+      "fjords",
+      "runes",
+      "wolves",
+      "medieval villages",
+      "snow-mountain saga imagery"
+    ]
+  }
 }

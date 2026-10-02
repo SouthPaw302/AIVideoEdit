@@ -2,10 +2,15 @@
 
 Stage: STORYBOARD_LOCKED
 
-Director media-selection checkpoint: **REJECTED** for the existing B01-B10 candidate still library.
+Active subject canon: **Nordic aliens / Tall Whites** from the accepted source video.
 
-Reason: the 100 stills materially drifted away from the locked reference visual world into Viking fjords, warriors, longships, villages, and snow-mountain imagery. That violates Zero-Drift subject/world/wardrobe/craft continuity.
+Cleanup complete:
+- rejected drifted B01-B10 folders moved on Drive to `UNUSED - Rejected Drift`;
+- active manifests now contain only source canon and replacement batches;
+- active replacement batch IDs are B01R-B05R;
+- B01R contains 10 source-faithful candidate stills backed up to Drive;
+- B02R Drive folder is ready for stills 011-020.
 
-The rejected Drive media is preserved for audit but is not canon and must not be used downstream.
+Production rule: new stills must be edits/outpaints anchored to extracted source-video frames. Text-only re-invention is forbidden.
 
-Current next action: rebuild **B01R (10 stills)** directly from the accepted source reference: paired pale-haired futuristic heroes, matte-black fitted suits, barren pale sunset airfield, sleek dark craft, gold/graphite/pale palette. Run representative moving proof and FX gate before proceeding to B02R.
+Next: create B02R stills 011-020 for S11-S20, then director media-selection review before shot packages/motion proofs.

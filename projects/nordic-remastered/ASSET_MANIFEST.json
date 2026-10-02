@@ -22,164 +22,89 @@
       "status": "ingested"
     },
     {
-      "id": "generated_b01_stills",
-      "name": "B01 stills 001-010",
+      "id": "generated_b01r_stills",
+      "name": "B01R Source-Canon Stills 001-010",
       "kind": "generated_still_batch",
       "origin": "generated",
       "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1ft2yBogwEP9NQWB008aHnwPgyo9yi_l0",
+      "lifecycle_status": "candidate",
+      "uri": "gdrive://1qSnpSNTfTzVZfXafvNJ7vcp-x4XCe1iR",
       "count": 10,
-      "still_range": [
-        1,
-        10
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b02_stills",
-      "name": "B02 stills 011-020",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://10lD5DMTR-mFCGEQcGlv9Ydy-3ckk5Qn2",
-      "count": 10,
-      "still_range": [
-        11,
-        20
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b03_stills",
-      "name": "B03 stills 021-030",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1p24cyCDbQJETU8CANM9gGsAA7TLcUpbd",
-      "count": 10,
-      "still_range": [
-        21,
-        30
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b04_stills",
-      "name": "B04 stills 031-040",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1_4Da7Un6rQCBfClH7I4WsuJg57QyR0ch",
-      "count": 10,
-      "still_range": [
-        31,
-        40
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b05_stills",
-      "name": "B05 stills 041-050",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1Wp33i7hrkY0ifn92p9qU63jAHtS1m8l0",
-      "count": 10,
-      "still_range": [
-        41,
-        50
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b06_stills",
-      "name": "B06 stills 051-060",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://10xTy_B4vX6Dtq6X9GLlTSmzl7ChLir6M",
-      "count": 10,
-      "still_range": [
-        51,
-        60
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b07_stills",
-      "name": "B07 stills 061-070",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1GvPaqPun25bT_v6fT4gYd38KMHKyg3-4",
-      "count": 10,
-      "still_range": [
-        61,
-        70
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b08_stills",
-      "name": "B08 stills 071-080",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1t7YgfEOPmG9uOH3sio6UGExskLMBSvtq",
-      "count": 10,
-      "still_range": [
-        71,
-        80
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b09_stills",
-      "name": "B09 stills 081-090",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1MCcAJVd1Lakm25ziebXQAA-ROSENeVrz",
-      "count": 10,
-      "still_range": [
-        81,
-        90
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
-    },
-    {
-      "id": "generated_b10_stills",
-      "name": "B10 stills 091-100",
-      "kind": "generated_still_batch",
-      "origin": "generated",
-      "role": "production_scene_plates",
-      "lifecycle_status": "rejected",
-      "uri": "gdrive://1O2TCx_bmjJHvHj_pNgNUgvZzqO9If5qv",
-      "count": 10,
-      "still_range": [
-        91,
-        100
-      ],
-      "status": "rejected_canon_drift",
-      "rejection_reason": "Director media-selection review rejected visual canon drift."
+      "status": "candidate_source_canon",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "identity_lock": "Nordic aliens / Tall Whites",
+      "files": [
+        {
+          "asset_id": "b01r_001",
+          "name": "NR_B01R_001.png",
+          "uri": "gdrive://10SKh81_XS8uNhrzynSK3MWv-pDLkrZYV",
+          "sha256": "92bbc9e1af56dbdf0a3a07b5cadd729075daadbd0b20de733af22350a15e2e4a",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_002",
+          "name": "NR_B01R_002.png",
+          "uri": "gdrive://1jSubKbHrt2vs-N1XH47uL5AS8OgqU3ay",
+          "sha256": "094d770af982e59e89c36900926eec706f42228a6cb37860274e950cc1f4e1d5",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_003",
+          "name": "NR_B01R_003.png",
+          "uri": "gdrive://1XCr2_NLyEXHeFaalNqCjJPpyGNiOgHpn",
+          "sha256": "b7d7014a58d8824b733555966bc0ea3927014863f758af41de6f90272ec40c49",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_004",
+          "name": "NR_B01R_004.png",
+          "uri": "gdrive://112P4u2uO1xXpNsfpo9JQfhRwXj-0MBNW",
+          "sha256": "d39a0e46b93c40c3a7a8c6654f5a794e449edef70cba4d681d855136e3e738eb",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_005",
+          "name": "NR_B01R_005.png",
+          "uri": "gdrive://1H_kitdGQJ5mFk5g_mIkpM1tpG_HyZdxA",
+          "sha256": "6f61e298fbe08b8512153c39d45ed25e1e623708400484583d182c574c6c2d97",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_006",
+          "name": "NR_B01R_006.png",
+          "uri": "gdrive://17n3lEScC7SqNDqlZn3xq_jloMAsWOLwH",
+          "sha256": "624c6fbb7781ae1be21df732e0aad40810128f2e579725c352fe1f95ca64216d",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_007",
+          "name": "NR_B01R_007.png",
+          "uri": "gdrive://1e0sIfmk9QqdsEweRs-Hg_mectFIr3U23",
+          "sha256": "130b13eac87ea49ce912ccffcd906f8f40fdd85a58489c63d8d510f2aea3c6c9",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_008",
+          "name": "NR_B01R_008.png",
+          "uri": "gdrive://1enBsvAwVnB7C0yO1L2myZiNgPe7F3odI",
+          "sha256": "8e4ebcbc71d9cb6e8a3514ba55fd3bb30dd7e389bceca97d7d30634660f48275",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_009",
+          "name": "NR_B01R_009.png",
+          "uri": "gdrive://1E8vp1tByC9IA-odIPJ3vX0_HJpoTqL-q",
+          "sha256": "933e4aaacb06c56f0cf2cf3a00a35afc21226a7ccc423e6d6d5bc908206cc66e",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b01r_010",
+          "name": "NR_B01R_010.png",
+          "uri": "gdrive://1w3vstM9WWH-tcaW0E_iibe0GeEJdnaFF",
+          "sha256": "6b7b8fbcda4f4dcecb03745f26b7519d0e8021205a511cbfdee3ff20c3b37504",
+          "lifecycle_status": "candidate"
+        }
+      ]
     }
   ]
 }

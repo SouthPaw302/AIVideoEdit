@@ -1,19 +1,20 @@
 {
   "schema": "aivideoedit.operating-order.v1",
-  "mission": "Build a complete 137.92-second reference-led hybrid music video for Nordic (Remastered) from the locked paired-hero/craft world using five Batch-10 stacks and MainV2 animation/FX tools.",
+  "mission": "Build a complete 137.92-second reference-led hybrid music video for Nordic (Remastered) centered on the accepted Nordic alien / Tall White pair and their dark alien craft, using source-faithful replacement Batch-10 stacks and MainV2 animation/FX tools.",
   "direction_authority": "reference_led",
   "production_mode": "hybrid",
   "canon_lock": {
     "locked": true,
-    "picture_language": "Paired pale long-haired futuristic heroes in matte-black fitted suits on a barren pale sunset airfield with a sleek dark craft; warm gold/peach sky, graphite clothing, cool pale neutrals; restrained portrait camera and localized internal motion.",
+    "picture_language": "Two Nordic alien / Tall White humanoids from the accepted source video: tall, very pale, long pale-blond hair, matte-black fitted futuristic suits, barren pale sunset airfield, and a sleek dark swept-wing alien craft; warm gold/peach sky, graphite clothing, restrained portrait camera, localized internal motion.",
     "items": [
-      "paired hero identity",
-      "long pale-blond hair",
-      "matte-black fitted suit language",
-      "pale barren airfield",
-      "sleek dark craft design language",
-      "golden-hour light direction and palette",
-      "restrained camera grammar",
+      "same two Tall White alien identities from accepted source",
+      "tall pale humanoid proportions",
+      "very long pale-blond hair",
+      "matte-black fitted futuristic suits",
+      "barren pale sunset airfield",
+      "same dark swept-wing alien craft design language",
+      "golden-hour light direction and gold/graphite/pale palette",
+      "restrained camera grammar and zero-drift continuity",
       "47-shot locked coverage architecture"
     ]
   },
@@ -46,8 +47,8 @@
     "forbidden_changes": [],
     "source_replacement_authorized": false
   },
-  "current_user_direction": "Follow MainV2 top to bottom using installed repo tools; use the given video as visual authority, the song/BPM as timing authority, and build stacked image batches for animation without drift.",
-  "exact_next_action": "Generate real Batch B01 (10 reference-faithful production stills), record hashes/lifecycle in ASSET_MANIFEST, build corresponding shot packages, then create short mode-aware moving proofs before advancing to B02.",
+  "current_user_direction": "Nordic means Nordic aliens / Tall Whites, not historical Vikings. Use the extracted stills from the supplied video as the visual identity authority. Keep the same two pale long-haired alien humanoids, matte-black suits, dark alien craft, barren sunset airfield, and zero-drift continuity.",
+  "exact_next_action": "Build B02R stills 011-020 by editing/outpainting the extracted source-video stills; do not generate from text-only prompts or use quarantined rejected media.",
   "updated_at_utc": "2026-10-02T07:10:00Z",
   "director_supervision": {
     "required": true,
