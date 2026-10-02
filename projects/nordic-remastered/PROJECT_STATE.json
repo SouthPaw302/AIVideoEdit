@@ -29,5 +29,8 @@
   "fx_lock_mainv2_contract_run_id": 37078521936,
   "fx_workprint_sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c",
   "final_master_sha256": "bafa6b9f971c98f2ed4646492278ec96c16777524a3096a106fe75f5ec70d74c",
-  "final_qc_passed_at": "2026-10-02T23:52:00Z"
+  "final_qc_passed_at": "2026-10-02T23:52:00Z",
+  "mode_aware_qc_passed": true,
+  "mode_aware_qc_passed_at": "2026-10-02T23:41:00Z",
+  "mode_aware_qc_evidence": "projects/nordic-remastered/FINAL_QC.json"
 }
