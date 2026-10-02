@@ -12,3 +12,6 @@ Active production must preserve the same two tall pale long-haired alien humanoi
 
 ## 2026-10-02 — Replacement media-selection pass
 B01R and B02R pass the director media-selection checkpoint for subject/world continuity. B02R uses only exact extracted-source derivatives. The rejected generated snowy/Norse/Tall-White fantasy board was not uploaded or promoted. Assets remain candidate pending representative moving proof.
+
+## 2026-10-02 — Representative motion language approved
+Living proof V1 was rejected for motion that was too subtle. V2 increases only localized hair/cloth motion while protecting faces and keeping the camera restrained; it is approved. The S08 craft proof is approved for bounded cinematic travel and controlled atmosphere. The proof set is backed up in Drive Director Proofs. This approval does not constitute FX lock.

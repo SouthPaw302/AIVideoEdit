@@ -2,7 +2,7 @@
   "schema": "aivideoedit.production-execution-ledger.v1",
   "project": "Nordic Remastered",
   "created_at": "2026-10-02T08:05:00Z",
-  "updated_at": "2026-10-02T08:05:00Z",
+  "updated_at": "2026-10-02T19:30:00Z",
   "events": [
     {
       "component": "director_review",
@@ -34,6 +34,79 @@
       },
       "metadata": {
         "canon": "paired pale-haired futuristic heroes / black suits / barren sunset airfield / dark craft"
+      },
+      "required_execution": true,
+      "required_consumption": true,
+      "reason": null
+    },
+    {
+      "component": "media_selection",
+      "subject": "accepted_source_reference",
+      "stage": "executed",
+      "at": "2026-10-02T19:20:00Z",
+      "actor": "sandbox_director",
+      "consumer": "B01R_B02R_replacement_media",
+      "evidence": {
+        "source_video_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+        "batch_manifest": "BATCH_MANIFEST.json"
+      },
+      "metadata": {
+        "result": "Tall White source reference actually used for replacement media."
+      },
+      "required_execution": true,
+      "required_consumption": true,
+      "reason": null
+    },
+    {
+      "component": "media_selection",
+      "subject": "accepted_source_reference",
+      "stage": "consumed",
+      "at": "2026-10-02T19:20:00Z",
+      "actor": "sandbox_director",
+      "consumer": "representative_motion_proof",
+      "evidence": {
+        "proof_record": "REPRESENTATIVE_PROOF.json"
+      },
+      "metadata": {
+        "result": "Source canon consumed by B01R/B02R and director motion proof."
+      },
+      "required_execution": true,
+      "required_consumption": true,
+      "reason": null
+    },
+    {
+      "component": "director_proof",
+      "subject": "TallWhite_motion_language_v2",
+      "stage": "executed",
+      "at": "2026-10-02T19:29:00Z",
+      "actor": "sandbox_director",
+      "consumer": "representative_proof_checkpoint",
+      "evidence": {
+        "drive_uri": "gslides://19g6BcWLyukzmFFGTdQBwyUe8anqKTByPHK-qiGjcN0w",
+        "living_sha256": "e067a3a8a15d101377fff89eccddf4e104b6188a699bb60a16d4f9e6c0e70b12",
+        "cinematic_sha256": "bcc097d657775444f3ca324403b1854476a5286fa9ffad20e24617e48ad78092"
+      },
+      "metadata": {
+        "fx_lock_claimed": false,
+        "v1_result": "REJECTED",
+        "v2_result": "APPROVED"
+      },
+      "required_execution": true,
+      "required_consumption": true,
+      "reason": null
+    },
+    {
+      "component": "director_proof",
+      "subject": "TallWhite_motion_language_v2",
+      "stage": "consumed",
+      "at": "2026-10-02T19:30:00Z",
+      "actor": "sandbox_director",
+      "consumer": "B03R_generation_direction",
+      "evidence": {
+        "checkpoint": "DIRECTOR_CHECKPOINTS.json"
+      },
+      "metadata": {
+        "decision": "Use approved restrained living/cinematic behavior for next source-canon batch."
       },
       "required_execution": true,
       "required_consumption": true,

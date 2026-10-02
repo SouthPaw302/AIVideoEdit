@@ -1,0 +1,122 @@
+{
+  "schema": "aivideoedit.representative-proof.v1",
+  "project": "Nordic Remastered",
+  "branch": "song/nordic-remastered",
+  "direction_authority": "reference_led",
+  "production_mode": "hybrid",
+  "creative_status": "approved",
+  "reviewer": "sandbox_director",
+  "approved_at": "2026-10-02T19:30:00Z",
+  "drive_evidence": {
+    "presentation_id": "19g6BcWLyukzmFFGTdQBwyUe8anqKTByPHK-qiGjcN0w",
+    "uri": "gslides://19g6BcWLyukzmFFGTdQBwyUe8anqKTByPHK-qiGjcN0w",
+    "folder_uri": "gdrive://1ndIDa6pHzavMdLXHoiaqQahsP_rGUKBl",
+    "contents": [
+      "animated living-scene GIF",
+      "animated cinematic GIF",
+      "first/mid/last contact sheet"
+    ]
+  },
+  "rejected_preproof": {
+    "id": "living_v1",
+    "result": "REJECTED",
+    "reason": "Internal motion was technically present but too subtle to satisfy the Director's internal_motion_visible standard."
+  },
+  "proofs": [
+    {
+      "shot_id": "S03",
+      "mode": "living_scene",
+      "file_name": "NR_REP_PROOF_LIVING_S03_V2.mp4",
+      "sha256": "e067a3a8a15d101377fff89eccddf4e104b6188a699bb60a16d4f9e6c0e70b12",
+      "gif_sha256": "a7e4a61d8ef94063f123d4a4634ac59ba7fc03c952b43ae6652815d066abf624",
+      "source_plate": "B01R_003",
+      "source_plate_sha256": "b7d7014a58d8824b733555966bc0ea3927014863f758af41de6f90272ec40c49",
+      "audio_range_seconds": [
+        7.918,
+        11.818
+      ],
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_seconds": 3.9,
+        "decoded_frames": 93,
+        "black_frames": 0
+      },
+      "motion_evidence": {
+        "mean_first_to_mid_pixel_delta": 4.424,
+        "hair_region_delta": 6.662,
+        "cloth_region_delta": 6.5222,
+        "face_identity_visual_check": "PASS",
+        "camera": "locked/restrained",
+        "join_visual_check": "PASS"
+      },
+      "checks": {
+        "internal_motion_visible": true,
+        "material_motion_independent": true,
+        "identity_stable": true,
+        "camera_restrained": true,
+        "loop_or_join_clean": true,
+        "reference_behavior_match": true
+      },
+      "runtime_basis": [
+        "MainV2 FX2-MOTION-002 localized_living_flow equation",
+        "MainV2 atmospheric motion behavior",
+        "protected face regions"
+      ],
+      "note": "Director representative proof. This is not an FX-lock execution receipt."
+    },
+    {
+      "shot_id": "S08",
+      "mode": "cinematic",
+      "file_name": "NR_REP_PROOF_CINEMATIC_S08.mp4",
+      "sha256": "bcc097d657775444f3ca324403b1854476a5286fa9ffad20e24617e48ad78092",
+      "gif_sha256": "084bacbcbf72fbb1a89cbfca947b99073cb323723b0c1de94bbf497845aaf9dd",
+      "source_plate": "B01R_008",
+      "source_plate_sha256": "8e4ebcbc71d9cb6e8a3514ba55fd3bb30dd7e389bceca97d7d30634660f48275",
+      "audio_range_seconds": [
+        26.61,
+        29.86
+      ],
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_seconds": 3.25,
+        "decoded_frames": 78,
+        "black_frames": 0
+      },
+      "motion_evidence": {
+        "mean_first_to_mid_pixel_delta": 19.4019,
+        "mean_first_to_last_pixel_delta": 24.0761,
+        "bounded_camera_push_percent": 4.2,
+        "craft_topology_visual_check": "PASS"
+      },
+      "checks": {
+        "story_action_readable": true,
+        "coverage_sufficient": true,
+        "continuity_controlled": true,
+        "shot_progression_present": true,
+        "pacing_music_directed": true,
+        "reference_behavior_match": true
+      },
+      "runtime_basis": [
+        "MainV2 atmospheric motion behavior",
+        "MainV2 moving-light behavior",
+        "bounded camera travel"
+      ],
+      "note": "Director representative proof. This is not an FX-lock execution receipt."
+    }
+  ],
+  "hybrid_checks": {
+    "section_mode_declared": true,
+    "mode_specific_qc_passed": true,
+    "visual_world_coherent": true,
+    "method_transitions_intentional": true,
+    "complexity_serves_film": true
+  },
+  "reference_comparison": {
+    "result": "PASS",
+    "notes": "Both proofs retain the accepted Tall White pair, matte-black suits, dark swept-wing craft, barren sunset airfield and restrained source motion language. No Viking/Norse world elements introduced."
+  }
+}
