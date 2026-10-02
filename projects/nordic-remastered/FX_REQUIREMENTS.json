@@ -1,0 +1,30 @@
+{
+  "schema": "aivideoedit.fx-requirements.v1",
+  "project": "nordic-remastered",
+  "runtime": "MainV2 canonical FX execution",
+  "seed": 302,
+  "effects": [
+    {
+      "id": "FX2-MOTION-002"
+    },
+    {
+      "id": "FX2-LIGHT-002"
+    },
+    {
+      "id": "FX2-CAMERA-023"
+    },
+    {
+      "id": "FX2-LIGHT-028"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "FX2-TRANS-025"
+    }
+  ],
+  "render_inputs": [
+    "projects/nordic-remastered/SCRIPT.json",
+    "projects/nordic-remastered/SHOT_PACKAGE_MANIFEST.json"
+  ],
+  "created_at": "2026-10-02T23:40:00Z"
+}
