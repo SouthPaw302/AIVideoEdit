@@ -11,8 +11,8 @@
     "folder_id": "11oDq40ic59HPrYWwBJMxIsJx0L1Xtnhd"
   },
   "planned_batches": 5,
-  "completed_candidate_batches": 3,
-  "active_stills": 30,
+  "completed_candidate_batches": 5,
+  "active_stills": 50,
   "batches": [
     {
       "id": "B01R",
@@ -56,8 +56,11 @@
         31,
         40
       ],
-      "count": 0,
-      "lifecycle_status": "planned"
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1BZkxu9gesgZXdBIhOAHtw6RLtIeB3DMQ",
+      "backup_presentation_id": "1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c",
+      "director_media_selection": "PASS"
     },
     {
       "id": "B05R",
@@ -65,8 +68,11 @@
         41,
         50
       ],
-      "count": 0,
-      "lifecycle_status": "planned"
+      "count": 10,
+      "lifecycle_status": "candidate",
+      "drive_folder_id": "1aFEFJn17JhR4AGhCprOtoxo4YEl-DYPO",
+      "backup_presentation_id": "1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw",
+      "director_media_selection": "PASS"
     }
   ],
   "rules": [

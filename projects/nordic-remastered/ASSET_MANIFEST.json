@@ -309,6 +309,230 @@
           "lifecycle_status": "candidate"
         }
       ]
+    },
+    {
+      "id": "generated_b04r_stills",
+      "name": "B04R Source-Canon Stills 031-040",
+      "kind": "source_derived_still_batch",
+      "origin": "source_derived",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "count": 10,
+      "status": "candidate_source_canon",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "identity_lock": "Nordic aliens / Tall Whites",
+      "drive_folder_uri": "gdrive://1BZkxu9gesgZXdBIhOAHtw6RLtIeB3DMQ",
+      "drive_backup_presentation": "gslides://1y6zJVS-sNhceUfkIeps1DjSOm2cs7EVyoM9GPMVMh8c",
+      "derivation_policy": "Exact extracted source frames only; crop/reframe/upscale/blurred-edge extension. No generative scene invention.",
+      "files": [
+        {
+          "asset_id": "b04r_031",
+          "name": "NR_B04R_031.png",
+          "sha256": "523a4657883569c0ab3598dcff4049c165a21a124ac7174f37aa51b4acd51b95",
+          "source_frame": "frame_0370",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_31",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_032",
+          "name": "NR_B04R_032.png",
+          "sha256": "287acc48690fdf7cf533c1545f0ff45125a9626456ca1ff6723ef1a57fcfdf46",
+          "source_frame": "frame_0182",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_32",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_033",
+          "name": "NR_B04R_033.png",
+          "sha256": "3b86f624bfea70dcd02113c76101e12afb2ea37ca0e1b0e2f3ba6e0c34c8f16f",
+          "source_frame": "frame_0286",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_33",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_034",
+          "name": "NR_B04R_034.png",
+          "sha256": "15f0c6eec335f3f10fffeb7208151db477c138afd9e27f1212b4dc1576ad7974",
+          "source_frame": "frame_0136",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_34",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_035",
+          "name": "NR_B04R_035.png",
+          "sha256": "5e1fa819e62a1971479b8240230da9cf9e1bcc459115179eb7c18d7a8010dfa6",
+          "source_frame": "frame_0182",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_35",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_036",
+          "name": "NR_B04R_036.png",
+          "sha256": "1c3776524eee1aa3f189e094479a8ec1c9f62d511f578c40758ee114d2bf2b25",
+          "source_frame": "frame_0564",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_36",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_037",
+          "name": "NR_B04R_037.png",
+          "sha256": "5354b0c0c84dc943713debf2f53e935210f50d99f253bb6ae274bd75e3d3fb19",
+          "source_frame": "frame_0218",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_37",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_038",
+          "name": "NR_B04R_038.png",
+          "sha256": "db1fc540714358265d1ab5d6f9e1c463370eac1ae9385f5d06ebf5aca3e6e7b2",
+          "source_frame": "frame_0182",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_38",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_039",
+          "name": "NR_B04R_039.png",
+          "sha256": "3ca353be7e83a8e7d60e1966b0c2989cecd7685109333a36bb7a5797700a4a3f",
+          "source_frame": "frame_0286",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_39",
+          "lifecycle_status": "candidate"
+        },
+        {
+          "asset_id": "b04r_040",
+          "name": "NR_B04R_040.png",
+          "sha256": "71d88bf95a3dee2858d171014aea8a593c44b7c8668c12fa131f17f786b5bd0e",
+          "source_frame": "frame_0001",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b04r_40",
+          "lifecycle_status": "candidate"
+        }
+      ]
+    },
+    {
+      "id": "generated_b05r_stills",
+      "name": "B05R Source-Canon Stills 041-050",
+      "kind": "source_derived_still_batch",
+      "origin": "source_derived",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "count": 10,
+      "status": "candidate_source_canon",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "identity_lock": "Nordic aliens / Tall Whites",
+      "drive_folder_uri": "gdrive://1aFEFJn17JhR4AGhCprOtoxo4YEl-DYPO",
+      "drive_backup_presentation": "gslides://1gEZWlNBxVd8RUww5Kk6pUzLjgu_tlyyvTvPY61nEQRw",
+      "derivation_policy": "Exact extracted source frames only; crop/reframe/upscale/blurred-edge extension. No generative scene invention.",
+      "files": [
+        {
+          "asset_id": "b05r_041",
+          "name": "NR_B05R_041.png",
+          "sha256": "cfab9744cf05b50cbf04db155e5df55defe4a82f3589e66a9b369d10ed459ca4",
+          "source_frame": "frame_0182",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_41",
+          "lifecycle_status": "candidate",
+          "role": "scripted_plate"
+        },
+        {
+          "asset_id": "b05r_042",
+          "name": "NR_B05R_042.png",
+          "sha256": "305e23a48431f94e6f30a5f0118d0a606c65f6e46aea758e9648e345d8570b2d",
+          "source_frame": "frame_0564",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_42",
+          "lifecycle_status": "candidate",
+          "role": "scripted_plate"
+        },
+        {
+          "asset_id": "b05r_043",
+          "name": "NR_B05R_043.png",
+          "sha256": "11428941743421d380d1687991591ddd952d24504c4e39d0efe1804da797ca42",
+          "source_frame": "frame_0136",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_43",
+          "lifecycle_status": "candidate",
+          "role": "scripted_plate"
+        },
+        {
+          "asset_id": "b05r_044",
+          "name": "NR_B05R_044.png",
+          "sha256": "d0ba206bd570863406e0493a4f63a39ef2af586351309b6729fe85fc813c2ecf",
+          "source_frame": "frame_0218",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_44",
+          "lifecycle_status": "candidate",
+          "role": "scripted_plate"
+        },
+        {
+          "asset_id": "b05r_045",
+          "name": "NR_B05R_045.png",
+          "sha256": "2419a03b5107693596f2b9ee98bd9c0c274c532eeac18e0fd1017e335d0ce721",
+          "source_frame": "frame_0286",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_45",
+          "lifecycle_status": "candidate",
+          "role": "scripted_plate"
+        },
+        {
+          "asset_id": "b05r_046",
+          "name": "NR_B05R_046.png",
+          "sha256": "0d939069c799282a254ea5236d4228c815c01a317165d36997500386f6732ea2",
+          "source_frame": "frame_0001",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_46",
+          "lifecycle_status": "candidate",
+          "role": "scripted_plate"
+        },
+        {
+          "asset_id": "b05r_047",
+          "name": "NR_B05R_047.png",
+          "sha256": "be9d3be5fbe127ed6559b4aba6d65069d818ddc7477e89168dd90fd3bdd0ebe8",
+          "source_frame": "frame_0632",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_47",
+          "lifecycle_status": "candidate",
+          "role": "scripted_plate"
+        },
+        {
+          "asset_id": "b05r_048",
+          "name": "NR_B05R_048.png",
+          "sha256": "8eb75ebb360ccaf359cf7fb8eea8644219afc9bc5ee45c40fb7b2610b39d9f98",
+          "source_frame": "frame_0370",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_48",
+          "lifecycle_status": "candidate",
+          "role": "alternate_plate"
+        },
+        {
+          "asset_id": "b05r_049",
+          "name": "NR_B05R_049.png",
+          "sha256": "71e27e984ac655fedd4729df4a9707ee9e4b3e69b849d9955fc03fba951bd8a1",
+          "source_frame": "frame_0182",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_49",
+          "lifecycle_status": "candidate",
+          "role": "alternate_plate"
+        },
+        {
+          "asset_id": "b05r_050",
+          "name": "NR_B05R_050.png",
+          "sha256": "f548c415d839caa61c850fde9f6884fdd3d996c5e1fc820f51d71cf86226dfaa",
+          "source_frame": "frame_0092",
+          "derivation": "source crop/reframe or blurred-edge wide extension",
+          "backup_slide_object_id": "b05r_50",
+          "lifecycle_status": "candidate",
+          "role": "alternate_plate"
+        }
+      ]
     }
   ]
 }
