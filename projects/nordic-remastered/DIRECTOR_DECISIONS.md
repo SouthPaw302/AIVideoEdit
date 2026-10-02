@@ -9,3 +9,6 @@ The earlier candidate library materially changed the accepted source identities,
 Current user clarified the subject: **Nordic aliens / Tall Whites**.
 
 Active production must preserve the same two tall pale long-haired alien humanoids from the accepted source video, their matte-black fitted futuristic suits, the dark swept-wing alien craft, barren sunset airfield, and golden-hour lighting. New replacement stills must be image-anchored edits/outpaints from extracted source frames, not text-only re-invention.
+
+## 2026-10-02 — Replacement media-selection pass
+B01R and B02R pass the director media-selection checkpoint for subject/world continuity. B02R uses only exact extracted-source derivatives. The rejected generated snowy/Norse/Tall-White fantasy board was not uploaded or promoted. Assets remain candidate pending representative moving proof.

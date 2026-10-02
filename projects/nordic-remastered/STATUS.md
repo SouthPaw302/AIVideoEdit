@@ -4,13 +4,13 @@ Stage: STORYBOARD_LOCKED
 
 Active subject canon: **Nordic aliens / Tall Whites** from the accepted source video.
 
-Cleanup complete:
-- rejected drifted B01-B10 folders moved on Drive to `UNUSED - Rejected Drift`;
-- active manifests now contain only source canon and replacement batches;
-- active replacement batch IDs are B01R-B05R;
-- B01R contains 10 source-faithful candidate stills backed up to Drive;
-- B02R Drive folder is ready for stills 011-020.
+Completed:
+- rejected Viking B01-B10 quarantined under Drive `UNUSED - Rejected Drift`;
+- B01R: 10 source-canon candidate production stills;
+- B02R: 10 exact-source-derived stills for S11-S20;
+- B02R backed up in Drive as a 10-slide source-canon plate deck;
+- Director `media_selection` checkpoint: **PASS** for replacement path.
 
-Production rule: new stills must be edits/outpaints anchored to extracted source-video frames. Text-only re-invention is forbidden.
+B02R derivation is non-generative: crop/reframe/upscale/blurred-edge extension from extracted source frames only. S15 was adjusted to an available source-derived paired angle rather than inventing a rear view.
 
-Next: create B02R stills 011-020 for S11-S20, then director media-selection review before shot packages/motion proofs.
+Next repo step: create representative shot packages and moving proofs from the replacement media, validate living-scene/cinematic behavior against the Tall White reference, then continue B03R only after that proof language is accepted.

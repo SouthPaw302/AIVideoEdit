@@ -105,6 +105,103 @@
           "lifecycle_status": "candidate"
         }
       ]
+    },
+    {
+      "id": "generated_b02r_stills",
+      "name": "B02R Source-Canon Stills 011-020",
+      "kind": "source_derived_still_batch",
+      "origin": "source_derived",
+      "role": "production_scene_plates",
+      "lifecycle_status": "candidate",
+      "count": 10,
+      "status": "candidate_source_canon",
+      "source_canon_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+      "identity_lock": "Nordic aliens / Tall Whites",
+      "drive_folder_uri": "gdrive://1loH3J1sECreUs5He6C6VllfpQbIeDL_j",
+      "drive_backup_presentation": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY",
+      "derivation_policy": "Exact extracted source frames only; crop/reframe/upscale/blurred-edge extension. No generative scene invention.",
+      "files": [
+        {
+          "asset_id": "b02r_011",
+          "name": "NR_B02R_011.png",
+          "sha256": "e409f3bbebbcae9785e406b563b8bc23e832a75cf420a1cde63eb0dbcfc49bda",
+          "source_frame": "frame_0370",
+          "derivation": "medium pair crop/reframe",
+          "backup_slide_object_id": "b02r_11"
+        },
+        {
+          "asset_id": "b02r_012",
+          "name": "NR_B02R_012.png",
+          "sha256": "58b299cfcba6dceb6de7032882d719d7d5739c68ed05d1a8a09a3f75af992c69",
+          "source_frame": "frame_0564",
+          "derivation": "hero-one close crop/reframe",
+          "backup_slide_object_id": "b02r_12"
+        },
+        {
+          "asset_id": "b02r_013",
+          "name": "NR_B02R_013.png",
+          "sha256": "85c65128a9657128d05e73977e683b7675a616529bab4cb40aab2c3e81046816",
+          "source_frame": "frame_0286",
+          "derivation": "full source with blurred-edge 16:9 extension",
+          "backup_slide_object_id": "b02r_13"
+        },
+        {
+          "asset_id": "b02r_014",
+          "name": "NR_B02R_014.png",
+          "sha256": "060235db2c382fbe86f7465737523e8b939b221f80e0ebb81939640bea07f603",
+          "source_frame": "frame_0136",
+          "derivation": "hero-two close crop/reframe",
+          "backup_slide_object_id": "b02r_14"
+        },
+        {
+          "asset_id": "b02r_015",
+          "name": "NR_B02R_015.png",
+          "sha256": "ed30ea1e564eb99906652149768e083ba4ed82219cb2ab96048d62e1e94c7c81",
+          "source_frame": "frame_0092",
+          "derivation": "available paired three-quarter crop; replaces impossible invented rear view",
+          "backup_slide_object_id": "b02r_15"
+        },
+        {
+          "asset_id": "b02r_016",
+          "name": "NR_B02R_016.png",
+          "sha256": "73677add2c3622d72e91e694bdeb501d667cbe0d2326a777bc56e01ee1bcbd0b",
+          "source_frame": "frame_0182",
+          "derivation": "craft hull/wing source crop",
+          "backup_slide_object_id": "b02r_16"
+        },
+        {
+          "asset_id": "b02r_017",
+          "name": "NR_B02R_017.png",
+          "sha256": "d193e554dc903068ddc2923ade35c39454ea2d9560465dbef48b1343ca3f3d95",
+          "source_frame": "frame_0052",
+          "derivation": "medium pair crop/reframe",
+          "backup_slide_object_id": "b02r_17"
+        },
+        {
+          "asset_id": "b02r_018",
+          "name": "NR_B02R_018.png",
+          "sha256": "7df76273e09cfbf1a7c2245eafdf51d8e18969235553af29cfbd0352a0c32680",
+          "source_frame": "frame_0564",
+          "derivation": "hero-one isolated crop/reframe",
+          "backup_slide_object_id": "b02r_18"
+        },
+        {
+          "asset_id": "b02r_019",
+          "name": "NR_B02R_019.png",
+          "sha256": "2850b59bd6c16f04c8c5541024de5b96e8fa2306c3d66e6f0170cb7b8e3f0bf0",
+          "source_frame": "frame_0632",
+          "derivation": "paired return crop/reframe",
+          "backup_slide_object_id": "b02r_19"
+        },
+        {
+          "asset_id": "b02r_020",
+          "name": "NR_B02R_020.png",
+          "sha256": "cb5937cc7405e9e8af03979d1753a360ae58d4f2ab8ed7121354a694d6bdc98a",
+          "source_frame": "frame_0182",
+          "derivation": "full source with blurred-edge wide reset",
+          "backup_slide_object_id": "b02r_20"
+        }
+      ]
     }
   ]
 }

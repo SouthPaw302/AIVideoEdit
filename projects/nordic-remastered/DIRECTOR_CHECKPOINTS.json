@@ -2,14 +2,24 @@
   "schema": "aivideoedit.director-checkpoints.v1",
   "project": "Nordic Remastered",
   "created_at": "2026-10-02T08:05:00Z",
-  "updated_at": "2026-10-02T08:05:00Z",
+  "updated_at": "2026-10-02T19:20:00Z",
   "checkpoints": {
     "media_selection": {
-      "status": "rejected",
+      "status": "passed",
       "reviewer": "sandbox_director",
-      "at": "2026-10-02T08:05:00Z",
-      "evidence": {},
-      "notes": "Rejected B01-B10. They depict Viking fjords/warriors/longships rather than the locked reference world. Zero-Drift violation across subject identity, wardrobe, environment, and craft. Preserve as rejected media; regenerate from accepted source."
+      "at": "2026-10-02T19:20:00Z",
+      "evidence": {
+        "accepted_source_sha256": "a5acc4d880f9e4e4a46ffa4ae53aff8d96b60ce900edbbc377ece1c8737e9ded",
+        "active_batches": [
+          "B01R",
+          "B02R"
+        ],
+        "active_still_count": 20,
+        "b01r_drive_folder": "gdrive://1qSnpSNTfTzVZfXafvNJ7vcp-x4XCe1iR",
+        "b02r_drive_folder": "gdrive://1loH3J1sECreUs5He6C6VllfpQbIeDL_j",
+        "b02r_backup_presentation": "gslides://1rWdWTqfFLE7AoF68CBIZ324IeDAPLMJqsl6LFAhJDnY"
+      },
+      "notes": "Replacement media preserves Tall White source identity/world. B02R contains only exact-source pixel derivatives; no Viking/Norse imagery or invented scenes. Assets remain candidate until representative moving proof passes."
     },
     "representative_proof": {
       "status": "pending"
