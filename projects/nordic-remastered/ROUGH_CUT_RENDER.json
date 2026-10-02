@@ -1,0 +1,32 @@
+{
+  "schema": "aivideoedit.rough-cut.v1",
+  "project": "Nordic Remastered",
+  "branch": "song/nordic-remastered",
+  "source": "47 accepted animated Drive proof GIFs + locked Nordic source audio",
+  "scene_timing_authority": "projects/nordic-remastered/SCENE_TIMELINE.json",
+  "shot_count": 47,
+  "duration_seconds": 137.92,
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "codec": "h264"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2
+  },
+  "sha256": "0004215326fca091db7b058c8b0defa2da195db151d89425f212b0d287a02d20",
+  "technical_qc": {
+    "decode": "PASS",
+    "blackdetect_long_black_frames": "none detected"
+  },
+  "drive": {
+    "file_id": "1bB7PLka_emUC1a4o5qDgtnY3nat8cWN2",
+    "folder_id": "1bzZLEeAjncwCIpApVjs3PxJhjkbmgdo3",
+    "role": "final_masters"
+  },
+  "status": "ROUGH_CUT_RENDERED",
+  "note": "Director rough cut assembled from accepted durable animated proof backups. Does not claim canonical FX lock or final creative QC."
+}
