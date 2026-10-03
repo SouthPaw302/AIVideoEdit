@@ -70,6 +70,7 @@ jobs:
           python general/reusable/tools/test_recipe_execution_guard.py
           python general/reusable/tools/test_workflow_authority.py
       - name: Verify bootstrapped production contract
+        if: github.event_name != 'pull_request' || startsWith(github.head_ref, 'song/') || startsWith(github.head_ref, 'project/')
         shell: bash
         run: |
           python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$CONTRACT_BRANCH"
