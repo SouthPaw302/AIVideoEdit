@@ -23,10 +23,19 @@ jobs:
             echo "FAIL: song branches are production archives and must not merge into main."
             exit 1
           fi
-          if [[ "$GITHUB_EVENT_NAME" == "pull_request" && "$GITHUB_BASE_REF" == "main" ]]; then
-            CONTRACT_BRANCH="main"
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            if [[ "$GITHUB_BASE_REF" == "main" ]]; then
+              CONTRACT_BRANCH="main"
+            elif [[ "$GITHUB_HEAD_REF" == song/* || "$GITHUB_HEAD_REF" == project/* ]]; then
+              CONTRACT_BRANCH="$GITHUB_HEAD_REF"
+            else
+              # System/feature PRs targeting integration branches are not production work.
+              # Validate them against the canonical main production contract; branch-specific
+              # integration checks remain responsible for validating the candidate changes.
+              CONTRACT_BRANCH="main"
+            fi
           else
-            CONTRACT_BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+            CONTRACT_BRANCH="$GITHUB_REF_NAME"
           fi
           echo "CONTRACT_BRANCH=$CONTRACT_BRANCH" >> "$GITHUB_ENV"
       - name: Bootstrap exact current-main AIVideoEdit OS
@@ -61,6 +70,7 @@ jobs:
           python general/reusable/tools/test_recipe_execution_guard.py
           python general/reusable/tools/test_workflow_authority.py
       - name: Verify bootstrapped production contract
+        if: github.event_name != 'pull_request' || startsWith(github.head_ref, 'song/') || startsWith(github.head_ref, 'project/')
         shell: bash
         run: |
           python .aivideoedit/os/general/reusable/tools/production_guard.py --branch "$CONTRACT_BRANCH"

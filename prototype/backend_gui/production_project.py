@@ -20,8 +20,8 @@ import server as base
 from core_adapter import CORE
 
 
-def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedProcess:
-    return subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=timeout, check=False)
+def _run(cmd: list[str], cwd: Path, timeout: int = 300, env: dict | None = None) -> subprocess.CompletedProcess:
+    return subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=timeout, check=False, env=env)
 
 
 def _engine_root(project_id: str) -> Path:
@@ -210,7 +210,10 @@ def initialize(project_id: str) -> dict:
         raise RuntimeError((proc.stderr or proc.stdout or "local core clone failed")[-1200:])
 
     branch = _branch(project_id)
-    checkout = _run(["git", "checkout", "-b", branch, "main"], engine, timeout=60)
+    base_commit = str(CORE.status().get("main_commit") or "").strip()
+    checkout = _run(["git", "checkout", "-b", branch, base_commit or "main"], engine, timeout=60)
+    if checkout.returncode != 0:
+        checkout = _run(["git", "checkout", "-b", branch, "main"], engine, timeout=60)
     if checkout.returncode != 0:
         checkout = _run(["git", "checkout", "-b", branch, "origin/main"], engine, timeout=60)
     if checkout.returncode != 0:
@@ -225,12 +228,20 @@ def initialize(project_id: str) -> dict:
     if commit.returncode != 0:
         raise RuntimeError((commit.stderr or commit.stdout or "initial project commit failed")[-1200:])
 
-    boot = _run([
+    boot_env = dict(os.environ)
+    core_ref = os.environ.get("AIVE_CORE_REF", "main").strip() or "main"
+    if core_ref != "main":
+        boot_env["AIVIDEOEDIT_AUTHORITY_REF"] = core_ref
+        boot_env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
+    boot_cmd = [
         sys.executable, str(engine / "bootstrap.py"), "boot",
         "--repo-root", str(engine),
         "--branch", branch,
         "--project-dir", f"projects/{project_dir.name}",
-    ], engine, timeout=300)
+    ]
+    if os.environ.get("AIVE_OFFLINE", "").strip().lower() in {"1", "true", "yes", "on"}:
+        boot_cmd.append("--offline")
+    boot = _run(boot_cmd, engine, timeout=300, env=boot_env)
     if boot.returncode != 0:
         return {
             "ok": False,

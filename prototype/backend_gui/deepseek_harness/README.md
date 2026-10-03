@@ -1,7 +1,6 @@
 # DeepSeek Harness adapter prototype
 
-This folder contains an optional adapter for testing DeepSeek Harness against the
-AIVideoEdit Studio prototype. It does not replace the AIVideoEdit production
+This folder contains an optional provider-neutral Harness adapter for AIVideoEdit Studio. It does not replace the AIVideoEdit production
 engine, contracts, guards, GUI, or branch model.
 
 ## Architecture
@@ -28,7 +27,7 @@ for example `mcp__aivideo__production__status`.
 
 ## Safety / isolation rules
 
-- This integration lives only on `prototype/deepseek-harness`.
+- Harness is opt-in (`AIVE_HARNESS_ENABLED=1`) and is not required for normal production.
 - It must not mutate repository `main`.
 - AIVideoEdit remains authoritative for production state.
 - Canonical production guards remain in force.
@@ -40,8 +39,7 @@ for example `mcp__aivideo__production__status`.
 
 ## DeepSeek Harness configuration
 
-DeepSeek Harness is developer-preview software. Current releases include an MCP
-client plugin and support stdio MCP servers. This dependency-free prototype bridge
+External Harness hosts may use the provider-neutral MCP stdio bridge. This dependency-free prototype bridge
 intentionally serves the stable 2025-era MCP handshake over stdio; current Harness
 clients can probe the 2026 era and fall back to supported legacy negotiation. Copy the adjacent
 `cordis.patch.yml.example` into an experimental Harness profile and replace

@@ -9,12 +9,19 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import shutil
+import sys
 from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 import server as base
 import production_project
 from core_adapter import CORE
+from general.reusable.tools.harness_router import harness_enabled
 
 SCHEMAS = [
     {
@@ -29,6 +36,17 @@ SCHEMAS = [
             "type": "object",
             "required": ["project_id"],
             "properties": {"project_id": {"type": "string"}},
+        },
+    },
+    {
+        "name": "harness.specialist_fixture",
+        "description": "Run one bounded provider-neutral specialist fixture when optional Harness is enabled.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "task": {"type": "string"},
+                "evidence": {"type": "object"}
+            },
         },
     },
     {
@@ -47,7 +65,7 @@ SCHEMAS = [
                 "motifs": {"type": "array", "items": {"type": "string"}},
                 "tags": {"type": "array", "items": {"type": "string"}},
                 "constraints": {"type": "array", "items": {"type": "string"}},
-                "allow_proof_required": {"type": "boolean", "default": false},
+                "allow_proof_required": {"type": "boolean", "default": False},
                 "max_effects": {"type": "integer", "minimum": 1, "maximum": 12}
             },
         },
@@ -74,6 +92,7 @@ def status() -> dict:
         "ok": True,
         "bridge": "mcp-stdio",
         "bridge_ready": True,
+        "enabled": harness_enabled(),
         "dsh_installed": bool(dsh),
         "npx_available": bool(npx),
         "launcher": dsh or npx,
@@ -160,7 +179,7 @@ def context(project_id: str) -> dict:
         "agent_rules": [
             "Treat the current project branch and current explicit user instruction as project authority.",
             "Run through existing AIVideoEdit tools; do not bypass canonical production guards.",
-            "Do not mutate main from the harness experiment.",
+            "Harness is optional orchestration only; AIVideoEdit production state remains authoritative.",
             "Refresh harness.context after a stage-changing operation before choosing the next action.",
             "Resolve FX through harness.fx_resolve before authoring batch/scene/still FX requirements and after material scene changes.",
         ],
@@ -216,12 +235,30 @@ def fx_resolve(project_id: str, request: dict) -> dict:
     }
 
 
+def specialist_fixture(args: dict | None = None) -> dict:
+    if not harness_enabled():
+        raise RuntimeError("optional Harness is disabled; set AIVE_HARNESS_ENABLED=1 to use specialist routing")
+    args = args or {}
+    task = str(args.get("task") or "bounded specialist fixture").strip()
+    evidence = args.get("evidence") if isinstance(args.get("evidence"), dict) else {}
+    return {
+        "schema": "aivideoedit.harness-specialist-fixture.v1",
+        "status": "COMPLETE",
+        "task": task,
+        "evidence_keys": sorted(str(k) for k in evidence),
+        "authority": "advisory_only",
+        "production_mutation": False,
+    }
+
+
 def call(name: str, args: dict | None = None):
     args = args or {}
     if name == "harness.status":
         return status()
     if name == "harness.context":
         return context(str(args.get("project_id") or ""))
+    if name == "harness.specialist_fixture":
+        return specialist_fixture(args)
     if name == "harness.fx_resolve":
         return fx_resolve(str(args.get("project_id") or ""), args)
     raise ValueError(f"unknown harness tool: {name}")

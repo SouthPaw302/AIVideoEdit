@@ -30,6 +30,11 @@ CAPABILITY_MATRIX = Path("general/reusable/MEDIA_CAPABILITY_MATRIX.json")
 FX_REGISTRY = Path("general/reusable/fx_v2/registry.json")
 
 
+def _core_ref() -> str:
+    value = os.environ.get("AIVE_CORE_REF", "main").strip()
+    return value or "main"
+
+
 def _read_json(path: Path, default: Any) -> Any:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -53,7 +58,7 @@ def _host_branch() -> str:
     return "unknown"
 
 
-def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedProcess:
+def _run(cmd: list[str], cwd: Path, timeout: int = 300, env: dict | None = None) -> subprocess.CompletedProcess:
     return subprocess.run(
         cmd,
         cwd=str(cwd),
@@ -61,6 +66,7 @@ def _run(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedP
         text=True,
         timeout=timeout,
         check=False,
+        env=env,
     )
 
 
@@ -85,10 +91,11 @@ class CoreAdapter:
             )
             if proc.returncode != 0:
                 return proc
-            target = "origin/main"
+            ref = _core_ref()
+            target = f"origin/{ref}"
             check = _run(["git", "rev-parse", "--verify", target], CORE_REPO, timeout=30)
             if check.returncode != 0:
-                target = "main"
+                target = ref
             return _run(["git", "checkout", "--detach", target], CORE_REPO, timeout=60)
 
         if not HOST_BOOTSTRAP.is_file():
@@ -117,6 +124,8 @@ class CoreAdapter:
         if not bootstrap.is_file():
             return {"ok": False, "bootstrapped": False, "error": "installed main lacks bootstrap.py", **self.status()}
 
+        requested_ref = _core_ref()
+        boot_branch = "main"
         cmd = [
             sys.executable,
             str(bootstrap),
@@ -124,11 +133,15 @@ class CoreAdapter:
             "--repo-root",
             str(CORE_REPO),
             "--branch",
-            "main",
+            boot_branch,
         ]
         if offline:
             cmd.append("--offline")
-        proc = _run(cmd, CORE_REPO, timeout=300)
+        env = dict(os.environ)
+        if requested_ref != "main":
+            env["AIVIDEOEDIT_AUTHORITY_REF"] = requested_ref
+            env["AIVIDEOEDIT_VALIDATION_MODE"] = "1"
+        proc = _run(cmd, CORE_REPO, timeout=300, env=env)
         result = {
             "ok": proc.returncode == 0,
             "returncode": proc.returncode,
@@ -146,11 +159,13 @@ class CoreAdapter:
         fx = _read_json(self.os_root / FX_REGISTRY, {}) if self.os_root.is_dir() else {}
         capabilities = self._records(matrix, ("capabilities", "media_capabilities", "items"))
         effects = self._records(fx, ("effects", "fx", "registry", "items"))
+        ref = _core_ref()
         bootstrapped = bool(session) and self.os_root.is_dir() and session.get("branch") == "main"
         return {
             "ok": True,
             "bootstrapped": bootstrapped,
-            "mode": "isolated-canonical-main",
+            "mode": "isolated-canonical-main" if ref == "main" else "isolated-validation-ref",
+            "requested_core_ref": ref,
             "host_repo": str(self.host_repo),
             "host_branch": _host_branch(),
             "core_repo": str(self.core_repo) if self.core_repo.exists() else None,
