@@ -28,3 +28,19 @@ def test_proof_required_is_rejected_by_default():
 def test_effect_limit_is_bounded():
     out=mod.resolve({"level":"scene","environment":["tavern"],"objects":["fire","instrument"],"needs":["audio_reactive","long_hold"]},max_effects=3)
     assert len(out["effects"]) <= 3
+
+
+def test_camera_semantics_select_approved_camera_fx():
+    cases={
+        "slow_push":"FX2-CAMERA-023",
+        "lateral_reframe":"FX2-CAMERA-023",
+        "pullback":"FX2-CAMERA-023",
+        "orbit":"FX2-CAMERA-022",
+        "detail_push":"FX2-CAMERA-021",
+        "rack_focus":"FX2-CAMERA-024",
+    }
+    for token,eid in cases.items():
+        out=mod.resolve({"level":"scene","needs":[token]})
+        ids={x["id"] for x in out["effects"]}
+        assert eid in ids
+        assert all(x["gate_status"]=="approved" for x in out["effects"])

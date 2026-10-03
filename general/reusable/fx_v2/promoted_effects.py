@@ -98,7 +98,28 @@ def _glow(im,cx,cy,strength,color=(45,125,255)):
 def _transition(a,b,p):
     q=.5-.5*math.cos(np.clip(p,0,1)*math.pi); return cv2.addWeighted(a,1-q,b,q,0)
 
-def apply_effect(name:str, frame:np.ndarray, t:float, duration:float=2.0, energy:float=.6, transient:float=.4, second_frame:np.ndarray|None=None)->np.ndarray:
+def _pair_param(value, default):
+    if isinstance(value,(list,tuple)) and len(value)==2:
+        return float(value[0]),float(value[1])
+    return float(default[0]),float(default[1])
+
+def _authored_camera(im,p,params,default_zoom_start=1.0,default_zoom_end=1.10,default_center_start=(.5,.5),default_center_end=(.5,.5)):
+    """Bounded source-locked crop/resize camera move. No pixels are invented."""
+    h,w=im.shape[:2]; q=float(np.clip(p,0,1)); easing=str(params.get("easing","smoothstep")).lower()
+    if easing=="smoothstep": q=q*q*(3-2*q)
+    elif easing=="cosine": q=.5-.5*math.cos(math.pi*q)
+    elif easing!="linear": raise ValueError(f"unsupported camera easing: {easing}")
+    cap=float(np.clip(params.get("zoom_cap",1.40),1.0,1.50))
+    z0=float(np.clip(params.get("zoom_start",default_zoom_start),1.0,cap)); z1=float(np.clip(params.get("zoom_end",default_zoom_end),1.0,cap))
+    c0=_pair_param(params.get("center_start"),default_center_start); c1=_pair_param(params.get("center_end"),default_center_end)
+    z=z0+(z1-z0)*q; cx=c0[0]+(c1[0]-c0[0])*q; cy=c0[1]+(c1[1]-c0[1])*q
+    cw=max(2,min(w,int(round(w/z)))); ch=max(2,min(h,int(round(h/z))))
+    halfx=cw/(2.0*w); halfy=ch/(2.0*h); cx=float(np.clip(cx,halfx,1-halfx)); cy=float(np.clip(cy,halfy,1-halfy))
+    x0=max(0,min(w-cw,int(round(cx*w-cw/2)))); y0=max(0,min(h-ch,int(round(cy*h-ch/2))))
+    crop=im[y0:y0+ch,x0:x0+cw]
+    return cv2.resize(crop,(w,h),interpolation=cv2.INTER_LANCZOS4)
+
+def apply_effect(name:str, frame:np.ndarray, t:float, duration:float=2.0, energy:float=.6, transient:float=.4, second_frame:np.ndarray|None=None, params:dict|None=None)->np.ndarray:
     if name not in EFFECT_NAMES: raise KeyError(name)
     im=frame.copy(); h,w=im.shape[:2]; y,x=_grid(im); p=_phase(t,duration); ang=TAU*p
     b = second_frame.copy() if second_frame is not None else cv2.GaussianBlur(255-im,(0,0),1.2)
@@ -111,6 +132,8 @@ def apply_effect(name:str, frame:np.ndarray, t:float, duration:float=2.0, energy
     if name=='transient_warp':
         amp=(.5+2.4*transient)*math.sin(ang*2); dx=amp*np.sin(y/18); return _remap(im,dx,np.zeros_like(dx))
     if name=='narrative_camera_travel':
+        if params:
+            return _authored_camera(im,p,params,1.0,1.10,(.50,.50),(.52,.49))
         dx=3*math.sin(ang*.5); dy=1.5*math.cos(ang*.5); M=np.float32([[1,0,dx],[0,1,dy]]); return cv2.warpAffine(im,M,(w,h),borderMode=cv2.BORDER_REFLECT_101)
     if name=='firelight_breath': return _glow(im,.24,.68,.7+.25*math.sin(ang),(20,95,245))
     if name in {'wet_reflection_ripple','puddle_shimmer','water_region_displacement_shimmer','reflection_to_water'}:
@@ -130,6 +153,11 @@ def apply_effect(name:str, frame:np.ndarray, t:float, duration:float=2.0, energy
     if name=='disocclusion_alpha_feather':
         shifted=np.roll(im,int(4*math.sin(ang)),axis=1); m=cv2.GaussianBlur(_blur_mask(h,w,.5,.5,.45,.45),(0,0),7); return _blend(im,shifted,m*.22)
     if name=='loopable_eased_orbit':
+        if params:
+            rot=float(params.get("rotation_deg",.55)); rx=float(params.get("radius_x_px",2.0)); ry=float(params.get("radius_y_px",1.2))
+            zoom=float(params.get("zoom_base",1.006))+float(params.get("zoom_pulse",.006))*math.cos(ang)
+            M=cv2.getRotationMatrix2D((w/2,h/2),rot*math.sin(ang),zoom); M[:,2]+=[rx*math.cos(ang),ry*math.sin(ang)]
+            return cv2.warpAffine(im,M,(w,h),borderMode=cv2.BORDER_REFLECT_101)
         M=cv2.getRotationMatrix2D((w/2,h/2),.55*math.sin(ang),1+.006*math.cos(ang)); M[:,2]+=[2*math.cos(ang),1.2*math.sin(ang)]; return cv2.warpAffine(im,M,(w,h),borderMode=cv2.BORDER_REFLECT_101)
     if name=='rain_puddle_ember_composite': return _embers(_rain(apply_effect('puddle_shimmer',im,t,duration,energy,transient),t,.35),t,.28)
     if name=='threshold_reflection_lamp_flicker': return _glow(apply_effect('wet_reflection_ripple',im,t,duration,energy,transient),.25,.35,.5+.2*math.sin(ang*3),(25,115,245))
@@ -143,6 +171,9 @@ def apply_effect(name:str, frame:np.ndarray, t:float, duration:float=2.0, energy
     if name=='rotating_architecture_debris':
         M=cv2.getRotationMatrix2D((w/2,h/2),1.2*math.sin(ang),1+.006*math.sin(ang)); out=cv2.warpAffine(im,M,(w,h),borderMode=cv2.BORDER_REFLECT_101); return _embers(out,t,.12)
     if name=='corridor_push_focus_definition':
+        if params:
+            out=_authored_camera(im,p,params,1.0,1.08,(.50,.50),(.52,.48)); sharp=cv2.detailEnhance(out,sigma_s=10,sigma_r=.15)
+            amount=float(np.clip(params.get("definition_strength",.25),0,.50))*p; return cv2.addWeighted(out,1-amount,sharp,amount,0)
         s=1+.025*p; M=cv2.getRotationMatrix2D((w/2,h/2),0,s); out=cv2.warpAffine(im,M,(w,h),borderMode=cv2.BORDER_REFLECT_101); sharp=cv2.detailEnhance(out,sigma_s=10,sigma_r=.15); return cv2.addWeighted(out,1-p*.25,sharp,p*.25,0)
     if name=='reflection_ash_dawn':
         out=apply_effect('wet_reflection_ripple',im,t,duration,energy,transient); out=_embers(out,-t,.20*(1-p)); gold=np.full_like(im,(35,150,235)); return _blend(out,gold,np.full((h,w),.18*p,np.float32))

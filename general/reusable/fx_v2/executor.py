@@ -31,7 +31,7 @@ class FXExecutor:
         if kind=="runtime_apply":out=self.runtime.apply(frame,{"id":eid,**params},ctx)
         elif kind=="adapter":
             mod=_load_module(impl.get("path"));fn=getattr(mod,impl.get("symbol") or rec.get("name"))
-            if (impl.get("symbol") or "")=="apply_effect":out=fn(impl.get("effect_name") or rec.get("name"),frame,float(ctx.t),float(ctx.duration),float(ctx.energy),float(ctx.transient),second_frame)
+            if (impl.get("symbol") or "")=="apply_effect":out=fn(impl.get("effect_name") or rec.get("name"),frame,float(ctx.t),float(ctx.duration),float(ctx.energy),float(ctx.transient),second_frame,params=params)
             else:
                 kwargs={}
                 for name in inspect.signature(fn).parameters:
